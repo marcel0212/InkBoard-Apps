@@ -5,63 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title id="pageTitle">InkBoard · Rezept laden</title>
 <style>
-  /* CHANGELOG Eintrag 239 (UX-Review 4e): Farbschema folgt dem System
-     (prefers-color-scheme) statt immer dunkel - Standard hell wie Studio,
-     dunkel nur, wenn das Handy im Dunkelmodus ist. Die Farbwerte lehnen sich
-     an die Studio-Palette (studio_home_page.h :root / body.dark) an. */
+  /* Studio-Designsystem (studio_home_page.h): Lavendel-Grau-Basis mit weichen Farbflaechen, stark gerundete Karten, warmes Orange als einziger
+     Akzent, Verlaufs-Buttons; Dunkelmodus folgt dem System. Dieselben Farben/Radien wie die Handy-Seite der Bilder-App. */
   :root {
     color-scheme: light dark;
-    --bg: #f4f5f8; --card: #ffffff; --line: #dcdfe6; --text: #1c1e26;
-    --muted: #6b7280; --accent: #d98750; --accent-text: #ffffff; --input-bg: #f7f8fb;
-    --ok: #2f7d3a; --err: #b3261e;
-    --pending-bg: #eef3fb; --ok-bg: #e6f4e8; --err-bg: #fbe9e7; --pending-text: #3f6fbf;
+    --bg: #eceef6; --card-bg: rgba(255,255,255,0.74); --border: rgba(38,40,56,0.10);
+    --text: #262838; --text-secondary: #5f6480; --accent: #d9824f; --accent-text: #b0572a;
+    --accent-grad: linear-gradient(135deg, #cf7a45 0%, #a9512a 100%); --input-bg: rgba(38,40,56,0.045);
+    --success-bg: #e0f2e6; --success-text: #257a44; --error-bg: #fbe9e7; --error-text: #b53f31;
+    --pending-bg: rgba(109,127,174,0.16); --pending-text: #3f4f7e;
+    --elev-1: 0 10px 30px rgba(90,99,140,0.10), 0 1px 2px rgba(38,40,56,0.04);
+    --radius-lg: 22px; --radius-md: 14px; --logo: #262838;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14161a; --card: #1d2026; --line: #2c3038; --text: #e8eaed;
-      --muted: #9aa0a8; --accent: #7EA3DD; --accent-text: #101317; --input-bg: #14161a;
-      --ok: #6fbf73; --err: #e07a6a;
-      --pending-bg: #23303f; --ok-bg: #22301f; --err-bg: #382220; --pending-text: #7EA3DD;
+      --bg: #191b26; --card-bg: rgba(37,40,56,0.74); --border: rgba(255,255,255,0.10);
+      --text: #e9eaf2; --text-secondary: #a9aec9; --accent: #e59a63; --accent-text: #eaa46f;
+      --accent-grad: linear-gradient(135deg, #d07a45 0%, #b25a2c 100%); --input-bg: rgba(255,255,255,0.05);
+      --success-bg: #1e3a2a; --success-text: #6fcf97; --error-bg: #3a1e1e; --error-text: #e08a8a;
+      --pending-bg: rgba(85,100,143,0.30); --pending-text: #b9c6ee;
+      --elev-1: 0 10px 30px rgba(0,0,0,0.35); --logo: #e9eaf2;
     }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-         font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-  .wrap { max-width: 520px; margin: 0 auto; padding: 20px 16px 48px; }
-  h1 { font-size: 20px; margin: 8px 0 2px; }
-  .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
-  .card { background: var(--card); border: 1px solid var(--line);
-          border-radius: 14px; padding: 16px; margin-bottom: 16px; }
-  .card h2 { font-size: 15px; margin: 0 0 10px; }
-  label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
-  input, textarea { width: 100%; background: var(--input-bg); color: var(--text);
-    border: 1px solid var(--line); border-radius: 10px; padding: 12px;
-    font-size: 15px; font-family: inherit; }
+  body { margin: 0; background: var(--bg); color: var(--text); min-height: 100vh;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(640px 520px at 88% -6%, rgba(214,126,74,0.32), transparent 62%),
+      radial-gradient(760px 640px at -12% 18%, rgba(109,127,174,0.34), transparent 62%),
+      radial-gradient(680px 540px at 96% 88%, rgba(226,149,95,0.26), transparent 62%),
+      radial-gradient(620px 560px at 12% 108%, rgba(101,88,128,0.28), transparent 62%); }
+  @media (prefers-color-scheme: dark) {
+    body::before { background:
+      radial-gradient(640px 520px at 88% -6%, rgba(207,116,67,0.20), transparent 62%),
+      radial-gradient(760px 640px at -12% 18%, rgba(85,100,143,0.28), transparent 62%),
+      radial-gradient(680px 540px at 96% 88%, rgba(207,116,67,0.16), transparent 62%),
+      radial-gradient(620px 560px at 12% 108%, rgba(111,97,144,0.22), transparent 62%); }
+  }
+  .wrap { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; padding: 24px 16px 48px; }
+  .brand { text-align: center; padding: 4px 8px 18px; }
+  .brand h1 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin: 10px 0 2px; }
+  .brand p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.45; }
+  .card { background: var(--card-bg); border-radius: var(--radius-lg); padding: 22px 24px; margin-bottom: 16px; box-shadow: var(--elev-1); }
+  .card h2 { font-size: 15px; margin: 0 0 10px; font-weight: 700; }
+  details.card > summary { cursor: pointer; font-size: 15px; font-weight: 700; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+  details.card > summary::-webkit-details-marker { display: none; }
+  details.card > summary::after { content: "\25BE"; color: var(--text-secondary); transition: transform .15s; }
+  details.card[open] > summary::after { transform: rotate(180deg); }
+  details.card[open] > summary { margin-bottom: 10px; }
+  label { display: block; font-size: 13px; color: var(--text-secondary); margin: 12px 0 6px; }
+  input, textarea { width: 100%; background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 12px; font-size: 15px; font-family: inherit; }
   textarea { min-height: 110px; resize: vertical; }
-  button { width: 100%; margin-top: 12px; padding: 13px; border: 0;
-    border-radius: 10px; background: var(--accent); color: var(--accent-text);
-    font-size: 15px; font-weight: 600; cursor: pointer; }
-  button.secondary { background: transparent; color: var(--muted);
-    border: 1px solid var(--line); font-weight: 500; }
-  button:disabled { opacity: .55; }
-  .status { margin-top: 12px; font-size: 14px; border-radius: 10px;
-    padding: 11px 12px; display: none; }
+  button { width: 100%; margin-top: 12px; padding: 12px 16px; border: 0; border-radius: var(--radius-md);
+    background: var(--accent-grad); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  button:disabled { opacity: .5; }
+  .status { margin-top: 12px; font-size: 13px; border-radius: 8px; padding: 10px 14px; display: none; }
   .status.pending { display: block; background: var(--pending-bg); color: var(--pending-text); }
-  .status.ok { display: block; background: var(--ok-bg); color: var(--ok); }
-  .status.error { display: block; background: var(--err-bg); color: var(--err); }
-  .current { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .status.ok { display: block; background: var(--success-bg); color: var(--success-text); }
+  .status.error { display: block; background: var(--error-bg); color: var(--error-text); }
+  .current { font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
   .current b { color: var(--text); }
-  .hint { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .hint { font-size: 12.5px; color: var(--text-secondary); margin-top: 10px; line-height: 1.5; }
+  .full h3 { font-size: 13px; margin: 14px 0 6px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .04em; }
+  .full ul, .full ol { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.5; }
+  .full li { margin-bottom: 4px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1 data-i18n="recipe_title">Rezept aufs InkBoard laden</h1>
-  <p class="sub" data-i18n="recipe_subtitle">Link einer Rezeptseite einfügen - das Display zeigt danach Zutaten und Zubereitung als Seiten.</p>
+  <div class="brand">
+    <svg width="46" height="30" viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 8 L92 2 Q97 2 97 8 L97 58 Q97 64 92 64 L15 58 Q8 56 8 50 L8 16 Q8 10 15 8 Z" fill="none" stroke="var(--logo)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="88" y="4" width="10" height="15" fill="#3f6fbf"/><rect x="88" y="19" width="10" height="15" fill="#5a9a4a"/>
+      <rect x="88" y="34" width="10" height="15" fill="#e8b923"/><rect x="88" y="49" width="10" height="15" fill="#c2483f"/>
+    </svg>
+    <h1 data-i18n="recipe_title">Rezept aufs InkBoard laden</h1>
+    <p data-i18n="recipe_subtitle">Link einer Rezeptseite einfügen - das Display zeigt danach Zutaten und Zubereitung als Seiten.</p>
+  </div>
 
   <div class="card">
     <h2 data-i18n="recipe_link_card_title">Rezept-Link</h2>
-    <label for="url" data-i18n="recipe_link_label">Link (z.&nbsp;B. von Chefkoch, teilen &rarr; Link kopieren)</label>
+    <label for="url" data-i18n="recipe_link_label" style="margin-top:0;">Link (z.&nbsp;B. von Chefkoch, teilen &rarr; Link kopieren)</label>
     <input id="url" type="url" inputmode="url" placeholder="https://www.chefkoch.de/rezepte/...">
     <button id="loadBtn" onclick="loadFromUrl()" data-i18n="recipe_load_btn">Rezept laden</button>
     <div id="urlStatus" class="status"></div>
@@ -73,6 +100,10 @@
   <div class="card">
     <h2 data-i18n="recipe_current_card_title">Aktuell auf dem Display</h2>
     <div id="current" class="current" data-i18n="recipe_loading">Wird geladen ...</div>
+    <details id="fullBox" class="full" style="display:none; margin-top:10px;">
+      <summary data-i18n="recipe_full_toggle" style="cursor:pointer; font-size:13px; font-weight:600; color:var(--accent-text);">Zutaten und Schritte anzeigen</summary>
+      <div id="fullBody"></div>
+    </details>
     <button class="secondary" onclick="clearRecipe()" data-i18n="recipe_clear_btn">Rezept vom Display entfernen</button>
   </div>
 
@@ -81,8 +112,7 @@
     <div id="servingsInfo" class="current"></div>
     <div style="display:flex; align-items:center; gap:10px; margin-top:12px;">
       <button type="button" class="secondary" style="width:44px; margin-top:0; padding:12px 0;" onclick="stepServings(-1)">&minus;</button>
-      <input id="servingsValue" type="number" inputmode="numeric" min="1" max="99"
-             style="text-align:center; flex:1;">
+      <input id="servingsValue" type="number" inputmode="numeric" min="1" max="99" style="text-align:center; flex:1;">
       <button type="button" class="secondary" style="width:44px; margin-top:0; padding:12px 0;" onclick="stepServings(1)">+</button>
     </div>
     <button onclick="applyServings()" data-i18n="recipe_apply_servings_btn">Zutaten umrechnen</button>
@@ -91,9 +121,9 @@
     Angaben ohne Zahl (z.&nbsp;B. "Salz nach Geschmack") bleiben unverändert.</p>
   </div>
 
-  <div class="card">
-    <h2 data-i18n="recipe_manual_card_title">Manuell einfügen</h2>
-    <label for="mTitle" data-i18n="recipe_manual_title_label">Titel</label>
+  <details class="card" id="manualBox">
+    <summary data-i18n="recipe_manual_card_title">Manuell einfügen</summary>
+    <label for="mTitle" data-i18n="recipe_manual_title_label" style="margin-top:0;">Titel</label>
     <input id="mTitle" type="text" data-i18n-placeholder="recipe_manual_title_placeholder" placeholder="z. B. Spaghetti Carbonara">
     <label for="mYield" data-i18n="recipe_manual_yield_label">Portionen (optional)</label>
     <input id="mYield" type="text" inputmode="numeric" data-i18n-placeholder="recipe_manual_yield_placeholder" placeholder="z. B. 4">
@@ -103,7 +133,7 @@
     <textarea id="mSteps" data-i18n-placeholder="recipe_manual_steps_placeholder" placeholder="Nudeln kochen.&#10;Speck anbraten.&#10;Alles vermengen."></textarea>
     <button onclick="saveManual()" data-i18n="recipe_manual_save_btn">Aufs Display bringen</button>
     <div id="manualStatus" class="status"></div>
-  </div>
+  </details>
 </div>
 <script>
 // Handy-Seite des Pakets "rezepte" (Manifest "http": page = assets/phone.html, api = true). Alle Aufrufe gehen als POST mit
@@ -158,7 +188,11 @@ const RECIPE_I18N = {
     recipe_servings_applied: 'Übernommen: Zutaten sind jetzt für {n} Portionen berechnet.',
     recipe_err_apply_failed: 'Übernehmen fehlgeschlagen.',
     recipe_manual_saved: 'Übernommen: {ingredients} Zutaten, {steps} Schritte.',
-    recipe_busy: 'Das Gerät ist gerade beschäftigt - einen Moment ...'
+    recipe_busy: 'Das Gerät ist gerade beschäftigt - einen Moment ...',
+    recipe_full_toggle: 'Zutaten und Schritte anzeigen',
+    recipe_full_ingredients: 'Zutaten',
+    recipe_full_steps: 'Zubereitung',
+    recipe_full_nutrition: 'Nährwerte'
   },
   en: {
     page_title: 'InkBoard · Load recipe',
@@ -201,7 +235,11 @@ const RECIPE_I18N = {
     recipe_servings_applied: 'Applied: ingredients are now calculated for {n} servings.',
     recipe_err_apply_failed: 'Applying failed.',
     recipe_manual_saved: 'Saved: {ingredients} ingredients, {steps} steps.',
-    recipe_busy: 'The device is busy - one moment ...'
+    recipe_busy: 'The device is busy - one moment ...',
+    recipe_full_toggle: 'Show ingredients and steps',
+    recipe_full_ingredients: 'Ingredients',
+    recipe_full_steps: 'Steps',
+    recipe_full_nutrition: 'Nutrition'
   }
 };
 let currentLang = 'de';
@@ -246,6 +284,7 @@ function renderCurrent(d) {
     el.textContent = t('recipe_none_loaded');
   }
 
+  loadFull(!!d.valid, (d.title || '') + '|' + currentServings + '|' + (d.ingredients || 0) + '|' + (d.steps || 0));
   const card = document.getElementById('servingsCard');
   if (d.valid && baseServings > 0) {
     card.style.display = 'block';
@@ -254,6 +293,23 @@ function renderCurrent(d) {
   } else {
     card.style.display = 'none';
   }
+}
+// Ganzes Rezept (Zutaten/Schritte/Naehrwerte) fuer das Aufklapp-Feld unter "Aktuell auf dem Display".
+let fullKey = '';
+function loadFull(valid, key) {
+  const box = document.getElementById('fullBox');
+  if (!valid) { box.style.display = 'none'; fullKey = ''; return; }
+  if (key === fullKey) return; // unveraendert: nicht erneut laden (renderCurrent laeuft bei jedem Status-Poll)
+  fullKey = key;
+  api('recipe').then(r => {
+    if (!r || !r.valid) { box.style.display = 'none'; return; }
+    let h = '';
+    if (r.ingredients && r.ingredients.length) h += '<h3>' + t('recipe_full_ingredients') + '</h3><ul>' + r.ingredients.map(x => '<li>' + escapeHtml(x) + '</li>').join('') + '</ul>';
+    if (r.steps && r.steps.length) h += '<h3>' + t('recipe_full_steps') + '</h3><ol>' + r.steps.map(x => '<li>' + escapeHtml(x) + '</li>').join('') + '</ol>';
+    if (r.nutrition && r.nutrition.length) h += '<h3>' + t('recipe_full_nutrition') + '</h3><ul>' + r.nutrition.map(x => '<li>' + escapeHtml(x[0]) + ': ' + escapeHtml(x[1]) + '</li>').join('') + '</ul>';
+    document.getElementById('fullBody').innerHTML = h;
+    box.style.display = h ? 'block' : 'none';
+  }).catch(() => {});
 }
 function escapeHtml(s) {
   return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

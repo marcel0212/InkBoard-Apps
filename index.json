@@ -65,7 +65,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -121,8 +121,8 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "90e6e695e805ce67904ab71aa35b40b24820fc571773659d2691b169b5cf7e79",
-      "size": 21337
+      "sha256": "bf9286ad16381e28d02df2496bc1ac1c336ef92dcc6e269067cccbd287d06b1b",
+      "size": 22799
     },
     {
       "id": "calendar-app",
@@ -1562,7 +1562,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -1619,8 +1619,8 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "661990566f0ee98c1c3d1c7e150b78f0b1ec8b3c3a154b4753db6b47abda925f",
-      "size": 40930
+      "sha256": "84012e360d16ba7984bc3c11cdac03fd09dd92ebe3e1cd7b35b204b27d09e8eb",
+      "size": 45612
     },
     {
       "id": "sport-tabellen",

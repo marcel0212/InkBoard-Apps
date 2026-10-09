@@ -220,6 +220,19 @@ ingredients = d and #d.ing or 0, steps = d and #d.steps or 0, nutrition = d and 
 if st == "ok" or st == "error" then ctx.data.set("st", "idle") end -- einmal ausgeliefert, dann zurueck auf idle
 return reply(200, out)
 end
+if op == "recipe" then
+if d == nil then return reply(200, { valid = false }) end
+local ing = {}
+for i, v in ipairs(d.ing) do
+ing[i] = (d.base > 0 and d.cur ~= d.base) and recipe.scale(v, d.base, d.cur) or v
+end
+local nut = {}
+for i, p in ipairs(d.nut) do nut[i] = { p[1], p[2] } end
+return reply(200, {
+valid = true, title = d.title, source = d.source, url = d.url, yield = d.yield, time = d.time,
+baseServings = d.base, currentServings = d.cur, ingredients = ing, steps = d.steps, nutrition = nut,
+})
+end
 if op == "url" then
 local url = trim(tostring(q.url or ""))
 if url:sub(1, 7) == "http://" then url = "https://" .. url:sub(8) end
@@ -413,37 +426,14 @@ ctx.data.set("bt", time.now())
 ctx.data.set("pg", (pageIndex(ctx, total) + int(n)) % total)
 return true
 end
-local QR_CAPS = { 53, 78, 106, 134, 154, 192 }
-local function qrSize(s, maxSize)
-for i, cap in ipairs(QR_CAPS) do
-if #s <= cap then
-local modules = 4 * (i + 2) + 17
-local scale = math.min(6, maxSize // modules)
-if scale < 2 then return 0 end
-return modules * scale
-end
-end
-return 0
-end
 local function drawEmpty(ctx)
+if device.qrscreen and device.qrscreen(T(ctx, "Noch kein Rezept geladen", "No recipe loaded yet"), T(ctx, "QR-Code scannen, um ein Rezept zu laden:", "Scan the QR code to load a recipe:")) then
+return
+end
 local cx = draw.width // 2
 local topY = draw.top
 draw.text(cx, topY + 44, T(ctx, "Noch kein Rezept geladen", "No recipe loaded yet"), "large", color.BLACK, "center")
-local url = device.url()
-if url == nil then
 draw.text(cx, topY + 90, T(ctx, "Das Gerät braucht eine WLAN-Verbindung, dann erscheint hier ein QR-Code.", "The device needs a Wi-Fi connection; a QR code will appear here."), "normal", color.BLACK, "center")
-return
-end
-draw.text(cx, topY + 74, T(ctx, "QR-Code mit dem Handy scannen und dort den", "Scan the QR code with your phone and paste"), "normal", color.BLACK, "center")
-draw.text(cx, topY + 96, T(ctx, "Link einer Rezeptseite einfügen:", "the link of a recipe page there:"), "normal", color.BLACK, "center")
-local size = qrSize(url, 200)
-if size == 0 then return end
-local pad = 10
-local qx, qy = cx - size // 2, topY + 112
-size = draw.qr(url, qx, qy, 200) or size -- die Firmware liefert dieselbe Seitenlaenge wie qrSize()
-draw.rect(qx - pad, qy - pad, size + pad * 2, size + pad * 2, color.BLACK, false, 12)
-draw.rect(qx - pad + 1, qy - pad + 1, size + pad * 2 - 2, size + pad * 2 - 2, color.BLACK, false, 11)
-draw.text(cx, qy + size + pad + 26, url, "normal", color.BLACK, "center")
 end
 function on_draw(ctx, page)
 draw.clear(color.WHITE)

@@ -5,48 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>InkBoard · Bilder</title>
 <style>
+  /* Studio-Designsystem (studio_home_page.h): Lavendel-Grau-Basis mit weichen Farbflaechen, stark gerundete Karten, warmes Orange als einziger
+     Akzent, Verlaufs-Buttons; Dunkelmodus folgt dem System. */
   :root {
     color-scheme: light dark;
-    --bg: #f4f5f8; --card: #ffffff; --line: #dcdfe6; --text: #1c1e26;
-    --muted: #6b7280; --accent: #d98750; --accent-text: #ffffff; --input-bg: #f7f8fb;
-    --ok: #2f7d3a; --err: #b3261e;
-    --pending-bg: #eef3fb; --ok-bg: #e6f4e8; --err-bg: #fbe9e7; --pending-text: #3f6fbf;
+    --bg: #eceef6; --card-bg: rgba(255,255,255,0.74); --border: rgba(38,40,56,0.10);
+    --text: #262838; --text-secondary: #5f6480; --accent: #d9824f; --accent-text: #b0572a;
+    --accent-grad: linear-gradient(135deg, #cf7a45 0%, #a9512a 100%); --input-bg: rgba(38,40,56,0.045);
+    --success-bg: #e0f2e6; --success-text: #257a44; --error-bg: #fbe9e7; --error-text: #b53f31;
+    --pending-bg: rgba(109,127,174,0.16); --pending-text: #3f4f7e;
+    --elev-1: 0 10px 30px rgba(90,99,140,0.10), 0 1px 2px rgba(38,40,56,0.04);
+    --radius-lg: 22px; --radius-md: 14px; --logo: #262838;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14161a; --card: #1d2026; --line: #2c3038; --text: #e8eaed;
-      --muted: #9aa0a8; --accent: #7EA3DD; --accent-text: #101317; --input-bg: #14161a;
-      --ok: #6fbf73; --err: #e07a6a;
-      --pending-bg: #23303f; --ok-bg: #22301f; --err-bg: #382220; --pending-text: #7EA3DD;
+      --bg: #191b26; --card-bg: rgba(37,40,56,0.74); --border: rgba(255,255,255,0.10);
+      --text: #e9eaf2; --text-secondary: #a9aec9; --accent: #e59a63; --accent-text: #eaa46f;
+      --accent-grad: linear-gradient(135deg, #d07a45 0%, #b25a2c 100%); --input-bg: rgba(255,255,255,0.05);
+      --success-bg: #1e3a2a; --success-text: #6fcf97; --error-bg: #3a1e1e; --error-text: #e08a8a;
+      --pending-bg: rgba(85,100,143,0.30); --pending-text: #b9c6ee;
+      --elev-1: 0 10px 30px rgba(0,0,0,0.35); --logo: #e9eaf2;
     }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-         font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-  .wrap { max-width: 520px; margin: 0 auto; padding: 20px 16px 48px; }
-  h1 { font-size: 20px; margin: 8px 0 2px; }
-  .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; line-height: 1.5; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 16px; }
-  input { width: 100%; background: var(--input-bg); color: var(--text); border: 1px solid var(--line);
-          border-radius: 10px; padding: 12px; font-size: 15px; font-family: inherit; }
-  button { width: 100%; margin-top: 12px; padding: 13px; border: 0; border-radius: 10px;
-           background: var(--accent); color: var(--accent-text); font-size: 15px; font-weight: 600; cursor: pointer; }
-  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
-  button:disabled { opacity: .55; }
-  .status { margin-top: 12px; font-size: 14px; border-radius: 10px; padding: 11px 12px; display: none; }
+  body { margin: 0; background: var(--bg); color: var(--text); min-height: 100vh;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(640px 520px at 88% -6%, rgba(214,126,74,0.32), transparent 62%),
+      radial-gradient(760px 640px at -12% 18%, rgba(109,127,174,0.34), transparent 62%),
+      radial-gradient(680px 540px at 96% 88%, rgba(226,149,95,0.26), transparent 62%),
+      radial-gradient(620px 560px at 12% 108%, rgba(101,88,128,0.28), transparent 62%); }
+  @media (prefers-color-scheme: dark) {
+    body::before { background:
+      radial-gradient(640px 520px at 88% -6%, rgba(207,116,67,0.20), transparent 62%),
+      radial-gradient(760px 640px at -12% 18%, rgba(85,100,143,0.28), transparent 62%),
+      radial-gradient(680px 540px at 96% 88%, rgba(207,116,67,0.16), transparent 62%),
+      radial-gradient(620px 560px at 12% 108%, rgba(111,97,144,0.22), transparent 62%); }
+  }
+  .wrap { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; padding: 24px 16px 48px; }
+  .brand { text-align: center; padding: 4px 8px 18px; }
+  .brand h1 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin: 10px 0 2px; }
+  .brand p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.45; }
+  .card { background: var(--card-bg); border-radius: var(--radius-lg); padding: 22px 24px; margin-bottom: 16px; box-shadow: var(--elev-1); }
+  input { width: 100%; background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+          border-radius: var(--radius-md); padding: 12px; font-size: 15px; font-family: inherit; }
+  label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+  button { width: 100%; margin-top: 12px; padding: 12px 16px; border: 0; border-radius: var(--radius-md);
+           background: var(--accent-grad); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  button:disabled { opacity: .5; }
+  .status { margin-top: 12px; font-size: 13px; border-radius: 8px; padding: 10px 14px; display: none; }
   .status.pending { display: block; background: var(--pending-bg); color: var(--pending-text); }
-  .status.ok { display: block; background: var(--ok-bg); color: var(--ok); }
-  .status.error { display: block; background: var(--err-bg); color: var(--err); }
-  .hint { font-size: 12.5px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
-  .bar { height: 6px; background: var(--line); border-radius: 3px; margin-top: 12px; overflow: hidden; display: none; }
+  .status.ok { display: block; background: var(--success-bg); color: var(--success-text); }
+  .status.error { display: block; background: var(--error-bg); color: var(--error-text); }
+  .hint { font-size: 12.5px; color: var(--text-secondary); margin: 12px 0 0; line-height: 1.5; }
+  .bar { height: 6px; background: var(--border); border-radius: 3px; margin-top: 12px; overflow: hidden; display: none; }
   .bar > div { height: 100%; width: 0; background: var(--accent); }
   #preview { max-width: 100%; max-height: 220px; display: none; margin: 12px auto 0; border-radius: 8px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1 data-i18n="title">Bild aufs InkBoard bringen</h1>
-  <p class="sub" data-i18n="sub">Foto auswählen - es wird auf dem Handy passend für das Display verkleinert.</p>
+  <div class="brand">
+    <svg width="46" height="30" viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 8 L92 2 Q97 2 97 8 L97 58 Q97 64 92 64 L15 58 Q8 56 8 50 L8 16 Q8 10 15 8 Z" fill="none" stroke="var(--logo)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="88" y="4" width="10" height="15" fill="#3f6fbf"/><rect x="88" y="19" width="10" height="15" fill="#5a9a4a"/>
+      <rect x="88" y="34" width="10" height="15" fill="#e8b923"/><rect x="88" y="49" width="10" height="15" fill="#c2483f"/>
+    </svg>
+    <h1 data-i18n="title">Bild aufs InkBoard bringen</h1>
+    <p data-i18n="sub">Foto auswählen oder aufnehmen - es wird auf dem Handy passend für das Display verkleinert.</p>
+  </div>
 
   <div class="card">
     <input id="file" type="file" accept="image/*">
@@ -69,7 +98,7 @@
 // (POST /api/image-upload, GET /api/images-status). Ist im Studio eine PIN gesetzt, fragt die Seite sie einmal ab (POST /api/auth).
 const XRW = { 'X-Requested-With': 'InkBoardStudio' };
 const TXT = {
-  de: { title: 'Bild aufs InkBoard bringen', sub: 'Foto auswählen - es wird auf dem Handy passend für das Display verkleinert.',
+  de: { title: 'Bild aufs InkBoard bringen', sub: 'Foto auswählen oder aufnehmen - es wird auf dem Handy passend für das Display verkleinert.',
         show: 'Direkt anzeigen', save: 'Speichern (Diashow)', pin: 'Studio-PIN', pinOk: 'Bestätigen',
         hint: '"Direkt anzeigen" zeigt das Bild einmalig, bis am Drehknopf gedreht oder gedrückt wird. "Speichern" legt es auf dem externen Speicher (NAS) ab und nimmt es in die Diashow auf.',
         nostore: 'Zum Speichern zuerst unter Einstellungen -> Speicher den externen Speicher (NAS) einrichten - "Direkt anzeigen" geht auch ohne.',
@@ -77,7 +106,7 @@ const TXT = {
         fail: 'Upload fehlgeschlagen.', resize: 'Bild konnte nicht gelesen werden.', timeout: 'Keine Rückmeldung vom InkBoard - bitte erneut versuchen.',
         showOk: 'Fertig! Das Bild erscheint gleich auf dem Display (ein e-Paper-Refresh dauert ca. 25 s) und bleibt stehen, bis der Drehknopf gedreht oder gedrückt wird.',
         saveOk: 'Gespeichert! Das Bild ist jetzt Teil der Diashow.', pinWrong: 'PIN falsch oder gesperrt - bitte erneut versuchen.' },
-  en: { title: 'Send a picture to InkBoard', sub: 'Choose a photo - it is downscaled on your phone to fit the display.',
+  en: { title: 'Send a picture to InkBoard', sub: 'Choose or take a photo - it is downscaled on your phone to fit the display.',
         show: 'Show once', save: 'Save (slideshow)', pin: 'Studio PIN', pinOk: 'Confirm',
         hint: '"Show once" displays the picture until the dial is turned or pressed. "Save" stores it on the external storage (NAS) and adds it to the slideshow.',
         nostore: 'To save pictures, first set up the external storage (NAS) under Settings -> Storage - "Show once" works without it.',

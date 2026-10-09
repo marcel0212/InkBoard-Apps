@@ -1,7 +1,7 @@
 {
   "id": "bilder",
   "name": {"de": "Bilder", "en": "Pictures"},
-  "version": "1.2.0",
+  "version": "1.2.1",
   "apiLevel": 20,
   "input": true,
   "fetchOnOpen": true,
