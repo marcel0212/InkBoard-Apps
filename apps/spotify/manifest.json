@@ -1,0 +1,66 @@
+{
+  "id": "spotify",
+  "name": {"de": "Spotify", "en": "Spotify"},
+  "version": "1.0.0",
+  "apiLevel": 21,
+  "pages": 1,
+  "refreshMinutes": 1,
+  "widget": {"w": 340, "h": 100},
+  "permissions": {"spotify": true},
+  "sections": [
+    {
+      "id": "account",
+      "title": {"de": "Spotify-Konto", "en": "Spotify account"}
+    },
+    {
+      "id": "look",
+      "title": {"de": "Darstellung", "en": "Appearance"}
+    }
+  ],
+  "settings": [
+    {
+      "key": "account",
+      "type": "connect",
+      "device": "spotify",
+      "label": {"de": "Verbindung", "en": "Connection"},
+      "section": "account"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": ["cards", "flat", "compact"],
+      "default": "cards",
+      "optionLabels": {
+        "de": {"cards": "Bento (Kacheln)", "flat": "Slate (zweispaltig)", "compact": "Nano (Datenblatt)"},
+        "en": {"cards": "Bento (tiles)", "flat": "Slate (two columns)", "compact": "Nano (data sheet)"}
+      },
+      "label": {"de": "Stil der App-Seite", "en": "App page style"},
+      "help": {
+        "de": "Bento: großes Cover mit Steuer-Kacheln links, Titel, Status und Fortschritt in Karten rechts. Slate: schlichte zweispaltige Ansicht mit Cover, Titel und Fortschrittslinie. Nano: kompaktes Datenblatt mit sieben Zeilen und kleinem Cover.",
+        "en": "Bento: large cover with control tiles on the left, title, status and progress in cards on the right. Slate: plain two-column view with cover, title and a progress line. Nano: compact data sheet with seven rows and a small cover."
+      },
+      "section": "look"
+    },
+    {
+      "key": "wProgress",
+      "type": "toggle",
+      "group": "widget",
+      "default": false,
+      "label": {"de": "Fortschrittsbalken anzeigen", "en": "Show progress bar"}
+    },
+    {
+      "key": "wAlbum",
+      "type": "toggle",
+      "group": "widget",
+      "default": false,
+      "label": {"de": "Album anzeigen", "en": "Show album"}
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "group": "widget",
+      "default": false,
+      "label": {"de": "Kompakte Darstellung", "en": "Compact layout"}
+    }
+  ]
+}

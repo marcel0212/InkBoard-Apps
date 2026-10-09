@@ -1562,7 +1562,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -1611,7 +1611,7 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "84012e360d16ba7984bc3c11cdac03fd09dd92ebe3e1cd7b35b204b27d09e8eb",
+      "sha256": "6bd68c1cd7c32b10a6aff4f6bc502ddd7b5a00a5cf199137fe133a1d421167a4",
       "size": 45612
     },
     {
@@ -1740,6 +1740,92 @@
       "package": "apps/sport-tabellen/package.json",
       "sha256": "090afb69476eca5adbd7ae9c5ff48ecc44abf1b96c0358d8c88043e07f4f5b86",
       "size": 58530
+    },
+    {
+      "id": "spotify",
+      "name": {
+        "de": "Spotify",
+        "en": "Spotify"
+      },
+      "tagline": {
+        "de": "Zeigt, was auf Spotify gerade läuft",
+        "en": "Shows what is playing on Spotify right now"
+      },
+      "description": {
+        "de": "Zeigt den Titel, der auf deinem Spotify-Konto gerade läuft: Cover, Titel, Interpret, Album und Fortschritt, in drei Stilen (Bento, Slate, Nano) und als Dashboard-Widget „Gerade läuft“. Die Anmeldung läuft einmalig über die Spotify-Seite (OAuth) und wird in den App-Einstellungen unter „Verbindung“ eingerichtet: Client-ID und Client-Secret trägst du dort ein, danach öffnet „Mit Spotify verbinden“ die Freigabe. Anmeldung, Zugangsdaten, Token, Abfrage-Takt und Cover-Download bleiben Dienste der Firmware; das Paket zeichnet nur die Anzeige und kann weder Token noch Secret lesen. Das Cover ist eine Zeichenfläche für jede App (draw.image(\"spotify-cover\")). Skript-Variante der früheren eingebauten App: gleiche Anzeige, Stil und Widget-Optionen als Einstellung.",
+        "en": "Shows the track playing on your Spotify account right now: cover, title, artist, album and progress, in three styles (Bento, Slate, Nano) and as a \"Now playing\" dashboard widget. Sign-in happens once on the Spotify site (OAuth) and is set up in the app settings under \"Connection\": enter your client ID and client secret there, then \"Connect with Spotify\" opens the authorization. Sign-in, credentials, tokens, poll interval and cover download remain firmware services; the package only draws the display and can read neither token nor secret. The cover is a drawing surface any app can use (draw.image(\"spotify-cover\")). Script version of the former built-in app: same display, with style and widget options as settings."
+      },
+      "category": "media",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 21,
+      "pages": 1,
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Cover, Titel, Interpret, Album und Fortschritt",
+          "Drei Stile: Bento, Slate, Nano",
+          "Dashboard-Widget „Gerade läuft“",
+          "Einmalige Anmeldung, Token bleiben in der Firmware",
+          "Verbindung geprüft per Zertifikat (TLS)"
+        ],
+        "en": [
+          "Cover, title, artist, album and progress",
+          "Three styles: Bento, Slate, Nano",
+          "\"Now playing\" dashboard widget",
+          "One-time sign-in, tokens stay in the firmware",
+          "Connection verified by certificate (TLS)"
+        ]
+      },
+      "net": [],
+      "spotify": true,
+      "icon": "apps/spotify/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-display.svg",
+          "caption": {
+            "de": "Bento: Cover, Titel und Fortschritt",
+            "en": "Bento: cover, title and progress"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: zweispaltig",
+            "en": "Slate: two columns"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: Datenblatt (Pause)",
+            "en": "Nano: data sheet (paused)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-empty.svg",
+          "caption": {
+            "de": "Noch nicht verknüpft",
+            "en": "Not connected yet"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/spotify/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Gerade läuft“",
+            "en": "\"Now playing\" widget"
+          }
+        }
+      ],
+      "package": "apps/spotify/package.json",
+      "sha256": "f148731c45db5ea5e8691e37ed307735cf4e7b07678a73984d5475622cbeb3d6",
+      "size": 16157
     },
     {
       "id": "stocks-crypto",
