@@ -29,14 +29,6 @@
   "previews": [
     {
       "kind": "display",
-      "file": "preview-empty.svg",
-      "caption": {
-        "de": "QR-Code zur Handy-Seite",
-        "en": "QR code to the phone page"
-      }
-    },
-    {
-      "kind": "display",
       "file": "preview-ingredients.svg",
       "caption": {
         "de": "Zutaten",

@@ -1595,14 +1595,6 @@
       "previews": [
         {
           "kind": "display",
-          "file": "apps/rezepte/preview-empty.svg",
-          "caption": {
-            "de": "QR-Code zur Handy-Seite",
-            "en": "QR code to the phone page"
-          }
-        },
-        {
-          "kind": "display",
           "file": "apps/rezepte/preview-ingredients.svg",
           "caption": {
             "de": "Zutaten",
