@@ -1,0 +1,67 @@
+{
+  "category": "organize",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Deine Aufgabenlisten aus Todoist, iCloud und Nextcloud",
+    "en": "Your task lists from Todoist, iCloud and Nextcloud"
+  },
+  "description": {
+    "de": "Zeigt deine offenen Aufgaben auf dem Display: aus Todoist, den iCloud-Erinnerungen, Nextcloud oder jedem anderen CalDAV-Server, bis zu drei Quellen gleichzeitig, jede mit eigener Farbe. Überfällige Aufgaben stehen oben und sind rot, Fälligkeit und Uhrzeit werden ausgeschrieben, Priorität, Projekt, Labels und Beschreibung erscheinen auf den Detailkarten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu. Alle Zugangsdaten stellst du hier im Store ein.",
+    "en": "Shows your open tasks on the display: from Todoist, iCloud Reminders, Nextcloud or any other CalDAV server, up to three sources at once, each in its own color. Overdue tasks come first in red, due dates and times are written out, and priority, project, labels and description appear on the detail cards. Three layouts (Bento, Slate, Nano) and a dashboard widget are included. You set up all credentials here in the Store."
+  },
+  "features": {
+    "de": [
+      "Todoist, iCloud, Nextcloud und andere CalDAV-Server",
+      "Bis zu drei Quellen mit eigener Farbe",
+      "Überfälliges zuerst, in Rot",
+      "Drei Darstellungen und Dashboard-Widget"
+    ],
+    "en": [
+      "Todoist, iCloud, Nextcloud and other CalDAV servers",
+      "Up to three sources, each in its own color",
+      "Overdue first, in red",
+      "Three layouts and a dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Detailkarten",
+        "en": "Bento: detail cards"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: eine Zeile je Aufgabe",
+        "en": "Slate: one line per task"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: kompakt",
+        "en": "Nano: compact"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

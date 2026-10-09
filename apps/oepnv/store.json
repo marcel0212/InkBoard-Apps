@@ -1,0 +1,105 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Abfahrten deiner Haltestelle und Lieblingsrouten mit Echtzeit",
+    "en": "Departures of your stop and favourite routes with real time"
+  },
+  "description": {
+    "de": "Zeigt die nächsten Abfahrten einer Haltestelle mit Linienfarben, Fahrtziel, Countdown und Verspätung sowie bis zu sechs Lieblingsrouten mit Zeitstrahl: Umstiege, Gleise, Fußwege, Ankunftszeit und Störungen. Mit eingestellter Wegezeit zeigt die App, wann du losgehen musst. Anbieter: HVV Geofox (vollständige HVV-Echtzeitdaten, eigener Zugang nötig), Transitous (bundesweit ohne Anmeldung) oder der DB-Dienst v6.db.transport.rest. Zwei Seiten (Abfahrten, Routen) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget für Abfahrten oder Routen.",
+    "en": "Shows the next departures of a stop with line colours, destination, countdown and delay, plus up to six favourite routes with a timeline: transfers, platforms, walks, arrival time and disruptions. With a walking time set, the app shows when you have to leave. Providers: HVV Geofox (complete HVV real-time data, own access required), Transitous (nationwide without sign-up) or the DB service v6.db.transport.rest. Two pages (departures, routes) in three layouts (Bento, Slate, Nano) and a dashboard widget for departures or routes."
+  },
+  "features": {
+    "de": [
+      "Abfahrten mit Linienfarben, Countdown und Verspätung",
+      "Bis zu sechs Lieblingsrouten mit Zeitstrahl und Umstiegen",
+      "Wegezeit: zeigt, wann du losgehen musst",
+      "HVV Geofox, Transitous oder DB - drei Darstellungen und Widget"
+    ],
+    "en": [
+      "Departures with line colours, countdown and delay",
+      "Up to six favourite routes with timeline and transfers",
+      "Walking time: shows when you have to leave",
+      "HVV Geofox, Transitous or DB - three layouts and widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Kacheln je Linie",
+        "en": "Bento: tiles per line"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Countdown-Liste",
+        "en": "Slate: countdown list"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: zehn Abfahrten",
+        "en": "Nano: ten departures"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-routes.svg",
+      "caption": {
+        "de": "Bento: Route mit Zeitstrahl",
+        "en": "Bento: route with timeline"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-routes-flat.svg",
+      "caption": {
+        "de": "Slate: Routen-Blöcke",
+        "en": "Slate: route blocks"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-routes-compact.svg",
+      "caption": {
+        "de": "Nano: Zeit bis Losgehen",
+        "en": "Nano: time until departure"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget „Abfahrten“",
+        "en": "“Departures” widget"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-routes.svg",
+      "caption": {
+        "de": "Widget „Routen“",
+        "en": "“Routes” widget"
+      }
+    }
+  ]
+}

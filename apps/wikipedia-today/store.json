@@ -1,0 +1,67 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Sechs Ereignisse, die an diesem Tag in der Geschichte geschahen",
+    "en": "Six events from this day in history"
+  },
+  "description": {
+    "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein. Skript-Variante der eingebauten App.",
+    "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over. Script version of the built-in app."
+  },
+  "features": {
+    "de": [
+      "Wichtigste Ereignisse zum heutigen Datum",
+      "Folgt der Display-Sprache",
+      "Drei Stile: Bento, Slate, Nano",
+      "Ausweichquelle, wenn Wikimedia ablehnt"
+    ],
+    "en": [
+      "Key events for today's date",
+      "Follows the display language",
+      "Three styles: Bento, Slate, Nano",
+      "Fallback source if Wikimedia declines"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Hauptereignis + Kacheln",
+        "en": "Bento: main event + tiles"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Zeitleiste",
+        "en": "Slate: timeline"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: Kompaktliste",
+        "en": "Nano: compact list"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

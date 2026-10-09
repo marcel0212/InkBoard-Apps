@@ -1,0 +1,274 @@
+{
+  "id": "fuel-prices",
+  "name": {
+    "de": "Tankpreise",
+    "en": "Fuel prices"
+  },
+  "version": "1.1.9",
+  "apiLevel": 7,
+  "pages": [
+    {
+      "de": "Tankpreise",
+      "en": "Fuel prices"
+    }
+  ],
+  "refreshMinutes": 15,
+  "widget": {
+    "w": 320,
+    "h": 180
+  },
+  "permissions": {
+    "net": [
+      "creativecommons.tankerkoenig.de",
+      "de.wikipedia.org",
+      "upload.wikimedia.org",
+      "*.wikimedia.org"
+    ]
+  },
+  "sections": [
+    {
+      "id": "access",
+      "title": {
+        "de": "API-Zugang",
+        "en": "API access"
+      },
+      "help": {
+        "de": "1. Auf creativecommons.tankerkoenig.de kostenlos registrieren\n2. Den API-Key aus der E-Mail hier einfügen\nDer Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten).",
+        "en": "1. Sign up for free at creativecommons.tankerkoenig.de\n2. Paste the API key from the e-mail here\nThe location comes from the device settings (weather location)."
+      },
+      "helpTitle": {
+        "de": "API-Key holen",
+        "en": "Get an API key"
+      },
+      "helpUrl": "https://creativecommons.tankerkoenig.de"
+    },
+    {
+      "id": "stations",
+      "title": {
+        "de": "Tankstellen & Sorten",
+        "en": "Stations & fuels"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "apiKey",
+      "type": "password",
+      "maxLen": 64,
+      "label": {
+        "de": "Tankerkönig-API-Key",
+        "en": "Tankerkoenig API key"
+      },
+      "section": "access"
+    },
+    {
+      "key": "radius",
+      "type": "number",
+      "min": 1,
+      "max": 25,
+      "default": 5,
+      "label": {
+        "de": "Umkreis (km)",
+        "en": "Radius (km)"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "maxStations",
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "default": 5,
+      "label": {
+        "de": "Anzahl Tankstellen",
+        "en": "Number of stations"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "primary",
+      "type": "select",
+      "options": [
+        "e5",
+        "e10",
+        "diesel"
+      ],
+      "default": "e5",
+      "optionLabels": {
+        "de": {
+          "e5": "Super E5",
+          "e10": "Super E10",
+          "diesel": "Diesel"
+        },
+        "en": {
+          "e5": "Super E5",
+          "e10": "Super E10",
+          "diesel": "Diesel"
+        }
+      },
+      "label": {
+        "de": "Hauptkraftstoff",
+        "en": "Main fuel"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "showE5",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Super E5",
+        "en": "Also show: Super E5"
+      },
+      "group": {
+        "de": "Weitere Sorten in der App",
+        "en": "More fuels in the app"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "showE10",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Super E10",
+        "en": "Also show: Super E10"
+      },
+      "group": {
+        "de": "Weitere Sorten in der App",
+        "en": "More fuels in the app"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "showDiesel",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Diesel",
+        "en": "Also show: Diesel"
+      },
+      "group": {
+        "de": "Weitere Sorten in der App",
+        "en": "More fuels in the app"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "logos",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Marken-Logos von Wikipedia laden",
+        "en": "Load brand logos from Wikipedia"
+      },
+      "section": "stations"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Zeilen)",
+          "compact": "Nano (Tabelle)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (rows)",
+          "compact": "Nano (table)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    },
+    {
+      "key": "wE5",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Super E5",
+        "en": "Super E5"
+      },
+      "group": "widget",
+      "widgetIf": [
+        {
+          "key": "showE5",
+          "eq": true
+        },
+        {
+          "key": "primary",
+          "eq": "e5"
+        }
+      ]
+    },
+    {
+      "key": "wE10",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Super E10",
+        "en": "Super E10"
+      },
+      "group": "widget",
+      "widgetIf": [
+        {
+          "key": "showE10",
+          "eq": true
+        },
+        {
+          "key": "primary",
+          "eq": "e10"
+        }
+      ]
+    },
+    {
+      "key": "wDiesel",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Diesel",
+        "en": "Diesel"
+      },
+      "group": "widget",
+      "widgetIf": [
+        {
+          "key": "showDiesel",
+          "eq": true
+        },
+        {
+          "key": "primary",
+          "eq": "diesel"
+        }
+      ]
+    },
+    {
+      "key": "wDist",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Entfernung anzeigen",
+        "en": "Show distance"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Kompakt",
+        "en": "Compact"
+      },
+      "group": "widget"
+    }
+  ]
+}

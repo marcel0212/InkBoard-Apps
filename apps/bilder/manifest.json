@@ -1,0 +1,61 @@
+{
+  "id": "bilder",
+  "name": {"de": "Bilder", "en": "Pictures"},
+  "version": "1.1.0",
+  "apiLevel": 20,
+  "needsStorage": true,
+  "input": true,
+  "fetchOnOpen": true,
+  "ownRedraw": true,
+  "queueTurns": true,
+  "cycleFetch": true,
+  "retrySeconds": 15,
+  "pages": [
+    {"de": "Bilder", "en": "Pictures", "fullscreen": true}
+  ],
+  "refreshMinutes": 5,
+  "sections": [
+    {
+      "id": "show",
+      "title": {"de": "Diashow", "en": "Slideshow"}
+    },
+    {
+      "id": "nas",
+      "title": {"de": "Externer Speicher (NAS)", "en": "External storage (NAS)"},
+      "help": {
+        "de": "Die Bilder liegen als JPEG, PNG oder BMP in diesem Ordner auf dem externen Speicher (eingerichtet unter Einstellungen -> Speicher). Hochladen und Löschen geht im Studio unter Apps -> Bilder; der Ordner ist derselbe wie dort (Einstellungen -> Speicher -> Bilder-Ordner). Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten. Der Speicher muss FTP, WebDAV oder Google Drive sein: ein reiner HTTP-Export reicht nicht, weil er die Fotos nicht zurücklesen kann.",
+        "en": "The pictures are JPEG, PNG or BMP files in this folder on the external storage (set up under Settings -> Storage). Upload and delete in Studio under Apps -> Pictures; the folder is the same one as there (Settings -> Storage -> Pictures folder). File names may contain spaces, umlauts and parentheses. The storage must be FTP, WebDAV or Google Drive: a plain HTTP export is not enough because it cannot read the pictures back."
+      },
+      "helpTitle": {"de": "Woher kommen die Bilder?", "en": "Where do the pictures come from?"}
+    }
+  ],
+  "settings": [
+    {
+      "key": "order",
+      "type": "select",
+      "options": ["name", "zufall"],
+      "optionLabels": {
+        "de": {"name": "Nach Dateiname", "zufall": "Zufällig"},
+        "en": {"name": "By file name", "zufall": "Random"}
+      },
+      "default": "name",
+      "label": {"de": "Reihenfolge", "en": "Order"},
+      "section": "show"
+    },
+    {
+      "key": "frame",
+      "type": "toggle",
+      "default": true,
+      "label": {"de": "Dünner schwarzer Rahmen ums Bild", "en": "Thin black frame around the picture"},
+      "section": "show"
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "device": "imagesFtpPath",
+      "default": "/inkboard/bilder",
+      "label": {"de": "Ordner mit den Bildern", "en": "Folder with the pictures"},
+      "section": "nas"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "wort-des-tages",
+  "name": {
+    "de": "Wort des Tages",
+    "en": "Word of the day"
+  },
+  "version": "1.3.4",
+  "apiLevel": 1,
+  "pages": [
+    {
+      "de": "Wort des Tages",
+      "en": "Word of the day"
+    }
+  ],
+  "refreshMinutes": 360,
+  "widget": {
+    "w": 320,
+    "h": 130
+  },
+  "permissions": {
+    "net": [
+      "www.merriam-webster.com",
+      "api.mymemory.translated.net"
+    ]
+  },
+  "settings": [
+    {
+      "key": "showExample",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Beispielsatz anzeigen",
+        "en": "Show example sentence"
+      }
+    }
+  ]
+}

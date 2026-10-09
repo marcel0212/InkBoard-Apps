@@ -1,0 +1,87 @@
+{
+  "id": "golf-tour",
+  "name": {
+    "de": "Golf Tour",
+    "en": "Golf Tour"
+  },
+  "version": "1.0.1",
+  "apiLevel": 12,
+  "pages": [
+    {
+      "de": "Leaderboard",
+      "en": "Leaderboard"
+    }
+  ],
+  "refreshMinutes": 60,
+  "widget": {
+    "w": 300,
+    "h": 140
+  },
+  "permissions": {
+    "net": [
+      "site.api.espn.com"
+    ]
+  },
+  "settings": [
+    {
+      "key": "tour",
+      "type": "select",
+      "options": [
+        "pga",
+        "liv",
+        "dpworld"
+      ],
+      "default": "pga",
+      "optionLabels": {
+        "de": {
+          "pga": "PGA Tour",
+          "liv": "LIV Golf",
+          "dpworld": "DP World Tour"
+        },
+        "en": {
+          "pga": "PGA Tour",
+          "liv": "LIV Golf",
+          "dpworld": "DP World Tour"
+        }
+      },
+      "label": {
+        "de": "Angezeigte Tour",
+        "en": "Tour shown"
+      },
+      "help": {
+        "de": "Diese Tour erscheint auf der Vollseite und im Dashboard-Widget. Die Platzierungen werden nur in der Turnierwoche geladen (zwei Tage vor bis sechs Tage nach dem Start); sonst zeigt die Seite das nächste Turnier mit Datum. Datenquelle ESPN, ein Schlüssel ist nicht nötig.",
+        "en": "This tour appears on the full page and in the dashboard widget. Standings are loaded only during tournament week (two days before to six days after the start); otherwise the page shows the next tournament with its date. Data source ESPN, no key needed."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Podium-Kacheln)",
+          "flat": "Slate (Rangliste)",
+          "compact": "Nano (kompakt)"
+        },
+        "en": {
+          "cards": "Bento (podium tiles)",
+          "flat": "Slate (ranking)",
+          "compact": "Nano (compact)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento: drei Podium-Kacheln für die Top 3 und eine kurze Liste darunter. Slate: durchgehende Rangliste ab Platz 1 mit Farbstreifen für den Führenden. Nano: dieselbe Rangliste in kleinster Schrift für möglichst viele Plätze.",
+        "en": "Bento: three podium tiles for the top 3 and a short list below. Slate: a continuous ranking from position 1 with a colour stripe for the leader. Nano: the same ranking in the smallest font for as many positions as possible."
+      }
+    }
+  ]
+}

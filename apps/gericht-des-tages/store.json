@@ -1,0 +1,63 @@
+{
+  "category": "fun",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Jeden Tag ein zufälliges Rezept von Chefkoch",
+    "en": "A random Chefkoch recipe every day"
+  },
+  "description": {
+    "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite. Skript-Variante der eingebauten App.",
+    "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page. Script version of the built-in app."
+  },
+  "features": {
+    "de": [
+      "Neues Gericht jeden Tag, per Taster (2x) jederzeit ein neues",
+      "Drehen blättert durch Übersicht, Zutaten, Nährwerte, Zubereitung",
+      "Beliebig lange Rezepte, Zutaten auf deine Portionen umgerechnet",
+      "Fleisch / Fisch / vegetarisch / vegan erkannt, QR-Code zur Rezeptseite",
+      "Dashboard-Widget"
+    ],
+    "en": [
+      "A new meal every day, or any time with the button (twice)",
+      "Turn to browse overview, ingredients, nutrition, instructions",
+      "Recipes of any length, ingredients scaled to your servings",
+      "Meat / fish / vegetarian / vegan detected, QR code to the recipe page",
+      "Dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Übersicht mit QR-Code",
+        "en": "Overview with QR code"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-ingredients.svg",
+      "caption": {
+        "de": "Zutaten",
+        "en": "Ingredients"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-steps.svg",
+      "caption": {
+        "de": "Zubereitung",
+        "en": "Instructions"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

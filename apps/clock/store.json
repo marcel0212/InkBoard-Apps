@@ -1,0 +1,67 @@
+{
+  "category": "time",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Digitaluhr mit Datum und Kalenderwoche",
+    "en": "Digital clock with date and calendar week"
+  },
+  "description": {
+    "de": "Große Digitaluhr mit Datum und Kalenderwoche in drei Stilen: Bento, Slate und Nano. Die Uhr ist eine Standard-App: Sie lässt sich nicht entfernen und erscheint in der Rotation nur, solange in den Einstellungen die Uhrzeit-Anzeige aktiv ist. Format (12 oder 24 Stunden) und Akzentfarbe folgen den Geräteeinstellungen. Dazu gibt es ein passendes Dashboard-Widget.",
+    "en": "Large digital clock with date and calendar week in three styles: Bento, Slate and Nano. The clock is a standard app: it cannot be removed and only appears in the rotation while the time display is enabled in the settings. The format (12 or 24 hours) and accent color follow the device settings. A matching dashboard widget is included."
+  },
+  "features": {
+    "de": [
+      "Drei Stile: Bento, Slate, Nano",
+      "12- oder 24-Stunden-Anzeige",
+      "Datum und Kalenderwoche",
+      "Passendes Dashboard-Widget"
+    ],
+    "en": [
+      "Three styles: Bento, Slate, Nano",
+      "12 or 24 hour display",
+      "Date and calendar week",
+      "Matching dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento",
+        "en": "Bento"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate",
+        "en": "Slate"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano",
+        "en": "Nano"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

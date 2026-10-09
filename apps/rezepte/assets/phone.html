@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitle">InkBoard · Rezept laden</title>
+<style>
+  /* CHANGELOG Eintrag 239 (UX-Review 4e): Farbschema folgt dem System
+     (prefers-color-scheme) statt immer dunkel - Standard hell wie Studio,
+     dunkel nur, wenn das Handy im Dunkelmodus ist. Die Farbwerte lehnen sich
+     an die Studio-Palette (studio_home_page.h :root / body.dark) an. */
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f5f8; --card: #ffffff; --line: #dcdfe6; --text: #1c1e26;
+    --muted: #6b7280; --accent: #d98750; --accent-text: #ffffff; --input-bg: #f7f8fb;
+    --ok: #2f7d3a; --err: #b3261e;
+    --pending-bg: #eef3fb; --ok-bg: #e6f4e8; --err-bg: #fbe9e7; --pending-text: #3f6fbf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a; --card: #1d2026; --line: #2c3038; --text: #e8eaed;
+      --muted: #9aa0a8; --accent: #7EA3DD; --accent-text: #101317; --input-bg: #14161a;
+      --ok: #6fbf73; --err: #e07a6a;
+      --pending-bg: #23303f; --ok-bg: #22301f; --err-bg: #382220; --pending-text: #7EA3DD;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { font-size: 20px; margin: 8px 0 2px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+  .card { background: var(--card); border: 1px solid var(--line);
+          border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+  .card h2 { font-size: 15px; margin: 0 0 10px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
+  input, textarea { width: 100%; background: var(--input-bg); color: var(--text);
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px;
+    font-size: 15px; font-family: inherit; }
+  textarea { min-height: 110px; resize: vertical; }
+  button { width: 100%; margin-top: 12px; padding: 13px; border: 0;
+    border-radius: 10px; background: var(--accent); color: var(--accent-text);
+    font-size: 15px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--muted);
+    border: 1px solid var(--line); font-weight: 500; }
+  button:disabled { opacity: .55; }
+  .status { margin-top: 12px; font-size: 14px; border-radius: 10px;
+    padding: 11px 12px; display: none; }
+  .status.pending { display: block; background: var(--pending-bg); color: var(--pending-text); }
+  .status.ok { display: block; background: var(--ok-bg); color: var(--ok); }
+  .status.error { display: block; background: var(--err-bg); color: var(--err); }
+  .current { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .current b { color: var(--text); }
+  .hint { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 data-i18n="recipe_title">Rezept aufs InkBoard laden</h1>
+  <p class="sub" data-i18n="recipe_subtitle">Link einer Rezeptseite einfügen - das Display zeigt danach Zutaten und Zubereitung als Seiten.</p>
+
+  <div class="card">
+    <h2 data-i18n="recipe_link_card_title">Rezept-Link</h2>
+    <label for="url" data-i18n="recipe_link_label">Link (z.&nbsp;B. von Chefkoch, teilen &rarr; Link kopieren)</label>
+    <input id="url" type="url" inputmode="url" placeholder="https://www.chefkoch.de/rezepte/...">
+    <button id="loadBtn" onclick="loadFromUrl()" data-i18n="recipe_load_btn">Rezept laden</button>
+    <div id="urlStatus" class="status"></div>
+    <p class="hint" data-i18n="recipe_link_hint">Funktioniert mit allen Seiten, die ihr Rezept maschinenlesbar einbetten
+    (schema.org/Recipe - Chefkoch, Kitchen Stories und die meisten Rezept-Blogs tun das).
+    Falls nicht: unten manuell einfügen.</p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="recipe_current_card_title">Aktuell auf dem Display</h2>
+    <div id="current" class="current" data-i18n="recipe_loading">Wird geladen ...</div>
+    <button class="secondary" onclick="clearRecipe()" data-i18n="recipe_clear_btn">Rezept vom Display entfernen</button>
+  </div>
+
+  <div class="card" id="servingsCard" style="display:none;">
+    <h2 data-i18n="recipe_servings_card_title">Portionen anpassen</h2>
+    <div id="servingsInfo" class="current"></div>
+    <div style="display:flex; align-items:center; gap:10px; margin-top:12px;">
+      <button type="button" class="secondary" style="width:44px; margin-top:0; padding:12px 0;" onclick="stepServings(-1)">&minus;</button>
+      <input id="servingsValue" type="number" inputmode="numeric" min="1" max="99"
+             style="text-align:center; flex:1;">
+      <button type="button" class="secondary" style="width:44px; margin-top:0; padding:12px 0;" onclick="stepServings(1)">+</button>
+    </div>
+    <button onclick="applyServings()" data-i18n="recipe_apply_servings_btn">Zutaten umrechnen</button>
+    <div id="servingsStatus" class="status"></div>
+    <p class="hint" data-i18n="recipe_servings_hint">Nur Zutaten mit erkennbarer Mengenangabe (z.&nbsp;B. "200 g Mehl") werden umgerechnet -
+    Angaben ohne Zahl (z.&nbsp;B. "Salz nach Geschmack") bleiben unverändert.</p>
+  </div>
+
+  <div class="card">
+    <h2 data-i18n="recipe_manual_card_title">Manuell einfügen</h2>
+    <label for="mTitle" data-i18n="recipe_manual_title_label">Titel</label>
+    <input id="mTitle" type="text" data-i18n-placeholder="recipe_manual_title_placeholder" placeholder="z. B. Spaghetti Carbonara">
+    <label for="mYield" data-i18n="recipe_manual_yield_label">Portionen (optional)</label>
+    <input id="mYield" type="text" inputmode="numeric" data-i18n-placeholder="recipe_manual_yield_placeholder" placeholder="z. B. 4">
+    <label for="mIngredients" data-i18n="recipe_manual_ingredients_label">Zutaten (eine je Zeile)</label>
+    <textarea id="mIngredients" data-i18n-placeholder="recipe_manual_ingredients_placeholder" placeholder="200 g Spaghetti&#10;100 g Speck&#10;2 Eier"></textarea>
+    <label for="mSteps" data-i18n="recipe_manual_steps_label">Zubereitung (ein Schritt je Zeile)</label>
+    <textarea id="mSteps" data-i18n-placeholder="recipe_manual_steps_placeholder" placeholder="Nudeln kochen.&#10;Speck anbraten.&#10;Alles vermengen."></textarea>
+    <button onclick="saveManual()" data-i18n="recipe_manual_save_btn">Aufs Display bringen</button>
+    <div id="manualStatus" class="status"></div>
+  </div>
+</div>
+<script>
+// Handy-Seite des Pakets "rezepte" (Manifest "http": page = assets/phone.html, api = true). Alle Aufrufe gehen als POST mit
+// {"op": ...} an /app/rezepte/api (Hook on_http in main.lua). Die Firmware verlangt den Header X-Requested-With (CSRF-Schutz wie beim
+// Studio), aber keine PIN: die Seite wird per QR-Code am Geraet geoeffnet. HTTP 503 = das Geraet ist gerade beschaeftigt (z. B. waehrend
+// des Abrufs einer Rezeptseite) - die Seite wartet kurz und fragt erneut.
+const API_URL = '/app/rezepte/api';
+// Kleines, eigenständiges i18n - bewusst NICHT das grosse Studio-Wörterbuch
+// (studio_home_page.h), das diese schlanke Seite gar nicht einbindet. Selbes
+// Grundmuster (data-i18n/-placeholder + t()/applyI18n()) wie im Studio, damit
+// künftige Pflege vertraut bleibt. Sprache kommt von /api/status
+// ("studioLang") statt einer eigenen Umschaltung - siehe Datei-Kommentar oben.
+const RECIPE_I18N = {
+  de: {
+    page_title: 'InkBoard · Rezept laden',
+    recipe_title: 'Rezept aufs InkBoard laden',
+    recipe_subtitle: 'Link einer Rezeptseite einfügen - das Display zeigt danach Zutaten und Zubereitung als Seiten.',
+    recipe_link_card_title: 'Rezept-Link',
+    recipe_link_label: 'Link (z.&nbsp;B. von Chefkoch, teilen &rarr; Link kopieren)',
+    recipe_load_btn: 'Rezept laden',
+    recipe_link_hint: 'Funktioniert mit allen Seiten, die ihr Rezept maschinenlesbar einbetten (schema.org/Recipe - Chefkoch, Kitchen Stories und die meisten Rezept-Blogs tun das). Falls nicht: unten manuell einfügen.',
+    recipe_current_card_title: 'Aktuell auf dem Display',
+    recipe_loading: 'Wird geladen ...',
+    recipe_clear_btn: 'Rezept vom Display entfernen',
+    recipe_servings_card_title: 'Portionen anpassen',
+    recipe_apply_servings_btn: 'Zutaten umrechnen',
+    recipe_servings_hint: 'Nur Zutaten mit erkennbarer Mengenangabe (z.&nbsp;B. "200 g Mehl") werden umgerechnet - Angaben ohne Zahl (z.&nbsp;B. "Salz nach Geschmack") bleiben unverändert.',
+    recipe_manual_card_title: 'Manuell einfügen',
+    recipe_manual_title_label: 'Titel',
+    recipe_manual_title_placeholder: 'z. B. Spaghetti Carbonara',
+    recipe_manual_yield_label: 'Portionen (optional)',
+    recipe_manual_yield_placeholder: 'z. B. 4',
+    recipe_manual_ingredients_label: 'Zutaten (eine je Zeile)',
+    recipe_manual_ingredients_placeholder: '200 g Spaghetti\n100 g Speck\n2 Eier',
+    recipe_manual_steps_label: 'Zubereitung (ein Schritt je Zeile)',
+    recipe_manual_steps_placeholder: 'Nudeln kochen.\nSpeck anbraten.\nAlles vermengen.',
+    recipe_manual_save_btn: 'Aufs Display bringen',
+    recipe_none_loaded: 'Noch kein Rezept geladen.',
+    recipe_current_summary: '{ingredients} Zutaten · {steps} Schritte · {pages} Seiten',
+    recipe_current_yield_prefix: 'Portionen: ',
+    recipe_current_now_suffix: ' → aktuell {n}',
+    recipe_current_nutrition: 'Nährwerte: {n} Angaben erkannt (letzte Seite)',
+    recipe_current_source_prefix: 'Quelle: ',
+    recipe_servings_info: 'Ursprünglich für <b>{n}</b> Portionen. Zahl ändern und "Zutaten umrechnen" tippen - das Display zeigt danach die umgerechneten Mengen.',
+    recipe_status_loading: 'Rezept wird geladen - einen Moment ...',
+    recipe_status_done: 'Fertig! "{title}" ist jetzt auf dem Display ({pages} Seiten).',
+    recipe_err_no_link: 'Bitte zuerst einen Link einfügen.',
+    recipe_err_fetch_failed: 'Abruf fehlgeschlagen.',
+    recipe_err_start_failed: 'Start fehlgeschlagen.',
+    recipe_err_unreachable: 'InkBoard nicht erreichbar.',
+    recipe_err_servings_range: 'Bitte eine Zahl von 1 bis 99 eingeben.',
+    recipe_servings_applied: 'Übernommen: Zutaten sind jetzt für {n} Portionen berechnet.',
+    recipe_err_apply_failed: 'Übernehmen fehlgeschlagen.',
+    recipe_manual_saved: 'Übernommen: {ingredients} Zutaten, {steps} Schritte.',
+    recipe_busy: 'Das Gerät ist gerade beschäftigt - einen Moment ...'
+  },
+  en: {
+    page_title: 'InkBoard · Load recipe',
+    recipe_title: 'Load a recipe onto InkBoard',
+    recipe_subtitle: 'Paste the link of a recipe page - the display will then show ingredients and steps as pages.',
+    recipe_link_card_title: 'Recipe link',
+    recipe_link_label: 'Link (e.g. from a recipe site, share &rarr; copy link)',
+    recipe_load_btn: 'Load recipe',
+    recipe_link_hint: 'Works with any site that embeds its recipe in a machine-readable way (schema.org/Recipe - most recipe blogs and sites do). If not: use the manual entry below.',
+    recipe_current_card_title: 'Currently on the display',
+    recipe_loading: 'Loading ...',
+    recipe_clear_btn: 'Remove recipe from the display',
+    recipe_servings_card_title: 'Adjust servings',
+    recipe_apply_servings_btn: 'Convert ingredients',
+    recipe_servings_hint: 'Only ingredients with a recognizable quantity (e.g. "200 g flour") are converted - entries without a number (e.g. "salt to taste") stay unchanged.',
+    recipe_manual_card_title: 'Enter manually',
+    recipe_manual_title_label: 'Title',
+    recipe_manual_title_placeholder: 'e.g. Spaghetti Carbonara',
+    recipe_manual_yield_label: 'Servings (optional)',
+    recipe_manual_yield_placeholder: 'e.g. 4',
+    recipe_manual_ingredients_label: 'Ingredients (one per line)',
+    recipe_manual_ingredients_placeholder: '200 g spaghetti\n100 g bacon\n2 eggs',
+    recipe_manual_steps_label: 'Steps (one per line)',
+    recipe_manual_steps_placeholder: 'Cook the pasta.\nFry the bacon.\nMix everything together.',
+    recipe_manual_save_btn: 'Send to display',
+    recipe_none_loaded: 'No recipe loaded yet.',
+    recipe_current_summary: '{ingredients} ingredients · {steps} steps · {pages} pages',
+    recipe_current_yield_prefix: 'Servings: ',
+    recipe_current_now_suffix: ' → currently {n}',
+    recipe_current_nutrition: '{n} facts detected (last page)',
+    recipe_current_source_prefix: 'Source: ',
+    recipe_servings_info: 'Originally for <b>{n}</b> servings. Change the number and tap "Convert ingredients" - the display will then show the converted amounts.',
+    recipe_status_loading: 'Loading recipe - one moment ...',
+    recipe_status_done: 'Done! "{title}" is now on the display ({pages} pages).',
+    recipe_err_no_link: 'Please paste a link first.',
+    recipe_err_fetch_failed: 'Fetch failed.',
+    recipe_err_start_failed: 'Failed to start.',
+    recipe_err_unreachable: 'InkBoard not reachable.',
+    recipe_err_servings_range: 'Please enter a number from 1 to 99.',
+    recipe_servings_applied: 'Applied: ingredients are now calculated for {n} servings.',
+    recipe_err_apply_failed: 'Applying failed.',
+    recipe_manual_saved: 'Saved: {ingredients} ingredients, {steps} steps.',
+    recipe_busy: 'The device is busy - one moment ...'
+  }
+};
+let currentLang = 'de';
+function t(key) {
+  const dict = RECIPE_I18N[currentLang] || RECIPE_I18N.de;
+  return dict[key] !== undefined ? dict[key] : (RECIPE_I18N.de[key] !== undefined ? RECIPE_I18N.de[key] : key);
+}
+function tf(key, vars) {
+  let s = t(key);
+  Object.keys(vars || {}).forEach(k => { s = s.split('{' + k + '}').join(vars[k]); });
+  return s;
+}
+function applyI18n() {
+  document.documentElement.lang = currentLang;
+  document.getElementById('pageTitle').textContent = t('page_title');
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+}
+
+function setStatus(id, cls, text) {
+  const el = document.getElementById(id);
+  el.className = 'status ' + cls;
+  el.textContent = text;
+}
+function hideStatus(id) { document.getElementById(id).className = 'status'; }
+
+let baseServings = 0, currentServings = 0;
+
+function renderCurrent(d) {
+  baseServings = d.baseServings || 0;
+  currentServings = d.currentServings || 0;
+  const el = document.getElementById('current');
+  if (d.valid) {
+    el.innerHTML = '<b>' + escapeHtml(d.title) + '</b><br>' +
+      tf('recipe_current_summary', { ingredients: d.ingredients, steps: d.steps, pages: d.pages }) +
+      (d.yield ? '<br>' + t('recipe_current_yield_prefix') + escapeHtml(d.yield) +
+        (baseServings > 0 && currentServings > 0 && currentServings !== baseServings
+          ? ' <span style="color:var(--accent)">' + tf('recipe_current_now_suffix', { n: currentServings }) + '</span>' : '') : '') +
+      (d.nutrition > 0 ? '<br>' + tf('recipe_current_nutrition', { n: d.nutrition }) : '') +
+      (d.source ? '<br>' + t('recipe_current_source_prefix') + escapeHtml(d.source) : '');
+  } else {
+    el.textContent = t('recipe_none_loaded');
+  }
+
+  const card = document.getElementById('servingsCard');
+  if (d.valid && baseServings > 0) {
+    card.style.display = 'block';
+    document.getElementById('servingsValue').value = currentServings || baseServings;
+    document.getElementById('servingsInfo').innerHTML = tf('recipe_servings_info', { n: baseServings });
+  } else {
+    card.style.display = 'none';
+  }
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+// CSRF-Schutz: alle POSTs dieser Seite tragen denselben Header wie das Studio (X-Requested-With: InkBoardStudio). Die Firmware
+// (studioAuthRouteProtected/studioAuthRoutePinExempt in teil09) verlangt ihn auch fuer /app/<id>/api, aber KEINE Studio-PIN - die
+// Seite wird per QR-Code am Geraet geoeffnet, eine PIN-Eingabe in der Kueche waere unzumutbar. Der Header allein wehrt fremde Seiten ab
+// (kein Cross-Origin-POST ohne CORS-Preflight). Vorlage dieser Seite: src/recipe_page.h (/rezept der eingebauten Rezepte-App).
+const RECIPE_JSON_HEADERS = { 'Content-Type': 'application/json', 'X-Requested-With': 'InkBoardStudio' };
+function api(op, extra) {
+  return fetch(API_URL, { method: 'POST', headers: RECIPE_JSON_HEADERS, body: JSON.stringify(Object.assign({ op: op }, extra || {})) })
+    .then(r => {
+      if (r.status === 503) { const e = new Error('busy'); e.busy = true; throw e; }
+      return r.json();
+    });
+}
+
+let pollTimer = null;
+function poll() {
+  api('status').then(d => {
+    renderCurrent(d);
+    if (d.state === 'pending') {
+      setStatus('urlStatus', 'pending', t('recipe_status_loading'));
+      pollTimer = setTimeout(poll, 1500);
+    } else if (d.state === 'ok') {
+      document.getElementById('loadBtn').disabled = false;
+      setStatus('urlStatus', 'ok', tf('recipe_status_done', { title: d.title, pages: d.pages }));
+    } else if (d.state === 'error') {
+      document.getElementById('loadBtn').disabled = false;
+      setStatus('urlStatus', 'error', d.error || t('recipe_err_fetch_failed'));
+    } else {
+      document.getElementById('loadBtn').disabled = false;
+    }
+  }).catch(e => {
+    if (e && e.busy) setStatus('urlStatus', 'pending', t('recipe_busy'));
+    pollTimer = setTimeout(poll, 1500);
+  });
+}
+
+function loadFromUrl() {
+  const url = document.getElementById('url').value.trim();
+  if (!url) { setStatus('urlStatus', 'error', t('recipe_err_no_link')); return; }
+  document.getElementById('loadBtn').disabled = true;
+  setStatus('urlStatus', 'pending', t('recipe_status_loading'));
+  api('url', { url })
+    .then(d => {
+      if (!d.success) {
+        document.getElementById('loadBtn').disabled = false;
+        setStatus('urlStatus', 'error', d.error || t('recipe_err_start_failed'));
+        return;
+      }
+      if (pollTimer) clearTimeout(pollTimer);
+      pollTimer = setTimeout(poll, 1500);
+    })
+    .catch(e => {
+      if (e && e.busy) { setStatus('urlStatus', 'pending', t('recipe_busy')); setTimeout(loadFromUrl, 2000); return; }
+      document.getElementById('loadBtn').disabled = false;
+      setStatus('urlStatus', 'error', t('recipe_err_unreachable'));
+    });
+}
+
+function saveManual() {
+  const body = {
+    title: document.getElementById('mTitle').value,
+    yield: document.getElementById('mYield').value,
+    ingredients: document.getElementById('mIngredients').value,
+    steps: document.getElementById('mSteps').value
+  };
+  api('manual', body)
+    .then(d => {
+      if (d.success) {
+        setStatus('manualStatus', 'ok', tf('recipe_manual_saved', { ingredients: d.ingredients, steps: d.steps }));
+        api('status').then(renderCurrent).catch(() => {});
+      } else {
+        setStatus('manualStatus', 'error', d.error || t('recipe_err_apply_failed'));
+      }
+    })
+    .catch(e => setStatus('manualStatus', e && e.busy ? 'pending' : 'error', t(e && e.busy ? 'recipe_busy' : 'recipe_err_unreachable')));
+}
+
+function clearRecipe() {
+  api('clear')
+    .then(() => { hideStatus('urlStatus'); hideStatus('manualStatus');
+      api('status').then(renderCurrent).catch(() => {}); })
+    .catch(e => setStatus('urlStatus', e && e.busy ? 'pending' : 'error', t(e && e.busy ? 'recipe_busy' : 'recipe_err_unreachable')));
+}
+
+function stepServings(delta) {
+  const el = document.getElementById('servingsValue');
+  let v = parseInt(el.value, 10);
+  if (!v || v < 1) v = currentServings || baseServings || 1;
+  v = Math.max(1, Math.min(99, v + delta));
+  el.value = v;
+}
+
+function applyServings() {
+  const v = parseInt(document.getElementById('servingsValue').value, 10);
+  if (!v || v < 1 || v > 99) {
+    setStatus('servingsStatus', 'error', t('recipe_err_servings_range'));
+    return;
+  }
+  api('servings', { servings: v })
+    .then(d => {
+      if (d.success) {
+        setStatus('servingsStatus', 'ok', tf('recipe_servings_applied', { n: v }));
+        api('status').then(renderCurrent).catch(() => {});
+      } else {
+        setStatus('servingsStatus', 'error', d.error || t('recipe_err_apply_failed'));
+      }
+    })
+    .catch(e => setStatus('servingsStatus', e && e.busy ? 'pending' : 'error', t(e && e.busy ? 'recipe_busy' : 'recipe_err_unreachable')));
+}
+
+// Sprache von /api/status übernehmen ("studioLang" - siehe Datei-Kommentar
+// oben), DANACH erst applyI18n() und der normale Inhalts-Abruf - so steht
+// die Sprache bereits fest, bevor renderCurrent() zum ersten Mal Text
+// einsetzt. Schlägt /api/status ausnahmsweise fehl, bleibt es beim
+// Standard Deutsch (Variable currentLang bleibt unverändert 'de').
+fetch('/api/status').then(r => r.json()).then(s => {
+  currentLang = (s.studioLang === 'en') ? 'en' : 'de';
+}).catch(() => {}).then(() => {
+  applyI18n();
+  api('status').then(d => {
+    renderCurrent(d);
+    if (d.state === 'pending') { document.getElementById('loadBtn').disabled = true; pollTimer = setTimeout(poll, 1500); }
+  });
+});
+</script>
+</body>
+</html>

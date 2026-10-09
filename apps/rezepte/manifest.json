@@ -1,0 +1,24 @@
+{
+  "id": "rezepte",
+  "name": {
+    "de": "Rezepte",
+    "en": "Recipes"
+  },
+  "version": "1.1.0",
+  "apiLevel": 20,
+  "pages": [
+    {
+      "de": "Rezepte",
+      "en": "Recipes"
+    }
+  ],
+  "refreshMinutes": 240,
+  "input": true,
+  "permissions": {
+    "recipeAnyHost": true
+  },
+  "http": {
+    "page": "assets/phone.html",
+    "api": true
+  }
+}

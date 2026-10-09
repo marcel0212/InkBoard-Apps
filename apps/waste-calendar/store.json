@@ -1,0 +1,67 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Nächste Abfuhrtermine deiner Tonnen",
+    "en": "Next pick-up dates for your bins"
+  },
+  "description": {
+    "de": "Zeigt, wann welche Tonne geleert wird: aus dem Kalender-Link (ICS) deines Entsorgers oder, für eine Auswahl von Kommunen und Landkreisen, direkt per Adresse. Restmüll, Biotonne, Papier und Gelbe Tonne bekommen ihre Tonnenfarbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Drei Darstellungen (Tonnen-Kacheln, Liste, Monatskalender) und ein Dashboard-Widget gehören dazu.",
+    "en": "Shows when each bin is emptied: from the calendar link (ICS) of your waste company or, for a selection of municipalities, directly by address. General waste, bio, paper and recycling bins get their bin color, plus “today”, “tomorrow” or “in 5 days”. Three layouts (bin tiles, list, month calendar) and a dashboard widget are included."
+  },
+  "features": {
+    "de": [
+      "ICS-Kalender-Link oder Adresse (AbfallNavi)",
+      "Tonnenfarben und „in X Tagen“",
+      "Drei Darstellungen und Dashboard-Widget",
+      "Tonnenarten für das Widget wählbar"
+    ],
+    "en": [
+      "ICS calendar link or address (AbfallNavi)",
+      "Bin colors and “in X days”",
+      "Three layouts and dashboard widget",
+      "Choose which bins the widget shows"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Tonnen-Kacheln",
+        "en": "Bento: bin tiles"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Headline und Liste",
+        "en": "Slate: headline and list"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: Monatskalender",
+        "en": "Nano: month calendar"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

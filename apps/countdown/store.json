@@ -1,0 +1,18 @@
+{
+  "category": "time",
+  "author": "InkBoard",
+  "tagline": {"de": "Tage bis zu deinem großen Termin", "en": "Days until your big date"},
+  "description": {
+    "de": "Zählt die Tage bis zu einem Datum deiner Wahl herunter: Urlaub, Geburtstag, Prüfung oder Umzug. Die Zahl steht groß und gut lesbar auf dem Display, in der Akzentfarbe deiner Wahl. Nach dem Termin zählt der Countdown die vergangenen Tage.",
+    "en": "Counts down the days to a date of your choice: vacation, birthday, exam or moving day. The number is shown large and easy to read on the display, in the accent color you pick. After the date it counts the days that have passed."
+  },
+  "features": {
+    "de": ["Eigene Bezeichnung und Zieldatum", "Fünf Akzentfarben", "Passendes Dashboard-Widget", "Funktioniert ohne Internet"],
+    "en": ["Your own label and target date", "Five accent colors", "Matching dashboard widget", "Works without internet"]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {"kind": "display", "file": "preview-display.svg", "caption": {"de": "App-Seite auf dem Display", "en": "App page on the display"}},
+    {"kind": "widget", "file": "preview-widget.svg", "caption": {"de": "Widget im Dashboard", "en": "Widget on the dashboard"}}
+  ]
+}

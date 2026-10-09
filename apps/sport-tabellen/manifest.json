@@ -1,0 +1,337 @@
+{
+  "id": "sport-tabellen",
+  "name": {
+    "de": "Sport",
+    "en": "Sports"
+  },
+  "version": "1.0.16",
+  "apiLevel": 14,
+  "pages": [
+    {
+      "de": "Team",
+      "en": "Team"
+    },
+    {
+      "de": "Liga-Tabelle",
+      "en": "League table"
+    }
+  ],
+  "refreshMinutes": 10,
+  "widget": {
+    "w": 300,
+    "h": 130
+  },
+  "permissions": {
+    "net": [
+      "sportal.de",
+      "www.sportal.de",
+      "en.wikipedia.org",
+      "upload.wikimedia.org",
+      "thumb.wikimedia.org"
+    ]
+  },
+  "sections": [
+    {
+      "id": "general",
+      "title": {
+        "de": "Allgemein",
+        "en": "General"
+      },
+      "help": {
+        "de": "Die gewählte Sportart erscheint auf den Vollseiten. Alle Sportarten, für die unten ein Team eingetragen ist, werden im Hintergrund geladen und lassen sich über eigene Dashboard-Widgets anzeigen. Datenquelle sportal.de, ein Schlüssel ist nicht nötig.\nEchte Wappen: lädt in der Bento-Darstellung die Wappen des eigenen Teams und des nächsten Gegners von Wikipedia (sportal.de liefert keine). Findet sich kein passendes Bild, erscheint die farbige Kürzel-Kachel.",
+        "en": "The chosen sport appears on the full pages. Every sport with a team entered below is loaded in the background and can be shown by its own dashboard widget. Data source sportal.de, no key needed.\nReal crests: in the Bento layout, loads the crests of your team and the next opponent from Wikipedia (sportal.de provides none). If no matching image is found, the coloured abbreviation tile is shown."
+      }
+    },
+    {
+      "id": "hockey",
+      "title": {
+        "de": "Eishockey (DEL)",
+        "en": "Ice hockey (DEL)"
+      },
+      "help": {
+        "de": "Leer lassen, wenn Eishockey nicht geladen werden soll. Mit „Teams laden“ erscheint die Liste der DEL-Teams zur Auswahl; der Name muss dem in der sportal-Tabelle entsprechen.",
+        "en": "Leave empty to skip ice hockey. “Load teams” fills a list of the DEL teams; the name has to match the sportal table."
+      }
+    },
+    {
+      "id": "handball",
+      "title": {
+        "de": "Handball",
+        "en": "Handball"
+      },
+      "help": {
+        "de": "Leer lassen, wenn Handball nicht geladen werden soll. Zuerst die Liga wählen, dann „Teams laden“.",
+        "en": "Leave empty to skip handball. Choose the league first, then “Load teams”."
+      }
+    },
+    {
+      "id": "basketball",
+      "title": {
+        "de": "Basketball",
+        "en": "Basketball"
+      },
+      "help": {
+        "de": "Leer lassen, wenn Basketball nicht geladen werden soll. Zuerst die Liga wählen, dann „Teams laden“.",
+        "en": "Leave empty to skip basketball. Choose the league first, then “Load teams”."
+      }
+    },
+    {
+      "id": "football",
+      "title": {
+        "de": "American Football (NFL)",
+        "en": "American football (NFL)"
+      },
+      "help": {
+        "de": "Leer lassen, wenn American Football nicht geladen werden soll. Die Tabelle zeigt die Division des Teams.",
+        "en": "Leave empty to skip American football. The table shows the team's division."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "kind",
+      "type": "select",
+      "options": [
+        "eishockey",
+        "handball",
+        "basketball",
+        "americanfootball"
+      ],
+      "default": "eishockey",
+      "optionLabels": {
+        "de": {
+          "eishockey": "Eishockey (DEL)",
+          "handball": "Handball",
+          "basketball": "Basketball",
+          "americanfootball": "American Football (NFL)"
+        },
+        "en": {
+          "eishockey": "Ice hockey (DEL)",
+          "handball": "Handball",
+          "basketball": "Basketball",
+          "americanfootball": "American football (NFL)"
+        }
+      },
+      "label": {
+        "de": "Angezeigte Sportart",
+        "en": "Sport shown"
+      },
+      "section": "general"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Spalten)",
+          "compact": "Nano (Zeitleiste)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (columns)",
+          "compact": "Nano (timeline)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento: großes nächstes Spiel mit Wappen und fünf Ergebniskacheln. Slate: letzte und nächste Spiele in zwei Spalten. Nano: Zeitleiste mit den Spielen. Die Tabelle gibt es in allen drei Darstellungen.",
+        "en": "Bento: large next match with crests and five result tiles. Slate: last and next matches in two columns. Nano: timeline of the matches. The table is available in all three layouts."
+      }
+    },
+    {
+      "key": "teamEh",
+      "type": "text",
+      "maxLen": 40,
+      "default": "",
+      "label": {
+        "de": "Team Eishockey (DEL)",
+        "en": "Team ice hockey (DEL)"
+      },
+      "action": {
+        "name": "teams_eh",
+        "label": {
+          "de": "Teams laden",
+          "en": "Load teams"
+        },
+        "fills": "teamEh"
+      },
+      "section": "hockey"
+    },
+    {
+      "key": "leagueHb",
+      "type": "select",
+      "options": [
+        "bundesliga",
+        "champions-league"
+      ],
+      "default": "bundesliga",
+      "optionLabels": {
+        "de": {
+          "bundesliga": "Handball-Bundesliga",
+          "champions-league": "EHF Champions League"
+        },
+        "en": {
+          "bundesliga": "Handball Bundesliga",
+          "champions-league": "EHF Champions League"
+        }
+      },
+      "label": {
+        "de": "Liga Handball",
+        "en": "League handball"
+      },
+      "section": "handball"
+    },
+    {
+      "key": "teamHb",
+      "type": "text",
+      "maxLen": 40,
+      "default": "",
+      "label": {
+        "de": "Team Handball",
+        "en": "Team handball"
+      },
+      "action": {
+        "name": "teams_hb",
+        "label": {
+          "de": "Teams laden",
+          "en": "Load teams"
+        },
+        "fills": "teamHb"
+      },
+      "section": "handball"
+    },
+    {
+      "key": "leagueBb",
+      "type": "select",
+      "options": [
+        "bundesliga",
+        "euroleague"
+      ],
+      "default": "bundesliga",
+      "optionLabels": {
+        "de": {
+          "bundesliga": "Basketball-Bundesliga (BBL)",
+          "euroleague": "EuroLeague"
+        },
+        "en": {
+          "bundesliga": "Basketball Bundesliga (BBL)",
+          "euroleague": "EuroLeague"
+        }
+      },
+      "label": {
+        "de": "Liga Basketball",
+        "en": "League basketball"
+      },
+      "section": "basketball"
+    },
+    {
+      "key": "teamBb",
+      "type": "text",
+      "maxLen": 40,
+      "default": "",
+      "label": {
+        "de": "Team Basketball",
+        "en": "Team basketball"
+      },
+      "action": {
+        "name": "teams_bb",
+        "label": {
+          "de": "Teams laden",
+          "en": "Load teams"
+        },
+        "fills": "teamBb"
+      },
+      "section": "basketball"
+    },
+    {
+      "key": "teamAf",
+      "type": "text",
+      "maxLen": 40,
+      "default": "",
+      "label": {
+        "de": "Team American Football (NFL)",
+        "en": "Team American football (NFL)"
+      },
+      "action": {
+        "name": "teams_af",
+        "label": {
+          "de": "Teams laden",
+          "en": "Load teams"
+        },
+        "fills": "teamAf"
+      },
+      "section": "football"
+    },
+    {
+      "key": "crests",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Echte Wappen laden",
+        "en": "Load real crests"
+      },
+      "section": "general"
+    },
+    {
+      "key": "wHandball",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Handball statt Eishockey",
+        "en": "Handball instead of ice hockey"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wBasketball",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Basketball statt Eishockey",
+        "en": "Basketball instead of ice hockey"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wFootball",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "American Football statt Eishockey",
+        "en": "American football instead of ice hockey"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wTablePos",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Tabellenplatz anzeigen",
+        "en": "Show table position"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wHomeAway",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Heim/Auswärts anzeigen",
+        "en": "Show home/away"
+      },
+      "group": "widget"
+    }
+  ],
+  "fetchOnOpen": true
+}

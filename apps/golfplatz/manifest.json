@@ -1,0 +1,83 @@
+{
+  "id": "golfplatz",
+  "name": {
+    "de": "Golfplatz",
+    "en": "Golf Course"
+  },
+  "version": "1.0.0",
+  "apiLevel": 14,
+  "pages": [
+    {
+      "de": "Heute",
+      "en": "Today"
+    },
+    {
+      "de": "Woche",
+      "en": "Week"
+    },
+    {
+      "de": "14 Tage",
+      "en": "14 days"
+    }
+  ],
+  "refreshMinutes": 360,
+  "widget": {
+    "w": 300,
+    "h": 140
+  },
+  "permissions": {
+    "net": [
+      "www.pccaddie.net"
+    ]
+  },
+  "settings": [
+    {
+      "key": "club",
+      "type": "text",
+      "maxLen": 16,
+      "default": "0492201",
+      "label": {
+        "de": "PC-CADDIE-Clubnummer",
+        "en": "PC CADDIE club number"
+      },
+      "helpTitle": {
+        "de": "Wo finde ich die Clubnummer?",
+        "en": "Where do I find the club number?"
+      },
+      "help": {
+        "de": "Voreingestellt: 0492201 (GC Hamburg-Ahrensburg e.V.).\nDie Nummer deines Clubs steht in der Adresszeile des öffentlichen Belegungsplans: pccaddie.net/clubs/<Clubnummer>/app.php?cat=occupancy.\nDie Daten kommen ohne Zugangsdaten vom PC-CADDIE-Belegungsplan. Abgerufen wird höchstens einmal pro Stunde, auch wenn ein kürzerer Takt eingestellt ist.",
+        "en": "Default: 0492201 (GC Hamburg-Ahrensburg e.V.).\nYour club's number is part of the public occupancy plan's address: pccaddie.net/clubs/<club number>/app.php?cat=occupancy.\nData comes from the PC CADDIE occupancy plan without credentials. It is fetched at most once per hour, even if a shorter interval is set."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Karten)",
+          "flat": "Slate (Haarlinien)",
+          "compact": "Nano (Tabellen)"
+        },
+        "en": {
+          "cards": "Bento (cards)",
+          "flat": "Slate (hairlines)",
+          "compact": "Nano (tables)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento: Heute mit großer Fokuskarte und FREI-Feld, Woche als Zeilenkarten, 14 Tage als zwei Wochenkarten. Slate: Heute als Zeitleiste, Woche als Liste, 14 Tage als Doppelspalte. Nano: Zwei-Spalten-Übersicht bzw. Volltabellen mit Bereichs-Kürzeln. Bereichsfarben überall gleich: Tee 1 blau, Greenkeeping grün, Kurse & Events rot, Information gelb.",
+        "en": "Bento: today with a large focus card and FREE panel, week as row cards, 14 days as two week cards. Slate: today as a timeline, week as a list, 14 days as a double column. Nano: two-column overview or full tables with area codes. Area colours are identical everywhere: Tee 1 blue, greenkeeping green, courses & events red, information yellow."
+      }
+    }
+  ]
+}

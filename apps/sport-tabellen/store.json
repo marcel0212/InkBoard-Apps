@@ -1,0 +1,97 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Tabellen und Spiele für Eishockey, Handball, Basketball und NFL",
+    "en": "Tables and matches for ice hockey, handball, basketball and the NFL"
+  },
+  "description": {
+    "de": "Verfolge dein Team: nächstes Spiel mit Wappen gegen Wappen, die letzten fünf Ergebnisse und die Liga-Tabelle für Eishockey (DEL), Handball (Bundesliga, Champions League), Basketball (BBL, EuroLeague) und American Football (NFL). Daten kommen von sportal.de, ein Schlüssel ist nicht nötig. Die Teams wählst du per Knopf „Teams laden“ aus der aktuellen Tabelle. Alle Sportarten mit eingetragenem Team werden im Hintergrund geladen; auf den Vollseiten erscheint die gewählte Sportart, im Dashboard kann jedes Widget eine andere zeigen. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit Termin, Live-Zwischenstand und Tabellenplatz gehören dazu.",
+    "en": "Follow your team: next match with crest against crest, the last five results and the league table for ice hockey (DEL), handball (Bundesliga, Champions League), basketball (BBL, EuroLeague) and American football (NFL). Data comes from sportal.de, no key needed. You pick your teams with the “Load teams” button from the current table. Every sport with a team entered is loaded in the background; the full pages show the chosen sport, and each dashboard widget can show a different one. Three layouts (Bento, Slate, Nano) and a dashboard widget with the date, live score and table position are included."
+  },
+  "features": {
+    "de": [
+      "Eishockey, Handball, Basketball und NFL von sportal.de",
+      "Nächstes Spiel, letzte fünf Ergebnisse und Liga-Tabelle",
+      "Team per Knopf aus der aktuellen Tabelle wählen",
+      "Drei Darstellungen und Dashboard-Widget mit Live-Stand"
+    ],
+    "en": [
+      "Ice hockey, handball, basketball and NFL from sportal.de",
+      "Next match, last five results and league table",
+      "Pick your team from the current table with one button",
+      "Three layouts and a dashboard widget with live score"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Team-Seite (Handball)",
+        "en": "Bento: team page (handball)"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Team-Seite (Eishockey)",
+        "en": "Slate: team page (ice hockey)"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: Team-Seite (Basketball)",
+        "en": "Nano: team page (basketball)"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-table.svg",
+      "caption": {
+        "de": "Bento: Liga-Tabelle (Handball)",
+        "en": "Bento: league table (handball)"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-flat.svg",
+      "caption": {
+        "de": "Slate: Liga-Tabelle (Eishockey)",
+        "en": "Slate: league table (ice hockey)"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-compact.svg",
+      "caption": {
+        "de": "Nano: Division-Tabelle (NFL)",
+        "en": "Nano: division table (NFL)"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "wikipedia-today",
+  "name": {
+    "de": "Was geschah heute",
+    "en": "On this day"
+  },
+  "version": "1.0.2",
+  "apiLevel": 8,
+  "pages": [
+    {
+      "de": "Was geschah heute",
+      "en": "On this day"
+    }
+  ],
+  "refreshMinutes": 360,
+  "widget": {
+    "w": 340,
+    "h": 150
+  },
+  "permissions": {
+    "net": [
+      "de.wikipedia.org",
+      "en.wikipedia.org",
+      "byabbe.se",
+      "api.mymemory.translated.net"
+    ]
+  },
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Hero + Kacheln)",
+          "flat": "Slate (Zeitleiste)",
+          "compact": "Nano (Kompaktliste)"
+        },
+        "en": {
+          "cards": "Bento (hero + tiles)",
+          "flat": "Slate (timeline)",
+          "compact": "Nano (compact list)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    }
+  ]
+}

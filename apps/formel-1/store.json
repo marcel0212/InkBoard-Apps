@@ -1,0 +1,125 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Rennkalender, WM-Wertung und Ergebnisse mit Streckenlayout",
+    "en": "Race calendar, standings and results with track layouts"
+  },
+  "description": {
+    "de": "Zeigt das nächste Formel-1-Rennen mit Streckenlayout, Zeitplan in Ortszeit und Countdown, die WM-Wertung (Fahrer und Konstrukteure) und das Ergebnis des letzten Rennens. Am Rennwochenende erscheint die zuletzt abgeschlossene Session (Training, Qualifying, Sprint oder Rennen). Daten kommen von Jolpica-F1 und OpenF1, ganz ohne Zugangsdaten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu.",
+    "en": "Shows the next Formula 1 race with track layout, schedule in local time and countdown, the championship standings (drivers and constructors) and the result of the last race. On a race weekend the most recently finished session (practice, qualifying, sprint or race) appears. Data comes from Jolpica-F1 and OpenF1, with no credentials needed. Three layouts (Bento, Slate, Nano) and a dashboard widget are included."
+  },
+  "features": {
+    "de": [
+      "Nächstes Rennen mit Streckenlayout und Countdown",
+      "WM-Wertung der Fahrer und Konstrukteure",
+      "Letzte Session, drei Darstellungen und Dashboard-Widget"
+    ],
+    "en": [
+      "Next race with track layout and countdown",
+      "Drivers' and constructors' standings",
+      "Last session, three layouts and dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: nächstes Rennen",
+        "en": "Bento: next race"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: nächstes Rennen",
+        "en": "Slate: next race"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: nächstes Rennen",
+        "en": "Nano: next race"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-standings.svg",
+      "caption": {
+        "de": "Bento: WM-Wertung",
+        "en": "Bento: standings"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-standings-flat.svg",
+      "caption": {
+        "de": "Slate: WM-Wertung",
+        "en": "Slate: standings"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-standings-compact.svg",
+      "caption": {
+        "de": "Nano: WM-Wertung",
+        "en": "Nano: standings"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-last.svg",
+      "caption": {
+        "de": "Bento: Rennergebnis",
+        "en": "Bento: race result"
+      },
+      "style": "cards",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-last-flat.svg",
+      "caption": {
+        "de": "Slate: Rennergebnis",
+        "en": "Slate: race result"
+      },
+      "style": "flat",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-last-compact.svg",
+      "caption": {
+        "de": "Nano: Rennergebnis",
+        "en": "Nano: race result"
+      },
+      "style": "compact",
+      "page": 2
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

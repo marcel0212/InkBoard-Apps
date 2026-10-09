@@ -1,0 +1,65 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Aktien, Indizes und Krypto mit Kursverlauf",
+    "en": "Stocks, indices and crypto with price history"
+  },
+  "description": {
+    "de": "Zeigt Kurse und die Tagesänderung für Aktien, Indizes und Kryptowährungen (Daten von Twelve Data). Zwei Seiten (Aktien, Krypto), je ein Fokus-Symbol, das immer zuerst steht, und bis zu neun Symbole je Seite, jeweils mit kleinem Kursverlauf. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Du brauchst einen kostenlosen API-Key von twelvedata.com; alles stellst du hier im Store ein.",
+    "en": "Shows quotes and the daily change for stocks, indices and cryptocurrencies (data from Twelve Data). Two pages (Stocks, Crypto), one focus symbol per page that always comes first, and up to nine symbols per page, each with a small price history. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You need a free API key from twelvedata.com; you set everything up here in the Store."
+  },
+  "features": {
+    "de": [
+      "Aktien, Indizes und Krypto auf zwei Seiten",
+      "Fokus-Symbol und bis zu neun Symbole je Seite",
+      "Drei Darstellungen, Kursverlauf und Dashboard-Widget"
+    ],
+    "en": [
+      "Stocks, indices and crypto on two pages",
+      "Focus symbol and up to nine symbols per page",
+      "Three layouts, price history and dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Kacheln",
+        "en": "Bento: tiles"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Zeilen",
+        "en": "Slate: rows"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: kompakt",
+        "en": "Nano: compact"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

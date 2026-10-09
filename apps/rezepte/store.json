@@ -1,0 +1,55 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Rezept per Link vom Handy aufs Display",
+    "en": "Send a recipe from your phone to the display"
+  },
+  "description": {
+    "de": "Scanne den QR-Code auf dem Display, füge auf dem Handy den Link einer Rezeptseite ein, und das Display zeigt Zutaten (zwei Spalten), Zubereitung und Nährwerte als Seiten - Drehen blättert. Die Portionen lassen sich auf dem Handy umrechnen; findet die App auf einer Seite kein Rezept, kannst du Zutaten und Zubereitung auch als Text einfügen. Skript-Variante der eingebauten App; die Handy-Seite liegt unter http://<IP des Geräts>/app/rezepte. Hinweis: Die App darf Rezeptseiten von jedem https-Server laden (nur dafür, nur Port 443, keine IP-Adressen).",
+    "en": "Scan the QR code on the display, paste the link of a recipe page on your phone, and the display shows ingredients (two columns), instructions and nutrition facts as pages - turn the dial to browse. Servings can be converted on the phone; if a page has no recipe data you can paste ingredients and steps as text. Script version of the built-in app; the phone page lives at http://<device IP>/app/rezepte. Note: the app may load recipe pages from any https server (for that purpose only, port 443 only, no IP addresses)."
+  },
+  "features": {
+    "de": [
+      "Rezeptlink einfügen, Zutaten, Zubereitung und Nährwerte als Seiten",
+      "Drehen blättert, Klick beendet das Blättern",
+      "Portionen auf dem Handy umrechnen",
+      "Manuell einfügen, wenn die Seite kein Rezept liefert",
+      "Darf Rezeptseiten von jedem https-Server laden"
+    ],
+    "en": [
+      "Paste a recipe link, ingredients, instructions and nutrition as pages",
+      "Turn to browse, click ends browsing",
+      "Convert servings on the phone",
+      "Paste manually if the page has no recipe data",
+      "May load recipe pages from any https server"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-empty.svg",
+      "caption": {
+        "de": "QR-Code zur Handy-Seite",
+        "en": "QR code to the phone page"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-ingredients.svg",
+      "caption": {
+        "de": "Zutaten",
+        "en": "Ingredients"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-steps.svg",
+      "caption": {
+        "de": "Zubereitung",
+        "en": "Instructions"
+      }
+    }
+  ]
+}

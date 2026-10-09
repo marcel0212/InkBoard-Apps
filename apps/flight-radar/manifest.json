@@ -1,0 +1,349 @@
+{
+  "id": "flight-radar",
+  "name": {
+    "de": "Flight Radar",
+    "en": "Flight Radar"
+  },
+  "version": "1.2.4",
+  "apiLevel": 18,
+  "needsStorage": true,
+  "pages": [
+    {
+      "de": "Flug",
+      "en": "Flight"
+    },
+    {
+      "de": "Himmel",
+      "en": "Sky",
+      "fullscreen": true
+    }
+  ],
+  "refreshMinutes": 5,
+  "fetchOnOpen": true,
+  "widget": {
+    "w": 300,
+    "h": 140
+  },
+  "permissions": {
+    "net": [
+      "api.adsb.lol",
+      "api.planespotters.net",
+      "*.plnspttrs.net"
+    ]
+  },
+  "sections": [
+    {
+      "id": "area",
+      "title": {
+        "de": "Suchgebiet",
+        "en": "Search area"
+      },
+      "help": {
+        "de": "Der Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten). Abgerufen wird adsb.lol, höchstens alle zwei Minuten; Route, Bild und Foto werden nur für das nächste Flugzeug geladen.",
+        "en": "The location comes from the device settings (weather location). Data comes from adsb.lol, at most every two minutes; route and image are only loaded for the nearest aircraft."
+      },
+      "helpTitle": {
+        "de": "Woher kommen die Daten?",
+        "en": "Where does the data come from?"
+      }
+    },
+    {
+      "id": "sky",
+      "title": {
+        "de": "Himmel",
+        "en": "Sky"
+      }
+    },
+    {
+      "id": "nas",
+      "title": {
+        "de": "Bilder und Auswertung (NAS)",
+        "en": "Images and coverage (NAS)"
+      },
+      "help": {
+        "de": "Beide Seiten zeigen das Flugzeug als freigestelltes Renderbild von einem Ordner auf dem externen Speicher (NAS, in den allgemeinen Einstellungen eingerichtet): <Gruppe>.png bzw. <Gruppe>_<IATA>.png (Paket \"inkboard-flugzeuge\"). Auf der Flug-Seite sitzt darin das Airline-Logo logos/<ICAO>.bmp (85 x 20). Liegt kein passendes Renderbild bereit (oder gibt es kein NAS), zeigt die Flug-Seite das Foto von planespotters.net mit Fotografen-Nennung, sonst \"Kein Bild verfügbar\"; die Himmel-Seite lässt das Flugzeug dann ungezeichnet.\nDie Abdeckungsauswertung schreibt, solange die App angezeigt wird, eine CSV im Schema der Mac-App (Flugzeugbilder -> Auswertungen) in den Auswertungs-Ordner; \"Auswertung herunterladen\" liefert dieselbe CSV als Datei vom Gerät, auch ohne NAS.",
+        "en": "Both pages show the aircraft as a cut-out render from a folder on the external storage (NAS, set up in the general settings): <group>.png or <group>_<IATA>.png (package \"inkboard-flugzeuge\"). On the flight page the airline logo logos/<ICAO>.bmp (85 x 20) sits inside it. Without a matching render (or without a NAS) the flight page shows the photo from planespotters.net with photographer credit, otherwise \"No image available\"; the sky page leaves the aircraft undrawn.\nThe coverage report writes a CSV in the Mac app schema (aircraft images -> reports) to the report folder while the app is shown; \"Download report\" delivers the same CSV as a file from the device, even without a NAS."
+      },
+      "helpTitle": {
+        "de": "Woher kommen die Bilder?",
+        "en": "Where do the images come from?"
+      }
+    },
+    {
+      "id": "airlines",
+      "title": {
+        "de": "airlines.json",
+        "en": "airlines.json"
+      },
+      "collapsed": true,
+      "help": {
+        "de": "Fluggesellschaften, Farben und Flugzeugtypen lassen sich ohne Update ergänzen. (1) \"Datei wählen und importieren\" lädt eine airlines.json direkt vom Gerät/Browser auf die Uhr, ganz ohne NAS; \"Exportieren (Download)\" speichert den wirksamen Gesamtstand als airlines.json, als Ausgangspunkt zum Ergänzen. (2) Eine Datei airlines.json im Bilder-Ordner auf dem NAS (Felder airlines, enableLiveryGroups, aircraftTypes) lädt das Gerät alle 30 Minuten selbst; \"Von NAS neu laden\" lädt sofort. Jede Datei ersetzt die vorige komplett (höchstens 24 KB); \"Änderungen der letzten Übernahme\" lädt die Vorher/Nachher-Liste herunter.",
+        "en": "Airlines, colours and aircraft types can be extended without an update. (1) \"Choose file and import\" uploads an airlines.json straight from your device/browser to the clock, no NAS needed; \"Export (download)\" saves the effective overall state as airlines.json, a starting point to extend. (2) A file airlines.json in the image folder on the NAS (fields airlines, enableLiveryGroups, aircraftTypes) is loaded by the device every 30 minutes; \"Reload from NAS\" loads it at once. Every file replaces the previous one completely (at most 24 KB); \"Changes of the last import\" downloads the before/after list."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "radius",
+      "type": "number",
+      "min": 5,
+      "max": 100,
+      "default": 25,
+      "label": {
+        "de": "Radius (km)",
+        "en": "Radius (km)"
+      },
+      "section": "area"
+    },
+    {
+      "key": "sky",
+      "type": "select",
+      "options": [
+        "white",
+        "blue",
+        "yellow",
+        "green",
+        "black"
+      ],
+      "default": "white",
+      "optionLabels": {
+        "de": {
+          "white": "Weiß",
+          "blue": "Blau",
+          "yellow": "Gelb",
+          "green": "Grün",
+          "black": "Schwarz"
+        },
+        "en": {
+          "white": "White",
+          "blue": "Blue",
+          "yellow": "Yellow",
+          "green": "Green",
+          "black": "Black"
+        }
+      },
+      "label": {
+        "de": "Himmelsfarbe",
+        "en": "Sky colour"
+      },
+      "section": "sky"
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "default": "/inkboard/flugzeuge",
+      "label": {
+        "de": "NAS-Ordner für Bilder und Logos",
+        "en": "NAS folder for images and logos"
+      },
+      "section": "nas"
+    },
+    {
+      "key": "cov",
+      "type": "storagePath",
+      "fallback": "dir",
+      "label": {
+        "de": "NAS-Ordner für die Auswertung (leer = Bilder-Ordner)",
+        "en": "NAS folder for the report (empty = image folder)"
+      },
+      "section": "nas",
+      "action": {
+        "name": "coverage",
+        "label": {
+          "de": "Auswertung jetzt schreiben",
+          "en": "Write report now"
+        }
+      }
+    },
+    {
+      "key": "covDl",
+      "type": "select",
+      "options": [
+        "file"
+      ],
+      "default": "file",
+      "optionLabels": {
+        "de": {
+          "file": "Aktuelle Auswertung (CSV)"
+        },
+        "en": {
+          "file": "Current report (CSV)"
+        }
+      },
+      "label": {
+        "de": "Auswertung als Datei",
+        "en": "Report as a file"
+      },
+      "section": "nas",
+      "action": {
+        "name": "coverage_download",
+        "label": {
+          "de": "Auswertung herunterladen",
+          "en": "Download report"
+        },
+        "download": "covout",
+        "filename": "fr_inkboard.csv"
+      }
+    },
+    {
+      "key": "airReload",
+      "type": "select",
+      "options": [
+        "nas"
+      ],
+      "default": "nas",
+      "optionLabels": {
+        "de": {
+          "nas": "airlines.json im NAS-Ordner"
+        },
+        "en": {
+          "nas": "airlines.json in the NAS folder"
+        }
+      },
+      "label": {
+        "de": "airlines.json vom NAS",
+        "en": "airlines.json from the NAS"
+      },
+      "section": "airlines",
+      "action": {
+        "name": "airlines_reload",
+        "label": {
+          "de": "Von NAS neu laden",
+          "en": "Reload from NAS"
+        }
+      }
+    },
+    {
+      "key": "airMode",
+      "type": "select",
+      "options": [
+        "export",
+        "reset"
+      ],
+      "default": "export",
+      "optionLabels": {
+        "de": {
+          "export": "Gesamtstand als airlines_export.json auf das NAS legen",
+          "reset": "Eigene Einträge verwerfen"
+        },
+        "en": {
+          "export": "Put the overall state on the NAS as airlines_export.json",
+          "reset": "Discard own entries"
+        }
+      },
+      "label": {
+        "de": "Weitere Aktion",
+        "en": "More actions"
+      },
+      "section": "airlines",
+      "action": {
+        "name": "airlines_run",
+        "label": {
+          "de": "Ausführen",
+          "en": "Run"
+        }
+      }
+    },
+    {
+      "key": "airImp",
+      "type": "select",
+      "options": [
+        "file"
+      ],
+      "default": "file",
+      "optionLabels": {
+        "de": {
+          "file": "Datei von diesem Gerät"
+        },
+        "en": {
+          "file": "File from this device"
+        }
+      },
+      "label": {
+        "de": "airlines.json importieren",
+        "en": "Import airlines.json"
+      },
+      "section": "airlines",
+      "action": {
+        "name": "airlines_import",
+        "label": {
+          "de": "Datei wählen und importieren",
+          "en": "Choose file and import"
+        },
+        "upload": "airin",
+        "accept": ".json,application/json"
+      }
+    },
+    {
+      "key": "airExp",
+      "type": "select",
+      "options": [
+        "file"
+      ],
+      "default": "file",
+      "optionLabels": {
+        "de": {
+          "file": "Gesamtstand als Datei"
+        },
+        "en": {
+          "file": "Overall state as a file"
+        }
+      },
+      "label": {
+        "de": "airlines.json exportieren",
+        "en": "Export airlines.json"
+      },
+      "section": "airlines",
+      "action": {
+        "name": "airlines_download",
+        "label": {
+          "de": "Exportieren (Download)",
+          "en": "Export (download)"
+        },
+        "download": "airout",
+        "filename": "airlines.json"
+      }
+    },
+    {
+      "key": "airDiff",
+      "type": "select",
+      "options": [
+        "file"
+      ],
+      "default": "file",
+      "optionLabels": {
+        "de": {
+          "file": "Änderungsliste als Textdatei"
+        },
+        "en": {
+          "file": "Change list as a text file"
+        }
+      },
+      "label": {
+        "de": "Änderungen der letzten Übernahme",
+        "en": "Changes of the last import"
+      },
+      "section": "airlines",
+      "action": {
+        "name": "airlines_diff",
+        "label": {
+          "de": "Änderungen herunterladen",
+          "en": "Download changes"
+        },
+        "download": "airdiff",
+        "filename": "airlines_aenderungen.txt"
+      }
+    },
+    {
+      "key": "wAirline",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Airline und Kennzeichen zeigen",
+        "en": "Show airline and registration"
+      },
+      "group": "widget"
+    }
+  ],
+  "onClose": true
+}

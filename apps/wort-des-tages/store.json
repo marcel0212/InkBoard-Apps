@@ -1,0 +1,45 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Jeden Tag ein neues englisches Wort, auf Deutsch erklärt",
+    "en": "A new English word every day"
+  },
+  "description": {
+    "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original. Skript-Variante der eingebauten App, als Testpaket für den App Store.",
+    "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original. Script version of the built-in app, used as a test package for the app store."
+  },
+  "features": {
+    "de": [
+      "Neues Wort jeden Tag",
+      "Übersetzung ins Deutsche",
+      "Folgt der Display-Sprache",
+      "Beispielsatz abschaltbar"
+    ],
+    "en": [
+      "A new word every day",
+      "German translation",
+      "Follows the display language",
+      "Example sentence can be turned off"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "App-Seite auf dem Display",
+        "en": "App page on the display"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

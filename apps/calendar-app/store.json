@@ -1,0 +1,135 @@
+{
+  "category": "time",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Termine aus deinen Kalendern: Tag, Woche, Monat",
+    "en": "Events from your calendars: day, week, month"
+  },
+  "description": {
+    "de": "Zeigt bis zu vier Kalender (ICS-Link, z. B. Google, Outlook, iCloud) in einer Ansicht. Die Tagesansicht listet die Termine von heute mit Uhrzeit, Dauer, Ort und Notizen, die Wochenansicht zeigt ein Zeitraster von 6 bis 22 Uhr mit einer Linie für die aktuelle Uhrzeit, die Monatsansicht ein Raster mit farbigen Punkten je Kalender. Jede Quelle hat Name, Farbe (Blau, Grün, Gelb, Rot) und einen Schalter. Geburtstage lassen sich auf die Tagesansicht beschränken. Wiederkehrende Termine, ausgenommene Tage (EXDATE), geänderte Einzeltermine und Zeitzonen werden berücksichtigt. Drei Stile (Slate, Bento, Nano) je Seite und ein Dashboard-Widget mit den nächsten Terminen gehören dazu. Skript-Variante der eingebauten Kalender-App.",
+    "en": "Shows up to four calendars (ICS link, e.g. Google, Outlook, iCloud) in one view. The day view lists today's events with time, duration, location and notes, the week view shows a time grid from 6 to 22 o'clock with a line for the current time, the month view a grid with colored dots per calendar. Each source has a name, a color (blue, green, yellow, red) and a switch. Birthdays can be limited to the day view. Recurring events, excluded days (EXDATE), changed single occurrences and time zones are taken into account. Three styles (Slate, Bento, Nano) per page and a dashboard widget with the next events are included. Script version of the built-in calendar app."
+  },
+  "features": {
+    "de": [
+      "Bis zu vier ICS-Kalender mit eigener Farbe",
+      "Tag, Woche (Zeitraster mit Jetzt-Linie) und Monat",
+      "Wiederholungen, EXDATE, geänderte Einzeltermine, Zeitzonen",
+      "Drei Stile je Seite und Dashboard-Widget"
+    ],
+    "en": [
+      "Up to four ICS calendars, each with its own color",
+      "Day, week (time grid with a now line) and month",
+      "Recurrences, EXDATE, changed occurrences, time zones",
+      "Three styles per page and a dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-day.svg",
+      "caption": {
+        "de": "Tag: Slate",
+        "en": "Day: Slate"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-day-cards.svg",
+      "caption": {
+        "de": "Tag: Bento",
+        "en": "Day: Bento"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-day-compact.svg",
+      "caption": {
+        "de": "Tag: Nano",
+        "en": "Day: Nano"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-week.svg",
+      "caption": {
+        "de": "Woche: Slate",
+        "en": "Week: Slate"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-week-cards.svg",
+      "caption": {
+        "de": "Woche: Bento",
+        "en": "Week: Bento"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-week-compact.svg",
+      "caption": {
+        "de": "Woche: Nano",
+        "en": "Week: Nano"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-month.svg",
+      "caption": {
+        "de": "Monat: Slate",
+        "en": "Month: Slate"
+      },
+      "style": "flat",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-month-cards.svg",
+      "caption": {
+        "de": "Monat: Bento",
+        "en": "Month: Bento"
+      },
+      "style": "cards",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-month-compact.svg",
+      "caption": {
+        "de": "Monat: Nano",
+        "en": "Month: Nano"
+      },
+      "style": "compact",
+      "page": 2
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget: nächste Termine",
+        "en": "Widget: next events"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: kompakte Liste",
+        "en": "Widget: compact list"
+      }
+    }
+  ]
+}

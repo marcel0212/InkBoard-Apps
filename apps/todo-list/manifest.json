@@ -1,0 +1,587 @@
+{
+  "id": "todo-list",
+  "name": {
+    "de": "Aufgaben",
+    "en": "Tasks"
+  },
+  "version": "1.1.8",
+  "apiLevel": 6,
+  "pages": [
+    {
+      "de": "Aufgaben",
+      "en": "Tasks"
+    }
+  ],
+  "refreshMinutes": 15,
+  "widget": {
+    "w": 320,
+    "h": 180
+  },
+  "permissions": {
+    "net": [
+      "caldav.icloud.com",
+      "*.icloud.com",
+      "api.todoist.com"
+    ],
+    "netFrom": [
+      "a_url",
+      "b_url",
+      "c_url"
+    ]
+  },
+  "sections": [
+    {
+      "id": "source1",
+      "title": {
+        "de": "Quelle 1",
+        "en": "Source 1"
+      },
+      "help": {
+        "de": "iCloud: Auf account.apple.com unter „Anmeldung und Sicherheit“ ein App-spezifisches Passwort erzeugen und hier eintragen (nicht das Apple-ID-Passwort). Benutzername ist die Apple-ID.\nNextcloud/CalDAV: App-Passwort aus den Sicherheitseinstellungen des Servers verwenden.\nTodoist: Token unter Todoist → Einstellungen → Integrationen → Entwickler kopieren.",
+        "en": "iCloud: create an app-specific password at account.apple.com under Sign-In and Security and enter it here (not your Apple ID password). The user name is your Apple ID.\nNextcloud/CalDAV: use an app password from the server's security settings.\nTodoist: copy the token from Todoist → Settings → Integrations → Developer."
+      },
+      "helpTitle": {
+        "de": "Zugangsdaten besorgen",
+        "en": "Getting the credentials"
+      },
+      "helpUrl": "https://account.apple.com"
+    },
+    {
+      "id": "source2",
+      "title": {
+        "de": "Quelle 2",
+        "en": "Source 2"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "source3",
+      "title": {
+        "de": "Quelle 3",
+        "en": "Source 3"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "display",
+      "title": {
+        "de": "Anzeige",
+        "en": "Display"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "a_type",
+      "type": "select",
+      "options": [
+        "off",
+        "icloud",
+        "nextcloud",
+        "generic",
+        "todoist"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "icloud": "iCloud-Erinnerungen",
+          "nextcloud": "Nextcloud",
+          "generic": "Anderer CalDAV-Server",
+          "todoist": "Todoist"
+        },
+        "en": {
+          "off": "Off",
+          "icloud": "iCloud Reminders",
+          "nextcloud": "Nextcloud",
+          "generic": "Other CalDAV server",
+          "todoist": "Todoist"
+        }
+      },
+      "label": {
+        "de": "Quelle 1: Dienst",
+        "en": "Source 1: service"
+      },
+      "section": "source1"
+    },
+    {
+      "key": "a_url",
+      "type": "url",
+      "label": {
+        "de": "Serveradresse",
+        "en": "Server address"
+      },
+      "showIf": {
+        "key": "a_type",
+        "in": [
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source1"
+    },
+    {
+      "key": "a_user",
+      "type": "text",
+      "maxLen": 100,
+      "label": {
+        "de": "Benutzername / Apple-ID",
+        "en": "User name / Apple ID"
+      },
+      "showIf": {
+        "key": "a_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source1"
+    },
+    {
+      "key": "a_secret",
+      "type": "password",
+      "maxLen": 120,
+      "label": {
+        "de": "Passwort / Token",
+        "en": "Password / token"
+      },
+      "showIf": {
+        "key": "a_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "action": {
+        "name": "connect_a",
+        "label": {
+          "de": "Verbinden und Listen laden",
+          "en": "Connect and load lists"
+        },
+        "fills": "a_list"
+      },
+      "section": "source1"
+    },
+    {
+      "key": "a_list",
+      "type": "text",
+      "maxLen": 60,
+      "label": {
+        "de": "Liste / Projekt",
+        "en": "List / project"
+      },
+      "showIf": {
+        "key": "a_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source1"
+    },
+    {
+      "key": "a_color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "blue",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "showIf": {
+        "key": "a_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source1"
+    },
+    {
+      "key": "b_type",
+      "type": "select",
+      "options": [
+        "off",
+        "icloud",
+        "nextcloud",
+        "generic",
+        "todoist"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "icloud": "iCloud-Erinnerungen",
+          "nextcloud": "Nextcloud",
+          "generic": "Anderer CalDAV-Server",
+          "todoist": "Todoist"
+        },
+        "en": {
+          "off": "Off",
+          "icloud": "iCloud Reminders",
+          "nextcloud": "Nextcloud",
+          "generic": "Other CalDAV server",
+          "todoist": "Todoist"
+        }
+      },
+      "label": {
+        "de": "Quelle 2: Dienst",
+        "en": "Source 2: service"
+      },
+      "section": "source2"
+    },
+    {
+      "key": "b_url",
+      "type": "url",
+      "label": {
+        "de": "Serveradresse",
+        "en": "Server address"
+      },
+      "showIf": {
+        "key": "b_type",
+        "in": [
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source2"
+    },
+    {
+      "key": "b_user",
+      "type": "text",
+      "maxLen": 100,
+      "label": {
+        "de": "Benutzername / Apple-ID",
+        "en": "User name / Apple ID"
+      },
+      "showIf": {
+        "key": "b_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source2"
+    },
+    {
+      "key": "b_secret",
+      "type": "password",
+      "maxLen": 120,
+      "label": {
+        "de": "Passwort / Token",
+        "en": "Password / token"
+      },
+      "showIf": {
+        "key": "b_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "action": {
+        "name": "connect_b",
+        "label": {
+          "de": "Verbinden und Listen laden",
+          "en": "Connect and load lists"
+        },
+        "fills": "b_list"
+      },
+      "section": "source2"
+    },
+    {
+      "key": "b_list",
+      "type": "text",
+      "maxLen": 60,
+      "label": {
+        "de": "Liste / Projekt",
+        "en": "List / project"
+      },
+      "showIf": {
+        "key": "b_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source2"
+    },
+    {
+      "key": "b_color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "green",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "showIf": {
+        "key": "b_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source2"
+    },
+    {
+      "key": "c_type",
+      "type": "select",
+      "options": [
+        "off",
+        "icloud",
+        "nextcloud",
+        "generic",
+        "todoist"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "icloud": "iCloud-Erinnerungen",
+          "nextcloud": "Nextcloud",
+          "generic": "Anderer CalDAV-Server",
+          "todoist": "Todoist"
+        },
+        "en": {
+          "off": "Off",
+          "icloud": "iCloud Reminders",
+          "nextcloud": "Nextcloud",
+          "generic": "Other CalDAV server",
+          "todoist": "Todoist"
+        }
+      },
+      "label": {
+        "de": "Quelle 3: Dienst",
+        "en": "Source 3: service"
+      },
+      "section": "source3"
+    },
+    {
+      "key": "c_url",
+      "type": "url",
+      "label": {
+        "de": "Serveradresse",
+        "en": "Server address"
+      },
+      "showIf": {
+        "key": "c_type",
+        "in": [
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source3"
+    },
+    {
+      "key": "c_user",
+      "type": "text",
+      "maxLen": 100,
+      "label": {
+        "de": "Benutzername / Apple-ID",
+        "en": "User name / Apple ID"
+      },
+      "showIf": {
+        "key": "c_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic"
+        ]
+      },
+      "section": "source3"
+    },
+    {
+      "key": "c_secret",
+      "type": "password",
+      "maxLen": 120,
+      "label": {
+        "de": "Passwort / Token",
+        "en": "Password / token"
+      },
+      "showIf": {
+        "key": "c_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "action": {
+        "name": "connect_c",
+        "label": {
+          "de": "Verbinden und Listen laden",
+          "en": "Connect and load lists"
+        },
+        "fills": "c_list"
+      },
+      "section": "source3"
+    },
+    {
+      "key": "c_list",
+      "type": "text",
+      "maxLen": 60,
+      "label": {
+        "de": "Liste / Projekt",
+        "en": "List / project"
+      },
+      "showIf": {
+        "key": "c_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source3"
+    },
+    {
+      "key": "c_color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "yellow",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "showIf": {
+        "key": "c_type",
+        "in": [
+          "icloud",
+          "nextcloud",
+          "generic",
+          "todoist"
+        ]
+      },
+      "section": "source3"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Detailkarten)",
+          "flat": "Slate (eine Zeile)",
+          "compact": "Nano (kompakt)"
+        },
+        "en": {
+          "cards": "Bento (detail cards)",
+          "flat": "Slate (one line)",
+          "compact": "Nano (compact)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    },
+    {
+      "key": "showDone",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Erledigte Aufgaben anzeigen (CalDAV)",
+        "en": "Show completed tasks (CalDAV)"
+      },
+      "section": "display"
+    },
+    {
+      "key": "wDue",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Fälligkeit anzeigen",
+        "en": "Show due date"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wPrio",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Priorität farbig",
+        "en": "Color by priority"
+      },
+      "group": "widget"
+    }
+  ]
+}

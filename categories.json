@@ -1,0 +1,11 @@
+{
+  "categories": [
+    {"id": "info", "name": {"de": "Information", "en": "Information"}},
+    {"id": "organize", "name": {"de": "Organisation", "en": "Organization"}},
+    {"id": "home", "name": {"de": "Zuhause", "en": "Home"}},
+    {"id": "time", "name": {"de": "Zeit & Datum", "en": "Time & date"}},
+    {"id": "fun", "name": {"de": "Freizeit", "en": "Leisure"}},
+    {"id": "media", "name": {"de": "Medien", "en": "Media"}}
+  ],
+  "featured": ["countdown", "wort-des-tages"]
+}

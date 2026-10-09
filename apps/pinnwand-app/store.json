@@ -1,0 +1,58 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Die letzte Familien-Nachricht als angeheftete Notiz",
+    "en": "The latest family message as a pinned note"
+  },
+  "description": {
+    "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem NAS, sofortige Anzeige beim Eintreffen) bleibt in der Firmware. Skript-Variante der eingebauten App: Aussehen und Einstellungen wie dort, ohne Stilauswahl und ohne Widget.",
+    "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the NAS, instant display on arrival) stays in the firmware. Script version of the built-in app: same look and settings, without a style choice and without a widget."
+  },
+  "features": {
+    "de": [
+      "Zettel mit Stecknadel, Absender-Chip und Uhrzeit",
+      "Große Schrift, bei langen Nachrichten kleiner mit Umbruch",
+      "Nachricht anpinnen: Absender, Text und Zielgerät in den Einstellungen",
+      "Ordner auf dem NAS für schlafende Geräte",
+      "Nachrichtendienst bleibt in der Firmware"
+    ],
+    "en": [
+      "Note with pin, sender chip and time",
+      "Large type, smaller with wrapping for long messages",
+      "Pin a message: sender, text and target device in the settings",
+      "Folder on the NAS for sleeping devices",
+      "Messaging service stays in the firmware"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-note.svg",
+      "caption": {
+        "de": "Nachricht von heute",
+        "en": "Message from today"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-long.svg",
+      "caption": {
+        "de": "Lange Nachricht in kleinerer Schrift",
+        "en": "Long message in smaller type"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-empty.svg",
+      "caption": {
+        "de": "Noch keine Nachricht",
+        "en": "No message yet"
+      },
+      "page": 0
+    }
+  ]
+}

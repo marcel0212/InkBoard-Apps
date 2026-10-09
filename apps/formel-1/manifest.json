@@ -1,0 +1,106 @@
+{
+  "id": "formel-1",
+  "name": {
+    "de": "Formel 1",
+    "en": "Formula 1"
+  },
+  "version": "1.0.0",
+  "apiLevel": 11,
+  "pages": [
+    {
+      "de": "Nächstes Rennen",
+      "en": "Next race"
+    },
+    {
+      "de": "WM-Wertung",
+      "en": "Standings"
+    },
+    {
+      "de": "Letzte Session",
+      "en": "Last session"
+    }
+  ],
+  "refreshMinutes": 30,
+  "widget": {
+    "w": 280,
+    "h": 110
+  },
+  "permissions": {
+    "net": [
+      "api.jolpi.ca",
+      "api.openf1.org"
+    ]
+  },
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Zeilen)",
+          "compact": "Nano (Tabelle)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (rows)",
+          "compact": "Nano (table)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento zeigt Kacheln, Slate Zeilen, Nano eine kompakte Tabelle. Die Streckenlayouts und der Zeitplan gibt es in allen drei Darstellungen.",
+        "en": "Bento shows tiles, Slate rows, Nano a compact table. Track layouts and the schedule are available in all three layouts."
+      }
+    },
+    {
+      "key": "wTrack",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Streckenlayout statt Zielflagge",
+        "en": "Track layout instead of checkered flag"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wLast",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Letztes Rennen zusätzlich",
+        "en": "Add last race"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wLocality",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Ort anzeigen",
+        "en": "Show location"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Kompakt",
+        "en": "Compact"
+      },
+      "group": "widget"
+    }
+  ]
+}

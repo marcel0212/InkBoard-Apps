@@ -1,0 +1,291 @@
+{
+  "id": "stocks-crypto",
+  "name": {
+    "de": "Aktien & Krypto",
+    "en": "Stocks & Crypto"
+  },
+  "version": "1.0.7",
+  "apiLevel": 7,
+  "pages": [
+    {
+      "de": "Aktien",
+      "en": "Stocks"
+    },
+    {
+      "de": "Krypto",
+      "en": "Crypto"
+    }
+  ],
+  "refreshMinutes": 15,
+  "widget": {
+    "w": 320,
+    "h": 180
+  },
+  "permissions": {
+    "net": [
+      "api.twelvedata.com"
+    ]
+  },
+  "sections": [
+    {
+      "id": "access",
+      "title": {
+        "de": "Twelve-Data-Zugang",
+        "en": "Twelve Data access"
+      },
+      "help": {
+        "de": "1. Auf twelvedata.com kostenlos registrieren\n2. Im Dashboard den API-Key kopieren und hier einfügen\nDer kostenlose Tarif erlaubt 8 Abrufe pro Minute und etwa 800 pro Tag. Dabei holt das Paket pro Abruf nur einen Teil der Symbole (jedes kostet einen Abruf für den Kurs und einen für den Verlauf) und arbeitet die Liste nach und nach durch. Mit einem bezahlten Tarif werden alle Symbole bei jedem Abruf aktualisiert.",
+        "en": "1. Sign up for free at twelvedata.com\n2. Copy the API key from the dashboard and paste it here\nThe free plan allows 8 requests per minute and about 800 per day. The package then updates only some symbols per fetch (each costs one request for the quote and one for the history) and works through the list step by step. On a paid plan all symbols update on every fetch."
+      },
+      "helpTitle": {
+        "de": "API-Key holen",
+        "en": "Get an API key"
+      },
+      "helpUrl": "https://twelvedata.com/register"
+    },
+    {
+      "id": "stocks",
+      "title": {
+        "de": "Aktien & Indizes",
+        "en": "Stocks & indices"
+      },
+      "help": {
+        "de": "Je Eintrag ein Symbol, z. B. AAPL, SAP oder DAX. Mit eigenem Namen: Apple=AAPL. Bis zu 9 Symbole je Seite. Leer = DAX, S&P 500, Apple, Microsoft, SAP.",
+        "en": "One symbol per entry, e.g. AAPL, SAP or DAX. With your own name: Apple=AAPL. Up to 9 symbols per page. Empty = DAX, S&P 500, Apple, Microsoft, SAP."
+      }
+    },
+    {
+      "id": "crypto",
+      "title": {
+        "de": "Kryptowährungen",
+        "en": "Cryptocurrencies"
+      },
+      "help": {
+        "de": "Je Eintrag ein Paar, z. B. BTC/EUR oder ETH/USD. Ohne Währung wird /EUR ergänzt (BTC wird zu BTC/EUR). Leer = Bitcoin, Ethereum, Solana.",
+        "en": "One pair per entry, e.g. BTC/EUR or ETH/USD. Without a currency /EUR is added (BTC becomes BTC/EUR). Empty = Bitcoin, Ethereum, Solana."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "apiKey",
+      "type": "password",
+      "maxLen": 64,
+      "label": {
+        "de": "Twelve-Data-API-Key",
+        "en": "Twelve Data API key"
+      },
+      "section": "access"
+    },
+    {
+      "key": "plan",
+      "type": "select",
+      "options": [
+        "free",
+        "paid"
+      ],
+      "default": "free",
+      "optionLabels": {
+        "de": {
+          "free": "Kostenlos (8 Abrufe/Minute)",
+          "paid": "Bezahlt (mehr Abrufe)"
+        },
+        "en": {
+          "free": "Free (8 requests/minute)",
+          "paid": "Paid (more requests)"
+        }
+      },
+      "label": {
+        "de": "Twelve-Data-Tarif",
+        "en": "Twelve Data plan"
+      },
+      "section": "access"
+    },
+    {
+      "key": "stocks",
+      "type": "list",
+      "label": {
+        "de": "Aktien und Indizes",
+        "en": "Stocks and indices"
+      },
+      "suggest": [
+        "DAX",
+        "S&P 500=SPX",
+        "Dow Jones=DJI",
+        "Nasdaq=IXIC",
+        "Apple=AAPL",
+        "Microsoft=MSFT",
+        "Alphabet=GOOGL",
+        "Amazon=AMZN",
+        "Tesla=TSLA",
+        "Nvidia=NVDA",
+        "Meta=META",
+        "SAP=SAP",
+        "Siemens=SIE",
+        "Volkswagen=VOW3",
+        "Allianz=ALV",
+        "BMW=BMW",
+        "Netflix=NFLX",
+        "AMD=AMD",
+        "Disney=DIS",
+        "Coca-Cola=KO"
+      ],
+      "section": "stocks"
+    },
+    {
+      "key": "focusStock",
+      "type": "text",
+      "maxLen": 16,
+      "label": {
+        "de": "Fokus-Aktie (immer zuerst)",
+        "en": "Focus stock (always first)"
+      },
+      "suggest": [
+        "DAX",
+        "S&P 500=SPX",
+        "Dow Jones=DJI",
+        "Nasdaq=IXIC",
+        "Apple=AAPL",
+        "Microsoft=MSFT",
+        "Alphabet=GOOGL",
+        "Amazon=AMZN",
+        "Tesla=TSLA",
+        "Nvidia=NVDA",
+        "Meta=META",
+        "SAP=SAP",
+        "Siemens=SIE",
+        "Volkswagen=VOW3",
+        "Allianz=ALV",
+        "BMW=BMW",
+        "Netflix=NFLX",
+        "AMD=AMD",
+        "Disney=DIS",
+        "Coca-Cola=KO"
+      ],
+      "section": "stocks"
+    },
+    {
+      "key": "crypto",
+      "type": "list",
+      "label": {
+        "de": "Kryptowährungen",
+        "en": "Cryptocurrencies"
+      },
+      "suggest": [
+        "Bitcoin=BTC/EUR",
+        "Ethereum=ETH/EUR",
+        "Solana=SOL/EUR",
+        "BNB=BNB/EUR",
+        "XRP=XRP/EUR",
+        "Cardano=ADA/EUR",
+        "Dogecoin=DOGE/EUR",
+        "Polkadot=DOT/EUR",
+        "Chainlink=LINK/EUR",
+        "Litecoin=LTC/EUR"
+      ],
+      "section": "crypto"
+    },
+    {
+      "key": "focusCrypto",
+      "type": "text",
+      "maxLen": 16,
+      "label": {
+        "de": "Fokus-Kryptowährung (immer zuerst)",
+        "en": "Focus cryptocurrency (always first)"
+      },
+      "suggest": [
+        "Bitcoin=BTC/EUR",
+        "Ethereum=ETH/EUR",
+        "Solana=SOL/EUR",
+        "BNB=BNB/EUR",
+        "XRP=XRP/EUR",
+        "Cardano=ADA/EUR",
+        "Dogecoin=DOGE/EUR",
+        "Polkadot=DOT/EUR",
+        "Chainlink=LINK/EUR",
+        "Litecoin=LTC/EUR"
+      ],
+      "section": "crypto"
+    },
+    {
+      "key": "spark",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Kursverlauf laden (Sparklines)",
+        "en": "Load price history (sparklines)"
+      },
+      "section": "access"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Zeilen)",
+          "compact": "Nano (Tabelle)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (rows)",
+          "compact": "Nano (table)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    },
+    {
+      "key": "wKind",
+      "type": "select",
+      "options": [
+        "stocks",
+        "crypto"
+      ],
+      "default": "stocks",
+      "optionLabels": {
+        "de": {
+          "stocks": "Aktien",
+          "crypto": "Krypto"
+        },
+        "en": {
+          "stocks": "Stocks",
+          "crypto": "Crypto"
+        }
+      },
+      "label": {
+        "de": "Seite",
+        "en": "Page"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wSpark",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Kursverlauf anzeigen",
+        "en": "Show sparkline"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Kompakt",
+        "en": "Compact"
+      },
+      "group": "widget"
+    }
+  ]
+}

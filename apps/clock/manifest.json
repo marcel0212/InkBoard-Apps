@@ -1,0 +1,53 @@
+{
+  "id": "clock",
+  "name": {
+    "de": "Uhr",
+    "en": "Clock"
+  },
+  "version": "1.0.2",
+  "apiLevel": 2,
+  "standard": true,
+  "pages": 1,
+  "refreshMinutes": 1,
+  "widget": {
+    "w": 320,
+    "h": 200
+  },
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "bento",
+        "slate",
+        "nano"
+      ],
+      "default": "bento",
+      "optionLabels": {
+        "de": {
+          "bento": "Bento",
+          "slate": "Slate",
+          "nano": "Nano"
+        },
+        "en": {
+          "bento": "Bento",
+          "slate": "Slate",
+          "nano": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil der App-Seite",
+        "en": "App page style"
+      }
+    },
+    {
+      "key": "showDate",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Datum im Widget anzeigen",
+        "en": "Show date in widget"
+      }
+    }
+  ]
+}

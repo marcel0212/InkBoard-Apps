@@ -1,0 +1,83 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Flugzeuge über dir live, mit Route und Flugzeugbild",
+    "en": "Aircraft above you, live, with route and aircraft image"
+  },
+  "description": {
+    "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher (NAS), mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein NAS eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner wie bei der eingebauten App. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei im Studio und in der App, oder vom NAS neu laden) und eine Abdeckungsauswertung als CSV (auf dem NAS oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Skript-Variante der eingebauten App; benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
+    "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage (NAS), with the airline logo in the corner of the image box; if nothing suitable is there (or no NAS is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder as in the built-in app. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the NAS) and a coverage report as CSV (on the NAS or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Script version of the built-in app; needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
+  },
+  "features": {
+    "de": [
+      "Nächstes Flugzeug live von adsb.lol, ohne Zugangsdaten",
+      "Flug-Seite: Renderbild vom NAS mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
+      "Seite Himmel vollflächig mit freigestellten Renderbildern vom NAS",
+      "airlines.json importieren/exportieren/vom NAS neu laden (Studio, App oder NAS) mit Änderungsliste, Abdeckungsauswertung als CSV (NAS oder Download)",
+      "Widget mit nächstem Flugzeug, optional Airline und Kennzeichen"
+    ],
+    "en": [
+      "Nearest aircraft live from adsb.lol, no credentials",
+      "Flight page: render from the NAS with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
+      "Sky page full-screen with cut-out renders from the NAS",
+      "Import/export/reload airlines.json (Studio, app or NAS) with a change list, coverage report as CSV (NAS or download)",
+      "Widget with the nearest aircraft, optionally airline and registration"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-flight.svg",
+      "caption": {
+        "de": "Flug: Renderbild vom NAS mit Logo-Platzhalter, Route und Daten",
+        "en": "Flight: render from the NAS with logo placeholder, route and data"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-flight-nophoto.svg",
+      "caption": {
+        "de": "Flug ohne Renderbild und ohne Foto: Hinweis „Kein Bild verfügbar“",
+        "en": "Flight without render and photo: “No image available” note"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-sky.svg",
+      "caption": {
+        "de": "Himmel (vollflächig): die drei nächsten Flugzeuge als Renderbilder",
+        "en": "Sky (full-screen): the three nearest aircraft as renders"
+      },
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-sky-blue.svg",
+      "caption": {
+        "de": "Himmel in Blau",
+        "en": "Sky in blue"
+      },
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget „Nächster Flug“ mit Airline und Kennzeichen",
+        "en": "“Next flight” widget with airline and registration"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-small.svg",
+      "caption": {
+        "de": "Widget „Nächster Flug“, flache Bauform",
+        "en": "“Next flight” widget, low variant"
+      }
+    }
+  ]
+}

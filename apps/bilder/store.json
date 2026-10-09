@@ -1,0 +1,58 @@
+{
+  "category": "media",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Diashow mit den Fotos von deinem NAS",
+    "en": "Slideshow of the photos on your NAS"
+  },
+  "description": {
+    "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher (NAS) als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in den App-Einstellungen im Studio: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Skript-Variante der eingebauten App: gleiche Anzeige, dazu Reihenfolge und Rahmen als Einstellung, ohne Widget.",
+    "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage (NAS) as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in the app settings in Studio: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures. Script version of the built-in app: same display, plus order and frame as settings, without a widget."
+  },
+  "features": {
+    "de": [
+      "Vollbild-Diashow vom NAS, JPEG, PNG und BMP",
+      "Auch große Fotos (kein 200-KB-Limit)",
+      "Reihenfolge nach Name oder zufällig, dünner Rahmen",
+      "Drehen blättert, Pille zeigt die Position",
+      "Hochladen und Verwalten im Studio"
+    ],
+    "en": [
+      "Full-screen slideshow from the NAS, JPEG, PNG and BMP",
+      "Large photos too (no 200 KB limit)",
+      "Order by name or random, thin frame",
+      "Turning browses, a pill shows the position",
+      "Upload and manage in Studio"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-slideshow.svg",
+      "caption": {
+        "de": "Diashow mit Bild vom NAS",
+        "en": "Slideshow with a picture from the NAS"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-browse.svg",
+      "caption": {
+        "de": "Blättern: Position im Bildordner",
+        "en": "Browsing: position in the picture folder"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-empty.svg",
+      "caption": {
+        "de": "Noch keine Bilder im Ordner",
+        "en": "No pictures in the folder yet"
+      },
+      "page": 0
+    }
+  ]
+}

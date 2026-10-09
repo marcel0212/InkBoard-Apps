@@ -1,0 +1,618 @@
+{
+  "id": "calendar-app",
+  "name": {
+    "de": "Kalender",
+    "en": "Calendar"
+  },
+  "version": "1.1.0",
+  "apiLevel": 20,
+  "pages": [
+    {
+      "de": "Tag",
+      "en": "Day",
+      "ownDate": true
+    },
+    {
+      "de": "Woche",
+      "en": "Week",
+      "ownDate": true
+    },
+    {
+      "de": "Monat",
+      "en": "Month",
+      "ownDate": true
+    }
+  ],
+  "refreshMinutes": 15,
+  "widget": {
+    "w": 340,
+    "h": 200,
+    "relevantWhen": {
+      "key": "lastEnd",
+      "mode": "future"
+    }
+  },
+  "permissions": {
+    "net": [],
+    "netFrom": [
+      "src1Url",
+      "src2Url",
+      "src3Url",
+      "src4Url"
+    ]
+  },
+  "sections": [
+    {
+      "id": "src1",
+      "title": {
+        "de": "Quelle 1",
+        "en": "Source 1"
+      },
+      "help": {
+        "de": "Pro Quelle: ein Kalender-Link (ICS, iCal), eine Farbe und ein Schalter.\nGoogle Kalender: Einstellungen > Kalender integrieren > „Geheime Adresse im iCal-Format“.\nOutlook.com: Kalender > Freigeben > Veröffentlichen > ICS-Link.\niCloud: Kalender freigeben > „Öffentlicher Kalender“ (webcal:// wird automatisch zu https://).\nDer Link muss ohne Anmeldung abrufbar sein. Er ist geheim: nicht weitergeben.",
+        "en": "Per source: a calendar link (ICS, iCal), a color and a switch.\nGoogle Calendar: Settings > Integrate calendar > “Secret address in iCal format”.\nOutlook.com: Calendar > Share > Publish > ICS link.\niCloud: Share calendar > “Public calendar” (webcal:// becomes https:// automatically).\nThe link must work without signing in. It is secret: do not share it."
+      },
+      "helpTitle": {
+        "de": "Kalender-Link holen",
+        "en": "Get the calendar link"
+      }
+    },
+    {
+      "id": "src2",
+      "title": {
+        "de": "Quelle 2",
+        "en": "Source 2"
+      }
+    },
+    {
+      "id": "src3",
+      "title": {
+        "de": "Quelle 3",
+        "en": "Source 3"
+      }
+    },
+    {
+      "id": "src4",
+      "title": {
+        "de": "Quelle 4",
+        "en": "Source 4"
+      }
+    },
+    {
+      "id": "check",
+      "title": {
+        "de": "Quellen prüfen",
+        "en": "Check sources"
+      }
+    },
+    {
+      "id": "day",
+      "title": {
+        "de": "Tagesansicht",
+        "en": "Day view"
+      }
+    },
+    {
+      "id": "week",
+      "title": {
+        "de": "Wochen- und Monatsansicht",
+        "en": "Week and month view"
+      }
+    },
+    {
+      "id": "layout",
+      "title": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "src1Name",
+      "type": "text",
+      "maxLen": 24,
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "src1"
+    },
+    {
+      "key": "src1Color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "blue",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "section": "src1",
+      "swatches": {
+        "blue": "#2f5aa8",
+        "green": "#2f8f4e",
+        "yellow": "#e8b923",
+        "red": "#c2483f"
+      }
+    },
+    {
+      "key": "src1Url",
+      "type": "url",
+      "label": {
+        "de": "Kalender-Link (ICS)",
+        "en": "Calendar link (ICS)"
+      },
+      "section": "src1",
+      "action": {
+        "name": "check_1",
+        "label": {
+          "de": "Quelle prüfen",
+          "en": "Check source"
+        }
+      }
+    },
+    {
+      "key": "src1On",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Aktiv",
+        "en": "Active"
+      },
+      "section": "src1"
+    },
+    {
+      "key": "src2Name",
+      "type": "text",
+      "maxLen": 24,
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "src2"
+    },
+    {
+      "key": "src2Color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "green",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "section": "src2",
+      "swatches": {
+        "blue": "#2f5aa8",
+        "green": "#2f8f4e",
+        "yellow": "#e8b923",
+        "red": "#c2483f"
+      }
+    },
+    {
+      "key": "src2Url",
+      "type": "url",
+      "label": {
+        "de": "Kalender-Link (ICS)",
+        "en": "Calendar link (ICS)"
+      },
+      "section": "src2",
+      "action": {
+        "name": "check_2",
+        "label": {
+          "de": "Quelle prüfen",
+          "en": "Check source"
+        }
+      }
+    },
+    {
+      "key": "src2On",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Aktiv",
+        "en": "Active"
+      },
+      "section": "src2"
+    },
+    {
+      "key": "src3Name",
+      "type": "text",
+      "maxLen": 24,
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "src3"
+    },
+    {
+      "key": "src3Color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "yellow",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "section": "src3",
+      "swatches": {
+        "blue": "#2f5aa8",
+        "green": "#2f8f4e",
+        "yellow": "#e8b923",
+        "red": "#c2483f"
+      }
+    },
+    {
+      "key": "src3Url",
+      "type": "url",
+      "label": {
+        "de": "Kalender-Link (ICS)",
+        "en": "Calendar link (ICS)"
+      },
+      "section": "src3",
+      "action": {
+        "name": "check_3",
+        "label": {
+          "de": "Quelle prüfen",
+          "en": "Check source"
+        }
+      }
+    },
+    {
+      "key": "src3On",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Aktiv",
+        "en": "Active"
+      },
+      "section": "src3"
+    },
+    {
+      "key": "src4Name",
+      "type": "text",
+      "maxLen": 24,
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "src4"
+    },
+    {
+      "key": "src4Color",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "red",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "yellow": "Yellow",
+          "red": "Red"
+        }
+      },
+      "label": {
+        "de": "Farbe",
+        "en": "Color"
+      },
+      "section": "src4",
+      "swatches": {
+        "blue": "#2f5aa8",
+        "green": "#2f8f4e",
+        "yellow": "#e8b923",
+        "red": "#c2483f"
+      }
+    },
+    {
+      "key": "src4Url",
+      "type": "url",
+      "label": {
+        "de": "Kalender-Link (ICS)",
+        "en": "Calendar link (ICS)"
+      },
+      "section": "src4",
+      "action": {
+        "name": "check_4",
+        "label": {
+          "de": "Quelle prüfen",
+          "en": "Check source"
+        }
+      }
+    },
+    {
+      "key": "src4On",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Aktiv",
+        "en": "Active"
+      },
+      "section": "src4"
+    },
+    {
+      "key": "checkAll",
+      "type": "info",
+      "label": {
+        "de": "Alle Quellen",
+        "en": "All sources"
+      },
+      "text": {
+        "de": "Alle aktiven Quellen werden abgerufen.",
+        "en": "All active sources are fetched."
+      },
+      "empty": {
+        "de": "Ruft alle aktiven Quellen ab und zeigt je Quelle: in Ordnung, Fehler, Zahl der Termine, ob abgeschnitten.",
+        "en": "Fetches all active sources and shows per source: OK, error, number of events, whether truncated."
+      },
+      "action": {
+        "name": "check_all",
+        "label": {
+          "de": "Alle Quellen prüfen",
+          "en": "Check all sources"
+        }
+      },
+      "section": "check"
+    },
+    {
+      "key": "dayName",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Titel zeigen",
+        "en": "Show title"
+      },
+      "section": "day"
+    },
+    {
+      "key": "dayDur",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Dauer zeigen",
+        "en": "Show duration"
+      },
+      "section": "day"
+    },
+    {
+      "key": "dayLoc",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Ort zeigen",
+        "en": "Show location"
+      },
+      "section": "day"
+    },
+    {
+      "key": "dayNotes",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Notizen zeigen",
+        "en": "Show notes"
+      },
+      "section": "day"
+    },
+    {
+      "key": "wkName",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Titel im Wochenraster",
+        "en": "Title in the week grid"
+      },
+      "section": "week"
+    },
+    {
+      "key": "wkLoc",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Ort im Wochenraster",
+        "en": "Location in the week grid"
+      },
+      "section": "week"
+    },
+    {
+      "key": "wkNotes",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Notizen im Wochenraster",
+        "en": "Notes in the week grid"
+      },
+      "section": "week"
+    },
+    {
+      "key": "bdaySep",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Geburtstage nur in der Tagesansicht",
+        "en": "Birthdays on the day view only"
+      },
+      "section": "week"
+    },
+    {
+      "key": "styleDay",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "flat",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Tagesansicht",
+        "en": "Day view"
+      },
+      "section": "layout",
+      "previewPage": 0
+    },
+    {
+      "key": "styleWeek",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "flat",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Wochenansicht",
+        "en": "Week view"
+      },
+      "section": "layout",
+      "previewPage": 1
+    },
+    {
+      "key": "styleMonth",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "flat",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Monatsansicht",
+        "en": "Month view"
+      },
+      "section": "layout",
+      "previewPage": 2
+    },
+    {
+      "key": "wTime",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Uhrzeit zeigen",
+        "en": "Show time"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wLocation",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Ort zeigen",
+        "en": "Show location"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Kompakte Liste",
+        "en": "Compact list"
+      },
+      "group": "widget"
+    }
+  ]
+}

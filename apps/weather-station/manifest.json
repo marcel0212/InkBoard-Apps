@@ -1,0 +1,213 @@
+{
+  "id": "weather-station",
+  "name": {
+    "de": "Wetter",
+    "en": "Weather"
+  },
+  "version": "1.1.1",
+  "apiLevel": 4,
+  "standard": true,
+  "pages": [
+    {
+      "de": "Innen",
+      "en": "Indoor"
+    },
+    {
+      "de": "Außen",
+      "en": "Outdoor"
+    },
+    {
+      "de": "Netzwerk",
+      "en": "Network"
+    }
+  ],
+  "refreshMinutes": 15,
+  "sections": [
+    {
+      "id": "history",
+      "title": {
+        "de": "Verlauf",
+        "en": "History"
+      }
+    },
+    {
+      "id": "warnings",
+      "title": {
+        "de": "Warnungen",
+        "en": "Warnings"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil der Seiten",
+        "en": "Page style"
+      }
+    },
+    {
+      "key": "focus",
+      "type": "select",
+      "options": [
+        "co2",
+        "temperature",
+        "humidity"
+      ],
+      "default": "co2",
+      "optionLabels": {
+        "de": {
+          "co2": "CO2",
+          "temperature": "Temperatur",
+          "humidity": "Luftfeuchtigkeit"
+        },
+        "en": {
+          "co2": "CO2",
+          "temperature": "Temperature",
+          "humidity": "Humidity"
+        }
+      },
+      "label": {
+        "de": "Fokuswert (großer Verlaufsgraph, nur Stil Bento)",
+        "en": "Focus value (large trend chart, Bento style only)"
+      },
+      "section": "history"
+    },
+    {
+      "key": "showTemp",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Temperatur zusätzlich anzeigen (kleiner Verlauf)",
+        "en": "Also show temperature (small trend)"
+      },
+      "section": "history"
+    },
+    {
+      "key": "showHum",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Luftfeuchtigkeit zusätzlich anzeigen (kleiner Verlauf)",
+        "en": "Also show humidity (small trend)"
+      },
+      "section": "history"
+    },
+    {
+      "key": "showCo2",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "CO2 zusätzlich anzeigen (kleiner Verlauf)",
+        "en": "Also show CO2 (small trend)"
+      },
+      "section": "history"
+    },
+    {
+      "key": "co2Warn",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "CO2-Warnung (Ampel, Banner, Pinnwand-Alarm)",
+        "en": "CO2 warning (traffic light, banner, bulletin alarm)"
+      },
+      "section": "warnings"
+    },
+    {
+      "key": "co2WarnPpm",
+      "type": "number",
+      "min": 400,
+      "max": 3000,
+      "default": 1200,
+      "label": {
+        "de": "CO2-Warnschwelle (ppm)",
+        "en": "CO2 warning threshold (ppm)"
+      },
+      "section": "warnings"
+    },
+    {
+      "key": "humWarn",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Feuchte-Warnung (Ampel, Banner)",
+        "en": "Humidity warning (traffic light, banner)"
+      },
+      "section": "warnings"
+    },
+    {
+      "key": "humLow",
+      "type": "number",
+      "min": 0,
+      "max": 99,
+      "default": 30,
+      "label": {
+        "de": "Feuchte niedrig ab (%)",
+        "en": "Humidity low below (%)"
+      },
+      "section": "warnings"
+    },
+    {
+      "key": "humHigh",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "default": 60,
+      "label": {
+        "de": "Feuchte hoch ab (%)",
+        "en": "Humidity high above (%)"
+      },
+      "section": "warnings"
+    },
+    {
+      "key": "range",
+      "type": "select",
+      "options": [
+        "24",
+        "12",
+        "6"
+      ],
+      "default": "24",
+      "optionLabels": {
+        "de": {
+          "24": "24 Stunden",
+          "12": "12 Stunden",
+          "6": "6 Stunden"
+        },
+        "en": {
+          "24": "24 hours",
+          "12": "12 hours",
+          "6": "6 hours"
+        }
+      },
+      "label": {
+        "de": "Zeitraum der Verlaufsgraphen (lokal gespeichert sind 24 Stunden)",
+        "en": "Time range of the trend charts (24 hours are stored locally)"
+      },
+      "section": "history"
+    }
+  ],
+  "nativeWidgets": [
+    "weather_indoor",
+    "weather_outdoor"
+  ]
+}

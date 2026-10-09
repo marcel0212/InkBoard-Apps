@@ -1,0 +1,67 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Leaderboards von PGA Tour, LIV Golf und DP World Tour",
+    "en": "Leaderboards of the PGA Tour, LIV Golf and DP World Tour"
+  },
+  "description": {
+    "de": "Zeigt das aktuelle Leaderboard der PGA Tour, von LIV Golf oder der DP World Tour (Daten von ESPN, kein Schlüssel nötig): Turniername, Status (läuft/beendet) und die besten Platzierungen mit Gleichständen (T4), Score zu Par und Hinweisen wie F, CUT oder WD. Du wählst, welche Tour auf der Vollseite und im Dashboard-Widget erscheint. Die Platzierungen werden nur in der Turnierwoche geladen, davor steht das nächste Turnier mit Datum auf der Seite. Drei Darstellungen (Bento mit Podium-Kacheln, Slate, Nano) und ein Dashboard-Widget „Top 3“ gehören dazu. Skript-Variante der eingebauten App.",
+    "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour (data from ESPN, no key needed): tournament name, status (in progress/final) and the top standings with ties (T4), score to par and notes such as F, CUT or WD. You choose which tour appears on the full page and in the dashboard widget. Standings are loaded during tournament week only; before that the page shows the next tournament with its date. Three layouts (Bento with podium tiles, Slate, Nano) and a \"Top 3\" dashboard widget are included. Script version of the built-in app."
+  },
+  "features": {
+    "de": [
+      "PGA Tour, LIV Golf oder DP World Tour zur Auswahl",
+      "Podium der Top 3 plus Liste bis Platz 15, Gleichstände und Score zu Par",
+      "Standings nur in der Turnierwoche geladen, sonst das nächste Turnier",
+      "Drei Darstellungen und Dashboard-Widget „Top 3“"
+    ],
+    "en": [
+      "Choose PGA Tour, LIV Golf or DP World Tour",
+      "Podium of the top 3 plus a list down to 15th place, ties and score to par",
+      "Standings loaded during tournament week only, otherwise the next tournament",
+      "Three layouts and a \"Top 3\" dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Podium-Kacheln",
+        "en": "Bento: podium tiles"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Rangliste",
+        "en": "Slate: ranking"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: kompakt",
+        "en": "Nano: compact"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget „Top 3“ im Dashboard",
+        "en": "\"Top 3\" widget on the dashboard"
+      }
+    }
+  ]
+}

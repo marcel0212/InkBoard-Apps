@@ -1,0 +1,97 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Dein Verein: nächstes Spiel, Ergebnisse und Liga-Tabelle",
+    "en": "Your club: next match, results and league table"
+  },
+  "description": {
+    "de": "Zeigt deinen Lieblingsverein: das nächste Spiel mit Wappen, Anstoßzeit und Live-Stand, die letzten Ergebnisse mit Sieg/Remis/Niederlage und die komplette Liga-Tabelle mit Zonen (Champions League, Europa, Abstieg) und S/U/N, Tore, Punkten. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal kommen ohne Schlüssel von OpenLigaDB (der Pokal hat keine Tabelle, nur Spiele). Premier League, La Liga, Serie A, Ligue 1 und weitere Ligen kommen von football-data.org mit kostenlosem API-Schlüssel. Zwei Seiten (Team, Liga-Tabelle) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget „Nächstes Spiel“ mit Live-Stand.",
+    "en": "Shows your favourite club: the next match with crests, kick-off time and live score, the latest results with win/draw/loss and the full league table with zones (Champions League, Europe, relegation) and W/D/L, goals and points. Bundesliga, 2. Bundesliga, 3. Liga and the DFB-Pokal come from OpenLigaDB without a key (the cup has no table, only matches). Premier League, La Liga, Serie A, Ligue 1 and more leagues come from football-data.org with a free API key. Two pages (team, league table) in three layouts (Bento, Slate, Nano) and a \"Next match\" dashboard widget with live score."
+  },
+  "features": {
+    "de": [
+      "Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal ohne Schlüssel",
+      "Nächstes Spiel, letzte 5 Ergebnisse und Liga-Tabelle mit Zonen",
+      "Wappen als Kürzel in Vereinsfarbe, echte Wappen von Wikipedia",
+      "Drei Darstellungen und Dashboard-Widget mit Live-Stand"
+    ],
+    "en": [
+      "Bundesliga, 2. Bundesliga, 3. Liga and DFB-Pokal without a key",
+      "Next match, last 5 results and league table with zones",
+      "Crests as abbreviation badges in club colours, real crests from Wikipedia",
+      "Three layouts and dashboard widget with live score"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-team.svg",
+      "caption": {
+        "de": "Bento: nächstes Spiel und letzte Ergebnisse",
+        "en": "Bento: next match and latest results"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-team-flat.svg",
+      "caption": {
+        "de": "Slate: Ergebnisse und Termine",
+        "en": "Slate: results and fixtures"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-team-compact.svg",
+      "caption": {
+        "de": "Nano: Zeitleiste",
+        "en": "Nano: timeline"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-table.svg",
+      "caption": {
+        "de": "Bento: Liga-Tabelle mit Zonen",
+        "en": "Bento: league table with zones"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-flat.svg",
+      "caption": {
+        "de": "Slate: komplette Tabelle",
+        "en": "Slate: full table"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-compact.svg",
+      "caption": {
+        "de": "Nano: kompakte Tabelle",
+        "en": "Nano: compact table"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget „Nächstes Spiel“",
+        "en": "“Next match” widget"
+      }
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+{
+  "id": "news-feeds",
+  "name": {
+    "de": "Nachrichten",
+    "en": "News"
+  },
+  "version": "1.0.6",
+  "apiLevel": 7,
+  "pages": [
+    {
+      "de": "Allgemein",
+      "en": "General"
+    },
+    {
+      "de": "Wirtschaft",
+      "en": "Business"
+    },
+    {
+      "de": "Sport",
+      "en": "Sports"
+    },
+    {
+      "de": "Technik",
+      "en": "Tech"
+    }
+  ],
+  "refreshMinutes": 15,
+  "widget": {
+    "w": 320,
+    "h": 180
+  },
+  "permissions": {
+    "net": [
+      "*.tagesschau.de",
+      "*.zeit.de",
+      "*.kicker.de",
+      "*.heise.de",
+      "*.golem.de"
+    ],
+    "netFrom": [
+      "general_url",
+      "business_url",
+      "sports_url",
+      "tech_url"
+    ]
+  },
+  "sections": [
+    {
+      "id": "general",
+      "title": {
+        "de": "Allgemein",
+        "en": "General"
+      }
+    },
+    {
+      "id": "business",
+      "title": {
+        "de": "Wirtschaft",
+        "en": "Business"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "sports",
+      "title": {
+        "de": "Sport",
+        "en": "Sports"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "tech",
+      "title": {
+        "de": "Technik",
+        "en": "Technology"
+      },
+      "collapsed": true
+    }
+  ],
+  "settings": [
+    {
+      "key": "general_a",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "tagesschau",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Allgemein: Feed 1",
+        "en": "General: feed 1"
+      },
+      "section": "general"
+    },
+    {
+      "key": "general_b",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Allgemein: Feed 2",
+        "en": "General: feed 2"
+      },
+      "section": "general"
+    },
+    {
+      "key": "general_url",
+      "type": "url",
+      "label": {
+        "de": "Allgemein: eigener Feed (https)",
+        "en": "General: own feed (https)"
+      },
+      "section": "general"
+    },
+    {
+      "key": "business_a",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "tagesschau_wirtschaft",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Wirtschaft: Feed 1",
+        "en": "Business: feed 1"
+      },
+      "section": "business"
+    },
+    {
+      "key": "business_b",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Wirtschaft: Feed 2",
+        "en": "Business: feed 2"
+      },
+      "section": "business"
+    },
+    {
+      "key": "business_url",
+      "type": "url",
+      "label": {
+        "de": "Wirtschaft: eigener Feed (https)",
+        "en": "Business: own feed (https)"
+      },
+      "section": "business"
+    },
+    {
+      "key": "sports_a",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "kicker",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Sport: Feed 1",
+        "en": "Sports: feed 1"
+      },
+      "section": "sports"
+    },
+    {
+      "key": "sports_b",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "off",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Sport: Feed 2",
+        "en": "Sports: feed 2"
+      },
+      "section": "sports"
+    },
+    {
+      "key": "sports_url",
+      "type": "url",
+      "label": {
+        "de": "Sport: eigener Feed (https)",
+        "en": "Sports: own feed (https)"
+      },
+      "section": "sports"
+    },
+    {
+      "key": "tech_a",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "heise",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Technik: Feed 1",
+        "en": "Tech: feed 1"
+      },
+      "section": "tech"
+    },
+    {
+      "key": "tech_b",
+      "type": "select",
+      "options": [
+        "off",
+        "tagesschau",
+        "zeit",
+        "tagesschau_wirtschaft",
+        "kicker",
+        "heise",
+        "golem"
+      ],
+      "default": "golem",
+      "optionLabels": {
+        "de": {
+          "off": "Aus",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Wirtschaft",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        },
+        "en": {
+          "off": "Off",
+          "tagesschau": "Tagesschau",
+          "zeit": "ZEIT ONLINE",
+          "tagesschau_wirtschaft": "Tagesschau Business",
+          "kicker": "Kicker",
+          "heise": "Heise",
+          "golem": "Golem"
+        }
+      },
+      "label": {
+        "de": "Technik: Feed 2",
+        "en": "Tech: feed 2"
+      },
+      "section": "tech"
+    },
+    {
+      "key": "tech_url",
+      "type": "url",
+      "label": {
+        "de": "Technik: eigener Feed (https)",
+        "en": "Tech: own feed (https)"
+      },
+      "section": "tech"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "flat",
+        "cards",
+        "compact"
+      ],
+      "default": "flat",
+      "optionLabels": {
+        "de": {
+          "flat": "Slate (Zeilen)",
+          "cards": "Bento (Karten)",
+          "compact": "Nano (kompakt)"
+        },
+        "en": {
+          "flat": "Slate (rows)",
+          "cards": "Bento (cards)",
+          "compact": "Nano (compact)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      }
+    },
+    {
+      "key": "wCat",
+      "type": "select",
+      "options": [
+        "general",
+        "business",
+        "sports",
+        "tech"
+      ],
+      "default": "general",
+      "optionLabels": {
+        "de": {
+          "general": "Allgemein",
+          "business": "Wirtschaft",
+          "sports": "Sport",
+          "tech": "Technik"
+        },
+        "en": {
+          "general": "General",
+          "business": "Business",
+          "sports": "Sports",
+          "tech": "Tech"
+        }
+      },
+      "label": {
+        "de": "Kategorie",
+        "en": "Category"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wSource",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Quelle anzeigen",
+        "en": "Show source"
+      },
+      "group": "widget"
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Kompakt",
+        "en": "Compact"
+      },
+      "group": "widget"
+    }
+  ]
+}

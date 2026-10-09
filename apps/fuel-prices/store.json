@@ -1,0 +1,65 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Spritpreise in deiner Nähe",
+    "en": "Fuel prices near you"
+  },
+  "description": {
+    "de": "Zeigt die aktuellen Preise der Tankstellen im Umkreis deines Standorts (Daten der Markttransparenzstelle über Tankerkönig). Hauptkraftstoff groß, weitere Sorten klein, Marken-Badges, geschlossene Tankstellen schwarz markiert. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit frei wählbaren Sorten. Der Standort kommt aus den Geräteeinstellungen, den kostenlosen API-Key trägst du hier im Store ein.",
+    "en": "Shows the current prices of the fuel stations around your location (Markttransparenzstelle data via Tankerkoenig). Main fuel large, other grades small, brand badges, closed stations marked black. Three layouts (Bento, Slate, Nano) and a dashboard widget with selectable grades. The location comes from the device settings, you enter the free API key here in the Store."
+  },
+  "features": {
+    "de": [
+      "Umkreissuche am Gerätestandort",
+      "Hauptkraftstoff und weitere Sorten",
+      "Drei Darstellungen und Dashboard-Widget"
+    ],
+    "en": [
+      "Search around the device location",
+      "Main fuel and other grades",
+      "Three layouts and a dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento: Kacheln",
+        "en": "Bento: tiles"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate: Zeilen",
+        "en": "Slate: rows"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano: Tabelle",
+        "en": "Nano: table"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Die Wetter-App: Innen, Außen und Netzwerk",
+    "en": "The Weather app: indoor, outdoor and network"
+  },
+  "description": {
+    "de": "Die komplette Wetter-App als ein Paket: Innen-Seite (Temperatur, CO2 und Luftfeuchtigkeit des Raumsensors mit Ampel, Warnhinweisen und Verlauf), Außen-Seite (aktuelles Wetter, Sonnenzeiten, Wind, Druck, UV, Sicht, Luftqualität, Stundenverlauf, Mehrtagesvorschau) und Netzwerk-Seite (alle InkBoards im Netzwerk als Raum-Kacheln mit Ranking, Akkustand und CO2-Dauer) in den drei Stilen Bento, Slate und Nano, dazu die Dashboard-Widgets „Wetter Innen“ und „Wetter Außen“. Das Paket ist eine Standard-App und lässt sich nicht entfernen. Stil, Fokuswert, Warnschwellen und Verlaufszeitraum findest du in den Paket-Einstellungen; Standort, Wetterdienst, API-Key und Abruf-Takte stehen in den Geräte-Einstellungen unter „Wetter“.",
+    "en": "The complete Weather app as one package: indoor page (temperature, CO2 and humidity of the room sensor with traffic light, warnings and trend), outdoor page (current weather, sun times, wind, pressure, UV, visibility, air quality, hourly trend, multi-day forecast) and network page (all InkBoards on the network as room tiles with ranking, battery level and CO2 duration) in the three styles Bento, Slate and Nano, plus the dashboard widgets \"Weather Indoor\" and \"Weather Outdoor\". The package is a standard app and cannot be removed. Style, focus value, warning thresholds and trend range are in the package settings; location, weather service, API key and fetch intervals are in the device settings under \"Weather\"."
+  },
+  "features": {
+    "de": [
+      "Drei Seiten: Innen, Außen, Netzwerk",
+      "Drei Stile: Bento, Slate, Nano",
+      "CO2- und Feuchte-Ampel mit Warnhinweisen",
+      "Stundenverlauf, Mehrtagesvorschau, Regen-Countdown",
+      "Dashboard-Widgets Wetter Innen und Wetter Außen"
+    ],
+    "en": [
+      "Three pages: indoor, outdoor, network",
+      "Three styles: Bento, Slate, Nano",
+      "CO2 and humidity traffic light with warnings",
+      "Hourly trend, multi-day forecast, rain countdown",
+      "Dashboard widgets Weather Indoor and Weather Outdoor"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-outdoor.svg",
+      "caption": {
+        "de": "Außen-Seite im Stil Bento",
+        "en": "Outdoor page, style Bento"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-outdoor-flat.svg",
+      "caption": {
+        "de": "Außen-Seite im Stil Slate",
+        "en": "Outdoor page, style Slate"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-outdoor-compact.svg",
+      "caption": {
+        "de": "Außen-Seite im Stil Nano",
+        "en": "Outdoor page, style Nano"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-outdoor.svg",
+      "caption": {
+        "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
+        "en": "Dashboard widget with forecast and rain countdown"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-indoor.svg",
+      "style": "cards",
+      "page": 0,
+      "caption": {
+        "de": "Innen-Seite im Stil Bento",
+        "en": "Indoor page, style Bento"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-indoor-flat.svg",
+      "style": "flat",
+      "page": 0,
+      "caption": {
+        "de": "Innen-Seite im Stil Slate",
+        "en": "Indoor page, style Slate"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-indoor-compact.svg",
+      "style": "compact",
+      "page": 0,
+      "caption": {
+        "de": "Innen-Seite im Stil Nano",
+        "en": "Indoor page, style Nano"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-network.svg",
+      "style": "cards",
+      "page": 2,
+      "caption": {
+        "de": "Netzwerk-Seite im Stil Bento",
+        "en": "Network page, style Bento"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-network-flat.svg",
+      "style": "flat",
+      "page": 2,
+      "caption": {
+        "de": "Netzwerk-Seite im Stil Slate",
+        "en": "Network page, style Slate"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-network-compact.svg",
+      "style": "compact",
+      "page": 2,
+      "caption": {
+        "de": "Netzwerk-Seite im Stil Nano",
+        "en": "Network page, style Nano"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-indoor.svg",
+      "caption": {
+        "de": "Dashboard-Widget mit Verlaufskurven",
+        "en": "Dashboard widget with trend curves"
+      }
+    }
+  ]
+}

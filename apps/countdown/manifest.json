@@ -1,0 +1,74 @@
+{
+  "id": "countdown",
+  "name": {
+    "de": "Countdown",
+    "en": "Countdown"
+  },
+  "version": "1.0.4",
+  "apiLevel": 1,
+  "pages": 1,
+  "refreshMinutes": 60,
+  "settings": [
+    {
+      "key": "label",
+      "type": "text",
+      "maxLen": 24,
+      "default": "Urlaub",
+      "label": {
+        "de": "Bezeichnung",
+        "en": "Label"
+      }
+    },
+    {
+      "key": "date",
+      "type": "text",
+      "maxLen": 10,
+      "default": "2027-01-01",
+      "label": {
+        "de": "Zieldatum (JJJJ-MM-TT)",
+        "en": "Target date (YYYY-MM-DD)"
+      }
+    },
+    {
+      "key": "accent",
+      "type": "select",
+      "options": [
+        "blue",
+        "green",
+        "red",
+        "yellow",
+        "black"
+      ],
+      "default": "blue",
+      "optionLabels": {
+        "de": {
+          "blue": "Blau",
+          "green": "Grün",
+          "red": "Rot",
+          "yellow": "Gelb",
+          "black": "Schwarz"
+        },
+        "en": {
+          "blue": "Blue",
+          "green": "Green",
+          "red": "Red",
+          "yellow": "Yellow",
+          "black": "Black"
+        }
+      },
+      "label": {
+        "de": "Akzentfarbe",
+        "en": "Accent color"
+      }
+    },
+    {
+      "key": "showDate",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zieldatum anzeigen",
+        "en": "Show target date"
+      }
+    }
+  ]
+}

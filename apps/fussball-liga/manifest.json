@@ -1,0 +1,244 @@
+{
+  "id": "fussball-liga",
+  "name": {
+    "de": "Fußball-Liga",
+    "en": "Football league"
+  },
+  "version": "1.0.9",
+  "apiLevel": 14,
+  "pages": [
+    {
+      "de": "Team",
+      "en": "Team"
+    },
+    {
+      "de": "Liga-Tabelle",
+      "en": "League table"
+    }
+  ],
+  "refreshMinutes": 30,
+  "widget": {
+    "w": 240,
+    "h": 140
+  },
+  "permissions": {
+    "net": [
+      "api.openligadb.de",
+      "api.football-data.org",
+      "crests.football-data.org",
+      "upload.wikimedia.org",
+      "thumb.wikimedia.org",
+      "en.wikipedia.org"
+    ]
+  },
+  "sections": [
+    {
+      "id": "club",
+      "title": {
+        "de": "Liga & Verein",
+        "en": "League & club"
+      },
+      "help": {
+        "de": "Die Liga gilt für die Seiten der App (Team und Tabelle). Das Dashboard-Widget zeigt immer das nächste Spiel des Vereins aus allen Wettbewerben, die der Datenanbieter liefert.\nBundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal kommen ohne Schlüssel von OpenLigaDB (der DFB-Pokal hat keine Tabelle, nur Spiele). Die übrigen Ligen brauchen einen kostenlosen football-data.org-Schlüssel (Abschnitt „API-Zugang“).\nNach der Wahl der Liga „Vereine laden“ drücken und den Verein aus der Liste wählen. Alternativ den Namen eintippen (z. B. FC Bayern München) oder die Vereinsnummer des Datenanbieters.",
+        "en": "The league applies to the app pages (team and table). The dashboard widget always shows the club's next match from all competitions the data provider supplies.\nBundesliga, 2. Bundesliga, 3. Liga and the DFB-Pokal come from OpenLigaDB without a key (the cup has no table, only matches). The other leagues need a free football-data.org key (section “API access”).\nAfter choosing the league, press “Load clubs” and pick the club from the list. Alternatively type the name (e.g. FC Bayern München) or the club number of the data provider."
+      }
+    },
+    {
+      "id": "access",
+      "title": {
+        "de": "API-Zugang",
+        "en": "API access"
+      },
+      "help": {
+        "de": "1. Auf football-data.org/client/register mit E-Mail-Adresse registrieren (kostenlos).\n2. Den per E-Mail zugeschickten API-Token hier eintragen.\n3. Kostenloser Tarif: u. a. Premier League, La Liga, Serie A, Ligue 1, ca. 10 Anfragen pro Minute; die App braucht nur 2 je Aktualisierung.",
+        "en": "1. Register with your email address at football-data.org/client/register (free).\n2. Enter the API token you receive by email here.\n3. Free tier: among others Premier League, La Liga, Serie A, Ligue 1, about 10 requests per minute; the app needs only 2 per refresh."
+      },
+      "helpTitle": {
+        "de": "Wie bekomme ich einen API-Key?",
+        "en": "How do I get an API key?"
+      },
+      "helpUrl": "https://www.football-data.org/client/register"
+    },
+    {
+      "id": "display",
+      "title": {
+        "de": "Anzeige",
+        "en": "Display"
+      },
+      "help": {
+        "de": "Lädt die Wappen von Wikipedia (zuerst die Adresse des Datenanbieters, sonst der Artikel mit dem Vereinsnamen) (Bento: große Spielpaarung, Nano: Kopfzeile). Fehlt ein Wappen, erscheint das Kürzel-Wappen in der Vereinsfarbe.",
+        "en": "Loads the crests from Wikipedia (first the data provider's address, otherwise the article named like the club) (Bento: big pairing, Nano: header). If a crest is missing, the abbreviation badge in the club colour is shown."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "league",
+      "type": "select",
+      "options": [
+        "BL1",
+        "BL2",
+        "BL3",
+        "DFB",
+        "PL",
+        "PD",
+        "SA",
+        "FL1",
+        "DED",
+        "PPL",
+        "ELC",
+        "BSA"
+      ],
+      "default": "BL1",
+      "optionLabels": {
+        "de": {
+          "BL1": "Bundesliga",
+          "BL2": "2. Bundesliga",
+          "BL3": "3. Liga",
+          "DFB": "DFB-Pokal",
+          "PL": "Premier League (Key)",
+          "PD": "La Liga (Key)",
+          "SA": "Serie A (Key)",
+          "FL1": "Ligue 1 (Key)",
+          "DED": "Eredivisie (Key)",
+          "PPL": "Primeira Liga (Key)",
+          "ELC": "Championship (Key)",
+          "BSA": "Série A Brasilien (Key)"
+        },
+        "en": {
+          "BL1": "Bundesliga",
+          "BL2": "2. Bundesliga",
+          "BL3": "3. Liga",
+          "DFB": "DFB-Pokal (German cup)",
+          "PL": "Premier League (key)",
+          "PD": "La Liga (key)",
+          "SA": "Serie A (key)",
+          "FL1": "Ligue 1 (key)",
+          "DED": "Eredivisie (key)",
+          "PPL": "Primeira Liga (key)",
+          "ELC": "Championship (key)",
+          "BSA": "Série A Brazil (key)"
+        }
+      },
+      "label": {
+        "de": "Liga",
+        "en": "League"
+      },
+      "action": {
+        "name": "load_teams",
+        "label": {
+          "de": "Vereine laden",
+          "en": "Load clubs"
+        },
+        "fills": "team"
+      },
+      "section": "club"
+    },
+    {
+      "key": "team",
+      "type": "text",
+      "maxLen": 60,
+      "default": "",
+      "label": {
+        "de": "Lieblingsverein",
+        "en": "Favourite club"
+      },
+      "section": "club"
+    },
+    {
+      "key": "apiKey",
+      "type": "password",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "football-data.org-API-Key",
+        "en": "football-data.org API key"
+      },
+      "showIf": {
+        "key": "league",
+        "in": [
+          "PL",
+          "PD",
+          "SA",
+          "FL1",
+          "DED",
+          "PPL",
+          "ELC",
+          "BSA"
+        ]
+      },
+      "section": "access"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Listen)",
+          "compact": "Nano (kompakt)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (lists)",
+          "compact": "Nano (compact)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento: Hero-Karte fürs nächste Spiel und Zonen-Kacheln in der Tabelle. Slate: schlichte Listen und Zonen-Tabelle. Nano: Mini-Zeitleiste und Kompakttabelle.",
+        "en": "Bento: hero card for the next match and zone tiles in the table. Slate: plain lists and a zone table. Nano: mini timeline and compact table."
+      }
+    },
+    {
+      "key": "crests",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Echte Vereinswappen laden",
+        "en": "Load real club crests"
+      },
+      "section": "display"
+    },
+    {
+      "key": "wTablePos",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Tabellenplatz anzeigen",
+        "en": "Show table position"
+      }
+    },
+    {
+      "key": "wHomeAway",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Heim/Auswärts anzeigen",
+        "en": "Show home/away"
+      }
+    },
+    {
+      "key": "wCompact",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Kompakt",
+        "en": "Compact"
+      }
+    }
+  ],
+  "fetchOnOpen": true
+}

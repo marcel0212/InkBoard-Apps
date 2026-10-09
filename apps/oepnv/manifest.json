@@ -1,0 +1,893 @@
+{
+  "id": "oepnv",
+  "name": {
+    "de": "ÖPNV",
+    "en": "Public transport"
+  },
+  "version": "1.2.2",
+  "apiLevel": 16,
+  "pages": [
+    {
+      "de": "Abfahrten",
+      "en": "Departures"
+    },
+    {
+      "de": "Routen",
+      "en": "Routes"
+    }
+  ],
+  "refreshMinutes": 5,
+  "widget": {
+    "w": 340,
+    "h": 150
+  },
+  "permissions": {
+    "net": [
+      "gti.geofox.de",
+      "api.transitous.org",
+      "v6.db.transport.rest"
+    ]
+  },
+  "sections": [
+    {
+      "id": "access",
+      "title": {
+        "de": "Anbieter & Zugang",
+        "en": "Provider & access"
+      },
+      "help": {
+        "de": "Transitous (OpenStreetMap + Fahrplandaten) funktioniert bundesweit ohne Anmeldung, die Qualität schwankt je Region. HVV Geofox liefert die vollständigen HVV-Daten mit Echtzeit, braucht aber eigene Zugangsdaten. Der DB-Dienst v6.db.transport.rest ist seit 2026 meist nicht erreichbar.\nHVV-Zugang: formlose E-Mail an api@hochbahn.de mit kurzer Beschreibung (private Abfahrtsanzeige) und Ansprechpartner. Die HOCHBAHN schickt Anwendername und Passwort für die Geofox-Schnittstelle (GTI), eine Zusage ist nicht garantiert. Beides eintragen und „Zugang prüfen“ drücken. Die Nutzung muss kostenlos bleiben.\nDas Passwort verlässt das Gerät nie, gesendet wird nur eine Signatur (HMAC-SHA1).\nNach einem Anbieterwechsel die Haltestelle neu suchen (Routen bleiben gültig).",
+        "en": "Transitous (OpenStreetMap + timetable data) works nationwide without sign-up; quality varies by region. HVV Geofox delivers the complete HVV data with real time but needs your own access. The DB service v6.db.transport.rest has mostly been unavailable since 2026.\nHVV access: send an informal email to api@hochbahn.de with a short description (private departure display) and a contact person. HOCHBAHN sends a user name and password for the Geofox interface (GTI); approval is not guaranteed. Enter both and press “Check access”. Use must stay free of charge.\nThe password never leaves the device; only a signature (HMAC-SHA1) is sent.\nAfter switching the provider, search the stop again (routes stay valid)."
+      },
+      "helpTitle": {
+        "de": "Anbieter wählen und HVV-Zugang",
+        "en": "Choosing a provider and HVV access"
+      },
+      "helpUrl": "https://www.hvv.de/de/fahrplaene/abruf-fahrplaninfos/datenabruf"
+    },
+    {
+      "id": "departures",
+      "title": {
+        "de": "Abfahrten",
+        "en": "Departures"
+      },
+      "help": {
+        "de": "Haltestelle eintippen (z. B. U Berne), „Haltestelle suchen“ drücken und den Treffer aus der Liste wählen. Ein nur eingetippter Name wird beim Abruf automatisch gesucht (erster Treffer).\nWegezeit: Zeit von deiner Adresse bis zur Haltestelle. Ist sie größer als 0, zeigen alle Zeiten, wann du losgehen musst, und Routen starten an der Geräte-Adresse (Einstellungen → Standort).",
+        "en": "Type a stop (e.g. U Berne), press “Search stop” and pick the match from the list. A name that is only typed is searched automatically when fetching (first match).\nWalking time: time from your address to the stop. If it is above 0, all times show when you have to leave, and routes start at the device address (settings → location)."
+      }
+    },
+    {
+      "id": "routes",
+      "title": {
+        "de": "Routen",
+        "en": "Routes"
+      },
+      "help": {
+        "de": "Bis zu sechs Lieblingsrouten für die Seite „Routen“. Eine Route ist aktiv, sobald Start und Ziel gesetzt sind.\nStart und Ziel: Haltestelle oder Adresse eintippen, „Suchen“ drücken und den Treffer wählen. Gespeichert werden die Koordinaten, die Route gilt deshalb für jeden Anbieter.\nName z. B. „Zur Arbeit“. Ohne Namen, aber mit Symbol zeigt die Seite nur das Symbol.",
+        "en": "Up to six favourite routes for the “Routes” page. A route is active once start and destination are set.\nStart and destination: type a stop or address, press “Search” and pick the match. The coordinates are stored, so the route works with every provider.\nName e.g. “To work”. Without a name but with an icon, the page shows only the icon."
+      },
+      "collapsed": true
+    }
+  ],
+  "settings": [
+    {
+      "key": "provider",
+      "type": "select",
+      "options": [
+        "hvv",
+        "transitous",
+        "db"
+      ],
+      "default": "transitous",
+      "optionLabels": {
+        "de": {
+          "hvv": "HVV Geofox (Hamburg, Zugang nötig)",
+          "transitous": "Transitous (bundesweit, ohne Anmeldung)",
+          "db": "Deutsche Bahn (v6.db.transport.rest)"
+        },
+        "en": {
+          "hvv": "HVV Geofox (Hamburg, access required)",
+          "transitous": "Transitous (nationwide, no sign-up)",
+          "db": "Deutsche Bahn (v6.db.transport.rest)"
+        }
+      },
+      "label": {
+        "de": "Anbieter",
+        "en": "Provider"
+      },
+      "section": "access"
+    },
+    {
+      "key": "hvvUser",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "HVV-Anwendername",
+        "en": "HVV user name"
+      },
+      "showIf": {
+        "key": "provider",
+        "in": [
+          "hvv"
+        ]
+      },
+      "section": "access"
+    },
+    {
+      "key": "hvvPass",
+      "type": "password",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "HVV-Passwort",
+        "en": "HVV password"
+      },
+      "showIf": {
+        "key": "provider",
+        "in": [
+          "hvv"
+        ]
+      },
+      "action": {
+        "name": "hvv_check",
+        "label": {
+          "de": "Zugang prüfen",
+          "en": "Check access"
+        }
+      },
+      "section": "access"
+    },
+    {
+      "key": "stop",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Haltestelle (Abfahrten)",
+        "en": "Stop (departures)"
+      },
+      "action": {
+        "name": "find_stop",
+        "label": {
+          "de": "Haltestelle suchen",
+          "en": "Search stop"
+        },
+        "fills": "stop"
+      },
+      "section": "departures"
+    },
+    {
+      "key": "walk",
+      "type": "number",
+      "min": 0,
+      "max": 60,
+      "default": 0,
+      "label": {
+        "de": "Wegezeit zu Fuß (Minuten)",
+        "en": "Walking time (minutes)"
+      },
+      "section": "departures"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (Listen)",
+          "compact": "Nano (kompakt)"
+        },
+        "en": {
+          "cards": "Bento (tiles)",
+          "flat": "Slate (lists)",
+          "compact": "Nano (compact)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bento: Kacheln je Linie und Hero-Karte für die dringendste Route mit Zeitstrahl. Slate: Countdown-Liste und Routen-Blöcke. Nano: dichte Liste (zehn Abfahrten) und Zeitskala bis zum Losgehen.",
+        "en": "Bento: tiles per line and a hero card with timeline for the most urgent route. Slate: countdown list and route blocks. Nano: dense list (ten departures) and a time-to-leave scale."
+      }
+    },
+    {
+      "key": "r1Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 1",
+        "en": "Route 1"
+      }
+    },
+    {
+      "key": "r1From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r1from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r1From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 1",
+        "en": "Route 1"
+      }
+    },
+    {
+      "key": "r1To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r1to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r1To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 1",
+        "en": "Route 1"
+      }
+    },
+    {
+      "key": "r1Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 1",
+        "en": "Route 1"
+      }
+    },
+    {
+      "key": "r2Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 2",
+        "en": "Route 2"
+      }
+    },
+    {
+      "key": "r2From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r2from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r2From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 2",
+        "en": "Route 2"
+      }
+    },
+    {
+      "key": "r2To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r2to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r2To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 2",
+        "en": "Route 2"
+      }
+    },
+    {
+      "key": "r2Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 2",
+        "en": "Route 2"
+      }
+    },
+    {
+      "key": "r3Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 3",
+        "en": "Route 3"
+      }
+    },
+    {
+      "key": "r3From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r3from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r3From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 3",
+        "en": "Route 3"
+      }
+    },
+    {
+      "key": "r3To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r3to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r3To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 3",
+        "en": "Route 3"
+      }
+    },
+    {
+      "key": "r3Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 3",
+        "en": "Route 3"
+      }
+    },
+    {
+      "key": "r4Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 4",
+        "en": "Route 4"
+      }
+    },
+    {
+      "key": "r4From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r4from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r4From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 4",
+        "en": "Route 4"
+      }
+    },
+    {
+      "key": "r4To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r4to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r4To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 4",
+        "en": "Route 4"
+      }
+    },
+    {
+      "key": "r4Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 4",
+        "en": "Route 4"
+      }
+    },
+    {
+      "key": "r5Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 5",
+        "en": "Route 5"
+      }
+    },
+    {
+      "key": "r5From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r5from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r5From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 5",
+        "en": "Route 5"
+      }
+    },
+    {
+      "key": "r5To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r5to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r5To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 5",
+        "en": "Route 5"
+      }
+    },
+    {
+      "key": "r5Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 5",
+        "en": "Route 5"
+      }
+    },
+    {
+      "key": "r6Name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 6",
+        "en": "Route 6"
+      }
+    },
+    {
+      "key": "r6From",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Start",
+        "en": "Start"
+      },
+      "action": {
+        "name": "find_r6from",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r6From"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 6",
+        "en": "Route 6"
+      }
+    },
+    {
+      "key": "r6To",
+      "type": "text",
+      "maxLen": 100,
+      "default": "",
+      "label": {
+        "de": "Ziel",
+        "en": "Destination"
+      },
+      "action": {
+        "name": "find_r6to",
+        "label": {
+          "de": "Suchen",
+          "en": "Search"
+        },
+        "fills": "r6To"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 6",
+        "en": "Route 6"
+      }
+    },
+    {
+      "key": "r6Icon",
+      "type": "select",
+      "options": [
+        "none",
+        "home",
+        "work",
+        "school",
+        "family",
+        "shopping",
+        "train",
+        "plane",
+        "star"
+      ],
+      "default": "none",
+      "optionLabels": {
+        "de": {
+          "none": "Kein Symbol",
+          "home": "Zuhause",
+          "work": "Arbeit",
+          "school": "Schule",
+          "family": "Familie",
+          "shopping": "Einkaufen",
+          "train": "Zug",
+          "plane": "Flugzeug",
+          "star": "Stern"
+        },
+        "en": {
+          "none": "No icon",
+          "home": "Home",
+          "work": "Work",
+          "school": "School",
+          "family": "Family",
+          "shopping": "Shopping",
+          "train": "Train",
+          "plane": "Plane",
+          "star": "Star"
+        }
+      },
+      "label": {
+        "de": "Symbol",
+        "en": "Icon"
+      },
+      "section": "routes",
+      "group": {
+        "de": "Route 6",
+        "en": "Route 6"
+      }
+    },
+    {
+      "key": "wDest",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Fahrtziel anzeigen",
+        "en": "Show destination"
+      }
+    },
+    {
+      "key": "wDelay",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Verspätung anzeigen",
+        "en": "Show delay"
+      }
+    },
+    {
+      "key": "wRoutes",
+      "type": "toggle",
+      "default": false,
+      "group": "widget",
+      "label": {
+        "de": "Routen statt Abfahrten",
+        "en": "Routes instead of departures"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+# Flight Radar: Tabellen der eingebauten App (tools/flightradar_tables.py erzeugt diese Datei aus teil02_app_datenmodelle.inc)
+T;A388;a380;1
+T;A318;a318;0
+T;A319;a319neo;1
+T;A19N;a319neo;1
+T;A320;a320neo;1
+T;A20N;a320neo;1
+T;A321;a321neo;1
+T;A21N;a321neo;1
+T;A332;a330-200;1
+T;A333;a330-300;0
+T;A338;a330-800;0
+T;A339;a330-900;1
+T;A342;a340-200;0
+T;A343;a340-300;0
+T;A345;a340-500;0
+T;A346;a340-600;1
+T;A359;a350-900;1
+T;A35K;a350-1000;0
+T;BCS1;a220-100;1
+T;BCS3;a220-300;1
+T;B37M;737max;1
+T;B38M;737max;1
+T;B39M;737max;1
+T;B3XM;737max;1
+T;B73;737ng;1
+T;B74;747;1
+T;B778;777x;1
+T;B779;777x;1
+T;B77;777;1
+T;B78;787;1
+T;E170;e170;0
+T;E75;e175;1
+T;E190;e190;1
+T;E195;e195;0
+T;E290;e190_e2;1
+T;E295;e195_e2;1
+T;E135;erj_135;0
+T;E145;erj_145;0
+T;CRJ9;crj900;1
+T;AT76;atr72-600;1
+T;C404;cessna404;1
+A;DLH;lh;Lufthansa;Y
+A;CLH;lh;Lufthansa CityLine;Y
+A;CFG;de;Condor;Y
+A;EWG;ew;Eurowings;R
+A;EJU;u2;easyJet Europe;R
+A;EZS;u2;easyJet Switzerland;R
+A;EZY;u2;easyJet;R
+A;RYR;fr;Ryanair;B
+A;RUK;fr;Ryanair UK;
+A;MAY;fr;Malta Air;B
+A;WZZ;w6;Wizz Air;R
+A;WMT;w6;Wizz Air Malta;R
+A;WUK;w6;Wizz Air UK;R
+A;WAZ;w6;Wizz Air Abu Dhabi;R
+A;VLG;vy;Vueling;Y
+A;AFR;af;Air France;B
+A;KLM;kl;KLM;B
+A;KLC;kl;KLM Cityhopper;B
+A;BAW;ba;British Airways;B
+A;SHT;ba;BA Shuttle;B
+A;CFE;ba;BA CityFlyer;B
+A;EFW;ba;BA Euroflyer;B
+A;SWR;lx;SWISS;R
+A;AUA;os;Austrian Airlines;R
+A;OAW;2l;Helvetic Airways;R
+A;THY;tk;Turkish Airlines;R
+A;PGT;pc;Pegasus Airlines;R
+A;SXS;xq;SunExpress;R
+A;UAE;ek;Emirates;R
+A;QTR;qr;Qatar Airways;R
+A;ETD;ey;Etihad Airways;Y
+A;IRA;ir;Iran Air;B
+A;AWU;7e;Sylt Air;B
+A;SAS;sk;SAS;B
+A;FIN;ay;Finnair;B
+A;LOT;lo;LOT Polish Airlines;B
+A;TAP;tp;TAP Portugal;G
+A;EIN;ei;Aer Lingus;G
+A;IBE;ib;Iberia;R
+A;IBS;i2;Iberia Express;R
+A;ITY;az;ITA Airways;B
+A;NOZ;dy;Norwegian;R
+A;NSZ;n0;Norse Atlantic;R
+A;TUI;x3;;B
+A;TFL;x3;TUI fly;B
+A;JAF;x3;TUI fly Belgium;B
+A;MBU;di;Marabu;G
+A;BCS;qy;DHL (EAT);Y
+A;FDX;fx;FedEx;B
+A;UPS;5x;UPS Airlines;
+A;GTI;5y;Atlas Air;
+A;UAL;ua;United;B
+A;DAL;dl;Delta;B
+A;AAL;aa;American Airlines;R
+A;ACA;ac;Air Canada;R
+A;CCA;ca;Air China;
+A;CES;mu;China Eastern;
+A;CSN;cz;China Southern;
+A;ANA;nh;All Nippon Airways;
+A;JAL;jl;Japan Airlines;
+A;KAL;ke;Korean Air;
+A;AAR;oz;Asiana Airlines;
+A;SIA;sq;Singapore Airlines;
+A;CPA;cx;Cathay Pacific;
+A;THA;tg;Thai Airways;
+A;ELY;ly;El Al;
+A;MSR;ms;EgyptAir;
+A;ETH;et;Ethiopian Airlines;
+A;QFA;qf;Qantas;
+A;ANZ;nz;Air New Zealand;
+A;VIR;vs;Virgin Atlantic;
+A;WJA;ws;WestJet;
+A;ASA;as;Alaska Airlines;
+A;SWA;wn;Southwest Airlines;
+A;ICE;fi;Icelandair;
+A;BEL;sn;Brussels Airlines;B
+A;GEC;;Lufthansa Cargo;Y
+A;VJH;;Lufthansa City Airlines;Y
+A;DHK;;DHL Air;Y
+A;BOX;;AeroLogic;Y

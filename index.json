@@ -1,0 +1,2351 @@
+{
+  "schema": 1,
+  "categories": [
+    {
+      "id": "info",
+      "name": {
+        "de": "Information",
+        "en": "Information"
+      }
+    },
+    {
+      "id": "organize",
+      "name": {
+        "de": "Organisation",
+        "en": "Organization"
+      }
+    },
+    {
+      "id": "home",
+      "name": {
+        "de": "Zuhause",
+        "en": "Home"
+      }
+    },
+    {
+      "id": "time",
+      "name": {
+        "de": "Zeit & Datum",
+        "en": "Time & date"
+      }
+    },
+    {
+      "id": "fun",
+      "name": {
+        "de": "Freizeit",
+        "en": "Leisure"
+      }
+    },
+    {
+      "id": "media",
+      "name": {
+        "de": "Medien",
+        "en": "Media"
+      }
+    }
+  ],
+  "featured": [
+    "countdown",
+    "wort-des-tages"
+  ],
+  "apps": [
+    {
+      "id": "bilder",
+      "name": {
+        "de": "Bilder",
+        "en": "Pictures"
+      },
+      "tagline": {
+        "de": "Diashow mit den Fotos von deinem NAS",
+        "en": "Slideshow of the photos on your NAS"
+      },
+      "description": {
+        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher (NAS) als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in den App-Einstellungen im Studio: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Skript-Variante der eingebauten App: gleiche Anzeige, dazu Reihenfolge und Rahmen als Einstellung, ohne Widget.",
+        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage (NAS) as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in the app settings in Studio: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures. Script version of the built-in app: same display, plus order and frame as settings, without a widget."
+      },
+      "category": "media",
+      "author": "InkBoard",
+      "version": "1.1.0",
+      "apiLevel": 20,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Bilder",
+          "en": "Pictures"
+        }
+      ],
+      "hasWidget": false,
+      "needsStorage": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Vollbild-Diashow vom NAS, JPEG, PNG und BMP",
+          "Auch große Fotos (kein 200-KB-Limit)",
+          "Reihenfolge nach Name oder zufällig, dünner Rahmen",
+          "Drehen blättert, Pille zeigt die Position",
+          "Hochladen und Verwalten im Studio"
+        ],
+        "en": [
+          "Full-screen slideshow from the NAS, JPEG, PNG and BMP",
+          "Large photos too (no 200 KB limit)",
+          "Order by name or random, thin frame",
+          "Turning browses, a pill shows the position",
+          "Upload and manage in Studio"
+        ]
+      },
+      "net": [],
+      "icon": "apps/bilder/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/bilder/preview-slideshow.svg",
+          "caption": {
+            "de": "Diashow mit Bild vom NAS",
+            "en": "Slideshow with a picture from the NAS"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/bilder/preview-browse.svg",
+          "caption": {
+            "de": "Blättern: Position im Bildordner",
+            "en": "Browsing: position in the picture folder"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/bilder/preview-empty.svg",
+          "caption": {
+            "de": "Noch keine Bilder im Ordner",
+            "en": "No pictures in the folder yet"
+          }
+        }
+      ],
+      "package": "apps/bilder/package.json",
+      "sha256": "e98fab51fa3f9fdea5508bce94bb2db167ba8e2bd79051dd05051be5c20a2fb0",
+      "size": 8596
+    },
+    {
+      "id": "calendar-app",
+      "name": {
+        "de": "Kalender",
+        "en": "Calendar"
+      },
+      "tagline": {
+        "de": "Termine aus deinen Kalendern: Tag, Woche, Monat",
+        "en": "Events from your calendars: day, week, month"
+      },
+      "description": {
+        "de": "Zeigt bis zu vier Kalender (ICS-Link, z. B. Google, Outlook, iCloud) in einer Ansicht. Die Tagesansicht listet die Termine von heute mit Uhrzeit, Dauer, Ort und Notizen, die Wochenansicht zeigt ein Zeitraster von 6 bis 22 Uhr mit einer Linie für die aktuelle Uhrzeit, die Monatsansicht ein Raster mit farbigen Punkten je Kalender. Jede Quelle hat Name, Farbe (Blau, Grün, Gelb, Rot) und einen Schalter. Geburtstage lassen sich auf die Tagesansicht beschränken. Wiederkehrende Termine, ausgenommene Tage (EXDATE), geänderte Einzeltermine und Zeitzonen werden berücksichtigt. Drei Stile (Slate, Bento, Nano) je Seite und ein Dashboard-Widget mit den nächsten Terminen gehören dazu. Skript-Variante der eingebauten Kalender-App.",
+        "en": "Shows up to four calendars (ICS link, e.g. Google, Outlook, iCloud) in one view. The day view lists today's events with time, duration, location and notes, the week view shows a time grid from 6 to 22 o'clock with a line for the current time, the month view a grid with colored dots per calendar. Each source has a name, a color (blue, green, yellow, red) and a switch. Birthdays can be limited to the day view. Recurring events, excluded days (EXDATE), changed single occurrences and time zones are taken into account. Three styles (Slate, Bento, Nano) per page and a dashboard widget with the next events are included. Script version of the built-in calendar app."
+      },
+      "category": "time",
+      "author": "InkBoard",
+      "version": "1.1.0",
+      "apiLevel": 20,
+      "pages": 3,
+      "pageNames": [
+        {
+          "de": "Tag",
+          "en": "Day"
+        },
+        {
+          "de": "Woche",
+          "en": "Week"
+        },
+        {
+          "de": "Monat",
+          "en": "Month"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Bis zu vier ICS-Kalender mit eigener Farbe",
+          "Tag, Woche (Zeitraster mit Jetzt-Linie) und Monat",
+          "Wiederholungen, EXDATE, geänderte Einzeltermine, Zeitzonen",
+          "Drei Stile je Seite und Dashboard-Widget"
+        ],
+        "en": [
+          "Up to four ICS calendars, each with its own color",
+          "Day, week (time grid with a now line) and month",
+          "Recurrences, EXDATE, changed occurrences, time zones",
+          "Three styles per page and a dashboard widget"
+        ]
+      },
+      "net": [],
+      "icon": "apps/calendar-app/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-day.svg",
+          "caption": {
+            "de": "Tag: Slate",
+            "en": "Day: Slate"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-day-cards.svg",
+          "caption": {
+            "de": "Tag: Bento",
+            "en": "Day: Bento"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-day-compact.svg",
+          "caption": {
+            "de": "Tag: Nano",
+            "en": "Day: Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-week.svg",
+          "caption": {
+            "de": "Woche: Slate",
+            "en": "Week: Slate"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-week-cards.svg",
+          "caption": {
+            "de": "Woche: Bento",
+            "en": "Week: Bento"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-week-compact.svg",
+          "caption": {
+            "de": "Woche: Nano",
+            "en": "Week: Nano"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-month.svg",
+          "caption": {
+            "de": "Monat: Slate",
+            "en": "Month: Slate"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-month-cards.svg",
+          "caption": {
+            "de": "Monat: Bento",
+            "en": "Month: Bento"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-month-compact.svg",
+          "caption": {
+            "de": "Monat: Nano",
+            "en": "Month: Nano"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/calendar-app/preview-widget.svg",
+          "caption": {
+            "de": "Widget: nächste Termine",
+            "en": "Widget: next events"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/calendar-app/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: kompakte Liste",
+            "en": "Widget: compact list"
+          }
+        }
+      ],
+      "package": "apps/calendar-app/package.json",
+      "sha256": "9500b69aee8fa2e408fa019341d8de14cb59215517013e5a2d84b20e8e5d58d3",
+      "size": 41111
+    },
+    {
+      "id": "clock",
+      "name": {
+        "de": "Uhr",
+        "en": "Clock"
+      },
+      "tagline": {
+        "de": "Digitaluhr mit Datum und Kalenderwoche",
+        "en": "Digital clock with date and calendar week"
+      },
+      "description": {
+        "de": "Große Digitaluhr mit Datum und Kalenderwoche in drei Stilen: Bento, Slate und Nano. Die Uhr ist eine Standard-App: Sie lässt sich nicht entfernen und erscheint in der Rotation nur, solange in den Einstellungen die Uhrzeit-Anzeige aktiv ist. Format (12 oder 24 Stunden) und Akzentfarbe folgen den Geräteeinstellungen. Dazu gibt es ein passendes Dashboard-Widget.",
+        "en": "Large digital clock with date and calendar week in three styles: Bento, Slate and Nano. The clock is a standard app: it cannot be removed and only appears in the rotation while the time display is enabled in the settings. The format (12 or 24 hours) and accent color follow the device settings. A matching dashboard widget is included."
+      },
+      "category": "time",
+      "author": "InkBoard",
+      "version": "1.0.2",
+      "apiLevel": 2,
+      "pages": 1,
+      "hasWidget": true,
+      "standard": true,
+      "features": {
+        "de": [
+          "Drei Stile: Bento, Slate, Nano",
+          "12- oder 24-Stunden-Anzeige",
+          "Datum und Kalenderwoche",
+          "Passendes Dashboard-Widget"
+        ],
+        "en": [
+          "Three styles: Bento, Slate, Nano",
+          "12 or 24 hour display",
+          "Date and calendar week",
+          "Matching dashboard widget"
+        ]
+      },
+      "net": [],
+      "icon": "apps/clock/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/clock/preview-display.svg",
+          "caption": {
+            "de": "Bento",
+            "en": "Bento"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/clock/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate",
+            "en": "Slate"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/clock/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano",
+            "en": "Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/clock/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/clock/package.json",
+      "sha256": "8830fa59e8a47c5e55bcb3fe1b8f94cc460693e44369eff08632d6f89252c68c",
+      "size": 9758
+    },
+    {
+      "id": "countdown",
+      "name": {
+        "de": "Countdown",
+        "en": "Countdown"
+      },
+      "tagline": {
+        "de": "Tage bis zu deinem großen Termin",
+        "en": "Days until your big date"
+      },
+      "description": {
+        "de": "Zählt die Tage bis zu einem Datum deiner Wahl herunter: Urlaub, Geburtstag, Prüfung oder Umzug. Die Zahl steht groß und gut lesbar auf dem Display, in der Akzentfarbe deiner Wahl. Nach dem Termin zählt der Countdown die vergangenen Tage.",
+        "en": "Counts down the days to a date of your choice: vacation, birthday, exam or moving day. The number is shown large and easy to read on the display, in the accent color you pick. After the date it counts the days that have passed."
+      },
+      "category": "time",
+      "author": "InkBoard",
+      "version": "1.0.4",
+      "apiLevel": 1,
+      "pages": 1,
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Eigene Bezeichnung und Zieldatum",
+          "Fünf Akzentfarben",
+          "Passendes Dashboard-Widget",
+          "Funktioniert ohne Internet"
+        ],
+        "en": [
+          "Your own label and target date",
+          "Five accent colors",
+          "Matching dashboard widget",
+          "Works without internet"
+        ]
+      },
+      "net": [],
+      "icon": "apps/countdown/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/countdown/preview-display.svg",
+          "caption": {
+            "de": "App-Seite auf dem Display",
+            "en": "App page on the display"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/countdown/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/countdown/package.json",
+      "sha256": "e602a736347292327dbc56695f910410f6ae4a81fb1710d62c8f238e72858114",
+      "size": 3414
+    },
+    {
+      "id": "flight-radar",
+      "name": {
+        "de": "Flight Radar",
+        "en": "Flight Radar"
+      },
+      "tagline": {
+        "de": "Flugzeuge über dir live, mit Route und Flugzeugbild",
+        "en": "Aircraft above you, live, with route and aircraft image"
+      },
+      "description": {
+        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher (NAS), mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein NAS eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner wie bei der eingebauten App. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei im Studio und in der App, oder vom NAS neu laden) und eine Abdeckungsauswertung als CSV (auf dem NAS oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Skript-Variante der eingebauten App; benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
+        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage (NAS), with the airline logo in the corner of the image box; if nothing suitable is there (or no NAS is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder as in the built-in app. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the NAS) and a coverage report as CSV (on the NAS or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Script version of the built-in app; needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.2.4",
+      "apiLevel": 18,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Flug",
+          "en": "Flight"
+        },
+        {
+          "de": "Himmel",
+          "en": "Sky"
+        }
+      ],
+      "hasWidget": true,
+      "needsStorage": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Nächstes Flugzeug live von adsb.lol, ohne Zugangsdaten",
+          "Flug-Seite: Renderbild vom NAS mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
+          "Seite Himmel vollflächig mit freigestellten Renderbildern vom NAS",
+          "airlines.json importieren/exportieren/vom NAS neu laden (Studio, App oder NAS) mit Änderungsliste, Abdeckungsauswertung als CSV (NAS oder Download)",
+          "Widget mit nächstem Flugzeug, optional Airline und Kennzeichen"
+        ],
+        "en": [
+          "Nearest aircraft live from adsb.lol, no credentials",
+          "Flight page: render from the NAS with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
+          "Sky page full-screen with cut-out renders from the NAS",
+          "Import/export/reload airlines.json (Studio, app or NAS) with a change list, coverage report as CSV (NAS or download)",
+          "Widget with the nearest aircraft, optionally airline and registration"
+        ]
+      },
+      "net": [
+        "api.adsb.lol",
+        "api.planespotters.net",
+        "*.plnspttrs.net"
+      ],
+      "icon": "apps/flight-radar/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/flight-radar/preview-flight.svg",
+          "caption": {
+            "de": "Flug: Renderbild vom NAS mit Logo-Platzhalter, Route und Daten",
+            "en": "Flight: render from the NAS with logo placeholder, route and data"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/flight-radar/preview-flight-nophoto.svg",
+          "caption": {
+            "de": "Flug ohne Renderbild und ohne Foto: Hinweis „Kein Bild verfügbar“",
+            "en": "Flight without render and photo: “No image available” note"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/flight-radar/preview-sky.svg",
+          "caption": {
+            "de": "Himmel (vollflächig): die drei nächsten Flugzeuge als Renderbilder",
+            "en": "Sky (full-screen): the three nearest aircraft as renders"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/flight-radar/preview-sky-blue.svg",
+          "caption": {
+            "de": "Himmel in Blau",
+            "en": "Sky in blue"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/flight-radar/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Nächster Flug“ mit Airline und Kennzeichen",
+            "en": "“Next flight” widget with airline and registration"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/flight-radar/preview-widget-small.svg",
+          "caption": {
+            "de": "Widget „Nächster Flug“, flache Bauform",
+            "en": "“Next flight” widget, low variant"
+          }
+        }
+      ],
+      "package": "apps/flight-radar/package.json",
+      "sha256": "1210e57ba7799ba8dd4fe1bca9c91eea4009c13e3ab8e5587a90a6f6ac4dce30",
+      "size": 70940
+    },
+    {
+      "id": "formel-1",
+      "name": {
+        "de": "Formel 1",
+        "en": "Formula 1"
+      },
+      "tagline": {
+        "de": "Rennkalender, WM-Wertung und Ergebnisse mit Streckenlayout",
+        "en": "Race calendar, standings and results with track layouts"
+      },
+      "description": {
+        "de": "Zeigt das nächste Formel-1-Rennen mit Streckenlayout, Zeitplan in Ortszeit und Countdown, die WM-Wertung (Fahrer und Konstrukteure) und das Ergebnis des letzten Rennens. Am Rennwochenende erscheint die zuletzt abgeschlossene Session (Training, Qualifying, Sprint oder Rennen). Daten kommen von Jolpica-F1 und OpenF1, ganz ohne Zugangsdaten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu.",
+        "en": "Shows the next Formula 1 race with track layout, schedule in local time and countdown, the championship standings (drivers and constructors) and the result of the last race. On a race weekend the most recently finished session (practice, qualifying, sprint or race) appears. Data comes from Jolpica-F1 and OpenF1, with no credentials needed. Three layouts (Bento, Slate, Nano) and a dashboard widget are included."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 11,
+      "pages": 3,
+      "pageNames": [
+        {
+          "de": "Nächstes Rennen",
+          "en": "Next race"
+        },
+        {
+          "de": "WM-Wertung",
+          "en": "Standings"
+        },
+        {
+          "de": "Letzte Session",
+          "en": "Last session"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Nächstes Rennen mit Streckenlayout und Countdown",
+          "WM-Wertung der Fahrer und Konstrukteure",
+          "Letzte Session, drei Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "Next race with track layout and countdown",
+          "Drivers' and constructors' standings",
+          "Last session, three layouts and dashboard widget"
+        ]
+      },
+      "net": [
+        "api.jolpi.ca",
+        "api.openf1.org"
+      ],
+      "icon": "apps/formel-1/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-display.svg",
+          "caption": {
+            "de": "Bento: nächstes Rennen",
+            "en": "Bento: next race"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: nächstes Rennen",
+            "en": "Slate: next race"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: nächstes Rennen",
+            "en": "Nano: next race"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-standings.svg",
+          "caption": {
+            "de": "Bento: WM-Wertung",
+            "en": "Bento: standings"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-standings-flat.svg",
+          "caption": {
+            "de": "Slate: WM-Wertung",
+            "en": "Slate: standings"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-standings-compact.svg",
+          "caption": {
+            "de": "Nano: WM-Wertung",
+            "en": "Nano: standings"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-last.svg",
+          "caption": {
+            "de": "Bento: Rennergebnis",
+            "en": "Bento: race result"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-last-flat.svg",
+          "caption": {
+            "de": "Slate: Rennergebnis",
+            "en": "Slate: race result"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-last-compact.svg",
+          "caption": {
+            "de": "Nano: Rennergebnis",
+            "en": "Nano: race result"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/formel-1/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/formel-1/package.json",
+      "sha256": "5e4f81e30ca8437aa2a7526a38aa9d982b5efccd3970c3077993bb211ec141ce",
+      "size": 67025
+    },
+    {
+      "id": "fuel-prices",
+      "name": {
+        "de": "Tankpreise",
+        "en": "Fuel prices"
+      },
+      "tagline": {
+        "de": "Spritpreise in deiner Nähe",
+        "en": "Fuel prices near you"
+      },
+      "description": {
+        "de": "Zeigt die aktuellen Preise der Tankstellen im Umkreis deines Standorts (Daten der Markttransparenzstelle über Tankerkönig). Hauptkraftstoff groß, weitere Sorten klein, Marken-Badges, geschlossene Tankstellen schwarz markiert. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit frei wählbaren Sorten. Der Standort kommt aus den Geräteeinstellungen, den kostenlosen API-Key trägst du hier im Store ein.",
+        "en": "Shows the current prices of the fuel stations around your location (Markttransparenzstelle data via Tankerkoenig). Main fuel large, other grades small, brand badges, closed stations marked black. Three layouts (Bento, Slate, Nano) and a dashboard widget with selectable grades. The location comes from the device settings, you enter the free API key here in the Store."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.1.9",
+      "apiLevel": 7,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Tankpreise",
+          "en": "Fuel prices"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Umkreissuche am Gerätestandort",
+          "Hauptkraftstoff und weitere Sorten",
+          "Drei Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "Search around the device location",
+          "Main fuel and other grades",
+          "Three layouts and a dashboard widget"
+        ]
+      },
+      "net": [
+        "creativecommons.tankerkoenig.de",
+        "de.wikipedia.org",
+        "upload.wikimedia.org",
+        "*.wikimedia.org"
+      ],
+      "icon": "apps/fuel-prices/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/fuel-prices/preview-display.svg",
+          "caption": {
+            "de": "Bento: Kacheln",
+            "en": "Bento: tiles"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/fuel-prices/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Zeilen",
+            "en": "Slate: rows"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/fuel-prices/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: Tabelle",
+            "en": "Nano: table"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fuel-prices/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/fuel-prices/package.json",
+      "sha256": "e778f9dfd5ea4d2ca7188dded2f782ed8716618ce9d3e5a1dbc399c374e5e3e2",
+      "size": 25616
+    },
+    {
+      "id": "fussball-liga",
+      "name": {
+        "de": "Fußball-Liga",
+        "en": "Football league"
+      },
+      "tagline": {
+        "de": "Dein Verein: nächstes Spiel, Ergebnisse und Liga-Tabelle",
+        "en": "Your club: next match, results and league table"
+      },
+      "description": {
+        "de": "Zeigt deinen Lieblingsverein: das nächste Spiel mit Wappen, Anstoßzeit und Live-Stand, die letzten Ergebnisse mit Sieg/Remis/Niederlage und die komplette Liga-Tabelle mit Zonen (Champions League, Europa, Abstieg) und S/U/N, Tore, Punkten. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal kommen ohne Schlüssel von OpenLigaDB (der Pokal hat keine Tabelle, nur Spiele). Premier League, La Liga, Serie A, Ligue 1 und weitere Ligen kommen von football-data.org mit kostenlosem API-Schlüssel. Zwei Seiten (Team, Liga-Tabelle) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget „Nächstes Spiel“ mit Live-Stand.",
+        "en": "Shows your favourite club: the next match with crests, kick-off time and live score, the latest results with win/draw/loss and the full league table with zones (Champions League, Europe, relegation) and W/D/L, goals and points. Bundesliga, 2. Bundesliga, 3. Liga and the DFB-Pokal come from OpenLigaDB without a key (the cup has no table, only matches). Premier League, La Liga, Serie A, Ligue 1 and more leagues come from football-data.org with a free API key. Two pages (team, league table) in three layouts (Bento, Slate, Nano) and a \"Next match\" dashboard widget with live score."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.9",
+      "apiLevel": 14,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Team",
+          "en": "Team"
+        },
+        {
+          "de": "Liga-Tabelle",
+          "en": "League table"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal ohne Schlüssel",
+          "Nächstes Spiel, letzte 5 Ergebnisse und Liga-Tabelle mit Zonen",
+          "Wappen als Kürzel in Vereinsfarbe, echte Wappen von Wikipedia",
+          "Drei Darstellungen und Dashboard-Widget mit Live-Stand"
+        ],
+        "en": [
+          "Bundesliga, 2. Bundesliga, 3. Liga and DFB-Pokal without a key",
+          "Next match, last 5 results and league table with zones",
+          "Crests as abbreviation badges in club colours, real crests from Wikipedia",
+          "Three layouts and dashboard widget with live score"
+        ]
+      },
+      "net": [
+        "api.openligadb.de",
+        "api.football-data.org",
+        "crests.football-data.org",
+        "upload.wikimedia.org",
+        "thumb.wikimedia.org",
+        "en.wikipedia.org"
+      ],
+      "icon": "apps/fussball-liga/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-team.svg",
+          "caption": {
+            "de": "Bento: nächstes Spiel und letzte Ergebnisse",
+            "en": "Bento: next match and latest results"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-team-flat.svg",
+          "caption": {
+            "de": "Slate: Ergebnisse und Termine",
+            "en": "Slate: results and fixtures"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-team-compact.svg",
+          "caption": {
+            "de": "Nano: Zeitleiste",
+            "en": "Nano: timeline"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-table.svg",
+          "caption": {
+            "de": "Bento: Liga-Tabelle mit Zonen",
+            "en": "Bento: league table with zones"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-table-flat.svg",
+          "caption": {
+            "de": "Slate: komplette Tabelle",
+            "en": "Slate: full table"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-table-compact.svg",
+          "caption": {
+            "de": "Nano: kompakte Tabelle",
+            "en": "Nano: compact table"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Nächstes Spiel“",
+            "en": "“Next match” widget"
+          }
+        }
+      ],
+      "package": "apps/fussball-liga/package.json",
+      "sha256": "d73e0116dd669b214f6f5932683c1a85fd82f3eba5490f787cf65bdfa30317d5",
+      "size": 66016
+    },
+    {
+      "id": "gericht-des-tages",
+      "name": {
+        "de": "Gericht des Tages",
+        "en": "Meal of the day"
+      },
+      "tagline": {
+        "de": "Jeden Tag ein zufälliges Rezept von Chefkoch",
+        "en": "A random Chefkoch recipe every day"
+      },
+      "description": {
+        "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite. Skript-Variante der eingebauten App.",
+        "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page. Script version of the built-in app."
+      },
+      "category": "fun",
+      "author": "InkBoard",
+      "version": "1.1.2",
+      "apiLevel": 10,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Gericht des Tages",
+          "en": "Meal of the day"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Neues Gericht jeden Tag, per Taster (2x) jederzeit ein neues",
+          "Drehen blättert durch Übersicht, Zutaten, Nährwerte, Zubereitung",
+          "Beliebig lange Rezepte, Zutaten auf deine Portionen umgerechnet",
+          "Fleisch / Fisch / vegetarisch / vegan erkannt, QR-Code zur Rezeptseite",
+          "Dashboard-Widget"
+        ],
+        "en": [
+          "A new meal every day, or any time with the button (twice)",
+          "Turn to browse overview, ingredients, nutrition, instructions",
+          "Recipes of any length, ingredients scaled to your servings",
+          "Meat / fish / vegetarian / vegan detected, QR code to the recipe page",
+          "Dashboard widget"
+        ]
+      },
+      "net": [
+        "www.chefkoch.de"
+      ],
+      "icon": "apps/gericht-des-tages/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-display.svg",
+          "caption": {
+            "de": "Übersicht mit QR-Code",
+            "en": "Overview with QR code"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-ingredients.svg",
+          "caption": {
+            "de": "Zutaten",
+            "en": "Ingredients"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-steps.svg",
+          "caption": {
+            "de": "Zubereitung",
+            "en": "Instructions"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gericht-des-tages/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/gericht-des-tages/package.json",
+      "sha256": "1fab403c24d253d9e69051cdf83fe371e76066d9c12f0e3b84a69fb8199d4658",
+      "size": 21427
+    },
+    {
+      "id": "golf-tour",
+      "name": {
+        "de": "Golf Tour",
+        "en": "Golf Tour"
+      },
+      "tagline": {
+        "de": "Leaderboards von PGA Tour, LIV Golf und DP World Tour",
+        "en": "Leaderboards of the PGA Tour, LIV Golf and DP World Tour"
+      },
+      "description": {
+        "de": "Zeigt das aktuelle Leaderboard der PGA Tour, von LIV Golf oder der DP World Tour (Daten von ESPN, kein Schlüssel nötig): Turniername, Status (läuft/beendet) und die besten Platzierungen mit Gleichständen (T4), Score zu Par und Hinweisen wie F, CUT oder WD. Du wählst, welche Tour auf der Vollseite und im Dashboard-Widget erscheint. Die Platzierungen werden nur in der Turnierwoche geladen, davor steht das nächste Turnier mit Datum auf der Seite. Drei Darstellungen (Bento mit Podium-Kacheln, Slate, Nano) und ein Dashboard-Widget „Top 3“ gehören dazu. Skript-Variante der eingebauten App.",
+        "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour (data from ESPN, no key needed): tournament name, status (in progress/final) and the top standings with ties (T4), score to par and notes such as F, CUT or WD. You choose which tour appears on the full page and in the dashboard widget. Standings are loaded during tournament week only; before that the page shows the next tournament with its date. Three layouts (Bento with podium tiles, Slate, Nano) and a \"Top 3\" dashboard widget are included. Script version of the built-in app."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.1",
+      "apiLevel": 12,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Leaderboard",
+          "en": "Leaderboard"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "PGA Tour, LIV Golf oder DP World Tour zur Auswahl",
+          "Podium der Top 3 plus Liste bis Platz 15, Gleichstände und Score zu Par",
+          "Standings nur in der Turnierwoche geladen, sonst das nächste Turnier",
+          "Drei Darstellungen und Dashboard-Widget „Top 3“"
+        ],
+        "en": [
+          "Choose PGA Tour, LIV Golf or DP World Tour",
+          "Podium of the top 3 plus a list down to 15th place, ties and score to par",
+          "Standings loaded during tournament week only, otherwise the next tournament",
+          "Three layouts and a \"Top 3\" dashboard widget"
+        ]
+      },
+      "net": [
+        "site.api.espn.com"
+      ],
+      "icon": "apps/golf-tour/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/golf-tour/preview-display.svg",
+          "caption": {
+            "de": "Bento: Podium-Kacheln",
+            "en": "Bento: podium tiles"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/golf-tour/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Rangliste",
+            "en": "Slate: ranking"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/golf-tour/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: kompakt",
+            "en": "Nano: compact"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golf-tour/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Top 3“ im Dashboard",
+            "en": "\"Top 3\" widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/golf-tour/package.json",
+      "sha256": "a83df96ccddabcba356d2e34aabd29cab9b84c07adbf9c4476e601f93f509e46",
+      "size": 25860
+    },
+    {
+      "id": "golfplatz",
+      "name": {
+        "de": "Golfplatz",
+        "en": "Golf Course"
+      },
+      "tagline": {
+        "de": "Platzbelegung deines Golfclubs aus PC CADDIE",
+        "en": "Your golf club's course occupancy from PC CADDIE"
+      },
+      "description": {
+        "de": "Zeigt die Platzbelegung deines Golfclubs direkt vom öffentlichen PC-CADDIE-Belegungsplan: Sperrungen, Turniere, Gruppen und Hinweise für heute, die Woche und 14 Tage, nach Bereichen farbig getrennt (Tee 1, Greenkeeping, Kurse & Events, Information). Voreingestellt ist der GC Hamburg-Ahrensburg, per Clubnummer ist die App für jeden PC-CADDIE-Club nutzbar; Zugangsdaten braucht es nicht. Drei Seiten (Heute, Woche, 14 Tage) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget, das auf einen Blick zeigt, ob der Platz jetzt und in den nächsten drei Stunden frei ist. Aus Rücksicht auf den Betreiber wird höchstens einmal pro Stunde abgerufen. Skript-Variante der eingebauten App.",
+        "en": "Shows your golf club's course occupancy straight from the public PC CADDIE occupancy plan: closures, tournaments, groups and notes for today, the week and 14 days, colour-coded by area (Tee 1, greenkeeping, courses & events, information). The GC Hamburg-Ahrensburg is preset; with the club number the app works for every PC CADDIE club, no credentials needed. Three pages (today, week, 14 days) in three layouts (Bento, Slate, Nano) and a dashboard widget that shows at a glance whether the course is free now and for the next three hours. Out of respect for the operator it fetches at most once per hour. Script version of the built-in app."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 14,
+      "pages": 3,
+      "pageNames": [
+        {
+          "de": "Heute",
+          "en": "Today"
+        },
+        {
+          "de": "Woche",
+          "en": "Week"
+        },
+        {
+          "de": "14 Tage",
+          "en": "14 days"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Belegungsplan jedes PC-CADDIE-Clubs per Clubnummer, ohne Zugangsdaten",
+          "Heute, Woche und 14 Tage mit festen Bereichsfarben",
+          "Widget: jetzt frei oder belegt, frei bis wann, Einträge des Tages",
+          "Drei Darstellungen, Abruf höchstens einmal pro Stunde"
+        ],
+        "en": [
+          "Occupancy plan of any PC CADDIE club by club number, no credentials",
+          "Today, week and 14 days with fixed area colours",
+          "Widget: free or busy now, free until when, today's entries",
+          "Three layouts, fetched at most once per hour"
+        ]
+      },
+      "net": [
+        "www.pccaddie.net"
+      ],
+      "icon": "apps/golfplatz/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-today.svg",
+          "caption": {
+            "de": "Bento: Heute, Fokuskarte mit FREI-Feld",
+            "en": "Bento: today, focus card with FREE panel"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-today-flat.svg",
+          "caption": {
+            "de": "Slate: Heute, Zeitleiste",
+            "en": "Slate: today, timeline"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-today-compact.svg",
+          "caption": {
+            "de": "Nano: Heute, Platz und Betrieb in zwei Spalten",
+            "en": "Nano: today, course and operations in two columns"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-week.svg",
+          "caption": {
+            "de": "Bento: Woche, Zeilenkarten",
+            "en": "Bento: week, row cards"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-week-flat.svg",
+          "caption": {
+            "de": "Slate: Woche, flache Wochenliste",
+            "en": "Slate: week, flat week list"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-week-compact.svg",
+          "caption": {
+            "de": "Nano: Woche, Volltabelle",
+            "en": "Nano: week, full table"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-14d.svg",
+          "caption": {
+            "de": "Bento: 14 Tage, zwei Wochenkarten",
+            "en": "Bento: 14 days, two week cards"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-14d-flat.svg",
+          "caption": {
+            "de": "Slate: 14 Tage, zwei Wochenspalten",
+            "en": "Slate: 14 days, two week columns"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-14d-compact.svg",
+          "caption": {
+            "de": "Nano: 14 Tage, Volltabelle mit Hinweisen",
+            "en": "Nano: 14 days, full table with notes"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golfplatz/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Platzbelegung heute“",
+            "en": "“Occupancy today” widget"
+          }
+        }
+      ],
+      "package": "apps/golfplatz/package.json",
+      "sha256": "ec2fef4451d6387de2dd899ac6165dfb8cd366d248c5b37afd1e4f53c807494b",
+      "size": 40311
+    },
+    {
+      "id": "news-feeds",
+      "name": {
+        "de": "Nachrichten",
+        "en": "News"
+      },
+      "tagline": {
+        "de": "Schlagzeilen aus deinen RSS-Feeds",
+        "en": "Headlines from your RSS feeds"
+      },
+      "description": {
+        "de": "Zeigt aktuelle Schlagzeilen in vier Kategorien (Allgemein, Wirtschaft, Sport, Technik). Je Kategorie wählst du bis zu zwei bekannte Feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) und kannst eine eigene Feed-Adresse ergänzen. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Alles stellst du hier im Store ein.",
+        "en": "Shows current headlines in four categories (General, Business, Sports, Tech). For each category you pick up to two well-known feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) and can add your own feed address. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You set everything up here in the Store."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.6",
+      "apiLevel": 7,
+      "pages": 4,
+      "pageNames": [
+        {
+          "de": "Allgemein",
+          "en": "General"
+        },
+        {
+          "de": "Wirtschaft",
+          "en": "Business"
+        },
+        {
+          "de": "Sport",
+          "en": "Sports"
+        },
+        {
+          "de": "Technik",
+          "en": "Tech"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Vier Kategorien mit je bis zu drei Feeds",
+          "Eigene RSS-/Atom-Adresse möglich",
+          "Drei Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "Four categories with up to three feeds each",
+          "Your own RSS/Atom address possible",
+          "Three layouts and a dashboard widget"
+        ]
+      },
+      "net": [
+        "*.tagesschau.de",
+        "*.zeit.de",
+        "*.kicker.de",
+        "*.heise.de",
+        "*.golem.de"
+      ],
+      "icon": "apps/news-feeds/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-display.svg",
+          "caption": {
+            "de": "Bento: Karten",
+            "en": "Bento: cards"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Zeilen",
+            "en": "Slate: rows"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: kompakt",
+            "en": "Nano: compact"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/news-feeds/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/news-feeds/package.json",
+      "sha256": "d7f00c258e60b66a912cc2f62146b9a178b428f806e5a13c007fe3f41fdc4bf8",
+      "size": 25287
+    },
+    {
+      "id": "oepnv",
+      "name": {
+        "de": "ÖPNV",
+        "en": "Public transport"
+      },
+      "tagline": {
+        "de": "Abfahrten deiner Haltestelle und Lieblingsrouten mit Echtzeit",
+        "en": "Departures of your stop and favourite routes with real time"
+      },
+      "description": {
+        "de": "Zeigt die nächsten Abfahrten einer Haltestelle mit Linienfarben, Fahrtziel, Countdown und Verspätung sowie bis zu sechs Lieblingsrouten mit Zeitstrahl: Umstiege, Gleise, Fußwege, Ankunftszeit und Störungen. Mit eingestellter Wegezeit zeigt die App, wann du losgehen musst. Anbieter: HVV Geofox (vollständige HVV-Echtzeitdaten, eigener Zugang nötig), Transitous (bundesweit ohne Anmeldung) oder der DB-Dienst v6.db.transport.rest. Zwei Seiten (Abfahrten, Routen) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget für Abfahrten oder Routen.",
+        "en": "Shows the next departures of a stop with line colours, destination, countdown and delay, plus up to six favourite routes with a timeline: transfers, platforms, walks, arrival time and disruptions. With a walking time set, the app shows when you have to leave. Providers: HVV Geofox (complete HVV real-time data, own access required), Transitous (nationwide without sign-up) or the DB service v6.db.transport.rest. Two pages (departures, routes) in three layouts (Bento, Slate, Nano) and a dashboard widget for departures or routes."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.2.2",
+      "apiLevel": 16,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Abfahrten",
+          "en": "Departures"
+        },
+        {
+          "de": "Routen",
+          "en": "Routes"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Abfahrten mit Linienfarben, Countdown und Verspätung",
+          "Bis zu sechs Lieblingsrouten mit Zeitstrahl und Umstiegen",
+          "Wegezeit: zeigt, wann du losgehen musst",
+          "HVV Geofox, Transitous oder DB - drei Darstellungen und Widget"
+        ],
+        "en": [
+          "Departures with line colours, countdown and delay",
+          "Up to six favourite routes with timeline and transfers",
+          "Walking time: shows when you have to leave",
+          "HVV Geofox, Transitous or DB - three layouts and widget"
+        ]
+      },
+      "net": [
+        "gti.geofox.de",
+        "api.transitous.org",
+        "v6.db.transport.rest"
+      ],
+      "icon": "apps/oepnv/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-display.svg",
+          "caption": {
+            "de": "Bento: Kacheln je Linie",
+            "en": "Bento: tiles per line"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Countdown-Liste",
+            "en": "Slate: countdown list"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: zehn Abfahrten",
+            "en": "Nano: ten departures"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-routes.svg",
+          "caption": {
+            "de": "Bento: Route mit Zeitstrahl",
+            "en": "Bento: route with timeline"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-routes-flat.svg",
+          "caption": {
+            "de": "Slate: Routen-Blöcke",
+            "en": "Slate: route blocks"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-routes-compact.svg",
+          "caption": {
+            "de": "Nano: Zeit bis Losgehen",
+            "en": "Nano: time until departure"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/oepnv/preview-widget.svg",
+          "caption": {
+            "de": "Widget „Abfahrten“",
+            "en": "“Departures” widget"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/oepnv/preview-widget-routes.svg",
+          "caption": {
+            "de": "Widget „Routen“",
+            "en": "“Routes” widget"
+          }
+        }
+      ],
+      "package": "apps/oepnv/package.json",
+      "sha256": "c4e97155ac106203c9f0798d9cedb686c043130050418d37f81a776dcec78576",
+      "size": 81287
+    },
+    {
+      "id": "pinnwand-app",
+      "name": {
+        "de": "Pinnwand",
+        "en": "Family Board"
+      },
+      "tagline": {
+        "de": "Die letzte Familien-Nachricht als angeheftete Notiz",
+        "en": "The latest family message as a pinned note"
+      },
+      "description": {
+        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem NAS, sofortige Anzeige beim Eintreffen) bleibt in der Firmware. Skript-Variante der eingebauten App: Aussehen und Einstellungen wie dort, ohne Stilauswahl und ohne Widget.",
+        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the NAS, instant display on arrival) stays in the firmware. Script version of the built-in app: same look and settings, without a style choice and without a widget."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.1.1",
+      "apiLevel": 19,
+      "pages": 1,
+      "hasWidget": false,
+      "needsStorage": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Zettel mit Stecknadel, Absender-Chip und Uhrzeit",
+          "Große Schrift, bei langen Nachrichten kleiner mit Umbruch",
+          "Nachricht anpinnen: Absender, Text und Zielgerät in den Einstellungen",
+          "Ordner auf dem NAS für schlafende Geräte",
+          "Nachrichtendienst bleibt in der Firmware"
+        ],
+        "en": [
+          "Note with pin, sender chip and time",
+          "Large type, smaller with wrapping for long messages",
+          "Pin a message: sender, text and target device in the settings",
+          "Folder on the NAS for sleeping devices",
+          "Messaging service stays in the firmware"
+        ]
+      },
+      "net": [],
+      "icon": "apps/pinnwand-app/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-note.svg",
+          "caption": {
+            "de": "Nachricht von heute",
+            "en": "Message from today"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-long.svg",
+          "caption": {
+            "de": "Lange Nachricht in kleinerer Schrift",
+            "en": "Long message in smaller type"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-empty.svg",
+          "caption": {
+            "de": "Noch keine Nachricht",
+            "en": "No message yet"
+          }
+        }
+      ],
+      "package": "apps/pinnwand-app/package.json",
+      "sha256": "d160f8f964a809c3ef928a16f2f3d14508c458f199f1d5305682301f30b68f75",
+      "size": 8404
+    },
+    {
+      "id": "rezepte",
+      "name": {
+        "de": "Rezepte",
+        "en": "Recipes"
+      },
+      "tagline": {
+        "de": "Rezept per Link vom Handy aufs Display",
+        "en": "Send a recipe from your phone to the display"
+      },
+      "description": {
+        "de": "Scanne den QR-Code auf dem Display, füge auf dem Handy den Link einer Rezeptseite ein, und das Display zeigt Zutaten (zwei Spalten), Zubereitung und Nährwerte als Seiten - Drehen blättert. Die Portionen lassen sich auf dem Handy umrechnen; findet die App auf einer Seite kein Rezept, kannst du Zutaten und Zubereitung auch als Text einfügen. Skript-Variante der eingebauten App; die Handy-Seite liegt unter http://<IP des Geräts>/app/rezepte. Hinweis: Die App darf Rezeptseiten von jedem https-Server laden (nur dafür, nur Port 443, keine IP-Adressen).",
+        "en": "Scan the QR code on the display, paste the link of a recipe page on your phone, and the display shows ingredients (two columns), instructions and nutrition facts as pages - turn the dial to browse. Servings can be converted on the phone; if a page has no recipe data you can paste ingredients and steps as text. Script version of the built-in app; the phone page lives at http://<device IP>/app/rezepte. Note: the app may load recipe pages from any https server (for that purpose only, port 443 only, no IP addresses)."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.1.0",
+      "apiLevel": 20,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Rezepte",
+          "en": "Recipes"
+        }
+      ],
+      "hasWidget": false,
+      "standard": false,
+      "features": {
+        "de": [
+          "Rezeptlink einfügen, Zutaten, Zubereitung und Nährwerte als Seiten",
+          "Drehen blättert, Klick beendet das Blättern",
+          "Portionen auf dem Handy umrechnen",
+          "Manuell einfügen, wenn die Seite kein Rezept liefert",
+          "Darf Rezeptseiten von jedem https-Server laden"
+        ],
+        "en": [
+          "Paste a recipe link, ingredients, instructions and nutrition as pages",
+          "Turn to browse, click ends browsing",
+          "Convert servings on the phone",
+          "Paste manually if the page has no recipe data",
+          "May load recipe pages from any https server"
+        ]
+      },
+      "net": [],
+      "recipeAnyHost": true,
+      "icon": "apps/rezepte/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-empty.svg",
+          "caption": {
+            "de": "QR-Code zur Handy-Seite",
+            "en": "QR code to the phone page"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-ingredients.svg",
+          "caption": {
+            "de": "Zutaten",
+            "en": "Ingredients"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-steps.svg",
+          "caption": {
+            "de": "Zubereitung",
+            "en": "Instructions"
+          }
+        }
+      ],
+      "package": "apps/rezepte/package.json",
+      "sha256": "661990566f0ee98c1c3d1c7e150b78f0b1ec8b3c3a154b4753db6b47abda925f",
+      "size": 40930
+    },
+    {
+      "id": "sport-tabellen",
+      "name": {
+        "de": "Sport",
+        "en": "Sports"
+      },
+      "tagline": {
+        "de": "Tabellen und Spiele für Eishockey, Handball, Basketball und NFL",
+        "en": "Tables and matches for ice hockey, handball, basketball and the NFL"
+      },
+      "description": {
+        "de": "Verfolge dein Team: nächstes Spiel mit Wappen gegen Wappen, die letzten fünf Ergebnisse und die Liga-Tabelle für Eishockey (DEL), Handball (Bundesliga, Champions League), Basketball (BBL, EuroLeague) und American Football (NFL). Daten kommen von sportal.de, ein Schlüssel ist nicht nötig. Die Teams wählst du per Knopf „Teams laden“ aus der aktuellen Tabelle. Alle Sportarten mit eingetragenem Team werden im Hintergrund geladen; auf den Vollseiten erscheint die gewählte Sportart, im Dashboard kann jedes Widget eine andere zeigen. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit Termin, Live-Zwischenstand und Tabellenplatz gehören dazu.",
+        "en": "Follow your team: next match with crest against crest, the last five results and the league table for ice hockey (DEL), handball (Bundesliga, Champions League), basketball (BBL, EuroLeague) and American football (NFL). Data comes from sportal.de, no key needed. You pick your teams with the “Load teams” button from the current table. Every sport with a team entered is loaded in the background; the full pages show the chosen sport, and each dashboard widget can show a different one. Three layouts (Bento, Slate, Nano) and a dashboard widget with the date, live score and table position are included."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.16",
+      "apiLevel": 14,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Team",
+          "en": "Team"
+        },
+        {
+          "de": "Liga-Tabelle",
+          "en": "League table"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Eishockey, Handball, Basketball und NFL von sportal.de",
+          "Nächstes Spiel, letzte fünf Ergebnisse und Liga-Tabelle",
+          "Team per Knopf aus der aktuellen Tabelle wählen",
+          "Drei Darstellungen und Dashboard-Widget mit Live-Stand"
+        ],
+        "en": [
+          "Ice hockey, handball, basketball and NFL from sportal.de",
+          "Next match, last five results and league table",
+          "Pick your team from the current table with one button",
+          "Three layouts and a dashboard widget with live score"
+        ]
+      },
+      "net": [
+        "sportal.de",
+        "www.sportal.de",
+        "en.wikipedia.org",
+        "upload.wikimedia.org",
+        "thumb.wikimedia.org"
+      ],
+      "icon": "apps/sport-tabellen/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-display.svg",
+          "caption": {
+            "de": "Bento: Team-Seite (Handball)",
+            "en": "Bento: team page (handball)"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Team-Seite (Eishockey)",
+            "en": "Slate: team page (ice hockey)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: Team-Seite (Basketball)",
+            "en": "Nano: team page (basketball)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-table.svg",
+          "caption": {
+            "de": "Bento: Liga-Tabelle (Handball)",
+            "en": "Bento: league table (handball)"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-table-flat.svg",
+          "caption": {
+            "de": "Slate: Liga-Tabelle (Eishockey)",
+            "en": "Slate: league table (ice hockey)"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-table-compact.svg",
+          "caption": {
+            "de": "Nano: Division-Tabelle (NFL)",
+            "en": "Nano: division table (NFL)"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/sport-tabellen/package.json",
+      "sha256": "090afb69476eca5adbd7ae9c5ff48ecc44abf1b96c0358d8c88043e07f4f5b86",
+      "size": 58530
+    },
+    {
+      "id": "stocks-crypto",
+      "name": {
+        "de": "Aktien & Krypto",
+        "en": "Stocks & Crypto"
+      },
+      "tagline": {
+        "de": "Aktien, Indizes und Krypto mit Kursverlauf",
+        "en": "Stocks, indices and crypto with price history"
+      },
+      "description": {
+        "de": "Zeigt Kurse und die Tagesänderung für Aktien, Indizes und Kryptowährungen (Daten von Twelve Data). Zwei Seiten (Aktien, Krypto), je ein Fokus-Symbol, das immer zuerst steht, und bis zu neun Symbole je Seite, jeweils mit kleinem Kursverlauf. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Du brauchst einen kostenlosen API-Key von twelvedata.com; alles stellst du hier im Store ein.",
+        "en": "Shows quotes and the daily change for stocks, indices and cryptocurrencies (data from Twelve Data). Two pages (Stocks, Crypto), one focus symbol per page that always comes first, and up to nine symbols per page, each with a small price history. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You need a free API key from twelvedata.com; you set everything up here in the Store."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.7",
+      "apiLevel": 7,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Aktien",
+          "en": "Stocks"
+        },
+        {
+          "de": "Krypto",
+          "en": "Crypto"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Aktien, Indizes und Krypto auf zwei Seiten",
+          "Fokus-Symbol und bis zu neun Symbole je Seite",
+          "Drei Darstellungen, Kursverlauf und Dashboard-Widget"
+        ],
+        "en": [
+          "Stocks, indices and crypto on two pages",
+          "Focus symbol and up to nine symbols per page",
+          "Three layouts, price history and dashboard widget"
+        ]
+      },
+      "net": [
+        "api.twelvedata.com"
+      ],
+      "icon": "apps/stocks-crypto/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-display.svg",
+          "caption": {
+            "de": "Bento: Kacheln",
+            "en": "Bento: tiles"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Zeilen",
+            "en": "Slate: rows"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: kompakt",
+            "en": "Nano: compact"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/stocks-crypto/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/stocks-crypto/package.json",
+      "sha256": "c6a2a8fc2f0bc3738775331fb38ab71f8c7db9deb681c7380145e1b1a5cd416f",
+      "size": 26702
+    },
+    {
+      "id": "todo-list",
+      "name": {
+        "de": "Aufgaben",
+        "en": "Tasks"
+      },
+      "tagline": {
+        "de": "Deine Aufgabenlisten aus Todoist, iCloud und Nextcloud",
+        "en": "Your task lists from Todoist, iCloud and Nextcloud"
+      },
+      "description": {
+        "de": "Zeigt deine offenen Aufgaben auf dem Display: aus Todoist, den iCloud-Erinnerungen, Nextcloud oder jedem anderen CalDAV-Server, bis zu drei Quellen gleichzeitig, jede mit eigener Farbe. Überfällige Aufgaben stehen oben und sind rot, Fälligkeit und Uhrzeit werden ausgeschrieben, Priorität, Projekt, Labels und Beschreibung erscheinen auf den Detailkarten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu. Alle Zugangsdaten stellst du hier im Store ein.",
+        "en": "Shows your open tasks on the display: from Todoist, iCloud Reminders, Nextcloud or any other CalDAV server, up to three sources at once, each in its own color. Overdue tasks come first in red, due dates and times are written out, and priority, project, labels and description appear on the detail cards. Three layouts (Bento, Slate, Nano) and a dashboard widget are included. You set up all credentials here in the Store."
+      },
+      "category": "organize",
+      "author": "InkBoard",
+      "version": "1.1.8",
+      "apiLevel": 6,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Aufgaben",
+          "en": "Tasks"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Todoist, iCloud, Nextcloud und andere CalDAV-Server",
+          "Bis zu drei Quellen mit eigener Farbe",
+          "Überfälliges zuerst, in Rot",
+          "Drei Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "Todoist, iCloud, Nextcloud and other CalDAV servers",
+          "Up to three sources, each in its own color",
+          "Overdue first, in red",
+          "Three layouts and a dashboard widget"
+        ]
+      },
+      "net": [
+        "caldav.icloud.com",
+        "*.icloud.com",
+        "api.todoist.com"
+      ],
+      "icon": "apps/todo-list/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/todo-list/preview-display.svg",
+          "caption": {
+            "de": "Bento: Detailkarten",
+            "en": "Bento: detail cards"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/todo-list/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: eine Zeile je Aufgabe",
+            "en": "Slate: one line per task"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/todo-list/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: kompakt",
+            "en": "Nano: compact"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/todo-list/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/todo-list/package.json",
+      "sha256": "bd55e88c1e4f105fa411816bdae6b10d73ce90773721e9a46e35c134147b0e60",
+      "size": 49299
+    },
+    {
+      "id": "waste-calendar",
+      "name": {
+        "de": "Müllabfuhr",
+        "en": "Waste collection"
+      },
+      "tagline": {
+        "de": "Nächste Abfuhrtermine deiner Tonnen",
+        "en": "Next pick-up dates for your bins"
+      },
+      "description": {
+        "de": "Zeigt, wann welche Tonne geleert wird: aus dem Kalender-Link (ICS) deines Entsorgers oder, für eine Auswahl von Kommunen und Landkreisen, direkt per Adresse. Restmüll, Biotonne, Papier und Gelbe Tonne bekommen ihre Tonnenfarbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Drei Darstellungen (Tonnen-Kacheln, Liste, Monatskalender) und ein Dashboard-Widget gehören dazu.",
+        "en": "Shows when each bin is emptied: from the calendar link (ICS) of your waste company or, for a selection of municipalities, directly by address. General waste, bio, paper and recycling bins get their bin color, plus “today”, “tomorrow” or “in 5 days”. Three layouts (bin tiles, list, month calendar) and a dashboard widget are included."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.0.2",
+      "apiLevel": 9,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Müllabfuhr",
+          "en": "Waste collection"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "ICS-Kalender-Link oder Adresse (AbfallNavi)",
+          "Tonnenfarben und „in X Tagen“",
+          "Drei Darstellungen und Dashboard-Widget",
+          "Tonnenarten für das Widget wählbar"
+        ],
+        "en": [
+          "ICS calendar link or address (AbfallNavi)",
+          "Bin colors and “in X days”",
+          "Three layouts and dashboard widget",
+          "Choose which bins the widget shows"
+        ]
+      },
+      "net": [
+        "abfallapp.regioit.de",
+        "*.regioit.de"
+      ],
+      "icon": "apps/waste-calendar/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/waste-calendar/preview-display.svg",
+          "caption": {
+            "de": "Bento: Tonnen-Kacheln",
+            "en": "Bento: bin tiles"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/waste-calendar/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Headline und Liste",
+            "en": "Slate: headline and list"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/waste-calendar/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: Monatskalender",
+            "en": "Nano: month calendar"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/waste-calendar/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/waste-calendar/package.json",
+      "sha256": "5595274519f00cb660fab2689439cec5355cc651eae0320d49442bc95f96d6a2",
+      "size": 29628
+    },
+    {
+      "id": "weather-station",
+      "name": {
+        "de": "Wetter",
+        "en": "Weather"
+      },
+      "tagline": {
+        "de": "Die Wetter-App: Innen, Außen und Netzwerk",
+        "en": "The Weather app: indoor, outdoor and network"
+      },
+      "description": {
+        "de": "Die komplette Wetter-App als ein Paket: Innen-Seite (Temperatur, CO2 und Luftfeuchtigkeit des Raumsensors mit Ampel, Warnhinweisen und Verlauf), Außen-Seite (aktuelles Wetter, Sonnenzeiten, Wind, Druck, UV, Sicht, Luftqualität, Stundenverlauf, Mehrtagesvorschau) und Netzwerk-Seite (alle InkBoards im Netzwerk als Raum-Kacheln mit Ranking, Akkustand und CO2-Dauer) in den drei Stilen Bento, Slate und Nano, dazu die Dashboard-Widgets „Wetter Innen“ und „Wetter Außen“. Das Paket ist eine Standard-App und lässt sich nicht entfernen. Stil, Fokuswert, Warnschwellen und Verlaufszeitraum findest du in den Paket-Einstellungen; Standort, Wetterdienst, API-Key und Abruf-Takte stehen in den Geräte-Einstellungen unter „Wetter“.",
+        "en": "The complete Weather app as one package: indoor page (temperature, CO2 and humidity of the room sensor with traffic light, warnings and trend), outdoor page (current weather, sun times, wind, pressure, UV, visibility, air quality, hourly trend, multi-day forecast) and network page (all InkBoards on the network as room tiles with ranking, battery level and CO2 duration) in the three styles Bento, Slate and Nano, plus the dashboard widgets \"Weather Indoor\" and \"Weather Outdoor\". The package is a standard app and cannot be removed. Style, focus value, warning thresholds and trend range are in the package settings; location, weather service, API key and fetch intervals are in the device settings under \"Weather\"."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.1.1",
+      "apiLevel": 4,
+      "pages": 3,
+      "pageNames": [
+        {
+          "de": "Innen",
+          "en": "Indoor"
+        },
+        {
+          "de": "Außen",
+          "en": "Outdoor"
+        },
+        {
+          "de": "Netzwerk",
+          "en": "Network"
+        }
+      ],
+      "hasWidget": false,
+      "standard": true,
+      "features": {
+        "de": [
+          "Drei Seiten: Innen, Außen, Netzwerk",
+          "Drei Stile: Bento, Slate, Nano",
+          "CO2- und Feuchte-Ampel mit Warnhinweisen",
+          "Stundenverlauf, Mehrtagesvorschau, Regen-Countdown",
+          "Dashboard-Widgets Wetter Innen und Wetter Außen"
+        ],
+        "en": [
+          "Three pages: indoor, outdoor, network",
+          "Three styles: Bento, Slate, Nano",
+          "CO2 and humidity traffic light with warnings",
+          "Hourly trend, multi-day forecast, rain countdown",
+          "Dashboard widgets Weather Indoor and Weather Outdoor"
+        ]
+      },
+      "net": [],
+      "icon": "apps/weather-station/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-outdoor.svg",
+          "caption": {
+            "de": "Außen-Seite im Stil Bento",
+            "en": "Outdoor page, style Bento"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-outdoor-flat.svg",
+          "caption": {
+            "de": "Außen-Seite im Stil Slate",
+            "en": "Outdoor page, style Slate"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-outdoor-compact.svg",
+          "caption": {
+            "de": "Außen-Seite im Stil Nano",
+            "en": "Outdoor page, style Nano"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor.svg",
+          "caption": {
+            "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
+            "en": "Dashboard widget with forecast and rain countdown"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-indoor.svg",
+          "caption": {
+            "de": "Innen-Seite im Stil Bento",
+            "en": "Indoor page, style Bento"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-indoor-flat.svg",
+          "caption": {
+            "de": "Innen-Seite im Stil Slate",
+            "en": "Indoor page, style Slate"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-indoor-compact.svg",
+          "caption": {
+            "de": "Innen-Seite im Stil Nano",
+            "en": "Indoor page, style Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-network.svg",
+          "caption": {
+            "de": "Netzwerk-Seite im Stil Bento",
+            "en": "Network page, style Bento"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-network-flat.svg",
+          "caption": {
+            "de": "Netzwerk-Seite im Stil Slate",
+            "en": "Network page, style Slate"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-network-compact.svg",
+          "caption": {
+            "de": "Netzwerk-Seite im Stil Nano",
+            "en": "Network page, style Nano"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-indoor.svg",
+          "caption": {
+            "de": "Dashboard-Widget mit Verlaufskurven",
+            "en": "Dashboard widget with trend curves"
+          }
+        }
+      ],
+      "package": "apps/weather-station/package.json",
+      "sha256": "80e1d6a273b24aabc9be029dbf54e8e32be19d3582d8775dd2604588bb0f1d69",
+      "size": 59112
+    },
+    {
+      "id": "wikipedia-today",
+      "name": {
+        "de": "Was geschah heute",
+        "en": "On this day"
+      },
+      "tagline": {
+        "de": "Sechs Ereignisse, die an diesem Tag in der Geschichte geschahen",
+        "en": "Six events from this day in history"
+      },
+      "description": {
+        "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein. Skript-Variante der eingebauten App.",
+        "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over. Script version of the built-in app."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.2",
+      "apiLevel": 8,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Was geschah heute",
+          "en": "On this day"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Wichtigste Ereignisse zum heutigen Datum",
+          "Folgt der Display-Sprache",
+          "Drei Stile: Bento, Slate, Nano",
+          "Ausweichquelle, wenn Wikimedia ablehnt"
+        ],
+        "en": [
+          "Key events for today's date",
+          "Follows the display language",
+          "Three styles: Bento, Slate, Nano",
+          "Fallback source if Wikimedia declines"
+        ]
+      },
+      "net": [
+        "de.wikipedia.org",
+        "en.wikipedia.org",
+        "byabbe.se",
+        "api.mymemory.translated.net"
+      ],
+      "icon": "apps/wikipedia-today/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/wikipedia-today/preview-display.svg",
+          "caption": {
+            "de": "Bento: Hauptereignis + Kacheln",
+            "en": "Bento: main event + tiles"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wikipedia-today/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate: Zeitleiste",
+            "en": "Slate: timeline"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wikipedia-today/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano: Kompaktliste",
+            "en": "Nano: compact list"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wikipedia-today/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/wikipedia-today/package.json",
+      "sha256": "05e15b5720fa3862d30be7ff166e80f374f884945552599764b1c0e166f38ce2",
+      "size": 16420
+    },
+    {
+      "id": "wort-des-tages",
+      "name": {
+        "de": "Wort des Tages",
+        "en": "Word of the day"
+      },
+      "tagline": {
+        "de": "Jeden Tag ein neues englisches Wort, auf Deutsch erklärt",
+        "en": "A new English word every day"
+      },
+      "description": {
+        "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original. Skript-Variante der eingebauten App, als Testpaket für den App Store.",
+        "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original. Script version of the built-in app, used as a test package for the app store."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.3.4",
+      "apiLevel": 1,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Wort des Tages",
+          "en": "Word of the day"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Neues Wort jeden Tag",
+          "Übersetzung ins Deutsche",
+          "Folgt der Display-Sprache",
+          "Beispielsatz abschaltbar"
+        ],
+        "en": [
+          "A new word every day",
+          "German translation",
+          "Follows the display language",
+          "Example sentence can be turned off"
+        ]
+      },
+      "net": [
+        "www.merriam-webster.com",
+        "api.mymemory.translated.net"
+      ],
+      "icon": "apps/wort-des-tages/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/wort-des-tages/preview-display.svg",
+          "caption": {
+            "de": "App-Seite auf dem Display",
+            "en": "App page on the display"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wort-des-tages/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/wort-des-tages/package.json",
+      "sha256": "64018ac723ec62c918b359cf49c1668b4f893a5882b63e1d5a0a044dcc7b4929",
+      "size": 11209
+    }
+  ]
+}
