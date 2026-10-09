@@ -65,7 +65,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -75,7 +75,6 @@
         }
       ],
       "hasWidget": false,
-      "needsStorage": true,
       "standard": false,
       "features": {
         "de": [
@@ -122,8 +121,8 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "e98fab51fa3f9fdea5508bce94bb2db167ba8e2bd79051dd05051be5c20a2fb0",
-      "size": 8596
+      "sha256": "90e6e695e805ce67904ab71aa35b40b24820fc571773659d2691b169b5cf7e79",
+      "size": 21337
     },
     {
       "id": "calendar-app",

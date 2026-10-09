@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InkBoard · Bilder</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f5f8; --card: #ffffff; --line: #dcdfe6; --text: #1c1e26;
+    --muted: #6b7280; --accent: #d98750; --accent-text: #ffffff; --input-bg: #f7f8fb;
+    --ok: #2f7d3a; --err: #b3261e;
+    --pending-bg: #eef3fb; --ok-bg: #e6f4e8; --err-bg: #fbe9e7; --pending-text: #3f6fbf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a; --card: #1d2026; --line: #2c3038; --text: #e8eaed;
+      --muted: #9aa0a8; --accent: #7EA3DD; --accent-text: #101317; --input-bg: #14161a;
+      --ok: #6fbf73; --err: #e07a6a;
+      --pending-bg: #23303f; --ok-bg: #22301f; --err-bg: #382220; --pending-text: #7EA3DD;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { font-size: 20px; margin: 8px 0 2px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; line-height: 1.5; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+  input { width: 100%; background: var(--input-bg); color: var(--text); border: 1px solid var(--line);
+          border-radius: 10px; padding: 12px; font-size: 15px; font-family: inherit; }
+  button { width: 100%; margin-top: 12px; padding: 13px; border: 0; border-radius: 10px;
+           background: var(--accent); color: var(--accent-text); font-size: 15px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
+  button:disabled { opacity: .55; }
+  .status { margin-top: 12px; font-size: 14px; border-radius: 10px; padding: 11px 12px; display: none; }
+  .status.pending { display: block; background: var(--pending-bg); color: var(--pending-text); }
+  .status.ok { display: block; background: var(--ok-bg); color: var(--ok); }
+  .status.error { display: block; background: var(--err-bg); color: var(--err); }
+  .hint { font-size: 12.5px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; margin-top: 12px; overflow: hidden; display: none; }
+  .bar > div { height: 100%; width: 0; background: var(--accent); }
+  #preview { max-width: 100%; max-height: 220px; display: none; margin: 12px auto 0; border-radius: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 data-i18n="title">Bild aufs InkBoard bringen</h1>
+  <p class="sub" data-i18n="sub">Foto auswählen - es wird auf dem Handy passend für das Display verkleinert.</p>
+
+  <div class="card">
+    <input id="file" type="file" accept="image/*">
+    <img id="preview" alt="">
+    <div class="bar" id="bar"><div id="fill"></div></div>
+    <button id="showBtn" onclick="send('show')" data-i18n="show">Direkt anzeigen</button>
+    <button id="saveBtn" class="secondary" onclick="send('save')" data-i18n="save" disabled>Speichern (Diashow)</button>
+    <div id="status" class="status"></div>
+    <p class="hint" id="hint" data-i18n="hint">"Direkt anzeigen" zeigt das Bild einmalig, bis am Drehknopf gedreht oder gedrückt wird. "Speichern" legt es auf dem externen Speicher (NAS) ab und nimmt es in die Diashow auf.</p>
+  </div>
+
+  <div class="card" id="pinCard" style="display:none;">
+    <label for="pin" id="pinLabel" data-i18n="pin">Studio-PIN</label>
+    <input id="pin" type="password" inputmode="numeric" autocomplete="off">
+    <button onclick="pinOk()" data-i18n="pinOk">Bestätigen</button>
+  </div>
+</div>
+<script>
+// Handy-Seite des Pakets "bilder" (Manifest "http": page = assets/phone.html). Sie nutzt direkt die Studio-Endpunkte des Geraets
+// (POST /api/image-upload, GET /api/images-status). Ist im Studio eine PIN gesetzt, fragt die Seite sie einmal ab (POST /api/auth).
+const XRW = { 'X-Requested-With': 'InkBoardStudio' };
+const TXT = {
+  de: { title: 'Bild aufs InkBoard bringen', sub: 'Foto auswählen - es wird auf dem Handy passend für das Display verkleinert.',
+        show: 'Direkt anzeigen', save: 'Speichern (Diashow)', pin: 'Studio-PIN', pinOk: 'Bestätigen',
+        hint: '"Direkt anzeigen" zeigt das Bild einmalig, bis am Drehknopf gedreht oder gedrückt wird. "Speichern" legt es auf dem externen Speicher (NAS) ab und nimmt es in die Diashow auf.',
+        nostore: 'Zum Speichern zuerst unter Einstellungen -> Speicher den externen Speicher (NAS) einrichten - "Direkt anzeigen" geht auch ohne.',
+        nofile: 'Bitte zuerst ein Bild auswählen.', prep: 'Bild wird verkleinert ...', proc: 'InkBoard verarbeitet das Bild ...',
+        fail: 'Upload fehlgeschlagen.', resize: 'Bild konnte nicht gelesen werden.', timeout: 'Keine Rückmeldung vom InkBoard - bitte erneut versuchen.',
+        showOk: 'Fertig! Das Bild erscheint gleich auf dem Display (ein e-Paper-Refresh dauert ca. 25 s) und bleibt stehen, bis der Drehknopf gedreht oder gedrückt wird.',
+        saveOk: 'Gespeichert! Das Bild ist jetzt Teil der Diashow.', pinWrong: 'PIN falsch oder gesperrt - bitte erneut versuchen.' },
+  en: { title: 'Send a picture to InkBoard', sub: 'Choose a photo - it is downscaled on your phone to fit the display.',
+        show: 'Show once', save: 'Save (slideshow)', pin: 'Studio PIN', pinOk: 'Confirm',
+        hint: '"Show once" displays the picture until the dial is turned or pressed. "Save" stores it on the external storage (NAS) and adds it to the slideshow.',
+        nostore: 'To save pictures, first set up the external storage (NAS) under Settings -> Storage - "Show once" works without it.',
+        nofile: 'Please choose a picture first.', prep: 'Downscaling picture ...', proc: 'InkBoard is processing the picture ...',
+        fail: 'Upload failed.', resize: 'Picture could not be read.', timeout: 'No response from InkBoard - please try again.',
+        showOk: 'Done! The picture will appear on the display shortly (an e-paper refresh takes ~25 s) and stays until the dial is turned or pressed.',
+        saveOk: 'Saved! The picture is now part of the slideshow.', pinWrong: 'Wrong PIN or locked - please try again.' }
+};
+const L = (navigator.language || 'de').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
+function t(k) { return TXT[L][k]; }
+document.documentElement.lang = L;
+document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n')); });
+
+let token = '';
+let pinResolve = null;
+const $ = id => document.getElementById(id);
+
+function status(cls, text) { const el = $('status'); el.className = 'status' + (cls ? ' ' + cls : ' pending'); el.textContent = text; }
+function busy(b) { $('showBtn').disabled = b; $('saveBtn').disabled = b || !storageReady; }
+
+let storageReady = false;
+fetch('/api/images-status').then(r => r.json()).then(d => {
+  storageReady = !!d.ftpReady;
+  $('saveBtn').disabled = !storageReady;
+  if (!storageReady) $('hint').textContent = t('nostore');
+}).catch(() => {});
+
+$('file').addEventListener('change', () => {
+  const f = $('file').files[0];
+  const p = $('preview');
+  if (!f) { p.style.display = 'none'; return; }
+  p.src = URL.createObjectURL(f);
+  p.style.display = 'block';
+});
+
+function resize(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const sw = img.naturalWidth || img.width, sh = img.naturalHeight || img.height;
+      const sc = Math.min(800 / sw, 480 / sh, 1);
+      const w = Math.max(1, Math.round(sw * sc)), h = Math.max(1, Math.round(sh * sc));
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      c.toBlob(b => (b ? resolve(b) : reject(new Error('toBlob'))), 'image/jpeg', 0.85);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('decode')); };
+    img.src = url;
+  });
+}
+
+function askPin() {
+  $('pinCard').style.display = 'block';
+  $('pin').focus();
+  return new Promise(res => { pinResolve = res; });
+}
+function pinOk() {
+  const pin = $('pin').value.trim();
+  fetch('/api/auth', { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, XRW), body: JSON.stringify({ pin: pin }) })
+    .then(r => r.json().then(b => ({ s: r.status, b: b })))
+    .then(({ s, b }) => {
+      if (s === 200 && b && b.success) {
+        token = b.token || '';
+        $('pinCard').style.display = 'none';
+        $('pin').value = '';
+        if (pinResolve) { const f = pinResolve; pinResolve = null; f(true); }
+      } else { status('error', t('pinWrong')); }
+    }).catch(() => status('error', t('fail')));
+}
+
+function upload(blob, mode) {
+  return new Promise(resolve => {
+    const fd = new FormData();
+    fd.append('image', blob, 'bild.jpg');
+    const x = new XMLHttpRequest();
+    x.open('POST', '/api/image-upload?mode=' + mode, true);
+    x.setRequestHeader('X-Requested-With', 'InkBoardStudio');
+    if (token) x.setRequestHeader('X-InkBoard-Auth', token);
+    x.upload.onprogress = e => {
+      if (!e.lengthComputable) return;
+      $('bar').style.display = 'block';
+      $('fill').style.width = Math.round(e.loaded / e.total * 100) + '%';
+    };
+    x.onload = () => {
+      let resp = {};
+      try { resp = JSON.parse(x.responseText); } catch (e) {}
+      resolve({ status: x.status, resp: resp });
+    };
+    x.onerror = () => resolve({ status: 0, resp: {} });
+    x.send(fd);
+  });
+}
+
+function poll(mode, tries) {
+  if (tries > 40) { busy(false); status('error', t('timeout')); return; }
+  fetch('/api/images-status').then(r => r.json()).then(d => {
+    if (d.state === 'pending') { setTimeout(() => poll(mode, tries + 1), 1500); return; }
+    busy(false);
+    if (d.state === 'error') { status('error', d.error || t('fail')); return; }
+    status('ok', mode === 'save' ? t('saveOk') : t('showOk'));
+  }).catch(() => setTimeout(() => poll(mode, tries + 1), 1500));
+}
+
+async function send(mode) {
+  const f = $('file').files[0];
+  if (!f) { status('error', t('nofile')); return; }
+  busy(true);
+  status('', t('prep'));
+  let blob;
+  try { blob = await resize(f); } catch (e) { busy(false); status('error', t('resize')); return; }
+  let r = await upload(blob, mode);
+  if (r.status === 401 && r.resp && r.resp.reason === 'pin') {
+    status('', t('pin'));
+    if (!(await askPin())) { busy(false); return; }
+    status('', t('prep'));
+    r = await upload(blob, mode);
+  }
+  if (r.status !== 200 || !r.resp.success) { busy(false); status('error', (r.resp && r.resp.error) || t('fail')); return; }
+  status('', t('proc'));
+  poll(mode, 0);
+}
+</script>
+</body>
+</html>

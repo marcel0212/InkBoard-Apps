@@ -185,6 +185,48 @@ local function notice(cx, lines)
   end
 end
 
+-- QR-Code zur Handy-Seite /app/bilder (Upload mit "Direkt anzeigen", geht auch ohne externen Speicher; "Speichern" braucht ihn)
+local QR_CAPS = { 53, 78, 106, 134, 154, 192 }
+local function qrSize(s, maxSize)
+  for i, cap in ipairs(QR_CAPS) do
+    if #s <= cap then
+      local modules = 4 * (i + 2) + 17
+      local scale = math.min(6, maxSize // modules)
+      if scale < 2 then return 0 end
+      return modules * scale
+    end
+  end
+  return 0
+end
+
+local function drawQrPage(cx, nonas)
+  draw.text(cx, 52, T("Noch keine Bilder", "No pictures yet"), "large", color.BLACK, "center")
+  local url = device.url()
+  if url == nil then
+    draw.text(cx, 100, T("Das Gerät braucht eine WLAN-Verbindung, dann erscheint hier ein QR-Code.", "The device needs a Wi-Fi connection; a QR code will appear here."), "normal", color.BLACK, "center")
+    return
+  end
+  draw.text(cx, 90, T("QR-Code mit dem Handy scannen und dort ein Bild auswählen -", "Scan the QR code with your phone and choose a picture there -"), "normal", color.BLACK, "center")
+  if nonas then
+    draw.text(cx, 114, T("\"Direkt anzeigen\" geht ohne Speicher; für die Diashow den NAS einrichten.", "\"Show once\" works without storage; set up the NAS for the slideshow."), "normal", color.BLACK, "center")
+  else
+    draw.text(cx, 114, T("direkt anzeigen oder für die Diashow speichern.", "show it once or save it for the slideshow."), "normal", color.BLACK, "center")
+  end
+  local size = qrSize(url, 230)
+  if size == 0 then return end
+  local pad = 10
+  local qx, qy = cx - size // 2, 148
+  size = draw.qr(url, qx, qy, 230) or size
+  draw.rect(qx - pad, qy - pad, size + pad * 2, size + pad * 2, color.BLACK, false, 12)
+  draw.rect(qx - pad + 1, qy - pad + 1, size + pad * 2 - 2, size + pad * 2 - 2, color.BLACK, false, 11)
+  draw.text(cx, qy + size + pad + 26, url, "normal", color.BLACK, "center")
+end
+
+-- Die Handy-Seite (assets/phone.html) spricht direkt die Studio-Endpunkte an (/api/image-upload); eine eigene API gibt es nicht.
+function on_http(ctx, req)
+  return { status = 404, body = "{}" }
+end
+
 function on_draw(ctx, page)
   EN = (ctx.lang == "en")
   local d = ctx.data
@@ -203,12 +245,8 @@ function on_draw(ctx, page)
     end
     return
   end
-  if st == "nonas" then
-    notice(cx, {
-      { 244, T("Zuerst den externen Speicher (NAS) einrichten:", "First set up the external storage (NAS):") },
-      { 268, T("Studio -> Einstellungen -> Speicher.", "Studio -> Settings -> Storage.") },
-      { 302, T("Danach Bilder in Studio unter Apps -> Bilder hochladen.", "Then upload pictures in Studio under Apps -> Pictures.") },
-    })
+  if st == "nonas" or st == "empty" then
+    drawQrPage(cx, st == "nonas")
     return
   end
   -- leerer Ordner, Fehler, Bild (noch) nicht im Speicher: derselbe Hinweis wie die eingebaute App ohne Bild

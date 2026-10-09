@@ -1,15 +1,15 @@
 {
   "id": "bilder",
   "name": {"de": "Bilder", "en": "Pictures"},
-  "version": "1.1.0",
+  "version": "1.2.0",
   "apiLevel": 20,
-  "needsStorage": true,
   "input": true,
   "fetchOnOpen": true,
   "ownRedraw": true,
   "queueTurns": true,
   "cycleFetch": true,
   "retrySeconds": 15,
+  "http": {"page": "assets/phone.html"},
   "pages": [
     {"de": "Bilder", "en": "Pictures", "fullscreen": true}
   ],
