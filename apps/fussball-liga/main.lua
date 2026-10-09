@@ -773,7 +773,6 @@ file.write("e", err or "net")
 return false
 end
 file.write("e", "")
-ctx.data.set("t", now)
 loadCrests(ctx, now) -- CHANGELOG 606: nach JEDEM Abruf (auch football-data.org), wie die eingebaute App
 return true
 end
@@ -888,7 +887,7 @@ nokey = { "Kein API-Key hinterlegt.", "No API key set." },
 rate = { "Anfragelimit erreicht.", "Rate limit reached." },
 }
 local function emptyState(ctx, lg)
-local hint = T("Einstellungen der App „Fußball-Liga“", "Settings of the “Football league” app")
+local hint = T("Einstellungen der App „Fußball“", "Settings of the “Football” app")
 if not lg.o and clean(ctx.cfg.apiKey or "", 80) == "" then
 notice("gear", T("Kein football-data.org-API-Key hinterlegt.", "No football-data.org API key set."), hint)
 return true

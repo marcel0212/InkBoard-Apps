@@ -7,5 +7,5 @@
     {"id": "fun", "name": {"de": "Freizeit", "en": "Leisure"}},
     {"id": "media", "name": {"de": "Medien", "en": "Media"}}
   ],
-  "featured": ["countdown", "wort-des-tages"]
+  "featured": ["countdown", "wort-des-tages", "gericht-des-tages", "spotify", "stocks-crypto", "weather-station"]
 }

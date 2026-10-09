@@ -46,7 +46,11 @@
   ],
   "featured": [
     "countdown",
-    "wort-des-tages"
+    "wort-des-tages",
+    "gericht-des-tages",
+    "spotify",
+    "stocks-crypto",
+    "weather-station"
   ],
   "apps": [
     {
@@ -60,12 +64,12 @@
         "en": "Slideshow of the photos on your NAS"
       },
       "description": {
-        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher (NAS) als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in den App-Einstellungen im Studio: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Skript-Variante der eingebauten App: gleiche Anzeige, dazu Reihenfolge und Rahmen als Einstellung, ohne Widget.",
-        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage (NAS) as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in the app settings in Studio: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures. Script version of the built-in app: same display, plus order and frame as settings, without a widget."
+        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher (NAS) als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in Studio unter Store -> Bilder: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Reihenfolge und Rahmen sind einstellbar; ein Widget gibt es nicht.",
+        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage (NAS) as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in Studio under Store -> Pictures: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures."
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -82,7 +86,7 @@
           "Auch große Fotos (kein 200-KB-Limit)",
           "Reihenfolge nach Name oder zufällig, dünner Rahmen",
           "Drehen blättert, Pille zeigt die Position",
-          "Hochladen und Verwalten im Studio"
+          "Hochladen und Verwalten in Studio"
         ],
         "en": [
           "Full-screen slideshow from the NAS, JPEG, PNG and BMP",
@@ -121,8 +125,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "bf9286ad16381e28d02df2496bc1ac1c336ef92dcc6e269067cccbd287d06b1b",
-      "size": 22799
+      "sha256": "d7b87e97bac565b7494b45d06d272f80cb7d6f1b4dcf882225d038a86ed4a088",
+      "sig": "Xvb+E51Fbf+BVJ0/KVb9lyzQ0A4pK+UyRQJ4d7Z0+Gt+b/D5GNkqb/ZdCJMx+NYRl9WVaN6mqx8cy/h67D4rTINKU/o1yC1PftJWguhq11XC2fKO1ZBIj3OfM8xW3HcWgKF3PxS+ShtsgNf1ndYM+gP6gdF26/U4Qp/iloCXmIShObsEQ+ASwidVywN5UjJuv51O9juMUEUFrY3Cmbq5d30Dw36uz6zbTF5sRl9yUnVpUUxp4RGMtLBNNvL1MWDHYHP0OKEAwf+rezuqi6tYuU+DFtNjmnLcnhM7PGBPFl8E8Ry07xgTVnave1A2A/bmLzO3f/Tv0bEM4cdLTTyVVA==",
+      "size": 22803
     },
     {
       "id": "calendar-app",
@@ -135,12 +140,12 @@
         "en": "Events from your calendars: day, week, month"
       },
       "description": {
-        "de": "Zeigt bis zu vier Kalender (ICS-Link, z. B. Google, Outlook, iCloud) in einer Ansicht. Die Tagesansicht listet die Termine von heute mit Uhrzeit, Dauer, Ort und Notizen, die Wochenansicht zeigt ein Zeitraster von 6 bis 22 Uhr mit einer Linie für die aktuelle Uhrzeit, die Monatsansicht ein Raster mit farbigen Punkten je Kalender. Jede Quelle hat Name, Farbe (Blau, Grün, Gelb, Rot) und einen Schalter. Geburtstage lassen sich auf die Tagesansicht beschränken. Wiederkehrende Termine, ausgenommene Tage (EXDATE), geänderte Einzeltermine und Zeitzonen werden berücksichtigt. Drei Stile (Slate, Bento, Nano) je Seite und ein Dashboard-Widget mit den nächsten Terminen gehören dazu. Skript-Variante der eingebauten Kalender-App.",
-        "en": "Shows up to four calendars (ICS link, e.g. Google, Outlook, iCloud) in one view. The day view lists today's events with time, duration, location and notes, the week view shows a time grid from 6 to 22 o'clock with a line for the current time, the month view a grid with colored dots per calendar. Each source has a name, a color (blue, green, yellow, red) and a switch. Birthdays can be limited to the day view. Recurring events, excluded days (EXDATE), changed single occurrences and time zones are taken into account. Three styles (Slate, Bento, Nano) per page and a dashboard widget with the next events are included. Script version of the built-in calendar app."
+        "de": "Zeigt bis zu vier Kalender (per Kalender-Link, z. B. Google, Outlook, iCloud) in einer Ansicht. Die Tagesansicht listet die Termine von heute mit Uhrzeit, Dauer, Ort und Notizen, die Wochenansicht zeigt ein Zeitraster von 6 bis 22 Uhr mit einer Linie für die aktuelle Uhrzeit, die Monatsansicht ein Raster mit farbigen Punkten je Kalender. Jede Quelle hat Name, Farbe (Blau, Grün, Gelb, Rot) und einen Schalter. Geburtstage lassen sich auf die Tagesansicht beschränken. Wiederkehrende Termine, ausgenommene Tage (EXDATE), geänderte Einzeltermine und Zeitzonen werden berücksichtigt. Drei Stile (Slate, Bento, Nano) je Seite und ein Dashboard-Widget mit den nächsten Terminen gehören dazu.",
+        "en": "Shows up to four calendars (ICS link, e.g. Google, Outlook, iCloud) in one view. The day view lists today's events with time, duration, location and notes, the week view shows a time grid from 6 to 22 o'clock with a line for the current time, the month view a grid with colored dots per calendar. Each source has a name, a color (blue, green, yellow, red) and a switch. Birthdays can be limited to the day view. Recurring events, excluded days (EXDATE), changed single occurrences and time zones are taken into account. Three styles (Slate, Bento, Nano) per page and a dashboard widget with the next events are included."
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -284,8 +289,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "9500b69aee8fa2e408fa019341d8de14cb59215517013e5a2d84b20e8e5d58d3",
-      "size": 41111
+      "sha256": "97fc37c225332669b0fab01c1a343a2a85a91517a4cc4d6a791e1754ab7fcbf0",
+      "sig": "FldKVPepsE+13m3Id0auAFozhZwlrqU7fVTwXj5vLl8/AtNtaGRefHyJKbTYU+q26DJ+kKYgY7AivrZmeAWFL/mrSeqKGY85Ed2xiODeZsslQ7zTufh2IGINsOH2UGtj0S7U62TiL/K064iNQxSPFr/D9ecgdAYAo+SSsVpImHUSQXiwgh7jepWleOkqVNjZ8xicUMC8WF3PqyciMYYgRNBotgHIh9UBk5VLkRaTBNOq/zaMniGWFEWrbxSqehUzCoSbxcCF7fje48MxPLIerFSyQa3uDtzYY7BdyYA1P4aBrpEYId7T4GnGF9VL4CdCcHimhncvf0xEUEpQKsfP2w==",
+      "size": 41113
     },
     {
       "id": "clock",
@@ -366,6 +372,7 @@
       ],
       "package": "apps/clock/package.json",
       "sha256": "8830fa59e8a47c5e55bcb3fe1b8f94cc460693e44369eff08632d6f89252c68c",
+      "sig": "flTX11gRxoXU6WRnyNtDLQTLrci5f0k/tNT2k5Vh8qZ+8lRB1LNh1siw7WKnc3vLiGkqYAoi4C9Yuh4Z7R1ok9Xd4DG0JRQHec4yB9xZ1N8MiOsAb2HUwB+vQqtPZJ7YlrfSBXAOoSZbeCyhJJ++HGvfPMLyEZ+vBf2Pm277fxrc+Fca5v14y+JrrWarB6hXjPGZwpG5gY+Yjjzdlns1BkX4fJYbqPaksxKTzqB4lcVBh/r3KJ6IWvpDjDQG0JGc9Ny3KOj2sbeOgm79tz37QRfDXhWeTuqg299c65D6ITL/+44Iugsx/hHYQiBuyQZpbe14KnRqP0o/tESaOfj8Gw==",
       "size": 9758
     },
     {
@@ -425,6 +432,7 @@
       ],
       "package": "apps/countdown/package.json",
       "sha256": "e602a736347292327dbc56695f910410f6ae4a81fb1710d62c8f238e72858114",
+      "sig": "VIlqtJPLZCDSNL+HqeeUVSi74JfccDQicFC5cOXr1kCPlfdqKrmfPRazbgdIIHh9Ycd0+oom2xKZzxsh9jbuZVcqagefb3vqXRmERs+oLpKAC5j2cjS/d6Zofm535jafukKLt4boK58OwrpHPuBkCLNyR/3EWeC2b+mARw0kGFtgMwY0aBiGk0muHAyYGsm6Zh9YJ3NjvzavAmAspgnFqv1oJwPtlQ3iaBAQViDtplx0MXYYdXO20szSPIxUL+8AFX7s8VDayhM2m4uPQyCNmAKcIml8ZdjFbxqiM+yLbHmBBNR4YOk+3JV/2Bm5PyUqpcj69XeFGyYW6pNzTqGMCQ==",
       "size": 3414
     },
     {
@@ -438,12 +446,12 @@
         "en": "Aircraft above you, live, with route and aircraft image"
       },
       "description": {
-        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher (NAS), mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein NAS eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner wie bei der eingebauten App. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei im Studio und in der App, oder vom NAS neu laden) und eine Abdeckungsauswertung als CSV (auf dem NAS oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Skript-Variante der eingebauten App; benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
-        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage (NAS), with the airline logo in the corner of the image box; if nothing suitable is there (or no NAS is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder as in the built-in app. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the NAS) and a coverage report as CSV (on the NAS or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Script version of the built-in app; needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
+        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher (NAS), mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein NAS eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei in Studio und in der App, oder vom NAS neu laden) und eine Abdeckungsauswertung als CSV (auf dem NAS oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
+        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage (NAS), with the airline logo in the corner of the image box; if nothing suitable is there (or no NAS is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the NAS) and a coverage report as CSV (on the NAS or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.4",
+      "version": "1.2.5",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -532,7 +540,8 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "1210e57ba7799ba8dd4fe1bca9c91eea4009c13e3ab8e5587a90a6f6ac4dce30",
+      "sha256": "35f90b34fa10c6db9bf7f64eb17a9cb505a0c524e95e5bb148acc1e66f869ddf",
+      "sig": "azBRIYpcjdw0+VIObXCBLsneAx4nUL8yz2I8dRBYa+1k1xjmktOnYrZpTlUxU62QeJAdpFu4l+cxhHum6g2S9GD+MieYFg1PbheaCrpUWfEtTko4ayunpGGfBoqueE0gFyGY+4nxqbI64hgsUjLgeT3FV8CjbcG0YqecmCzfK8jCx5WdX6QzcLqIDjRlunvQiqVRJqXd3rrVridahnOJbXC0XPjAo2HoBRb8aHoski2qto37z03WkfcFJ6AJ9Jmi7Y6+26uXK8dXK+adWUfbIrh0XCVbbD19YRgEk69EHPtiIxcERn2GArlZt8yzOnzGxZRH8rtOlEk8LV419g1ieA==",
       "size": 70940
     },
     {
@@ -689,6 +698,7 @@
       ],
       "package": "apps/formel-1/package.json",
       "sha256": "5e4f81e30ca8437aa2a7526a38aa9d982b5efccd3970c3077993bb211ec141ce",
+      "sig": "Rh6elYSmbYcTmNVn5cHrgPx/u1agDvmWuxq+67U9xJA2t37CIf+v3FYI4QCAw2b4fBd7WFn0FdRYyipCfP1weKMHW0zD4WYmS3ppAxhcHX5btRpIoWqqICHo07Dx4ACkIDdFs19UTq7SpjuQVHzlj7h81JhhWw99XHzSxWcp7n14jh7Is7HZ8xqWp7irn9WEypEgeJbYbdOFvwfpRErCyjly0cAp4T/qvhMUSgssWpcqjmkPz7Rw2jOSJFQB8z77oaZQ/RVHIoAdEFUrYMx3PWm1ZqglxXrBf51IWVxd/VZaDpn0KxkoMv9B5t0q+5PgF4B0s75w0+8WpKfJD4S2Hw==",
       "size": 67025
     },
     {
@@ -779,13 +789,14 @@
       ],
       "package": "apps/fuel-prices/package.json",
       "sha256": "e778f9dfd5ea4d2ca7188dded2f782ed8716618ce9d3e5a1dbc399c374e5e3e2",
+      "sig": "W2CltNBmBrr/QQDBm9uHgFJyfxZi10OZk4yME5IKIFUL+Dz7L+Jz0vRt6wLHmZMIe0kNWLAsFYgTz+orddFYojsVusjYMPEYQaS3kqrN4fLvD47PbAULOcWZd+C1oe0YnRV1ZaB+7gdQin+kS/Gj4iURtEyRCsX9hiEJSLaKzd3/xrA7crvSljrd1WMgJfBB3ahhgJs5MoPoz9VEsa5V8KqI8ZsSJPfBliKiC0rFNVQ742YSolWNyBzhYuYXUH27qNtQmx5Ty3ElY/Tq1Vf80/Dy8LN58k3uj2fiO9xS51JpvPhxlFaHvCb9fmRBslJbqhXyJP9OZBALahds5DSpaA==",
       "size": 25616
     },
     {
       "id": "fussball-liga",
       "name": {
-        "de": "Fußball-Liga",
-        "en": "Football league"
+        "de": "Fußball",
+        "en": "Football"
       },
       "tagline": {
         "de": "Dein Verein: nächstes Spiel, Ergebnisse und Liga-Tabelle",
@@ -797,7 +808,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.9",
+      "version": "1.0.11",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -906,8 +917,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "d73e0116dd669b214f6f5932683c1a85fd82f3eba5490f787cf65bdfa30317d5",
-      "size": 66016
+      "sha256": "c4d4929a1d7622a0fe7cdb57d12352bd6b60be7589dc46c7330c2672dcff4614",
+      "sig": "qapeJVnxBhmjZoPGQLA/Q2H8BFCeY1ulJFL2vfGWacdL0mB/imdOtVTQYPX472sx2sBcbBBrdldyr3D65j5giD3tizpNcTDylqQWjY23PYsv7zt6tFs/GCm7UzQocXmT4Yx/e6MOK0pBmjKKNnfdixRizYqT64ajoUTmYzf6y0FE2UhlDw3wYZ9RzR3INNlNJXIgVjHGXOpjsiSwK85bM8T1zx8XcFZlYKEuc1B5HPWA72CVv6wTgYG/fhARyWVu4dLciMIKG7R5F2nVnLThukK0trFyl4EFgV6tY7FVybZzfatWzgMdTY86Rk6uqUW7tRHQpQzdvcph1ACBNRmKRQ==",
+      "size": 65967
     },
     {
       "id": "gericht-des-tages",
@@ -920,12 +932,12 @@
         "en": "A random Chefkoch recipe every day"
       },
       "description": {
-        "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite. Skript-Variante der eingebauten App.",
-        "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page. Script version of the built-in app."
+        "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite.",
+        "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page."
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -938,7 +950,7 @@
       "standard": false,
       "features": {
         "de": [
-          "Neues Gericht jeden Tag, per Taster (2x) jederzeit ein neues",
+          "Neues Gericht jeden Tag, per Knopf (2x) jederzeit ein neues",
           "Drehen blättert durch Übersicht, Zutaten, Nährwerte, Zubereitung",
           "Beliebig lange Rezepte, Zutaten auf deine Portionen umgerechnet",
           "Fleisch / Fisch / vegetarisch / vegan erkannt, QR-Code zur Rezeptseite",
@@ -991,8 +1003,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "1fab403c24d253d9e69051cdf83fe371e76066d9c12f0e3b84a69fb8199d4658",
-      "size": 21427
+      "sha256": "9237d63bfe3fa0ce99abdc2acdeaa002b4671de43603f902e72ea3cd16154016",
+      "sig": "pCiERXR6Kac4eECZuxrvAl3b9xMzeMq5AMMmr9p7qG4eVirjkl//Jnpfp2U3DEkSldWT7XG9ST2v607z8hhX3ss68HQ5YnUV8HTUvQ0WUEBl0kOSTw+fH7sdII+nUh4S5bJ9EVtWAGEYQ7s5wu1z86ao4TXoSK0oPVQOs/R6hxx4MSTZvQaX7VP2BvXGxBjEoK502MQPI0ZJ7PcVyqbyR0FwtfNT7UR0CZtDF/vbGnid6sm68/a9NgoBOAww/uJyNKFCQ6E+l9zcxofEuryXjCrgZhhjgIUu+sL3XkqMoQawK7SXAetJBkb/i44jHLc4uEbjt3SVshbSnr//r71FKw==",
+      "size": 21425
     },
     {
       "id": "golf-tour",
@@ -1005,8 +1018,8 @@
         "en": "Leaderboards of the PGA Tour, LIV Golf and DP World Tour"
       },
       "description": {
-        "de": "Zeigt das aktuelle Leaderboard der PGA Tour, von LIV Golf oder der DP World Tour (Daten von ESPN, kein Schlüssel nötig): Turniername, Status (läuft/beendet) und die besten Platzierungen mit Gleichständen (T4), Score zu Par und Hinweisen wie F, CUT oder WD. Du wählst, welche Tour auf der Vollseite und im Dashboard-Widget erscheint. Die Platzierungen werden nur in der Turnierwoche geladen, davor steht das nächste Turnier mit Datum auf der Seite. Drei Darstellungen (Bento mit Podium-Kacheln, Slate, Nano) und ein Dashboard-Widget „Top 3“ gehören dazu. Skript-Variante der eingebauten App.",
-        "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour (data from ESPN, no key needed): tournament name, status (in progress/final) and the top standings with ties (T4), score to par and notes such as F, CUT or WD. You choose which tour appears on the full page and in the dashboard widget. Standings are loaded during tournament week only; before that the page shows the next tournament with its date. Three layouts (Bento with podium tiles, Slate, Nano) and a \"Top 3\" dashboard widget are included. Script version of the built-in app."
+        "de": "Zeigt das aktuelle Leaderboard der PGA Tour, von LIV Golf oder der DP World Tour (Daten von ESPN, kein Schlüssel nötig): Turniername, Status (läuft/beendet) und die besten Platzierungen mit Gleichständen (T4), Score zu Par und Hinweisen wie F, CUT oder WD. Du wählst, welche Tour auf der Vollseite und im Dashboard-Widget erscheint. Die Platzierungen werden nur in der Turnierwoche geladen, davor steht das nächste Turnier mit Datum auf der Seite. Drei Darstellungen (Bento mit Podium-Kacheln, Slate, Nano) und ein Dashboard-Widget „Top 3“ gehören dazu.",
+        "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour (data from ESPN, no key needed): tournament name, status (in progress/final) and the top standings with ties (T4), score to par and notes such as F, CUT or WD. You choose which tour appears on the full page and in the dashboard widget. Standings are loaded during tournament week only; before that the page shows the next tournament with its date. Three layouts (Bento with podium tiles, Slate, Nano) and a \"Top 3\" dashboard widget are included."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1081,6 +1094,7 @@
       ],
       "package": "apps/golf-tour/package.json",
       "sha256": "a83df96ccddabcba356d2e34aabd29cab9b84c07adbf9c4476e601f93f509e46",
+      "sig": "rKlWbcBI3EPY+3UjoeLTW1bIaxbdepcZsGhCpM7/UAsTN/Bkf+6pxD/2CJheB8mAqMeOXYueoAX0D+bpQCJz2h+b4Qd2CPlBFB/OJigeCtFPkTMIqxoYNpdEL6/1HrcLLkeNNMp4sqBkag2lQWWamqHSJKbO6y1ljYaCESCzqHX3+y1mSEyYXU2PaupS4IY038wCiTpC9jIzjgSN97KYeU9ihz1DBYpkmLYz5YpYGQyu9+e1Sc8TmW01EY/VcKipcLK+ntanmnqBcFhl3EKcVQr5jmk6fnGhuJoFg0M6kzUqDPwKFjOev6AsOUKzw78BsobhvZnpKV63LdsUlwhkOA==",
       "size": 25860
     },
     {
@@ -1094,8 +1108,8 @@
         "en": "Your golf club's course occupancy from PC CADDIE"
       },
       "description": {
-        "de": "Zeigt die Platzbelegung deines Golfclubs direkt vom öffentlichen PC-CADDIE-Belegungsplan: Sperrungen, Turniere, Gruppen und Hinweise für heute, die Woche und 14 Tage, nach Bereichen farbig getrennt (Tee 1, Greenkeeping, Kurse & Events, Information). Voreingestellt ist der GC Hamburg-Ahrensburg, per Clubnummer ist die App für jeden PC-CADDIE-Club nutzbar; Zugangsdaten braucht es nicht. Drei Seiten (Heute, Woche, 14 Tage) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget, das auf einen Blick zeigt, ob der Platz jetzt und in den nächsten drei Stunden frei ist. Aus Rücksicht auf den Betreiber wird höchstens einmal pro Stunde abgerufen. Skript-Variante der eingebauten App.",
-        "en": "Shows your golf club's course occupancy straight from the public PC CADDIE occupancy plan: closures, tournaments, groups and notes for today, the week and 14 days, colour-coded by area (Tee 1, greenkeeping, courses & events, information). The GC Hamburg-Ahrensburg is preset; with the club number the app works for every PC CADDIE club, no credentials needed. Three pages (today, week, 14 days) in three layouts (Bento, Slate, Nano) and a dashboard widget that shows at a glance whether the course is free now and for the next three hours. Out of respect for the operator it fetches at most once per hour. Script version of the built-in app."
+        "de": "Zeigt die Platzbelegung deines Golfclubs direkt vom öffentlichen PC-CADDIE-Belegungsplan: Sperrungen, Turniere, Gruppen und Hinweise für heute, die Woche und 14 Tage, nach Bereichen farbig getrennt (Tee 1, Greenkeeping, Kurse & Events, Information). Voreingestellt ist der GC Hamburg-Ahrensburg, per Clubnummer ist die App für jeden PC-CADDIE-Club nutzbar; Zugangsdaten braucht es nicht. Drei Seiten (Heute, Woche, 14 Tage) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget, das auf einen Blick zeigt, ob der Platz jetzt und in den nächsten drei Stunden frei ist. Aus Rücksicht auf den Betreiber wird höchstens einmal pro Stunde abgerufen.",
+        "en": "Shows your golf club's course occupancy straight from the public PC CADDIE occupancy plan: closures, tournaments, groups and notes for today, the week and 14 days, colour-coded by area (Tee 1, greenkeeping, courses & events, information). The GC Hamburg-Ahrensburg is preset; with the club number the app works for every PC CADDIE club, no credentials needed. Three pages (today, week, 14 days) in three layouts (Bento, Slate, Nano) and a dashboard widget that shows at a glance whether the course is free now and for the next three hours. Out of respect for the operator it fetches at most once per hour."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1238,6 +1252,7 @@
       ],
       "package": "apps/golfplatz/package.json",
       "sha256": "ec2fef4451d6387de2dd899ac6165dfb8cd366d248c5b37afd1e4f53c807494b",
+      "sig": "i4+kesNHqfQjsi+85UDvaBwEW4+N3WbgQYvScpYw9KOeBb5DLRt6ZwJsxnIJV4/5WFmanxWRHVRTmvUeXrEPWskGGDCQlenUPV4upiJvcngx22Qgz658x8zrM9pU8RdrK+3dD/HTut5/1RqDuNknBcCXaXNLCCye1ChGSMJy7KW13+iFu9XmAKsUIn4nYY2BKn+M8MiEyvD+/uH+jo5ONsPl2e4lwl6VVEKtZskJIbI17tii+1euneGE4Dx9eepkwfaKuuLAvejQE9SOixz/8Fwyp23UgNKLqVr5dLE4M0H43lWy0q59kZUmI3ukfGvHHAs26K6pAEAiYoSB7iH5rQ==",
       "size": 40311
     },
     {
@@ -1341,6 +1356,7 @@
       ],
       "package": "apps/news-feeds/package.json",
       "sha256": "d7f00c258e60b66a912cc2f62146b9a178b428f806e5a13c007fe3f41fdc4bf8",
+      "sig": "K1Haq07zFpQQwoAD38HA4U8H55EFI/1DYJ1V9yCXalAAX6LtTgmKjWDhHUOG01onaKDGA2RFli9X03j9bs7otntat3UfZ7oyQTken7quvDhr+eQpG7zl7YZ5Hf3vkG+swxofB0uPxcw2Yl1kIQyr694oB+d/AcUG0d4NHQ/am2UhhfzH2yoHglFVM7W8FRyZgwqTzifuTIpPhFlDCXdwpQZkcpWxiyWSAv51mJ6lSWYm9hBEnDmQLyX7j8H/97qPY5Wtd0FbgQ50fxtW0GUUDpPh6AKp6bJFiebYmd+J4hqDPoYme5v7N4CBkHPfF044HTb0S+X4aEG4DItuBdYtdw==",
       "size": 25287
     },
     {
@@ -1474,6 +1490,7 @@
       ],
       "package": "apps/oepnv/package.json",
       "sha256": "c4e97155ac106203c9f0798d9cedb686c043130050418d37f81a776dcec78576",
+      "sig": "QDaLLcSie8z/Yg5QphEFmIwRsL7ZD+u1jgKniKjIu+wvc6MwhdRSy1nj/BSknivAh7Bzi2R+R+zpOlH1IC8HmDUNDQLheiKkDHsZPwKhBas8sjPTnzDnCPL4kVhCGSAsmQZ9cioFuM1R2pEM0ZVrw9nDO37ym1sPnjGP66lva0QHJhzXhNFt2MFCqSD+9yHljDreko0Cm414gAfqomOvwftGiBOg1YCPlj5+26rNYVgOASfxkmXEcaxbsOcMNPkvyqIoA8/e1kWNnQea312V9oWSTinuaFKNQ5V+I/NVbeBd3FZSLvra302pexpUqDwzGKWOBWwPUgoyY2n2/Ox3dg==",
       "size": 81287
     },
     {
@@ -1487,13 +1504,13 @@
         "en": "The latest family message as a pinned note"
       },
       "description": {
-        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem NAS, sofortige Anzeige beim Eintreffen) bleibt in der Firmware. Skript-Variante der eingebauten App: Aussehen und Einstellungen wie dort, ohne Stilauswahl und ohne Widget.",
-        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the NAS, instant display on arrival) stays in the firmware. Script version of the built-in app: same look and settings, without a style choice and without a widget."
+        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem NAS, sofortige Anzeige beim Eintreffen) bleibt in der Firmware.",
+        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the NAS, instant display on arrival) stays in the firmware."
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.1",
-      "apiLevel": 19,
+      "version": "1.2.1",
+      "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
       "needsStorage": true,
@@ -1543,8 +1560,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "d160f8f964a809c3ef928a16f2f3d14508c458f199f1d5305682301f30b68f75",
-      "size": 8404
+      "sha256": "71a8dd3aa85656ee6368ce99c761329920e0d2a6afa5a21500aaccf73fca1b9a",
+      "sig": "KGU4kNVjztt6e1/EzJhfleITZswO0htZdE7dghzlQicWZ04r1H7topIAE5iMXaDYQ0iSIbDOSjLlSPD7Oozx6qjniOl3Za4fbSxBIXJnqNcwgRCsYqO/jg6XV8SqTt3yx6trsAlf0TEOszocYJTLJR4DEy9MBJ+//seuiThnVPaQTCFEUq4Ey9yl0E3PbOVymoA3OG8CD9cQp9w1MAyffghj4kNY82h45r64jSV7vWHGLbrSjp/SBNXEvYsBCKkv0QSbwazV3GsW9TY6Z5/u7GjugfXYxVBvYL7QCkgMaA29C8Id+zuf5lQh0JoB8pG23d/+DHxNRfDxbeuR6Dei4Q==",
+      "size": 8541
     },
     {
       "id": "rezepte",
@@ -1557,8 +1575,8 @@
         "en": "Send a recipe from your phone to the display"
       },
       "description": {
-        "de": "Scanne den QR-Code auf dem Display, füge auf dem Handy den Link einer Rezeptseite ein, und das Display zeigt Zutaten (zwei Spalten), Zubereitung und Nährwerte als Seiten - Drehen blättert. Die Portionen lassen sich auf dem Handy umrechnen; findet die App auf einer Seite kein Rezept, kannst du Zutaten und Zubereitung auch als Text einfügen. Skript-Variante der eingebauten App; die Handy-Seite liegt unter http://<IP des Geräts>/app/rezepte. Hinweis: Die App darf Rezeptseiten von jedem https-Server laden (nur dafür, nur Port 443, keine IP-Adressen).",
-        "en": "Scan the QR code on the display, paste the link of a recipe page on your phone, and the display shows ingredients (two columns), instructions and nutrition facts as pages - turn the dial to browse. Servings can be converted on the phone; if a page has no recipe data you can paste ingredients and steps as text. Script version of the built-in app; the phone page lives at http://<device IP>/app/rezepte. Note: the app may load recipe pages from any https server (for that purpose only, port 443 only, no IP addresses)."
+        "de": "Scanne den QR-Code auf dem Display, füge auf dem Handy den Link einer Rezeptseite ein, und das Display zeigt Zutaten (zwei Spalten), Zubereitung und Nährwerte als Seiten - Drehen blättert. Die Portionen lassen sich auf dem Handy umrechnen; findet die App auf einer Seite kein Rezept, kannst du Zutaten und Zubereitung auch als Text einfügen. Die Handy-Seite liegt unter http://<IP des Geräts>/app/rezepte. Hinweis: Die App darf Rezeptseiten von jedem https-Server laden (nur dafür, nur Port 443, keine IP-Adressen).",
+        "en": "Scan the QR code on the display, paste the link of a recipe page on your phone, and the display shows ingredients (two columns), instructions and nutrition facts as pages - turn the dial to browse. Servings can be converted on the phone; if a page has no recipe data you can paste ingredients and steps as text. The phone page lives at http://<device IP>/app/rezepte. Note: the app may load recipe pages from any https server (for that purpose only, port 443 only, no IP addresses)."
       },
       "category": "home",
       "author": "InkBoard",
@@ -1611,8 +1629,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "6bd68c1cd7c32b10a6aff4f6bc502ddd7b5a00a5cf199137fe133a1d421167a4",
-      "size": 45612
+      "sha256": "16c65cf1e730e7d1d087d2a4daaf08805ef304cdea27e49047d444e044377f61",
+      "sig": "LncXlx0P6eyr6FVx/7RbGr83WPXQFrytOE2XLqLmRL5KVocUYJf4QnDAGSBXNHU2uCUyYO7w/MyH2qUUT5IkvuIlmZfxv60X16+7YX3SItBMVrNTjKwFzugp/HJBfrqxdIDBXPTCEVLNOfsQyzqLKwH3tSZijUZsNIMvmTYkIE/pk84iP9YeJVNuvJWo3cEk9jzISh/LmncJ7OTD7hT1q/9VxZh3q3aoE+VuUlBAQsB2OA5HWhCxA5S771tBP17Vufp5UqE9aQId9GF8JI8Egk8mggXA3ltSl9WdtUv3iGQ3RqRBw+0cqLAD6Nv5Sep/WhfDDiccZ5C3SCYW+VNLJg==",
+      "size": 45608
     },
     {
       "id": "sport-tabellen",
@@ -1739,6 +1758,7 @@
       ],
       "package": "apps/sport-tabellen/package.json",
       "sha256": "090afb69476eca5adbd7ae9c5ff48ecc44abf1b96c0358d8c88043e07f4f5b86",
+      "sig": "kdyoP/yeoV1NDFPUD6cRFBRsKny1PjMCyZaxeKGor8HyU1uTTFnAqw1ami1kGmKZAhg7A9BobMtRt4t3GMm3Xvi53x5GjFtxd6gdm6F0/8UNUsYYeOVsWoNf6vpSnAriJLc+3k65NT5LmVLLOcmKSFMdcGcLe4ZvLuekHnCWlU8lDCvkqF97NGLPKe5n927e/H32fO4wpuBWkfIO1eiE88IJcPxo6vFpuuNLHZ7jqjag0Ohi73uzUwTQ8dN8v/ef1RSkiJJmmb0DA8trXLptEeW1jDS7GcQkxW5Kvuxk3j0K4HctOhStklWYrX58VlGxLKzwBkxDlFcBYbEEqiPjGQ==",
       "size": 58530
     },
     {
@@ -1752,12 +1772,12 @@
         "en": "Shows what is playing on Spotify right now"
       },
       "description": {
-        "de": "Zeigt den Titel, der auf deinem Spotify-Konto gerade läuft: Cover, Titel, Interpret, Album und Fortschritt, in drei Stilen (Bento, Slate, Nano) und als Dashboard-Widget „Gerade läuft“. Die Anmeldung läuft einmalig über die Spotify-Seite (OAuth) und wird in den App-Einstellungen unter „Verbindung“ eingerichtet: Client-ID und Client-Secret trägst du dort ein, danach öffnet „Mit Spotify verbinden“ die Freigabe. Anmeldung, Zugangsdaten, Token, Abfrage-Takt und Cover-Download bleiben Dienste der Firmware; das Paket zeichnet nur die Anzeige und kann weder Token noch Secret lesen. Das Cover ist eine Zeichenfläche für jede App (draw.image(\"spotify-cover\")). Skript-Variante der früheren eingebauten App: gleiche Anzeige, Stil und Widget-Optionen als Einstellung.",
-        "en": "Shows the track playing on your Spotify account right now: cover, title, artist, album and progress, in three styles (Bento, Slate, Nano) and as a \"Now playing\" dashboard widget. Sign-in happens once on the Spotify site (OAuth) and is set up in the app settings under \"Connection\": enter your client ID and client secret there, then \"Connect with Spotify\" opens the authorization. Sign-in, credentials, tokens, poll interval and cover download remain firmware services; the package only draws the display and can read neither token nor secret. The cover is a drawing surface any app can use (draw.image(\"spotify-cover\")). Script version of the former built-in app: same display, with style and widget options as settings."
+        "de": "Zeigt den Titel, der auf deinem Spotify-Konto gerade läuft: Cover, Titel, Interpret, Album und Fortschritt, in drei Stilen (Bento, Slate, Nano) und als Dashboard-Widget „Gerade läuft“. Die Anmeldung läuft einmalig über die Spotify-Seite (OAuth) und wird in den App-Einstellungen unter „Verbindung“ eingerichtet: Client-ID und Client-Secret trägst du dort ein, danach öffnet „Mit Spotify verbinden“ die Freigabe. Anmeldung, Zugangsdaten, Token, Abfrage-Takt und Cover-Download bleiben Dienste der Firmware; das Paket zeichnet nur die Anzeige und kann weder Token noch Secret lesen. Das Cover ist eine Zeichenfläche für jede App (draw.image(\"spotify-cover\")).",
+        "en": "Shows the track playing on your Spotify account right now: cover, title, artist, album and progress, in three styles (Bento, Slate, Nano) and as a \"Now playing\" dashboard widget. Sign-in happens once on the Spotify site (OAuth) and is set up in the app settings under \"Connection\": enter your client ID and client secret there, then \"Connect with Spotify\" opens the authorization. Sign-in, credentials, tokens, poll interval and cover download remain firmware services; the package only draws the display and can read neither token nor secret. The cover is a drawing surface any app can use (draw.image(\"spotify-cover\"))."
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -1788,7 +1808,9 @@
           "caption": {
             "de": "Bento: Cover, Titel und Fortschritt",
             "en": "Bento: cover, title and progress"
-          }
+          },
+          "style": "cards",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1796,7 +1818,9 @@
           "caption": {
             "de": "Slate: zweispaltig",
             "en": "Slate: two columns"
-          }
+          },
+          "style": "flat",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1804,7 +1828,9 @@
           "caption": {
             "de": "Nano: Datenblatt (Pause)",
             "en": "Nano: data sheet (paused)"
-          }
+          },
+          "style": "compact",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1824,8 +1850,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "f148731c45db5ea5e8691e37ed307735cf4e7b07678a73984d5475622cbeb3d6",
-      "size": 16157
+      "sha256": "5bfc27949d6a3d29b5efcc452cee9a9e4a0659eb2b54515acafb5b0a55eaccea",
+      "sig": "PbeiWrWa1qUlmMDL2IoMrUAk4FNVr6kQbyiE/d3Mjyf/R9gpeJ8vTUR9gt7zCU7ngpU82SkPXhyOj30uc8000ZxkQmSFNlOpQLWwjTv+wLK1wzKNDl3jxaYiYx53aZHzDtT8xJvFYOWvPCBzmDeK7YFATy9xNy6pDA9n//okCmHGzGt39fbRcW/ITq4X7CbUO9Pos68vTXPE3vxQzku3FJQGaL92msZQVQIut48EZjgyEGqtkhO+FEfp8l8J5o07buR+KNP4vR08G1xCm18YG31vVwsgIq5hFdkS7PKm2PTlCz6E1a4ZN9nn9wEI5ndjULGMSQ40Q+/MNiBJpZjsKg==",
+      "size": 16322
     },
     {
       "id": "stocks-crypto",
@@ -1916,6 +1943,7 @@
       ],
       "package": "apps/stocks-crypto/package.json",
       "sha256": "c6a2a8fc2f0bc3738775331fb38ab71f8c7db9deb681c7380145e1b1a5cd416f",
+      "sig": "ZE2WwJfrv17qTBf5ruF95N7dVfOmzYfD1v1EXL4Rv6E62W31Zjsd8NhczvT+g0h4ooFpXDARq3j0tWnxBK+clItjgZWwdgIwa36B3kbupsxjIcw/upeweHrUdY5ZdIhzgFrWbSdNXoCVzqK4QBy2sqINHK81dc1+/IW7YZicQ53tTpvcdrT552Ayo/tKZoKHt6u7gK/63atQOQQXH49wXGIz2bGc9s/lTdAKY6xlXcCin7kiXibo3q2HoBARaa0sp0LBon0yCHyhX3Evn9W+ocNtUQeiBn9TlMNAvJoKdJHp8bX2F9xMhLTFr+jCEFG+wi8erHEtKlONFit37Vu6UQ==",
       "size": 26702
     },
     {
@@ -2007,6 +2035,7 @@
       ],
       "package": "apps/todo-list/package.json",
       "sha256": "bd55e88c1e4f105fa411816bdae6b10d73ce90773721e9a46e35c134147b0e60",
+      "sig": "rtpWqL0enxQ1WxMRkQlZCDO+PMfwuJywyd4GM9SULt/7bQQvrMZwVaEk76Ia4/7km6NDsYIzcTIZwNhDV3HH35/soPVH/fbbFu0p8vcGyGL5YBUgS8FL582r9ZHelJvGbKXR4dUg3qVnN60yoiCL8iDvHH+iNduazmY1M7GZZiFh9grnOFAXIA/GUyngk8XCpvNoehc0h80IHH1lWAO+w5YEyIcQjTNAN9rv8Rd+HLgGsxPjEMFYm22Zei6Iu86DJQX8sE9zPC21g0muSs9+0Nm6M5wspanePUKqOnrLPzjdozMBclny+p3rQYSNFMZQXgWx8cau5+SX9QtAkCx7fA==",
       "size": 49299
     },
     {
@@ -2097,6 +2126,7 @@
       ],
       "package": "apps/waste-calendar/package.json",
       "sha256": "5595274519f00cb660fab2689439cec5355cc651eae0320d49442bc95f96d6a2",
+      "sig": "YD5bUcuTqMdY4jKBFEAfXjUwbov5E+WbOXLfJw4m4OStWjqR/k5zBM9fd1lGJb2IYbmWrppMxZU6NrcZMHgctMXEcZXDPkQRwCY6rFu4Q+4ij0ihtP4PSJEHZP/njw2+SJIJP9yLTmzAqCpqAdGd6wUhSnrQy7XLpxfUp6AGELsEccpUkcpZswcc15WFLPEKNRT+s9ejeq7M/CZHtoKn7sz3JPs8npG3PTw5FCnd4KNs1oeC9Y5jLFS3eZOHjG5UvCyPyrdE2n0hZC2qfb+yqCNJdTXq7MnSi7y/Gv9Srghfb4gTFnsYKccqRfOanLpuNmhzcj9z3aRCu7Jn0PZm2w==",
       "size": 29628
     },
     {
@@ -2115,7 +2145,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.3",
       "apiLevel": 4,
       "pages": 3,
       "pageNames": [
@@ -2261,8 +2291,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "80e1d6a273b24aabc9be029dbf54e8e32be19d3582d8775dd2604588bb0f1d69",
-      "size": 59112
+      "sha256": "8c6223004bcde68374e019b7f0b3457eb2e10e08d36b003ea78d721b1b3a213d",
+      "sig": "SyNtSsefjOtWo9+orYVsojpvDylCuRVVUFQcUHLX78lwyXM/yhrbJ/TjJKDYxRdMzDwDz6QCQpLsmcn2llk3TCk+J9p3EPUPrA8bjmusjVLTBYETdwLwpVSCYIc2XZD9G3CjTbiZJcXdqx81liGnO+YsI80ECd/J9GjE3B8bCGP5gaOQ/ojge5nQrdu4SMf7fycGirNY9IWQxYPfQFmSKy8gXupiHOl+sgJLwWkyQG2WVv1+P8xwIsy2uLcjA1IkYi6REOiPy4vi7qqrZ5dBIM25nPfi9hJj+0bTSnIqgFDsBTs2ztC/UQPKnUCRV0QKJdo5Vh9Q5VHLpNsmFjpyHw==",
+      "size": 59158
     },
     {
       "id": "wikipedia-today",
@@ -2275,8 +2306,8 @@
         "en": "Six events from this day in history"
       },
       "description": {
-        "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein. Skript-Variante der eingebauten App.",
-        "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over. Script version of the built-in app."
+        "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein.",
+        "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2354,6 +2385,7 @@
       ],
       "package": "apps/wikipedia-today/package.json",
       "sha256": "05e15b5720fa3862d30be7ff166e80f374f884945552599764b1c0e166f38ce2",
+      "sig": "lj/+aTaB5uw2nDHFyjzf5ZVKu2t1MeFgrLFLXJggB+BP+21Y2ImW3KlXNlRHkyUP3UCAM9pWirgC4Hi9NwbbRodVNs4lVFByg5dJVpL9zESCh5Rb/TlvzBG83BrkLn8DB1pftuSRkq5Rdf3U9jiuWOSM+ggUnZTm/bsLjKBQ7d5qrNcVVkJBEyt8X1s1YTWVkaZSONRuOs1dKEdSEoTZgZKuNYr8qmsIPo9+lT+p+NGNKPTcehWyV8VqEFV0zP236Nh9qHSPbU6ZGfG6tcblsO/L253XZwnPODVWN5fvEp98pnobVc19Rbz4eucT++qM5jj1jOB+3T7052lPrrHwLg==",
       "size": 16420
     },
     {
@@ -2367,8 +2399,8 @@
         "en": "A new English word every day"
       },
       "description": {
-        "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original. Skript-Variante der eingebauten App, als Testpaket für den App Store.",
-        "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original. Script version of the built-in app, used as a test package for the app store."
+        "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original.",
+        "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2422,6 +2454,7 @@
       ],
       "package": "apps/wort-des-tages/package.json",
       "sha256": "64018ac723ec62c918b359cf49c1668b4f893a5882b63e1d5a0a044dcc7b4929",
+      "sig": "AqPi9FkP0dbBG/ChTPTZs9NCjn2mOwC7SjdgGh6y3ODdwiI8Nz2NU//MWcfI1dgfWU25g7nySSoF1EY/D5DaE9/BiUqrg4GS36SqF6JYsjxq8Q1rqrnGXNWR3zxZEhZavQoBZqLEMabnpKtxCL4i8BsCdQNBC5JjPdgJ5ESGm5rhIVitmJJw6Rm4tXOvdfhHoZvyxyMnQK1hDpjVnjvA5Jjo1hGNsDZJhUcR8Pm2CnNRQFN/7qOOcZ2KBbFVUnRZk+ttivAOfARO2Vmbsez7p+bfyLDNmdSM+l5KE1Op/QCp2Nqw8QvXBcHrOrqLLZMke0hkST3UF93wHTgZ3y9qZw==",
       "size": 11209
     }
   ]

@@ -508,7 +508,7 @@ function outdoor.on_draw(ctx, page)
   if not w then
     local y = draw.top + 16
     if why == "nolocation" then
-      notice(W // 2, y, "setup", tr("Location not set.", "Standort nicht eingerichtet.", ctx), tr("Studio -> Apps -> Weather", "Studio -> Apps -> Wetter", ctx))
+      notice(W // 2, y, "setup", tr("Location not set.", "Standort nicht eingerichtet.", ctx), tr("Studio -> Store -> Weather", "Studio -> Store -> Wetter", ctx))
     else
       notice(W // 2, y, "loading", tr("Loading ...", "Wird geladen ...", ctx))
     end

@@ -6,8 +6,8 @@
     "en": "Six events from this day in history"
   },
   "description": {
-    "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein. Skript-Variante der eingebauten App.",
-    "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over. Script version of the built-in app."
+    "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein.",
+    "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over."
   },
   "features": {
     "de": [

@@ -1,3 +1,4 @@
+local MAX_AGE = 3 * 3600 -- Sekunden
 local DAYS_DE = {"Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"}
 local DAYS_EN = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}
 local function trim(s)
@@ -68,13 +69,13 @@ local cy = y + 14 + 22
 draw.circle(cx, cy, 22, color.BLACK, true)
 draw.text(cx, cy + 7, "-", "large", color.WHITE, "center")
 draw.text(cx, cy + 22 + 32, en and "No message yet" or "Noch keine Nachricht", "large", color.BLACK, "center")
-draw.text(cx, cy + 22 + 32 + 26, en and "Studio -> Apps -> Family Board" or "Studio -> Apps -> Pinnwand", "normal", color.BLACK, "center")
+draw.text(cx, cy + 22 + 32 + 26, en and "Studio -> Store -> Family Board" or "Studio -> Store -> Pinnwand", "normal", color.BLACK, "center")
 end
 function on_draw(ctx, page)
 local en = (ctx.lang == "en")
 draw.clear(color.WHITE)
 local y = draw.top + 14
-local m = inbox.latest()
+local m = inbox.latest(MAX_AGE) -- CHANGELOG 662: nach 3 Stunden gilt die Nachricht als abgelaufen (nil = leere Pinnwand)
 if m == nil or m.text == nil or m.text == "" then
 emptyState(en, y)
 return

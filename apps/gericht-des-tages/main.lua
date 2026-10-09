@@ -465,7 +465,7 @@ elseif view.k == "s" then drawSteps(ctx, d, view)
 elseif view.k == "n" then drawNutrition(ctx, d)
 else
 drawOverview(ctx, d)
-hint = en and "Turn: browse · button twice: new meal" or "Drehen: blättern · Taster 2x: neues Gericht"
+hint = en and "Turn: browse · button twice: new meal" or "Drehen: blättern · Knopf 2x: neues Gericht"
 end
 if view.k == "i" then draw.text(28, draw.height - 10, en and "Ingredients" or "Zutaten", "small", color.ACCENT_TEXT, "left")
 elseif view.k == "s" then draw.text(28, draw.height - 10, en and "Instructions" or "Zubereitung", "small", color.ACCENT_TEXT, "left")

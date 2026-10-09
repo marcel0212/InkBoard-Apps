@@ -785,7 +785,6 @@ function on_fetch(ctx)
     return false
   end
   file.write("e", "")
-  ctx.data.set("t", now)
   loadCrests(ctx, now) -- CHANGELOG 606: nach JEDEM Abruf (auch football-data.org), wie die eingebaute App
   return true
 end
@@ -923,7 +922,7 @@ local ERR = {
 
 -- true, wenn statt des Inhalts ein Hinweis gezeichnet wurde (Einrichtung, Laden, Fehler, keine Ligadaten)
 local function emptyState(ctx, lg)
-  local hint = T("Einstellungen der App „Fußball-Liga“", "Settings of the “Football league” app")
+  local hint = T("Einstellungen der App „Fußball“", "Settings of the “Football” app")
   if not lg.o and clean(ctx.cfg.apiKey or "", 80) == "" then
     notice("gear", T("Kein football-data.org-API-Key hinterlegt.", "No football-data.org API key set."), hint)
     return true

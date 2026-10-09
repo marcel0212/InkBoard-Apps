@@ -1,7 +1,7 @@
 {
   "id": "bilder",
   "name": {"de": "Bilder", "en": "Pictures"},
-  "version": "1.2.1",
+  "version": "1.2.2",
   "apiLevel": 20,
   "input": true,
   "fetchOnOpen": true,
@@ -23,8 +23,8 @@
       "id": "nas",
       "title": {"de": "Externer Speicher (NAS)", "en": "External storage (NAS)"},
       "help": {
-        "de": "Die Bilder liegen als JPEG, PNG oder BMP in diesem Ordner auf dem externen Speicher (eingerichtet unter Einstellungen -> Speicher). Hochladen und Löschen geht im Studio unter Apps -> Bilder; der Ordner ist derselbe wie dort (Einstellungen -> Speicher -> Bilder-Ordner). Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten. Der Speicher muss FTP, WebDAV oder Google Drive sein: ein reiner HTTP-Export reicht nicht, weil er die Fotos nicht zurücklesen kann.",
-        "en": "The pictures are JPEG, PNG or BMP files in this folder on the external storage (set up under Settings -> Storage). Upload and delete in Studio under Apps -> Pictures; the folder is the same one as there (Settings -> Storage -> Pictures folder). File names may contain spaces, umlauts and parentheses. The storage must be FTP, WebDAV or Google Drive: a plain HTTP export is not enough because it cannot read the pictures back."
+        "de": "Die Bilder liegen als JPEG, PNG oder BMP in diesem Ordner auf dem externen Speicher (eingerichtet unter Einstellungen -> Speicher). Hochladen und Löschen geht im Studio unter Store -> Bilder; der Ordner ist derselbe wie dort (Einstellungen -> Speicher -> Bilder-Ordner). Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten. Der Speicher muss FTP, WebDAV oder Google Drive sein: ein reiner HTTP-Export reicht nicht, weil er die Fotos nicht zurücklesen kann.",
+        "en": "The pictures are JPEG, PNG or BMP files in this folder on the external storage (set up under Settings -> Storage). Upload and delete in Studio under Store -> Pictures; the folder is the same one as there (Settings -> Storage -> Pictures folder). File names may contain spaces, umlauts and parentheses. The storage must be FTP, WebDAV or Google Drive: a plain HTTP export is not enough because it cannot read the pictures back."
       },
       "helpTitle": {"de": "Woher kommen die Bilder?", "en": "Where do the pictures come from?"}
     }

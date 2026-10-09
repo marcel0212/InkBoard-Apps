@@ -131,7 +131,7 @@ local function emptyState(n, en, y)
   if not n then
     notice("error", en and "Spotify not available." or "Spotify nicht verfügbar.", nil, y)
   elseif not n.connected then
-    notice("setup", en and "Not connected to Spotify." or "Nicht mit Spotify verbunden.", "Studio -> Apps -> Spotify", y)
+    notice("setup", en and "Not connected to Spotify." or "Nicht mit Spotify verbunden.", "Studio -> Store -> Spotify", y)
   elseif not n.fetched then
     notice("loading", en and "Loading ..." or "Wird geladen ...", nil, y)
   elseif not n.fetch_ok then

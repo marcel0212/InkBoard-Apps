@@ -702,7 +702,7 @@ function on_draw(ctx, page)
   local top = draw.top
   if not configured(ctx.cfg) and not ctx.sample then
     stateNotice("setup", en and "No calendar configured." or "Kein Kalender eingerichtet.",
-      en and "Studio -> Apps -> Calendar" or "Studio -> Apps -> Kalender")
+      en and "Studio -> Store -> Calendar" or "Studio -> Store -> Kalender")
     return
   end
   local stt = ctx.data.get("st")

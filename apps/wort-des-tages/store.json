@@ -6,8 +6,8 @@
     "en": "A new English word every day"
   },
   "description": {
-    "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original. Skript-Variante der eingebauten App, als Testpaket für den App Store.",
-    "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original. Script version of the built-in app, used as a test package for the app store."
+    "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original.",
+    "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original."
   },
   "features": {
     "de": [

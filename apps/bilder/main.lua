@@ -174,7 +174,7 @@ drawQrPage(cx)
 return
 end
 notice(cx, {
-{ 244, T("Bilder in Studio unter Apps -> Bilder hochladen -", "Upload pictures in Studio under Apps -> Pictures -") },
+{ 244, T("Bilder in Studio unter Store -> Bilder hochladen -", "Upload pictures in Studio under Store -> Pictures -") },
 { 268, T("gespeicherte Bilder laufen hier als Diashow.", "saved pictures play here as a slideshow.") },
 })
 end

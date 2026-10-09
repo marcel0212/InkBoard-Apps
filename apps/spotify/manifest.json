@@ -1,7 +1,7 @@
 {
   "id": "spotify",
   "name": {"de": "Spotify", "en": "Spotify"},
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 21,
   "pages": 1,
   "refreshMinutes": 1,

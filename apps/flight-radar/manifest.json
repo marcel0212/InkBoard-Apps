@@ -4,7 +4,7 @@
     "de": "Flight Radar",
     "en": "Flight Radar"
   },
-  "version": "1.2.4",
+  "version": "1.2.5",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
