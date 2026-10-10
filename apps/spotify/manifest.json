@@ -1,11 +1,12 @@
 {
   "id": "spotify",
   "name": {"de": "Spotify", "en": "Spotify"},
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiLevel": 21,
   "pages": 1,
   "refreshMinutes": 1,
-  "widget": {"w": 340, "h": 100},
+  "widget": {
+    "autoCompact": true,"w": 340, "h": 100},
   "permissions": {"spotify": true},
   "sections": [
     {

@@ -4,12 +4,13 @@
     "de": "Uhr",
     "en": "Clock"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "apiLevel": 2,
   "standard": true,
   "pages": 1,
   "refreshMinutes": 1,
   "widget": {
+    "autoCompact": true,
     "w": 320,
     "h": 200
   },

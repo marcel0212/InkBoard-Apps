@@ -4,7 +4,7 @@
     "de": "Was geschah heute",
     "en": "On this day"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "apiLevel": 8,
   "pages": [
     {
@@ -14,6 +14,7 @@
   ],
   "refreshMinutes": 360,
   "widget": {
+    "autoCompact": true,
     "w": 340,
     "h": 150
   },

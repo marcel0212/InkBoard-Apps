@@ -4,7 +4,7 @@
     "de": "Aufgaben",
     "en": "Tasks"
   },
-  "version": "1.1.8",
+  "version": "1.1.9",
   "apiLevel": 6,
   "pages": [
     {
@@ -14,6 +14,7 @@
   ],
   "refreshMinutes": 15,
   "widget": {
+    "autoCompact": true,
     "w": 320,
     "h": 180
   },

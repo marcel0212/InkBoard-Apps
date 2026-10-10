@@ -4,7 +4,7 @@
     "de": "Wort des Tages",
     "en": "Word of the day"
   },
-  "version": "1.3.4",
+  "version": "1.3.5",
   "apiLevel": 1,
   "pages": [
     {
@@ -14,6 +14,7 @@
   ],
   "refreshMinutes": 360,
   "widget": {
+    "autoCompact": true,
     "w": 320,
     "h": 130
   },

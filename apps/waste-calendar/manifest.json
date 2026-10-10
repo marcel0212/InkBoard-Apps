@@ -4,7 +4,7 @@
     "de": "Müllabfuhr",
     "en": "Waste collection"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "apiLevel": 9,
   "pages": [
     {
@@ -14,6 +14,7 @@
   ],
   "refreshMinutes": 360,
   "widget": {
+    "autoCompact": true,
     "w": 320,
     "h": 120
   },

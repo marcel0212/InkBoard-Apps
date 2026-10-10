@@ -4,10 +4,13 @@
     "de": "Countdown",
     "en": "Countdown"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "apiLevel": 1,
   "pages": 1,
   "refreshMinutes": 60,
+  "widget": {
+    "autoCompact": true
+  },
   "settings": [
     {
       "key": "label",

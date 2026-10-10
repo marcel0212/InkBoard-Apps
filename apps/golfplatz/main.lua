@@ -904,17 +904,23 @@ end
 local maxY = box.y + box.h - 4
 local textX = box.x + 12
 local textW = math.max(20, box.w - 24)
-local G = 18
+local tier = box.font or 0 -- Widget-Einstellung Schriftgroesse: -1 klein, 0 normal, 1 gross
+local cmp = (box.style or ctx.cfg.style) == "compact" -- Widget-Design "Kompakt"
+local fBig = tier < 0 and "normal" or "large"
+local fSm = tier > 0 and "normal" or "small"
+local lineH = (tier > 0 and 23 or 19) - (cmp and 4 or 0)
+local G = cmp and 0 or 18
 local roomForLines = (box.fh or box.h) >= 70
 local statusY = box.y + 22
-local bigX, bigW = textX + G + 8, math.max(20, textW - G - 8)
+local gap = cmp and 0 or 8
+local bigX, bigW = textX + G + gap, math.max(20, textW - G - gap)
 local di = m.sample and 1 or todayIndex(m)
 local d = m.days[di]
 if #d.es == 0 then
-draw.text(bigX, statusY, fit(T("Platz frei", "Course free"), bigW, "large"), "large", color.GREEN)
-flag(textX, statusY - G - 2, G, color.GREEN)
-if roomForLines and statusY + 19 <= maxY then
-local y = statusY + 21
+draw.text(bigX, statusY, fit(T("Platz frei", "Course free"), bigW, fBig), fBig, color.GREEN)
+if not cmp then flag(textX, statusY - G - 2, G, color.GREEN) end
+if roomForLines and statusY + lineH <= maxY then
+local y = statusY + lineH + 2
 local line = T("keine Belegung in Sicht", "no bookings ahead")
 for i = di + 1, #m.days do
 local n = m.days[i]
@@ -923,7 +929,7 @@ line = string.format(T("Nächste: %s %s %s", "Next: %s %s %s"), dayShort(n), sta
 break
 end
 end
-draw.text(textX, y, fit(line, textW, "small"), "small", color.BLACK)
+draw.text(textX, y, fit(line, textW, fSm), fSm, color.BLACK)
 end
 return
 end
@@ -944,21 +950,21 @@ big = T("Jetzt frei", "Free now")
 if st.freeWindow then cap = T("mind. 3 Std. frei", "free for 3+ h")
 else cap = string.format(T("frei bis %s Uhr", "free until %s"), hm(st.nextBusy)) end
 end
-draw.text(bigX, statusY, fit(big, bigW, "large"), "large", sc)
-flag(textX, statusY - G - 2, G, sc)
+draw.text(bigX, statusY, fit(big, bigW, fBig), fBig, sc)
+if not cmp then flag(textX, statusY - G - 2, G, sc) end
 if statusY + 16 <= maxY then
-statusY = statusY + 16
+statusY = statusY + (cmp and 14 or 16)
 local n = #d.es
 local cnt = EN and string.format("%d booking%s today", n, n == 1 and "" or "s") or string.format("%d Belegung%s heute", n, n == 1 and "" or "en")
-draw.text(textX, statusY, fit(cap .. " · " .. cnt, textW, "small"), "small", sc)
+draw.text(textX, statusY, fit(cap .. " · " .. cnt, textW, fSm), fSm, sc)
 end
 if roomForLines then
-local y = statusY + 19
+local y = statusY + lineH
 for _, e in ipairs(d.es) do
 if y > maxY then break end
 dot(textX + 4, y - 4, 4, e.col)
-draw.text(textX + 14, y, fit(timeRange(e) .. "  " .. e.ev, textW - 14, "small"), "small", color.BLACK)
-y = y + 19
+draw.text(textX + 14, y, fit(timeRange(e) .. "  " .. e.ev, textW - 14, fSm), fSm, color.BLACK)
+y = y + lineH
 end
 end
 end
