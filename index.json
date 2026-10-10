@@ -309,7 +309,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
@@ -371,9 +371,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "6898b125a88415c3730403d6fbba13d6f88f3fe4d12a956dbf5de83808d3827a",
-      "sig": "qrZW3lnQJwFaECXsQTW9qbYcN8fjEWDtZGuFnrDIBhe3UjrGa8ag4sWVjxXEBwRH6dEB1iN9W6/OJqN81RRp0lzBjY0DFLU6ohzmbaF+e30y6go63PrVnBwVQjku/+edVMdyCbEffu2P17hWIimBp0o1385el7MaTcD9BJf7XXIpvI/w+nquz4ELZ3AhBxYCvwMn0FCIevWVihzo2Pjaj/1r/odTdnJ3rwe6H74+931QF0S7ncVSBIqaOshjm4HObfC5lrjmAEVBpGhuzbh6uB0BIneilbuJTFYkna8oiW8N2K8SNJHoaoHawlt3HJrLWpJ7WNtT7uk4hUQUAKGr7A==",
-      "size": 9777
+      "sha256": "4d4cd0791fb77450efb6106da3f943e75e35f561aaaa4affe8fa8b85821716f5",
+      "sig": "D51A58EXKP0gfsoVwr+IjUIiNooMfVJsH3hRNeeOpTwJsn3DqtOWstR12DqTlKvosDFl801YRFcNZameTCqRq/CbQNxpPw7HZVgFXlNapzpY/H02JdVNWqAgkc44hlQez+NORpL46dI+hqt6/y3m/TJvTlcv19d3D4htT1h58bVgTSQiVPLS/34WPIS4Pc9GwiEy4XMp06Gc8MxczG+76oC3VW7iz2F8jNB3kWsrz+nyKCEAA8MeLgcLBNqOpSHRV/YwvPysoToILF8DFdP+kpO1j9H8resK8ZhZq0ox33cCOeiq8Q3TXpKwTVHkJxk8g9RCoG0/LGgI7iRpvmxb9g==",
+      "size": 9994
     },
     {
       "id": "countdown",

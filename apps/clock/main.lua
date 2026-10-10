@@ -157,6 +157,9 @@ function on_widget(ctx, box)
   local hAvail = (maxY - box.y) - (showDate and 26 or 0)
   local h = hAvail - 6
   if h > 210 then h = 210 end
+  -- Schriftgroesse-Regler (box.fontStep -2..2): kleinere Stufen verkleinern die Ziffern, groessere nutzen die volle Hoehe
+  local fs = box.fontStep or 0
+  if fs < 0 then h = h * (fs == -1 and 85 or 70) // 100 end
   local dateLong = string.format("%s, %02d.%02d.%04d", days[lt.wday + 1], lt.day, lt.month, lt.year)
   if h >= 44 then
     local w = h * 11 // 21
