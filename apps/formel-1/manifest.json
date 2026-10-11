@@ -4,7 +4,7 @@
     "de": "Formel 1",
     "en": "Formula 1"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 11,
   "pages": [
     {
@@ -21,6 +21,7 @@
     }
   ],
   "refreshMinutes": 30,
+  "retrySeconds": 60,
   "widget": {
     "w": 280,
     "h": 110

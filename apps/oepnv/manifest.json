@@ -4,7 +4,7 @@
     "de": "ÖPNV",
     "en": "Public transport"
   },
-  "version": "1.2.3",
+  "version": "1.2.4",
   "apiLevel": 16,
   "pages": [
     {
@@ -17,6 +17,7 @@
     }
   ],
   "refreshMinutes": 5,
+  "retrySeconds": 60,
   "widget": {
     "autoCompact": true,
     "w": 340,

@@ -4,7 +4,7 @@
     "de": "Golf Tour",
     "en": "Golf Tour"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "apiLevel": 12,
   "pages": [
     {
@@ -13,6 +13,7 @@
     }
   ],
   "refreshMinutes": 60,
+  "retrySeconds": 60,
   "widget": {
     "autoCompact": true,
     "w": 300,

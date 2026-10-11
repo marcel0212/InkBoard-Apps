@@ -4,7 +4,7 @@
     "de": "Fußball",
     "en": "Football"
   },
-  "version": "1.0.11",
+  "version": "1.0.12",
   "apiLevel": 14,
   "pages": [
     {
@@ -17,6 +17,7 @@
     }
   ],
   "refreshMinutes": 30,
+  "retrySeconds": 60,
   "widget": {
     "w": 240,
     "h": 140

@@ -166,14 +166,29 @@ function on_fetch(ctx)
   local nextMon = time.mktime({ year = t.year, month = t.month, day = t.day - wdn + 7 })
   local req = {}
   for i, s in ipairs(srcs) do req[i] = { url = s.url, tag = s.tag } end
-  local list, info = ics.fetch({
-    sources = req, from = mstart, to = FAR, recurTo = now + 45 * 86400, max = MAX_EVENTS,
-    limits = { title = 39, location = 31, notes = 55 }, notesUntil = nextMon,
-  })
-  local function fail() -- nichts erreichbar: ohne alte Termine als Fehler melden, mit alten Terminen unveraendert weiter anzeigen
+  -- bis zu 3 Versuche (Verbindungsabbrueche mitten in der Antwort sind im WLAN nicht selten); Grund steht im Log
+  local list, info
+  for attempt = 1, 3 do
+    list, info = ics.fetch({
+      sources = req, from = mstart, to = FAR, recurTo = now + 45 * 86400, max = MAX_EVENTS,
+      limits = { title = 39, location = 31, notes = 55 }, notesUntil = nextMon,
+    })
+    local good = false
+    if list ~= nil then
+      for _, s in ipairs(srcs) do if info.ok[s.tag] then good = true end end
+    end
+    if good then break end
+    local why = list == nil and tostring(info) or "?"
+    if list ~= nil then
+      for _, s in ipairs(srcs) do why = tostring(info.err[s.tag] or "?") end
+    end
+    log("Kalender: Abruf " .. attempt .. "/3 fehlgeschlagen: " .. why)
+    if attempt < 3 then time.sleep(1000) end
+  end
+  local function fail() -- nichts erreichbar: ohne alte Termine als Fehler melden; false = Firmware wiederholt nach 5 Min., alte Termine bleiben sichtbar
     local old = file.read("ev1")
     if old == nil or old == "" then ctx.data.set("st", "e") end
-    return true
+    return false
   end
   if list == nil then return fail() end
   local failed, anyFail, allFail = {}, false, true
@@ -814,7 +829,11 @@ function on_widget(ctx, box)
       shown = shown + 1
     end
     if shown == 0 then
-      draw.text(x + 12, top + 16, en and "No data yet" or "Noch keine Daten", "small", color.BLACK, "left")
+      local st = ctx.data.get("st")
+      local msg = en and "No data yet" or "Noch keine Daten"
+      if st == "ok" then msg = en and "No upcoming events" or "Keine Termine" end
+      if st == "e" then msg = en and "Calendar not reachable" or "Kalender nicht erreichbar" end
+      draw.text(x + 12, top + 16, msg, "small", color.BLACK, "left")
     end
     return
   end

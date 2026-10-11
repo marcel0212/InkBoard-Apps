@@ -4,7 +4,7 @@
     "de": "Gericht des Tages",
     "en": "Meal of the day"
   },
-  "version": "1.1.4",
+  "version": "1.1.5",
   "apiLevel": 10,
   "pages": [
     {
@@ -13,6 +13,7 @@
     }
   ],
   "refreshMinutes": 360,
+  "retrySeconds": 60,
   "widget": {
     "autoCompact": true,
     "w": 340,

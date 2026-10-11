@@ -4,7 +4,7 @@
     "de": "Nachrichten",
     "en": "News"
   },
-  "version": "1.0.6",
+  "version": "1.0.8",
   "apiLevel": 7,
   "pages": [
     {
@@ -25,6 +25,7 @@
     }
   ],
   "refreshMinutes": 15,
+  "retrySeconds": 30,
   "widget": {
     "w": 320,
     "h": 180

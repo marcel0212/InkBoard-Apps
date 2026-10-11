@@ -4,7 +4,7 @@
     "de": "Tankpreise",
     "en": "Fuel prices"
   },
-  "version": "1.1.9",
+  "version": "1.1.10",
   "apiLevel": 7,
   "pages": [
     {
@@ -13,6 +13,7 @@
     }
   ],
   "refreshMinutes": 15,
+  "retrySeconds": 60,
   "widget": {
     "w": 320,
     "h": 180

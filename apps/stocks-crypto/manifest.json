@@ -4,7 +4,7 @@
     "de": "Aktien & Krypto",
     "en": "Stocks & Crypto"
   },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "apiLevel": 7,
   "pages": [
     {
@@ -17,6 +17,7 @@
     }
   ],
   "refreshMinutes": 15,
+  "retrySeconds": 60,
   "widget": {
     "w": 320,
     "h": 180
