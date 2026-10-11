@@ -1251,9 +1251,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "fd70f1305e7a3960f50effe173e3cfab3cfcf126c6cb6a8e556950c4608fd0c1",
-      "sig": "lQfHwDiG374wL4jlIDzIWW9UhltRlC06vbWdA8ORgyTtUZW+pezdulH3Zzv3yoK65ortsk+c/SlsJxHwlOeoaJKsNzPghp0SCFhjTi+XedAo5ZZqEd9Xzq3YUzO8pmMErnET0sj28JvXiTBeAO9Whchd/UV3kiXZbQEN7PrHAB1K/OZQQ+DaMzNQ+BLCJNy7dI6/5d5Sc5HVsJsiajkKNDGJcCW5FjtyezJYGPCjxfnN8KmCWas7Mwd2Yer1Ku97pF9ve8RzfTe1aszTdogq67Z7GCHj3z4fXhNDe2f9BWcbifEqPmjwFsvDzlVMczWwIWckBOaUZKc5cn6SfzpHlg==",
-      "size": 41114
+      "sha256": "48201c1f32a4382a34a842730010a1f2828e92fbf5d1c648a544d771e13520e6",
+      "sig": "j0+yVrO/Du+yrhvQYA5828ilOxGN1coeN2C0pdiXtjUjDb7Q6meqmpAaxe5OqzN9M+C4O7hIWLvSFLTC98vGWWoyRCLGtMd/6KNg+f33wyZ7jBnSbAG7DPpNrugIFWJlIJ2cN6ciWGa1EVLCWdl4wlt2sdzL7j1jslsY4W3b1ellZM17cFjSKJGuLGuU1K1/R5CtcJ0pwNPu9GeOvBSH4oWkGq0x2kcecnzfwa56+iQWI2mJtTkkZNwtoDEFPUFCscK7D24VBBrSmipS2BrdXaaAEzFwQGBZN2PupAeNqpKoyOvZRWaYA8mzwHgoCCvCAz8QQZEb/vL9LNoWJP37VA==",
+      "size": 41180
     },
     {
       "id": "news-feeds",

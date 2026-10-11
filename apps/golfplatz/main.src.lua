@@ -311,6 +311,7 @@ function on_fetch(ctx)
       local ok, werr = savePlan(club, now, days)
       if not ok then
         msg = "file: " .. tostring(werr)
+        log("Golfplatz: Speichern fehlgeschlagen: " .. tostring(werr))
       else
         local ne = 0
         for _, d in ipairs(days) do ne = ne + #d.es end
