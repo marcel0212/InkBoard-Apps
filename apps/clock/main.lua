@@ -24,7 +24,7 @@ local function digit(x, y, w, h, t, d, col)
 end
 
 local function timeWidth(w, t)
-  return 4 * w + 2 * t + 3 * t
+  return 4 * w + 6 * t -- vier Ziffern + drei Luecken (je t) + Doppelpunkt-Raum (3 t): so breit ist "HH:MM" wirklich
 end
 
 -- Zeichnet "HH:MM" (5 Zeichen) zentriert um cx mit Oberkante y; gibt die Unterkante zurueck.
@@ -166,7 +166,8 @@ function on_widget(ctx, box)
     local t = h // 8
     if t < 6 then t = 6 end
     -- schrumpfen, bis "HH:MM" in die Widget-Breite passt
-    while w > 22 and timeWidth(w, t) > box.w - 16 do
+    local limit = box.w - 16 - (ampm ~= "" and 56 or 0) -- im 12-h-Modus steht AM/PM rechts neben der Zeit
+    while w > 22 and timeWidth(w, t) > limit do
       w = w - 4
       h = w * 21 // 11
       t = h // 8
