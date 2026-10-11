@@ -459,24 +459,45 @@ function on_widget(ctx, box)
   local lh = (font == "small") and 15 or 18
   local textW = math.max(box.w - 24, 20)
   local maxY = box.y + box.h - 4
-  local tl = wrapLines(d.title, textW, font, 2)
+  -- Titel fett (die Firmware hat keine fette Schrift in dieser Groesse: zweimal mit 1 Pixel Versatz), bis zu 2 Zeilen
+  local function baseAfter(n) return box.y + 18 + n * lh end
+  local tl = wrapLines(d.title, textW - 1, font, 2)
+  local full = baseAfter(#tl) + 2 + 22 <= maxY
+  if not full and #tl > 1 then
+    -- zu niedrig fuer 2 Titelzeilen plus Info-Zeile: Titel auf eine Zeile, damit die Info bleibt
+    local one = wrapLines(d.title, textW - 1, font, 1)
+    if baseAfter(1) + 2 + 22 <= maxY then tl, full = one, true end
+  end
+  -- Info in EINER Zeile: Ernaehrungsart und Dauer ("Vegetarisch · 35 Min")
+  local label = dietLabel(d.diet, en)
+  local info = label
+  if d.time ~= "" then info = info .. (info ~= "" and " · " or "") .. d.time end
   local y = box.y + 18
   for _, l in ipairs(tl) do
     draw.text(box.x + 12, y, l, font, color.BLACK, "left")
+    draw.text(box.x + 13, y, l, font, color.BLACK, "left")
     y = y + lh
   end
-  local rowTop = y + 2
-  if rowTop + 22 <= maxY then
-    local label = dietLabel(d.diet, en)
+  if info == "" then return end
+  -- Passt der Titel in eine Zeile und bleibt rechts daneben Platz, steht die Info NEBEN dem Titel (breites, niedriges Widget)
+  if #tl == 1 and tl[1] == d.title then
+    local left = textW - (draw.measure(tl[1], font) + 1) - 14
+    if left >= draw.measure(info, "small") or left >= 90 then
+      draw.text(box.x + 12 + draw.measure(tl[1], font) + 1 + 14, box.y + 18, fit(info, left, "small"), "small", color.BLACK, "left")
+      return
+    end
+  end
+  if full then
+    local rowTop = y + 2
     local lx = box.x + 12
-    if label ~= "" then
+    -- Symbol nur, wenn das Widget breit genug fuer Symbol und die ganze Info-Zeile ist; sonst Platz fuer den Text
+    if label ~= "" and 26 + draw.measure(info, "small") <= textW then
       dietGlyph(d.diet, lx, rowTop, color.ACCENT)
       lx = lx + 26
-      draw.text(lx, rowTop + 17, label, "small", color.BLACK, "left")
-      lx = lx + draw.measure(label, "small") + 12
     end
-    if d.time ~= "" then
-      draw.text(lx, rowTop + 17, fit((label ~= "" and "· " or "") .. d.time, box.x + box.w - 8 - lx, "small"), "small", color.BLACK, "left")
-    end
+    draw.text(lx, rowTop + 17, fit(info, box.x + box.w - 8 - lx, "small"), "small", color.BLACK, "left")
+  elseif y <= maxY then
+    -- fuer das Symbol ist keine Hoehe da: nur die Textzeile unter dem Titel
+    draw.text(box.x + 12, y, fit(info, textW, "small"), "small", color.BLACK, "left")
   end
 end
