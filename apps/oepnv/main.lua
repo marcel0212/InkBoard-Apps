@@ -302,8 +302,8 @@ if #list == 0 then return nil, "noplace" end
 cachePut(prov, "P", sel.label, list[1])
 return list[1]
 end
-local function depsHvv(ctx, stop)
-local function attempt(rt)
+local function hvvAttempt(ctx, stop, rt)
+do
 local body = '{"language":"de","maxList":' .. MAXDEP .. ',"station":{"id":' .. js(stop.id) .. ',"type":"STATION"},'
 .. '"time":{"date":"heute","time":"jetzt"},"useRealtime":' .. (rt and "true" or "false") .. ',"departure":true,"returnFilters":true,"maxTimeOffset":120}'
 local d, e = hvvPost(ctx, "departureList", body,
@@ -323,28 +323,13 @@ end
 end
 return out
 end
+end
+local function depsHvv(ctx, stop)
+local function attempt(rt) return hvvAttempt(ctx, stop, rt) end
 local out, e = attempt(false)
 if out and #out == 0 and NET < 6 then
 log("OePNV (HVV): 0 Abfahrten ohne Echtzeit - zweiter Versuch mit useRealtime=true")
 out, e = attempt(true)
-elseif out and #out > 0 and NET < 6 then
-local rt = attempt(true)
-if rt and #rt > 0 then
-local byKey = {}
-for _, x in ipairs(rt) do
-local k = x.line .. "|" .. x.dest
-byKey[k] = byKey[k] or {}
-byKey[k][#byKey[k] + 1] = x.delay
-end
-local cnt = {}
-for _, x in ipairs(out) do
-local k = x.line .. "|" .. x.dest
-local n = (cnt[k] or 0) + 1
-cnt[k] = n
-local l = byKey[k]
-if l and l[n] and l[n] ~= 0 then x.delay = l[n] end
-end
-end
 end
 return out, e
 end
@@ -396,7 +381,17 @@ elseif f[1] == "D" and #f >= 6 then d.list[#d.list + 1] = { line = f[2], mode = 
 end
 return d
 end
+local LASTDEP = nil -- {stop, list, sig, prov} der letzten erfolgreichen HVV-Abfrage (fuer den Verspaetungs-Nachabruf)
+local function writeDeps(list, sig, prov, stop)
+local t = { table.concat({ "H", sig, tostring(NOW), prov, tf(stop.label, 60) }, "\t") }
+for _, x in ipairs(list) do
+t[#t + 1] = table.concat({ "D", tf(x.line, 9), tostring(x.mode), tf(x.dest, 39), tostring(math.floor(x.when)), tostring(math.floor(x.delay)) }, "\t")
+end
+WROTE.d = table.concat(t, "\n") .. "\n"
+file.write("d", WROTE.d)
+end
 local function fetchDeps(ctx, prov)
+LASTDEP = nil
 local stop, e = stopFor(ctx, prov)
 if not stop then ctx.data.set("ed", e); return false end
 local list, e2 = DEPS[prov](ctx, stop)
@@ -407,14 +402,31 @@ local old = readDeps()
 if old and old.sig == sig and #old.list > 0 then ctx.data.set("ed", nil); return true end
 end
 table.sort(list, function(a, b) return a.when < b.when end)
-local t = { table.concat({ "H", sig, tostring(NOW), prov, tf(stop.label, 60) }, "\t") }
-for _, x in ipairs(list) do
-t[#t + 1] = table.concat({ "D", tf(x.line, 9), tostring(x.mode), tf(x.dest, 39), tostring(math.floor(x.when)), tostring(math.floor(x.delay)) }, "\t")
-end
-WROTE.d = table.concat(t, "\n") .. "\n"
-file.write("d", WROTE.d)
+writeDeps(list, sig, prov, stop)
+if prov == "hvv" then LASTDEP = { stop = stop, list = list, sig = sig, prov = prov } end
 ctx.data.set("ed", nil)
 return true
+end
+local function hvvDelays(ctx)
+local L = LASTDEP
+if not L or NET >= 6 then return end
+local rt = hvvAttempt(ctx, L.stop, true)
+if not rt or #rt == 0 then return end
+local byKey = {}
+for _, x in ipairs(rt) do
+local k = x.line .. "|" .. x.dest
+byKey[k] = byKey[k] or {}
+byKey[k][#byKey[k] + 1] = x.delay
+end
+local cnt, changed = {}, false
+for _, x in ipairs(L.list) do
+local k = x.line .. "|" .. x.dest
+local n = (cnt[k] or 0) + 1
+cnt[k] = n
+local l = byKey[k]
+if l and l[n] and l[n] ~= 0 and l[n] ~= x.delay then x.delay = l[n]; changed = true end
+end
+if changed then writeDeps(L.list, L.sig, L.prov, L.stop) end
 end
 local ICONS = { home = true, work = true, school = true, family = true, shopping = true, train = true, plane = true, star = true }
 local function routeCfg(ctx)
@@ -692,6 +704,7 @@ end
 local ok = false
 if wantD then ok = fetchDeps(ctx, prov) or ok end
 if wantR then ok = fetchRoutes(ctx, prov) or ok end
+if wantD and LASTDEP then hvvDelays(ctx) end
 cacheSave()
 local h = 7
 for _, f in ipairs({ "d", "r" }) do
