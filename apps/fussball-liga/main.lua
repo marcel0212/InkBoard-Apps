@@ -133,6 +133,7 @@ local FOLD = {
 ["\195\164"] = "a", ["\195\132"] = "a", ["\195\182"] = "o", ["\195\150"] = "o", ["\195\188"] = "u", ["\195\156"] = "u",
 ["\195\159"] = "ss", ["\195\169"] = "e", ["\195\168"] = "e", ["\195\170"] = "e", ["\195\161"] = "a", ["\195\160"] = "a",
 ["\195\173"] = "i", ["\195\179"] = "o", ["\195\186"] = "u", ["\195\167"] = "c", ["\195\177"] = "n",
+["\195\184"] = "o", ["\195\152"] = "o", ["\195\165"] = "a", ["\195\133"] = "a", ["\195\166"] = "ae", ["\195\134"] = "ae", -- Bod\195\184/Glimt, Malm\195\182 ...
 }
 local function nk(s)
 s = tostring(s or ""):lower():gsub("\195.", FOLD)
@@ -437,6 +438,7 @@ D = nil
 return d
 end
 local WIKI = "https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageimages&piprop=thumbnail&pilicense=any&pithumbsize=250"
+local WIKI_TITLE = { fkbodoglimt = "FK Bod\195\184/Glimt", bodoglimt = "FK Bod\195\184/Glimt" }
 local STOPW = { club = 1, football = 1, verein = 1, team = 1, city = 1, united = 1, sport = 1 }
 local function urlEnc(t)
 return (t:gsub("[^%w ]", function(c) return string.format("%%%02X", c:byte()) end):gsub(" ", "+"))
@@ -468,7 +470,7 @@ end
 end
 if longest == "" then return nil, "kein Suchwort" end
 NET = NET + 1
-local body, err = http.get(WIKI .. "&titles=" .. urlEnc(name), 24000)
+local body, err = http.get(WIKI .. "&titles=" .. urlEnc(WIKI_TITLE[nk(name)] or name), 24000)
 local th = body and wikiPick(body, words, longest)
 if th then return th end
 if NET + 2 > 6 then return nil, "Abrufbudget", true end

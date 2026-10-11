@@ -808,7 +808,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.12",
+      "version": "1.0.13",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -917,9 +917,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "dd5438416dd279a8a573d4e4250f931906d77bd1111ae6f379d0d69fcbfecbd5",
-      "sig": "ioci5utunhPGTgq+iU4xtve2lq1pDLfwi9qYkfBogdvgnQwRYLeqrqCl85vnXEylRurpdG+rfySiXsrOqca/pz/rzEm7LmLbVbrurOLf3aOFnx1+pblk3ItOYwGvyjokreUuc1uawmpWtZyH1sQeTZJd+i3LXhaS7+ERtvJYzss7gRUeeCGzP2ZuuV+auiVRs80CTsUKdqFP4A9mFyeO6WFxyHpBB0t5VQfhDm2Tpcl1YIE+Lnzdr9Lsf7Uqvaz68S9WIV33NN3b5aa5DcpRE3W+o0vO2qn6V22ucPH1jI2ymD1CyaG66nYg9QT9b7l+x78qFifa9iTrpWbpWGnZ/Q==",
-      "size": 65985
+      "sha256": "091850739e01d988ec3438e29996fca9e2109244a7e2593149e23ea66f8bd18c",
+      "sig": "KFlLpb1w4hBTKIpLOjWkI1AtoHmV7U7OmngKpbHTU7vWkYZxrj5GFWqXV8Gk765VpghAe19k9hWTpnr/GBs87d07P2iZtpRpOsOFv14aZ2/9UYGTkwgon7+0lV4jIl9uefM7V4wcHv487trVufWaqJFNEIfK0Cj0Qsr0l94xuLY1KjCf6M8TpVWKvdTt9PvV26/6zBUrTcOl6IDjUACirymlEWyU3O9PFDIi1oJHUCrXOX4wTSBryL8ZSoivmruZBYOSiNk6cuUJQ34Z+889DBmrHhtkok55dG/LY+JvURGZxKWPpVPxhVGvFIFTTxyA/IP3lf98Y1LBalaaAnmR7w==",
+      "size": 66316
     },
     {
       "id": "gericht-des-tages",
@@ -1375,7 +1375,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.4",
+      "version": "1.2.5",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -1489,9 +1489,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "b4f7d962c1b721981ff43a783b2d418e1ca1eeddc730cfad4e7d8b408208986f",
-      "sig": "L9yhRCZSzJhPBqQ8N+PKQJdgkPj0gieQ1Aacm5DvTyZMf8zkaCD0vQGt6d+9+eKcFpQIPw0X4BsRlr6PLNtOfWSB9hOVh+WyKwlofrGBVIy7ZNIEEV+FrLEl38qyriDEcFV7dWAaqaM7fWFOnYF1Qm3QEvHTZSTQNtnsxMi1DAEWjFCnJelhIadZT8OeS6nCTJQXT4IrEgJ+qhrlDDfuj/CK7Or506okJ33w1dIsztAq92uhTC17IL2h11V0gq3nJrigVqI/E2EAmyuF4GsUr7yXU4SZqYo8KFe8zXPYKTne3FOek8JX7XCSTLuV2pcxBO2EGdz5CPDXbAvinieq8A==",
-      "size": 81324
+      "sha256": "53c9c4f23e459646d965a7798a71cae02271f408f51eb241acfdd24bbd11ffc4",
+      "sig": "aql1i6wSxhXZmfDie5l/mFo+ZFVigzvjZELeIaVorUDCyYaGh0UcZn56/+YbWGhmr51biMiV4oFfT1Y1M2af4kxdUbeNnqIz+U2Mrsy/+0BCF6HyqS/TtbIqJ/tq+OFBAmbG4nTYmgZi6+I9CaJkqVDKnSAG9Rq7honROy7cqLcqGRx5Lv8sx//LKsSTLdpz7yL5QLdiZXOgvT6FKCMxeFUcU7R2Gow99mp9SnlVxFPM+gRDSswhl6HUA7h7U9FxZP5aJq78uOxsQgRQK12kI2gjrE8+M9RZTZaK+PPuo0xdDAx2SbC197mb8CGutrvsEurJ/bnrPez3q/rhIdzd1A==",
+      "size": 81343
     },
     {
       "id": "pinnwand-app",
