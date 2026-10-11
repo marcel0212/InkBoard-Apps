@@ -180,7 +180,7 @@ local function store(ctx, r, today, servings, newDay)
 local title = cutBytes(clean(r.title, 95), 300)
 local meta = cutBytes(table.concat({ classify(r), nosep(r.time), nosep(r.yield), nosep(r.source) }, "|"), 300)
 local url = r.url ~= "" and cutBytes(r.url, 190) or ""
-local out = { "T" .. title, "U" .. url, "M" .. meta }
+local out = { "T" .. title, "U" .. url, "M" .. meta, "D" .. tostring(today) } -- D: Tag der Ziehung auch in der Datei (Rueckfall, falls ctx.data einmal leer ist)
 for _, ing in ipairs(r.ingredients or {}) do out[#out + 1] = "I" .. cutBytes(clean(ing, 150), 250) end
 for _, st in ipairs(r.steps or {}) do out[#out + 1] = "S" .. cutBytes(clean(st, 400), 600) end
 for _, p in ipairs(r.nutrition or {}) do out[#out + 1] = "N" .. clean(tostring(p[1]), 20) .. "=" .. clean(tostring(p[2]), 28) end
@@ -208,7 +208,10 @@ if servings < 1 then servings = 1 elseif servings > 12 then servings = 12 end
 local reroll = ctx.data.get("rq") == 1
 local saved = file.read("recipe")
 local have = type(saved) == "string" and saved ~= ""
-if have and not reroll and ctx.data.get("d") == today then
+local day = ctx.data.get("d")
+if day == nil and have then day = tonumber(saved:match("\nD(%d+)")) end
+if have and not reroll and day == today then
+if ctx.data.get("d") == nil then ctx.data.set("d", today) end
 if ctx.data.get("sv") == servings then return true end
 local url = have and saved:match("\nU([^\n]+)") or nil
 if type(url) == "string" and url ~= "" then

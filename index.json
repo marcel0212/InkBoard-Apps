@@ -937,7 +937,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1003,9 +1003,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "48d952b25fa0174f2c93c379cea20a385e0f9a92beb0de2831866bbd123c4ce3",
-      "sig": "Uwfclv4cSTylzeYrdBpr1LMoOu2yIxl0wv2bowhEGZUZbQ25zgvPjR2JZXBPVDQYBYjGizCU7dewNJ9pi8YvMji1aXwYujovdL/KBcRD7+ZABDTvom+8ESXCBV7NyXcISDVa0ghT1dZ+XM6HLyVQPxd62/gXyPM6eak9EBOyIJ8Ap9UizR4bHk5btNRGz4iekgwozVcmDIHJ+fKlcvEVaniCsvhVI6InGMjZoYeufKdfffCMt7vqL/+uZy8kMzxjTAGtsGzp0MeCk2hIIVzzP+qLXDlSCSC49j3dtS+4Fj5zf/QOOLlLTpcobbkar1QIR/36HDkfyyPZEUT55mK2pg==",
-      "size": 21651
+      "sha256": "3b9bf3014a02f0136c47bc765297597d58e3139f5203b5dbe125ae39330987d8",
+      "sig": "NRvNEWW5o4BAkosG6hajtQwn1DQrHrff7FP5HubVkgDdc0fke87lBk7KVbRRHQTc5UQM2st50R0itKT4xU5rIkIL2R703UkG7r+wdM6k7rR/Lr0yApgwKHSfY9YSxMZLoEMaKbno2P2L6RBIdjHqEjz7oaYeXxUqg4cYFeu790PQ5CneucfCaBBV/znboO+p481AtQz/oBP3HhmOg35owXVMF7qBExnU3NMc9/R/7cUecF5J8KwGNEj4gWfo2RpUSdiNa4jwmi9IJcfJv40hBcqG/5x20vQ2Vs2jV5xvMjnHntDXLCBbqqZw01x5fQqz6VCvZwu8ce6g8VPY+CjpQw==",
+      "size": 21921
     },
     {
       "id": "golf-tour",
