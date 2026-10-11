@@ -28,6 +28,7 @@ local function fit(s, w, font)
   while #s > 1 and draw.measure(s, font) > w do
     s = s:sub(1, #s - 1)
     while #s > 1 and (s:byte(#s) & 0xC0) == 0x80 do s = s:sub(1, #s - 1) end
+    if #s > 1 and s:byte(#s) >= 0xC0 then s = s:sub(1, #s - 1) end -- halb abgeschnittenes Zeichen (z.B. ss) nicht als ? zeigen
   end
   return s
 end

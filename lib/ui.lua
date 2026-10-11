@@ -72,6 +72,7 @@ local function wrapLines(s, width, font, maxLines)
       while #l > 1 and draw.measure(l, font) > width do
         l = l:sub(1, #l - 1)
         while #l > 1 and (l:byte(#l) & 0xC0) == 0x80 do l = l:sub(1, #l - 1) end
+        if #l > 1 and l:byte(#l) >= 0xC0 then l = l:sub(1, #l - 1) end
       end
       lines[i] = l
     end

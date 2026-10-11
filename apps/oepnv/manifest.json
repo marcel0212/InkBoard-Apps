@@ -4,7 +4,7 @@
     "de": "ÖPNV",
     "en": "Public transport"
   },
-  "version": "1.2.5",
+  "version": "1.2.6",
   "apiLevel": 16,
   "pages": [
     {
@@ -875,7 +875,7 @@
     {
       "key": "wDelay",
       "type": "toggle",
-      "default": false,
+      "default": true,
       "group": "widget",
       "label": {
         "de": "Verspätung anzeigen",
