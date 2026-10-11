@@ -283,7 +283,13 @@ function on_fetch(ctx)
   local plan = loadPlan()
   local fail = loadErr()
   if fail and fail.club == club then
-    if now - fail.at < RETRY then return false end -- Fehlversuch liegt keine 10 Minuten zurueck: spaeter erneut
+    -- Ohne gespeicherten Stand (Widget leer) zaehlt nur ein Mindestabstand von 60 s, sonst bleibt ein neues Widget 10 Minuten leer;
+    -- ein Fehlzeitstempel in der Zukunft (Uhr war falsch) sperrt nie.
+    local wait = (plan and plan.club == club) and RETRY or 60
+    if fail.at <= now and now - fail.at < wait then
+      log("Golfplatz: letzter Abruf scheiterte (" .. fail.msg .. "), neuer Versuch in " .. (wait - (now - fail.at)) .. " s")
+      return false
+    end
   elseif plan and plan.club == club and now - plan.at < MIN_GAP and now >= plan.at then
     return true -- Stand juenger als 60 Minuten: kein neuer Abruf
   end
@@ -294,7 +300,7 @@ function on_fetch(ctx)
     log("Golfplatz: " .. err)
     if err:find("404", 1, true) then msg = T("Clubnummer unbekannt (404)", "Club number unknown (404)")
     elseif err:find("HTTP", 1, true) then msg = T("Quelle nicht erreichbar", "Source unreachable") .. " (" .. err .. ")"
-    else msg = T("Verbindung fehlgeschlagen", "Connection failed") end
+    else msg = T("Verbindung fehlgeschlagen", "Connection failed") .. " (" .. err .. ")" end
   else
     local days = parsePlan(body)
     body = nil
@@ -871,6 +877,10 @@ function on_widget(ctx, box)
   if (m == nil or #m.days == 0) and ctx.sample then m = sampleModel() end
   if m == nil or #m.days == 0 then
     draw.text(box.x + 12, box.y + 16, fit(T("Noch keine Daten", "No data yet"), box.w - 20, "small"), "small", color.BLACK)
+    local fail = loadErr() -- Grund zeigen statt nur "keine Daten"
+    if fail and fail.club == clubOf(ctx.cfg) and fail.msg ~= "" then
+      draw.text(box.x + 12, box.y + 36, fit(fail.msg, box.w - 20, "small"), "small", color.RED)
+    end
     return
   end
   local maxY = box.y + box.h - 4

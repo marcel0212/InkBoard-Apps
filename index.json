@@ -1113,7 +1113,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -1251,9 +1251,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "66e8aa9e82da4c1a6ca778286e0b57a155a4a4c934a8a7f68ec62d72464f1775",
-      "sig": "D0SjLBTC/tqXHIgdLGaWxODoqRrRtQFvfKFtb7A9gDBQAtpc86c01cP3t3C0LSGvSq0ajkjKie0G+/tHXUdLuRqyTg+l8v4YcEvvq+32FIM9VypZgsAHJ1d62AuEGZTW7U+MKXmMgiQmubYaqcIBZqhDP+EupIA07GEaaFrLIPAtt/GOxd5wK2+NlRVzMG34u8C6q8YG/VeQR0h57SR2Et9dBRzWm+b+03LR+ptqd0dDkQE2IAtOJcYje3v6CYLu4Q3szm3FxeyHzjPsePFfhAN1VtF5e1ecCXPJ16IFxLLCv80i7Qlo5bs+OR43XjlqIcvzFSVW6+Iq6d9ya+OO1A==",
-      "size": 40711
+      "sha256": "fd70f1305e7a3960f50effe173e3cfab3cfcf126c6cb6a8e556950c4608fd0c1",
+      "sig": "lQfHwDiG374wL4jlIDzIWW9UhltRlC06vbWdA8ORgyTtUZW+pezdulH3Zzv3yoK65ortsk+c/SlsJxHwlOeoaJKsNzPghp0SCFhjTi+XedAo5ZZqEd9Xzq3YUzO8pmMErnET0sj28JvXiTBeAO9Whchd/UV3kiXZbQEN7PrHAB1K/OZQQ+DaMzNQ+BLCJNy7dI6/5d5Sc5HVsJsiajkKNDGJcCW5FjtyezJYGPCjxfnN8KmCWas7Mwd2Yer1Ku97pF9ve8RzfTe1aszTdogq67Z7GCHj3z4fXhNDe2f9BWcbifEqPmjwFsvDzlVMczWwIWckBOaUZKc5cn6SfzpHlg==",
+      "size": 41114
     },
     {
       "id": "news-feeds",
