@@ -635,7 +635,7 @@ local function monthPage(ctx, evs, st, en, t, topY)
   local gridLeft = 16
   local gridWidth = W - 2 * gridLeft
   local colW = gridWidth // 7
-  local headerY = topY + 6
+  local headerY = topY + 18 -- Grundlinie: Wochentage duerfen nicht in die Kopfzeile des Seitenwechsel-Modus ragen
   for c = 0, 6 do
     draw.text(gridLeft + c * colW + colW // 2, headerY, (en and WDS_EN or WDS_DE)[c + 1], "normal", color.BLACK, "center")
   end
