@@ -1375,7 +1375,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.6",
+      "version": "1.2.7",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -1489,9 +1489,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "1386fc9ddf1e465c7ab7e974da3696a69697310eaadef620fb3cd553dced84ac",
-      "sig": "MwqBHwrM+qDZsGwg0QilXg1B2/mEDhJ5SJlDiIKpQ2ptT+E6zMr680/1aExC+us3hUf+Qs/PcApVsRQBIyVPn+KWYr6+U+ZYrhQMY4PWcHmhORVWSrn52wsP6Q0I0BGRXQ+ugXBYr/76r63ru7X/6jf6N2wTouEthCXV0681rdVCncg+nwQTehXngGoyGozjvkcZIaXoegwZjFXK7eDV3gUeGWWBEhhWyhh/rUA0oJp3TsxNjZPZ08z5aDEJeb+TGocKzJNUu3kMkYJmlh4ljxbyhUCJIbBnXGHE4xqCALbpNlh4HP2MWYhgqPjGT3mi0eLfuvEZ1PW5q/GHy1yQcg==",
-      "size": 81467
+      "sha256": "c28254b4dc88475d7aeca596cc99d86f2986919873bb5d6d1516988b8b95ce48",
+      "sig": "L+cVEMmhm9zsy32tPBxJkaHN7OMU2YSJMn6l1UNqM2nxEZ2pURRwO2gXTw6NasLOpy7weqXTPlRwjeSJTkxln3PF2l1ojpOxqLvZJ4yHKu6iiE0mE9pOobi7p5g1FBTumt2hQlMbPeNs2sUWqiSBDaBgLDq2bwQx+u/Zn4UXI3Ihz5pmzKnxNhNn5PYfuIPspHCJ7OliCKDuxZIk/Z/S6HtdawGU3kbFqZyRxY/pBgBn5d7bYgXLfDPkOriH8URUlOBWmVqJ0dlvf0gCS9sSm3ytGaK4IAjy5BqChB1z5S8C34lHBi+u5pR9zZjVAjL9piGYZwBOgaHYFJ/ri8S97w==",
+      "size": 81913
     },
     {
       "id": "pinnwand-app",

@@ -327,6 +327,24 @@ local out, e = attempt(false)
 if out and #out == 0 and NET < 6 then
 log("OePNV (HVV): 0 Abfahrten ohne Echtzeit - zweiter Versuch mit useRealtime=true")
 out, e = attempt(true)
+elseif out and #out > 0 and NET < 6 then
+local rt = attempt(true)
+if rt and #rt > 0 then
+local byKey = {}
+for _, x in ipairs(rt) do
+local k = x.line .. "|" .. x.dest
+byKey[k] = byKey[k] or {}
+byKey[k][#byKey[k] + 1] = x.delay
+end
+local cnt = {}
+for _, x in ipairs(out) do
+local k = x.line .. "|" .. x.dest
+local n = (cnt[k] or 0) + 1
+cnt[k] = n
+local l = byKey[k]
+if l and l[n] and l[n] ~= 0 then x.delay = l[n] end
+end
+end
 end
 return out, e
 end
