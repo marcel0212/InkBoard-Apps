@@ -167,7 +167,7 @@ local function hourlyBlock(w, y, sparkXL, sparkXR, sparkH, labelX, maxDy, iconSi
   local i = 0
   while i < n do
     local px = sparkXL + (i * (sw - 1)) // (n - 1)
-    draw.weather_icon(w.hourly[i + 1].cond, px, y + sparkH + iconDy, iconSize)
+    draw.weather_icon(w.hourly[i + 1].cond, px, y + sparkH + iconDy, iconSize, w.hourly[i + 1].night)
     draw.text(px, y + sparkH + hourDy, string.format("%dh", w.hourly[i + 1].hour), "normal", color.BLACK, "center")
     i = i + step
   end
@@ -223,7 +223,7 @@ local function drawBigStyle(w, ctx, flat)
     if flat then hline(CARD_MARGIN, top, cardW) else accentCard(CARD_MARGIN, top, cardW, h) end
   end
   section(factY - 10, factRowH + 20)
-  draw.weather_icon(w.cond, 110, factY + factRowH // 2, 92)
+  draw.weather_icon(w.cond, 110, factY + factRowH // 2, 92, w.night)
   bigTemp(190, factY + 69, w.temp)
   draw.text(190, factY + 90, feelsText(w, ctx), "normal", color.BLACK)
   factGrid(w, ctx, 345, 20, 26, 34, factY + 6, 18)
@@ -250,7 +250,7 @@ local function drawCompact(w, ctx)
   local factRowH = 108
   local cardW = W - 2 * CARD_MARGIN
   accentCard(CARD_MARGIN, factY - 8, cardW, factRowH + 14)
-  draw.weather_icon(w.cond, 96, factY + factRowH // 2, 60)
+  draw.weather_icon(w.cond, 96, factY + factRowH // 2, 60, w.night)
   draw.text(160, factY + 50, string.format("%.0f °C", w.temp), "large", color.BLACK)
   draw.text(160, factY + 72, feelsText(w, ctx), "normal", color.BLACK)
   factGrid(w, ctx, 320, 16, 22, 26, factY + 4, 16)
@@ -316,7 +316,7 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
     if size < 26 then size = 26 end
     if size > b.w - 16 then size = b.w - 16 end
     local icy = top + 6 + size // 2
-    draw.weather_icon(w.cond, cx, icy, size)
+    draw.weather_icon(w.cond, cx, icy, size, w.night)
     local ty = icy + size // 2 + 26
     if ty > maxY - 4 then ty = maxY - 4 end
     centered(cx, ty, temp, "large", color.BLACK, b.x + 4, b.x + b.w - 4)
@@ -334,7 +334,7 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
   if size < 30 then size = 30 end
   if b.w < 200 and size > 56 then size = 56 end
   local icy = top + areaH // 2
-  draw.weather_icon(w.cond, b.x + 16 + size // 2, icy, size)
+  draw.weather_icon(w.cond, b.x + 16 + size // 2, icy, size, w.night)
   local tx = b.x + 34 + size
   local withLabel = areaH >= 56 and not compact
   local ty
