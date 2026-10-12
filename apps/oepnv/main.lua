@@ -1401,6 +1401,7 @@ return { { line = "U1", mode = SUBWAY, dest = "Ohlstedt", when = n + 4 * 60, del
 { line = "U1", mode = SUBWAY, dest = "Norderstedt Mitte", when = n + 9 * 60, delay = 0 }, { line = "S1", mode = SUB, dest = "Wedel", when = n + 12 * 60, delay = 1 },
 { line = "M8", mode = OTHER, dest = "Hauptbahnhof", when = n + 15 * 60, delay = 0 }, { line = "U1", mode = SUBWAY, dest = "Ohlstedt", when = n + 19 * 60, delay = 0 } }
 end
+local WIDGET_LEAD = 300
 local function widgetDeps(ctx, box, list)
 local withDest, withDelay = on(ctx.cfg.wDest), on(ctx.cfg.wDelay)
 local tileH = withDest and 44 or 26
@@ -1412,7 +1413,7 @@ local tf_ = box.font < 0 and "small" or (box.font > 0 and "medium" or "normal")
 local shown = 0
 for _, x in ipairs(list) do
 if shown >= maxTiles then break end
-if x.when >= NOW then
+if x.when >= NOW + WIDGET_LEAD then
 local col, row = shown % cols, shown // cols
 local tx, ty = box.x + 10 + col * tileW, box.y + row * tileH + 4
 local lc = lineColor(x.line, x.mode)

@@ -1596,6 +1596,8 @@ local function sampleDeps()
 end
 
 -- Widget "Abfahrten" (dwDrawTransitNext)
+-- Nutzerwunsch: das Widget zeigt nur Abfahrten ab jetzt + 5 Minuten (frueher kommt man ohnehin nicht mehr hin)
+local WIDGET_LEAD = 300
 local function widgetDeps(ctx, box, list)
   local withDest, withDelay = on(ctx.cfg.wDest), on(ctx.cfg.wDelay)
   local tileH = withDest and 44 or 26
@@ -1607,7 +1609,7 @@ local function widgetDeps(ctx, box, list)
   local shown = 0
   for _, x in ipairs(list) do
     if shown >= maxTiles then break end
-    if x.when >= NOW then
+    if x.when >= NOW + WIDGET_LEAD then
       local col, row = shown % cols, shown // cols
       local tx, ty = box.x + 10 + col * tileW, box.y + row * tileH + 4
       local lc = lineColor(x.line, x.mode)
