@@ -1,0 +1,61 @@
+{
+  "id": "einkaufsliste",
+  "name": {"de": "Einkaufsliste", "en": "Shopping list"},
+  "version": "1.0.0",
+  "apiLevel": 23,
+  "pages": [
+    {"de": "Liste", "en": "List"}
+  ],
+  "refreshMinutes": 15,
+  "input": true,
+  "fetchAnywhere": true,
+  "cycleFetch": true,
+  "widget": {"autoCompact": true, "w": 320, "h": 200},
+  "http": {"page": "assets/phone.html", "api": true},
+  "sections": [
+    {
+      "id": "nas",
+      "title": {"de": "Netzwerk-Abgleich", "en": "Network sync"},
+      "help": {
+        "de": "Mit externem Speicher (Einstellungen → Speicher; FTP, WebDAV oder Google Drive) zeigen alle InkBoards im Netzwerk dieselbe Liste: Jeder Eintrag liegt mit Zeitstempel in einer gemeinsamen Datei, der neuere gewinnt. Ohne externen Speicher arbeitet die Liste nur auf diesem Gerät.",
+        "en": "With external storage (Settings → Storage; FTP, WebDAV or Google Drive) all InkBoards in the network show the same list: every entry is kept with a time stamp in a shared file and the newer one wins. Without external storage the list only works on this device."
+      },
+      "helpTitle": {"de": "Wie funktioniert der Abgleich?", "en": "How does the sync work?"}
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": ["cards", "flat", "compact"],
+      "default": "cards",
+      "optionLabels": {
+        "de": {"cards": "Bento", "flat": "Slate", "compact": "Nano"},
+        "en": {"cards": "Bento", "flat": "Slate", "compact": "Nano"}
+      },
+      "label": {"de": "Stil", "en": "Style"}
+    },
+    {
+      "key": "cleanup",
+      "type": "select",
+      "options": ["12", "24", "72", "0"],
+      "default": "24",
+      "optionLabels": {
+        "de": {"12": "Nach 12 Stunden", "24": "Nach 1 Tag", "72": "Nach 3 Tagen", "0": "Nie"},
+        "en": {"12": "After 12 hours", "24": "After 1 day", "72": "After 3 days", "0": "Never"}
+      },
+      "label": {"de": "Erledigte automatisch entfernen", "en": "Remove done items automatically"}
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "default": "/inkboard/einkauf",
+      "label": {"de": "Ordner auf dem externen Speicher", "en": "Folder on the external storage"},
+      "help": {
+        "de": "Alle InkBoards mit demselben Ordner teilen sich die Liste.",
+        "en": "All InkBoards with the same folder share the list."
+      },
+      "section": "nas"
+    }
+  ]
+}

@@ -54,6 +54,76 @@
   ],
   "apps": [
     {
+      "id": "akku-prognose",
+      "name": {
+        "de": "Akku-Prognose",
+        "en": "Battery forecast"
+      },
+      "tagline": {
+        "de": "Restlaufzeit des Akkus und Tipps, wie sie länger wird",
+        "en": "Battery runtime forecast and tips to make it last longer"
+      },
+      "description": {
+        "de": "Sammelt die Akkuwerte dieses InkBoards und rechnet daraus die Restlaufzeit hoch (mit Verlaufsgraph und Datum, wann der Akku etwa leer ist). Der Spar-Berater liest die Einstellungen des Geräts (Wecktakt, App-/Dashboard-Intervall, Sensor-Verlauf, WLAN-Empfang) und sagt, was du ändern solltest. Er rechnet für jeden Vorschlag aus, wie viele Tage der Akku dann länger hält. Das ist keine KI, sondern ein einfaches Verbrauchsmodell, das aus deinen eigenen Messwerten lernt. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Messwerte kommen nur, solange die App angezeigt wird oder als Widget platziert ist. Braucht Firmware ab Build 737.",
+        "en": "Collects this InkBoard's battery readings and extrapolates the remaining runtime (with a trend chart and the date the battery is about empty). The saving advisor reads the device settings (wake interval, app/dashboard interval, sensor log, Wi-Fi reception) and tells you what to change, calculating for every suggestion how many more days the battery will last. It is not AI but a simple consumption model that learns from your own readings. Three styles (Bento, Slate, Nano) and a dashboard widget. Readings are only collected while the app is shown or placed as a widget. Needs firmware build 737 or later."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 25,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Prognose",
+          "en": "Forecast"
+        },
+        {
+          "de": "Spar-Berater",
+          "en": "Saving advisor"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Restlaufzeit und Leer-Datum aus eigenen Messwerten",
+          "Spar-Berater mit Tagen-Gewinn je Vorschlag",
+          "Verlaufsgraph mit Prognose-Linie",
+          "Dashboard-Widget, drei Stile"
+        ],
+        "en": [
+          "Runtime and empty date from your own readings",
+          "Saving advisor with days gained per suggestion",
+          "Trend chart with forecast line",
+          "Dashboard widget, three styles"
+        ]
+      },
+      "net": [],
+      "icon": "apps/akku-prognose/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-forecast.svg",
+          "caption": {
+            "de": "Prognose (Bento)",
+            "en": "Forecast (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-advisor.svg",
+          "caption": {
+            "de": "Spar-Berater",
+            "en": "Saving advisor"
+          }
+        }
+      ],
+      "package": "apps/akku-prognose/package.json",
+      "sha256": "49f3e099cf4385bfa73d5f7aec7cf752b2416e664a846cc4c726642866432870",
+      "sig": "LP0ICuxD0YaYf/sR9zxppRHhWzBBPR192RkIXzN1Yrz1b6xcZafOUkWdNzVy+IiisYkI/SriIY1DH7EcR7UQ8bjiWBWP0TADZFTbxEVIHW0RoiHMoZfivjtFXgE5phee7FqcYWQblGBxtF0ijKX+RxA9tr+s3UbqSgkSW5iGKpzxP+J8lN21P2SeqZCoonEQpUwPK2VAEjHKVCpxDBRQNYtVWUZLZyEggyHNO8CF42Vow1+bOqs7ViEWSJ7jH7HSapQzt8PuFVkO2HRKIKAq1rGqBGY0P4CIy5HTdw+XfCxOQtdi5OBubkiw1lgP0tmdH0GEwhYUx1nIXqGNnsgIdw==",
+      "size": 21145
+    },
+    {
       "id": "bilder",
       "name": {
         "de": "Bilder",
@@ -434,6 +504,80 @@
       "sha256": "0a64bdd4776b3b793ed2fdf1ec8814ee432a8d977d1d5e8ade1409abe101c2b5",
       "sig": "fGXaOgpv3rBBBSLec+OMo8Yvrb1oy6TpSqauU/aof8wDhByB9+bLrre+rwIXhY0zQSI2xMVs/WTq8hI1MjY9mA2nXb/vLLVGCHUP619q71mqwfKzxQQqLT7wf7sCU6j4C2Wp41V4qToyZGKNxF6P2ojnIZWmENyVUMiymFvu2Q+1m/zT9nLWrlAh8MIuYXoJ4TLSUZad7SR780WKFYO4cny6z0gvgm+vtMfP2pLONxs0o0Qze24KBMmywTxkhZtprXjOQmYiJUqcDVzjLPLi9QJgCD7CrqUOAtNkQlsEFWBYshOxqE0DhtuzVpN68bhUEk74q3OSuzM/Y/Wdso9kuw==",
       "size": 3444
+    },
+    {
+      "id": "einkaufsliste",
+      "name": {
+        "de": "Einkaufsliste",
+        "en": "Shopping list"
+      },
+      "tagline": {
+        "de": "Gemeinsame Einkaufsliste: per Handy füllen, am Drehrad abhaken",
+        "en": "Shared shopping list: fill by phone, tick off with the dial"
+      },
+      "description": {
+        "de": "Die Einkaufsliste für alle InkBoards im Netzwerk. Per QR-Code öffnet sich eine Handy-Seite im Heimnetz, auf der du Dinge hinzufügst, abhakst und löschst. Am Gerät wählst du mit dem Drehrad einen Eintrag und hakst ihn per Klick ab. Mit externem Speicher (FTP, WebDAV oder Google Drive) zeigen alle InkBoards im selben Ordner dieselbe Liste; ohne Speicher arbeitet sie nur lokal. Erledigte Einträge verschwinden nach einstellbarer Zeit. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget mit den offenen Einträgen. Braucht Firmware ab Build 663.",
+        "en": "The shopping list for all InkBoards in your network. A QR code opens a phone page on your home network where you add, tick off and delete items. On the device you pick an entry with the dial and tick it off with a click. With external storage (FTP, WebDAV or Google Drive) all InkBoards using the same folder show the same list; without storage it works locally only. Done items disappear after a configurable time. Three styles (Bento, Slate, Nano) and a dashboard widget with the open items. Needs firmware build 663 or later."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 23,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Liste",
+          "en": "List"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Eingabe per Handy-Seite (QR-Code)",
+          "Abhaken per Drehrad und Klick",
+          "Gleiche Liste auf allen InkBoards (mit externem Speicher)",
+          "Drei Stile und Dashboard-Widget"
+        ],
+        "en": [
+          "Entry via phone page (QR code)",
+          "Tick off with dial and click",
+          "Same list on all InkBoards (with external storage)",
+          "Three styles and dashboard widget"
+        ]
+      },
+      "net": [],
+      "icon": "apps/einkaufsliste/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-list.svg",
+          "caption": {
+            "de": "Liste (Bento)",
+            "en": "List (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-select.svg",
+          "caption": {
+            "de": "Abhaken am Drehrad",
+            "en": "Ticking off with the dial"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-nano.svg",
+          "caption": {
+            "de": "Nano",
+            "en": "Nano"
+          }
+        }
+      ],
+      "package": "apps/einkaufsliste/package.json",
+      "sha256": "784673ebd011bdbe722a995f2a99c23882c41cb0b2cc315243216eb5c6f483f9",
+      "sig": "mFzI45Kp6fmtt/B7x3/5XqEtDZ1qnQuJf5vAJizv+rCAGJvz/5l9/o6VMRlQzB0KMeRXyzFFn+IisJvkvej85uMim4/Ufh/SvHUv8TqAE/uyA/xb9sZvYh63IeEz4xa1lSjJWmIr67ItNruU6G4WFXUoncLsjoz/kjNZXUpLK6OWRrnPi2TdDZxq9Kn4c28JjzCvXJ6z0kNowgvfFnNhTNwv1SzpQxpiB1alf6hzeeXJZMaM1R8i6+wPJeDgQcYZegYRGTSAAMXwUXYfViyiFg92fIG7WSGZZdkgyqxPYoq2q9kjA0S4GiNj62Wm8+/1YNZDYq/le6lci0iwz7cg2A==",
+      "size": 22925
     },
     {
       "id": "flight-radar",
@@ -922,6 +1066,176 @@
       "size": 70576
     },
     {
+      "id": "gaeste-wlan",
+      "name": {
+        "de": "Gäste-WLAN",
+        "en": "Guest Wi-Fi"
+      },
+      "tagline": {
+        "de": "WLAN-QR für Gäste, Hausregeln, zeitlich begrenzt",
+        "en": "Wi-Fi QR for guests, house rules, time-limited"
+      },
+      "description": {
+        "de": "Der Gast-Modus fürs Zuhause: Das Display zeigt einen QR-Code, mit dem Gäste per Handy-Kamera ins WLAN kommen, dazu Name, Passwort, Willkommenstext und deine Hausregeln. Starten und beenden (1 Tag, 3 Tage, 1 Woche, 2 Wochen) sowie Text und Regeln ändern geht bequem per Handy-Seite; nach Ablauf verschwindet das Passwort automatisch vom Display. Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Gast-Modus (WLAN-Name und Passwort werden nie geteilt). Dashboard-Widget mit kleinem QR-Code, drei Stile (Bento, Slate, Nano).",
+        "en": "The guest mode for your home: the display shows a QR code guests scan with their phone camera to join the Wi-Fi, plus name, password, welcome text and your house rules. Start and end it (1 day, 3 days, 1 week, 2 weeks) and edit text and rules from your phone; when time is up the password disappears from the display automatically. With external storage all InkBoards in the network show the same guest mode (Wi-Fi name and password are never shared). Dashboard widget with a small QR code, three styles (Bento, Slate, Nano)."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 23,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "WLAN",
+          "en": "Wi-Fi"
+        },
+        {
+          "de": "Hausregeln",
+          "en": "House rules"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "WLAN-QR-Code zum Scannen",
+          "Gast-Modus mit Ablaufzeit",
+          "Willkommenstext und Hausregeln",
+          "Start/Ende per Handy-Seite",
+          "Netzwerk-Abgleich über externen Speicher",
+          "Dashboard-Widget, drei Stile"
+        ],
+        "en": [
+          "Wi-Fi QR code to scan",
+          "Guest mode with expiry",
+          "Welcome text and house rules",
+          "Start/stop from your phone",
+          "Network sync via external storage",
+          "Dashboard widget, three styles"
+        ]
+      },
+      "net": [],
+      "icon": "apps/gaeste-wlan/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-wifi.svg",
+          "caption": {
+            "de": "WLAN (Bento)",
+            "en": "Wi-Fi (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-wifi-slate.svg",
+          "caption": {
+            "de": "WLAN (Slate)",
+            "en": "Wi-Fi (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-wifi-nano.svg",
+          "caption": {
+            "de": "Großer QR-Code (Nano)",
+            "en": "Large QR code (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-rules.svg",
+          "caption": {
+            "de": "Hausregeln",
+            "en": "House rules"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gaeste-wlan/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
+          }
+        }
+      ],
+      "package": "apps/gaeste-wlan/package.json",
+      "sha256": "8180f83270931734d6ab28e060e341a771bf6968903cd4dd751a49ba33aeb687",
+      "sig": "k7UDuF4tFAFgwCD7mk5VnOHjLHRqqidyiNlgC9psezdaa7uFeAw0FpsUkXTaqGRv4lzqabJfk4VHKyEdweMMfUffYY4+vj8ABbk4M8m044mny8TL/od1IiKkduzW4YAcVFR/ayDcLtwfy+suo9jcTu0j82ClfayFw3lxT2chIbPLC1HEOmWL/r0NTq1U8i6FghVvCl5V6qqWmHaFD6/elJSJH9FkD89pieM3qvF6ck93HMa8GbM53ZypjgnyT3YcGpuTnNxOGOuKj2zQkym15v+V90cEjDGW6ciRxG6TC/B5bXw4mTsoMONNgNQKKnyQTShNBULaHzUch9rcsPNx1A==",
+      "size": 27279
+    },
+    {
+      "id": "geraete-check",
+      "name": {
+        "de": "Geräte-Check",
+        "en": "Device check"
+      },
+      "tagline": {
+        "de": "Zustand dieses InkBoards mit Ampeln auf einen Blick",
+        "en": "This InkBoard's state at a glance, with traffic lights"
+      },
+      "description": {
+        "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr (gestellt?), WLAN-Stärke, Akku bzw. Netzbetrieb, externer Speicher (letzter erfolgreicher Upload oder seit wann er scheitert), freier Arbeitsspeicher sowie Firmware-Version und Laufzeit. Jede Zeile hat eine Ampel; oben fasst ein Band zusammen, ob alles gut ist oder wie viele Hinweise und Probleme es gibt. Ohne Rechner und ohne Einstellungen, ideal bei Problemen wie falscher Uhrzeit oder fehlenden Logs. Braucht Firmware ab Build 736.",
+        "en": "Shows on one page whether everything is fine with the device: clock (set?), Wi-Fi strength, battery or mains power, external storage (last successful upload or since when it fails), free memory, plus firmware version and uptime. Each row has a traffic light; a band on top sums up whether all is good or how many notices and problems there are. No computer and no settings needed, ideal for problems like a wrong time or missing logs. Needs firmware build 736 or later."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.1.0",
+      "apiLevel": 24,
+      "pages": 1,
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Ampeln für Uhr, WLAN, Akku, Speicher, Arbeitsspeicher",
+          "Zusammenfassung: alles gut / Hinweise / Probleme",
+          "Drei Stile (Bento, Slate, Nano) und Dashboard-Widget",
+          "Zeigt den Grund, wenn der NAS-Upload scheitert"
+        ],
+        "en": [
+          "Traffic lights for clock, Wi-Fi, battery, storage, memory",
+          "Summary: all good / notices / problems",
+          "Three styles (Bento, Slate, Nano) and dashboard widget",
+          "Shows the reason when the NAS upload fails"
+        ]
+      },
+      "net": [],
+      "icon": "apps/geraete-check/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/geraete-check/preview-display.svg",
+          "caption": {
+            "de": "Slate: alles in Ordnung",
+            "en": "Slate: all good"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/geraete-check/preview-problems.svg",
+          "caption": {
+            "de": "Bento: Probleme",
+            "en": "Bento: problems"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/geraete-check/preview-nano.svg",
+          "caption": {
+            "de": "Nano",
+            "en": "Nano"
+          }
+        }
+      ],
+      "package": "apps/geraete-check/package.json",
+      "sha256": "2e518b794f0b89fcadf647968048e7996dc4c7059a35ddad8bc906d746112d35",
+      "sig": "EVhUZh3dAL7OwWTqg+XhG/Mj3Yurov7HUw0UHhZ/GgzWrh4O/Mz0Dm23fURuu2Jw090KVQ/zMMX+iBJylI5aW2fD8mADvYrhJERm+YmDdfVDUx6vbBR0jBtKiPsTVE9uXNGtk5cItGpJ49p3wXdqk+8pRTVoCqtkJFYOeH0F50Q17j8+Bdngr4P+YCJXdedvwe+1Wyz3J/2fJpwxxcO7RvssY7HjkpedgmTyPMeUhj6mzlKT0kxA1HdEH6EH2VG89C9cVgHOyNjg2Noveor88rMCg3iuKwGuVuTK0+Npw+3tusi8aCTjq2+pMulOJ9fAsTLQ3Cm5gjIEGPttuuFRHg==",
+      "size": 10486
+    },
+    {
       "id": "gericht-des-tages",
       "name": {
         "de": "Gericht des Tages",
@@ -1254,6 +1568,112 @@
       "sha256": "c3540bb20b67433159ac1f6b1b9391a675a06734115dc3c05f8d044ff1f3fa6a",
       "sig": "MU51zTWljrRQoN7JybINF89MFcpiNtQ/DDb6oYipv0FXS6GRKAe4Eh+2WX0svAvKe3Z8oc0vWBdhw2sCXmDvQWxv/nVNFVsEDEM4wujzf2/q+WbyePQGrS0uxhX/lCsYcb6AnGOc75XPfeN3ghexPh5zjmiAV0Auol59QYQICxvm35gQKgENIovhULYOk7Ap+DBQiCmThWM4u3Rf1+GtDteuRx0WYWZ2/ezB+0UFEtV8DzurNtI4VTfSXb5HT82Qt89b+ijYqGcDlYptaMwZS+XMpc9unwhUc8zb4RckljCSvVrBbZfh8fGuElfcVF67ewROOz0A8TQ9aXL5LpgYIQ==",
       "size": 41387
+    },
+    {
+      "id": "luft-pollen",
+      "name": {
+        "de": "Luft & Pollen",
+        "en": "Air & pollen"
+      },
+      "tagline": {
+        "de": "Luftqualität, UV, Pollen – und ob jetzt gelüftet werden soll",
+        "en": "Air quality, UV, pollen – and whether to open the window now"
+      },
+      "description": {
+        "de": "Die Luft draußen auf einen Blick: europäischer Luftqualitätsindex, Feinstaub, UV-Index und Pollenflug (Erle, Birke, Gräser, Beifuß, Ambrosia, Olive) am Standort deines InkBoards (Daten von Open-Meteo/CAMS, ohne Konto). Die Seite „Lüften“ ist der Fenster-auf-Entscheider: Sie vergleicht den CO2-Wert in deinen Räumen mit der Außenluft und sagt „Jetzt lüften“, „Kurz stoßlüften“ oder „Fenster zu lassen“ – auf Wunsch mit Rücksicht auf deine Pollenallergie. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Braucht den Wetter-Ort in den Geräteeinstellungen; Pollendaten gibt es nur in Europa und während der Saison.",
+        "en": "Outdoor air at a glance: European air quality index, particulates, UV index and pollen (alder, birch, grasses, mugwort, ragweed, olive) at your InkBoard's location (data from Open-Meteo/CAMS, no account needed). The “Ventilate” page is the open-the-window decider: it compares the CO2 level in your rooms with the outdoor air and says “Ventilate now”, “Short burst” or “Keep windows closed” – optionally taking your pollen allergy into account. Three styles (Bento, Slate, Nano) and a dashboard widget. Needs the weather location in the device settings; pollen data covers Europe during the season only."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 22,
+      "pages": 3,
+      "pageNames": [
+        {
+          "de": "Luft",
+          "en": "Air"
+        },
+        {
+          "de": "Pollen",
+          "en": "Pollen"
+        },
+        {
+          "de": "Lüften",
+          "en": "Ventilate"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Luftqualität, Feinstaub, UV-Index",
+          "Pollenflug je Pflanzenart",
+          "Fenster-auf-Entscheider mit CO2",
+          "Rücksicht auf Pollenallergie",
+          "Dashboard-Widget, drei Stile"
+        ],
+        "en": [
+          "Air quality, particulates, UV index",
+          "Pollen by plant",
+          "Open-the-window decider using CO2",
+          "Pollen allergy aware",
+          "Dashboard widget, three styles"
+        ]
+      },
+      "net": [
+        "air-quality-api.open-meteo.com"
+      ],
+      "icon": "apps/luft-pollen/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-air.svg",
+          "caption": {
+            "de": "Luft (Bento)",
+            "en": "Air (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-pollen.svg",
+          "caption": {
+            "de": "Pollenflug",
+            "en": "Pollen"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-vent.svg",
+          "caption": {
+            "de": "Lüften? (Slate)",
+            "en": "Ventilate? (Slate)"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-air-nano.svg",
+          "caption": {
+            "de": "Luft (Nano)",
+            "en": "Air (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/luft-pollen/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
+          }
+        }
+      ],
+      "package": "apps/luft-pollen/package.json",
+      "sha256": "742a1d358448a2f81d7a267a80dc43f4980bd695c80fac9816730c75960b6414",
+      "sig": "qdV7d/8/TCgWTZLc0oiBOd6W7KcugQmixUtgpoKOxD9fwfkONorCArDLusluTY3Li5CJkgmdxBbGm+RRLY6ag5QpemDTt8TAuzv67+vaKdGFrw3Lwvo7sXA4ISn14RmuSnHxXoMd5h9S3w45XopGxhdoSSKxmYSdNRCxxDLu+rOcbsbEtHhjKeFAcX30pmZqiMaXbAxPa8n10PsdveH7iqy56KEOLQiReLDpj1AxML4/uYbgnopKNmWXOIUbuIcV00d9KHqHfIEY0/CRUaD2xu60a2bncZ/lp3oajR2HR1xHRJ7FU2IeNs3nC8aANladBE59pGxjucncihb1DzlBwQ==",
+      "size": 22108
     },
     {
       "id": "news-feeds",
@@ -2387,6 +2807,106 @@
       "sha256": "aa20b44ac74ba3df5300ab952374f86cf031daf5f93281715b9d48a60716b9d1",
       "sig": "Dm5+geYVfrutD7w/U7Li5zGR0fpjfGANgX2RwAhr3D66deFLStwGfdC/DPkWb6bEKtNDnjbsFeaHj/uuCHUdF60MZSa8QwcfWQ9ohISwYEs7Xg6L6r7PWd20I/nn7jQWiiAWQY78qASbrui9MBVv+t5mPHt1Uz43y3Uch+V1LBT/jwrajQgcYbuF91jttZvT7g6rhs/tYmODbV1jLLYdaRHRbybFGmquQK02o/MmprVMFgdIaLkvQLlgCMTGdS2Dw3yr6qte8MltvxwWkYF45TDmxL/LY5UoEyzBozA5aa+MUaI0uIYXnojWbiE0llN9pAmA8pCOmtHcZrnymfT/qg==",
       "size": 16646
+    },
+    {
+      "id": "wochenplan",
+      "name": {
+        "de": "Wochenplan",
+        "en": "Weekly plan"
+      },
+      "tagline": {
+        "de": "Der Plan für die Woche, für alle im Haus",
+        "en": "The plan for the week, for everyone at home"
+      },
+      "description": {
+        "de": "Ein wiederkehrender Wochenplan: Für jeden Wochentag beliebige Einträge (Essen, Training, Aufgaben, Termine), optional mit Person und Farbpunkt. Eingabe bequem per Handy (QR-Code auf dem Display), Anzeige als Wochenübersicht, als Seite „Heute“ und als Dashboard-Widget. Drei Stile (Bento, Slate, Nano). Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Plan (der neuere Eintrag gewinnt), ohne Speicher arbeitet er nur auf diesem Gerät.",
+        "en": "A recurring weekly plan: for each weekday any entries (meals, training, chores, appointments), optionally with a person and color dot. Enter them comfortably from your phone (QR code on the display), shown as a week overview, a “Today” page and a dashboard widget. Three styles (Bento, Slate, Nano). With external storage all InkBoards in the network show the same plan (newer entry wins); without storage it only works on this device."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 23,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Woche",
+          "en": "Week"
+        },
+        {
+          "de": "Heute",
+          "en": "Today"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Wochenübersicht und Seite „Heute“",
+          "Eintragen per Handy-Seite",
+          "Personen mit Farbpunkt",
+          "Netzwerk-Abgleich über externen Speicher",
+          "Dashboard-Widget, drei Stile"
+        ],
+        "en": [
+          "Week overview and “Today” page",
+          "Enter from your phone",
+          "People with color dots",
+          "Network sync via external storage",
+          "Dashboard widget, three styles"
+        ]
+      },
+      "net": [],
+      "icon": "apps/wochenplan/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-week.svg",
+          "caption": {
+            "de": "Woche (Bento)",
+            "en": "Week (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-week-slate.svg",
+          "caption": {
+            "de": "Woche (Slate)",
+            "en": "Week (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-week-nano.svg",
+          "caption": {
+            "de": "Heute und morgen (Nano)",
+            "en": "Today and tomorrow (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-today.svg",
+          "caption": {
+            "de": "Heute",
+            "en": "Today"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wochenplan/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
+          }
+        }
+      ],
+      "package": "apps/wochenplan/package.json",
+      "sha256": "c5b6ebbee9708c6ca3e4645af247a8f81092781300c4fd5c8eb7d7ad0bbf7dee",
+      "sig": "CkAd90+F+Dv+Uk2+s2NwTin34sw9FGQLwHW/HgmObN6dJZCN1junX1ruKkIEuMWgwWWinvJOHnshBYVtQwFQ9/ewYAKIR3t4BOp3kWh5ZG1ac8sJbzSlsYe5swhhSun3NMetuMUYTCxM/LDh4C3bK/c9zjoklp2MrbCLMyk84MqeRYx3PknaCUZNWyunGeaL4qXOwhOsGvslJbKM4YbHPQlR+2KNcomIcMGBprJfgseF2KFZ3z665KCSZQDyK8866ScFRV7LLnvV1MbomRQGER6dRUXUWXWvCPKl4NU/elH5hcsa4tbX7Of1G9yW451zIC0NfoXs3nVT4k5cAKNi0Q==",
+      "size": 25828
     },
     {
       "id": "wort-des-tages",

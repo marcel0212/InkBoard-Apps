@@ -1,0 +1,31 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Restlaufzeit des Akkus und Tipps, wie sie länger wird",
+    "en": "Battery runtime forecast and tips to make it last longer"
+  },
+  "description": {
+    "de": "Sammelt die Akkuwerte dieses InkBoards und rechnet daraus die Restlaufzeit hoch (mit Verlaufsgraph und Datum, wann der Akku etwa leer ist). Der Spar-Berater liest die Einstellungen des Geräts (Wecktakt, App-/Dashboard-Intervall, Sensor-Verlauf, WLAN-Empfang) und sagt, was du ändern solltest. Er rechnet für jeden Vorschlag aus, wie viele Tage der Akku dann länger hält. Das ist keine KI, sondern ein einfaches Verbrauchsmodell, das aus deinen eigenen Messwerten lernt. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Messwerte kommen nur, solange die App angezeigt wird oder als Widget platziert ist. Braucht Firmware ab Build 737.",
+    "en": "Collects this InkBoard's battery readings and extrapolates the remaining runtime (with a trend chart and the date the battery is about empty). The saving advisor reads the device settings (wake interval, app/dashboard interval, sensor log, Wi-Fi reception) and tells you what to change, calculating for every suggestion how many more days the battery will last. It is not AI but a simple consumption model that learns from your own readings. Three styles (Bento, Slate, Nano) and a dashboard widget. Readings are only collected while the app is shown or placed as a widget. Needs firmware build 737 or later."
+  },
+  "features": {
+    "de": [
+      "Restlaufzeit und Leer-Datum aus eigenen Messwerten",
+      "Spar-Berater mit Tagen-Gewinn je Vorschlag",
+      "Verlaufsgraph mit Prognose-Linie",
+      "Dashboard-Widget, drei Stile"
+    ],
+    "en": [
+      "Runtime and empty date from your own readings",
+      "Saving advisor with days gained per suggestion",
+      "Trend chart with forecast line",
+      "Dashboard widget, three styles"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {"kind": "display", "file": "preview-forecast.svg", "caption": {"de": "Prognose (Bento)", "en": "Forecast (Bento)"}, "page": 0},
+    {"kind": "display", "file": "preview-advisor.svg", "caption": {"de": "Spar-Berater", "en": "Saving advisor"}, "page": 1}
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "wochenplan",
+  "name": {
+    "de": "Wochenplan",
+    "en": "Weekly plan"
+  },
+  "version": "1.0.0",
+  "apiLevel": 23,
+  "pages": [
+    {
+      "de": "Woche",
+      "en": "Week"
+    },
+    {
+      "de": "Heute",
+      "en": "Today"
+    }
+  ],
+  "refreshMinutes": 15,
+  "fetchAnywhere": true,
+  "cycleFetch": true,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 200
+  },
+  "http": {
+    "page": "assets/phone.html",
+    "api": true
+  },
+  "sections": [
+    {
+      "id": "nas",
+      "title": {
+        "de": "Netzwerk-Abgleich",
+        "en": "Network sync"
+      },
+      "help": {
+        "de": "Mit externem Speicher (Einstellungen → Speicher; FTP, WebDAV oder Google Drive) zeigen alle InkBoards im Netzwerk denselben Plan: Jeder Eintrag liegt mit Zeitstempel in einer gemeinsamen Datei, der neuere gewinnt. Ohne externen Speicher arbeitet der Plan nur auf diesem Gerät.",
+        "en": "With external storage (Settings → Storage; FTP, WebDAV or Google Drive) all InkBoards in the network show the same plan: every entry is kept with a time stamp in a shared file and the newer one wins. Without external storage the plan only works on this device."
+      },
+      "helpTitle": {
+        "de": "Wie funktioniert der Abgleich?",
+        "en": "How does the sync work?"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "default": "/inkboard/wochenplan",
+      "label": {
+        "de": "Ordner auf dem externen Speicher",
+        "en": "Folder on the external storage"
+      },
+      "help": {
+        "de": "Alle InkBoards mit demselben Ordner teilen sich den Plan.",
+        "en": "All InkBoards with the same folder share the plan."
+      },
+      "section": "nas"
+    }
+  ]
+}

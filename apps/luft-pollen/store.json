@@ -1,0 +1,77 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Luftqualität, UV, Pollen – und ob jetzt gelüftet werden soll",
+    "en": "Air quality, UV, pollen – and whether to open the window now"
+  },
+  "description": {
+    "de": "Die Luft draußen auf einen Blick: europäischer Luftqualitätsindex, Feinstaub, UV-Index und Pollenflug (Erle, Birke, Gräser, Beifuß, Ambrosia, Olive) am Standort deines InkBoards (Daten von Open-Meteo/CAMS, ohne Konto). Die Seite „Lüften“ ist der Fenster-auf-Entscheider: Sie vergleicht den CO2-Wert in deinen Räumen mit der Außenluft und sagt „Jetzt lüften“, „Kurz stoßlüften“ oder „Fenster zu lassen“ – auf Wunsch mit Rücksicht auf deine Pollenallergie. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Braucht den Wetter-Ort in den Geräteeinstellungen; Pollendaten gibt es nur in Europa und während der Saison.",
+    "en": "Outdoor air at a glance: European air quality index, particulates, UV index and pollen (alder, birch, grasses, mugwort, ragweed, olive) at your InkBoard's location (data from Open-Meteo/CAMS, no account needed). The “Ventilate” page is the open-the-window decider: it compares the CO2 level in your rooms with the outdoor air and says “Ventilate now”, “Short burst” or “Keep windows closed” – optionally taking your pollen allergy into account. Three styles (Bento, Slate, Nano) and a dashboard widget. Needs the weather location in the device settings; pollen data covers Europe during the season only."
+  },
+  "features": {
+    "de": [
+      "Luftqualität, Feinstaub, UV-Index",
+      "Pollenflug je Pflanzenart",
+      "Fenster-auf-Entscheider mit CO2",
+      "Rücksicht auf Pollenallergie",
+      "Dashboard-Widget, drei Stile"
+    ],
+    "en": [
+      "Air quality, particulates, UV index",
+      "Pollen by plant",
+      "Open-the-window decider using CO2",
+      "Pollen allergy aware",
+      "Dashboard widget, three styles"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-air.svg",
+      "caption": {
+        "de": "Luft (Bento)",
+        "en": "Air (Bento)"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-pollen.svg",
+      "caption": {
+        "de": "Pollenflug",
+        "en": "Pollen"
+      },
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-vent.svg",
+      "caption": {
+        "de": "Lüften? (Slate)",
+        "en": "Ventilate? (Slate)"
+      },
+      "page": 2,
+      "style": "flat"
+    },
+    {
+      "kind": "display",
+      "file": "preview-air-nano.svg",
+      "caption": {
+        "de": "Luft (Nano)",
+        "en": "Air (Nano)"
+      },
+      "page": 0,
+      "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Dashboard-Widget",
+        "en": "Dashboard widget"
+      }
+    }
+  ]
+}

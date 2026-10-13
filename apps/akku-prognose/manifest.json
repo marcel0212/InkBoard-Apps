@@ -1,0 +1,26 @@
+{
+  "id": "akku-prognose",
+  "name": {"de": "Akku-Prognose", "en": "Battery forecast"},
+  "version": "1.0.0",
+  "apiLevel": 25,
+  "pages": [
+    {"de": "Prognose", "en": "Forecast"},
+    {"de": "Spar-Berater", "en": "Saving advisor"}
+  ],
+  "refreshMinutes": 15,
+  "cycleFetch": true,
+  "widget": {"autoCompact": true, "w": 320, "h": 200},
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": ["cards", "flat", "compact"],
+      "default": "cards",
+      "optionLabels": {
+        "de": {"cards": "Bento", "flat": "Slate", "compact": "Nano"},
+        "en": {"cards": "Bento", "flat": "Slate", "compact": "Nano"}
+      },
+      "label": {"de": "Stil", "en": "Style"}
+    }
+  ]
+}

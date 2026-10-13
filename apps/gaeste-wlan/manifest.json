@@ -1,0 +1,166 @@
+{
+  "id": "gaeste-wlan",
+  "name": {
+    "de": "Gäste-WLAN",
+    "en": "Guest Wi-Fi"
+  },
+  "version": "1.0.0",
+  "apiLevel": 23,
+  "pages": [
+    {
+      "de": "WLAN",
+      "en": "Wi-Fi"
+    },
+    {
+      "de": "Hausregeln",
+      "en": "House rules"
+    }
+  ],
+  "refreshMinutes": 15,
+  "fetchAnywhere": true,
+  "cycleFetch": true,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 200
+  },
+  "http": {
+    "page": "assets/phone.html",
+    "api": true
+  },
+  "sections": [
+    {
+      "id": "wifi",
+      "title": {
+        "de": "Gäste-Netzwerk",
+        "en": "Guest network"
+      },
+      "helpTitle": {
+        "de": "Welches WLAN?",
+        "en": "Which network?"
+      },
+      "help": {
+        "de": "Trage das WLAN ein, das Gäste nutzen sollen (am besten das Gastnetz deines Routers). Name und Passwort bleiben nur auf diesem Gerät gespeichert und werden nie über den Speicher oder die Handy-Seite verteilt. Gäste scannen den QR-Code mit der Handy-Kamera und sind verbunden.",
+        "en": "Enter the Wi-Fi guests should use (ideally your router's guest network). Name and password only stay on this device and are never shared via storage or the phone page. Guests scan the QR code with their phone camera and are connected."
+      }
+    },
+    {
+      "id": "nas",
+      "title": {
+        "de": "Netzwerk-Abgleich",
+        "en": "Network sync"
+      },
+      "helpTitle": {
+        "de": "Wie funktioniert der Abgleich?",
+        "en": "How does the sync work?"
+      },
+      "help": {
+        "de": "Mit externem Speicher (Einstellungen → Speicher; FTP, WebDAV oder Google Drive) zeigen alle InkBoards im Netzwerk denselben Gast-Modus samt Hausregeln: Start, Ende, Willkommenstext und Regeln liegen mit Zeitstempel in einer gemeinsamen Datei, der neuere Stand gewinnt. WLAN-Name und Passwort werden nie geteilt. Ohne externen Speicher arbeitet die App nur auf diesem Gerät.",
+        "en": "With external storage (Settings → Storage; FTP, WebDAV or Google Drive) all InkBoards in the network show the same guest mode and house rules: start, end, welcome text and rules are kept with a time stamp in a shared file and the newer state wins. Wi-Fi name and password are never shared. Without external storage the app only works on this device."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    },
+    {
+      "key": "ssid",
+      "type": "text",
+      "default": "",
+      "label": {
+        "de": "WLAN-Name (SSID)",
+        "en": "Wi-Fi name (SSID)"
+      },
+      "section": "wifi"
+    },
+    {
+      "key": "pass",
+      "type": "password",
+      "default": "",
+      "label": {
+        "de": "WLAN-Passwort",
+        "en": "Wi-Fi password"
+      },
+      "section": "wifi"
+    },
+    {
+      "key": "sec",
+      "type": "select",
+      "options": [
+        "WPA",
+        "WEP",
+        "nopass"
+      ],
+      "default": "WPA",
+      "optionLabels": {
+        "de": {
+          "WPA": "WPA/WPA2/WPA3",
+          "WEP": "WEP",
+          "nopass": "Offen (ohne Passwort)"
+        },
+        "en": {
+          "WPA": "WPA/WPA2/WPA3",
+          "WEP": "WEP",
+          "nopass": "Open (no password)"
+        }
+      },
+      "label": {
+        "de": "Verschlüsselung",
+        "en": "Security"
+      },
+      "section": "wifi"
+    },
+    {
+      "key": "always",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Gast-Modus dauerhaft an",
+        "en": "Guest mode always on"
+      },
+      "help": {
+        "de": "Zeigt das Gäste-WLAN immer an, ohne Zeitbegrenzung (z. B. Ferienwohnung).",
+        "en": "Always shows the guest Wi-Fi without a time limit (e.g. holiday flat)."
+      },
+      "section": "wifi"
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "default": "/inkboard/gaeste-wlan",
+      "label": {
+        "de": "Ordner auf dem externen Speicher",
+        "en": "Folder on the external storage"
+      },
+      "help": {
+        "de": "Alle InkBoards mit demselben Ordner teilen sich Gast-Modus und Hausregeln.",
+        "en": "All InkBoards with the same folder share guest mode and house rules."
+      },
+      "section": "nas"
+    }
+  ]
+}

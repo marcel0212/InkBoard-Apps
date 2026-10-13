@@ -1,0 +1,79 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "WLAN-QR für Gäste, Hausregeln, zeitlich begrenzt",
+    "en": "Wi-Fi QR for guests, house rules, time-limited"
+  },
+  "description": {
+    "de": "Der Gast-Modus fürs Zuhause: Das Display zeigt einen QR-Code, mit dem Gäste per Handy-Kamera ins WLAN kommen, dazu Name, Passwort, Willkommenstext und deine Hausregeln. Starten und beenden (1 Tag, 3 Tage, 1 Woche, 2 Wochen) sowie Text und Regeln ändern geht bequem per Handy-Seite; nach Ablauf verschwindet das Passwort automatisch vom Display. Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Gast-Modus (WLAN-Name und Passwort werden nie geteilt). Dashboard-Widget mit kleinem QR-Code, drei Stile (Bento, Slate, Nano).",
+    "en": "The guest mode for your home: the display shows a QR code guests scan with their phone camera to join the Wi-Fi, plus name, password, welcome text and your house rules. Start and end it (1 day, 3 days, 1 week, 2 weeks) and edit text and rules from your phone; when time is up the password disappears from the display automatically. With external storage all InkBoards in the network show the same guest mode (Wi-Fi name and password are never shared). Dashboard widget with a small QR code, three styles (Bento, Slate, Nano)."
+  },
+  "features": {
+    "de": [
+      "WLAN-QR-Code zum Scannen",
+      "Gast-Modus mit Ablaufzeit",
+      "Willkommenstext und Hausregeln",
+      "Start/Ende per Handy-Seite",
+      "Netzwerk-Abgleich über externen Speicher",
+      "Dashboard-Widget, drei Stile"
+    ],
+    "en": [
+      "Wi-Fi QR code to scan",
+      "Guest mode with expiry",
+      "Welcome text and house rules",
+      "Start/stop from your phone",
+      "Network sync via external storage",
+      "Dashboard widget, three styles"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-wifi.svg",
+      "caption": {
+        "de": "WLAN (Bento)",
+        "en": "Wi-Fi (Bento)"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-wifi-slate.svg",
+      "caption": {
+        "de": "WLAN (Slate)",
+        "en": "Wi-Fi (Slate)"
+      },
+      "page": 0,
+      "style": "flat"
+    },
+    {
+      "kind": "display",
+      "file": "preview-wifi-nano.svg",
+      "caption": {
+        "de": "Großer QR-Code (Nano)",
+        "en": "Large QR code (Nano)"
+      },
+      "page": 0,
+      "style": "compact"
+    },
+    {
+      "kind": "display",
+      "file": "preview-rules.svg",
+      "caption": {
+        "de": "Hausregeln",
+        "en": "House rules"
+      },
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Dashboard-Widget",
+        "en": "Dashboard widget"
+      }
+    }
+  ]
+}

@@ -180,6 +180,7 @@ end
 - `box.x`, `box.y`, `box.w`, `box.h`: Innenfläche. `y` ist die Oberkante unter der Titelzeile.
 - `box.fh`: volle Widget-Höhe, daraus leitest du Größenstufen ab (z. B. ab 90 Pixeln auch Zusatzzeilen zeigen).
 - `box.font`: Schriftstufe aus den Widget-Einstellungen: `-1` klein, `0` normal, `1` groß.
+- `box.style`: Design aus den Widget-Einstellungen (`"cards"`, `"flat"`, `"compact"`; leer = Standard).
 
 Zeichne nur innerhalb der Box. Wähle Inhalte nach Platz: klein = nur das Wichtigste, groß = mehr Details.
 
@@ -247,7 +248,7 @@ Signiert wird genau der Text, der als `body` gesendet wird; das Paket baut ihn d
 
 Lokalzeit (API-Stufe 2): `time.localtime()` gibt eine Tabelle `{year, month, day, hour, min, sec, wday, week}` (wday 0=Sonntag … 6=Samstag, week = ISO-Kalenderwoche) oder `nil`, solange die Uhr nicht synchron ist. (Nicht `time.local` - das ist in Lua ein Schlüsselwort.)
 
-Wetter (API-Stufe 3, nur Außenwetter des Geräts): `weather.get()` liefert die Wetterdaten, die das Gerät ohnehin für seine Wetter-Anzeige holt (Anbieter, Ort und Einheiten stellt der Nutzer in den Geräteeinstellungen ein; das Skript braucht keinen eigenen Abruf). Ergebnis: eine Tabelle `{location, temp, feels, humidity, cond, sunrise, sunset, wind, pressure, uv, visibility, aqi, aqi_label, hourly, daily, rain}` oder `nil, grund` mit `grund` = `"nolocation"` (kein Standort eingerichtet), `"loading"` (Daten noch nicht da) oder `"unavailable"`. Felder, die der Anbieter nicht liefert (z. B. `uv` bei OpenWeatherMap), fehlen (`nil`). `cond` ist `"clear"`, `"partly"`, `"cloudy"`, `"fog"`, `"drizzle"`, `"rain"`, `"snow"`, `"thunder"` oder `"unknown"`. `sunrise`/`sunset` sind Minuten seit Mitternacht, `wind` in km/h, `pressure` in hPa, `visibility` in km, `aqi` 1 (gut) bis 5 (sehr schlecht). `hourly` ist eine Liste `{hour, temp, cond}`, `daily` eine Liste `{wday (0=So), cond, min, max}`, `rain` eine Liste `{t, mm}` (Beginn des 15-Minuten-Blocks als Unix-Zeit, Niederschlag in mm). `draw.weather_icon(cond, cx, cy, größe)` zeichnet das Wettersymbol der Firmware um den Mittelpunkt (feste Farben, gedacht für weißen Grund). Lies die Daten in `on_draw`/`on_widget` (sie ändern sich ohne Skriptlauf); ein eigenes `on_fetch` ist nicht nötig.
+Wetter (API-Stufe 3, nur Außenwetter des Geräts): `weather.get()` liefert die Wetterdaten, die das Gerät ohnehin für seine Wetter-Anzeige holt (Anbieter, Ort und Einheiten stellt der Nutzer in den Geräteeinstellungen ein; das Skript braucht keinen eigenen Abruf). Ergebnis: eine Tabelle `{location, temp, feels, humidity, cond, sunrise, sunset, wind, pressure, uv, visibility, aqi, aqi_label, hourly, daily, rain}` oder `nil, grund` mit `grund` = `"nolocation"` (kein Standort eingerichtet), `"loading"` (Daten noch nicht da) oder `"unavailable"`. Felder, die der Anbieter nicht liefert (z. B. `uv` bei OpenWeatherMap), fehlen (`nil`). `cond` ist `"clear"`, `"partly"`, `"cloudy"`, `"fog"`, `"drizzle"`, `"rain"`, `"snow"`, `"thunder"`, `"hail"` (Gewitter mit Hagel) oder `"unknown"`. `night` (Boolean, nur wenn Sonnenzeiten und Uhr bekannt) sagt, ob es jetzt zwischen Sonnenuntergang und -aufgang ist; `hourly[i].night` gilt entsprechend für die jeweilige Stunde. `sunrise`/`sunset` sind Minuten seit Mitternacht, `wind` in km/h, `pressure` in hPa, `visibility` in km, `aqi` 1 (gut) bis 5 (sehr schlecht). `hourly` ist eine Liste `{hour, temp, cond}`, `daily` eine Liste `{wday (0=So), cond, min, max}`, `rain` eine Liste `{t, mm}` (Beginn des 15-Minuten-Blocks als Unix-Zeit, Niederschlag in mm). `draw.weather_icon(cond, cx, cy, größe [, nacht])` zeichnet das Wettersymbol der Firmware um den Mittelpunkt (feste Farben, gedacht für weißen Grund). Mit `nacht = true` werden `"clear"`/`"partly"` zu Mond-Varianten (auch direkt als `"clear_night"`/`"partly_night"` angebbar); `"hail"` zeigt Wolke mit Hagelkörnern. Lies die Daten in `on_draw`/`on_widget` (sie ändern sich ohne Skriptlauf); ein eigenes `on_fetch` ist nicht nötig.
 
 Standort (API-Stufe 7): `weather.location()` gibt `{lat, lon, name}` des Gerätestandorts zurück (der Ort, den der Nutzer für die Wetter-App einstellt), oder `nil, "nolocation"`. Für Apps mit Umkreissuche (Tankstellen, Haltestellen); ein eigenes Ortsfeld braucht das Paket dann nicht.
 
@@ -283,6 +284,34 @@ function on_fetch(ctx)
   ctx.data.set("value", doc.value)
 end
 ```
+
+### Gerätezustand (`system.get()`, API-Stufe 24, Firmware ab Build 736)
+
+`system.get()` liefert den Zustand des Geräts, **nur lesend**, in allen Einstiegspunkten, ohne Netzabruf und ohne Berechtigung. Ergebnis (Tabelle) oder `nil, "unavailable"`:
+
+- `battery` (Prozent, fehlt ohne Akku-Messung), `on_battery` (Akkubetrieb mit Aufwach-Zyklen)
+- `wifi` (verbunden), `rssi` (dBm, nur bei `wifi`)
+- `clock_ok` (Systemuhr gestellt), `now` (Unix-Zeit), `uptime` (Sekunden seit Start)
+- `build`, `version` (Firmware), `room` (Raum-ID)
+- `nas_ready` (externer Speicher eingerichtet), `nas_ok` (Unix-Zeit des letzten erfolgreichen Log-Uploads, fehlt bis zum ersten seit Start), `nas_fail_since` (seit wann der Upload durchgehend scheitert, fehlt ohne Fehler), `nas_error` (letzte Fehlermeldung)
+- `free_kb` (freier Arbeitsspeicher)
+
+Beispiel: `local s = system.get(); if s and not s.clock_ok then draw.text(20, 40, "Uhr nicht gestellt", "normal", color.RED) end`. Einen Akku-Verlauf führt die Firmware nicht; Apps, die einen Verlauf brauchen, sammeln ihre Werte selbst (`file.write` im `on_fetch`).
+
+### E-Mail (`mail.send()`, API-Stufe 26, Firmware ab Build 738)
+
+Mit `"permissions": {"mail": true}` im Manifest (und `apiLevel` 26) darf eine App eine Mail senden. **Empfänger und Zugangsdaten bestimmt der Nutzer** in den Geräte-Einstellungen (Studio → Einstellungen → E-Mail, in der Mac-/iOS-App und im Einrichtungs-Assistenten); die App liefert nur Betreff und Text.
+
+- `mail.ready()` → `true`, wenn eine E-Mail-Einrichtung hinterlegt ist (Server, Benutzer, Passwort, Absender, Empfänger).
+- `mail.send(betreff, text)` → `true` oder `nil, Fehlertext`. Nur in `on_fetch` und `on_action`, höchstens eine Mail je Aufruf; Betreff bis 120 Byte, Text bis 6000 Byte (UTF-8, Umlaute sind erlaubt). Die Firmware sendet höchstens 6 Mails je Tag und Gerät.
+- `mail.send(betreff, text, html)` (Firmware ab Build 739): optionaler dritter Parameter mit einer **HTML-Fassung** (bis 12000 Byte; längeres HTML wird mit Fehler abgelehnt). Die Mail geht dann als `multipart/alternative` raus – Mail-Programme zeigen das HTML, der Text bleibt als Rückfall. Mail-Clients kennen kein `<style>`: Tabellen und Inline-Stile verwenden. Im **Baukasten** (Reiter „E-Mail“) gestaltest du die Vorlage mit Live-Vorschau; er erzeugt `bk_mail(vars)` → Betreff, Text, HTML: `mail.send(bk_mail({ wert = "42" }))`. Platzhalter `{wert}` in der Vorlage werden mit `vars` gefüllt und HTML-sicher maskiert.
+- Versand über SMTP mit SSL (Port 465, z. B. Gmail, GMX, web.de, Posteo, IONOS); STARTTLS (Port 587) wird nicht unterstützt. Das Serverzertifikat wird geprüft, dafür muss die Uhr gestellt sein. Das Passwort verlässt die Firmware nie.
+- **Eigener Mailserver:** In den Geräteeinstellungen lässt sich die Verschlüsselung wählen – „SSL, Zertifikat nicht prüfen“ (selbst signiertes Zertifikat, beliebiger Port mit Implicit-TLS) oder „Unverschlüsselt“ (z. B. Port 25 an NAS/Mail-Relay; nur für Server im eigenen Netz: 10.x, 172.16–31.x, 192.168.x, Namen ohne Punkt oder auf .local/.lan). Bei diesen beiden darf der Zugang leer sein (dann entfällt die Anmeldung). Für Apps ändert sich nichts.
+- Ohne Berechtigung bricht der Aufruf mit einem Fehler ab. Der Store zeigt die Berechtigung in der Beschreibung (Pflicht für Paketautoren).
+
+### Geräteeinstellungen (`system.settings()`, API-Stufe 25, Firmware ab Build 737)
+
+`system.settings()` liefert die Einstellungen, die den Akkuverbrauch bestimmen, **nur lesend** (Tabelle oder `nil, "unavailable"`): `wake_min` (tatsächlicher Weckabstand im Akkubetrieb), `view_min` (Display-Intervall der gerade sichtbaren Ansicht), `sensor_log_min`, `net_min` (Takt der Netzwerk-Uploads/-Rundrufe), `weather_min`, `dashboard_min`, `ui_window_min` (Bedienfenster nach Tasterweckung), `apps` (Anzahl aktiver Apps), `dashboard` (Dashboard sichtbar), `minimal` (Minimalmodus nach Absturzserie), `on_battery`. Grundlage für Apps wie die Akku-Prognose mit Spar-Berater.
 
 ## 7. Icons
 

@@ -1,0 +1,95 @@
+{
+  "id": "luft-pollen",
+  "name": {
+    "de": "Luft & Pollen",
+    "en": "Air & pollen"
+  },
+  "version": "1.0.0",
+  "apiLevel": 22,
+  "pages": [
+    {
+      "de": "Luft",
+      "en": "Air"
+    },
+    {
+      "de": "Pollen",
+      "en": "Pollen"
+    },
+    {
+      "de": "Lüften",
+      "en": "Ventilate"
+    }
+  ],
+  "refreshMinutes": 60,
+  "retrySeconds": 60,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 190
+  },
+  "permissions": {
+    "net": [
+      "air-quality-api.open-meteo.com"
+    ],
+    "tlsVerify": true
+  },
+  "sections": [
+    {
+      "id": "person",
+      "title": {
+        "de": "Persönlich",
+        "en": "Personal"
+      },
+      "helpTitle": {
+        "de": "Wie entscheidet die Lüften-Seite?",
+        "en": "How does the ventilation page decide?"
+      },
+      "help": {
+        "de": "Die Seite „Lüften“ vergleicht den CO2-Wert in deinen Räumen (dieses und andere InkBoards) mit der Luft draußen. Ist drinnen die Luft verbraucht und draußen gut, heißt es „Jetzt lüften“. Bei belasteter Außenluft empfiehlt sie nur kurzes Stoßlüften, und wenn drinnen alles gut ist, die Fenster geschlossen zu lassen. Mit „Ich reagiere auf Pollen“ zählt auch der Pollenflug mit.",
+        "en": "The “Ventilate” page compares the CO2 level in your rooms (this and other InkBoards) with the air outside. If indoor air is stale and outdoor air is good it says “Ventilate now”. With burdened outdoor air it only recommends a short burst, and keeps the windows closed when indoor air is fine. With “I react to pollen” the pollen count is included."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    },
+    {
+      "key": "allergy",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Ich reagiere auf Pollen",
+        "en": "I react to pollen"
+      },
+      "help": {
+        "de": "Dann berücksichtigt die Lüften-Seite auch den Pollenflug.",
+        "en": "Then the ventilation page also takes pollen into account."
+      },
+      "section": "person"
+    }
+  ]
+}

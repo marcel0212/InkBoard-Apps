@@ -1,0 +1,44 @@
+{
+  "id": "geraete-check",
+  "name": {
+    "de": "Geräte-Check",
+    "en": "Device check"
+  },
+  "version": "1.1.0",
+  "apiLevel": 24,
+  "pages": 1,
+  "refreshMinutes": 15,
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "flat",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    }
+  ],
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 140
+  }
+}

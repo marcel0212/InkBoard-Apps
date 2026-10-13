@@ -1,0 +1,56 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Zustand dieses InkBoards mit Ampeln auf einen Blick",
+    "en": "This InkBoard's state at a glance, with traffic lights"
+  },
+  "description": {
+    "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr (gestellt?), WLAN-Stärke, Akku bzw. Netzbetrieb, externer Speicher (letzter erfolgreicher Upload oder seit wann er scheitert), freier Arbeitsspeicher sowie Firmware-Version und Laufzeit. Jede Zeile hat eine Ampel; oben fasst ein Band zusammen, ob alles gut ist oder wie viele Hinweise und Probleme es gibt. Ohne Rechner und ohne Einstellungen, ideal bei Problemen wie falscher Uhrzeit oder fehlenden Logs. Braucht Firmware ab Build 736.",
+    "en": "Shows on one page whether everything is fine with the device: clock (set?), Wi-Fi strength, battery or mains power, external storage (last successful upload or since when it fails), free memory, plus firmware version and uptime. Each row has a traffic light; a band on top sums up whether all is good or how many notices and problems there are. No computer and no settings needed, ideal for problems like a wrong time or missing logs. Needs firmware build 736 or later."
+  },
+  "features": {
+    "de": [
+      "Ampeln für Uhr, WLAN, Akku, Speicher, Arbeitsspeicher",
+      "Zusammenfassung: alles gut / Hinweise / Probleme",
+      "Drei Stile (Bento, Slate, Nano) und Dashboard-Widget",
+      "Zeigt den Grund, wenn der NAS-Upload scheitert"
+    ],
+    "en": [
+      "Traffic lights for clock, Wi-Fi, battery, storage, memory",
+      "Summary: all good / notices / problems",
+      "Three styles (Bento, Slate, Nano) and dashboard widget",
+      "Shows the reason when the NAS upload fails"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Slate: alles in Ordnung",
+        "en": "Slate: all good"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-problems.svg",
+      "caption": {
+        "de": "Bento: Probleme",
+        "en": "Bento: problems"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-nano.svg",
+      "caption": {
+        "de": "Nano",
+        "en": "Nano"
+      },
+      "page": 0
+    }
+  ]
+}
