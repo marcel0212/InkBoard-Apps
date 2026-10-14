@@ -4,8 +4,8 @@
     "de": "Gäste-WLAN",
     "en": "Guest Wi-Fi"
   },
-  "version": "1.0.0",
-  "apiLevel": 23,
+  "version": "1.1.0",
+  "apiLevel": 27,
   "pages": [
     {
       "de": "WLAN",
@@ -42,6 +42,21 @@
       "help": {
         "de": "Trage das WLAN ein, das Gäste nutzen sollen (am besten das Gastnetz deines Routers). Name und Passwort bleiben nur auf diesem Gerät gespeichert und werden nie über den Speicher oder die Handy-Seite verteilt. Gäste scannen den QR-Code mit der Handy-Kamera und sind verbunden.",
         "en": "Enter the Wi-Fi guests should use (ideally your router's guest network). Name and password only stay on this device and are never shared via storage or the phone page. Guests scan the QR code with their phone camera and are connected."
+      }
+    },
+    {
+      "id": "rules",
+      "title": {
+        "de": "Willkommen und Hausregeln",
+        "en": "Welcome and house rules"
+      },
+      "helpTitle": {
+        "de": "Wie kommen die Regeln aufs Display?",
+        "en": "How do the rules get on the display?"
+      },
+      "help": {
+        "de": "Willkommenstext und bis zu 6 Hausregeln (eine pro Zeile) kannst du hier eintragen. Sobald du etwas änderst, gilt es als neuester Stand und wird – mit externem Speicher – an alle InkBoards im Netzwerk verteilt. Änderungen über die Handy-Seite (QR-Code) bleiben möglich.",
+        "en": "Enter a welcome text and up to 6 house rules (one per line) here. As soon as you change something it counts as the newest state and – with external storage – is shared with all InkBoards in the network. Changes via the phone page (QR code) remain possible."
       }
     },
     {
@@ -95,7 +110,15 @@
         "de": "WLAN-Name (SSID)",
         "en": "Wi-Fi name (SSID)"
       },
-      "section": "wifi"
+      "section": "wifi",
+      "action": {
+        "name": "use_current",
+        "label": {
+          "de": "Aktuelles WLAN des Geräts übernehmen",
+          "en": "Use the device's current Wi-Fi"
+        },
+        "fills": "ssid"
+      }
     },
     {
       "key": "pass",
@@ -147,6 +170,34 @@
         "en": "Always shows the guest Wi-Fi without a time limit (e.g. holiday flat)."
       },
       "section": "wifi"
+    },
+    {
+      "key": "welcome",
+      "type": "text",
+      "default": "",
+      "label": {
+        "de": "Willkommenstext",
+        "en": "Welcome text"
+      },
+      "help": {
+        "de": "Steht oben auf der WLAN-Seite (höchstens 80 Zeichen). Leer = Standardtext.",
+        "en": "Shown at the top of the Wi-Fi page (max. 80 characters). Empty = default text."
+      },
+      "section": "rules"
+    },
+    {
+      "key": "rules",
+      "type": "list",
+      "default": [],
+      "label": {
+        "de": "Hausregeln",
+        "en": "House rules"
+      },
+      "help": {
+        "de": "Eine Regel pro Zeile, höchstens 6 (je 70 Zeichen).",
+        "en": "One rule per line, max. 6 (70 characters each)."
+      },
+      "section": "rules"
     },
     {
       "key": "dir",

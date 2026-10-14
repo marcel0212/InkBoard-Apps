@@ -10,13 +10,66 @@
     "en": "The shopping list for all InkBoards in your network. A QR code opens a phone page on your home network where you add, tick off and delete items. On the device you pick an entry with the dial and tick it off with a click. With external storage (FTP, WebDAV or Google Drive) all InkBoards using the same folder show the same list; without storage it works locally only. Done items disappear after a configurable time. Three styles (Bento, Slate, Nano) and a dashboard widget with the open items. Needs firmware build 663 or later."
   },
   "features": {
-    "de": ["Eingabe per Handy-Seite (QR-Code)", "Abhaken per Drehrad und Klick", "Gleiche Liste auf allen InkBoards (mit externem Speicher)", "Drei Stile und Dashboard-Widget"],
-    "en": ["Entry via phone page (QR code)", "Tick off with dial and click", "Same list on all InkBoards (with external storage)", "Three styles and dashboard widget"]
+    "de": [
+      "Eingabe per Handy-Seite (QR-Code)",
+      "Abhaken per Drehrad und Klick",
+      "Gleiche Liste auf allen InkBoards (mit externem Speicher)",
+      "Drei Stile und Dashboard-Widget"
+    ],
+    "en": [
+      "Entry via phone page (QR code)",
+      "Tick off with dial and click",
+      "Same list on all InkBoards (with external storage)",
+      "Three styles and dashboard widget"
+    ]
   },
   "icon": "icon.svg",
   "previews": [
-    {"kind": "display", "file": "preview-list.svg", "caption": {"de": "Liste (Bento)", "en": "List (Bento)"}, "page": 0},
-    {"kind": "display", "file": "preview-select.svg", "caption": {"de": "Abhaken am Drehrad", "en": "Ticking off with the dial"}, "page": 0},
-    {"kind": "display", "file": "preview-nano.svg", "caption": {"de": "Nano", "en": "Nano"}, "page": 0}
+    {
+      "kind": "display",
+      "file": "preview-list.svg",
+      "caption": {
+        "de": "Liste (Bento)",
+        "en": "List (Bento)"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-slate.svg",
+      "caption": {
+        "de": "Liste (Slate)",
+        "en": "List (Slate)"
+      },
+      "page": 0,
+      "style": "flat"
+    },
+    {
+      "kind": "display",
+      "file": "preview-select.svg",
+      "caption": {
+        "de": "Abhaken am Drehrad",
+        "en": "Ticking off with the dial"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-nano.svg",
+      "caption": {
+        "de": "Nano",
+        "en": "Nano"
+      },
+      "page": 0,
+      "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Dashboard-Widget",
+        "en": "Dashboard widget"
+      }
+    }
   ]
 }

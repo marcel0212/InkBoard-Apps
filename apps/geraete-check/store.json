@@ -32,7 +32,8 @@
         "de": "Slate: alles in Ordnung",
         "en": "Slate: all good"
       },
-      "page": 0
+      "page": 0,
+      "style": "flat"
     },
     {
       "kind": "display",
@@ -50,7 +51,16 @@
         "de": "Nano",
         "en": "Nano"
       },
-      "page": 0
+      "page": 0,
+      "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Dashboard-Widget",
+        "en": "Dashboard widget"
+      }
     }
   ]
 }

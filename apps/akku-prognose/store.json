@@ -25,7 +25,60 @@
   },
   "icon": "icon.svg",
   "previews": [
-    {"kind": "display", "file": "preview-forecast.svg", "caption": {"de": "Prognose (Bento)", "en": "Forecast (Bento)"}, "page": 0},
-    {"kind": "display", "file": "preview-advisor.svg", "caption": {"de": "Spar-Berater", "en": "Saving advisor"}, "page": 1}
+    {
+      "kind": "display",
+      "file": "preview-forecast.svg",
+      "caption": {
+        "de": "Prognose (Bento)",
+        "en": "Forecast (Bento)"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-forecast-slate.svg",
+      "caption": {
+        "de": "Prognose (Slate)",
+        "en": "Forecast (Slate)"
+      },
+      "page": 0,
+      "style": "flat"
+    },
+    {
+      "kind": "display",
+      "file": "preview-forecast-nano.svg",
+      "caption": {
+        "de": "Prognose (Nano)",
+        "en": "Forecast (Nano)"
+      },
+      "page": 0,
+      "style": "compact"
+    },
+    {
+      "kind": "display",
+      "file": "preview-advisor.svg",
+      "caption": {
+        "de": "Spar-Berater",
+        "en": "Saving advisor"
+      },
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-collecting.svg",
+      "caption": {
+        "de": "Sammelt noch Daten",
+        "en": "Still collecting data"
+      },
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Dashboard-Widget",
+        "en": "Dashboard widget"
+      }
+    }
   ]
 }

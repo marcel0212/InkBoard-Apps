@@ -94,7 +94,7 @@ local function summary(list, en)
   for i = 1, #list do
     if list[i][3] == BAD then bad = bad + 1 elseif list[i][3] == WARN then warn = warn + 1 end
   end
-  local fill, ink, msg = color.GREEN, color.BLACK, en and "All good" or "Alles in Ordnung"
+  local fill, ink, msg = color.GREEN, color.WHITE, en and "All good" or "Alles in Ordnung"
   if bad > 0 then
     fill, ink = color.RED, color.WHITE
     msg = bad == 1 and (en and "1 problem" or "1 Problem") or string.format(en and "%d problems" or "%d Probleme", bad)

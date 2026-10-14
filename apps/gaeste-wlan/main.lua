@@ -1,5 +1,5 @@
 -- Gaeste-WLAN (Paket gaeste-wlan): zeitlich begrenzter Gast-Modus - WLAN-QR-Code zum Scannen, Zugangsdaten, Willkommenstext
--- und Hausregeln. Gast-Modus starten/beenden, Text und Regeln aendern per Handy-Seite (QR-Code). Skript-API Level 23.
+-- und Hausregeln. Gast-Modus starten/beenden, Text und Regeln aendern per Handy-Seite (QR-Code). Skript-API Level 27 (system.get().ssid).
 -- Zustand: Datei "gast" (lokal) und optional "gast.txt" auf dem externen Speicher (storagePath-Feld "dir"), pro Zeile
 -- "schluessel TAB zeit TAB wert" (until = Ende des Gast-Modus in Unix-Sekunden, 0 = aus; welcome; r1..r6 = Hausregeln).
 -- Abgleich in on_fetch: je Schluessel gewinnt die neuere Zeit. WLAN-Name/Passwort stehen nur in den Einstellungen dieses
@@ -100,8 +100,33 @@ end
 
 -- ===== Abruf: Abgleich mit dem externen Speicher =====
 
+-- Willkommenstext und Hausregeln aus den App-Einstellungen: aendert sich der Inhalt gegenueber dem letzten Uebernehmen,
+-- gilt er als neuer Stand (Zeitstempel jetzt) und wird wie eine Aenderung per Handy-Seite im Netzwerk verteilt.
+-- Die Handy-Seite darf danach wieder aendern; die Einstellungen greifen erst wieder bei einer neuen Eingabe.
+local function apply_cfg(ctx, m)
+  local w = clean(ctx.cfg.welcome, 80)
+  local list = type(ctx.cfg.rules) == "table" and ctx.cfg.rules or {}
+  local rules = {}
+  for i = 1, #list do
+    local t = clean(list[i], 70)
+    if t ~= "" and #rules < MAX_RULES then rules[#rules + 1] = t end
+  end
+  local sig = w .. "\n" .. table.concat(rules, "\n")
+  local old = file.read("cfgsig")
+  if old == sig then return end
+  file.write("cfgsig", sig)
+  if old == nil and sig == "\n" then return end -- erster Lauf ohne Eingabe: nichts ueberschreiben
+  local now = now_ts()
+  m.welcome = { ts = now, v = w }
+  for i = 1, MAX_RULES do
+    local t = rules[i] or ""
+    if t ~= "" or m["r" .. i] then m["r" .. i] = { ts = now, v = t } end
+  end
+end
+
 function on_fetch(ctx)
   local m = load_local()
+  apply_cfg(ctx, m)
   local sync = "local"
   if storage.ready() then
     local remote, err = storage.read("dir", NAS_FILE)
@@ -122,6 +147,22 @@ function on_fetch(ctx)
   ctx.data.set("sync", sync)
   if sync == "ok" then ctx.data.set("syncAt", now_ts()) end
   return true
+end
+
+-- ===== Einstellungen: Knopf "Aktuelles WLAN uebernehmen" =====
+
+function on_action(ctx, name)
+  if name ~= "use_current" then return { ok = false, message = "?" } end
+  local s = system.get()
+  local ssid = s and s.ssid
+  if not ssid or ssid == "" then
+    return { ok = false, message = T(ctx, "Das Gerät ist gerade mit keinem WLAN verbunden.", "The device is not connected to a Wi-Fi right now.") }
+  end
+  return {
+    ok = true,
+    message = string.format(T(ctx, "Verbunden mit „%s“. Name übernommen - Passwort bitte selbst eintragen (das Gerät kennt es nicht im Klartext).", "Connected to “%s”. Name applied - please enter the password yourself."), ssid),
+    options = { { value = ssid, label = ssid } },
+  }
 end
 
 -- ===== Handy-Seite =====

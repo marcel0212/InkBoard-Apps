@@ -598,6 +598,46 @@ function on_fetch(ctx)
   for i = 1, #SLOTS do
     if st[i]:sub(1, 2) == "e:" then log("Aufgaben Quelle " .. i .. ": " .. st[i]:sub(3)) end
   end
+  do -- Tagesbericht der Firmware: offene Aufgaben (Datei "bericht": Zeile 1 = Titel, danach je Zeile ein Eintrag)
+    local nowE = time.now()
+    local today
+    if nowE ~= nil then
+      local t = time.date(nowE)
+      today = t.year * 10000 + t.month * 100 + t.day
+    end
+    local open, overdue, rows = 0, 0, {}
+    for i = 1, #SLOTS do
+      if (ctx.cfg[SLOTS[i] .. "_type"] or "off") ~= "off" then
+        for _, suffix in ipairs({ "a", "b" }) do
+          local c = ctx.data.get("d" .. i .. suffix)
+          if type(c) == "string" then
+            for line in c:gmatch("[^\n]+") do
+              local f1, f2, f3 = line:match("^([^\t]*)\t([^\t]*)\t([^\t]*)")
+              if f1 ~= nil and f3 ~= "1" then
+                open = open + 1
+                local day = dueKey(f2)
+                local tag = ""
+                if day ~= nil and today ~= nil then
+                  if day < today then overdue = overdue + 1; tag = en and " (overdue)" or " (überfällig)"
+                  elseif day == today then tag = en and " (today)" or " (heute)" end
+                end
+                if #rows < 6 then
+                  local ttl = f1:gsub("%c", " ")
+                  if #ttl > 40 then ttl = ttl:sub(1, 40) end
+                  rows[#rows + 1] = ttl .. tag
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    if anyOk then
+      local head = en and string.format("Tasks: %d open, %d overdue", open, overdue) or string.format("Aufgaben: %d offen, %d überfällig", open, overdue)
+      if #rows == 0 then rows[1] = en and "Nothing open" or "Nichts offen" end
+      file.write("bericht", head .. "\n" .. table.concat(rows, "\n"))
+    end
+  end
   if anyErr and not anyOk then return false end
   return true
 end

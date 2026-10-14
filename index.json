@@ -111,10 +111,46 @@
         },
         {
           "kind": "display",
+          "file": "apps/akku-prognose/preview-forecast-slate.svg",
+          "caption": {
+            "de": "Prognose (Slate)",
+            "en": "Forecast (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-forecast-nano.svg",
+          "caption": {
+            "de": "Prognose (Nano)",
+            "en": "Forecast (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
           "file": "apps/akku-prognose/preview-advisor.svg",
           "caption": {
             "de": "Spar-Berater",
             "en": "Saving advisor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-collecting.svg",
+          "caption": {
+            "de": "Sammelt noch Daten",
+            "en": "Still collecting data"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/akku-prognose/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
           }
         }
       ],
@@ -215,7 +251,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -359,8 +395,8 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "7cb9c7aee76eb619b7ed0499bdc6f40807051bccb4c663ff633d52ccfc73184e",
-      "sig": "n0VOUnhEbOfHwCUKPiVZYU5ASSLXtAKS+eQal7TnfY6Nd0f2eb076Q1R0TpTSnzPP/adD7EAWKp5kX1VJdhP8COkKNU3d9wKk1ZnyMsHMpiVYKbQ557s5FkS4/DEPh4X4GkAZepJU0YBaANI4EFv3URPW291C2N39fKQNmz+sdmFSzewRzSTPCLfUlYWWdNjodp+El9b+Joc1WrIzftBtlv2tqGeG6yugNjotHkEzcPr1k/gs9IeoY8obiYTEvPm1XEuYobh1swuZ1xQOjCxkNRrqoAQzW5xzuy4Q6g3Im1bqqvUc5rkZJrjed81p1g97reYHJhisu8aHb7lfSsjOA==",
+      "sha256": "397ff69e452a5958c98cf5fcb9a0a678370f20abb77fb2c14167aee543260f67",
+      "sig": "H0/A0Bz4f+yDoa4aqTS2F4zSngzVoirRUtayGCFQ42+aaKRmGJ69XyRtygO9b9YGGh2GYPLvOXyWjm4NMvqojEnPuarVe7tP8pWJqKK7HKWZmR9U/kUhXB44fxmFFB4saZbEQdkRidfoLNP1DlnVyHRiJYqRZ+9LYHHC5+CDCSN2HGW/f2SbISgxogMBpCxGX03x2R8wSOFU/BXAUMiQvfoep93iA2k11k79AwU/MWtjQW3coH0azfp301T9BKB6KT7Qg8rQjNqSOrD2eh/Gcb9nfJagbYXQoszSbbRm2V0SuLuHiMi/oaNdzpU7uso5PwzfBIoUWuibK8GWIHAnUA==",
       "size": 42131
     },
     {
@@ -559,6 +595,16 @@
         },
         {
           "kind": "display",
+          "file": "apps/einkaufsliste/preview-slate.svg",
+          "caption": {
+            "de": "Liste (Slate)",
+            "en": "List (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
           "file": "apps/einkaufsliste/preview-select.svg",
           "caption": {
             "de": "Abhaken am Drehrad",
@@ -571,6 +617,16 @@
           "caption": {
             "de": "Nano",
             "en": "Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/einkaufsliste/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
           }
         }
       ],
@@ -1081,8 +1137,8 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.0",
-      "apiLevel": 23,
+      "version": "1.1.0",
+      "apiLevel": 27,
       "pages": 2,
       "pageNames": [
         {
@@ -1163,9 +1219,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "8180f83270931734d6ab28e060e341a771bf6968903cd4dd751a49ba33aeb687",
-      "sig": "k7UDuF4tFAFgwCD7mk5VnOHjLHRqqidyiNlgC9psezdaa7uFeAw0FpsUkXTaqGRv4lzqabJfk4VHKyEdweMMfUffYY4+vj8ABbk4M8m044mny8TL/od1IiKkduzW4YAcVFR/ayDcLtwfy+suo9jcTu0j82ClfayFw3lxT2chIbPLC1HEOmWL/r0NTq1U8i6FghVvCl5V6qqWmHaFD6/elJSJH9FkD89pieM3qvF6ck93HMa8GbM53ZypjgnyT3YcGpuTnNxOGOuKj2zQkym15v+V90cEjDGW6ciRxG6TC/B5bXw4mTsoMONNgNQKKnyQTShNBULaHzUch9rcsPNx1A==",
-      "size": 27279
+      "sha256": "78c1bd3519c2499e39ac8ed428f2a0b518c593f3cefffeac4acac780ba169960",
+      "sig": "LWUXYihYUOzEKSDyEXUV6O2MvShRsS+RYYGHgo/Uf0SoLys18cmYaIQrU1UzOLG6/DAJUYg91W1wOwLj0IhDqEIAjChYEF4fmWsGiUZwov0lzQsF6k8/L3UY1PAKItjjjdGPPu3urhK9YhRrfhB1kschzHi1O0M3CU6U8KU4YyGPcbBjFtJyDrqrRpK3vXMZnRuiTRSkeI+UCdd7oek+LzVvZ6mtcV0lwAHl6IGYcdnI9lLCT9TxKMr3R2B8vW6Pdf/UuPf7LPdr/VF3t4k47aCn1K/Z1GzBGwhbuadHWG83V2I+eyrmeVBMcFJ99CPUeE8EzqpE32pMi+2i7g7A+g==",
+      "size": 30629
     },
     {
       "id": "geraete-check",
@@ -1183,7 +1239,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -1211,7 +1267,9 @@
           "caption": {
             "de": "Slate: alles in Ordnung",
             "en": "Slate: all good"
-          }
+          },
+          "style": "flat",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1227,12 +1285,22 @@
           "caption": {
             "de": "Nano",
             "en": "Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/geraete-check/preview-widget.svg",
+          "caption": {
+            "de": "Dashboard-Widget",
+            "en": "Dashboard widget"
           }
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "2e518b794f0b89fcadf647968048e7996dc4c7059a35ddad8bc906d746112d35",
-      "sig": "EVhUZh3dAL7OwWTqg+XhG/Mj3Yurov7HUw0UHhZ/GgzWrh4O/Mz0Dm23fURuu2Jw090KVQ/zMMX+iBJylI5aW2fD8mADvYrhJERm+YmDdfVDUx6vbBR0jBtKiPsTVE9uXNGtk5cItGpJ49p3wXdqk+8pRTVoCqtkJFYOeH0F50Q17j8+Bdngr4P+YCJXdedvwe+1Wyz3J/2fJpwxxcO7RvssY7HjkpedgmTyPMeUhj6mzlKT0kxA1HdEH6EH2VG89C9cVgHOyNjg2Noveor88rMCg3iuKwGuVuTK0+Npw+3tusi8aCTjq2+pMulOJ9fAsTLQ3Cm5gjIEGPttuuFRHg==",
+      "sha256": "da0663cf76200d1c41b6a02976dfe86cd31cf8ce2748f29471db93e0b4f0621f",
+      "sig": "WckVHXEVlg45+Blq2T627K0x30ikkOdUdzRzjyiW1D0dWL7MfoOkxkeRzN4RAYvIOlVBD0dV+izgg8Wr/vLlkABhzTT8WnZMyDg+RGqhZ45FgHof0L0K/KrOVMRxt3jDDjf1IGpjWwTI4w0OxYsVqMcjmCtk6dT4uv8PWqkPWg8A+oZ/9Vw8Ft5/hPSJdy2ebVBLjrM3XDBjC8/3q243u+QWOY1ZV1VFxAhvFz+/Uk6zk7yv8zOiFLkY+iPhWGxBp5gnWb+Xgt3Pu56OlSScO3zLfDgVIDFpFlgVt7S9CJ7cmoz0ZOC01Awnput3dIQXy1mlGkEbHJUbMvamW+AQIw==",
       "size": 10486
     },
     {
@@ -2382,8 +2450,8 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.1.9",
-      "apiLevel": 6,
+      "version": "1.2.0",
+      "apiLevel": 10,
       "pages": 1,
       "pageNames": [
         {
@@ -2454,9 +2522,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "870781bb766b666d6fde92d0a92a137a5a7f130f38a7e87085d8f30f6d15bf15",
-      "sig": "d9rJpiF9xWjunN/nuewGzHHs+u1gS3vf+A4LEkUmCG/EhzBydiFCKK+XIplz/OAGGSa6+KtaNaEl8bV2GtsjPImNTwcB5T1hSvQIf/fMz1d51mMn7YfrGToHLgVaBVo199odLyhlmhlACBcRy4Vwvo4nAOJn9beAgy5TrFeXUwjotGG62jLrgXX40i5mLbU4FkMa/20GFiRASC0L5hwO0hSppHqjNxxIAB4H+Q9mnp03oSUPBemgrP33zXTzeGVEYFI+odnVr2yfTyLX3buDu3ZuIM+usmYI5VuNROHvdyordwOxJWIli7t4OtLY3msF9eQS9FcqDUBWfjIhjQejBw==",
-      "size": 49318
+      "sha256": "cf8b918ab952c42931cb9c8e7c21fa417a0886db3e80b88400288f9bac391a20",
+      "sig": "Jz+eftWsPTlHuO+QpbJP6hPfDT9e9lTBsZHpSrBz+Dj8FTsFTYzIZFyB3VSgwpMkGkEgv89U+rd0IOecQTgUbB2O9KWLElktgukcIB75u0Ytx+qanhZiNrQPW3xV/9EwvFudAuM3a/w+qO6/vnVHM0HiLzcq5vTZopkT3AGpngEJu55K3KrjR0pU0KIAq1v9xyBkgJ+upubcaV1Nyel9way65CDrfpw0fHQqMYptWvg19I1uCfVYUXyhw+D4EKB1sQmaZDGzZw4haUHCO1Z0WsOMvQWRGNyapA86nFNueKxI+7iXfCR37EQsuIEbh4gsVE0T2JHwSrwM6yQkzD+pVg==",
+      "size": 51124
     },
     {
       "id": "waste-calendar",

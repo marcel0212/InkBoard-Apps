@@ -4,7 +4,7 @@
     "de": "Geräte-Check",
     "en": "Device check"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 24,
   "pages": 1,
   "refreshMinutes": 15,
