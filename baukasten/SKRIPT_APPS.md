@@ -313,7 +313,7 @@ Mit `"permissions": {"mail": true}` im Manifest (und `apiLevel` 26) darf eine Ap
 
 ### Geräteeinstellungen (`system.settings()`, API-Stufe 25, Firmware ab Build 737)
 
-`system.settings()` liefert die Einstellungen, die den Akkuverbrauch bestimmen, **nur lesend** (Tabelle oder `nil, "unavailable"`): `wake_min` (tatsächlicher Weckabstand im Akkubetrieb), `view_min` (Display-Intervall der gerade sichtbaren Ansicht), `sensor_log_min`, `net_min` (Takt der Netzwerk-Uploads/-Rundrufe), `weather_min`, `dashboard_min`, `ui_window_min` (Bedienfenster nach Tasterweckung), `apps` (Anzahl aktiver Apps), `dashboard` (Dashboard sichtbar), `minimal` (Minimalmodus nach Absturzserie), `on_battery`. Grundlage für Apps wie die Akku-Prognose mit Spar-Berater.
+`system.settings()` liefert die Einstellungen, die den Akkuverbrauch bestimmen, **nur lesend** (Tabelle oder `nil, "unavailable"`): `wake_min` (tatsächlicher Weckabstand im Akkubetrieb), `view_min` (Display-Intervall der gerade sichtbaren Ansicht), `sensor_log_min`, `net_min` (Takt der Netzwerk-Uploads/-Rundrufe), `weather_min`, `dashboard_min`, `ui_window_min` (Bedienfenster nach Tasterweckung), `apps` (Anzahl aktiver Apps), `dashboard` (Dashboard sichtbar), `minimal` (Minimalmodus nach Absturzserie), `on_battery`, ab API-Stufe 27 `quiet_pct` (Anteil der Woche in Ruhezeit, 0 bis 100: Nachtruhe und Abwesend, in dieser Zeit weckt das Gerät im Akkubetrieb nicht), `night_on` und `away_on` (Nachtruhe bzw. Abwesend-Fenster eingeschaltet). Grundlage für Apps wie die Akku-Prognose mit Spar-Berater.
 
 ## 7. Icons
 

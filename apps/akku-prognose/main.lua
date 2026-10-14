@@ -1,5 +1,5 @@
 -- Akku-Prognose mit Spar-Berater (Paket akku-prognose): sammelt Akkuwerte, rechnet die Restlaufzeit hoch und sagt,
--- welche Einstellung am meisten Laufzeit bringt. Skript-API Level 25 (system.get/system.settings, nur lesend).
+-- welche Einstellung am meisten Laufzeit bringt. Skript-API Level 27 (system.get/system.settings, nur lesend; ab 27 mit Ruhezeiten).
 -- Kein KI-Modell auf dem Geraet: einfaches Verbrauchsmodell (Grundverbrauch + Kosten je Weckung), alles lokal.
 -- Messwerte: Datei "samples" (Zeilen "epoch prozent weckabstand"), gelernte Kosten je Weckung: Datei "cal".
 -- on_fetch laeuft nur, solange die App angezeigt wird oder als Widget platziert ist (Firmware-Regel) - dann sammelt sie.
@@ -94,7 +94,10 @@ local function analyse()
   an.rate = fit(t)
   local calTxt = file.read("cal")
   an.cal = calTxt and tonumber(calTxt) or nil
-  local W = (st and st.wake_min and st.wake_min > 0) and (1440 / st.wake_min) or nil
+  -- Ruhezeiten (Nachtruhe, Abwesend) weckt das Geraet nicht: nur der Rest des Tages zaehlt (API 27)
+  local q = (st and st.quiet_pct or 0) / 100
+  an.q = q
+  local W = (st and st.wake_min and st.wake_min > 0) and (1440 / st.wake_min) * (1 - q) or nil
   an.W = W
   if an.rate and W then
     an.c = (an.rate - BASE) / W
@@ -131,7 +134,7 @@ local function advise(an, en)
     local nw = wake_of(st, view, sens)
     local wake = st.wake_min
     if old > 0 then wake = st.wake_min * nw / old end
-    local W2 = 1440 / wake
+    local W2 = (1440 / wake) * (1 - (st.quiet_pct or 0) / 100)
     local r = { view = view, sens = sens, wake = wake, cut = W and math.floor((1 - W2 / W) * 100 + 0.5) or 0 }
     if an.c and an.pct then
       r.drain = BASE + W2 * an.c
@@ -171,6 +174,18 @@ local function advise(an, en)
   if st.ui_window_min > 3 then
     out.tips[#out.tips + 1] = string.format(en and "Operating window %d min: shorter saves battery after button wake" or "Bedienfenster %d Min.: kürzer spart Akku nach Tasterweckung", st.ui_window_min)
   end
+  -- Ruhezeiten: ohne Nachtruhe/Abwesend weckt das Geraet rund um die Uhr (Schaetzung der eingesparten Weckungen)
+  do
+    local q = (st.quiet_pct or 0) / 100
+    if st.night_on == false then
+      local cut = math.floor((8 / 24) / (1 - q) * 100 * (1 - q) + 0.5)
+      out.tips[#out.tips + 1] = string.format(en and "Night quiet (e.g. 22-06): about %d%% fewer wake-ups" or "Nachtruhe (z. B. 22-06 Uhr): ca. %d%% weniger Weckungen", cut)
+    end
+    if st.away_on == false then
+      local cut = math.floor((9 * 5 / 168) * 100 + 0.5)
+      out.tips[#out.tips + 1] = string.format(en and "Away (work, Mon-Fri 8-17): about %d%% fewer wake-ups" or "Abwesend (Arbeit, Mo-Fr 8-17 Uhr): ca. %d%% weniger Weckungen", cut)
+    end
+  end
   if st.minimal then
     out.tips[#out.tips + 1] = en and "Minimal mode is active (after crashes): wake every 60 min" or "Minimalmodus aktiv (nach Abstürzen): Weckung nur alle 60 Min."
   end
@@ -197,7 +212,7 @@ local function on_fetch_impl()
   t = thin(t)
   local rate = fit(t)
   if rate and st.wake_min > 0 then
-    local c = (rate - BASE) / (1440 / st.wake_min)
+    local c = (rate - BASE) / ((1440 / st.wake_min) * (1 - (st.quiet_pct or 0) / 100))
     if c >= 0.001 then file.write("cal", string.format("%.5f", c)) end
   end
   save_samples(t)
@@ -330,7 +345,7 @@ local function page_forecast(ctx)
       { en and "Runtime" or "Restlaufzeit", an.days and ("ca. " .. daysTxt) or "-" },
       { en and "Drain" or "Verbrauch", rateTxt },
       { en and "Empty around" or "Leer etwa", emptyTxt },
-      { en and "Wake interval" or "Weckabstand", an.st and string.format("%d Min.", an.st.wake_min) or "-" },
+      { en and "Wake interval" or "Weckabstand", an.st and string.format((an.st.quiet_pct or 0) > 0 and (en and "%d min, quiet %d%%" or "%d Min., Ruhe %d%%") or "%d Min.", an.st.wake_min, an.st.quiet_pct or 0) or "-" },
       { en and "Readings" or "Messwerte", tostring(an.n) },
     }
     local y = top + 12
@@ -350,7 +365,7 @@ local function page_forecast(ctx)
   battery_icon(44, top + 28, 90, 36, pct)
   draw.text(150, top + 58, pctTxt, "large", color.BLACK, "left")
   draw.text(44, top + 110, en and "Battery" or "Akku", "normal", color.BLACK, "left")
-  draw.text(44, top + 138, an.st and (string.format(en and "wakes every %d min" or "weckt alle %d Min.", an.st.wake_min)) or "", "small", color.BLACK, "left")
+  draw.text(44, top + 138, an.st and (string.format(en and "wakes every %d min" or "weckt alle %d Min.", an.st.wake_min) .. (((an.st.quiet_pct or 0) > 0) and string.format(en and ", quiet %d%%" or ", Ruhe %d%%", an.st.quiet_pct) or "")) or "", "small", color.BLACK, "left")
   local rx = 24 + lw + gap
   local rw = draw.width - rx - 24
   draw.rect(rx, top + 10, rw, 140, pct_color(pct), an.days ~= nil, 14)

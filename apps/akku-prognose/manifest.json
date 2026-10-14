@@ -1,7 +1,7 @@
 {
   "id": "akku-prognose",
   "name": {"de": "Akku-Prognose", "en": "Battery forecast"},
-  "version": "1.0.0",
+  "version": "1.1.0",
   "apiLevel": 25,
   "pages": [
     {"de": "Prognose", "en": "Forecast"},

@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "apiLevel": 25,
       "pages": 2,
       "pageNames": [
@@ -155,9 +155,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "49f3e099cf4385bfa73d5f7aec7cf752b2416e664a846cc4c726642866432870",
-      "sig": "LP0ICuxD0YaYf/sR9zxppRHhWzBBPR192RkIXzN1Yrz1b6xcZafOUkWdNzVy+IiisYkI/SriIY1DH7EcR7UQ8bjiWBWP0TADZFTbxEVIHW0RoiHMoZfivjtFXgE5phee7FqcYWQblGBxtF0ijKX+RxA9tr+s3UbqSgkSW5iGKpzxP+J8lN21P2SeqZCoonEQpUwPK2VAEjHKVCpxDBRQNYtVWUZLZyEggyHNO8CF42Vow1+bOqs7ViEWSJ7jH7HSapQzt8PuFVkO2HRKIKAq1rGqBGY0P4CIy5HTdw+XfCxOQtdi5OBubkiw1lgP0tmdH0GEwhYUx1nIXqGNnsgIdw==",
-      "size": 21145
+      "sha256": "0367d57c65ddd61eacd834fabb959f42e8571a42bfffcf72da6728e632026f8f",
+      "sig": "nlI9tF3DPeOWgKgFWSa+JhiH5wpWyg8nGmy1SYn44qw3M9CmDYDd4i5RsJ5Gsp1U3bmtEVPPfIq1CN6K7K/qWLNs0jTAeObCFiCUVtB3j/M88gs9Uygz+Pz4uZ0htuWEX95AZFt9C0XU9kVoU7yunVeKo1/wwhv3g8hBV7BWmPtix1HVVbL3FoSvhQLIWfm5Py1AreLDhmp9hN9TVyvr6ko3nQS1n4mgEwO2cqnmjVxzcm77ExejI3GMYIbfkRftwKkjtxANJAYiOGNN4PejAgGfKihyN0CdA+NMrs6YHhB/V00GSpow/xbvEG052773XqZqagZk6kcK3LNGDlh1bw==",
+      "size": 22392
     },
     {
       "id": "bilder",
