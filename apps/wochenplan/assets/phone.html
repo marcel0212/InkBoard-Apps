@@ -32,6 +32,14 @@
   .tabs button.on { background:var(--grad); color:#fff; }
   .tabs button.today:not(.on) { outline:2px solid var(--accent); }
   .tabs .c { display:block; font-size:11px; opacity:.7; font-weight:400; }
+  .weekbar { display:flex; align-items:center; gap:6px; margin-bottom:10px; }
+  .weekbar button { background:var(--input); color:var(--text); border-radius:12px; padding:0; width:42px; height:42px; font-size:20px; font-weight:500; flex:none; }
+  .weekbar .wk { flex:1; text-align:center; background:none; color:var(--text); font-size:15px; font-weight:600; height:42px; line-height:1.2; }
+  .weekbar .wk small { display:block; font-size:12px; font-weight:400; color:var(--sub); }
+  .scope { display:flex; gap:6px; margin-bottom:12px; }
+  .scope button { flex:1; padding:9px 0; font-size:14px; background:var(--input); color:var(--text); border-radius:12px; font-weight:500; }
+  .scope button.on { background:var(--grad); color:#fff; font-weight:600; }
+  .rec { display:inline-block; margin-right:6px; color:var(--sub); font-size:14px; }
   .who { width:34%; flex:none !important; }
   .pp { display:inline-block; padding:1px 8px; border-radius:10px; background:var(--input); font-size:13px; margin-right:8px; color:var(--sub); }
   #msg { margin:8px 4px 0; font-size:13px; color:var(--err); min-height:16px; }
@@ -42,6 +50,8 @@
   <h1 id="h1">Wochenplan</h1>
   <p class="sub" id="sub">&nbsp;</p>
   <div class="card">
+    <div class="weekbar"><button type="button" id="wprev" aria-label="Previous week">&#8249;</button><button type="button" class="wk" id="wtitle"></button><button type="button" id="wnext" aria-label="Next week">&#8250;</button></div>
+    <div class="scope" id="scope"></div>
     <div class="tabs" id="tabs"></div>
     <form id="f"><input type="text" id="who" class="who" maxlength="12" list="pl" placeholder="Person" autocomplete="off"><datalist id="pl"></datalist><input type="text" id="in" maxlength="50" placeholder="Was steht an?" autocomplete="off" enterkeyhint="done"><button type="submit" id="add">+</button></form>
     <ul id="list"></ul>
@@ -55,14 +65,26 @@
   var en = (navigator.language || "de").slice(0, 2) === "en";
   var D = en ? ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"] : ["Mo","Di","Mi","Do","Fr","Sa","So"];
   var DL = en ? ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"] : ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"];
-  var L = en ? { h: "Weekly plan", who: "Person", ph: "What is planned?", empty: "Nothing planned.", ok: "synced with the network", local: "not synced (no external storage)", error: "sync error - will retry", busy: "Device busy, retrying…", fail: "No connection to the InkBoard", rep: "repeats every week" }
-               : { h: "Wochenplan", who: "Person", ph: "Was steht an?", empty: "Nichts geplant.", ok: "mit dem Netzwerk synchronisiert", local: "nicht synchronisiert (kein externer Speicher)", error: "Sync-Fehler, wird wiederholt", busy: "Gerät beschäftigt, neuer Versuch…", fail: "Keine Verbindung zum InkBoard", rep: "wiederholt sich jede Woche" };
+  var L = en ? { h: "Weekly plan", who: "Person", ph: "What is planned?", empty: "Nothing planned.", ok: "synced with the network", local: "not synced (no external storage)", error: "sync error - will retry", busy: "Device busy, retrying…", fail: "No connection to the InkBoard", rep: "repeats every week", every: "Every week", only: "Only week {w}", wk: "Week", back: "Tap: this week", one: "this week only" }
+               : { h: "Wochenplan", who: "Person", ph: "Was steht an?", empty: "Nichts geplant.", ok: "mit dem Netzwerk synchronisiert", local: "nicht synchronisiert (kein externer Speicher)", error: "Sync-Fehler, wird wiederholt", busy: "Gerät beschäftigt, neuer Versuch…", fail: "Keine Verbindung zum InkBoard", rep: "wiederholt sich jede Woche", every: "Jede Woche", only: "Nur KW {w}", wk: "KW", back: "Tippen: diese Woche", one: "nur diese Woche" };
   var $ = function (id) { return document.getElementById(id); };
   $("h1").textContent = L.h; $("who").placeholder = L.who; $("in").placeholder = L.ph; $("empty").textContent = L.empty;
   var data = { items: [], persons: [], today: 0, sync: "local" };
-  var sel = 0;
+  var sel = 0, off = 0, scope = "all";
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  // Montag der gewaehlten Woche (Ortszeit des Handys) und ISO-Schluessel Jahr*100+KW (wie in der Firmware)
+  function monday() { var d = new Date(); d = new Date(d.getFullYear(), d.getMonth(), d.getDate() - ((d.getDay() + 6) % 7) + 7 * off); return d; }
+  function isoKey(d) {
+    var u = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    u.setUTCDate(u.getUTCDate() - ((u.getUTCDay() + 6) % 7) + 3);
+    var y = u.getUTCFullYear(), f = new Date(Date.UTC(y, 0, 4));
+    return { y: y, w: 1 + Math.round(((u - f) / 864e5 - 3 + ((f.getUTCDay() + 6) % 7)) / 7) };
+  }
+  function wkKey() { var k = isoKey(monday()); return k.y * 100 + k.w; }
+  function dayDate(i) { var m = monday(); return new Date(m.getFullYear(), m.getMonth(), m.getDate() + i - 1); }
+  function fmt(d) { return d.getDate() + "." + (d.getMonth() + 1) + "."; }
   function api(body, retry) {
-    return fetch("api", { method: "POST", headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/json" }, body: JSON.stringify(body) })
+    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/json" }, body: JSON.stringify(body) })
       .then(function (r) {
         if (r.status === 503 && (retry || 0) < 6) { $("msg").textContent = L.busy; return new Promise(function (res) { setTimeout(res, 1200); }).then(function () { return api(body, (retry || 0) + 1); }); }
         if (!r.ok) throw new Error(r.status);
@@ -72,28 +94,39 @@
   function render(d) {
     data = d; $("msg").textContent = "";
     if (!sel) sel = d.today || 1;
+    var key = wkKey();
+    var inWeek = function (x) { return x.wk === 0 || x.wk === key; };
+    var k = isoKey(monday());
+    $("wtitle").innerHTML = L.wk + " " + k.w + "<small>" + fmt(dayDate(1)) + " – " + fmt(dayDate(7)) + (off === 0 ? "" : " · " + L.back) + "</small>";
+    var sc = $("scope"); sc.innerHTML = "";
+    [["all", L.every], ["week", L.only.replace("{w}", k.w)]].forEach(function (o) {
+      var b = document.createElement("button"); b.type = "button"; b.className = scope === o[0] ? "on" : ""; b.textContent = o[1];
+      b.onclick = function () { scope = o[0]; render(data); };
+      sc.appendChild(b);
+    });
     var tabs = $("tabs"); tabs.innerHTML = "";
     for (var i = 1; i <= 7; i++) (function (i) {
-      var n = d.items.filter(function (x) { return x.day === i; }).length;
+      var n = d.items.filter(function (x) { return x.day === i && inWeek(x); }).length;
       var b = document.createElement("button"); b.type = "button";
-      b.className = (i === sel ? "on " : "") + (i === d.today ? "today" : "");
-      b.innerHTML = D[i - 1] + '<span class="c">' + (n || "&nbsp;") + "</span>";
+      b.className = (i === sel ? "on " : "") + (i === d.today && off === 0 ? "today" : "");
+      b.innerHTML = D[i - 1] + '<span class="c">' + dayDate(i).getDate() + '.</span><span class="c">' + (n || "&nbsp;") + "</span>";
       b.onclick = function () { sel = i; render(data); };
       tabs.appendChild(b);
     })(i);
     var ul = $("list"); ul.innerHTML = "";
-    var rows = d.items.filter(function (x) { return x.day === sel; });
+    var rows = d.items.filter(function (x) { return x.day === sel && inWeek(x); });
     rows.forEach(function (it) {
       var li = document.createElement("li");
       var t = document.createElement("div"); t.className = "t";
+      if (it.wk === 0) { var r = document.createElement("span"); r.className = "rec"; r.textContent = "\u21bb"; r.title = L.rep; t.appendChild(r); }
       if (it.person) { var p = document.createElement("span"); p.className = "pp"; p.textContent = it.person; t.appendChild(p); }
       t.appendChild(document.createTextNode(it.text));
-      var x = document.createElement("button"); x.className = "x"; x.type = "button"; x.textContent = "×"; x.setAttribute("aria-label", "Delete");
+      var x = document.createElement("button"); x.className = "x"; x.type = "button"; x.textContent = "\u00d7"; x.setAttribute("aria-label", "Delete");
       x.onclick = function () { act({ op: "del", id: it.id }); };
       li.appendChild(t); li.appendChild(x); ul.appendChild(li);
     });
     $("empty").hidden = rows.length > 0;
-    $("sub").textContent = DL[sel - 1] + " · " + L.rep;
+    $("sub").textContent = DL[sel - 1] + ", " + fmt(dayDate(sel)) + " · " + (scope === "week" ? L.one : L.rep);
     var pl = $("pl"); pl.innerHTML = "";
     d.persons.forEach(function (p) { var o = document.createElement("option"); o.value = p; pl.appendChild(o); });
     $("sync").textContent = L[d.sync] || "";
@@ -104,8 +137,12 @@
     var v = $("in").value.trim(); if (!v) return;
     var who = $("who").value.trim();
     $("in").value = "";
-    act({ op: "add", day: sel, person: who, text: v });
+    act({ op: "add", day: sel, person: who, text: v, wk: scope === "week" ? wkKey() : 0 });
   };
+  function nav(n) { off += n; scope = "week"; render(data); }
+  $("wprev").onclick = function () { nav(-1); };
+  $("wnext").onclick = function () { nav(1); };
+  $("wtitle").onclick = function () { if (off !== 0) { off = 0; sel = data.today || sel; render(data); } };
   act({ op: "list" });
   setInterval(function () { if (!document.hidden) api({ op: "list" }).then(render).catch(function () {}); }, 8000);
 })();

@@ -631,9 +631,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "784673ebd011bdbe722a995f2a99c23882c41cb0b2cc315243216eb5c6f483f9",
-      "sig": "mFzI45Kp6fmtt/B7x3/5XqEtDZ1qnQuJf5vAJizv+rCAGJvz/5l9/o6VMRlQzB0KMeRXyzFFn+IisJvkvej85uMim4/Ufh/SvHUv8TqAE/uyA/xb9sZvYh63IeEz4xa1lSjJWmIr67ItNruU6G4WFXUoncLsjoz/kjNZXUpLK6OWRrnPi2TdDZxq9Kn4c28JjzCvXJ6z0kNowgvfFnNhTNwv1SzpQxpiB1alf6hzeeXJZMaM1R8i6+wPJeDgQcYZegYRGTSAAMXwUXYfViyiFg92fIG7WSGZZdkgyqxPYoq2q9kjA0S4GiNj62Wm8+/1YNZDYq/le6lci0iwz7cg2A==",
-      "size": 22925
+      "sha256": "656ca9d4e8acd61ac8ec3c2aed4cb7fff9c3244ae1b9f9734a847e4eb11c1a7e",
+      "sig": "QXO7g4iSvO2yFhNT//VWL2fPJNTJX39IYKuRdQ9dV36dJ4CKI+M4ksNt5Hyl96rLPN8fr1petoLy4TasnHYBuN8nrfu2fYdSAESrwI53woP+D7T3hKZVh9SgnqFKOvFUEQd89Xt2EIjk/cGGJ5bwRDCbB+qWhY0FKtijnikwdZ/N1CPiz2cOpPDp9LMe6cObsZ2Z15C8zNYIPRrmv1QIGOgM2xkTvW4VeZmaQnU2xzGIlmyyLNyPE4Ucr2fZkZNjdsrcYUei24J4pg5Kqx43vT3wUjTdYUjZ+XAyuwhZC7vfGJ3besZgOUBmAcR+9NNRtE2jxwEYqvjojtkAR5gusw==",
+      "size": 22969
     },
     {
       "id": "flight-radar",
@@ -1219,9 +1219,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "78c1bd3519c2499e39ac8ed428f2a0b518c593f3cefffeac4acac780ba169960",
-      "sig": "LWUXYihYUOzEKSDyEXUV6O2MvShRsS+RYYGHgo/Uf0SoLys18cmYaIQrU1UzOLG6/DAJUYg91W1wOwLj0IhDqEIAjChYEF4fmWsGiUZwov0lzQsF6k8/L3UY1PAKItjjjdGPPu3urhK9YhRrfhB1kschzHi1O0M3CU6U8KU4YyGPcbBjFtJyDrqrRpK3vXMZnRuiTRSkeI+UCdd7oek+LzVvZ6mtcV0lwAHl6IGYcdnI9lLCT9TxKMr3R2B8vW6Pdf/UuPf7LPdr/VF3t4k47aCn1K/Z1GzBGwhbuadHWG83V2I+eyrmeVBMcFJ99CPUeE8EzqpE32pMi+2i7g7A+g==",
-      "size": 30629
+      "sha256": "2ff6667c4ae32fabb180905e6db08bf34ff027e90103e319f6061485fe20a5fb",
+      "sig": "W1u07ojmmaTZ3yUsGfMW8J6Csw/bWyUsb0bCoKaQGg7Jn3qY1G7a+kyqmZzsJPR2Bt7o5Jlmt/+FbMA3VuQUuHKTozQNO3iS8B0Vwa/JVF+/C/Xf3dTcuMNCYHuU0qEr2Jldb0uVe9K7odzzJNjtwua0MwycDtc4qwbG68hEpNAOfcfo9TUFt2hQhX2jXZjQECPM+Yf42Nl5o7uQiAbRBIdbQq6IsJ8whToTrRBUwCUN2osqfP4q8xz3oGUaanUJvDEpSs94WZaUVadDpu0XkGPAOsNN4OfSicM3wJSrWl2AYRzR/tNKVsJESpML2LSuhpYy5BEQ1FLDuCYkJSbXZw==",
+      "size": 30673
     },
     {
       "id": "geraete-check",
@@ -2887,12 +2887,12 @@
         "en": "The plan for the week, for everyone at home"
       },
       "description": {
-        "de": "Ein wiederkehrender Wochenplan: Für jeden Wochentag beliebige Einträge (Essen, Training, Aufgaben, Termine), optional mit Person und Farbpunkt. Eingabe bequem per Handy (QR-Code auf dem Display), Anzeige als Wochenübersicht, als Seite „Heute“ und als Dashboard-Widget. Drei Stile (Bento, Slate, Nano). Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Plan (der neuere Eintrag gewinnt), ohne Speicher arbeitet er nur auf diesem Gerät.",
-        "en": "A recurring weekly plan: for each weekday any entries (meals, training, chores, appointments), optionally with a person and color dot. Enter them comfortably from your phone (QR code on the display), shown as a week overview, a “Today” page and a dashboard widget. Three styles (Bento, Slate, Nano). With external storage all InkBoards in the network show the same plan (newer entry wins); without storage it only works on this device."
+        "de": "Ein Wochenplan mit Kalenderwochen: Für jeden Wochentag beliebige Einträge (Essen, Training, Aufgaben, Termine), optional mit Person und Farbpunkt - jede Woche wiederkehrend oder nur für eine bestimmte KW. Eingabe bequem per Handy (QR-Code auf dem Display) oder aus den App-Details (Einträge bearbeiten), Anzeige als Wochenübersicht, als Seite „Heute“ und als Dashboard-Widget. Drei Stile (Bento, Slate, Nano). Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Plan (der neuere Eintrag gewinnt), ohne Speicher arbeitet er nur auf diesem Gerät.",
+        "en": "A weekly plan with calendar weeks: for each weekday any entries (meals, training, chores, appointments), optionally with a person and color dot - repeating every week or only for a specific week. Enter them comfortably from your phone (QR code on the display) or from the app details (Edit entries), shown as a week overview, a “Today” page and a dashboard widget. Three styles (Bento, Slate, Nano). With external storage all InkBoards in the network show the same plan (newer entry wins); without storage it only works on this device."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "apiLevel": 23,
       "pages": 2,
       "pageNames": [
@@ -2910,14 +2910,14 @@
       "features": {
         "de": [
           "Wochenübersicht und Seite „Heute“",
-          "Eintragen per Handy-Seite",
+          "Eintragen per Handy-Seite, Wochentage und KW-Auswahl",
           "Personen mit Farbpunkt",
           "Netzwerk-Abgleich über externen Speicher",
           "Dashboard-Widget, drei Stile"
         ],
         "en": [
           "Week overview and “Today” page",
-          "Enter from your phone",
+          "Enter from your phone, weekdays and week picker",
           "People with color dots",
           "Network sync via external storage",
           "Dashboard widget, three styles"
@@ -2972,9 +2972,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "c5b6ebbee9708c6ca3e4645af247a8f81092781300c4fd5c8eb7d7ad0bbf7dee",
-      "sig": "CkAd90+F+Dv+Uk2+s2NwTin34sw9FGQLwHW/HgmObN6dJZCN1junX1ruKkIEuMWgwWWinvJOHnshBYVtQwFQ9/ewYAKIR3t4BOp3kWh5ZG1ac8sJbzSlsYe5swhhSun3NMetuMUYTCxM/LDh4C3bK/c9zjoklp2MrbCLMyk84MqeRYx3PknaCUZNWyunGeaL4qXOwhOsGvslJbKM4YbHPQlR+2KNcomIcMGBprJfgseF2KFZ3z665KCSZQDyK8866ScFRV7LLnvV1MbomRQGER6dRUXUWXWvCPKl4NU/elH5hcsa4tbX7Of1G9yW451zIC0NfoXs3nVT4k5cAKNi0Q==",
-      "size": 25828
+      "sha256": "24a2c05f8690d0946b43ead15a82691bf1fe57387a1ec77f2be3802724ebc4fa",
+      "sig": "V3P5XSHPr0qtwDJfuyr4ZqQtbrutefJiU2khVvmVG9ey+uwQTSj9YT7KpsC8b1vwdzV7qYYCSCTij+SlNsr8PwDyJ673QM0dhU8xjeJxLcJ6hNzGgNRcT+1xTqTRJ/3conwgSMP+mS51dG7411HTQIlU0RyHHUIFq9R19zX7mwCDdv4rtB0BPFBieKxG+yPMFNfptl5q19AHyWcPweNTkTXu/mzC7rnnfAfv1IrjI5QnV+VPpTNsOEKo8Z6f/UVPk/AcUuDd0hNX3Uix45oQXlDygkhMC1Sgx6gCrN1SJ4rC4jnWTOYt83U59C55D3D1Cs/4bD0LtUW9EEHOfsgJXA==",
+      "size": 30706
     },
     {
       "id": "wort-des-tages",

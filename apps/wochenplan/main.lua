@@ -2,6 +2,8 @@
 -- (Essen, Training, Aufgaben, Termine). Eingabe per Handy-Seite (QR-Code). Skript-API Level 23.
 -- Eintraege: Datei "items" (lokal) und optional "wochenplan.txt" auf dem externen Speicher (storagePath-Feld "dir"),
 -- pro Zeile "id TAB zeit TAB status TAB tag TAB person TAB text" (status 0 aktiv, 2 geloescht = Grabstein; tag 1 = Montag ... 7 = Sonntag).
+-- Das Feld "tag" traegt optional eine Kalenderwoche: tag = KW-Schluessel * 10 + Wochentag (KW-Schluessel = ISO-Jahr * 100 + KW, z. B. 2026421
+-- = Montag in KW 42/2026); 0 als Schluessel = wiederkehrend jede Woche (Wert 1..7). Aeltere Staende ignorieren Wochen-Eintraege einfach.
 -- Abgleich in on_fetch: je Eintrag gewinnt die neuere Zeit - mehrere Geraete und Handys bleiben konfliktfrei.
 -- Ohne externen Speicher arbeitet der Plan lokal ("nicht synchronisiert").
 
@@ -20,11 +22,22 @@ local function day_short(ctx, d) return (ctx.lang == "en" and SHORT_EN or SHORT_
 
 -- ===== Daten =====
 
+-- Kalenderwoche der Gegenwart als Schluessel ISO-Jahr * 100 + KW (nil ohne Uhr)
+local function cur_wk()
+  local lt = time.localtime()
+  if not lt or not lt.week then return nil end
+  local y = lt.year
+  if lt.week >= 52 and lt.month == 1 then y = y - 1
+  elseif lt.week == 1 and lt.month == 12 then y = y + 1 end
+  return y * 100 + lt.week
+end
+
 local function parse(text)
   local m = {}
   if text then
     for id, ts, st, dy, pe, tx in text:gmatch("([^\t\n]+)\t(%d+)\t(%d)\t(%d)\t([^\t\n]*)\t([^\n]*)") do
-      m[id] = { id = id, ts = tonumber(ts), st = tonumber(st), day = tonumber(dy), person = pe, text = tx }
+      local v = tonumber(dy)
+      m[id] = { id = id, ts = tonumber(ts), st = tonumber(st), day = v % 10, wk = v // 10, person = pe, text = tx }
     end
   end
   return m
@@ -32,15 +45,17 @@ end
 
 local function serialize(m, now)
   local list = {}
+  local cw = cur_wk()
   for _, e in pairs(m) do
-    if not (e.st == 2 and now - e.ts > TOMB_SEC) then list[#list + 1] = e end
+    local old = cw ~= nil and e.wk > 0 and e.wk < cw - 2 -- abgelaufene Wochen-Eintraege fallen weg
+    if not (e.st == 2 and now - e.ts > TOMB_SEC) and not old then list[#list + 1] = e end
   end
   table.sort(list, function(a, b) if a.ts ~= b.ts then return a.ts < b.ts end return a.id < b.id end)
   local function join()
     local out = {}
     for i = 1, #list do
       local e = list[i]
-      out[i] = string.format("%s\t%d\t%d\t%d\t%s\t%s", e.id, e.ts, e.st, e.day, e.person, e.text)
+      out[i] = string.format("%s\t%d\t%d\t%d\t%s\t%s", e.id, e.ts, e.st, e.wk * 10 + e.day, e.person, e.text)
     end
     return table.concat(out, "\n")
   end
@@ -63,10 +78,11 @@ local function load_local() return parse(file.read("items")) end
 local function now_ts() return time.now() or 0 end
 
 -- aktive Eintraege je Tag (1..7), sortiert nach Person, dann Eingabezeit
-local function by_day(m)
+local function by_day(m, all)
   local days = { {}, {}, {}, {}, {}, {}, {} }
+  local cw = cur_wk()
   for _, e in pairs(m) do
-    if e.st == 0 and e.day >= 1 and e.day <= 7 then
+    if e.st == 0 and e.day >= 1 and e.day <= 7 and (all or e.wk == 0 or e.wk == cw) then
       local t = days[e.day]
       t[#t + 1] = e
     end
@@ -156,18 +172,18 @@ end
 local function reply(status, body) return { status = status, body = body } end
 
 local function list_json(ctx, m)
-  local days = by_day(m)
+  local days = by_day(m, true)
   local parts = {}
   for d = 1, 7 do
     for _, e in ipairs(days[d]) do
-      parts[#parts + 1] = string.format('{"id":"%s","day":%d,"person":"%s","text":"%s"}', esc(e.id), e.day, esc(e.person), esc(e.text))
+      parts[#parts + 1] = string.format('{"id":"%s","day":%d,"wk":%d,"person":"%s","text":"%s"}', esc(e.id), e.day, e.wk, esc(e.person), esc(e.text))
     end
   end
   local _, names = person_colors(m)
   local pn = {}
   for i = 1, #names do pn[i] = '"' .. esc(names[i]) .. '"' end
   local sync = ctx.data.get("sync") or "local"
-  return string.format('{"items":[%s],"persons":[%s],"today":%d,"sync":"%s"}', table.concat(parts, ","), table.concat(pn, ","), today_index() or 0, esc(sync))
+  return string.format('{"items":[%s],"persons":[%s],"today":%d,"week":%d,"sync":"%s"}', table.concat(parts, ","), table.concat(pn, ","), today_index() or 0, cur_wk() or 0, esc(sync))
 end
 
 function on_http(ctx, req)
@@ -182,7 +198,9 @@ function on_http(ctx, req)
     local d = math.floor(tonumber(q.day) or 0)
     if t == "" or d < 1 or d > 7 then return reply(400, '{"error":"leer"}') end
     local id = new_id(ctx)
-    m[id] = { id = id, ts = now, st = 0, day = d, person = clean(q.person, 12), text = t }
+    local wk = math.floor(tonumber(q.wk) or 0)
+    if wk ~= 0 and (wk < 200001 or wk > 209953 or wk % 100 < 1 or wk % 100 > 53) then wk = 0 end
+    m[id] = { id = id, ts = now, st = 0, day = d, wk = wk, person = clean(q.person, 12), text = t }
     changed = true
   elseif op == "del" then
     local e = m[tostring(q.id or "")]
@@ -308,6 +326,8 @@ local function page_week(ctx)
     end
   end
   local foot = sync_text(ctx)
+  local cwk = cur_wk()
+  if cwk then foot = T(ctx, "KW ", "Wk ") .. (cwk % 100) .. "   ·   " .. foot end
   local u = device.url and device.url() or nil
   if u then foot = foot .. "   ·   " .. T(ctx, "Handy: ", "Phone: ") .. u end
   draw.text(28, draw.height - 10, cut(foot, draw.width - 56, "small"), "small", color.BLACK, "left")
