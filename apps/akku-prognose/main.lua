@@ -143,12 +143,17 @@ local function advise(an, en)
     return r
   end
   local list = {}
-  local viewLabel = st.dashboard and (en and "Dashboard interval" or "Dashboard-Intervall") or (en and "App interval" or "App-Intervall")
   local nv = next_step(st.view_min)
   if nv and st.view_min < 120 then
     local r = eval(nv, st.sensor_log_min)
     if r.cut > 0 then
-      r.text = string.format("%s %d -> %d Min.", viewLabel, st.view_min, nv)
+      if st.dashboard then
+        r.text = string.format(en and "Refresh the dashboard every %d instead of %d min" or "Dashboard alle %d statt %d Min. aktualisieren", nv, st.view_min)
+        r.where = en and "Set in: Dashboard > Auto-refresh every (minutes)" or "Einstellen: Dashboard > Automatisch aktualisieren alle (Minuten)"
+      else
+        r.text = string.format(en and "Refresh the open app every %d instead of %d min" or "Geöffnete App alle %d statt %d Min. aktualisieren", nv, st.view_min)
+        r.where = en and "Set in: Store > the app > Refresh (min)" or "Einstellen: Store > die App > Aktualisierung (Min.)"
+      end
       list[#list + 1] = r
     end
   end
@@ -157,7 +162,8 @@ local function advise(an, en)
     local target = math.min(ns, st.view_min)
     local r = eval(st.view_min, target)
     if r.cut > 0 then
-      r.text = string.format(en and "Sensor log %d -> %d min" or "Sensor-Verlauf %d -> %d Min.", st.sensor_log_min, target)
+      r.text = string.format(en and "Measure the sensor every %d instead of %d min" or "Sensor alle %d statt %d Min. messen", target, st.sensor_log_min)
+      r.where = en and "Set in: Settings > Battery mode > Sensor/history interval" or "Einstellen: Einstellungen > Akkubetrieb > Sensor-/Verlaufsintervall"
       list[#list + 1] = r
     end
   end
@@ -411,8 +417,9 @@ local function page_advisor(ctx)
   end
   for i = 1, math.min(3, #adv.list) do
     local r = adv.list[i]
-    draw.rect(40, y, draw.width - 80, 64, color.BLACK, false, 12)
+    draw.rect(40, y, draw.width - 80, 84, color.BLACK, false, 12)
     draw.text(58, y + 28, cut(r.text, 470, "normal"), "normal", color.BLACK, "left")
+    if r.where then draw.text(58, y + 76, cut(r.where, draw.width - 116, "small"), "small", color.BLACK, "left") end
     local gain
     if r.days and an.days then
       gain = string.format("+%s", fmt_days(math.max(0, r.days - an.days), en))
@@ -421,7 +428,7 @@ local function page_advisor(ctx)
     else
       draw.text(draw.width - 58, y + 30, string.format(en and "-%d%% wake-ups" or "-%d%% Weckungen", r.cut), "normal", color.GREEN, "right")
     end
-    y = y + 72
+    y = y + 92
   end
   if adv.all and adv.all.days and an.days then
     draw.rect(40, y, draw.width - 80, 56, color.GREEN, true, 12)

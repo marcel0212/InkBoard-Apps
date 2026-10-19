@@ -106,8 +106,23 @@ local function summary(list, en)
   return fill, ink, msg, bad, warn
 end
 
-local function who_of(s)
-  return (s.room ~= nil and s.room ~= "") and s.room:sub(1, 1):upper() .. s.room:sub(2) or "InkBoard"
+-- Raum-ID -> Anzeigename mit Umlauten (die Firmware liefert die ID, z. B. "kueche")
+local ROOM_DE = { wohnzimmer = "Wohnzimmer", flur = "Flur", kueche = "Küche", bad = "Bad", schlafzimmer = "Schlafzimmer",
+  buero = "Büro", gaestezimmer = "Gästezimmer", waschkueche = "Waschküche", kinderzimmer = "Kinderzimmer", arbeitszimmer = "Arbeitszimmer",
+  esszimmer = "Esszimmer", keller = "Keller", garage = "Garage", dachboden = "Dachboden", balkon = "Balkon", terrasse = "Terrasse", diele = "Diele" }
+local ROOM_EN = { wohnzimmer = "Living room", flur = "Hallway", kueche = "Kitchen", bad = "Bathroom", schlafzimmer = "Bedroom",
+  buero = "Office", gaestezimmer = "Guest room", waschkueche = "Laundry room", kinderzimmer = "Kids' room", arbeitszimmer = "Study",
+  esszimmer = "Dining room", keller = "Basement", garage = "Garage", dachboden = "Attic", balkon = "Balcony", terrasse = "Terrace", diele = "Hall" }
+local function room_label(r, en)
+  r = tostring(r or "")
+  if r == "" then return r end
+  local m = (en and ROOM_EN or ROOM_DE)[r:lower()]
+  if m then return m end
+  return r:sub(1, 1):upper() .. r:sub(2)
+end
+
+local function who_of(s, en)
+  return (s.room ~= nil and s.room ~= "") and room_label(s.room, en) or "InkBoard"
 end
 
 function on_draw(ctx, page)
@@ -134,12 +149,12 @@ function on_draw(ctx, page)
       light(cx, top + 210, 20, list[i][3])
       draw.text(cx, top + 270, cut(list[i][1], colw - 6, "small"), "small", color.BLACK, "center")
     end
-    draw.text(draw.width // 2, top + 340, who_of(s) .. "  -  " .. s.version, "normal", color.BLACK, "center")
+    draw.text(draw.width // 2, top + 340, who_of(s, en) .. "  -  " .. s.version, "normal", color.BLACK, "center")
     return
   end
   draw.rect(24, top, draw.width - 48, 50, fill, true, 14)
   draw.text(48, top + 34, msg, "large", ink, "left")
-  draw.text(draw.width - 48, top + 33, who_of(s), "normal", ink, "right")
+  draw.text(draw.width - 48, top + 33, who_of(s, en), "normal", ink, "right")
   if style == "cards" then
     -- Bento: Kacheln in zwei Spalten
     local tw = (draw.width - 48 - 12) // 2

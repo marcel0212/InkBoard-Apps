@@ -147,10 +147,23 @@ local function rooms(ctx)
   return out, thr
 end
 
-local function nice_room(r)
+-- Raum-ID -> Anzeigename mit Umlauten (die Firmware liefert die ID, z. B. "kueche")
+local ROOM_DE = { wohnzimmer = "Wohnzimmer", flur = "Flur", kueche = "Küche", bad = "Bad", schlafzimmer = "Schlafzimmer",
+  buero = "Büro", gaestezimmer = "Gästezimmer", waschkueche = "Waschküche", kinderzimmer = "Kinderzimmer", arbeitszimmer = "Arbeitszimmer",
+  esszimmer = "Esszimmer", keller = "Keller", garage = "Garage", dachboden = "Dachboden", balkon = "Balkon", terrasse = "Terrasse", diele = "Diele" }
+local ROOM_EN = { wohnzimmer = "Living room", flur = "Hallway", kueche = "Kitchen", bad = "Bathroom", schlafzimmer = "Bedroom",
+  buero = "Office", gaestezimmer = "Guest room", waschkueche = "Laundry room", kinderzimmer = "Kids' room", arbeitszimmer = "Study",
+  esszimmer = "Dining room", keller = "Basement", garage = "Garage", dachboden = "Attic", balkon = "Balcony", terrasse = "Terrace", diele = "Hall" }
+local function room_label(r, en)
   r = tostring(r or "")
   if r == "" then return r end
-  return (r:sub(1, 1):upper() .. r:sub(2))
+  local m = (en and ROOM_EN or ROOM_DE)[r:lower()]
+  if m then return m end
+  return r:sub(1, 1):upper() .. r:sub(2)
+end
+
+local function nice_room(r, ctx)
+  return room_label(r, ctx ~= nil and ctx.lang == "en")
 end
 
 -- Ergebnis: { code, col, title, sub, rooms, why }
@@ -351,7 +364,7 @@ local function page_vent(ctx)
     y = y + 30
     draw.circle(40, y - 7, 7, r.need and color.RED or color.GREEN, true)
     draw.circle(40, y - 7, 7, color.BLACK, false)
-    draw.text(58, y, nice_room(r.name) .. (r.own and " *" or ""), "normal", color.BLACK, "left")
+    draw.text(58, y, nice_room(r.name, ctx) .. (r.own and " *" or ""), "normal", color.BLACK, "left")
     draw.text(W // 2 - 20, y, string.format("%d ppm", r.co2), "normal", color.BLACK, "right")
   end
   local ox = W // 2 + 20

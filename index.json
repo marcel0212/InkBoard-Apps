@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "apiLevel": 25,
       "pages": 2,
       "pageNames": [
@@ -155,9 +155,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "0367d57c65ddd61eacd834fabb959f42e8571a42bfffcf72da6728e632026f8f",
-      "sig": "nlI9tF3DPeOWgKgFWSa+JhiH5wpWyg8nGmy1SYn44qw3M9CmDYDd4i5RsJ5Gsp1U3bmtEVPPfIq1CN6K7K/qWLNs0jTAeObCFiCUVtB3j/M88gs9Uygz+Pz4uZ0htuWEX95AZFt9C0XU9kVoU7yunVeKo1/wwhv3g8hBV7BWmPtix1HVVbL3FoSvhQLIWfm5Py1AreLDhmp9hN9TVyvr6ko3nQS1n4mgEwO2cqnmjVxzcm77ExejI3GMYIbfkRftwKkjtxANJAYiOGNN4PejAgGfKihyN0CdA+NMrs6YHhB/V00GSpow/xbvEG052773XqZqagZk6kcK3LNGDlh1bw==",
-      "size": 22392
+      "sha256": "18e2d8bcaed14a8f3fc8c49bcd945b8933063140efe460e416e5ec5870b27701",
+      "sig": "mKMF4JeRzuv6sWBfoBKlWc9sNEdvingkordlY6IRguOAxZ0+3XgAklEsHmVyvgcj2BX9+n3EYE817QnF5tcQHqg/6Ku1BHOtwzo/1h5KTJyEgKPwqvuIaqgahneJv+9wlLIYa6u8RwBDIoCRwuNjZDs+uhoxptpD5uYB8r7Z3NUl5DclUqK0JU6iTm4ZFjrUy6M3KksR/RTSvs7Mp/cKIhasiXs4JUz4rbAWNr/FScV4lFX5PQs+UKkbsyVvhTVROh+lEDXDFFZ0sfiGqBX/TGVfyugQOaGPO5/auXQebgU9DHycb+7Z0E3ZoGe7U5OhoeNSbZvsbb48cKbn5I90bg==",
+      "size": 23163
     },
     {
       "id": "bilder",
@@ -1239,7 +1239,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -1299,9 +1299,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "da0663cf76200d1c41b6a02976dfe86cd31cf8ce2748f29471db93e0b4f0621f",
-      "sig": "WckVHXEVlg45+Blq2T627K0x30ikkOdUdzRzjyiW1D0dWL7MfoOkxkeRzN4RAYvIOlVBD0dV+izgg8Wr/vLlkABhzTT8WnZMyDg+RGqhZ45FgHof0L0K/KrOVMRxt3jDDjf1IGpjWwTI4w0OxYsVqMcjmCtk6dT4uv8PWqkPWg8A+oZ/9Vw8Ft5/hPSJdy2ebVBLjrM3XDBjC8/3q243u+QWOY1ZV1VFxAhvFz+/Uk6zk7yv8zOiFLkY+iPhWGxBp5gnWb+Xgt3Pu56OlSScO3zLfDgVIDFpFlgVt7S9CJ7cmoz0ZOC01Awnput3dIQXy1mlGkEbHJUbMvamW+AQIw==",
-      "size": 10486
+      "sha256": "bccf45bd3771d1270ab7869e73e6ecc055bbfb35655e451ab8dca05e5dd8b6d9",
+      "sig": "Z+N6YsvcRt/rmSz4yhLcO6UJIspfJNBO2jjJ9CCeLOkCCJwN8JIUKXyfQUlmNntye7ubxTaTJhwi2eXX/fIhAk9GpOh2PXHLXLjWIDWv/4S04bgFGYrVI1IPqHzZsGVBbt8w/shMNTjhOFQZXKXJbgi7qBqMtgPytkOEQ7Rl3En7XT7k61ZfNNB0tfZ57Rt1gOnF3B16F6hwAN0DGhQuiyG5qwjqkeDtb3HWOc9RXWCNr5HKBBLSCuwLrtFxZh+sXDh/hAAxK53XDypdxXbqos6aW6CPEnlNrg6tL1CfS5I0L1QRkyxpV0Z3w/oh8B5bAtxhaWGKUv+y4tcvzWTHAg==",
+      "size": 11689
     },
     {
       "id": "gericht-des-tages",
@@ -1653,7 +1653,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -1739,9 +1739,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "742a1d358448a2f81d7a267a80dc43f4980bd695c80fac9816730c75960b6414",
-      "sig": "qdV7d/8/TCgWTZLc0oiBOd6W7KcugQmixUtgpoKOxD9fwfkONorCArDLusluTY3Li5CJkgmdxBbGm+RRLY6ag5QpemDTt8TAuzv67+vaKdGFrw3Lwvo7sXA4ISn14RmuSnHxXoMd5h9S3w45XopGxhdoSSKxmYSdNRCxxDLu+rOcbsbEtHhjKeFAcX30pmZqiMaXbAxPa8n10PsdveH7iqy56KEOLQiReLDpj1AxML4/uYbgnopKNmWXOIUbuIcV00d9KHqHfIEY0/CRUaD2xu60a2bncZ/lp3oajR2HR1xHRJ7FU2IeNs3nC8aANladBE59pGxjucncihb1DzlBwQ==",
-      "size": 22108
+      "sha256": "39cf21e43b9261d7fc13497f6320051320985cb93fe29f60625aa6f398f5632d",
+      "sig": "SY1bBf3rjz+tfINyGENQyl1GVY07UTM7gNDW+qVfB89vBnS6dqSDZsDs/jvEGUbMDzK0Efmmahmc0g+ba7LSQTVfN1P3b7/JxnA7KlcAa+h4ssXOBOSn8qRVcNpktYupgVNNEK4jHc8sRcVutxnNcc6PAdsXT/J3atzSfwAmxpJRVR6QLkFY3fo5zbdzc0kdixnoTcnGyZPQ4h/pc1+ngQQzUuieEau8nIvw8SkHHWQ6+9dv0sRDw00C/uPI4MvBxS81RMSUYnJylS0v6lPV6gUT0NsxqWrfD47z+GIvFZ96nqNj01X3e/9YwReVzQadYf5Q/R3PDDyUl+CLZ9hzbg==",
+      "size": 23282
     },
     {
       "id": "news-feeds",
@@ -2633,7 +2633,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -2779,9 +2779,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "4bc36225f9d9ce3ba82ee42f3f857c3bd4ae7ef33f41e4d3ddaac642f62aad8f",
-      "sig": "Mltf+3tdWAyLxldSwkn0t1ZRgBngxCUld2637rqtHOopc0R6HzuF80gPfasjoHC2mE4ZljY0eOuKqDnqwrEnLQKXsbcd4GhxK/TxUrmRtb8YbqSzpIGBPHQ9uDUXXoxDiP6/wykSTwqdMwKGMK8E9gggfFTbCE43r9IwM3r5KjAReMOD93sAX+1rhTOdQ0No5YSI7IihroTwOTvk+zZDg9Ta77YLxezk3iPkOZcaupQZj3ErxXBWAlzCJLxRMtLIq9pjz6kfC9AiGjBZhUe1doYH4jCyhcLgWU08i9iL7we1LUkK3q/OLtNveXhXFkuOzZuRH8wb8SFDdEedwSKycw==",
-      "size": 59737
+      "sha256": "c7689a6fd4bb3e7f9e507aa3d74f1f2448bf1502b8ace0f098f4db7bb1bed544",
+      "sig": "CeqtyPFMVHoBbaqdpOWHzF5f3XXPhys2ZZdcP0OewOSSovw769kN3INwcBOdtMtH+XTA3EXeDrY/5Nbqm1S8J1JTEXccamjhIXYv4eu1JslXHSBICL1tBuFYqLrzLlO/kJ59zRVtUv6ARlsB8PPcYXF/j/5O5RQf8cCJLkMaFUhVQGabCz4VXPUpRWyzGB0QGlMc2S2vz7I6kNDkg1FoFw+R1jl+DrRk8K8RvkRQqRdvfrPnBP1TBMMBFVE/tBxxJXXA2j+10SK55c86G1e6/LH4IdzMf5rCXbtJZ3tiDqLbv3SgNMfsiC2PRsbe1oZmgHUmHleeQhO3KGwBw/KymQ==",
+      "size": 60531
     },
     {
       "id": "wikipedia-today",

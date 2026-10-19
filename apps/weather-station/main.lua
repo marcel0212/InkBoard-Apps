@@ -756,9 +756,14 @@ end
 
 local ROOMS_DE = { wohnzimmer = "Wohnzimmer", flur = "Flur", kueche = "Küche", bad = "Bad", schlafzimmer = "Schlafzimmer" }
 local ROOMS_EN = { wohnzimmer = "Living room", flur = "Hallway", kueche = "Kitchen", bad = "Bathroom", schlafzimmer = "Bedroom" }
+local ROOMS_MORE_DE = { buero = "Büro", gaestezimmer = "Gästezimmer", waschkueche = "Waschküche", kinderzimmer = "Kinderzimmer", arbeitszimmer = "Arbeitszimmer", esszimmer = "Esszimmer", keller = "Keller", garage = "Garage", dachboden = "Dachboden", balkon = "Balkon", terrasse = "Terrasse", diele = "Diele" }
+local ROOMS_MORE_EN = { buero = "Office", gaestezimmer = "Guest room", waschkueche = "Laundry room", kinderzimmer = "Kids' room", arbeitszimmer = "Study", esszimmer = "Dining room", keller = "Basement", garage = "Garage", dachboden = "Attic", balkon = "Balcony", terrasse = "Terrace", diele = "Hall" }
 local function roomName(id, ctx)
-  local map = (ctx.lang == "en") and ROOMS_EN or ROOMS_DE
-  return map[id] or id
+  local en = (ctx.lang == "en")
+  local key = tostring(id or ""):lower()
+  local m = (en and ROOMS_EN or ROOMS_DE)[key] or (en and ROOMS_MORE_EN or ROOMS_MORE_DE)[key]
+  if m then return m end
+  return id
 end
 
 local function relTime(epoch, ctx)
