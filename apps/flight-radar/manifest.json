@@ -4,7 +4,7 @@
     "de": "Flight Radar",
     "en": "Flight Radar"
   },
-  "version": "1.3.0",
+  "version": "1.3.1",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
@@ -60,12 +60,12 @@
     {
       "id": "nas",
       "title": {
-        "de": "Bilder und Auswertung (NAS)",
-        "en": "Images and coverage (NAS)"
+        "de": "Bilder und Auswertung",
+        "en": "Images and coverage"
       },
       "help": {
-        "de": "Beide Seiten zeigen das Flugzeug als freigestelltes Renderbild von einem Ordner auf dem externen Speicher (NAS, in den allgemeinen Einstellungen eingerichtet): <Gruppe>.png bzw. <Gruppe>_<IATA>.png (Paket \"inkboard-flugzeuge\"). Auf der Flug-Seite sitzt darin das Airline-Logo logos/<ICAO>.bmp (85 x 20). Liegt kein passendes Renderbild bereit (oder gibt es kein NAS), zeigt die Flug-Seite das Foto von planespotters.net mit Fotografen-Nennung, sonst \"Kein Bild verfügbar\"; die Himmel-Seite lässt das Flugzeug dann ungezeichnet.\nDie Abdeckungsauswertung schreibt, solange die App angezeigt wird, eine CSV im Schema der Mac-App (Flugzeugbilder -> Auswertungen) in den Auswertungs-Ordner; \"Auswertung herunterladen\" liefert dieselbe CSV als Datei vom Gerät, auch ohne NAS.",
-        "en": "Both pages show the aircraft as a cut-out render from a folder on the external storage (NAS, set up in the general settings): <group>.png or <group>_<IATA>.png (package \"inkboard-flugzeuge\"). On the flight page the airline logo logos/<ICAO>.bmp (85 x 20) sits inside it. Without a matching render (or without a NAS) the flight page shows the photo from planespotters.net with photographer credit, otherwise \"No image available\"; the sky page leaves the aircraft undrawn.\nThe coverage report writes a CSV in the Mac app schema (aircraft images -> reports) to the report folder while the app is shown; \"Download report\" delivers the same CSV as a file from the device, even without a NAS."
+        "de": "Beide Seiten zeigen das Flugzeug als freigestelltes Renderbild von einem Ordner auf dem externen Speicher (in den allgemeinen Einstellungen eingerichtet): <Gruppe>.png bzw. <Gruppe>_<IATA>.png (Paket \"inkboard-flugzeuge\"). Auf der Flug-Seite sitzt darin das Airline-Logo logos/<ICAO>.bmp (85 x 20). Liegt kein passendes Renderbild bereit (oder gibt es kein Speicher), zeigt die Flug-Seite das Foto von planespotters.net mit Fotografen-Nennung, sonst \"Kein Bild verfügbar\"; die Himmel-Seite lässt das Flugzeug dann ungezeichnet.\nDie Abdeckungsauswertung schreibt, solange die App angezeigt wird, eine CSV im Schema der Mac-App (Flugzeugbilder -> Auswertungen) in den Auswertungs-Ordner; \"Auswertung herunterladen\" liefert dieselbe CSV als Datei vom Gerät, auch ohne Speicher.",
+        "en": "Both pages show the aircraft as a cut-out render from a folder on the external storage (set up in the general settings): <group>.png or <group>_<IATA>.png (package \"inkboard-flugzeuge\"). On the flight page the airline logo logos/<ICAO>.bmp (85 x 20) sits inside it. Without a matching render (or without storage) the flight page shows the photo from planespotters.net with photographer credit, otherwise \"No image available\"; the sky page leaves the aircraft undrawn.\nThe coverage report writes a CSV in the Mac app schema (aircraft images -> reports) to the report folder while the app is shown; \"Download report\" delivers the same CSV as a file from the device, even without storage."
       },
       "helpTitle": {
         "de": "Woher kommen die Bilder?",
@@ -80,8 +80,8 @@
       },
       "collapsed": true,
       "help": {
-        "de": "Fluggesellschaften, Farben und Flugzeugtypen lassen sich ohne Update ergänzen. (1) \"Datei wählen und importieren\" lädt eine airlines.json direkt vom Gerät/Browser auf die Uhr, ganz ohne NAS; \"Exportieren (Download)\" speichert den wirksamen Gesamtstand als airlines.json, als Ausgangspunkt zum Ergänzen. (2) Eine Datei airlines.json im Bilder-Ordner auf dem NAS (Felder airlines, enableLiveryGroups, aircraftTypes) lädt das Gerät alle 30 Minuten selbst; \"Von NAS neu laden\" lädt sofort. Jede Datei ersetzt die vorige komplett (höchstens 24 KB); \"Änderungen der letzten Übernahme\" lädt die Vorher/Nachher-Liste herunter.",
-        "en": "Airlines, colours and aircraft types can be extended without an update. (1) \"Choose file and import\" uploads an airlines.json straight from your device/browser to the clock, no NAS needed; \"Export (download)\" saves the effective overall state as airlines.json, a starting point to extend. (2) A file airlines.json in the image folder on the NAS (fields airlines, enableLiveryGroups, aircraftTypes) is loaded by the device every 30 minutes; \"Reload from NAS\" loads it at once. Every file replaces the previous one completely (at most 24 KB); \"Changes of the last import\" downloads the before/after list."
+        "de": "Fluggesellschaften, Farben und Flugzeugtypen lassen sich ohne Update ergänzen. (1) \"Datei wählen und importieren\" lädt eine airlines.json direkt vom Gerät/Browser auf die Uhr, ganz ohne Speicher; \"Exportieren (Download)\" speichert den wirksamen Gesamtstand als airlines.json, als Ausgangspunkt zum Ergänzen. (2) Eine Datei airlines.json im Bilder-Ordner auf dem Speicher (Felder airlines, enableLiveryGroups, aircraftTypes) lädt das Gerät alle 30 Minuten selbst; \"Vom Speicher neu laden\" lädt sofort. Jede Datei ersetzt die vorige komplett (höchstens 24 KB); \"Änderungen der letzten Übernahme\" lädt die Vorher/Nachher-Liste herunter.",
+        "en": "Airlines, colours and aircraft types can be extended without an update. (1) \"Choose file and import\" uploads an airlines.json straight from your device/browser to the clock, no storage needed; \"Export (download)\" saves the effective overall state as airlines.json, a starting point to extend. (2) A file airlines.json in the image folder on the storage (fields airlines, enableLiveryGroups, aircraftTypes) is loaded by the device every 30 minutes; \"Reload from storage\" loads it at once. Every file replaces the previous one completely (at most 24 KB); \"Changes of the last import\" downloads the before/after list."
       }
     }
   ],
@@ -152,8 +152,8 @@
       "type": "storagePath",
       "default": "/inkboard/flugzeuge",
       "label": {
-        "de": "NAS-Ordner für Bilder und Logos",
-        "en": "NAS folder for images and logos"
+        "de": "Speicher-Ordner für Bilder und Logos",
+        "en": "storage folder for images and logos"
       },
       "section": "nas"
     },
@@ -162,8 +162,8 @@
       "type": "storagePath",
       "fallback": "dir",
       "label": {
-        "de": "NAS-Ordner für die Auswertung (leer = Bilder-Ordner)",
-        "en": "NAS folder for the report (empty = image folder)"
+        "de": "Speicher-Ordner für die Auswertung (leer = Bilder-Ordner)",
+        "en": "storage folder for the report (empty = image folder)"
       },
       "section": "nas",
       "action": {
@@ -213,22 +213,22 @@
       "default": "nas",
       "optionLabels": {
         "de": {
-          "nas": "airlines.json im NAS-Ordner"
+          "nas": "airlines.json im Speicher-Ordner"
         },
         "en": {
-          "nas": "airlines.json in the NAS folder"
+          "nas": "airlines.json in the storage folder"
         }
       },
       "label": {
-        "de": "airlines.json vom NAS",
-        "en": "airlines.json from the NAS"
+        "de": "airlines.json vom Speicher",
+        "en": "airlines.json from the storage"
       },
       "section": "airlines",
       "action": {
         "name": "airlines_reload",
         "label": {
-          "de": "Von NAS neu laden",
-          "en": "Reload from NAS"
+          "de": "Vom Speicher neu laden",
+          "en": "Reload from storage"
         }
       }
     },
@@ -242,11 +242,11 @@
       "default": "export",
       "optionLabels": {
         "de": {
-          "export": "Gesamtstand als airlines_export.json auf das NAS legen",
+          "export": "Gesamtstand als airlines_export.json auf den Speicher legen",
           "reset": "Eigene Einträge verwerfen"
         },
         "en": {
-          "export": "Put the overall state on the NAS as airlines_export.json",
+          "export": "Put the overall state on the storage as airlines_export.json",
           "reset": "Discard own entries"
         }
       },

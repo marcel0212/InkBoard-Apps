@@ -49,9 +49,9 @@ local COVPOOL = 8        -- Abdeckungsauswertung: wie die Firmware nur die 8 nae
 local KEEP = { "hex", "flight", "r", "t", "desc", "ownOp", "lat", "lon", "alt_baro", "gs", "track" }
 local PHOTO_W, PHOTO_H = 430, 296 -- FR_PHOTO_BOX_W/H: Ersatzfoto als Arbeitsspeicher-Bild (ram), gedithert wie in der eingebauten App
 local FI_W, FI_H = 406, 244 -- Renderbild der Flug-Seite: Bildkasten 430 x 296 minus 12 Pixel Rand, unten Platz fuer die Logo-Zeile
-local MISS_TTL, MISS_MAX = 1800, 16 -- Negativ-Cache fuer fehlende NAS-Dateien (FR_ASSET_MISS_TTL_MS / FR_ASSET_MISS_CACHE)
-local AIR_GAP = 1800     -- airlines.json hoechstens alle 30 Minuten vom NAS (FR_AIRLINES_JSON_INTERVAL_MS)
-local COV_FLUSH = 600    -- Abdeckung alle 10 Minuten auf das NAS (FR_COV_FLUSH_INTERVAL_MS)
+local MISS_TTL, MISS_MAX = 1800, 16 -- Negativ-Cache fuer fehlende Speicher-Dateien (FR_ASSET_MISS_TTL_MS / FR_ASSET_MISS_CACHE)
+local AIR_GAP = 1800     -- airlines.json hoechstens alle 30 Minuten vom Speicher (FR_AIRLINES_JSON_INTERVAL_MS)
+local COV_FLUSH = 600    -- Abdeckung alle 10 Minuten auf den Speicher (FR_COV_FLUSH_INTERVAL_MS)
 local COV_PROBES = 4     -- FR_COV_PROBES_PER_TICK
 local PROBES = 16        -- storage.exists + storage.image je Lauf (Firmware-Grenze)
 local SKY_VER = "r50"    -- FR_SKY_ASSET_VERSION
@@ -604,13 +604,13 @@ local function covFlush(now)
   if not storage.ready() then return nil end
   local ok, err = storage.write("cov", cv.fn, covCsv())
   cv.pend = not ok
-  log(string.format("Flight Radar: Auswertung %s (%d Punkte) %s.", cv.fn, #S.bk, ok and "auf dem NAS abgelegt" or ("NICHT auf das NAS geschrieben: " .. tostring(err))))
+  log(string.format("Flight Radar: Auswertung %s (%d Punkte) %s.", cv.fn, #S.bk, ok and "auf dem Speicher abgelegt" or ("NICHT auf den Speicher geschrieben: " .. tostring(err))))
   return ok, err
 end
 
 local function covStart(now)
   stLoad()
-  if S.cv and (S.cv.pend or S.cv.dirty) then covFlush(now) end -- letzte Auswertung noch aufs NAS, bevor sie ersetzt wird
+  if S.cv and (S.cv.pend or S.cv.dirty) then covFlush(now) end -- letzte Auswertung noch auf den Speicher, bevor sie ersetzt wird
   local t = time.localtime()
   local cv = { date = "", time = "", fn = "fr_inkboard.csv", start = now, flush = now, pend = false, dirty = false, last = now, closed = false }
   if t then
@@ -1162,7 +1162,7 @@ function on_action(ctx, name)
     stFlush()
     local msg = covSummary()
     if ok then return { ok = true, message = cut(msg .. " " .. S.cv.fn, 150) } end
-    if ok == nil then return { ok = true, message = cut(msg .. " " .. T("Kein NAS eingerichtet.", "No storage set up."), 150) } end
+    if ok == nil then return { ok = true, message = cut(msg .. " " .. T("Kein Speicher eingerichtet.", "No storage set up."), 150) } end
     return { ok = false, message = cut(msg .. " " .. tostring(err), 150) }
   end
   if name == "airlines_import" then -- Datei aus dem Browser/der App (Manifest action.upload = "airin")
@@ -1181,7 +1181,7 @@ function on_action(ctx, name)
     if not ok then return { ok = false, message = tostring(err) } end
     return { ok = true, message = T("Änderungsliste bereit.", "Change list ready.") }
   end
-  if name == "coverage_download" then -- Abdeckungs-CSV fuer den Download, auch ohne NAS (Manifest action.download = "covout")
+  if name == "coverage_download" then -- Abdeckungs-CSV fuer den Download, auch ohne Speicher (Manifest action.download = "covout")
     stLoad()
     if not S.cv then return { ok = false, message = T("Noch keine Auswertung: erst die App öffnen und Flugzeuge abwarten.", "No coverage data yet: open the app and wait for aircraft.") } end
     local ok, err = file.write("covout", covCsv())
@@ -1201,7 +1201,7 @@ function on_action(ctx, name)
     if not storage.ready() then return { ok = false, message = T("Kein externer Speicher eingerichtet.", "No external storage set up.") } end
     local ok, err = storage.write("dir", "airlines_export.json", exportJson())
     if not ok then return { ok = false, message = tostring(err) } end
-    return { ok = true, message = T("airlines_export.json liegt im NAS-Ordner (als airlines.json umbenennen und ergänzen).", "airlines_export.json is in the NAS folder (rename to airlines.json and extend).") }
+    return { ok = true, message = T("airlines_export.json liegt im Speicher-Ordner (als airlines.json umbenennen und ergänzen).", "airlines_export.json is in the storage folder (rename to airlines.json and extend).") }
   elseif mode == "reset" then
     file.write("airl", "")
     stLoad().sig = ""
@@ -1213,7 +1213,7 @@ function on_action(ctx, name)
   if not storage.ready() then return { ok = false, message = T("Kein externer Speicher eingerichtet.", "No external storage set up.") } end
   local txt, err = storage.read("dir", "airlines.json")
   if not txt then
-    if err == "nicht gefunden" then return { ok = false, message = T("Keine airlines.json im NAS-Ordner gefunden.", "No airlines.json found in the NAS folder.") } end
+    if err == "nicht gefunden" then return { ok = false, message = T("Keine airlines.json im Speicher-Ordner gefunden.", "No airlines.json found in the storage folder.") } end
     return { ok = false, message = tostring(err) }
   end
   stLoad().air = time.now() or 0
@@ -1366,7 +1366,7 @@ local function skyPage(ctx, st, ac, radius)
   if #ent == 0 then
     local a1 = ac.list[1]
     local want = skyFile(a1) or (a1.grp ~= "" and a1.grp .. ".png") or nil
-    draw.text(W // 2, H // 2 - 8, T("Noch kein passendes Flugzeugbild auf dem NAS.", "No matching aircraft image on the NAS yet."), "normal", fg, "center")
+    draw.text(W // 2, H // 2 - 8, T("Noch kein passendes Flugzeugbild auf dem Speicher.", "No matching aircraft image on the storage yet."), "normal", fg, "center")
     if want then draw.text(W // 2, H // 2 + 16, "z. B. " .. want, "small", fg, "center") end
   end
   local foot

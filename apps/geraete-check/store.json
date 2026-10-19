@@ -14,13 +14,13 @@
       "Ampeln für Uhr, WLAN, Akku, Speicher, Arbeitsspeicher",
       "Zusammenfassung: alles gut / Hinweise / Probleme",
       "Drei Stile (Bento, Slate, Nano) und Dashboard-Widget",
-      "Zeigt den Grund, wenn der NAS-Upload scheitert"
+      "Zeigt den Grund, wenn der Speicher-Upload scheitert"
     ],
     "en": [
       "Traffic lights for clock, Wi-Fi, battery, storage, memory",
       "Summary: all good / notices / problems",
       "Three styles (Bento, Slate, Nano) and dashboard widget",
-      "Shows the reason when the NAS upload fails"
+      "Shows the reason when the storage upload fails"
     ]
   },
   "icon": "icon.svg",

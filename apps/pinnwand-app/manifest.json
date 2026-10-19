@@ -1,7 +1,7 @@
 {
   "id": "pinnwand-app",
   "name": {"de": "Pinnwand", "en": "Family Board"},
-  "version": "1.3.0",
+  "version": "1.3.1",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -13,7 +13,7 @@
     },
     {
       "id": "nas",
-      "title": {"de": "Externer Speicher (NAS)", "en": "External storage (NAS)"},
+      "title": {"de": "Externer Speicher", "en": "External storage"},
       "help": {
         "de": "Ein InkBoard im Tiefschlaf kann die Nachricht nicht per Funk empfangen. Deshalb legt das sendende Gerät sie zusätzlich als Datei in diesem Ordner auf dem externen Speicher ab (eingerichtet unter Einstellungen -> Speicher); schlafende Geräte holen sie beim nächsten Aufwachen von dort.",
         "en": "A sleeping InkBoard cannot receive the message by radio. So the sending device also puts it as a file into this folder on the external storage (set up under Settings -> Storage); sleeping devices fetch it from there when they wake up."

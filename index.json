@@ -166,16 +166,16 @@
         "en": "Pictures"
       },
       "tagline": {
-        "de": "Diashow mit den Fotos von deinem NAS",
-        "en": "Slideshow of the photos on your NAS"
+        "de": "Diashow mit den Fotos von deinem Speicher",
+        "en": "Slideshow of the photos on your server"
       },
       "description": {
-        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher (NAS) als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in Studio unter Store -> Bilder: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Reihenfolge und Rahmen sind einstellbar; ein Widget gibt es nicht.",
-        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage (NAS) as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in Studio under Store -> Pictures: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures."
+        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in Studio unter Store -> Bilder: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Reihenfolge und Rahmen sind einstellbar; ein Widget gibt es nicht.",
+        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in Studio under Store -> Pictures: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures."
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -188,14 +188,14 @@
       "standard": false,
       "features": {
         "de": [
-          "Vollbild-Diashow vom NAS, JPEG, PNG und BMP",
+          "Vollbild-Diashow vom Speicher, JPEG, PNG und BMP",
           "Auch große Fotos (kein 200-KB-Limit)",
           "Reihenfolge nach Name oder zufällig, dünner Rahmen",
           "Drehen blättert, Pille zeigt die Position",
           "Hochladen und Verwalten in Studio"
         ],
         "en": [
-          "Full-screen slideshow from the NAS, JPEG, PNG and BMP",
+          "Full-screen slideshow from the storage, JPEG, PNG and BMP",
           "Large photos too (no 200 KB limit)",
           "Order by name or random, thin frame",
           "Turning browses, a pill shows the position",
@@ -209,8 +209,8 @@
           "kind": "display",
           "file": "apps/bilder/preview-slideshow.svg",
           "caption": {
-            "de": "Diashow mit Bild vom NAS",
-            "en": "Slideshow with a picture from the NAS"
+            "de": "Diashow mit Bild vom Speicher",
+            "en": "Slideshow with a picture from the storage"
           }
         },
         {
@@ -231,9 +231,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "82c98b882ab6ba5c5d7dced0b2e69a76274b751a9b90198fc8d3310a7633dd1f",
-      "sig": "HoEhtuSDHPbADPXQmm6BEzf1PbQNBculBoL7VzIndq4Rq33801TVjD+L/NkamcRagDARSxhWlXeRNKaXuXOIlDPjFKrmQ3KdOnPKCAZjPfmhS+HQNntNoQrcs6N9lcktKha7Ozf0iau7A/6Es2ejKVh3be7RlOQjvLPidbimo1Nr3whNjS0XFSpAVCnCvUKwYDVgean74XZGFoRBZSYxtLe3LiPucCwMQJHaOT7Pl0qQzn93KjV4ZrMmAfRrGqE1zUpJ/UOEv1JscQtmfYcyfQ5ZWxbx5cerIH6UrkXRo+Bqr8okJ977hxilzZRBlszrDKgNjMWNPHCvgms4UXXjKg==",
-      "size": 23367
+      "sha256": "35a2c17f375d8275e4f1dd43e0564eb68b53a002e6d63c160012e663f4d60cec",
+      "sig": "qYh5rwqxQcR+/B5hiwX7uPp7MzeJuT/yBAOobf1zJnBmuY2h1AZzBARMcYMVa/GpMPMpWDmMHPvp8SJ5lhlp/Av2cwDE//s6iskz/BtVy8BKvpc7KUAH+Zaim937koFVRtcjETMzVz0rg79AXhu14kBhJEh2TMNYQ6XuE1gc0FBp6ae3HZBJAtdO49sFh46t68/JPMbJJTQh8ImX8D6k6+b6KMlWHxB6tTNwBSTybTm793eb9SQNc3MQievRsroBT4qCsLoD3ypDpujHGxh++wlehUk+ImRNRc0Yj3XfmbHimKlZ7kGiRWmtVL8DOP7eg6AlrQuYaWV1CiyxFK9VQw==",
+      "size": 23355
     },
     {
       "id": "calendar-app",
@@ -646,12 +646,12 @@
         "en": "Aircraft above you, live, with route and aircraft image"
       },
       "description": {
-        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher (NAS), mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein NAS eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei in Studio und in der App, oder vom NAS neu laden) und eine Abdeckungsauswertung als CSV (auf dem NAS oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
-        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage (NAS), with the airline logo in the corner of the image box; if nothing suitable is there (or no NAS is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the NAS) and a coverage report as CSV (on the NAS or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
+        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher, mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein Speicher eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei in Studio und in der App, oder vom Speicher neu laden) und eine Abdeckungsauswertung als CSV (auf dem Speicher oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
+        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage, with the airline logo in the corner of the image box; if nothing suitable is there (or no storage is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the storage) and a coverage report as CSV (on the storage or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -670,16 +670,16 @@
       "features": {
         "de": [
           "Nächstes Flugzeug live von adsb.lol, ohne Zugangsdaten",
-          "Flug-Seite: Renderbild vom NAS mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
-          "Seite Himmel vollflächig mit freigestellten Renderbildern vom NAS",
-          "airlines.json importieren/exportieren/vom NAS neu laden (Studio, App oder NAS) mit Änderungsliste, Abdeckungsauswertung als CSV (NAS oder Download)",
+          "Flug-Seite: Renderbild vom Speicher mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
+          "Seite Himmel vollflächig mit freigestellten Renderbildern vom Speicher",
+          "airlines.json importieren/exportieren/vom Speicher neu laden (Studio, App oder Speicher) mit Änderungsliste, Abdeckungsauswertung als CSV (Speicher oder Download)",
           "Widget mit nächstem Flugzeug, optional Airline und Kennzeichen"
         ],
         "en": [
           "Nearest aircraft live from adsb.lol, no credentials",
-          "Flight page: render from the NAS with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
-          "Sky page full-screen with cut-out renders from the NAS",
-          "Import/export/reload airlines.json (Studio, app or NAS) with a change list, coverage report as CSV (NAS or download)",
+          "Flight page: render from the storage with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
+          "Sky page full-screen with cut-out renders from the storage",
+          "Import/export/reload airlines.json (Studio, app or storage) with a change list, coverage report as CSV (storage or download)",
           "Widget with the nearest aircraft, optionally airline and registration"
         ]
       },
@@ -694,8 +694,8 @@
           "kind": "display",
           "file": "apps/flight-radar/preview-flight.svg",
           "caption": {
-            "de": "Flug: Renderbild vom NAS mit Logo-Platzhalter, Route und Daten",
-            "en": "Flight: render from the NAS with logo placeholder, route and data"
+            "de": "Flug: Renderbild vom Speicher mit Logo-Platzhalter, Route und Daten",
+            "en": "Flight: render from the storage with logo placeholder, route and data"
           }
         },
         {
@@ -740,9 +740,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "ebbe2cfd322cedf1bb916352870f166d0220af7960c4347bf098cbe7be8ba3d9",
-      "sig": "W3ZBQptb5VkYIN2LHrdnieFCA/s1TbVHooilg1NF313n79fi6ZcbQmF7nqFiO/SrnCH/rKCujYHSdJS6ClKiiEXKzo3fp2JNGbj7cEsIUYKiHWH4YUwjBzIzzTF9y6hF9qoIv0HeY5/a4WCcNwyUs+DFuneBz4Q/2RwrTXzw0SG+UedQkTabWJFs3mYXhtScJ4GGl7X8sy/W1ftQF33hUvrlHqMuns0azvuAO3FVdlr0kSzsxnEF+VgytfRuxXajYGKkKYGUoNND7jsTDhgP+IpDr41TlaEo9U+UXYSg0WBvRCSQGRM829/ODpNs83q4suAkQX6qBbsdOizLLGCYGA==",
-      "size": 71746
+      "sha256": "50f7dbd565b76604ba9d218169a57d971d50d3ec3e1a91ed22f0aa5130b969ff",
+      "sig": "X6UT6jNiK7Yq72/6KcNyBVdv25fPv1rxsAolqVvbAClKjGIjLd97bg6hv1/oNS6kZTejcXT0/lhp0LZ/SswXXy6xZ6m6q15KygAB9+JFZPeCrjwfE/SbjVD5lwIiPwYMLjxwoz8r9VJBMRLkhujzSh3tLG8Fh8wBVyapC1XxLWlTzQO1E8eIgNQtgjMtN82IOPlNL5/MOFXlN21MIoPak6/emkObvOEbYyG7u6x5/C82ltyoszv4u9Ty72mhWZs/y8sd4WELGa85MTjAsVanZk9UHm277cLI049vpJ+UhLBp/KpkFNKpQEepJIFXQzoukh5rrKF4LUXZ0wYKak0Xgw==",
+      "size": 71889
     },
     {
       "id": "formel-1",
@@ -1239,7 +1239,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -1249,13 +1249,13 @@
           "Ampeln für Uhr, WLAN, Akku, Speicher, Arbeitsspeicher",
           "Zusammenfassung: alles gut / Hinweise / Probleme",
           "Drei Stile (Bento, Slate, Nano) und Dashboard-Widget",
-          "Zeigt den Grund, wenn der NAS-Upload scheitert"
+          "Zeigt den Grund, wenn der Speicher-Upload scheitert"
         ],
         "en": [
           "Traffic lights for clock, Wi-Fi, battery, storage, memory",
           "Summary: all good / notices / problems",
           "Three styles (Bento, Slate, Nano) and dashboard widget",
-          "Shows the reason when the NAS upload fails"
+          "Shows the reason when the storage upload fails"
         ]
       },
       "net": [],
@@ -1299,8 +1299,8 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "bccf45bd3771d1270ab7869e73e6ecc055bbfb35655e451ab8dca05e5dd8b6d9",
-      "sig": "Z+N6YsvcRt/rmSz4yhLcO6UJIspfJNBO2jjJ9CCeLOkCCJwN8JIUKXyfQUlmNntye7ubxTaTJhwi2eXX/fIhAk9GpOh2PXHLXLjWIDWv/4S04bgFGYrVI1IPqHzZsGVBbt8w/shMNTjhOFQZXKXJbgi7qBqMtgPytkOEQ7Rl3En7XT7k61ZfNNB0tfZ57Rt1gOnF3B16F6hwAN0DGhQuiyG5qwjqkeDtb3HWOc9RXWCNr5HKBBLSCuwLrtFxZh+sXDh/hAAxK53XDypdxXbqos6aW6CPEnlNrg6tL1CfS5I0L1QRkyxpV0Z3w/oh8B5bAtxhaWGKUv+y4tcvzWTHAg==",
+      "sha256": "7e38ae65b8a3e76df379b1dbfc07c7c42416b5b808c277eb114a7938fb16e249",
+      "sig": "Z0B/r4hXAfT1wdIOsdGCAyBg/rhOiCbUh/7kbHjoHF2hfTnHlcfWKKTIcEoA5KyumYF6JOXD5wu68DAMEc0tZMkK5waiEz9CsEaqJ1aaipmUYEVmJ/dcDwKa8GTdsk+NTidM77uEHRENTNwtiFWewXRiaP9jeft92iFEz9rzJpxkWjQ+YHTPGUyE0IzKUYm9V1SQwb9C4xmn/AIzWmfLIBl16jJQVKFt+G+Hqgr6NyENLSOeIfAj7uIHsL72qSAdrbxnfYgAbld8GB5ClrYJ663p0Bd8kxPTVZVg9hhIX15MgXeLQKV5f1zDep/8/J+uj+axFQU23/m9KhxigIwoZA==",
       "size": 11689
     },
     {
@@ -1992,12 +1992,12 @@
         "en": "The latest family message as a pinned note"
       },
       "description": {
-        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem NAS, sofortige Anzeige beim Eintreffen) bleibt in der Firmware.",
-        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the NAS, instant display on arrival) stays in the firmware."
+        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem Speicher, sofortige Anzeige beim Eintreffen) bleibt in der Firmware.",
+        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the storage, instant display on arrival) stays in the firmware."
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
@@ -2008,14 +2008,14 @@
           "Zettel mit Stecknadel, Absender-Chip und Uhrzeit",
           "Große Schrift, bei langen Nachrichten kleiner mit Umbruch",
           "Nachricht anpinnen: Absender, Text und Zielgerät in den Einstellungen",
-          "Ordner auf dem NAS für schlafende Geräte",
+          "Ordner auf dem Speicher für schlafende Geräte",
           "Nachrichtendienst bleibt in der Firmware"
         ],
         "en": [
           "Note with pin, sender chip and time",
           "Large type, smaller with wrapping for long messages",
           "Pin a message: sender, text and target device in the settings",
-          "Folder on the NAS for sleeping devices",
+          "Folder on the storage for sleeping devices",
           "Messaging service stays in the firmware"
         ]
       },
@@ -2048,9 +2048,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "97446625b2f03344fed0858cd062065560bf3dfee71b4e79bd03fbb694acb59d",
-      "sig": "uAMmsfNTKr42Zjh5w/IPBnMlM8k8YLWk8p9UrJ5T7XH1coESgPg/wG/OF3q47ir4DDUZ3kQQI5W4rCSPorwpnhI03MEvijF99y8or2wL7BZN1IgxZSXInSXWBMU/E05Fb2/ZIWRsFveUO0iazhP5ywKeNVMsWbNYjgdgl98DYgAKW167z7BBeYhvktD1fIzXg/lWvBxtPkz2jJTp1uDRUNixhpoXKpWgRgvJAsOhy+oVlINeCWboVwmMuRCMep3alLTSjQJf/rUz1QheWS+Vya0VfFdFhClHuQPbG2WwH5gOkQnOC7FFAvl6vkWOHrteSgzdfWT2wVKBwL7B/LsJyw==",
-      "size": 9105
+      "sha256": "ae9bf126470d64cf09367ccec6b31cc02088c0e9c731a0b1ed2a11d6b1d5227b",
+      "sig": "rs3c15mIVn1XqATIuXnd4ZRzoNcxjI9AtFXLqnokN1jKR3XgMZFtMmD8BKckKRJk+lNX9Gohf48+e8kHU4Kb1EZdu1DlEXXfEZD3egsuOK51HnjAXCs39RyNa3TTfvgbP2Pfph2GgOGXq+tPz5jkhyVfXXY6IM3vL6Tm63pxxJYoVCPHQmbU1FOztGQ21VHpRuuAd0ZoZyRyReW66zs3LU8Edoi1j/cbG7mjRfkLnh8s730VYoYdhz421isq2utRPc5v1ROa2eOEr1M4gP3zGvH/tULTwDhFrG6yF6/1S1q32SdVTgSfT2PrMqayEVeDD8o+oMBTkXpLOvYjDEnYXQ==",
+      "size": 9093
     },
     {
       "id": "rezepte",
