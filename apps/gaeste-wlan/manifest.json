@@ -4,7 +4,7 @@
     "de": "Gäste-WLAN",
     "en": "Guest Wi-Fi"
   },
-  "version": "1.1.1",
+  "version": "1.2.0",
   "apiLevel": 27,
   "pages": [
     {
@@ -198,6 +198,22 @@
         "en": "One rule per line, max. 6 (70 characters each)."
       },
       "section": "rules"
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
+      },
+      "section": "nas"
     },
     {
       "key": "dir",

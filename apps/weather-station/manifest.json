@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.1.6",
+  "version": "1.2.0",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -202,6 +202,22 @@
       "label": {
         "de": "Zeitraum der Verlaufsgraphen (lokal gespeichert sind 24 Stunden)",
         "en": "Time range of the trend charts (24 hours are stored locally)"
+      },
+      "section": "history"
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
       },
       "section": "history"
     },

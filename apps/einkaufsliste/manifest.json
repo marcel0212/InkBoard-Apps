@@ -1,7 +1,7 @@
 {
   "id": "einkaufsliste",
   "name": {"de": "Einkaufsliste", "en": "Shopping list"},
-  "version": "1.0.1",
+  "version": "1.1.0",
   "apiLevel": 23,
   "pages": [
     {"de": "Liste", "en": "List"}
@@ -45,6 +45,22 @@
         "en": {"12": "After 12 hours", "24": "After 1 day", "72": "After 3 days", "0": "Never"}
       },
       "label": {"de": "Erledigte automatisch entfernen", "en": "Remove done items automatically"}
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps, z. B. wenn der Hauptspeicher nur im Heimnetz erreichbar ist. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps, e.g. when the main storage is only reachable at home. Set it up under Settings → App storage."
+      },
+      "section": "nas"
     },
     {
       "key": "dir",

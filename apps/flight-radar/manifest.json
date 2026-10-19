@@ -4,7 +4,7 @@
     "de": "Flight Radar",
     "en": "Flight Radar"
   },
-  "version": "1.2.9",
+  "version": "1.3.0",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
@@ -130,6 +130,22 @@
         "en": "Sky colour"
       },
       "section": "sky"
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
+      },
+      "section": "nas"
     },
     {
       "key": "dir",

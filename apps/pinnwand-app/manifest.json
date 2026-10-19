@@ -1,7 +1,7 @@
 {
   "id": "pinnwand-app",
   "name": {"de": "Pinnwand", "en": "Family Board"},
-  "version": "1.2.1",
+  "version": "1.3.0",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -67,6 +67,22 @@
         "name": "send",
         "label": {"de": "Nachricht anpinnen", "en": "Pin message"}
       }
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
+      },
+      "section": "nas"
     },
     {
       "key": "dir",

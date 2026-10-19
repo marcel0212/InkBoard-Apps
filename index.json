@@ -175,7 +175,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -231,9 +231,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "d7b87e97bac565b7494b45d06d272f80cb7d6f1b4dcf882225d038a86ed4a088",
-      "sig": "Xvb+E51Fbf+BVJ0/KVb9lyzQ0A4pK+UyRQJ4d7Z0+Gt+b/D5GNkqb/ZdCJMx+NYRl9WVaN6mqx8cy/h67D4rTINKU/o1yC1PftJWguhq11XC2fKO1ZBIj3OfM8xW3HcWgKF3PxS+ShtsgNf1ndYM+gP6gdF26/U4Qp/iloCXmIShObsEQ+ASwidVywN5UjJuv51O9juMUEUFrY3Cmbq5d30Dw36uz6zbTF5sRl9yUnVpUUxp4RGMtLBNNvL1MWDHYHP0OKEAwf+rezuqi6tYuU+DFtNjmnLcnhM7PGBPFl8E8Ry07xgTVnave1A2A/bmLzO3f/Tv0bEM4cdLTTyVVA==",
-      "size": 22803
+      "sha256": "82c98b882ab6ba5c5d7dced0b2e69a76274b751a9b90198fc8d3310a7633dd1f",
+      "sig": "HoEhtuSDHPbADPXQmm6BEzf1PbQNBculBoL7VzIndq4Rq33801TVjD+L/NkamcRagDARSxhWlXeRNKaXuXOIlDPjFKrmQ3KdOnPKCAZjPfmhS+HQNntNoQrcs6N9lcktKha7Ozf0iau7A/6Es2ejKVh3be7RlOQjvLPidbimo1Nr3whNjS0XFSpAVCnCvUKwYDVgean74XZGFoRBZSYxtLe3LiPucCwMQJHaOT7Pl0qQzn93KjV4ZrMmAfRrGqE1zUpJ/UOEv1JscQtmfYcyfQ5ZWxbx5cerIH6UrkXRo+Bqr8okJ977hxilzZRBlszrDKgNjMWNPHCvgms4UXXjKg==",
+      "size": 23367
     },
     {
       "id": "calendar-app",
@@ -557,7 +557,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -631,9 +631,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "6db86cb774dbdd1f92694f1976baa9233ebe4e079291263e72cb47cb220a5914",
-      "sig": "YB85ptlDdSFQvYdShLKNMB4eqzUzjDAPmoWMA44WxhpqBqv06GNZqEGIXjxtOra1KNWJjcEE3OMRdCF7tUPK2yrYcGOTZNx72N3z1HIouVY2cll7ceDgoyT+e+pI2hl/SsYEPzZL71Ld7+7nKeaD0XtmIx6BxjPM1PP8DCmRfcQBNkHAxhKK4VCGku1qUQ/G62bSnEiRParOvp9K+BO78kLM1MXbBgXTKombUPPdbajyI8Fj8x43GlNFdHEJMHaz7v44UTTONx+SxHDuRib24WYk7XJUJEsIV2pMytKyMNvlgyAxfzFMAr76rdiBFZGD2lWrMd5SrUVEXtMRE9pWjA==",
-      "size": 22969
+      "sha256": "db24802cc3050d7c5a6e8a89acb5aac1a3bcb821101b766578cac14a233ec687",
+      "sig": "dJgLghGCQyOVMus43fT2uOMtsquZTE7AAqvxPx5PNAGTFpbyZNLzUEwP3hsxajYsFd0Db7yOj0KqSl62aLxJjKQXACOYI/j55swnfaIo9TOUjHEREc8P17XOX/ffgO7M+TUITPDUSJ5jXVUrwoVdGeU8Oi5W44vZcfJr6js5UIqS+vzh8ePvypVWQBMUQYgTolMRFEiBQ8f1a3PooIvMjO/MwKSdopHvWWuU6qEsUI/FJa6HVNWgGLT8cHqrXYCBK66fofcaj+eg52Q31cZridQS1sLNlOhrapyZuLQ1xgkj6WyStK4zl4l+b1p1R4HjiGcot3uf1k3AGA8PIpUCbw==",
+      "size": 23648
     },
     {
       "id": "flight-radar",
@@ -651,7 +651,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.9",
+      "version": "1.3.0",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -740,9 +740,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "0920f87ce67fc0ee7a5d53665b3383791f571902b8e5043639ab8e1328cc3dd8",
-      "sig": "ooY9FJACsb68mUkWCzkQgcYx5Oe7AjGwmeueY9oloqsTjtXH9YXmU9ebSqIRjCVYg4G5KZZ+GeJQV7k4BvHrlu1X94BFCN4bi+SeaFBcTZ3GFsvR+I7HGLVIPOR9sK9ZO0ucGzaMidebOdii53wv05rTnada70OcPPLON68h5P4KkDy1Z2a47LzPgE0683IzaGDCaOGNGOu/hMaJ+lkXYqwyHsbcEOLNFlot3T1HoIu5A/lBSLyhLtiQqqnpA7Inm+ITBZxzWIgMjYhNMyM1nRhB/5B8PQ+DQ/vQTlp15htIln2uv0Zy20tfj1p/l8D3hCgza74y8+4BXonHITd2nQ==",
-      "size": 71182
+      "sha256": "ebbe2cfd322cedf1bb916352870f166d0220af7960c4347bf098cbe7be8ba3d9",
+      "sig": "W3ZBQptb5VkYIN2LHrdnieFCA/s1TbVHooilg1NF313n79fi6ZcbQmF7nqFiO/SrnCH/rKCujYHSdJS6ClKiiEXKzo3fp2JNGbj7cEsIUYKiHWH4YUwjBzIzzTF9y6hF9qoIv0HeY5/a4WCcNwyUs+DFuneBz4Q/2RwrTXzw0SG+UedQkTabWJFs3mYXhtScJ4GGl7X8sy/W1ftQF33hUvrlHqMuns0azvuAO3FVdlr0kSzsxnEF+VgytfRuxXajYGKkKYGUoNND7jsTDhgP+IpDr41TlaEo9U+UXYSg0WBvRCSQGRM829/ODpNs83q4suAkQX6qBbsdOizLLGCYGA==",
+      "size": 71746
     },
     {
       "id": "formel-1",
@@ -1137,7 +1137,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "apiLevel": 27,
       "pages": 2,
       "pageNames": [
@@ -1219,9 +1219,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "59f41579d33974745c4828542f27c25dbfb780f1e6cdc477a9fec4575016566e",
-      "sig": "rrXxDFlx08NzXuxtHho747yTPq4oZt85PDMFfnhpJF0x0pjeJ5JeDcZFKrCqyFLrVwEpMucSiA4+dzvQWnacZIr/GVVAwSUnVPko3dREd4z/1PxIDwovzNbFizPlhsg+3+W3etLkHzTjFnrs9Dx/ttHgMy/1v9iIy2TSPHRoXGEU3wvqi+eaYrwnS7Xm9dBnhlCLMDbPTTTrYNuVOmiN+GntR7RebyktXkLEgUEF21s2iannfpxx6Ly/YJBUILW8qpvYfc+zok4okCGj7JDPGr2BV8BPTsbcRKUU7MFTrQ4s2/u0+d1z388AFf6PUZs7YHESr2XV2cvcSN4Yns/Faw==",
-      "size": 30673
+      "sha256": "4cbd92fb9994dbd697fd47585e15899d616daaf42f3ef0b7e1668629b7f3bff1",
+      "sig": "EOUib48EkjHLMN2XUNqkpOlhLqnZefMuVkJgSpqIJ+3eSjuTP6XTecjPMAZDMSwhPe28aWP/IxLABAcOBB9N5xv/OhTypN1al2/m/7vRIcWLdvmjehiIHxXyJvM6oNA/fqXYgxr3KJmbq19gWdcHMb5+gvzScqlYiTCizmhHStdY3h+x9s4wzRo6o8l6jufQ+uIXCpxN2Y4V3ZCy2EFwq2UtSVledcndRKEG0txtmYpD8hCpXJ1xk0/FLCWhcuDINgsmrjdKxf3VsyPHS+NMjBjdAcfI3Nda8z0W6iCP3Ne6pov830BvckKJ11LjKAL+J3agwkeFv1Dyfmbrla1MSg==",
+      "size": 31237
     },
     {
       "id": "geraete-check",
@@ -1997,7 +1997,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
@@ -2048,9 +2048,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "71a8dd3aa85656ee6368ce99c761329920e0d2a6afa5a21500aaccf73fca1b9a",
-      "sig": "KGU4kNVjztt6e1/EzJhfleITZswO0htZdE7dghzlQicWZ04r1H7topIAE5iMXaDYQ0iSIbDOSjLlSPD7Oozx6qjniOl3Za4fbSxBIXJnqNcwgRCsYqO/jg6XV8SqTt3yx6trsAlf0TEOszocYJTLJR4DEy9MBJ+//seuiThnVPaQTCFEUq4Ey9yl0E3PbOVymoA3OG8CD9cQp9w1MAyffghj4kNY82h45r64jSV7vWHGLbrSjp/SBNXEvYsBCKkv0QSbwazV3GsW9TY6Z5/u7GjugfXYxVBvYL7QCkgMaA29C8Id+zuf5lQh0JoB8pG23d/+DHxNRfDxbeuR6Dei4Q==",
-      "size": 8541
+      "sha256": "97446625b2f03344fed0858cd062065560bf3dfee71b4e79bd03fbb694acb59d",
+      "sig": "uAMmsfNTKr42Zjh5w/IPBnMlM8k8YLWk8p9UrJ5T7XH1coESgPg/wG/OF3q47ir4DDUZ3kQQI5W4rCSPorwpnhI03MEvijF99y8or2wL7BZN1IgxZSXInSXWBMU/E05Fb2/ZIWRsFveUO0iazhP5ywKeNVMsWbNYjgdgl98DYgAKW167z7BBeYhvktD1fIzXg/lWvBxtPkz2jJTp1uDRUNixhpoXKpWgRgvJAsOhy+oVlINeCWboVwmMuRCMep3alLTSjQJf/rUz1QheWS+Vya0VfFdFhClHuQPbG2WwH5gOkQnOC7FFAvl6vkWOHrteSgzdfWT2wVKBwL7B/LsJyw==",
+      "size": 9105
     },
     {
       "id": "rezepte",
@@ -2633,7 +2633,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.6",
+      "version": "1.2.0",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -2779,9 +2779,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "c7689a6fd4bb3e7f9e507aa3d74f1f2448bf1502b8ace0f098f4db7bb1bed544",
-      "sig": "CeqtyPFMVHoBbaqdpOWHzF5f3XXPhys2ZZdcP0OewOSSovw769kN3INwcBOdtMtH+XTA3EXeDrY/5Nbqm1S8J1JTEXccamjhIXYv4eu1JslXHSBICL1tBuFYqLrzLlO/kJ59zRVtUv6ARlsB8PPcYXF/j/5O5RQf8cCJLkMaFUhVQGabCz4VXPUpRWyzGB0QGlMc2S2vz7I6kNDkg1FoFw+R1jl+DrRk8K8RvkRQqRdvfrPnBP1TBMMBFVE/tBxxJXXA2j+10SK55c86G1e6/LH4IdzMf5rCXbtJZ3tiDqLbv3SgNMfsiC2PRsbe1oZmgHUmHleeQhO3KGwBw/KymQ==",
-      "size": 60531
+      "sha256": "c6343d0a6061d65d539c81eaf47276d2d39fd824e43abe1e9dd0b290b7f8c485",
+      "sig": "bntauAG2bpCCrr/N2Ibuw+8vIUry0IbBCrGLxl119L2ZsdTCSsk1aZ/QfBI8IGsXSiK0P663kv/EI0YahoO60nvyOh1NB3tZOxmnEC3Zu6A4sPSS90JFukxGOrfGDcutCyq/E1EQSZfgGewhGSPrV/l7Q3KY2NrqbsYUJBOg/lnzoscc+0l1nSwAiA2QdlbCdNjcEFNGW27NR2TssXIwSQeyxTa2pzJ59mZk4IEuMqEeXC74nqCOSCvGxUrjJhRK5ICFPl2egTWbiEwCDWoWVNhgydYyN/oTlmgIiQ4Xat79Uit+xP15a1EySUFbq0q25apJdov2W8wbBpYB3n0UEg==",
+      "size": 61099
     },
     {
       "id": "wikipedia-today",
@@ -2892,7 +2892,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "apiLevel": 23,
       "pages": 2,
       "pageNames": [
@@ -2972,9 +2972,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "bf7da553a4e7828fef039327c7b201f726b53e62472f6366c18c605ea426109b",
-      "sig": "bYPDQ9CbUuRIccg1sBRiRGmfpo/KNgmAC5NiBA/lckkll3AQIpdoBGF/jb9PhcHOUgbsLEeWeRZevx57UkzV7ZkA+1dOWFsP3v3PBMCRdaklOHJE/Cgne9fFwKQA7NCIwHCiTkTadXDdQfIhJFNQ+e8UFgWBM1Ju5sFP6ZKOJXjt+cpSVGkv9dY5LpYaMck8J/wvc6ClAcXozSsONTSkvNwHqBXWR/7VgJEJ8+h65dauNjffRa+jRtZXGABu3DGXUePFBjRHXEikZ1WSmqSrpxwA1FR1N9tn6xHKAzZLUb4CL986K8T3W68yKbJr+MyLw/KcIQXV98eLyzMF62JoWQ==",
-      "size": 30706
+      "sha256": "7d0ca21624c0a46c5ca62562b3995097c55b020f56c9c7af95ad575645a03b29",
+      "sig": "koeynjIzZ1cjMKGU5u+KRXXcxW4t2YHUEbtRUagpojtDicIUAhSX2TISqq3vEAc/zlTfa/1kIj3M5MCmNIPn6Oe/gLE/gUtm+Up7SmTAHu8pyqSQkL9rp+J1fyy4lLytnzz9TJfLBEtJ1T9ByIZ+Cqlm0WL+67KPsLHGPUlfKa2URhzUjQVBf9GmHi4pB1F372iCyf4rpbuIMabvKRUEVHQjI5LEIPdxsfS0G7py/1HeWlDosr4F8Sc6MKKu5punDEsM/ug6jc2FA0WFRUwkDG5Ig4C6KRScC33FbJqVbCTT9C6+JsEk/omcjMyOKbgyH8y1i0sUCU/r2n7NNl5CLw==",
+      "size": 31270
     },
     {
       "id": "wort-des-tages",

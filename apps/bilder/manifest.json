@@ -1,7 +1,7 @@
 {
   "id": "bilder",
   "name": {"de": "Bilder", "en": "Pictures"},
-  "version": "1.2.2",
+  "version": "1.3.0",
   "apiLevel": 20,
   "input": true,
   "fetchOnOpen": true,
@@ -48,6 +48,22 @@
       "default": true,
       "label": {"de": "Dünner schwarzer Rahmen ums Bild", "en": "Thin black frame around the picture"},
       "section": "show"
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": ["main", "app"],
+      "default": "main",
+      "optionLabels": {
+        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
+        "en": {"main": "Main storage", "app": "App storage (separate)"}
+      },
+      "label": {"de": "Speicher", "en": "Storage"},
+      "help": {
+        "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
+        "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
+      },
+      "section": "nas"
     },
     {
       "key": "dir",
