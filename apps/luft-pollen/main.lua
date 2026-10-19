@@ -364,7 +364,7 @@ local function page_vent(ctx)
     y = y + 30
     draw.circle(40, y - 7, 7, r.need and color.RED or color.GREEN, true)
     draw.circle(40, y - 7, 7, color.BLACK, false)
-    draw.text(58, y, nice_room(r.name, ctx) .. (r.own and " *" or ""), "normal", color.BLACK, "left")
+    draw.text(58, y, nice_room(r.name, ctx) .. (r.own and T(ctx, " (hier)", " (here)") or ""), "normal", color.BLACK, "left")
     draw.text(W // 2 - 20, y, string.format("%d ppm", r.co2), "normal", color.BLACK, "right")
   end
   local ox = W // 2 + 20

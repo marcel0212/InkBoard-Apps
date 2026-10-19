@@ -84,7 +84,7 @@
   function dayDate(i) { var m = monday(); return new Date(m.getFullYear(), m.getMonth(), m.getDate() + i - 1); }
   function fmt(d) { return d.getDate() + "." + (d.getMonth() + 1) + "."; }
   function api(body, retry) {
-    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/json" }, body: JSON.stringify(body) })
+    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "InkBoardStudio", "Content-Type": "application/json" }, body: JSON.stringify(body) })
       .then(function (r) {
         if (r.status === 503 && (retry || 0) < 6) { $("msg").textContent = L.busy; return new Promise(function (res) { setTimeout(res, 1200); }).then(function () { return api(body, (retry || 0) + 1); }); }
         if (!r.ok) throw new Error(r.status);

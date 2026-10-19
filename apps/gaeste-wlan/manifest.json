@@ -4,7 +4,7 @@
     "de": "Gäste-WLAN",
     "en": "Guest Wi-Fi"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 27,
   "pages": [
     {

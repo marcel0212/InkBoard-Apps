@@ -51,7 +51,7 @@
   $("h1").textContent = L.h; $("in").placeholder = L.ph; $("add").textContent = L.add; $("empty").textContent = L.empty; $("clr").textContent = L.clr;
   var busy = false;
   function api(body, retry) {
-    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/json" }, body: JSON.stringify(body) })
+    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "InkBoardStudio", "Content-Type": "application/json" }, body: JSON.stringify(body) })
       .then(function (r) {
         if (r.status === 503 && (retry || 0) < 6) { $("msg").textContent = L.busy; return new Promise(function (res) { setTimeout(res, 1200); }).then(function () { return api(body, (retry || 0) + 1); }); }
         if (!r.ok) throw new Error(r.status);
