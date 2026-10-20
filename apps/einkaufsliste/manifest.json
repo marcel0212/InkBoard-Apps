@@ -1,7 +1,7 @@
 {
   "id": "einkaufsliste",
   "name": {"de": "Einkaufsliste", "en": "Shopping list"},
-  "version": "1.1.0",
+  "version": "1.2.2",
   "apiLevel": 23,
   "pages": [
     {"de": "Liste", "en": "List"}
@@ -17,8 +17,8 @@
       "id": "nas",
       "title": {"de": "Netzwerk-Abgleich", "en": "Network sync"},
       "help": {
-        "de": "Mit externem Speicher (Einstellungen → Speicher; FTP, WebDAV oder Google Drive) zeigen alle InkBoards im Netzwerk dieselbe Liste: Jeder Eintrag liegt mit Zeitstempel in einer gemeinsamen Datei, der neuere gewinnt. Ohne externen Speicher arbeitet die Liste nur auf diesem Gerät.",
-        "en": "With external storage (Settings → Storage; FTP, WebDAV or Google Drive) all InkBoards in the network show the same list: every entry is kept with a time stamp in a shared file and the newer one wins. Without external storage the list only works on this device."
+        "de": "Mit externem Speicher (Einstellungen → Speicher; FTP, WebDAV oder Google Drive) zeigen alle InkBoards im Netzwerk dieselbe Liste: Jeder Eintrag liegt mit Zeitstempel in einer gemeinsamen Datei, der neuere gewinnt. Ohne externen Speicher arbeitet die Liste nur auf diesem Gerät. Die Mac- und iOS-App halten außerdem eine eigene Kopie, die offline gepflegt und alle 20 Minuten mit dem Gerät abgeglichen wird.",
+        "en": "With external storage (Settings → Storage; FTP, WebDAV or Google Drive) all InkBoards in the network show the same list: every entry is kept with a time stamp in a shared file and the newer one wins. Without external storage the list only works on this device. The Mac and iOS apps also keep their own copy that can be edited offline and is synced with the device every 20 minutes."
       },
       "helpTitle": {"de": "Wie funktioniert der Abgleich?", "en": "How does the sync work?"}
     }

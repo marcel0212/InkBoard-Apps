@@ -149,14 +149,23 @@ end
 local function reply(status, body) return { status = status, body = body } end
 
 -- Antwort der Handy-Seite als JSON-Text (es gibt kein json.encode)
-local function list_json(ctx, m)
+local function list_json(ctx, m, full)
   local v, open, done = visible(m)
   local parts = {}
   for i = 1, #v do
     parts[i] = string.format('{"id":"%s","text":"%s","done":%s}', esc(v[i].id), esc(v[i].text), v[i].st == 1 and "true" or "false")
   end
   local sync = ctx.data.get("sync") or "local"
-  return string.format('{"items":[%s],"open":%d,"done":%d,"sync":"%s","nas":%s}', table.concat(parts, ","), open, done, esc(sync), sync ~= "local" and "true" or "false")
+  local extra = ""
+  if full then
+    -- alle Eintraege inkl. Grabsteine (Mac-/iOS-App haelt eine eigene Kopie und gleicht sie ueber "sync" ab)
+    local ents = {}
+    for _, e in pairs(m) do
+      ents[#ents + 1] = string.format('{"id":"%s","ts":%d,"st":%d,"text":"%s"}', esc(e.id), e.ts, e.st, esc(e.text))
+    end
+    extra = ',"entries":[' .. table.concat(ents, ",") .. ']'
+  end
+  return string.format('{"items":[%s],"open":%d,"done":%d,"sync":"%s","nas":%s%s}', table.concat(parts, ","), open, done, esc(sync), sync ~= "local" and "true" or "false", extra)
 end
 
 function on_http(ctx, req)
@@ -181,6 +190,29 @@ function on_http(ctx, req)
     if e then e.st = 2; e.ts = now; changed = true end
   elseif op == "clear" then
     for _, e in pairs(m) do if e.st == 1 then e.st = 2; e.ts = now; changed = true end end
+  elseif op == "sync" then
+    -- Abgleich mit der lokalen Kopie der App: je Eintrag gewinnt die neuere Zeit (offline gepflegte Aenderungen kommen so nach).
+    -- Zeitstempel aus der Zukunft (falsche Uhr am Client) werden auf "jetzt" gesetzt.
+    local inc = q.entries
+    if type(inc) == "table" then
+      for i = 1, #inc do
+        local x = inc[i]
+        if type(x) == "table" and x.id ~= nil then
+          local id = tostring(x.id):gsub("[%c]", "")
+          local ts = tonumber(x.ts) or 0
+          local st = tonumber(x.st) or 0
+          if now > 0 and ts > now + 86400 then ts = now end
+          local tx = clean_text(x.text)
+          if id ~= "" and #id <= 24 and (st == 0 or st == 1 or st == 2) and (tx ~= "" or st == 2) then
+            local cur = m[id]
+            if cur == nil or ts > cur.ts then
+              m[id] = { id = id, ts = ts, st = st, text = tx }
+              changed = true
+            end
+          end
+        end
+      end
+    end
   end
   if changed then
     file.write("items", serialize(m, now, cleanup_sec(ctx)))
@@ -188,12 +220,12 @@ function on_http(ctx, req)
     ctx.data.set("open", open)
     ctx.data.set("done", done)
     ctx.data.set("rev", (tonumber(ctx.data.get("rev")) or 0) + 1)
-    local r = reply(200, list_json(ctx, m))
+    local r = reply(200, list_json(ctx, m, op == "sync"))
     r.fetch = true
     r.redraw = true
     return r
   end
-  return reply(200, list_json(ctx, m))
+  return reply(200, list_json(ctx, m, op == "sync"))
 end
 
 -- ===== Drehrad =====
