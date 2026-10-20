@@ -1,0 +1,71 @@
+{
+  "category": "organize",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Fokus-Timer, Pausen und Stand-up fürs Homeoffice",
+    "en": "Focus timer, breaks and stand-up for the home office"
+  },
+  "description": {
+    "de": "Drei Helfer für den Arbeitstag in einer App: ein Fokus-Timer nach der Pomodoro-Methode, eine Pausen- und Bewegungserinnerung mit wechselnden Übungen und ein Stand-up-Timer, der zwischen Sitzen und Stehen wechseln lässt. Bedient wird alles mit dem Drehgeber: Drehen wechselt die Ansicht, ein Klick startet oder bestätigt. Arbeitszeit, Intervalle und Pausenlängen stellst du selbst ein. Dazu gibt es ein Dashboard-Widget, das das Wichtigste auf einen Blick zeigt, und drei Stile für die App-Seite. Alles läuft ohne Internet.\n\nBedienung am Drehgeber: Drehen wechselt zwischen Fokus-Timer, Pausen-Erinnerung und Stand-up-Timer. Ein Klick startet den Fokus-Timer, bestätigt „Pause gemacht“ bzw. wechselt zwischen Sitzen und Stehen. Beim Fokus-Timer beendet ein zweiter Klick innerhalb von 3 Sekunden die Sitzung.",
+    "en": "Three helpers for the working day in one app: a focus timer based on the Pomodoro method, a break and movement reminder with changing exercises, and a stand-up timer that switches between sitting and standing. Everything is operated with the rotary encoder: turning switches the view, a click starts or confirms. You set working hours, intervals and break lengths yourself. A dashboard widget shows the essentials at a glance, and there are three styles for the app page. Everything works without internet.\n\nControls on the rotary encoder: turning switches between focus timer, break reminder and stand-up timer. A click starts the focus timer, confirms “break done” or switches between sitting and standing. In the focus timer a second click within 3 seconds stops the session."
+  },
+  "features": {
+    "de": [
+      "Bedienung nur mit dem Drehgeber: Drehen = Ansicht, Klick = Start/Bestätigen",
+      "Fokus-Timer mit Runden, kurzer und langer Pause",
+      "Pausen-Erinnerung mit Bewegungsübungen",
+      "Stand-up-Timer mit Tageszähler für das Stehen",
+      "Drei Stile und passendes Dashboard-Widget",
+      "Funktioniert ohne Internet"
+    ],
+    "en": [
+      "Operated with the encoder only: turn = view, click = start/confirm",
+      "Focus timer with rounds, short and long breaks",
+      "Break reminder with movement exercises",
+      "Stand-up timer with a daily standing total",
+      "Three styles and a matching dashboard widget",
+      "Works without internet"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento",
+        "en": "Bento"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Slate",
+        "en": "Slate"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nano",
+        "en": "Nano"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

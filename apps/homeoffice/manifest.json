@@ -1,0 +1,235 @@
+{
+  "id": "homeoffice",
+  "name": {
+    "de": "Homeoffice",
+    "en": "Home office"
+  },
+  "version": "1.0.0",
+  "apiLevel": 10,
+  "pages": [
+    {
+      "de": "Homeoffice",
+      "en": "Home office"
+    }
+  ],
+  "refreshMinutes": 1,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 150
+  },
+  "input": true,
+  "sections": [
+    {
+      "id": "modules",
+      "title": {
+        "de": "Bereiche",
+        "en": "Modules"
+      },
+      "help": {
+        "de": "Drehen wechselt die Ansicht, ein Klick startet oder bestätigt. Beim Fokus-Timer beendet ein zweiter Klick innerhalb von 3 Sekunden die Sitzung.",
+        "en": "Turning switches the view, a click starts or confirms. In the focus timer a second click within 3 seconds stops the session."
+      }
+    },
+    {
+      "id": "focus",
+      "title": {
+        "de": "Fokus-Timer (Pomodoro)",
+        "en": "Focus timer (Pomodoro)"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "break",
+      "title": {
+        "de": "Pausen & Bewegung",
+        "en": "Breaks & movement"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "stand",
+      "title": {
+        "de": "Stand-up-Timer",
+        "en": "Stand-up timer"
+      },
+      "collapsed": true
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "bento",
+        "slate",
+        "nano"
+      ],
+      "default": "bento",
+      "optionLabels": {
+        "de": {
+          "bento": "Bento",
+          "slate": "Slate",
+          "nano": "Nano"
+        },
+        "en": {
+          "bento": "Bento",
+          "slate": "Slate",
+          "nano": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil der App-Seite",
+        "en": "App page style"
+      }
+    },
+    {
+      "key": "showFocus",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Fokus-Timer anzeigen",
+        "en": "Show focus timer"
+      },
+      "section": "modules"
+    },
+    {
+      "key": "showBreak",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Pausen-Erinnerung anzeigen",
+        "en": "Show break reminder"
+      },
+      "section": "modules"
+    },
+    {
+      "key": "showStand",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Stand-up-Timer anzeigen",
+        "en": "Show stand-up timer"
+      },
+      "section": "modules"
+    },
+    {
+      "key": "focusMin",
+      "type": "number",
+      "min": 5,
+      "max": 90,
+      "default": 25,
+      "label": {
+        "de": "Fokus-Phase (Minuten)",
+        "en": "Focus phase (minutes)"
+      },
+      "section": "focus"
+    },
+    {
+      "key": "shortMin",
+      "type": "number",
+      "min": 1,
+      "max": 30,
+      "default": 5,
+      "label": {
+        "de": "Kurze Pause (Minuten)",
+        "en": "Short break (minutes)"
+      },
+      "section": "focus"
+    },
+    {
+      "key": "longMin",
+      "type": "number",
+      "min": 5,
+      "max": 60,
+      "default": 15,
+      "label": {
+        "de": "Lange Pause (Minuten)",
+        "en": "Long break (minutes)"
+      },
+      "section": "focus"
+    },
+    {
+      "key": "rounds",
+      "type": "number",
+      "min": 2,
+      "max": 8,
+      "default": 4,
+      "label": {
+        "de": "Runden bis zur langen Pause",
+        "en": "Rounds before the long break"
+      },
+      "section": "focus"
+    },
+    {
+      "key": "breakEvery",
+      "type": "number",
+      "min": 15,
+      "max": 240,
+      "default": 60,
+      "label": {
+        "de": "Pause alle (Minuten)",
+        "en": "Break every (minutes)"
+      },
+      "section": "break"
+    },
+    {
+      "key": "workStart",
+      "type": "number",
+      "min": 0,
+      "max": 23,
+      "default": 8,
+      "label": {
+        "de": "Arbeitsbeginn (Uhr)",
+        "en": "Work starts (hour)"
+      },
+      "section": "break"
+    },
+    {
+      "key": "workEnd",
+      "type": "number",
+      "min": 1,
+      "max": 24,
+      "default": 18,
+      "label": {
+        "de": "Arbeitsende (Uhr)",
+        "en": "Work ends (hour)"
+      },
+      "section": "break"
+    },
+    {
+      "key": "weekdaysOnly",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Nur Montag bis Freitag",
+        "en": "Monday to Friday only"
+      },
+      "section": "break"
+    },
+    {
+      "key": "sitMin",
+      "type": "number",
+      "min": 10,
+      "max": 180,
+      "default": 45,
+      "label": {
+        "de": "Sitzen höchstens (Minuten)",
+        "en": "Sit at most (minutes)"
+      },
+      "section": "stand"
+    },
+    {
+      "key": "standMin",
+      "type": "number",
+      "min": 5,
+      "max": 90,
+      "default": 15,
+      "label": {
+        "de": "Stehen (Minuten)",
+        "en": "Stand for (minutes)"
+      },
+      "section": "stand"
+    }
+  ]
+}
