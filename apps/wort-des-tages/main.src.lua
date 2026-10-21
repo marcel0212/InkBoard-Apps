@@ -84,7 +84,9 @@ function on_fetch(ctx)
     return translateText(s, "en", "de")
   end
   local wordDe, defDe, exDe, failKind
-  wordDe, failKind = tryTranslate(word)
+  -- Kleingeschrieben uebersetzen: "Jilt" mit grossem Anfangsbuchstaben hielt Google fuer einen Namen und liess es stehen.
+  local wordLow = word:lower()
+  wordDe, failKind = tryTranslate(wordLow)
   -- Ein einzelnes Wort ohne Zusammenhang kommt oft unveraendert zurueck ("jilt" -> "Jilt"). Dann mit Wortart fragen:
   -- Verben beginnen bei Merriam-Webster mit "to ..." ("to jilt" -> "zu verlassen" -> "verlassen"), Nomen mit "a/an ...".
   if wordDe and wordDe:lower() == word:lower() and #word > 2 then
@@ -96,7 +98,7 @@ function on_fetch(ctx)
       prefix, strip = "a ", { "ein ", "eine ", "einen " }
     end
     if prefix then
-      local alt = translateText(prefix .. word, "en", "de")
+      local alt = translateText(prefix .. wordLow, "en", "de")
       if alt then
         local low = alt:lower()
         for _, st in ipairs(strip) do
