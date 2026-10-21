@@ -36,14 +36,14 @@ local function rows(s, en)
     local v = t and string.format("%02d:%02d  %02d.%02d.%04d", t.hour, t.min, t.day, t.month, t.year) or "ok"
     r[#r + 1] = { en and "Clock" or "Uhr", v, OK }
   else
-    r[#r + 1] = { en and "Clock" or "Uhr", en and "Not set (no NTP)" or "Nicht gestellt (kein NTP)", BAD }
+    r[#r + 1] = { en and "Clock" or "Uhr", en and "Not set" or "Nicht gestellt", BAD }
   end
   -- WLAN
   if s.wifi then
     local q, st = en and "good" or "gut", OK
     if s.rssi <= -80 then q, st = en and "weak" or "schwach", BAD
     elseif s.rssi <= -70 then q, st = en and "fair" or "mittel", WARN end
-    r[#r + 1] = { "WLAN", string.format("%d dBm  (%s)", s.rssi, q), st }
+    r[#r + 1] = { "WLAN", q, st }
   else
     r[#r + 1] = { "WLAN", en and "Not connected" or "Nicht verbunden", BAD }
   end
@@ -56,7 +56,7 @@ local function rows(s, en)
     r[#r + 1] = { en and "Battery" or "Akku", s.on_battery and (en and "No reading" or "Kein Messwert") or (en and "Mains powered" or "Netzbetrieb"), NONE }
   end
   -- Externer Speicher (NAS)
-  local nas = en and "Storage" or "Ext. Speicher"
+  local nas = en and "Data storage" or "Speicher für Daten"
   if not s.nas_ready then
     r[#r + 1] = { nas, en and "Not set up" or "Nicht eingerichtet", NONE }
   elseif s.nas_fail_since ~= nil and s.clock_ok then
@@ -132,7 +132,7 @@ function on_draw(ctx, page)
   local s = system.get()
   if s == nil then
     draw.text(draw.width // 2, draw.top + 160, en and "Device state not available" or "Gerätezustand nicht verfügbar", "large", color.BLACK, "center")
-    draw.text(draw.width // 2, draw.top + 196, en and "Firmware update needed (API 24)" or "Firmware-Update nötig (API 24)", "normal", color.BLACK, "center")
+    draw.text(draw.width // 2, draw.top + 196, en and "Firmware update needed" or "Firmware-Update nötig", "normal", color.BLACK, "center")
     return
   end
   local list = rows(s, en)

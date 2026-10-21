@@ -55,8 +55,8 @@
         "en": "1. Register with your email address at football-data.org/client/register (free).\n2. Enter the API token you receive by email here.\n3. Free tier: among others Premier League, La Liga, Serie A, Ligue 1, about 10 requests per minute; the app needs only 2 per refresh."
       },
       "helpTitle": {
-        "de": "Wie bekomme ich einen API-Key?",
-        "en": "How do I get an API key?"
+        "de": "Wie bekomme ich einen Zugangsschlüssel?",
+        "en": "How do I get an access key?"
       },
       "helpUrl": "https://www.football-data.org/client/register"
     },
@@ -152,8 +152,8 @@
       "maxLen": 80,
       "default": "",
       "label": {
-        "de": "football-data.org-API-Key",
-        "en": "football-data.org API key"
+        "de": "football-data.org-Zugangsschlüssel",
+        "en": "football-data.org access key"
       },
       "showIf": {
         "key": "league",

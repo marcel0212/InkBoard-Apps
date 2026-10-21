@@ -6,8 +6,8 @@
     "en": "Stocks, indices and crypto with price history"
   },
   "description": {
-    "de": "Zeigt Kurse und die Tagesänderung für Aktien, Indizes und Kryptowährungen (Daten von Twelve Data). Zwei Seiten (Aktien, Krypto), je ein Fokus-Symbol, das immer zuerst steht, und bis zu neun Symbole je Seite, jeweils mit kleinem Kursverlauf. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Du brauchst einen kostenlosen API-Key von twelvedata.com; alles stellst du hier im Store ein.",
-    "en": "Shows quotes and the daily change for stocks, indices and cryptocurrencies (data from Twelve Data). Two pages (Stocks, Crypto), one focus symbol per page that always comes first, and up to nine symbols per page, each with a small price history. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You need a free API key from twelvedata.com; you set everything up here in the Store."
+    "de": "Zeigt Kurse und Tagesänderung für Aktien und Kryptowährungen, je mit kleinem Kursverlauf. Zwei Seiten mit bis zu neun Werten. Du brauchst einen kostenlosen Zugangsschlüssel von twelvedata.com. Mit drei Stilen und Widget.",
+    "en": "Shows prices and daily change for stocks and cryptocurrencies, each with a small chart. Two pages with up to nine items. You need a free access key from twelvedata.com. Three styles and a widget."
   },
   "features": {
     "de": [

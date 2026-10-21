@@ -6,8 +6,8 @@
     "en": "Next pick-up dates for your bins"
   },
   "description": {
-    "de": "Zeigt, wann welche Tonne geleert wird: aus dem Kalender-Link (ICS) deines Entsorgers oder, für eine Auswahl von Kommunen und Landkreisen, direkt per Adresse. Restmüll, Biotonne, Papier und Gelbe Tonne bekommen ihre Tonnenfarbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Drei Darstellungen (Tonnen-Kacheln, Liste, Monatskalender) und ein Dashboard-Widget gehören dazu.",
-    "en": "Shows when each bin is emptied: from the calendar link (ICS) of your waste company or, for a selection of municipalities, directly by address. General waste, bio, paper and recycling bins get their bin color, plus “today”, “tomorrow” or “in 5 days”. Three layouts (bin tiles, list, month calendar) and a dashboard widget are included."
+    "de": "Zeigt, wann welche Tonne geleert wird. Du nutzt den Kalender-Link deines Entsorgers oder gibst deine Adresse ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
+    "en": "Shows when each bin is collected. Use your waste company's calendar link or enter your address. Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
   },
   "features": {
     "de": [

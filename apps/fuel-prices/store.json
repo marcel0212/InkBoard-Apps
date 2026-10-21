@@ -6,8 +6,8 @@
     "en": "Fuel prices near you"
   },
   "description": {
-    "de": "Zeigt die aktuellen Preise der Tankstellen im Umkreis deines Standorts (Daten der Markttransparenzstelle über Tankerkönig). Hauptkraftstoff groß, weitere Sorten klein, Marken-Badges, geschlossene Tankstellen schwarz markiert. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit frei wählbaren Sorten. Der Standort kommt aus den Geräteeinstellungen, den kostenlosen API-Key trägst du hier im Store ein.",
-    "en": "Shows the current prices of the fuel stations around your location (Markttransparenzstelle data via Tankerkoenig). Main fuel large, other grades small, brand badges, closed stations marked black. Three layouts (Bento, Slate, Nano) and a dashboard widget with selectable grades. The location comes from the device settings, you enter the free API key here in the Store."
+    "de": "Zeigt die aktuellen Spritpreise der Tankstellen in deiner Nähe. Die wichtigste Sorte steht groß, geschlossene Tankstellen sind markiert. Du brauchst einen kostenlosen Zugangsschlüssel von Tankerkönig. Mit drei Stilen und Widget.",
+    "en": "Shows current fuel prices at stations near you. The main fuel is shown large, closed stations are marked. You need a free access key from Tankerkönig. Three styles and a widget."
   },
   "features": {
     "de": [

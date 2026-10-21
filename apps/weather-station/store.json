@@ -6,8 +6,8 @@
     "en": "The Weather app: indoor, outdoor and network"
   },
   "description": {
-    "de": "Die komplette Wetter-App als ein Paket: Innen-Seite (Temperatur, CO2 und Luftfeuchtigkeit des Raumsensors mit Ampel, Warnhinweisen und Verlauf), Außen-Seite (aktuelles Wetter, Sonnenzeiten, Wind, Druck, UV, Sicht, Luftqualität, Stundenverlauf, Mehrtagesvorschau) und Netzwerk-Seite (alle InkBoards im Netzwerk als Raum-Kacheln mit Ranking, Akkustand und CO2-Dauer) in den drei Stilen Bento, Slate und Nano, dazu die Dashboard-Widgets „Wetter Innen“ und „Wetter Außen“. Das Paket ist eine Standard-App und lässt sich nicht entfernen. Stil, Fokuswert, Warnschwellen und Verlaufszeitraum findest du in den Paket-Einstellungen; Standort, Wetterdienst, API-Key und Abruf-Takte stehen in den Geräte-Einstellungen unter „Wetter“.",
-    "en": "The complete Weather app as one package: indoor page (temperature, CO2 and humidity of the room sensor with traffic light, warnings and trend), outdoor page (current weather, sun times, wind, pressure, UV, visibility, air quality, hourly trend, multi-day forecast) and network page (all InkBoards on the network as room tiles with ranking, battery level and CO2 duration) in the three styles Bento, Slate and Nano, plus the dashboard widgets \"Weather Indoor\" and \"Weather Outdoor\". The package is a standard app and cannot be removed. Style, focus value, warning thresholds and trend range are in the package settings; location, weather service, API key and fetch intervals are in the device settings under \"Weather\"."
+    "de": "Die komplette Wetter-App: Innenraum mit Temperatur, CO2 und Luftfeuchtigkeit, Außenwetter mit Vorschau und alle InkBoards im Netzwerk als Raum-Kacheln. Drei Stile und zwei Widgets. Die App ist fest eingebaut.",
+    "en": "The complete weather app: indoor temperature, CO2 and humidity, outdoor weather with forecast, and all InkBoards on your network as room tiles. Three styles and two widgets. The app is built in."
   },
   "features": {
     "de": [

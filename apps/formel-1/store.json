@@ -6,8 +6,8 @@
     "en": "Race calendar, standings and results with track layouts"
   },
   "description": {
-    "de": "Zeigt das nächste Formel-1-Rennen mit Streckenlayout, Zeitplan in Ortszeit und Countdown, die WM-Wertung (Fahrer und Konstrukteure) und das Ergebnis des letzten Rennens. Am Rennwochenende erscheint die zuletzt abgeschlossene Session (Training, Qualifying, Sprint oder Rennen). Daten kommen von Jolpica-F1 und OpenF1, ganz ohne Zugangsdaten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu.",
-    "en": "Shows the next Formula 1 race with track layout, schedule in local time and countdown, the championship standings (drivers and constructors) and the result of the last race. On a race weekend the most recently finished session (practice, qualifying, sprint or race) appears. Data comes from Jolpica-F1 and OpenF1, with no credentials needed. Three layouts (Bento, Slate, Nano) and a dashboard widget are included."
+    "de": "Zeigt das nächste Formel-1-Rennen mit Strecke, Zeitplan und Countdown. Dazu die Meisterschaftswertung und das Ergebnis des letzten Rennens. Ohne Anmeldung nutzbar. Mit drei Stilen und einem Widget.",
+    "en": "Shows the next Formula 1 race with track, schedule and countdown. Plus the championship standings and the last race result. No sign-up needed. Three styles and a widget."
   },
   "features": {
     "de": [

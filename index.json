@@ -64,14 +64,14 @@
         "en": "Battery runtime forecast and tips to make it last longer"
       },
       "description": {
-        "de": "Sammelt die Akkuwerte dieses InkBoards und rechnet daraus die Restlaufzeit hoch (mit Verlaufsgraph und Datum, wann der Akku etwa leer ist). Der Spar-Berater liest die Einstellungen des Geräts (Wecktakt, App-/Dashboard-Intervall, Sensor-Verlauf, WLAN-Empfang) und sagt, was du ändern solltest. Er rechnet für jeden Vorschlag aus, wie viele Tage der Akku dann länger hält. Das ist keine KI, sondern ein einfaches Verbrauchsmodell, das aus deinen eigenen Messwerten lernt. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Messwerte kommen nur, solange die App angezeigt wird oder als Widget platziert ist. Braucht Firmware ab Build 737.",
-        "en": "Collects this InkBoard's battery readings and extrapolates the remaining runtime (with a trend chart and the date the battery is about empty). The saving advisor reads the device settings (wake interval, app/dashboard interval, sensor log, Wi-Fi reception) and tells you what to change, calculating for every suggestion how many more days the battery will last. It is not AI but a simple consumption model that learns from your own readings. Three styles (Bento, Slate, Nano) and a dashboard widget. Readings are only collected while the app is shown or placed as a widget. Needs firmware build 737 or later."
+        "de": "Zeigt, wie lange der Akku noch hält und wann er etwa leer ist. Der Spar-Berater prüft alle Einstellungen und Apps und sagt dir, was du ändern kannst, damit der Akku länger hält. Mit drei Stilen und einem Widget.",
+        "en": "Shows how long the battery will last and when it will be empty. The Power-Saving Advisor checks all settings and apps and tells you what to change so the battery lasts longer. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "apiLevel": 25,
-      "pages": 2,
+      "pages": 3,
       "pageNames": [
         {
           "de": "Prognose",
@@ -80,21 +80,27 @@
         {
           "de": "Spar-Berater",
           "en": "Saving advisor"
+        },
+        {
+          "de": "Einstellungen",
+          "en": "Settings check"
         }
       ],
       "hasWidget": true,
       "standard": false,
       "features": {
         "de": [
-          "Restlaufzeit und Leer-Datum aus eigenen Messwerten",
+          "Prüft alle Einstellungen und jede App",
           "Spar-Berater mit Tagen-Gewinn je Vorschlag",
-          "Verlaufsgraph mit Prognose-Linie",
+          "Einstellungen-Check mit Ampeln",
+          "Restlaufzeit, Leer-Datum und Verlaufsgraph",
           "Dashboard-Widget, drei Stile"
         ],
         "en": [
-          "Runtime and empty date from your own readings",
+          "Checks all settings and every app",
           "Saving advisor with days gained per suggestion",
-          "Trend chart with forecast line",
+          "Settings check with traffic lights",
+          "Runtime, empty date and trend chart",
           "Dashboard widget, three styles"
         ]
       },
@@ -139,6 +145,14 @@
         },
         {
           "kind": "display",
+          "file": "apps/akku-prognose/preview-check.svg",
+          "caption": {
+            "de": "Einstellungen-Check",
+            "en": "Settings check"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/akku-prognose/preview-collecting.svg",
           "caption": {
             "de": "Sammelt noch Daten",
@@ -155,9 +169,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "18e2d8bcaed14a8f3fc8c49bcd945b8933063140efe460e416e5ec5870b27701",
-      "sig": "mKMF4JeRzuv6sWBfoBKlWc9sNEdvingkordlY6IRguOAxZ0+3XgAklEsHmVyvgcj2BX9+n3EYE817QnF5tcQHqg/6Ku1BHOtwzo/1h5KTJyEgKPwqvuIaqgahneJv+9wlLIYa6u8RwBDIoCRwuNjZDs+uhoxptpD5uYB8r7Z3NUl5DclUqK0JU6iTm4ZFjrUy6M3KksR/RTSvs7Mp/cKIhasiXs4JUz4rbAWNr/FScV4lFX5PQs+UKkbsyVvhTVROh+lEDXDFFZ0sfiGqBX/TGVfyugQOaGPO5/auXQebgU9DHycb+7Z0E3ZoGe7U5OhoeNSbZvsbb48cKbn5I90bg==",
-      "size": 23163
+      "sha256": "6e75400fd76b9e2ceead84afe98ca930db80633cf1808f672e93e2520e9b9de2",
+      "sig": "GqD0Vw727oYP9Yh5r00MWvPiFhT84F6XdTkBGOWNEsZ3rUxLgu6FeMC1gnPD5JfgObEMpV2mzdFPiHax176IbAcGzocfQCqIAR3Kc8/mDXkJaEz3xd0qajhdLKCtIs+Cg2//RXW/5+XO4IqBonHZQ3cvvGF+Hu1b8ciRs45InitVyC40o03j3QLhpm0X/mfvUvnBV1BTfTPfb8yc2j6MVGcDnTqmd2aE9vSDXm3GEpThVp+mBizaA2XV6WZeVHW9xXn8ZlVp3cp5DCls+jgJSLi17+8iuAWzpFwPneiP8j1uAouiU2iyOPaskMLz0Ww8/mCLBnZegtloVT0mZDtm0Q==",
+      "size": 34209
     },
     {
       "id": "bilder",
@@ -170,8 +184,8 @@
         "en": "Slideshow of the photos on your server"
       },
       "description": {
-        "de": "Zeigt die Bilder (JPEG, PNG, BMP) aus einem Ordner auf dem externen Speicher als Vollbild-Diashow: Das Foto wird auf die sechs Display-Farben gerastert, behält sein Seitenverhältnis, wird nie vergrößert und steht auf weißem Grund mit einem dünnen schwarzen Rahmen (abschaltbar). Alle fünf Minuten (einstellbar in der App-Übersicht) kommt das nächste Bild, nach Dateiname oder zufällig. Drehen blättert von Hand, dabei zeigt eine Pille „Bild 2 von 7“ die Position; ein nicht lesbares Bild wird übersprungen. Dateinamen dürfen Leerzeichen, Umlaute und Klammern enthalten, die Bilder dürfen größer als 200 KB sein. Hochladen, Löschen und die Einmal-Anzeige bleiben Dienste der Firmware (in Studio unter Store -> Bilder: Bilder hochladen und verwalten); der Ordner ist derselbe wie unter Einstellungen -> Speicher -> Bilder. Reihenfolge und Rahmen sind einstellbar; ein Widget gibt es nicht.",
-        "en": "Shows the pictures (JPEG, PNG, BMP) from a folder on the external storage as a full-screen slideshow: the photo is converted to the six display colors, keeps its aspect ratio, is never enlarged and sits on white with a thin black frame (can be switched off). Every five minutes (adjustable in the app overview) the next picture follows, by file name or at random. Turning browses by hand, with a pill such as \"Picture 2 of 7\" showing the position; an unreadable picture is skipped. File names may contain spaces, umlauts and parentheses, and pictures may be larger than 200 KB. Upload, delete and the one-time display remain firmware services (in Studio under Store -> Pictures: upload and manage pictures); the folder is the same as under Settings -> Storage -> Pictures."
+        "de": "Zeigt deine Fotos aus einem Ordner auf dem externen Speicher als Diashow. Alle fünf Minuten kommt das nächste Bild, in Reihenfolge oder zufällig. Mit dem Drehknopf blätterst du selbst weiter. Hochladen und Löschen geht im Studio.",
+        "en": "Shows your photos from a folder on the external storage as a slideshow. The next picture appears every five minutes, in order or random. Turn the knob to flip through them yourself. Upload and delete in Studio."
       },
       "category": "media",
       "author": "InkBoard",
@@ -246,8 +260,8 @@
         "en": "Events from your calendars: day, week, month"
       },
       "description": {
-        "de": "Zeigt bis zu vier Kalender (per Kalender-Link, z. B. Google, Outlook, iCloud) in einer Ansicht. Die Tagesansicht listet die Termine von heute mit Uhrzeit, Dauer, Ort und Notizen, die Wochenansicht zeigt ein Zeitraster von 6 bis 22 Uhr mit einer Linie für die aktuelle Uhrzeit, die Monatsansicht ein Raster mit farbigen Punkten je Kalender. Jede Quelle hat Name, Farbe (Blau, Grün, Gelb, Rot) und einen Schalter. Geburtstage lassen sich auf die Tagesansicht beschränken. Wiederkehrende Termine, ausgenommene Tage (EXDATE), geänderte Einzeltermine und Zeitzonen werden berücksichtigt. Drei Stile (Slate, Bento, Nano) je Seite und ein Dashboard-Widget mit den nächsten Terminen gehören dazu.",
-        "en": "Shows up to four calendars (ICS link, e.g. Google, Outlook, iCloud) in one view. The day view lists today's events with time, duration, location and notes, the week view shows a time grid from 6 to 22 o'clock with a line for the current time, the month view a grid with colored dots per calendar. Each source has a name, a color (blue, green, yellow, red) and a switch. Birthdays can be limited to the day view. Recurring events, excluded days (EXDATE), changed single occurrences and time zones are taken into account. Three styles (Slate, Bento, Nano) per page and a dashboard widget with the next events are included."
+        "de": "Zeigt bis zu vier Kalender (Google, Outlook, iCloud) auf einem Display. Du siehst Tag, Woche oder Monat. Jeder Kalender hat seine eigene Farbe. Mit drei Stilen und einem Widget für die nächsten Termine.",
+        "en": "Shows up to four calendars (Google, Outlook, iCloud) on one display. See day, week or month. Each calendar has its own color. Three styles and a widget for upcoming events."
       },
       "category": "time",
       "author": "InkBoard",
@@ -410,8 +424,8 @@
         "en": "Digital clock with date and calendar week"
       },
       "description": {
-        "de": "Große Digitaluhr mit Datum und Kalenderwoche in drei Stilen: Bento, Slate und Nano. Die Uhr ist eine Standard-App: Sie lässt sich nicht entfernen und erscheint in der Rotation nur, solange in den Einstellungen die Uhrzeit-Anzeige aktiv ist. Format (12 oder 24 Stunden) und Akzentfarbe folgen den Geräteeinstellungen. Dazu gibt es ein passendes Dashboard-Widget.",
-        "en": "Large digital clock with date and calendar week in three styles: Bento, Slate and Nano. The clock is a standard app: it cannot be removed and only appears in the rotation while the time display is enabled in the settings. The format (12 or 24 hours) and accent color follow the device settings. A matching dashboard widget is included."
+        "de": "Große Uhr mit Datum und Kalenderwoche in drei Stilen. Die Uhr gehört fest zum Gerät und kann nicht entfernt werden. Zeitformat und Farbe übernimmt sie aus den Einstellungen. Mit passendem Widget.",
+        "en": "Large clock with date and week number in three styles. The clock is built in and cannot be removed. Time format and color come from your settings. Includes a matching widget."
       },
       "category": "time",
       "author": "InkBoard",
@@ -492,8 +506,8 @@
         "en": "Days until your big date"
       },
       "description": {
-        "de": "Zählt die Tage bis zu einem Datum deiner Wahl herunter: Urlaub, Geburtstag, Prüfung oder Umzug. Die Zahl steht groß und gut lesbar auf dem Display, in der Akzentfarbe deiner Wahl. Nach dem Termin zählt der Countdown die vergangenen Tage.",
-        "en": "Counts down the days to a date of your choice: vacation, birthday, exam or moving day. The number is shown large and easy to read on the display, in the accent color you pick. After the date it counts the days that have passed."
+        "de": "Zählt die Tage bis zu einem Datum deiner Wahl herunter, zum Beispiel bis zum Urlaub oder Geburtstag. Die Zahl ist groß und gut lesbar. Nach dem Termin zählt sie die vergangenen Tage.",
+        "en": "Counts down the days to a date you choose, such as a vacation or birthday. The number is large and easy to read. After the date it counts the days since."
       },
       "category": "time",
       "author": "InkBoard",
@@ -548,12 +562,12 @@
         "en": "Shopping list"
       },
       "tagline": {
-        "de": "Gemeinsame Einkaufsliste: per Handy füllen, am Drehrad abhaken",
+        "de": "Gemeinsame Einkaufsliste: per Handy füllen, am Drehknopf abhaken",
         "en": "Shared shopping list: fill by phone, tick off with the dial"
       },
       "description": {
-        "de": "Die Einkaufsliste für alle InkBoards im Netzwerk. Per QR-Code öffnet sich eine Handy-Seite im Heimnetz, auf der du Dinge hinzufügst, abhakst und löschst. Am Gerät wählst du mit dem Drehrad einen Eintrag und hakst ihn per Klick ab. Mit externem Speicher (FTP, WebDAV oder Google Drive) zeigen alle InkBoards im selben Ordner dieselbe Liste; ohne Speicher arbeitet sie nur lokal. Erledigte Einträge verschwinden nach einstellbarer Zeit. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget mit den offenen Einträgen. Braucht Firmware ab Build 663.",
-        "en": "The shopping list for all InkBoards in your network. A QR code opens a phone page on your home network where you add, tick off and delete items. On the device you pick an entry with the dial and tick it off with a click. With external storage (FTP, WebDAV or Google Drive) all InkBoards using the same folder show the same list; without storage it works locally only. Done items disappear after a configurable time. Three styles (Bento, Slate, Nano) and a dashboard widget with the open items. Needs firmware build 663 or later."
+        "de": "Die Einkaufsliste für alle deine InkBoards. Mit dem Handy scannst du den QR-Code und fügst Dinge hinzu oder hakst sie ab. Am Gerät wählst du mit dem Drehknopf einen Eintrag. Mit drei Stilen und einem Widget.",
+        "en": "The shopping list for all your InkBoards. Scan the QR code with your phone to add or tick off items. On the device, choose an item with the knob. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -571,7 +585,7 @@
       "features": {
         "de": [
           "Eingabe per Handy-Seite (QR-Code)",
-          "Abhaken per Drehrad und Klick",
+          "Abhaken per Drehknopf und Klick",
           "Gleiche Liste auf allen InkBoards (mit externem Speicher)",
           "Drei Stile und Dashboard-Widget"
         ],
@@ -607,7 +621,7 @@
           "kind": "display",
           "file": "apps/einkaufsliste/preview-select.svg",
           "caption": {
-            "de": "Abhaken am Drehrad",
+            "de": "Abhaken am Drehknopf",
             "en": "Ticking off with the dial"
           }
         },
@@ -646,8 +660,8 @@
         "en": "Aircraft above you, live, with route and aircraft image"
       },
       "description": {
-        "de": "Zeigt die Flugzeuge in deiner Nähe live von adsb.lol: das nächste Flugzeug mit Kennung, Airline, Typ, Kennzeichen, Höhe, Tempo, Entfernung und Himmelsrichtung sowie Route (von nach). Links zeigt die Flug-Seite das freigestellte Renderbild genau dieser Maschine (in der Lackierung ihrer Airline) vom externen Speicher, mit dem Airline-Logo in der Ecke des Bildkastens; liegt dort nichts Passendes (oder ist kein Speicher eingerichtet), steht an der Stelle das Foto von Planespotters mit Fotografen-Nennung, sonst der Hinweis „Kein Bild verfügbar“. Die zweite Seite zeigt vollflächig den Himmel mit den nächsten Flugzeugen als freigestellte Renderbilder (bis zu drei, als Formation mit Kennung, Entfernung, Airline und Typ). Renderbilder und Logos liegen im selben Ordner. Zusätzlich: eigene Airlines, Gruppen und Typen per airlines.json (Import, Export und Änderungsliste als Datei in Studio und in der App, oder vom Speicher neu laden) und eine Abdeckungsauswertung als CSV (auf dem Speicher oder als Download vom Gerät). Der Standort kommt aus den Geräteeinstellungen, Radius und Himmelsfarbe sind einstellbar. Ein Dashboard-Widget zeigt das nächste Flugzeug, optional mit Airline und Kennzeichen. Benötigt Firmware ab Skript-API Stufe 18. Die Vorschaubilder zeigen Beispieldaten mit echten Renderbildern; die Airline-Logos liegen nicht im Paket, an ihrer Stelle steht in den Vorschauen ein neutraler Rahmen mit dem ICAO-Kürzel.",
-        "en": "Shows the aircraft near you live from adsb.lol: the nearest aircraft with callsign, airline, type, registration, altitude, speed, distance and compass direction plus the route (from to). On the left the flight page shows the cut-out render of exactly this aircraft (in its airline livery) from the external storage, with the airline logo in the corner of the image box; if nothing suitable is there (or no storage is set up), the Planespotters photo with photographer credit takes its place, otherwise the note \"No image available\". The second page shows the sky full-screen with the nearest aircraft as cut-out renders (up to three, as a formation with callsign, distance, airline and type). Renders and logos are read from the same folder. Also: your own airlines, groups and types via airlines.json (import, export and change list as a file in Studio and the app, or reload from the storage) and a coverage report as CSV (on the storage or as a download from the device). The location comes from the device settings; radius and sky colour are adjustable. A dashboard widget shows the nearest aircraft, optionally with airline and registration. Needs firmware with script API level 18. The preview images show sample data with real renders; the airline logos are not part of the package, so the previews show a neutral frame with the ICAO code in their place."
+        "de": "Zeigt Flugzeuge in deiner Nähe live: Airline, Typ, Höhe, Tempo, Entfernung und Route. Dazu ein Foto der Maschine und eine Himmelsansicht mit den nächsten Flugzeugen. Radius und Farbe stellst du selbst ein. Mit Widget.",
+        "en": "Shows aircraft near you live: airline, type, altitude, speed, distance and route. Plus a photo of the plane and a sky view of the nearest aircraft. You set radius and color. Includes a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -755,8 +769,8 @@
         "en": "Race calendar, standings and results with track layouts"
       },
       "description": {
-        "de": "Zeigt das nächste Formel-1-Rennen mit Streckenlayout, Zeitplan in Ortszeit und Countdown, die WM-Wertung (Fahrer und Konstrukteure) und das Ergebnis des letzten Rennens. Am Rennwochenende erscheint die zuletzt abgeschlossene Session (Training, Qualifying, Sprint oder Rennen). Daten kommen von Jolpica-F1 und OpenF1, ganz ohne Zugangsdaten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu.",
-        "en": "Shows the next Formula 1 race with track layout, schedule in local time and countdown, the championship standings (drivers and constructors) and the result of the last race. On a race weekend the most recently finished session (practice, qualifying, sprint or race) appears. Data comes from Jolpica-F1 and OpenF1, with no credentials needed. Three layouts (Bento, Slate, Nano) and a dashboard widget are included."
+        "de": "Zeigt das nächste Formel-1-Rennen mit Strecke, Zeitplan und Countdown. Dazu die Meisterschaftswertung und das Ergebnis des letzten Rennens. Ohne Anmeldung nutzbar. Mit drei Stilen und einem Widget.",
+        "en": "Shows the next Formula 1 race with track, schedule and countdown. Plus the championship standings and the last race result. No sign-up needed. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -912,8 +926,8 @@
         "en": "Fuel prices near you"
       },
       "description": {
-        "de": "Zeigt die aktuellen Preise der Tankstellen im Umkreis deines Standorts (Daten der Markttransparenzstelle über Tankerkönig). Hauptkraftstoff groß, weitere Sorten klein, Marken-Badges, geschlossene Tankstellen schwarz markiert. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit frei wählbaren Sorten. Der Standort kommt aus den Geräteeinstellungen, den kostenlosen API-Key trägst du hier im Store ein.",
-        "en": "Shows the current prices of the fuel stations around your location (Markttransparenzstelle data via Tankerkoenig). Main fuel large, other grades small, brand badges, closed stations marked black. Three layouts (Bento, Slate, Nano) and a dashboard widget with selectable grades. The location comes from the device settings, you enter the free API key here in the Store."
+        "de": "Zeigt die aktuellen Spritpreise der Tankstellen in deiner Nähe. Die wichtigste Sorte steht groß, geschlossene Tankstellen sind markiert. Du brauchst einen kostenlosen Zugangsschlüssel von Tankerkönig. Mit drei Stilen und Widget.",
+        "en": "Shows current fuel prices at stations near you. The main fuel is shown large, closed stations are marked. You need a free access key from Tankerkönig. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -988,9 +1002,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "b8562f5ec499a49570fb95293be74c8b7adc74739733027e133c26ece4426f21",
-      "sig": "YCXXOCgp2cqg0jp1P8NL0GLWOCij3la8wQh6XIDX40XlumtCckBQfQ1tq9YfUQODWd7yhfCNJT4D3F9s7bozVeFE9LAHMmorptbDk9OwIl4EZfhmWPAG4hA+M5CbrPeXz5DpsquvaeXF+VZF7y8EA/l1twKMHTLmjV5SUGRyE0lEWvmPYDzf9Pz+96IYmHi9u5HCSGQrt/RTzRAsfrH+gtFNdyu0DaFI9ddK24svWxuODTq5opJpe9bZ3Pc+HQFDBo9Wpl/FCf3C3lbiJuAX711Qbiosx3hma4ESzeLI0NyPz66aO0t3plht53tMDo1HGTSNJVCeBkkJJl4qwcvbeg==",
-      "size": 25824
+      "sha256": "54de9444207729d0b37fc86f6f90c4ac5ebf561edda986e581b46271d94b00d4",
+      "sig": "q4Cwzp2wsOp+FWbzbpB14L+phNYqMlRlWFGalxVWzl1aLMgY6wtlGD1QxXWD6F5niY1/pujX9Vw/GZ5ntfUagcgF30Sudz4wctOXZan0kU3qQhZ+sHfer4ENgySbkcNa1Cd/nGQwnamrZ8NcUO/QuM8L5rYuEd/VzHrotCExnfUjl8b6bKe7QJaYobqHM3iohg0jO8we0fBUrr4BJMmR3QCcjW0n+bwq0aQuja2mWg5iEALtcMwNVvC/WFnFjeMDI5cd2QFwdgQ7XXrJjs+Te25lKLhII/XNy01kpWviTJA1BhCQnLUs1cyxsrRBRlx0Eq3cc9KlWIq16wP947WaTA==",
+      "size": 25889
     },
     {
       "id": "fussball-liga",
@@ -1003,8 +1017,8 @@
         "en": "Your club: next match, results and league table"
       },
       "description": {
-        "de": "Zeigt deinen Lieblingsverein: das nächste Spiel mit Wappen, Anstoßzeit und Live-Stand, die letzten Ergebnisse mit Sieg/Remis/Niederlage und die komplette Liga-Tabelle mit Zonen (Champions League, Europa, Abstieg) und S/U/N, Tore, Punkten. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal kommen ohne Schlüssel von OpenLigaDB (der Pokal hat keine Tabelle, nur Spiele). Premier League, La Liga, Serie A, Ligue 1 und weitere Ligen kommen von football-data.org mit kostenlosem API-Schlüssel. Zwei Seiten (Team, Liga-Tabelle) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget „Nächstes Spiel“ mit Live-Stand.",
-        "en": "Shows your favourite club: the next match with crests, kick-off time and live score, the latest results with win/draw/loss and the full league table with zones (Champions League, Europe, relegation) and W/D/L, goals and points. Bundesliga, 2. Bundesliga, 3. Liga and the DFB-Pokal come from OpenLigaDB without a key (the cup has no table, only matches). Premier League, La Liga, Serie A, Ligue 1 and more leagues come from football-data.org with a free API key. Two pages (team, league table) in three layouts (Bento, Slate, Nano) and a \"Next match\" dashboard widget with live score."
+        "de": "Zeigt deinen Lieblingsverein: nächstes Spiel, letzte Ergebnisse und die Tabelle. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal gehen ohne Anmeldung. Andere Ligen brauchen einen kostenlosen Schlüssel. Mit drei Stilen und Widget.",
+        "en": "Shows your favorite club: next match, recent results and the table. Bundesliga, 2. Bundesliga, 3. Liga and DFB-Pokal work without sign-up. Other leagues need a free key. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1117,9 +1131,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "3ac24322ddee759f5d620009417b4bf1b9e7c33dce8df403f5bc101699ffaafe",
-      "sig": "m95sLf4f+ycpcob4wGcuvW9/e2JJY4zLjhNVRAwDPRFGWy22JzbxUMz74sx6Zde1sEDYRAVZjaZ+6CI8v6E/nwmuJSZ3egxHNf5XJsaSvi9ydB+hKiyIjzRlf30XAWsaAy8n38zlEewaNBBDChhQsK7Ec992tnr1e0gZF+19jP13VAZgNoPj1UhZjiDUE/9BujLX0FFar6/a3+3zDH3OUBzLJti6DQLNq1JTph+Kq8u7Qf6Evhb8KUnuKRhWzS/DeF9D7OaJllG2Z/mEopUwbhf6i6VcFFSCkW3edE+YOMfmvFHLr6KDoIx/930mmiJMrfiBgIhsgXCpy2RSrMXZTQ==",
-      "size": 70576
+      "sha256": "6eac93c9231331450e1f654069694c27fedd8ae0a16bdd8d2bd278e8905e5de3",
+      "sig": "PWMfQTRoUyTcSEOzvTU75JE5WOpi6xKa5dcAY7ZF4PAq6WuPavCrP8W+/H+hrZqvzXClzUFBQuU47dnNJxP3XMsYQlxYuE7cp9ThC0G8tNxOJYnCbxTvWSvbeb+MsRkFkCeYNqC5fxJ40a7N7XgGDD43Fi1/Wk34t/ZS2YVy9mF5/T+u575JR9BTOYSOb+WRfkOQGTdH/ZlPnyFBzIR6BvNfrD9LYyY6W4Z1VtkQBJGc+vsnXLLqI3tggAsODjJH0G89OFZ7dl13pDwnsV/RYsVCGTt2buM/GpK9c3nkLpbCyQEDujH9h7pJC6aTC4A0H5goLbAkqGpFKXsBspiGWQ==",
+      "size": 70667
     },
     {
       "id": "gaeste-wlan",
@@ -1132,8 +1146,8 @@
         "en": "Wi-Fi QR for guests, house rules, time-limited"
       },
       "description": {
-        "de": "Der Gast-Modus fürs Zuhause: Das Display zeigt einen QR-Code, mit dem Gäste per Handy-Kamera ins WLAN kommen, dazu Name, Passwort, Willkommenstext und deine Hausregeln. Starten und beenden (1 Tag, 3 Tage, 1 Woche, 2 Wochen) sowie Text und Regeln ändern geht bequem per Handy-Seite; nach Ablauf verschwindet das Passwort automatisch vom Display. Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Gast-Modus (WLAN-Name und Passwort werden nie geteilt). Dashboard-Widget mit kleinem QR-Code, drei Stile (Bento, Slate, Nano).",
-        "en": "The guest mode for your home: the display shows a QR code guests scan with their phone camera to join the Wi-Fi, plus name, password, welcome text and your house rules. Start and end it (1 day, 3 days, 1 week, 2 weeks) and edit text and rules from your phone; when time is up the password disappears from the display automatically. With external storage all InkBoards in the network show the same guest mode (Wi-Fi name and password are never shared). Dashboard widget with a small QR code, three styles (Bento, Slate, Nano)."
+        "de": "Zeigt Gästen einen QR-Code, mit dem sie sich per Handy-Kamera ins WLAN einloggen. Dazu Willkommenstext und Hausregeln. Du startest und beendest den Gast-Modus mit dem Handy. Nach Ablauf verschwindet das Passwort. Mit Widget.",
+        "en": "Shows guests a QR code to join your Wi-Fi with a phone camera. Plus a welcome text and house rules. You start and stop guest mode with your phone. The password disappears when time is up. Includes a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1234,8 +1248,8 @@
         "en": "This InkBoard's state at a glance, with traffic lights"
       },
       "description": {
-        "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr (gestellt?), WLAN-Stärke, Akku bzw. Netzbetrieb, externer Speicher (letzter erfolgreicher Upload oder seit wann er scheitert), freier Arbeitsspeicher sowie Firmware-Version und Laufzeit. Jede Zeile hat eine Ampel; oben fasst ein Band zusammen, ob alles gut ist oder wie viele Hinweise und Probleme es gibt. Ohne Rechner und ohne Einstellungen, ideal bei Problemen wie falscher Uhrzeit oder fehlenden Logs. Braucht Firmware ab Build 736.",
-        "en": "Shows on one page whether everything is fine with the device: clock (set?), Wi-Fi strength, battery or mains power, external storage (last successful upload or since when it fails), free memory, plus firmware version and uptime. Each row has a traffic light; a band on top sums up whether all is good or how many notices and problems there are. No computer and no settings needed, ideal for problems like a wrong time or missing logs. Needs firmware build 736 or later."
+        "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr, WLAN, Akku, Speicher und Firmware. Jede Zeile hat eine Ampel. Oben steht, ob alles gut ist. Eine Hilfe bei Problemen, ohne Einstellungen.",
+        "en": "Shows on one page whether everything is fine with your device: clock, Wi-Fi, battery, storage and firmware. Each row has a traffic light. The top says if all is well. A help for problems, no settings needed."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1299,9 +1313,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "7e38ae65b8a3e76df379b1dbfc07c7c42416b5b808c277eb114a7938fb16e249",
-      "sig": "Z0B/r4hXAfT1wdIOsdGCAyBg/rhOiCbUh/7kbHjoHF2hfTnHlcfWKKTIcEoA5KyumYF6JOXD5wu68DAMEc0tZMkK5waiEz9CsEaqJ1aaipmUYEVmJ/dcDwKa8GTdsk+NTidM77uEHRENTNwtiFWewXRiaP9jeft92iFEz9rzJpxkWjQ+YHTPGUyE0IzKUYm9V1SQwb9C4xmn/AIzWmfLIBl16jJQVKFt+G+Hqgr6NyENLSOeIfAj7uIHsL72qSAdrbxnfYgAbld8GB5ClrYJ663p0Bd8kxPTVZVg9hhIX15MgXeLQKV5f1zDep/8/J+uj+axFQU23/m9KhxigIwoZA==",
-      "size": 11689
+      "sha256": "d8b6927521b8d423c1bcb8f9f6da4093c63523659aeb1eeb9d7a4925d6e8507b",
+      "sig": "UfOlCfPqV+Fnvx2COTkdQm7Wi9vUDIHM+0CpSSUuomKpQ8Hnry6wkGsLgS9HMiftU7nWV1/zLEKviZwvIqM4inzOZWsbDMU+u0eOIleaE1njuBa844I1R5Dm6CvRw6zlI1e90zscOhSLAWDTxg/5EjcmfNaUkRSEQ4euMQnRmPs57VPkAMiOt/skLXwM+1g5xRF89pakX0EQk6z9rdyDB7Borx7mwt0zmVdhJTjBHnhkkY9KTpagMiU3QcRQxTsa6FicWbatCmyeuuXVoOgyDHEGQ80GvxRpNbC7aAIrBFUAglOA07QapajfrcPV65Lh85XiOIyhnlTSnUjDoAmcSg==",
+      "size": 11621
     },
     {
       "id": "gericht-des-tages",
@@ -1314,8 +1328,8 @@
         "en": "A random Chefkoch recipe every day"
       },
       "description": {
-        "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite.",
-        "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page."
+        "de": "Zeigt jeden Tag ein zufälliges Rezept von Chefkoch mit Zutaten, Zubereitung und Nährwerten. Die Zutaten rechnet die App auf deine Portionen um. Ein QR-Code führt zur Rezeptseite.",
+        "en": "Shows a random recipe from Chefkoch every day with ingredients, steps and nutrition. The app scales ingredients to your servings. A QR code leads to the recipe page."
       },
       "category": "fun",
       "author": "InkBoard",
@@ -1400,8 +1414,8 @@
         "en": "Leaderboards of the PGA Tour, LIV Golf and DP World Tour"
       },
       "description": {
-        "de": "Zeigt das aktuelle Leaderboard der PGA Tour, von LIV Golf oder der DP World Tour (Daten von ESPN, kein Schlüssel nötig): Turniername, Status (läuft/beendet) und die besten Platzierungen mit Gleichständen (T4), Score zu Par und Hinweisen wie F, CUT oder WD. Du wählst, welche Tour auf der Vollseite und im Dashboard-Widget erscheint. Die Platzierungen werden nur in der Turnierwoche geladen, davor steht das nächste Turnier mit Datum auf der Seite. Drei Darstellungen (Bento mit Podium-Kacheln, Slate, Nano) und ein Dashboard-Widget „Top 3“ gehören dazu.",
-        "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour (data from ESPN, no key needed): tournament name, status (in progress/final) and the top standings with ties (T4), score to par and notes such as F, CUT or WD. You choose which tour appears on the full page and in the dashboard widget. Standings are loaded during tournament week only; before that the page shows the next tournament with its date. Three layouts (Bento with podium tiles, Slate, Nano) and a \"Top 3\" dashboard widget are included."
+        "de": "Zeigt die aktuelle Rangliste der PGA Tour, von LIV Golf oder der DP World Tour. Ohne Anmeldung nutzbar. Du wählst die Tour. Außerhalb der Turnierwoche steht das nächste Turnier da. Mit drei Stilen und Widget.",
+        "en": "Shows the current leaderboard of the PGA Tour, LIV Golf or the DP World Tour. No sign-up needed. You choose the tour. Outside tournament week the next event is shown. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1490,8 +1504,8 @@
         "en": "Your golf club's course occupancy from PC CADDIE"
       },
       "description": {
-        "de": "Zeigt die Platzbelegung deines Golfclubs direkt vom öffentlichen PC-CADDIE-Belegungsplan: Sperrungen, Turniere, Gruppen und Hinweise für heute, die Woche und 14 Tage, nach Bereichen farbig getrennt (Tee 1, Greenkeeping, Kurse & Events, Information). Voreingestellt ist der GC Hamburg-Ahrensburg, per Clubnummer ist die App für jeden PC-CADDIE-Club nutzbar; Zugangsdaten braucht es nicht. Drei Seiten (Heute, Woche, 14 Tage) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget, das auf einen Blick zeigt, ob der Platz jetzt und in den nächsten drei Stunden frei ist. Aus Rücksicht auf den Betreiber wird höchstens einmal pro Stunde abgerufen.",
-        "en": "Shows your golf club's course occupancy straight from the public PC CADDIE occupancy plan: closures, tournaments, groups and notes for today, the week and 14 days, colour-coded by area (Tee 1, greenkeeping, courses & events, information). The GC Hamburg-Ahrensburg is preset; with the club number the app works for every PC CADDIE club, no credentials needed. Three pages (today, week, 14 days) in three layouts (Bento, Slate, Nano) and a dashboard widget that shows at a glance whether the course is free now and for the next three hours. Out of respect for the operator it fetches at most once per hour."
+        "de": "Zeigt die Belegung deines Golfclubs: Sperrungen, Turniere und Hinweise für heute, die Woche und 14 Tage. Du trägst die Nummer deines Clubs ein. Das Widget zeigt, ob der Platz gerade frei ist. Mit drei Stilen.",
+        "en": "Shows the course schedule of your golf club: closures, tournaments and notes for today, the week and 14 days. Enter your club number. The widget shows whether the course is free now. Three styles."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1648,8 +1662,8 @@
         "en": "Focus timer, breaks and stand-up for the home office"
       },
       "description": {
-        "de": "Drei Helfer für den Arbeitstag in einer App: ein Fokus-Timer nach der Pomodoro-Methode, eine Pausen- und Bewegungserinnerung mit wechselnden Übungen und ein Stand-up-Timer, der zwischen Sitzen und Stehen wechseln lässt. Bedient wird alles mit dem Drehgeber: Drehen wechselt die Ansicht, ein Klick startet oder bestätigt. Arbeitszeit, Intervalle und Pausenlängen stellst du selbst ein. Dazu gibt es ein Dashboard-Widget, das das Wichtigste auf einen Blick zeigt, und drei Stile für die App-Seite. Alles läuft ohne Internet.\n\nBedienung am Drehgeber: Drehen wechselt zwischen Fokus-Timer, Pausen-Erinnerung und Stand-up-Timer. Ein Klick startet den Fokus-Timer, bestätigt „Pause gemacht“ bzw. wechselt zwischen Sitzen und Stehen. Beim Fokus-Timer beendet ein zweiter Klick innerhalb von 3 Sekunden die Sitzung.",
-        "en": "Three helpers for the working day in one app: a focus timer based on the Pomodoro method, a break and movement reminder with changing exercises, and a stand-up timer that switches between sitting and standing. Everything is operated with the rotary encoder: turning switches the view, a click starts or confirms. You set working hours, intervals and break lengths yourself. A dashboard widget shows the essentials at a glance, and there are three styles for the app page. Everything works without internet.\n\nControls on the rotary encoder: turning switches between focus timer, break reminder and stand-up timer. A click starts the focus timer, confirms “break done” or switches between sitting and standing. In the focus timer a second click within 3 seconds stops the session."
+        "de": "Drei Helfer für den Arbeitstag: ein Konzentrations-Timer, eine Pausen-Erinnerung mit Bewegungsübungen und ein Timer zum Wechsel zwischen Sitzen und Stehen. Mit dem Drehknopf wechselst du die Ansicht, ein Druck startet. Läuft ohne Internet.",
+        "en": "Three helpers for your workday: a focus timer, a break reminder with exercises and a timer to switch between sitting and standing. Turn the knob to change view, press to start. Works without internet."
       },
       "category": "organize",
       "author": "InkBoard",
@@ -1740,8 +1754,8 @@
         "en": "Air quality, UV, pollen – and whether to open the window now"
       },
       "description": {
-        "de": "Die Luft draußen auf einen Blick: europäischer Luftqualitätsindex, Feinstaub, UV-Index und Pollenflug (Erle, Birke, Gräser, Beifuß, Ambrosia, Olive) am Standort deines InkBoards (Daten von Open-Meteo/CAMS, ohne Konto). Die Seite „Lüften“ ist der Fenster-auf-Entscheider: Sie vergleicht den CO2-Wert in deinen Räumen mit der Außenluft und sagt „Jetzt lüften“, „Kurz stoßlüften“ oder „Fenster zu lassen“ – auf Wunsch mit Rücksicht auf deine Pollenallergie. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Braucht den Wetter-Ort in den Geräteeinstellungen; Pollendaten gibt es nur in Europa und während der Saison.",
-        "en": "Outdoor air at a glance: European air quality index, particulates, UV index and pollen (alder, birch, grasses, mugwort, ragweed, olive) at your InkBoard's location (data from Open-Meteo/CAMS, no account needed). The “Ventilate” page is the open-the-window decider: it compares the CO2 level in your rooms with the outdoor air and says “Ventilate now”, “Short burst” or “Keep windows closed” – optionally taking your pollen allergy into account. Three styles (Bento, Slate, Nano) and a dashboard widget. Needs the weather location in the device settings; pollen data covers Europe during the season only."
+        "de": "Zeigt die Luft draußen: Luftqualität, Feinstaub, UV-Index und Pollen. Die Seite „Lüften“ sagt dir, ob du jetzt das Fenster öffnen solltest. Ohne Anmeldung nutzbar. Mit drei Stilen und Widget.",
+        "en": "Shows the outdoor air: air quality, fine dust, UV index and pollen. The “Ventilate” page tells you whether to open the window now. No sign-up needed. Three styles and a widget."
       },
       "category": "home",
       "author": "InkBoard",
@@ -1846,8 +1860,8 @@
         "en": "Headlines from your RSS feeds"
       },
       "description": {
-        "de": "Zeigt aktuelle Schlagzeilen in vier Kategorien (Allgemein, Wirtschaft, Sport, Technik). Je Kategorie wählst du bis zu zwei bekannte Feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) und kannst eine eigene Feed-Adresse ergänzen. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Alles stellst du hier im Store ein.",
-        "en": "Shows current headlines in four categories (General, Business, Sports, Tech). For each category you pick up to two well-known feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) and can add your own feed address. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You set everything up here in the Store."
+        "de": "Zeigt aktuelle Schlagzeilen in vier Themen: Allgemein, Wirtschaft, Sport und Technik. Du wählst bekannte Nachrichtenseiten oder trägst eine eigene Adresse ein. Alles stellst du im Store ein. Mit drei Stilen und Widget.",
+        "en": "Shows current headlines in four topics: general, business, sport and tech. Pick well-known news sites or enter your own address. You set everything in the Store. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -1950,8 +1964,8 @@
         "en": "Departures of your stop and favourite routes with real time"
       },
       "description": {
-        "de": "Zeigt die nächsten Abfahrten einer Haltestelle mit Linienfarben, Fahrtziel, Countdown und Verspätung sowie bis zu sechs Lieblingsrouten mit Zeitstrahl: Umstiege, Gleise, Fußwege, Ankunftszeit und Störungen. Mit eingestellter Wegezeit zeigt die App, wann du losgehen musst. Anbieter: HVV Geofox (vollständige HVV-Echtzeitdaten, eigener Zugang nötig), Transitous (bundesweit ohne Anmeldung) oder der DB-Dienst v6.db.transport.rest. Zwei Seiten (Abfahrten, Routen) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget für Abfahrten oder Routen.",
-        "en": "Shows the next departures of a stop with line colours, destination, countdown and delay, plus up to six favourite routes with a timeline: transfers, platforms, walks, arrival time and disruptions. With a walking time set, the app shows when you have to leave. Providers: HVV Geofox (complete HVV real-time data, own access required), Transitous (nationwide without sign-up) or the DB service v6.db.transport.rest. Two pages (departures, routes) in three layouts (Bento, Slate, Nano) and a dashboard widget for departures or routes."
+        "de": "Zeigt die nächsten Abfahrten deiner Haltestelle mit Linie, Ziel, Countdown und Verspätung. Dazu bis zu sechs Lieblingsrouten. Die Wegezeit sagt dir, wann du losgehen musst. Mit drei Stilen und Widget.",
+        "en": "Shows the next departures at your stop with line, destination, countdown and delay. Plus up to six favorite routes. Your walking time tells you when to leave. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2069,9 +2083,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "c228adfde4d662bea75c6494bc2c08ab9a9e423d0e00228b3c1bb8bfeee99747",
-      "sig": "fRD/IXdldS0LiWMmJjsTHDvH2144jE43+XIWPv8KiWPeEV9pS70rM3LdkfPHmmeNl/pNDJAn+oOShjhyxs2jv3AboKYipRAKuhQvPfnCTWu12O7utPhwtfyeBxJ+danEcH95cx2H3D8efpvI1ELLeyCYZSh+xGMzALqJnWsslPB0W4oE4zm11HJDwCBKsOvIZk9FqyNHIGvSGo5tWHR6EgjuLt6dNptyiCHg+0UfoSCrNHL4yvnqKoY1ibTsKsxB4+N4+JLr/pVS1c70q0Ruv51v01wmueYDW/mOypXSOWW6DFSCWURAM9/vpHw+8ovSrukV/+P6jd8MYebgj5vvOA==",
-      "size": 82595
+      "sha256": "2bcd13eeb27baa92ec2f8ba6434b8874d686dc4d9bbe4e286c26ee68ca661920",
+      "sig": "T1PPIINORA/mdMjtCR3kxsXPhBZEKDEhTZUeBapJt1xqcebiMvcE9tQtc7LzkoPpAIh2dAm1bpufifekSqiacZkL6GSoAlOtnM4moTeHD70ppjqnyzqE1eDXZJAKK0Yt1j7BBK/XGG17c2kQxg2sTLkSasfC4eu4GY6UfczeiSB6XsFQ3JtDRUSzmO/TCKuaGcI9LvsPlKZ7KNaTJJVT+t22c1kyOBhcz3tc1quLItaj8y8at3bxihXWjv1qiN7I9Sc2bXc7qO6R3FFuT40qse6Ff/V2tVJHByAtOgoRAsnXrlXQXYUzMpH02Gx/E+anm2pUKsgWeSOsK3NBjFKuVg==",
+      "size": 82744
     },
     {
       "id": "pinnwand-app",
@@ -2084,8 +2098,8 @@
         "en": "The latest family message as a pinned note"
       },
       "description": {
-        "de": "Zeigt die zuletzt empfangene Nachricht der Familien-Pinnwand als Zettel mit Stecknadel: Absender mit Avatar-Chip, Uhrzeit (für ältere Nachrichten mit Wochentag) und der Text in großer Schrift, bei langen Nachrichten kleiner mit Zeilenumbruch. Ohne Nachricht erscheint ein Hinweis. In den Einstellungen der App (Studio, Mac und iPhone) lässt sich eine Nachricht schreiben und anpinnen: Absender, Text und Ziel (alle Geräte oder ein Raum im InkBoard Netzwerk); dazu der Ordner auf dem externen Speicher für die Zustellung an schlafende Geräte. Der Nachrichtendienst (Funk-Übertragung ESP-NOW, Ablage auf dem Speicher, sofortige Anzeige beim Eintreffen) bleibt in der Firmware.",
-        "en": "Shows the most recently received message of the family board as a note with a pin: sender with avatar chip, time (with the weekday for older messages) and the text in large type, smaller with line wrapping for long messages. Without a message a hint is shown. In the app's settings (Studio, Mac and iPhone) you can write and pin a message: sender, text and target (all devices or one room in the InkBoard network); plus the folder on the external storage used for delivery to sleeping devices. The messaging service (ESP-NOW radio transfer, storage on the storage, instant display on arrival) stays in the firmware."
+        "de": "Zeigt die letzte Nachricht der Familien-Pinnwand als Zettel mit Stecknadel. Mit Studio, Mac oder iPhone schreibst du eine Nachricht für alle Geräte oder für einen Raum. Ohne Nachricht erscheint ein Hinweis.",
+        "en": "Shows the latest message of the family pinboard as a note with a pin. Write a message in Studio, Mac or iPhone for all devices or one room. Without a message a hint is shown."
       },
       "category": "home",
       "author": "InkBoard",
@@ -2155,8 +2169,8 @@
         "en": "Send a recipe from your phone to the display"
       },
       "description": {
-        "de": "Scanne den QR-Code auf dem Display, füge auf dem Handy den Link einer Rezeptseite ein, und das Display zeigt Zutaten (zwei Spalten), Zubereitung und Nährwerte als Seiten - Drehen blättert. Die Portionen lassen sich auf dem Handy umrechnen; findet die App auf einer Seite kein Rezept, kannst du Zutaten und Zubereitung auch als Text einfügen. Die Handy-Seite liegt unter http://<IP des Geräts>/app/rezepte. Hinweis: Die App darf Rezeptseiten von jedem https-Server laden (nur dafür, nur Port 443, keine IP-Adressen).",
-        "en": "Scan the QR code on the display, paste the link of a recipe page on your phone, and the display shows ingredients (two columns), instructions and nutrition facts as pages - turn the dial to browse. Servings can be converted on the phone; if a page has no recipe data you can paste ingredients and steps as text. The phone page lives at http://<device IP>/app/rezepte. Note: the app may load recipe pages from any https server (for that purpose only, port 443 only, no IP addresses)."
+        "de": "Scanne den QR-Code auf dem Display und füge am Handy den Link zu einem Rezept ein. Das Display zeigt Zutaten, Zubereitung und Nährwerte auf mehreren Seiten. Mit dem Drehknopf blätterst du. Die Portionen rechnest du am Handy um.",
+        "en": "Scan the QR code on the display and paste a recipe link on your phone. The display shows ingredients, steps and nutrition on several pages. Turn the knob to flip. Adjust servings on your phone."
       },
       "category": "home",
       "author": "InkBoard",
@@ -2224,8 +2238,8 @@
         "en": "Tables and matches for ice hockey, handball, basketball and the NFL"
       },
       "description": {
-        "de": "Verfolge dein Team: nächstes Spiel mit Wappen gegen Wappen, die letzten fünf Ergebnisse und die Liga-Tabelle für Eishockey (DEL), Handball (Bundesliga, Champions League), Basketball (BBL, EuroLeague) und American Football (NFL). Daten kommen von sportal.de, ein Schlüssel ist nicht nötig. Die Teams wählst du per Knopf „Teams laden“ aus der aktuellen Tabelle. Alle Sportarten mit eingetragenem Team werden im Hintergrund geladen; auf den Vollseiten erscheint die gewählte Sportart, im Dashboard kann jedes Widget eine andere zeigen. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit Termin, Live-Zwischenstand und Tabellenplatz gehören dazu.",
-        "en": "Follow your team: next match with crest against crest, the last five results and the league table for ice hockey (DEL), handball (Bundesliga, Champions League), basketball (BBL, EuroLeague) and American football (NFL). Data comes from sportal.de, no key needed. You pick your teams with the “Load teams” button from the current table. Every sport with a team entered is loaded in the background; the full pages show the chosen sport, and each dashboard widget can show a different one. Three layouts (Bento, Slate, Nano) and a dashboard widget with the date, live score and table position are included."
+        "de": "Verfolge dein Team: nächstes Spiel, letzte Ergebnisse und Tabelle für Eishockey, Handball, Basketball und American Football. Ohne Anmeldung nutzbar. Die Teams wählst du mit „Teams laden“. Mit drei Stilen und Widget.",
+        "en": "Follow your team: next match, recent results and table for ice hockey, handball, basketball and American football. No sign-up needed. Choose teams with “Load teams”. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2352,8 +2366,8 @@
         "en": "Shows what is playing on Spotify right now"
       },
       "description": {
-        "de": "Zeigt den Titel, der auf deinem Spotify-Konto gerade läuft: Cover, Titel, Interpret, Album und Fortschritt, in drei Stilen (Bento, Slate, Nano) und als Dashboard-Widget „Gerade läuft“. Die Anmeldung läuft einmalig über die Spotify-Seite (OAuth) und wird in den App-Einstellungen unter „Verbindung“ eingerichtet: Client-ID und Client-Secret trägst du dort ein, danach öffnet „Mit Spotify verbinden“ die Freigabe. Anmeldung, Zugangsdaten, Token, Abfrage-Takt und Cover-Download bleiben Dienste der Firmware; das Paket zeichnet nur die Anzeige und kann weder Token noch Secret lesen. Das Cover ist eine Zeichenfläche für jede App (draw.image(\"spotify-cover\")).",
-        "en": "Shows the track playing on your Spotify account right now: cover, title, artist, album and progress, in three styles (Bento, Slate, Nano) and as a \"Now playing\" dashboard widget. Sign-in happens once on the Spotify site (OAuth) and is set up in the app settings under \"Connection\": enter your client ID and client secret there, then \"Connect with Spotify\" opens the authorization. Sign-in, credentials, tokens, poll interval and cover download remain firmware services; the package only draws the display and can read neither token nor secret. The cover is a drawing surface any app can use (draw.image(\"spotify-cover\"))."
+        "de": "Zeigt, welcher Titel gerade auf deinem Spotify-Konto läuft: Cover, Titel, Interpret und Fortschritt. Die Verbindung richtest du einmal in den App-Einstellungen unter „Verbindung“ ein. Mit drei Stilen und Widget.",
+        "en": "Shows which track is playing on your Spotify account: cover, title, artist and progress. Set up the connection once in the app settings under “Connection”. Three styles and a widget."
       },
       "category": "media",
       "author": "InkBoard",
@@ -2445,8 +2459,8 @@
         "en": "Stocks, indices and crypto with price history"
       },
       "description": {
-        "de": "Zeigt Kurse und die Tagesänderung für Aktien, Indizes und Kryptowährungen (Daten von Twelve Data). Zwei Seiten (Aktien, Krypto), je ein Fokus-Symbol, das immer zuerst steht, und bis zu neun Symbole je Seite, jeweils mit kleinem Kursverlauf. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Du brauchst einen kostenlosen API-Key von twelvedata.com; alles stellst du hier im Store ein.",
-        "en": "Shows quotes and the daily change for stocks, indices and cryptocurrencies (data from Twelve Data). Two pages (Stocks, Crypto), one focus symbol per page that always comes first, and up to nine symbols per page, each with a small price history. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You need a free API key from twelvedata.com; you set everything up here in the Store."
+        "de": "Zeigt Kurse und Tagesänderung für Aktien und Kryptowährungen, je mit kleinem Kursverlauf. Zwei Seiten mit bis zu neun Werten. Du brauchst einen kostenlosen Zugangsschlüssel von twelvedata.com. Mit drei Stilen und Widget.",
+        "en": "Shows prices and daily change for stocks and cryptocurrencies, each with a small chart. Two pages with up to nine items. You need a free access key from twelvedata.com. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2522,9 +2536,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "81cd72df8a7e96f6bef2c8159d69650a6932f54368c5212e3dce14fe9ec31fab",
-      "sig": "JfSDMToWa8DZvy2JvvXcN2GIQDxH5c7DsfFDVnBbolMcy3W9DnEY5KQ5xyx+qe4n5VgM2b2cr/LFYSDIN+B4vJEM+I96k83mYdN5LKKOQXOmwx+A1jkY6ZC3yQsLNR5VlWd873W2tyg+bhCrz6lVuAb2FgsvRSFuwEg4hPzdTZ9b2dzJGvnjhpwBzEGMmDacr494V9I4VOOMm5mpFzY2GDLx1/KsvRR6LqrLGya6Cpmtd6F8lTiE9dICcpZ6+A9lcfcBQxczH8ZIkxbcndQsVDdHVtGUlimV1/OCt40Wd8tnYlaN7q1+ONyrDVU/RltfTCF5hsj3IF0u+Nfwezb/RA==",
-      "size": 26909
+      "sha256": "3219b89c7aefe29972dbbe26d5c1a1926deb5ea43e5a09b2c48f3e396263ba03",
+      "sig": "XJd5pNeinpJzCCh0e0NjlTfOsrCXA7c0M5KmuOI4LJkgxFIbyixz3v8T6wUidMC/4yFprdhJ/HvDuEieqYfilqd4wYmDNRyJYlr5PHTn3811bsF/kYewYz4pEal6+ohUswwMTu2tpA/XoiKUErbf6ojRRZxmB/mvf9kOpE4K/0gFrG9G7I1SFg5QgncVqIF3xeZaCF1MTtPtJbxPaAXyTPH34ip3ecoQXCmyGVnZwOtnfMvPK/xfZcogMXvhwoyl5GJzgz3y9KHnPTDXss/D+eWTDVrJ4zzXJbY9H9pWtOAg7Y1apb8MD364ondhKsQmJbliGKQsXkmJPTUyZu58xw==",
+      "size": 27090
     },
     {
       "id": "todo-list",
@@ -2537,8 +2551,8 @@
         "en": "Your task lists from Todoist, iCloud and Nextcloud"
       },
       "description": {
-        "de": "Zeigt deine offenen Aufgaben auf dem Display: aus Todoist, den iCloud-Erinnerungen, Nextcloud oder jedem anderen CalDAV-Server, bis zu drei Quellen gleichzeitig, jede mit eigener Farbe. Überfällige Aufgaben stehen oben und sind rot, Fälligkeit und Uhrzeit werden ausgeschrieben, Priorität, Projekt, Labels und Beschreibung erscheinen auf den Detailkarten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu. Alle Zugangsdaten stellst du hier im Store ein.",
-        "en": "Shows your open tasks on the display: from Todoist, iCloud Reminders, Nextcloud or any other CalDAV server, up to three sources at once, each in its own color. Overdue tasks come first in red, due dates and times are written out, and priority, project, labels and description appear on the detail cards. Three layouts (Bento, Slate, Nano) and a dashboard widget are included. You set up all credentials here in the Store."
+        "de": "Zeigt deine offenen Aufgaben aus Todoist, iCloud-Erinnerungen oder Nextcloud, bis zu drei Quellen gleichzeitig. Überfällige Aufgaben stehen oben in Rot. Zugangsdaten gibst du im Store ein. Mit drei Stilen und Widget.",
+        "en": "Shows your open tasks from Todoist, iCloud Reminders or Nextcloud, up to three sources at once. Overdue tasks appear on top in red. Enter your login in the Store. Three styles and a widget."
       },
       "category": "organize",
       "author": "InkBoard",
@@ -2614,9 +2628,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "cf8b918ab952c42931cb9c8e7c21fa417a0886db3e80b88400288f9bac391a20",
-      "sig": "Jz+eftWsPTlHuO+QpbJP6hPfDT9e9lTBsZHpSrBz+Dj8FTsFTYzIZFyB3VSgwpMkGkEgv89U+rd0IOecQTgUbB2O9KWLElktgukcIB75u0Ytx+qanhZiNrQPW3xV/9EwvFudAuM3a/w+qO6/vnVHM0HiLzcq5vTZopkT3AGpngEJu55K3KrjR0pU0KIAq1v9xyBkgJ+upubcaV1Nyel9way65CDrfpw0fHQqMYptWvg19I1uCfVYUXyhw+D4EKB1sQmaZDGzZw4haUHCO1Z0WsOMvQWRGNyapA86nFNueKxI+7iXfCR37EQsuIEbh4gsVE0T2JHwSrwM6yQkzD+pVg==",
-      "size": 51124
+      "sha256": "d7beb659f4344a628ce477b2535a8fe362cc5f4f99ed9d180619d82b362d8823",
+      "sig": "elA3rskyhQt1WZ4dDWC400ft/OxoNDZ5f5//+v2jSa8l82pAjd7Xs5cBztT9sp1PfPDlyIBDNCN2Ov1WpoJM5NyvK7otBikRD0B5gen7FCk9SLKO+gkOJ3p14mQHCkBLgy0DLQUjPpaQxgrpKiRPnuF8tzpqMRk3UbDDwPCJsRJPBsSSj+ohBlPrlf62QltEeI34XdrsnHA8PMbIGVxYSI+uHDNW0UhLZF37+CQg8deusdKSaJe7Z/lDNrYUDGaGSoRsv+W2dTmi6E+VtAo914UAQtEgiM7Vh3TPj0a1yCLUiSYTIEy8UcFygXXfm9zXsTOesqGzWF2gynHxzhb2yA==",
+      "size": 51178
     },
     {
       "id": "waste-calendar",
@@ -2629,8 +2643,8 @@
         "en": "Next pick-up dates for your bins"
       },
       "description": {
-        "de": "Zeigt, wann welche Tonne geleert wird: aus dem Kalender-Link (ICS) deines Entsorgers oder, für eine Auswahl von Kommunen und Landkreisen, direkt per Adresse. Restmüll, Biotonne, Papier und Gelbe Tonne bekommen ihre Tonnenfarbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Drei Darstellungen (Tonnen-Kacheln, Liste, Monatskalender) und ein Dashboard-Widget gehören dazu.",
-        "en": "Shows when each bin is emptied: from the calendar link (ICS) of your waste company or, for a selection of municipalities, directly by address. General waste, bio, paper and recycling bins get their bin color, plus “today”, “tomorrow” or “in 5 days”. Three layouts (bin tiles, list, month calendar) and a dashboard widget are included."
+        "de": "Zeigt, wann welche Tonne geleert wird. Du nutzt den Kalender-Link deines Entsorgers oder gibst deine Adresse ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
+        "en": "Shows when each bin is collected. Use your waste company's calendar link or enter your address. Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
       },
       "category": "home",
       "author": "InkBoard",
@@ -2705,9 +2719,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "7e4b8995de5bfdf11ed1fae1e627c43ad6574ca2f1fbfd4fb953eb71e039c736",
-      "sig": "cR7fTkLt15cBN48xuyqLo/MXc6iXhfS+UvCrF1zuDvUly0yVz5ZACdWXen01eG+mC+igcxYQFnh6GzODoeU9HnB2wszi8ESRjjQW00LdCsa3wL3ETZ9i+ZXSX/Q0PmjV7a8O8QexsEWdTYxBwWi9I98lU3dLX1YfSZ8qJ5sT1NDclLZxsmmTXEfZnrPdMdYpyK/TPBp8mlNLjq0+GcSgX8bpYGQ9oiiKY37p/G2tbbq92+jG34W6iIul4LFoAtlMTLm94vz7NH0SAal1QdG1tIF/s2t5UzaX/8z1Z1ptejJXD2uRclvB4UOWZF/m8w6jvLx1PX+svPw9vHVWhtjdFQ==",
-      "size": 29854
+      "sha256": "26d26e059894f7238d373ecc860cd4a5ac0697369f1a150b0634ba213b7b7913",
+      "sig": "JiGSE1gKiL7+8fj/77Pq87iq/6k2InF+XvuE26/dMxKXPHke0MBFYYSmoYLOM8PUvywJ7c4N71dcFqGzFi2DJ5BJYza9qcjCpz0PxUH6iSILQ6YLsO3hj6+3h09WqGpznXkQ0jTeMLEsnAZzmbFty9gvwLbJdIN2DW/ooci7zgRgvUckxrKN+UAqFhe2zcWDgK8j/37EBYtQqUXUEfHMoAM2pjcVwz8W72xG8EB8EHmwRJ7Oc3QFkr2+FdZhflIy83f/LemhcbEIZ1L3cRgJTLJcRS70T7az/QmMVImozfbYQ046Eui24Sed2Jh2+FW9hxBpnVsWwbfWjkZUeQdAhw==",
+      "size": 30203
     },
     {
       "id": "weather-station",
@@ -2720,8 +2734,8 @@
         "en": "The Weather app: indoor, outdoor and network"
       },
       "description": {
-        "de": "Die komplette Wetter-App als ein Paket: Innen-Seite (Temperatur, CO2 und Luftfeuchtigkeit des Raumsensors mit Ampel, Warnhinweisen und Verlauf), Außen-Seite (aktuelles Wetter, Sonnenzeiten, Wind, Druck, UV, Sicht, Luftqualität, Stundenverlauf, Mehrtagesvorschau) und Netzwerk-Seite (alle InkBoards im Netzwerk als Raum-Kacheln mit Ranking, Akkustand und CO2-Dauer) in den drei Stilen Bento, Slate und Nano, dazu die Dashboard-Widgets „Wetter Innen“ und „Wetter Außen“. Das Paket ist eine Standard-App und lässt sich nicht entfernen. Stil, Fokuswert, Warnschwellen und Verlaufszeitraum findest du in den Paket-Einstellungen; Standort, Wetterdienst, API-Key und Abruf-Takte stehen in den Geräte-Einstellungen unter „Wetter“.",
-        "en": "The complete Weather app as one package: indoor page (temperature, CO2 and humidity of the room sensor with traffic light, warnings and trend), outdoor page (current weather, sun times, wind, pressure, UV, visibility, air quality, hourly trend, multi-day forecast) and network page (all InkBoards on the network as room tiles with ranking, battery level and CO2 duration) in the three styles Bento, Slate and Nano, plus the dashboard widgets \"Weather Indoor\" and \"Weather Outdoor\". The package is a standard app and cannot be removed. Style, focus value, warning thresholds and trend range are in the package settings; location, weather service, API key and fetch intervals are in the device settings under \"Weather\"."
+        "de": "Die komplette Wetter-App: Innenraum mit Temperatur, CO2 und Luftfeuchtigkeit, Außenwetter mit Vorschau und alle InkBoards im Netzwerk als Raum-Kacheln. Drei Stile und zwei Widgets. Die App ist fest eingebaut.",
+        "en": "The complete weather app: indoor temperature, CO2 and humidity, outdoor weather with forecast, and all InkBoards on your network as room tiles. Three styles and two widgets. The app is built in."
       },
       "category": "info",
       "author": "InkBoard",
@@ -2886,12 +2900,12 @@
         "en": "Six events from this day in history"
       },
       "description": {
-        "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache des Displays. Drei Stile: Bento (großes Hauptereignis mit zwei Kacheln), Slate (Zeitleiste) und Nano (Kompaktliste). Dazu gibt es ein Dashboard-Widget mit Jahr und Satz. Antwortet Wikimedia nicht, springt eine Ausweichquelle (englische Wikipedia, bei deutschem Display teilweise per MyMemory übersetzt) ein.",
-        "en": "Shows the most important events for today's date from Wikipedia every day, in the display language. Three styles: Bento (a large main event with two tiles), Slate (timeline) and Nano (compact list). A dashboard widget shows the year and a sentence. If Wikimedia does not answer, a fallback source (English Wikipedia, partly translated through MyMemory on a German display) takes over."
+        "de": "Zeigt jeden Tag die wichtigsten Ereignisse zum heutigen Datum aus der Wikipedia, in der Sprache deines Displays. Mit drei Stilen und einem Widget mit Jahr und Satz.",
+        "en": "Shows the most important events for today's date from Wikipedia every day, in your display language. Three styles and a widget with year and sentence."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.6",
+      "version": "1.0.8",
       "apiLevel": 8,
       "pages": 1,
       "pageNames": [
@@ -2920,7 +2934,8 @@
         "de.wikipedia.org",
         "en.wikipedia.org",
         "byabbe.se",
-        "api.mymemory.translated.net"
+        "api.mymemory.translated.net",
+        "translate.googleapis.com"
       ],
       "icon": "apps/wikipedia-today/icon.svg",
       "previews": [
@@ -2964,9 +2979,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "aa20b44ac74ba3df5300ab952374f86cf031daf5f93281715b9d48a60716b9d1",
-      "sig": "Dm5+geYVfrutD7w/U7Li5zGR0fpjfGANgX2RwAhr3D66deFLStwGfdC/DPkWb6bEKtNDnjbsFeaHj/uuCHUdF60MZSa8QwcfWQ9ohISwYEs7Xg6L6r7PWd20I/nn7jQWiiAWQY78qASbrui9MBVv+t5mPHt1Uz43y3Uch+V1LBT/jwrajQgcYbuF91jttZvT7g6rhs/tYmODbV1jLLYdaRHRbybFGmquQK02o/MmprVMFgdIaLkvQLlgCMTGdS2Dw3yr6qte8MltvxwWkYF45TDmxL/LY5UoEyzBozA5aa+MUaI0uIYXnojWbiE0llN9pAmA8pCOmtHcZrnymfT/qg==",
-      "size": 16646
+      "sha256": "041971e92b66d07ff0f980b915c1bcb411581d925dba0da36e5038e5cc4e454e",
+      "sig": "W61JbmchUx/T+niJOrU6LGYkE64/vovPyhTYHWiJEm4I6Go6ioQn+kV0pPjhKlQVbfickt4Z4Z8YUDkVmldJKt46SuVH6x2b7byciYgBi5zIp+B9iiJMr/o+doOu8rMAP9EvCEXl9T5ivkQlNYHVr+HItzTLge6mXwWSRCjnKNcHo0E2m0QEqC93tcdkQU2Ihw9vYIMbux6klBZNNZUQTiuR4Dk+la0wYH8iamRMV8pm5DG5974jRURYwETkceXwIqqQTFl7hBIh76GojOVQTNtxdvCiWEFt14Tb5Eb+xLPdaXhIghvQo6APo+Nc5FDMEiqPt0u1+nFstZ/QnozhaQ==",
+      "size": 25105
     },
     {
       "id": "wochenplan",
@@ -2979,8 +2994,8 @@
         "en": "The plan for the week, for everyone at home"
       },
       "description": {
-        "de": "Ein Wochenplan mit Kalenderwochen: Für jeden Wochentag beliebige Einträge (Essen, Training, Aufgaben, Termine), optional mit Person und Farbpunkt - jede Woche wiederkehrend oder nur für eine bestimmte KW. Eingabe bequem per Handy (QR-Code auf dem Display) oder aus den App-Details (Einträge bearbeiten), Anzeige als Wochenübersicht, als Seite „Heute“ und als Dashboard-Widget. Drei Stile (Bento, Slate, Nano). Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Plan (der neuere Eintrag gewinnt), ohne Speicher arbeitet er nur auf diesem Gerät.",
-        "en": "A weekly plan with calendar weeks: for each weekday any entries (meals, training, chores, appointments), optionally with a person and color dot - repeating every week or only for a specific week. Enter them comfortably from your phone (QR code on the display) or from the app details (Edit entries), shown as a week overview, a “Today” page and a dashboard widget. Three styles (Bento, Slate, Nano). With external storage all InkBoards in the network show the same plan (newer entry wins); without storage it only works on this device."
+        "de": "Ein Wochenplan mit Einträgen für jeden Tag, zum Beispiel Essen, Training oder Termine, wahlweise mit Person und Farbe. Du trägst alles per Handy ein (QR-Code). Mit Speicher sehen alle InkBoards denselben Plan. Mit drei Stilen und Widget.",
+        "en": "A weekly planner with entries for each day, such as meals, training or appointments, optionally with person and color. Enter everything on your phone (QR code). With storage, all InkBoards show the same plan. Three styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
@@ -3079,12 +3094,12 @@
         "en": "A new English word every day"
       },
       "description": {
-        "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz. Das Wort kommt aus dem Merriam-Webster-Feed und wird per MyMemory ins Deutsche übersetzt; bei englischer Display-Sprache siehst du das Original.",
-        "en": "Shows a new English word with its meaning and an example sentence every day. The word comes from the Merriam-Webster feed and is translated to German via MyMemory; with an English display language you see the original."
+        "de": "Zeigt jeden Tag ein neues englisches Wort mit Bedeutung und Beispielsatz, auf Deutsch übersetzt. Bei englischer Display-Sprache siehst du das Original.",
+        "en": "Shows a new English word every day with meaning and example sentence, translated into German. With an English display language you see the original."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.7",
+      "version": "1.4.0",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -3111,7 +3126,8 @@
       },
       "net": [
         "www.merriam-webster.com",
-        "api.mymemory.translated.net"
+        "api.mymemory.translated.net",
+        "translate.googleapis.com"
       ],
       "icon": "apps/wort-des-tages/icon.svg",
       "previews": [
@@ -3133,9 +3149,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "8dbb79b9cb3f0febd468c9fff58ed1b2cf40594845fb00a23df3fd3a45606803",
-      "sig": "RVAWVU6Xsy/lhjbOTCDwvRrxFBfBPz9vWlZjfEq08RPdZf8XkwYTeNwkKijO96IqPg4gNCiZcJdwyG1K0PaNffJGqdi6Io4krybHAF+nnDrNHBHoA5uBG6dgjLGz/rny46Gs/MV+2KcLa9d1I2MJ0QeUj5oVHIDjevR6I2hLUfibAuQWqd7Q9vNNnyPlQNalSs3Pf5+XXUZOmuuwHpERUyOFQtUmmfPvvaeTdvhfNCo63WHYUsXxknWmTysvFs++ldFJCfoc0lZe2yd3z4PVMymlIZ9SddEllLoBxyiyY+BwZspXnH3Lhic/0O9NdqtzFag7z2xelInu3smrUY0Siw==",
-      "size": 11246
+      "sha256": "e6aa1908a9250f9c03b1d2806cbd190cec4f3ccb14037fb70f883a38c45686ef",
+      "sig": "g8Ynn/tsS927JsCx9pWitXm8dnCG6jfZxa0nxhwOShahbaw7t83HVCdCPhhn5GhGgaKfBZP6NXKk6WvtM/oEgMU3jwp52+PPoTBjAO7zOg2g5Qpxmb9tK/JNONFsqOpz1XFYH6dshei3iA6aqa9UlvYrLS/wECio3G1HR5BZqx0jDW5YJ01gW5ZunElSWQViy3JzBpsd8CkyWA6QrJXZF0kr1TePQsyyfBmFKPPc6+19DhuXUCTQWEOwZAjhHxaeALTqvUUE5F6o2qHR1fP8Xz9kZqZpZu9lLvxc4EVzsoTeDrabTlFk729/l7IEKmCRqZlgjBfEmrxU8wtcOQr02g==",
+      "size": 13642
     }
   ]
 }

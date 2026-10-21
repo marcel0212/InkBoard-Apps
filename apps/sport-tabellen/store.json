@@ -6,8 +6,8 @@
     "en": "Tables and matches for ice hockey, handball, basketball and the NFL"
   },
   "description": {
-    "de": "Verfolge dein Team: nächstes Spiel mit Wappen gegen Wappen, die letzten fünf Ergebnisse und die Liga-Tabelle für Eishockey (DEL), Handball (Bundesliga, Champions League), Basketball (BBL, EuroLeague) und American Football (NFL). Daten kommen von sportal.de, ein Schlüssel ist nicht nötig. Die Teams wählst du per Knopf „Teams laden“ aus der aktuellen Tabelle. Alle Sportarten mit eingetragenem Team werden im Hintergrund geladen; auf den Vollseiten erscheint die gewählte Sportart, im Dashboard kann jedes Widget eine andere zeigen. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget mit Termin, Live-Zwischenstand und Tabellenplatz gehören dazu.",
-    "en": "Follow your team: next match with crest against crest, the last five results and the league table for ice hockey (DEL), handball (Bundesliga, Champions League), basketball (BBL, EuroLeague) and American football (NFL). Data comes from sportal.de, no key needed. You pick your teams with the “Load teams” button from the current table. Every sport with a team entered is loaded in the background; the full pages show the chosen sport, and each dashboard widget can show a different one. Three layouts (Bento, Slate, Nano) and a dashboard widget with the date, live score and table position are included."
+    "de": "Verfolge dein Team: nächstes Spiel, letzte Ergebnisse und Tabelle für Eishockey, Handball, Basketball und American Football. Ohne Anmeldung nutzbar. Die Teams wählst du mit „Teams laden“. Mit drei Stilen und Widget.",
+    "en": "Follow your team: next match, recent results and table for ice hockey, handball, basketball and American football. No sign-up needed. Choose teams with “Load teams”. Three styles and a widget."
   },
   "features": {
     "de": [

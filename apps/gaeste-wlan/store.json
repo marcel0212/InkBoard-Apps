@@ -6,8 +6,8 @@
     "en": "Wi-Fi QR for guests, house rules, time-limited"
   },
   "description": {
-    "de": "Der Gast-Modus fürs Zuhause: Das Display zeigt einen QR-Code, mit dem Gäste per Handy-Kamera ins WLAN kommen, dazu Name, Passwort, Willkommenstext und deine Hausregeln. Starten und beenden (1 Tag, 3 Tage, 1 Woche, 2 Wochen) sowie Text und Regeln ändern geht bequem per Handy-Seite; nach Ablauf verschwindet das Passwort automatisch vom Display. Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Gast-Modus (WLAN-Name und Passwort werden nie geteilt). Dashboard-Widget mit kleinem QR-Code, drei Stile (Bento, Slate, Nano).",
-    "en": "The guest mode for your home: the display shows a QR code guests scan with their phone camera to join the Wi-Fi, plus name, password, welcome text and your house rules. Start and end it (1 day, 3 days, 1 week, 2 weeks) and edit text and rules from your phone; when time is up the password disappears from the display automatically. With external storage all InkBoards in the network show the same guest mode (Wi-Fi name and password are never shared). Dashboard widget with a small QR code, three styles (Bento, Slate, Nano)."
+    "de": "Zeigt Gästen einen QR-Code, mit dem sie sich per Handy-Kamera ins WLAN einloggen. Dazu Willkommenstext und Hausregeln. Du startest und beendest den Gast-Modus mit dem Handy. Nach Ablauf verschwindet das Passwort. Mit Widget.",
+    "en": "Shows guests a QR code to join your Wi-Fi with a phone camera. Plus a welcome text and house rules. You start and stop guest mode with your phone. The password disappears when time is up. Includes a widget."
   },
   "features": {
     "de": [

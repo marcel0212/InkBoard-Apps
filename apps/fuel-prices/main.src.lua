@@ -319,7 +319,7 @@ local function emptyState(ctx, stations)
   local en = en_(ctx)
   local st = ctx.data.get("st")
   if st == "e:key" or (st == nil and (ctx.cfg.apiKey == nil or ctx.cfg.apiKey == "")) then
-    notice("gear", en and "No Tankerkoenig API key set." or "Kein Tankerkönig-API-Key hinterlegt.",
+    notice("gear", en and "No Tankerkoenig access key set." or "Kein Tankerkönig-Zugangsschlüssel hinterlegt.",
       en and "Store -> Fuel prices -> Settings" or "Store -> Tankpreise -> Einstellungen")
     return true
   end
@@ -330,7 +330,7 @@ local function emptyState(ctx, stations)
   end
   if st == "e:api" then
     notice("warning", en and "Tankerkoenig reports an error." or "Tankerkönig meldet einen Fehler.",
-      en and "Check the API key in the Store" or "API-Key im Store prüfen")
+      en and "Check the access key in the Store" or "Zugangsschlüssel im Store prüfen")
     return true
   end
   if #stations > 0 then return false end

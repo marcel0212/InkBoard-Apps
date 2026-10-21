@@ -5,7 +5,7 @@
 -- Quelle 1: Wikimedia-REST "feed/onthisday/selected/MM/DD" der Wikipedia in der Display-Sprache (de/en).
 -- Quelle 2 (nur wenn Wikimedia ablehnt, z. B. HTTP 429): byabbe.se/on-this-day (Inhalte der englischen Wikipedia,
 --   chronologisch). Daraus werden gleichmaessig verteilte Ereignisse gewaehlt, neuestes zuerst; bei deutscher
---   Display-Sprache uebersetzt MyMemory (hoechstens 4 Ereignisse, wegen der 6 Abrufe je Lauf).
+--   Display-Sprache uebersetzt Google (Ersatz: MyMemory) (hoechstens 4 Ereignisse, wegen der 6 Abrufe je Lauf).
 -- Beide Antworten sind groesser als das 24-KB-Standardlimit von http.get; es wird mit 60 KB abgerufen (API-Stufe 8) und mit
 -- Textmustern gelesen, bis zum letzten vollstaendigen Eintrag.
 -- ctx.data: "n" Anzahl, "y1".."y6" Jahr, "t1".."t6" Text, "day" Tag der Daten (JJJJMMTT), "lang" Sprache der Daten,
@@ -16,6 +16,7 @@ local MAX_TRANSLATE = 4
 
 --#include text
 --#include ui
+--#include translate
 
 local function en_(ctx) return ctx.lang == "en" end
 
@@ -36,17 +37,10 @@ local function decodeEntities(s)
   return (s:gsub("&quot;", '"'):gsub("&lt;", "<"):gsub("&gt;", ">"):gsub("&amp;", "&"))
 end
 
--- Uebersetzt Englisch -> Deutsch (MyMemory). Gibt Text oder nil zurueck.
+-- Uebersetzung: Baustein translate (Google, Ersatz MyMemory); 2 der 6 Abrufe je Lauf sind schon fuer die Datenquellen verbraucht.
+translateUse(2)
 local function translate(s)
-  local body = http.get("https://api.mymemory.translated.net/get?langpair=en%7Cde&q=" .. text.url_encode(s))
-  if body == nil then return nil end
-  local doc = json.decode(body)
-  if type(doc) ~= "table" or type(doc.responseData) ~= "table" then return nil end
-  local t = doc.responseData.translatedText
-  if type(t) ~= "string" or t:find("MYMEMORY WARNING", 1, true) == 1 then return nil end
-  t = trim(decodeEntities(t))
-  if t == "" then return nil end
-  return t
+  return (translateText(s, "en", "de"))
 end
 
 -- Die Antworten sind gross (Wikimedia liefert je Ereignis mehrere Seiten mit Vorschaubild und Zusammenfassung, rund 8 KB),

@@ -370,7 +370,7 @@ local function emptyState(ctx, events, today)
     elseif code == "none" then
       l1 = en and "No upcoming dates found." or "Keine Termine gefunden."
     elseif code:sub(1, 4) == "http" then
-      l2 = (en and "HTTP error " or "HTTP-Fehler ") .. code:sub(5)
+      l2 = (en and "The provider is not reachable (code " or "Der Entsorger ist nicht erreichbar (Code ") .. code:sub(5) .. ")"
     end
     notice("warning", l1, l2)
     return true
@@ -482,7 +482,7 @@ local function drawCompact(ctx, events, today)
   local gridStart = today - iso
   local rows = 4
   local gridY0 = y + 24
-  local cellH = math.min(72, (draw.height - 16 - 50 - gridY0) // rows)
+  local cellH = math.min(72, (draw.height - 16 - 50 - 24 - gridY0) // rows)
   local byDay = {}
   for _, e in ipairs(events) do
     if byDay[e.day] == nil then byDay[e.day] = e end
@@ -502,6 +502,14 @@ local function drawCompact(ctx, events, today)
   local sy = math.min(draw.height - 18, gridY0 + rows * cellH + 34)
   draw.circle(margin + 6, sy - 5, 5, KIND[nxt.kind][1], true)
   draw.text(margin + 20, sy, (en and "Next: " or "Nächste: ") .. eventName(nxt, en) .. ", " .. relText(nxt.day, today, en), "normal", color.BLACK, "left")
+  -- Legende: welche Farbe welche Tonne ist
+  local lx, ly = margin, sy + 24
+  for _, k in ipairs({ "R", "B", "P", "G" }) do
+    draw.circle(lx + 5, ly - 5, 5, KIND[k][1], true)
+    local nm = kindName(k, en)
+    draw.text(lx + 16, ly, nm, "small", color.BLACK, "left")
+    lx = lx + 16 + draw.measure(nm, "small") + 22
+  end
 end
 
 function on_draw(ctx, page)

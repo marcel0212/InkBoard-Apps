@@ -109,6 +109,8 @@ local l = when - WALK * 60
 if l < NOW then return NOW end
 return l
 end
+local function dShort(d) return string.format("%+d min", d) end
+local function dLong(d) if d > 0 then return string.format("+%d min ", d) .. T("später", "late") end return string.format("%d min ", -d) .. T("früher", "early") end
 local function minsTo(e) local m = (e - NOW) // 60; if m < 0 then m = 0 end return m end
 local function modeDb(p)
 if p == "suburban" or p == "regional" or p == "regionalExpress" or p == "national" or p == "nationalExpress" then return SUB end
@@ -1098,7 +1100,7 @@ thickRR(cx, cy, cw, chh, 8, color.BLACK)
 textC(cx + cw // 2, cy + 23, clk, "normal")
 end
 local dl = g.delays[t]
-if dl ~= 0 then textC(cx + cw // 2, ty + 154, string.format("%+d", dl), "normal", dl > 0 and color.RED or color.GREEN) end
+if dl ~= 0 then textC(cx + cw // 2, ty + 154, dShort(dl), "normal", dl > 0 and color.RED or color.GREEN) end
 end
 drawnT = drawnT + 1
 end
@@ -1122,7 +1124,7 @@ textR(cntR, ry + 52, T("Minuten", "minutes"), "small")
 badge(bx, ry + 17, x.line, x.mode, true)
 draw.text(dx, ry + 39, fit(x.dest, re - 130 - dx, "medium"), "medium", color.BLACK)
 textR(re, ry + 34, T("ab ", "at ") .. clock(le), "normal")
-if x.delay ~= 0 then textR(re, ry + 54, string.format("%+d", x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+if x.delay ~= 0 then textR(re, ry + 54, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
 end
 footer(shown, #d.list, "Abfahrten", "departures", prov)
 end
@@ -1141,7 +1143,7 @@ badge(MX, ry + 8, x.line, x.mode, false)
 draw.text(74, base, fit(x.dest, 420, "normal"), "normal", color.BLACK)
 local le = leave(x.when)
 textR(re - 216, base, clock(le), "normal")
-if x.delay ~= 0 then textR(re - 150, base, string.format("%+d", x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+if x.delay ~= 0 then textR(re - 150, base, dShort(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
 textR(re, base, minsTo(le) .. " min", "normal")
 end
 footer(shown, #d.list, "Abfahrten", "departures", prov)
@@ -1199,7 +1201,7 @@ local m = minsTo(leave(f.when))
 draw.rect(boxX, boxY, boxW, boxH, color.ACCENT, true, 12)
 textC(boxX + boxW // 2, boxY + 56, tostring(m), "large", color.ACCENT_INK)
 local sub = T("Minuten", "minutes")
-if f.delay ~= 0 then sub = sub .. " \194\183 " .. string.format("%+d", f.delay) end
+if f.delay ~= 0 then sub = sub .. " \194\183 " .. dLong(f.delay) end
 textC(boxX + boxW // 2, boxY + 76, sub, "small", color.ACCENT_INK)
 if #hero.conns > 1 then chips(boxX, boxY + boxH + 8, hero.conns, 2, 100, 32, 12, false, re - 22, 2) end
 timeline(tx, hy + 120, f, boxX - 16 - tx)
@@ -1266,7 +1268,7 @@ if meta ~= "" then draw.text(MX, by + 110, fit(meta, splitX - 24 - MX, "small"),
 local le = leave(c.when)
 local cnt = minsTo(le) .. " min"
 draw.text(tx, by + 34, cnt, "large", color.BLACK)
-if c.delay ~= 0 then draw.text(tx + draw.measure(cnt, "large") + 10, by + 34, string.format("%+d", c.delay), "normal", c.delay > 0 and color.RED or color.GREEN) end
+if c.delay ~= 0 then draw.text(tx + draw.measure(cnt, "large") + 10, by + 34, dShort(c.delay), "normal", c.delay > 0 and color.RED or color.GREEN) end
 draw.text(tx, by + 60, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
 local nx = nextTimes(r, " \194\183 ", T("dann ", "then "))
 if nx then draw.text(tx, by + 84, fit(nx, re - tx, "small"), "small", color.BLACK) end
@@ -1336,7 +1338,7 @@ local le = leave(c.when)
 local m = minsTo(le)
 local dur = c.arr > c.when and (c.arr - c.when) // 60 or 0
 local info = T("ab ", "dep ") .. clock(le) .. (c.arr > 0 and (" - " .. T("an ", "arr ") .. clock(c.arr)) or "") .. (dur > 0 and (" \194\183 " .. dur .. T(" Min", " min")) or "")
-local dl = c.delay ~= 0 and string.format("%+d", c.delay) or nil
+local dl = c.delay ~= 0 and dShort(c.delay) or nil
 local dc = c.delay > 0 and color.RED or color.GREEN
 local meta, dis = metaText(c, true), disruptLine(c)
 if c.dest ~= "" then meta = T("Ziel: ", "Dest: ") .. c.dest .. (meta ~= "" and (" \194\183 " .. meta) or "") end

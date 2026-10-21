@@ -6,8 +6,8 @@
     "en": "Your task lists from Todoist, iCloud and Nextcloud"
   },
   "description": {
-    "de": "Zeigt deine offenen Aufgaben auf dem Display: aus Todoist, den iCloud-Erinnerungen, Nextcloud oder jedem anderen CalDAV-Server, bis zu drei Quellen gleichzeitig, jede mit eigener Farbe. Überfällige Aufgaben stehen oben und sind rot, Fälligkeit und Uhrzeit werden ausgeschrieben, Priorität, Projekt, Labels und Beschreibung erscheinen auf den Detailkarten. Drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget gehören dazu. Alle Zugangsdaten stellst du hier im Store ein.",
-    "en": "Shows your open tasks on the display: from Todoist, iCloud Reminders, Nextcloud or any other CalDAV server, up to three sources at once, each in its own color. Overdue tasks come first in red, due dates and times are written out, and priority, project, labels and description appear on the detail cards. Three layouts (Bento, Slate, Nano) and a dashboard widget are included. You set up all credentials here in the Store."
+    "de": "Zeigt deine offenen Aufgaben aus Todoist, iCloud-Erinnerungen oder Nextcloud, bis zu drei Quellen gleichzeitig. Überfällige Aufgaben stehen oben in Rot. Zugangsdaten gibst du im Store ein. Mit drei Stilen und Widget.",
+    "en": "Shows your open tasks from Todoist, iCloud Reminders or Nextcloud, up to three sources at once. Overdue tasks appear on top in red. Enter your login in the Store. Three styles and a widget."
   },
   "features": {
     "de": [

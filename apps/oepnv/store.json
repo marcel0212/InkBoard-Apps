@@ -6,8 +6,8 @@
     "en": "Departures of your stop and favourite routes with real time"
   },
   "description": {
-    "de": "Zeigt die nächsten Abfahrten einer Haltestelle mit Linienfarben, Fahrtziel, Countdown und Verspätung sowie bis zu sechs Lieblingsrouten mit Zeitstrahl: Umstiege, Gleise, Fußwege, Ankunftszeit und Störungen. Mit eingestellter Wegezeit zeigt die App, wann du losgehen musst. Anbieter: HVV Geofox (vollständige HVV-Echtzeitdaten, eigener Zugang nötig), Transitous (bundesweit ohne Anmeldung) oder der DB-Dienst v6.db.transport.rest. Zwei Seiten (Abfahrten, Routen) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget für Abfahrten oder Routen.",
-    "en": "Shows the next departures of a stop with line colours, destination, countdown and delay, plus up to six favourite routes with a timeline: transfers, platforms, walks, arrival time and disruptions. With a walking time set, the app shows when you have to leave. Providers: HVV Geofox (complete HVV real-time data, own access required), Transitous (nationwide without sign-up) or the DB service v6.db.transport.rest. Two pages (departures, routes) in three layouts (Bento, Slate, Nano) and a dashboard widget for departures or routes."
+    "de": "Zeigt die nächsten Abfahrten deiner Haltestelle mit Linie, Ziel, Countdown und Verspätung. Dazu bis zu sechs Lieblingsrouten. Die Wegezeit sagt dir, wann du losgehen musst. Mit drei Stilen und Widget.",
+    "en": "Shows the next departures at your stop with line, destination, countdown and delay. Plus up to six favorite routes. Your walking time tells you when to leave. Three styles and a widget."
   },
   "features": {
     "de": [

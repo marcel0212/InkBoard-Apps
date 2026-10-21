@@ -6,8 +6,8 @@
     "en": "The plan for the week, for everyone at home"
   },
   "description": {
-    "de": "Ein Wochenplan mit Kalenderwochen: Für jeden Wochentag beliebige Einträge (Essen, Training, Aufgaben, Termine), optional mit Person und Farbpunkt - jede Woche wiederkehrend oder nur für eine bestimmte KW. Eingabe bequem per Handy (QR-Code auf dem Display) oder aus den App-Details (Einträge bearbeiten), Anzeige als Wochenübersicht, als Seite „Heute“ und als Dashboard-Widget. Drei Stile (Bento, Slate, Nano). Mit externem Speicher zeigen alle InkBoards im Netzwerk denselben Plan (der neuere Eintrag gewinnt), ohne Speicher arbeitet er nur auf diesem Gerät.",
-    "en": "A weekly plan with calendar weeks: for each weekday any entries (meals, training, chores, appointments), optionally with a person and color dot - repeating every week or only for a specific week. Enter them comfortably from your phone (QR code on the display) or from the app details (Edit entries), shown as a week overview, a “Today” page and a dashboard widget. Three styles (Bento, Slate, Nano). With external storage all InkBoards in the network show the same plan (newer entry wins); without storage it only works on this device."
+    "de": "Ein Wochenplan mit Einträgen für jeden Tag, zum Beispiel Essen, Training oder Termine, wahlweise mit Person und Farbe. Du trägst alles per Handy ein (QR-Code). Mit Speicher sehen alle InkBoards denselben Plan. Mit drei Stilen und Widget.",
+    "en": "A weekly planner with entries for each day, such as meals, training or appointments, optionally with person and color. Enter everything on your phone (QR code). With storage, all InkBoards show the same plan. Three styles and a widget."
   },
   "features": {
     "de": [

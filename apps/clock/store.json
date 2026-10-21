@@ -6,8 +6,8 @@
     "en": "Digital clock with date and calendar week"
   },
   "description": {
-    "de": "Große Digitaluhr mit Datum und Kalenderwoche in drei Stilen: Bento, Slate und Nano. Die Uhr ist eine Standard-App: Sie lässt sich nicht entfernen und erscheint in der Rotation nur, solange in den Einstellungen die Uhrzeit-Anzeige aktiv ist. Format (12 oder 24 Stunden) und Akzentfarbe folgen den Geräteeinstellungen. Dazu gibt es ein passendes Dashboard-Widget.",
-    "en": "Large digital clock with date and calendar week in three styles: Bento, Slate and Nano. The clock is a standard app: it cannot be removed and only appears in the rotation while the time display is enabled in the settings. The format (12 or 24 hours) and accent color follow the device settings. A matching dashboard widget is included."
+    "de": "Große Uhr mit Datum und Kalenderwoche in drei Stilen. Die Uhr gehört fest zum Gerät und kann nicht entfernt werden. Zeitformat und Farbe übernimmt sie aus den Einstellungen. Mit passendem Widget.",
+    "en": "Large clock with date and week number in three styles. The clock is built in and cannot be removed. Time format and color come from your settings. Includes a matching widget."
   },
   "features": {
     "de": [

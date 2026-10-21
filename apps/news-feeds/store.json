@@ -6,8 +6,8 @@
     "en": "Headlines from your RSS feeds"
   },
   "description": {
-    "de": "Zeigt aktuelle Schlagzeilen in vier Kategorien (Allgemein, Wirtschaft, Sport, Technik). Je Kategorie wählst du bis zu zwei bekannte Feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) und kannst eine eigene Feed-Adresse ergänzen. Drei Darstellungen (Slate, Bento, Nano) und ein Dashboard-Widget gehören dazu. Alles stellst du hier im Store ein.",
-    "en": "Shows current headlines in four categories (General, Business, Sports, Tech). For each category you pick up to two well-known feeds (Tagesschau, ZEIT ONLINE, Kicker, Heise, Golem) and can add your own feed address. Three layouts (Slate, Bento, Nano) and a dashboard widget are included. You set everything up here in the Store."
+    "de": "Zeigt aktuelle Schlagzeilen in vier Themen: Allgemein, Wirtschaft, Sport und Technik. Du wählst bekannte Nachrichtenseiten oder trägst eine eigene Adresse ein. Alles stellst du im Store ein. Mit drei Stilen und Widget.",
+    "en": "Shows current headlines in four topics: general, business, sport and tech. Pick well-known news sites or enter your own address. You set everything in the Store. Three styles and a widget."
   },
   "features": {
     "de": [

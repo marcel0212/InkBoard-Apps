@@ -26,7 +26,7 @@ local CATALOG = {
   ["LTC/EUR"] = "Litecoin",
 }
 
--- Ohne eigene Eintraege laufen diese Listen (damit nach dem Eintragen des API-Keys sofort etwas erscheint)
+-- Ohne eigene Eintraege laufen diese Listen (damit nach dem Eintragen des Zugangsschlüssels sofort etwas erscheint)
 local DEFAULTS = {
   { "DAX", "SPX", "AAPL", "MSFT", "SAP" },
   { "BTC/EUR", "ETH/EUR", "SOL/EUR" },
@@ -373,7 +373,7 @@ local function emptyState(ctx, p, items)
   local where = en and "Store -> Stocks & Crypto -> Settings" or "Store -> Aktien & Krypto -> Einstellungen"
   local key = ctx.cfg.apiKey
   if type(key) ~= "string" or trim(key) == "" then
-    notice("gear", en and "No Twelve Data API key set." or "Kein Twelve-Data-API-Key hinterlegt.", where)
+    notice("gear", en and "Your access key from twelvedata.com is missing." or "Es fehlt noch dein Zugangsschlüssel von twelvedata.com.", where)
     return true
   end
   if #items > 0 then return false end
@@ -386,13 +386,13 @@ local function emptyState(ctx, p, items)
   if st == nil then
     notice("clock", en and "Loading ..." or "Wird geladen ...")
   elseif st == "badkey" then
-    notice("warning", en and "API key rejected." or "API-Key abgelehnt.", where)
+    notice("warning", en and "The access key does not work." or "Der Zugangsschlüssel passt nicht.", where)
   elseif st == "limit" then
-    notice("warning", en and "Request limit reached." or "Abruflimit erreicht.", en and "Retrying shortly." or "Nächster Versuch in Kürze.")
+    notice("warning", en and "Too many requests." or "Zu viele Abfragen.", en and "Trying again soon." or "Das Display versucht es gleich noch einmal.")
   elseif st == "ok" then
     notice("clock", en and "Loading ..." or "Wird geladen ...", en and "More symbols follow with the next update." or "Weitere Symbole folgen beim nächsten Abruf.")
   else
-    notice("warning", en and "Fetch failed." or "Abruf fehlgeschlagen.", en and "Retrying shortly." or "Nächster Versuch in Kürze.")
+    notice("warning", en and "Could not load the prices." or "Die Kurse konnten nicht geladen werden.", en and "Trying again soon." or "Das Display versucht es gleich noch einmal.")
   end
   return true
 end
@@ -447,7 +447,7 @@ local function drawFlat(ctx, items)
   end
   if truncated then
     draw.text(W // 2, y + shown * rowH + 12,
-      en and ("+" .. (#items - shown) .. " more (see Nano)") or ("+" .. (#items - shown) .. " weitere (siehe Nano-Stil)"),
+      en and ("+" .. (#items - shown) .. " more (all shown in Nano style)") or ("+" .. (#items - shown) .. " weitere (alle im Nano-Stil)"),
       "small", color.BLACK, "center")
   end
 end

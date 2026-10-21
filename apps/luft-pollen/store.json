@@ -6,8 +6,8 @@
     "en": "Air quality, UV, pollen – and whether to open the window now"
   },
   "description": {
-    "de": "Die Luft draußen auf einen Blick: europäischer Luftqualitätsindex, Feinstaub, UV-Index und Pollenflug (Erle, Birke, Gräser, Beifuß, Ambrosia, Olive) am Standort deines InkBoards (Daten von Open-Meteo/CAMS, ohne Konto). Die Seite „Lüften“ ist der Fenster-auf-Entscheider: Sie vergleicht den CO2-Wert in deinen Räumen mit der Außenluft und sagt „Jetzt lüften“, „Kurz stoßlüften“ oder „Fenster zu lassen“ – auf Wunsch mit Rücksicht auf deine Pollenallergie. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget. Braucht den Wetter-Ort in den Geräteeinstellungen; Pollendaten gibt es nur in Europa und während der Saison.",
-    "en": "Outdoor air at a glance: European air quality index, particulates, UV index and pollen (alder, birch, grasses, mugwort, ragweed, olive) at your InkBoard's location (data from Open-Meteo/CAMS, no account needed). The “Ventilate” page is the open-the-window decider: it compares the CO2 level in your rooms with the outdoor air and says “Ventilate now”, “Short burst” or “Keep windows closed” – optionally taking your pollen allergy into account. Three styles (Bento, Slate, Nano) and a dashboard widget. Needs the weather location in the device settings; pollen data covers Europe during the season only."
+    "de": "Zeigt die Luft draußen: Luftqualität, Feinstaub, UV-Index und Pollen. Die Seite „Lüften“ sagt dir, ob du jetzt das Fenster öffnen solltest. Ohne Anmeldung nutzbar. Mit drei Stilen und Widget.",
+    "en": "Shows the outdoor air: air quality, fine dust, UV index and pollen. The “Ventilate” page tells you whether to open the window now. No sign-up needed. Three styles and a widget."
   },
   "features": {
     "de": [

@@ -35,12 +35,12 @@
         "en": "Twelve Data access"
       },
       "help": {
-        "de": "1. Auf twelvedata.com kostenlos registrieren\n2. Im Dashboard den API-Key kopieren und hier einfügen\nDer kostenlose Tarif erlaubt 8 Abrufe pro Minute und etwa 800 pro Tag. Dabei holt das Paket pro Abruf nur einen Teil der Symbole (jedes kostet einen Abruf für den Kurs und einen für den Verlauf) und arbeitet die Liste nach und nach durch. Mit einem bezahlten Tarif werden alle Symbole bei jedem Abruf aktualisiert.",
-        "en": "1. Sign up for free at twelvedata.com\n2. Copy the API key from the dashboard and paste it here\nThe free plan allows 8 requests per minute and about 800 per day. The package then updates only some symbols per fetch (each costs one request for the quote and one for the history) and works through the list step by step. On a paid plan all symbols update on every fetch."
+        "de": "1. Auf twelvedata.com kostenlos registrieren\n2. Im Dashboard den Zugangsschlüssel kopieren und hier einfügen\nDer kostenlose Tarif erlaubt 8 Abrufe pro Minute und etwa 800 pro Tag. Dabei holt das Paket pro Abruf nur einen Teil der Symbole (jedes kostet einen Abruf für den Kurs und einen für den Verlauf) und arbeitet die Liste nach und nach durch. Mit einem bezahlten Tarif werden alle Symbole bei jedem Abruf aktualisiert.",
+        "en": "1. Sign up for free at twelvedata.com\n2. Copy the access key from the dashboard and paste it here\nThe free plan allows 8 requests per minute and about 800 per day. The package then updates only some symbols per fetch (each costs one request for the quote and one for the history) and works through the list step by step. On a paid plan all symbols update on every fetch."
       },
       "helpTitle": {
-        "de": "API-Key holen",
-        "en": "Get an API key"
+        "de": "Zugangsschlüssel holen",
+        "en": "Get an access key"
       },
       "helpUrl": "https://twelvedata.com/register"
     },
@@ -73,8 +73,8 @@
       "type": "password",
       "maxLen": 64,
       "label": {
-        "de": "Twelve-Data-API-Key",
-        "en": "Twelve Data API key"
+        "de": "Twelve-Data-Zugangsschlüssel",
+        "en": "Twelve Data access key"
       },
       "section": "access"
     },

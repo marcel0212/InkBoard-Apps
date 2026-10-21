@@ -838,10 +838,10 @@ function on_action(ctx, name)
     end)
   else
     local key = clean(ctx.cfg.apiKey or "", 80)
-    if key == "" then return fail("Zuerst den football-data.org-API-Key eintragen.", "Enter the football-data.org API key first.") end
+    if key == "" then return fail("Zuerst den football-data.org-Zugangsschlüssel eintragen.", "Enter the football-data.org access key first.") end
     local body, err = fdGet("competitions/" .. code .. "/teams", key, 40000, { "id", "name", "shortName" }, { "area", "season", "competition", "filters" })
     if not body then
-      if err == "key" then return fail("API-Key ungültig oder Liga nicht im Tarif.", "API key invalid or league not in your plan.") end
+      if err == "key" then return fail("Zugangsschlüssel ungültig oder Liga nicht im Tarif.", "access key invalid or league not in your plan.") end
       return fail("Vereinsliste konnte nicht geladen werden.", "Club list could not be loaded.")
     end
     local arr = body:match('"teams":(%b[])')
@@ -942,8 +942,8 @@ local ERR = {
   nomatch = { "Noch keine Spiele für diese Saison.", "No matches for this season yet." },
   time = { "Uhrzeit noch nicht synchronisiert.", "Time not synced yet." },
   noteam = { "Verein nicht gefunden (Liga gewechselt?).", "Club not found (league changed?)." },
-  key = { "API-Key ungültig oder Liga nicht im Tarif?", "API key invalid or league not in your plan?" },
-  nokey = { "Kein API-Key hinterlegt.", "No API key set." },
+  key = { "Zugangsschlüssel ungültig oder Liga nicht im Tarif?", "access key invalid or league not in your plan?" },
+  nokey = { "Kein Zugangsschlüssel hinterlegt.", "No access key set." },
   rate = { "Anfragelimit erreicht.", "Rate limit reached." },
 }
 
@@ -951,7 +951,7 @@ local ERR = {
 local function emptyState(ctx, lg)
   local hint = T("Einstellungen der App „Fußball“", "Settings of the “Football” app")
   if not lg.o and clean(ctx.cfg.apiKey or "", 80) == "" then
-    notice("gear", T("Kein football-data.org-API-Key hinterlegt.", "No football-data.org API key set."), hint)
+    notice("gear", T("Kein football-data.org-Zugangsschlüssel hinterlegt.", "No football-data.org access key set."), hint)
     return true
   end
   if clean(ctx.cfg.team or "", 60) == "" then

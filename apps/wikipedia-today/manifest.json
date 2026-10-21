@@ -4,7 +4,7 @@
     "de": "Was geschah heute",
     "en": "On this day"
   },
-  "version": "1.0.6",
+  "version": "1.0.8",
   "apiLevel": 8,
   "pages": [
     {
@@ -24,7 +24,8 @@
       "de.wikipedia.org",
       "en.wikipedia.org",
       "byabbe.se",
-      "api.mymemory.translated.net"
+      "api.mymemory.translated.net",
+      "translate.googleapis.com"
     ]
   },
   "settings": [

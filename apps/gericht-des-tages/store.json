@@ -6,8 +6,8 @@
     "en": "A random Chefkoch recipe every day"
   },
   "description": {
-    "de": "Lost täglich ein zufälliges Rezept bei Chefkoch aus: Name, Ernährungsart (Fleisch, Fisch, vegetarisch, vegan), Portionen und Zeit, dazu Zutaten (auf deine Portionenzahl umgerechnet), Zubereitung und Nährwerte. Ein QR-Code führt zur Rezeptseite.",
-    "en": "Draws a random Chefkoch recipe every day: name, diet (meat, fish, vegetarian, vegan), servings and time, plus ingredients scaled to your servings, instructions and nutrition facts. A QR code leads to the recipe page."
+    "de": "Zeigt jeden Tag ein zufälliges Rezept von Chefkoch mit Zutaten, Zubereitung und Nährwerten. Die Zutaten rechnet die App auf deine Portionen um. Ein QR-Code führt zur Rezeptseite.",
+    "en": "Shows a random recipe from Chefkoch every day with ingredients, steps and nutrition. The app scales ingredients to your servings. A QR code leads to the recipe page."
   },
   "features": {
     "de": [

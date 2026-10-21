@@ -6,8 +6,8 @@
     "en": "This InkBoard's state at a glance, with traffic lights"
   },
   "description": {
-    "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr (gestellt?), WLAN-Stärke, Akku bzw. Netzbetrieb, externer Speicher (letzter erfolgreicher Upload oder seit wann er scheitert), freier Arbeitsspeicher sowie Firmware-Version und Laufzeit. Jede Zeile hat eine Ampel; oben fasst ein Band zusammen, ob alles gut ist oder wie viele Hinweise und Probleme es gibt. Ohne Rechner und ohne Einstellungen, ideal bei Problemen wie falscher Uhrzeit oder fehlenden Logs. Braucht Firmware ab Build 736.",
-    "en": "Shows on one page whether everything is fine with the device: clock (set?), Wi-Fi strength, battery or mains power, external storage (last successful upload or since when it fails), free memory, plus firmware version and uptime. Each row has a traffic light; a band on top sums up whether all is good or how many notices and problems there are. No computer and no settings needed, ideal for problems like a wrong time or missing logs. Needs firmware build 736 or later."
+    "de": "Zeigt auf einer Seite, ob mit dem Gerät alles in Ordnung ist: Uhr, WLAN, Akku, Speicher und Firmware. Jede Zeile hat eine Ampel. Oben steht, ob alles gut ist. Eine Hilfe bei Problemen, ohne Einstellungen.",
+    "en": "Shows on one page whether everything is fine with your device: clock, Wi-Fi, battery, storage and firmware. Each row has a traffic light. The top says if all is well. A help for problems, no settings needed."
   },
   "features": {
     "de": [

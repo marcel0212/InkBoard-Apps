@@ -4,7 +4,7 @@
     "de": "Wort des Tages",
     "en": "Word of the day"
   },
-  "version": "1.3.7",
+  "version": "1.4.0",
   "apiLevel": 1,
   "pages": [
     {
@@ -22,7 +22,8 @@
   "permissions": {
     "net": [
       "www.merriam-webster.com",
-      "api.mymemory.translated.net"
+      "api.mymemory.translated.net",
+      "translate.googleapis.com"
     ]
   },
   "settings": [

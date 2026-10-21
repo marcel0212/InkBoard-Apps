@@ -656,7 +656,7 @@ local ERR_EN = {
 local function errText(code, en)
   local t = en and ERR_EN or ERR_DE
   if code == "net" and lastNetErr ~= "" then return t.net .. " (" .. lastNetErr .. ")" end
-  return t[code] or ((en and "Server error " or "Serverfehler ") .. code:gsub("^srv", ""))
+  return t[code] or ((en and "The server reports a problem (code " or "Der Server meldet ein Problem (Code ") .. code:gsub("^srv", "") .. ")")
 end
 
 -- Knopf "Verbinden" im Einstellungsformular (manifest settings[].action): prueft die Zugangsdaten und liefert die

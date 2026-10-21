@@ -34,12 +34,12 @@
         "en": "API access"
       },
       "help": {
-        "de": "1. Auf creativecommons.tankerkoenig.de kostenlos registrieren\n2. Den API-Key aus der E-Mail hier einfügen\nDer Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten).",
-        "en": "1. Sign up for free at creativecommons.tankerkoenig.de\n2. Paste the API key from the e-mail here\nThe location comes from the device settings (weather location)."
+        "de": "1. Auf creativecommons.tankerkoenig.de kostenlos registrieren\n2. Den Zugangsschlüssel aus der E-Mail hier einfügen\nDer Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten).",
+        "en": "1. Sign up for free at creativecommons.tankerkoenig.de\n2. Paste the access key from the e-mail here\nThe location comes from the device settings (weather location)."
       },
       "helpTitle": {
-        "de": "API-Key holen",
-        "en": "Get an API key"
+        "de": "Zugangsschlüssel holen",
+        "en": "Get an access key"
       },
       "helpUrl": "https://creativecommons.tankerkoenig.de"
     },
@@ -57,8 +57,8 @@
       "type": "password",
       "maxLen": 64,
       "label": {
-        "de": "Tankerkönig-API-Key",
-        "en": "Tankerkoenig API key"
+        "de": "Tankerkönig-Zugangsschlüssel",
+        "en": "Tankerkoenig access key"
       },
       "section": "access"
     },

@@ -6,8 +6,8 @@
     "en": "Your club: next match, results and league table"
   },
   "description": {
-    "de": "Zeigt deinen Lieblingsverein: das nächste Spiel mit Wappen, Anstoßzeit und Live-Stand, die letzten Ergebnisse mit Sieg/Remis/Niederlage und die komplette Liga-Tabelle mit Zonen (Champions League, Europa, Abstieg) und S/U/N, Tore, Punkten. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal kommen ohne Schlüssel von OpenLigaDB (der Pokal hat keine Tabelle, nur Spiele). Premier League, La Liga, Serie A, Ligue 1 und weitere Ligen kommen von football-data.org mit kostenlosem API-Schlüssel. Zwei Seiten (Team, Liga-Tabelle) in drei Darstellungen (Bento, Slate, Nano) und ein Dashboard-Widget „Nächstes Spiel“ mit Live-Stand.",
-    "en": "Shows your favourite club: the next match with crests, kick-off time and live score, the latest results with win/draw/loss and the full league table with zones (Champions League, Europe, relegation) and W/D/L, goals and points. Bundesliga, 2. Bundesliga, 3. Liga and the DFB-Pokal come from OpenLigaDB without a key (the cup has no table, only matches). Premier League, La Liga, Serie A, Ligue 1 and more leagues come from football-data.org with a free API key. Two pages (team, league table) in three layouts (Bento, Slate, Nano) and a \"Next match\" dashboard widget with live score."
+    "de": "Zeigt deinen Lieblingsverein: nächstes Spiel, letzte Ergebnisse und die Tabelle. Bundesliga, 2. Bundesliga, 3. Liga und DFB-Pokal gehen ohne Anmeldung. Andere Ligen brauchen einen kostenlosen Schlüssel. Mit drei Stilen und Widget.",
+    "en": "Shows your favorite club: next match, recent results and the table. Bundesliga, 2. Bundesliga, 3. Liga and DFB-Pokal work without sign-up. Other leagues need a free key. Three styles and a widget."
   },
   "features": {
     "de": [

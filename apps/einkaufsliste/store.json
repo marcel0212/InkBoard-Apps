@@ -2,17 +2,17 @@
   "category": "info",
   "author": "InkBoard",
   "tagline": {
-    "de": "Gemeinsame Einkaufsliste: per Handy füllen, am Drehrad abhaken",
+    "de": "Gemeinsame Einkaufsliste: per Handy füllen, am Drehknopf abhaken",
     "en": "Shared shopping list: fill by phone, tick off with the dial"
   },
   "description": {
-    "de": "Die Einkaufsliste für alle InkBoards im Netzwerk. Per QR-Code öffnet sich eine Handy-Seite im Heimnetz, auf der du Dinge hinzufügst, abhakst und löschst. Am Gerät wählst du mit dem Drehrad einen Eintrag und hakst ihn per Klick ab. Mit externem Speicher (FTP, WebDAV oder Google Drive) zeigen alle InkBoards im selben Ordner dieselbe Liste; ohne Speicher arbeitet sie nur lokal. Erledigte Einträge verschwinden nach einstellbarer Zeit. Drei Stile (Bento, Slate, Nano) und ein Dashboard-Widget mit den offenen Einträgen. Braucht Firmware ab Build 663.",
-    "en": "The shopping list for all InkBoards in your network. A QR code opens a phone page on your home network where you add, tick off and delete items. On the device you pick an entry with the dial and tick it off with a click. With external storage (FTP, WebDAV or Google Drive) all InkBoards using the same folder show the same list; without storage it works locally only. Done items disappear after a configurable time. Three styles (Bento, Slate, Nano) and a dashboard widget with the open items. Needs firmware build 663 or later."
+    "de": "Die Einkaufsliste für alle deine InkBoards. Mit dem Handy scannst du den QR-Code und fügst Dinge hinzu oder hakst sie ab. Am Gerät wählst du mit dem Drehknopf einen Eintrag. Mit drei Stilen und einem Widget.",
+    "en": "The shopping list for all your InkBoards. Scan the QR code with your phone to add or tick off items. On the device, choose an item with the knob. Three styles and a widget."
   },
   "features": {
     "de": [
       "Eingabe per Handy-Seite (QR-Code)",
-      "Abhaken per Drehrad und Klick",
+      "Abhaken per Drehknopf und Klick",
       "Gleiche Liste auf allen InkBoards (mit externem Speicher)",
       "Drei Stile und Dashboard-Widget"
     ],
@@ -48,7 +48,7 @@
       "kind": "display",
       "file": "preview-select.svg",
       "caption": {
-        "de": "Abhaken am Drehrad",
+        "de": "Abhaken am Drehknopf",
         "en": "Ticking off with the dial"
       },
       "page": 0
