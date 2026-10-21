@@ -85,6 +85,27 @@ function on_fetch(ctx)
   end
   local wordDe, defDe, exDe, failKind
   wordDe, failKind = tryTranslate(word)
+  -- Ein einzelnes Wort ohne Zusammenhang kommt oft unveraendert zurueck ("jilt" -> "Jilt"). Dann mit Wortart fragen:
+  -- Verben beginnen bei Merriam-Webster mit "to ..." ("to jilt" -> "zu verlassen" -> "verlassen"), Nomen mit "a/an ...".
+  if wordDe and wordDe:lower() == word:lower() and #word > 2 then
+    local dl = def:lower()
+    local prefix, strip
+    if dl:sub(1, 3) == "to " then
+      prefix, strip = "to ", { "zu " }
+    elseif dl:sub(1, 2) == "a " or dl:sub(1, 3) == "an " then
+      prefix, strip = "a ", { "ein ", "eine ", "einen " }
+    end
+    if prefix then
+      local alt = translateText(prefix .. word, "en", "de")
+      if alt then
+        local low = alt:lower()
+        for _, st in ipairs(strip) do
+          if low:sub(1, #st) == st then alt = alt:sub(#st + 1); break end
+        end
+        if alt ~= "" and alt:lower() ~= word:lower() then wordDe = alt end
+      end
+    end
+  end
   if wordDe then
     time.sleep(300)
     defDe, failKind = tryTranslate(def)
