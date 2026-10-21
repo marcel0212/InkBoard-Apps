@@ -95,7 +95,8 @@ function on_fetch(ctx)
   end
   local ok = wordDe ~= nil and defDe ~= nil and (example == "" or exDe ~= nil)
   if not ok then
-    log("Uebersetzung nicht moeglich: " .. tostring(failKind))
+    log("Uebersetzung nicht moeglich: " .. tostring(failKind) .. " / " .. translateLastError())
+    ctx.data.set("trErr", translateLastError())
     wordDe, defDe, exDe = nil, nil, nil
   end
 
@@ -106,6 +107,7 @@ function on_fetch(ctx)
   ctx.data.set("defDe", defDe and capFirst(defDe) or def)
   ctx.data.set("exDe", exDe or example)
   ctx.data.set("tr", ok and "1" or "0")
+  if ok then ctx.data.set("trErr", "") end
   return true
 end
 
@@ -159,6 +161,8 @@ function on_draw(ctx, page)
       draw.text(tx, metaY + 16, "EN -> DE", "small", color.WHITE, "left")
     elseif not translated then
       draw.text(tx, metaY, "Original (Englisch)", "small", color.WHITE, "left")
+      local terr = ctx.data.get("trErr") or ""
+      if terr ~= "" then draw.text(tx, metaY + 16, terr:sub(1, 26), "small", color.WHITE, "left") end
     end
   end
 

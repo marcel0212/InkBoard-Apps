@@ -2979,9 +2979,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "041971e92b66d07ff0f980b915c1bcb411581d925dba0da36e5038e5cc4e454e",
-      "sig": "W61JbmchUx/T+niJOrU6LGYkE64/vovPyhTYHWiJEm4I6Go6ioQn+kV0pPjhKlQVbfickt4Z4Z8YUDkVmldJKt46SuVH6x2b7byciYgBi5zIp+B9iiJMr/o+doOu8rMAP9EvCEXl9T5ivkQlNYHVr+HItzTLge6mXwWSRCjnKNcHo0E2m0QEqC93tcdkQU2Ihw9vYIMbux6klBZNNZUQTiuR4Dk+la0wYH8iamRMV8pm5DG5974jRURYwETkceXwIqqQTFl7hBIh76GojOVQTNtxdvCiWEFt14Tb5Eb+xLPdaXhIghvQo6APo+Nc5FDMEiqPt0u1+nFstZ/QnozhaQ==",
-      "size": 25105
+      "sha256": "8fcad1e4392fddb721b53ddef25c7c07cd389f44ec91f6d83a9111487329dcbd",
+      "sig": "MIgZvLXyDymn/negJbDKb6tJC9/ostaUpc8AamZN8wuVfYJUiKjKUTIO8BRqfkq8y/xduM3rI5xr6onGaInnb7hbq5snZK21LVtvbRxBSocDs2+UzgZhaPxlSrrSJhGzbPIw2mOzP1zGMZtKxtWShyWT5wExCMtEr/dYSs/qhT1a3P/6navcC70HfgeIZQr2Svkt8+cktnbUUqFfHsw9vD3+03Ys2mDXNFJ69zrs66PpRBRomI/UylusHjwpuPRo70JbzchTFfM7FZGErBr5BGBAWUnqBbL5bw0FDM0pJ+cg3HpE7K6bOSsXb64bNZyQ6onlDn9dD8+cvg3Ru1QKRQ==",
+      "size": 25889
     },
     {
       "id": "wochenplan",
@@ -3099,7 +3099,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -3149,9 +3149,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "e6aa1908a9250f9c03b1d2806cbd190cec4f3ccb14037fb70f883a38c45686ef",
-      "sig": "g8Ynn/tsS927JsCx9pWitXm8dnCG6jfZxa0nxhwOShahbaw7t83HVCdCPhhn5GhGgaKfBZP6NXKk6WvtM/oEgMU3jwp52+PPoTBjAO7zOg2g5Qpxmb9tK/JNONFsqOpz1XFYH6dshei3iA6aqa9UlvYrLS/wECio3G1HR5BZqx0jDW5YJ01gW5ZunElSWQViy3JzBpsd8CkyWA6QrJXZF0kr1TePQsyyfBmFKPPc6+19DhuXUCTQWEOwZAjhHxaeALTqvUUE5F6o2qHR1fP8Xz9kZqZpZu9lLvxc4EVzsoTeDrabTlFk729/l7IEKmCRqZlgjBfEmrxU8wtcOQr02g==",
-      "size": 13642
+      "sha256": "f39928c4905b4a07f17021e3a896ff0952687b6aa290c5b27a888364234b55a6",
+      "sig": "s2ESzBQZPd1/B2bDb1TrN5TcHj1R/Kzxe91l9vOs5MDNRQu1ZhrGT8clpT2rO3QXOpzovUWP4r5o3b/mfHkywOJ56rTpBcHvBthT5sg3eVK33mU1AeYhbbfNcotYlZlXIQNIWnrZcxVtsUzbPINxFrB/37fCl5Hsm/z17lu0ZWe8o3d48TrX4APZEaI6BnnJcLa7dTmEkm79t2CHN4ULEMAmr0rDoRqLyWCPMlFpRqIQHNqy21dsl/udxKAKvslB1W2Q842IKBURwXJYZEEcig5Q6OMTNnEq6POnEHFtNkOHASrbDCGGIB8SrLKSpuO6ZTdoWTYGdpNpP96lkAyALA==",
+      "size": 14721
     }
   ]
 }
