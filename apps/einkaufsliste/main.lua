@@ -373,20 +373,33 @@ function on_widget(ctx, box)
     draw.text(cx, box.y + box.h // 2 + 6, T(ctx, "Liste leer", "List empty"), "normal", color.BLACK, "center")
     return
   end
-  if style == "compact" or box.h < 90 then
+  -- CHANGELOG 854: Eintraege immer lesbar zeigen (vorher nur "2 offen" in kleinen/kompakten Widgets). Kleine Boxen: 9pt-Schrift in
+  -- engeren Zeilen; Stil "Kompakt" (und breite Boxen): grosse Zahl links, Eintraege rechts daneben.
+  local small = box.h < 90
+  local lh = small and 19 or 26
+  local font = small and "small" or "normal"
+  local bs = small and 12 or 18
+  local left = 0
+  if style == "compact" and box.w >= 150 and box.h >= 44 then
+    left = 52
+    draw.text(box.x + left // 2, box.y + box.h // 2 + 6, tostring(open), "large", open > 0 and color.BLACK or color.GREEN, "center")
+    draw.text(box.x + left // 2, box.y + box.h // 2 + 22, T(ctx, "offen", "open"), "small", color.BLACK, "center")
+    draw.line(box.x + left + 2, box.y + 8, box.x + left + 2, box.y + box.h - 8, color.BLACK)
+  end
+  local rows = (box.h - 6) // lh
+  if rows < 1 then
     draw.text(cx, box.y + box.h // 2 + 10, tostring(open), "huge", open > 0 and color.BLACK or color.GREEN, "center")
     draw.text(cx, box.y + box.h - 6, T(ctx, "offen", "open"), "small", color.BLACK, "center")
     return
   end
-  local lh = 26
-  local rows = (box.h - 8) // lh
   local shown = 0
+  local tx = box.x + left + 8 + bs + 8
   for i = 1, #v do
     if shown >= rows then break end
     if v[i].st == 0 then
-      local y = box.y + 6 + shown * lh
-      checkbox(box.x + 8, y + 2, 18, false)
-      draw.text(box.x + 36, y + 17, cut(v[i].text, box.w - 48, "normal"), "normal", color.BLACK, "left")
+      local y = box.y + 4 + shown * lh
+      checkbox(box.x + left + 8, y + (lh - bs) // 2, bs, false)
+      draw.text(tx, y + lh // 2 + (small and 4 or 6), cut(v[i].text, box.x + box.w - tx - 8, font), font, color.BLACK, "left")
       shown = shown + 1
     end
   end

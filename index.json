@@ -265,7 +265,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.7",
+      "version": "1.2.0",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -409,9 +409,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "b5fff2bc4d933b0d28dcfac1e1abbedb66aa3f4a06b239b2734f8050c5a98d8d",
-      "sig": "taOgfnYCXnanx+8bo0vJSNsFc1ZT0IuTFb5Y8X14fDgp/qOPZBeIdQTrUwQCnaUQaZkPtA8c3bhK/fjQ5nAG87jF+MPU0XMLYRxbIjij9Lo40clN+pfbcjAC7e34HZtWZAxGfKpGopGjEGCSwLBJxQ6qOph+HqQI+KC/xe49VPagda78n/FQjKPdhzMgt8Pz5m+lYtWDbEQmX4YiZ0znJbQYqGZ3Dm8vuS8e3Tb4dC9lfr/+tLnDWF9WaDJf5d6F3O2AZM6QlLWmjusj4NDoETZckEIsuK1S+QOR+N9oeT21G7t2Wi++binlWCSkGev26OZ1TFB4YZZCrl0+oo6WeA==",
-      "size": 42604
+      "sha256": "9206934ffa16457ba209989f66107ebc909eb79b029f04f28b2063b2dc905b3e",
+      "sig": "t/7BwSfV3XQlQtIH5VDIY0V/QiR3oXfFloWy2/LfHAogx3fdGd19yijvZ+dKXqFMwBs54nspTZe4Ah18F1D/Lx/gUv1+nIHmpzYHzjIjT7/qE+TzTAu7/7IHuo0LVrNnDbMoU/BZ5MheEPgeExIzyiTvDEBYofoXN+h35X4LUIDNSwDILqyyYtU2UXQiFZ5cVC2KJcI0SZNDizR3z1vOM4uXPAAvO38B5RfzwF+QpqT8+j903qyoY2neGYtOIzWdCKNtSwX7QR4rXQR0x6Yz5Jwrulr4gLYXCABMrsjbdPhMOcPqr806+QBp8f4V+MjeOgAXNHMj9oMnvPd9A3fCVw==",
+      "size": 43786
     },
     {
       "id": "clock",
@@ -571,7 +571,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -645,9 +645,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "1ba66f3f93030cdc614e7c1a01337b72175bbd119b002448549f06ad1a5b4240",
-      "sig": "jo7shOi3kfH1XTJaj+mgnPNBeYx0ZQl4c+P3OvHnIxvCQKLbtMS8aCVTacD8UGtsAhEI6gHvBcmLN1t1ZJjuB67QUATYcyshaWHDdEpRU/sYdMIdEueWmzliFEnQERN2D9xpgv61hr8/5KRjkyEb8Xj/tN1IrGKsg3oEgCyRxiKqa24KVIGjGFtf3Jk6IVdT+HFSIfagmdMqqaQ2rJHF9xHwrhIAAiV8efBn5zfzIoLAXPOsdGwOmKd3xLy1/WLPA3WmAxiaNmk0/FXDWp3vzikIQUitduit/AX5121v5x+CecdE6kAAossI6W3wEWzdznmDRkky/ZmiyqolQ1Eh4g==",
-      "size": 25369
+      "sha256": "017ecb2fddb40caf77d01526644154112fe52aeb102254c9178695c5b5c74657",
+      "sig": "mOZIPz1WTWqq8Qe25DkwigKCzLWHrFVlkyvK6vx0rtjAD6x740Fi4u3DH5ZGTkonaxryhU0Z6rWa66KhdbfO2y8P8fq/F9ubP0ZpnVcdf2F1VH8yPTuIurGXGCAu8CPoSw7s4qsXV+dPfXuajiLLHErlV4Gf2qBCQFLircMEKahozt77eprx5zk6XSWQg6PrLUhVHFBDUr7tcCd3GdYwyUbEnlw6C2zAy835Pk3W2P21cUctXEndTfrrrVEdKBumY6M9A3AZ82l8FpPl3HIUI6vWzSN1jKOGw7b9xmwzBgufb2YU8idtFWvtcKGZNuVq6m9wcMSrs1KzHMshsMgTGg==",
+      "size": 26248
     },
     {
       "id": "flight-radar",
@@ -1151,8 +1151,8 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
-      "apiLevel": 27,
+      "version": "1.3.0",
+      "apiLevel": 29,
       "pages": 2,
       "pageNames": [
         {
@@ -1185,6 +1185,7 @@
         ]
       },
       "net": [],
+      "wifiPass": true,
       "icon": "apps/gaeste-wlan/icon.svg",
       "previews": [
         {
@@ -1233,9 +1234,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "4cbd92fb9994dbd697fd47585e15899d616daaf42f3ef0b7e1668629b7f3bff1",
-      "sig": "EOUib48EkjHLMN2XUNqkpOlhLqnZefMuVkJgSpqIJ+3eSjuTP6XTecjPMAZDMSwhPe28aWP/IxLABAcOBB9N5xv/OhTypN1al2/m/7vRIcWLdvmjehiIHxXyJvM6oNA/fqXYgxr3KJmbq19gWdcHMb5+gvzScqlYiTCizmhHStdY3h+x9s4wzRo6o8l6jufQ+uIXCpxN2Y4V3ZCy2EFwq2UtSVledcndRKEG0txtmYpD8hCpXJ1xk0/FLCWhcuDINgsmrjdKxf3VsyPHS+NMjBjdAcfI3Nda8z0W6iCP3Ne6pov830BvckKJ11LjKAL+J3agwkeFv1Dyfmbrla1MSg==",
-      "size": 31237
+      "sha256": "169813a308fd7985794212774f8554516a7c78c20913d5796bc91b0a3a368f28",
+      "sig": "N+2gH/nB6WHlGrovkANrcTPAgCvXtKtkivWaiBW5CybP9zoAzOzCALEzuNrXJL/iRvnUg8rIu1juhZ0oxGbCQn10LvbyJMOw3G/sIsIA5+8b7Pz+qmTo60fjnuVLJnm4l1AD9RCijsMq4Ga7zAMaBNuxTzexxI9It2k1lvWiSWVKtO5SULQe8nDjPeHHWVmT0jRPdu3DQgnED6i5j3K5AMSWZt00QbhHuo6NJ7/PlZD1B/q7AQkPFNr4EFrRokoR3T01BNinh2j3mr80OADEil2y4h3bGulHb4CWXAEmklW+bShdtFXFmEGblDJvFfcaoXjL/KJOwomvla8dhRTQiw==",
+      "size": 31867
     },
     {
       "id": "geraete-check",

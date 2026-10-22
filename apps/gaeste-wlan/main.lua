@@ -88,14 +88,30 @@ local function left_text(ctx, left)
   return string.format(T(ctx, "noch %d Min", "%d min left"), math.max(1, mi))
 end
 
+-- WLAN-Name und -Passwort: Eingabe der Einstellungen, sonst das WLAN des Geraets (Berechtigung wifiPass, CHANGELOG 854)
+local function wifi_ssid(ctx)
+  local s = tostring(ctx.cfg.ssid or "")
+  if s ~= "" then return s end
+  local sys = system.get()
+  return (sys and sys.ssid) or ""
+end
+
+local function wifi_pass(ctx)
+  local p = tostring(ctx.cfg.pass or "")
+  if p ~= "" then return p end
+  local sys = system.get()
+  if sys and sys.pass and sys.ssid == wifi_ssid(ctx) then return sys.pass end
+  return ""
+end
+
 -- WLAN-QR nach dem ueblichen Schema WIFI:T:WPA;S:name;P:passwort;;  (Sonderzeichen \ ; , : " mit Backslash)
 local function wifi_payload(ctx)
-  local ssid = tostring(ctx.cfg.ssid or "")
+  local ssid = wifi_ssid(ctx)
   if ssid == "" then return nil end
   local function esc(s) return (s:gsub('([\\;,:"])', "\\%1")) end
   local sec = tostring(ctx.cfg.sec or "WPA")
   if sec == "nopass" then return "WIFI:T:nopass;S:" .. esc(ssid) .. ";;" end
-  return "WIFI:T:" .. sec .. ";S:" .. esc(ssid) .. ";P:" .. esc(tostring(ctx.cfg.pass or "")) .. ";;"
+  return "WIFI:T:" .. sec .. ";S:" .. esc(ssid) .. ";P:" .. esc(wifi_pass(ctx)) .. ";;"
 end
 
 -- ===== Abruf: Abgleich mit dem externen Speicher =====
@@ -160,7 +176,7 @@ function on_action(ctx, name)
   end
   return {
     ok = true,
-    message = string.format(T(ctx, "Verbunden mit „%s“. Name übernommen - Passwort bitte selbst eintragen (das Gerät kennt es nicht im Klartext).", "Connected to “%s”. Name applied - please enter the password yourself."), ssid),
+    message = string.format(T(ctx, "Verbunden mit „%s“. Name übernommen. Das Passwort des Geräts wird automatisch verwendet, wenn das Passwortfeld leer bleibt.", "Connected to “%s”. Name applied. The device Wi-Fi password is used automatically while the password field stays empty."), ssid),
     options = { { value = ssid, label = ssid } },
   }
 end
@@ -183,7 +199,7 @@ local function state_json(ctx, m)
   for i = 1, #rules do rj[i] = '"' .. esc(rules[i]) .. '"' end
   return string.format('{"active":%s,"left":%d,"always":%s,"welcome":"%s","rules":[%s],"ssid":"%s","sync":"%s"}',
     tostring(active), left or -1, tostring(ctx.cfg.always and true or false), esc(val(m, "welcome")), table.concat(rj, ","),
-    esc(ctx.cfg.ssid or ""), esc(ctx.data.get("sync") or "local"))
+    esc(wifi_ssid(ctx)), esc(ctx.data.get("sync") or "local"))
 end
 
 function on_http(ctx, req)
@@ -269,8 +285,8 @@ local function page_wifi(ctx)
     draw.text(W // 2, y0 + 180, T(ctx, "In den App-Einstellungen eintragen", "Enter it in the app settings"), "normal", color.BLACK, "center")
     return
   end
-  local ssid = tostring(ctx.cfg.ssid)
-  local pass = tostring(ctx.cfg.pass or "")
+  local ssid = wifi_ssid(ctx)
+  local pass = wifi_pass(ctx)
   local open = (ctx.cfg.sec == "nopass")
   local lt = left_text(ctx, left)
   if style == "compact" then

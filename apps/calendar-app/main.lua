@@ -849,7 +849,33 @@ draw.text(x + 12, top + 16, msg, "small", color.BLACK, "left")
 end
 return
 end
-local function pass(doDraw, gapExtra)
+local function wrapLines(str, w, font, maxLines)
+local lines, rest = {}, str
+while rest ~= "" do
+if #lines == maxLines - 1 or draw.measure(rest, font) <= w then
+lines[#lines + 1] = fit(rest, w, font)
+break
+end
+local cutAt = nil
+for q = 1, #rest do
+if rest:sub(q, q) == " " then
+if draw.measure(rest:sub(1, q - 1), font) <= w then cutAt = q else break end
+end
+end
+if cutAt then
+lines[#lines + 1] = rest:sub(1, cutAt - 1)
+rest = rest:sub(cutAt + 1)
+else
+lines[#lines + 1] = fit(rest, w, font)
+break
+end
+end
+if #lines == 0 then lines[1] = "" end
+return lines
+end
+local function pass(doDraw, gapExtra, wrap, auto)
+local showTime = cfg.wTime == true or auto
+local showLoc = cfg.wLocation == true or auto
 local y = top + 4
 local i = 1
 local groups, cnt = 0, 0
@@ -868,16 +894,19 @@ local lineC = e0.c
 local tf = tier("normal", shift)
 while i <= #list and list[i].k == dayK and ey <= maxY do
 local e = list[i]
-if doDraw then draw.text(tX, ey, fit(e.title, x + box.w - tX - 6, tf), tf, color.BLACK, "left") end
-ey = ey + 8
-if cfg.wTime == true and not e.ad and ey + 12 <= maxY then
+local tl = wrap and wrapLines(e.title, x + box.w - tX - 6, tf, 2) or { fit(e.title, x + box.w - tX - 6, tf) }
+for li = 1, #tl do
+if doDraw then draw.text(tX, ey + (li - 1) * 15, tl[li], tf, color.BLACK, "left") end
+end
+ey = ey + (#tl - 1) * 15 + 8
+if showTime and not e.ad and ey + 12 <= maxY then
 if doDraw then
 glyphClock(tX + 6, ey + 5)
 draw.text(tX + 16, ey + 9, fmtTime(e.hh, e.mi, c24) .. " - " .. fmtTime(e.ehh, e.emi, c24), "small", color.BLACK, "left")
 end
 ey = ey + 17
 end
-if cfg.wLocation == true and e.loc ~= "" and ey + 12 <= maxY then
+if showLoc and e.loc ~= "" and ey + 12 <= maxY then
 if doDraw then
 glyphPin(tX + 6, ey + 5)
 draw.text(tX + 16, ey + 9, fit(e.loc, x + box.w - tX - 22, "small"), "small", color.BLACK, "left")
@@ -897,14 +926,25 @@ groups = groups + 1
 end
 return y, groups, cnt
 end
-local yEnd, groups = pass(false, 0)
+local _, _, plainCnt = pass(false, 0, false, false)
+local need = math.min(plainCnt, 3)
+local wrapOn, autoOn = false, false
+if box.h >= 120 then
+local _, _, c1 = pass(false, 0, true, true)
+if c1 >= need then wrapOn, autoOn = true, true
+else
+local _, _, c2 = pass(false, 0, true, false)
+if c2 >= need then wrapOn = true end
+end
+end
+local yEnd, groups = pass(false, 0, wrapOn, autoOn)
 local gapExtra = 0
 if groups > 0 then
 gapExtra = (maxY - yEnd) // groups
 if gapExtra < 0 then gapExtra = 0 end
 if gapExtra > 28 then gapExtra = 28 end
 end
-local _, _, cnt = pass(true, gapExtra)
+local _, _, cnt = pass(true, gapExtra, wrapOn, autoOn)
 shown = cnt
 if shown == 0 then
 local cy = top + 18

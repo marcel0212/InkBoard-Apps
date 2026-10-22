@@ -186,6 +186,14 @@ end
 
 Zeichne nur innerhalb der Box. Wähle Inhalte nach Platz: klein = nur das Wichtigste, groß = mehr Details.
 
+**An die Widget-Größe anpassen (Dashboard-Vorlagen):** Der Nutzer wählt Größe und Platz des Widgets, oft ein großes (z. B. 380 × 225) neben kleinen. Zeige deshalb in großen Boxen mehr, nicht nur Gleiches kleiner:
+
+- **Zwei Durchläufe:** Schreibe die Zeichenlogik als Funktion mit einem Schalter `doDraw`. Der erste Durchlauf misst nur (Rückgabe: Endposition, Anzahl der gezeigten Einträge), der zweite zeichnet. So wählst du die reichste Darstellung, die noch genug Einträge zeigt, und verteilst den übrigen Platz gleichmäßig (`(box.y + box.h - yEnde) // gruppen`, Obergrenze z. B. 28 px).
+- **Umbrechen statt abschneiden:** Lange Titel auf zwei Zeilen am Leerzeichen trennen (`draw.measure` je Wort prüfen), nur die letzte Zeile kürzen. Nimm den Umbruch nur, wenn dadurch nicht weniger Einträge sichtbar werden.
+- **Zusatzzeilen nach Platz:** Uhrzeit, Ort, Wettervorschau usw. ab einer Höhe (z. B. `box.h >= 120`) von selbst zeigen, auch ohne Schalter in den Einstellungen.
+- **Kleine Boxen:** Einträge lesbar halten (kleine Schrift, engere Zeilen) statt nur eine Zahl zu zeigen; eine Zahl allein gehört in die kleinste Stufe.
+- Beispiele: `calendar-app` (Tagesblöcke mit Umbruch und gleichmäßigen Abständen), `einkaufsliste` (Einträge auch klein), `weather-station` (größeres Symbol, Vorschau ab 170 px).
+
 ## 5. Zeichnen: `draw.*`
 
 Das Display ist 800 × 480 Pixel, Nullpunkt oben links. Die obersten `draw.top` (48) Pixel gehören dem Standard-Kopf der Firmware, deine Fläche beginnt darunter.
@@ -300,6 +308,7 @@ end
 - `nas_ready` (externer Speicher eingerichtet), `nas_ok` (Unix-Zeit des letzten erfolgreichen Log-Uploads, fehlt bis zum ersten seit Start), `nas_fail_since` (seit wann der Upload durchgehend scheitert, fehlt ohne Fehler), `nas_error` (letzte Fehlermeldung)
 - `free_kb` (freier Arbeitsspeicher)
 - `ssid` (Name des verbundenen WLANs, API-Stufe 27; fehlt ohne Verbindung)
+- `pass` (gespeichertes WLAN-Passwort des Geräts, API-Stufe 29; nur mit `"permissions": {"wifiPass": true}` im Manifest und nur bei Verbindung; für Apps wie das Gäste-WLAN, die einen WLAN-QR-Code zeigen. Das Passwort nie in Logs oder an Dritte senden)
 
 Beispiel: `local s = system.get(); if s and not s.clock_ok then draw.text(20, 40, "Uhr nicht gestellt", "normal", color.RED) end`. Einen Akku-Verlauf führt die Firmware nicht; Apps, die einen Verlauf brauchen, sammeln ihre Werte selbst (`file.write` im `on_fetch`).
 
@@ -461,7 +470,7 @@ Fotos werden mit einem feinen Punktmuster gerastert (Dithering) und sehen auf de
 - Ränder von mindestens 24 Pixeln, nichts in die Kopfzeile (`y < draw.top`) zeichnen.
 - Texte immer in beiden Sprachen: `if ctx.lang == "en" then ... end`.
 - Fehlende Daten zeigen („Wird geladen“, „Noch keine Daten“), nie leere Fläche oder Skriptfehler.
-- Widgets: Titelzeile gehört der Firmware, Innenbereich kompakt, auf `box.fh` und `box.font` reagieren.
+- Widgets: Titelzeile gehört der Firmware, Innenbereich kompakt, auf `box.fh` und `box.font` reagieren; große Boxen zeigen mehr (Umbruch, Zusatzzeilen, gleichmäßige Abstände), kleine bleiben lesbar.
 - Einstellungen sparsam halten: jede Option, die du weglässt, kann nicht falsch stehen.
 
 ## 11. Store-Eintrag (`store.json`)
