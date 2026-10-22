@@ -837,43 +837,65 @@ function on_widget(ctx, box)
     end
     return
   end
-  local y = top + 4
-  local i = 1
-  while i <= #list and y + 56 <= maxY do
-    local e0 = list[i]
-    local dayK = e0.k
-    local bt = y
-    draw.text(x + 34, bt + 12, (en and WDS_EN or WDS_DE)[isoWd(e0.wd)], "small", color.BLACK, "center")
-    draw.text(x + 34, bt + 40, tostring(dayK % 100), "large", color.BLACK, "center")
-    draw.text(x + 34, bt + 55, (en and MON_S_EN or MON_S_DE)[(dayK // 100) % 100], "small", color.BLACK, "center")
-    local tX = x + 78
-    local ey = bt + 14
-    local lineC = e0.c
-    local tf = tier("normal", shift)
-    while i <= #list and list[i].k == dayK and ey <= maxY do
-      local e = list[i]
-      draw.text(tX, ey, fit(e.title, x + box.w - tX - 6, tf), tf, color.BLACK, "left")
-      ey = ey + 8
-      if cfg.wTime == true and not e.ad and ey + 12 <= maxY then
-        glyphClock(tX + 6, ey + 5)
-        draw.text(tX + 16, ey + 9, fmtTime(e.hh, e.mi, c24) .. " - " .. fmtTime(e.ehh, e.emi, c24), "small", color.BLACK, "left")
-        ey = ey + 17
+  -- Liste mit Tagesbloecken. Zwei Durchlaeufe (CHANGELOG 853): erst messen, dann den uebrigen Platz gleichmaessig auf die Luecken
+  -- zwischen den Tagen verteilen (grosses Widget wirkt sonst oben zusammengedraengt und unten leer).
+  local function pass(doDraw, gapExtra)
+    local y = top + 4
+    local i = 1
+    local groups, cnt = 0, 0
+    while i <= #list and y + 56 <= maxY do
+      local e0 = list[i]
+      local dayK = e0.k
+      local bt = y
+      if doDraw then
+        draw.text(x + 34, bt + 12, (en and WDS_EN or WDS_DE)[isoWd(e0.wd)], "small", color.BLACK, "center")
+        draw.text(x + 34, bt + 40, tostring(dayK % 100), "large", color.BLACK, "center")
+        draw.text(x + 34, bt + 55, (en and MON_S_EN or MON_S_DE)[(dayK // 100) % 100], "small", color.BLACK, "center")
       end
-      if cfg.wLocation == true and e.loc ~= "" and ey + 12 <= maxY then
-        glyphPin(tX + 6, ey + 5)
-        draw.text(tX + 16, ey + 9, fit(e.loc, x + box.w - tX - 22, "small"), "small", color.BLACK, "left")
-        ey = ey + 17
+      local tX = x + 78
+      local ey = bt + 14
+      local lineC = e0.c
+      local tf = tier("normal", shift)
+      while i <= #list and list[i].k == dayK and ey <= maxY do
+        local e = list[i]
+        if doDraw then draw.text(tX, ey, fit(e.title, x + box.w - tX - 6, tf), tf, color.BLACK, "left") end
+        ey = ey + 8
+        if cfg.wTime == true and not e.ad and ey + 12 <= maxY then
+          if doDraw then
+            glyphClock(tX + 6, ey + 5)
+            draw.text(tX + 16, ey + 9, fmtTime(e.hh, e.mi, c24) .. " - " .. fmtTime(e.ehh, e.emi, c24), "small", color.BLACK, "left")
+          end
+          ey = ey + 17
+        end
+        if cfg.wLocation == true and e.loc ~= "" and ey + 12 <= maxY then
+          if doDraw then
+            glyphPin(tX + 6, ey + 5)
+            draw.text(tX + 16, ey + 9, fit(e.loc, x + box.w - tX - 22, "small"), "small", color.BLACK, "left")
+          end
+          ey = ey + 17
+        end
+        ey = ey + 12
+        cnt = cnt + 1
+        i = i + 1
       end
-      ey = ey + 12
-      shown = shown + 1
-      i = i + 1
+      while i <= #list and list[i].k == dayK do i = i + 1 end
+      local bb = ey - 8
+      if bb < bt + 58 then bb = bt + 58 end
+      if doDraw then draw.rect(x + 66, bt + 2, 3, bb - bt - 2, lineC, true) end
+      y = bb + 12 + gapExtra
+      groups = groups + 1
     end
-    while i <= #list and list[i].k == dayK do i = i + 1 end
-    local bb = ey - 8
-    if bb < bt + 58 then bb = bt + 58 end
-    draw.rect(x + 66, bt + 2, 3, bb - bt - 2, lineC, true)
-    y = bb + 12
+    return y, groups, cnt
   end
+  local yEnd, groups = pass(false, 0)
+  local gapExtra = 0
+  if groups > 0 then
+    gapExtra = (maxY - yEnd) // groups
+    if gapExtra < 0 then gapExtra = 0 end
+    if gapExtra > 28 then gapExtra = 28 end
+  end
+  local _, _, cnt = pass(true, gapExtra)
+  shown = cnt
   if shown == 0 then
     local cy = top + 18
     draw.line(x + 14, cy - 2, x + 18, cy + 3, color.ACCENT)

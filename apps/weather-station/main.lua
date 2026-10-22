@@ -329,7 +329,7 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
     return bottom > after and bottom or after
   end
   local size = areaH - 4
-  local cap = compact and 60 or 88
+  local cap = compact and 60 or ((areaH >= 130 and b.w >= 280) and 132 or 88) -- grosses Widget: groesseres Symbol
   if size > cap then size = cap end
   if size < 30 then size = 30 end
   if b.w < 200 and size > 56 then size = 56 end
@@ -340,8 +340,10 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
   local ty
   if withLabel then
     local names = (ctx.lang == "en") and COND_EN or COND_DE
-    draw.text(tx, top + 17, fit(names[w.cond] or names.unknown, fnt(b, "small"), b.x + b.w - tx - 6), fnt(b, "small"), color.BLACK)
-    ty = top + 52
+    local off = (size > 88) and (areaH // 2 - 40) or 0 -- Textblock mit dem groesseren Symbol mittig
+    if off < 0 then off = 0 end
+    draw.text(tx, top + 17 + off, fit(names[w.cond] or names.unknown, fnt(b, "small"), b.x + b.w - tx - 6), fnt(b, "small"), color.BLACK)
+    ty = top + 52 + off
   else
     ty = top + areaH // 2 + 12
   end
@@ -477,7 +479,8 @@ function outdoor.on_widget(ctx, b)
   end
   local opt = ctx.cfg.opt or 0
   local extra = (opt & 1) ~= 0
-  local showForecast = (opt & 2) ~= 0
+  -- CHANGELOG 853: grosse Widgets (ab 170 px Hoehe) zeigen die Vorschau auch ohne Haken - sonst bleibt die Flaeche leer
+  local showForecast = (opt & 2) ~= 0 or (b.h >= 170 and w.daily ~= nil and #w.daily > 0 and not (ctx.cfg.style == "compact"))
   local showRain = (opt & 4) ~= 0 and w.rain ~= nil and #w.rain > 0
   local compact = (ctx.cfg.style == "compact")
   local top = b.y

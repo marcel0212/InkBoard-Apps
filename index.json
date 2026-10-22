@@ -265,7 +265,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -409,9 +409,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "397ff69e452a5958c98cf5fcb9a0a678370f20abb77fb2c14167aee543260f67",
-      "sig": "H0/A0Bz4f+yDoa4aqTS2F4zSngzVoirRUtayGCFQ42+aaKRmGJ69XyRtygO9b9YGGh2GYPLvOXyWjm4NMvqojEnPuarVe7tP8pWJqKK7HKWZmR9U/kUhXB44fxmFFB4saZbEQdkRidfoLNP1DlnVyHRiJYqRZ+9LYHHC5+CDCSN2HGW/f2SbISgxogMBpCxGX03x2R8wSOFU/BXAUMiQvfoep93iA2k11k79AwU/MWtjQW3coH0azfp301T9BKB6KT7Qg8rQjNqSOrD2eh/Gcb9nfJagbYXQoszSbbRm2V0SuLuHiMi/oaNdzpU7uso5PwzfBIoUWuibK8GWIHAnUA==",
-      "size": 42131
+      "sha256": "b5fff2bc4d933b0d28dcfac1e1abbedb66aa3f4a06b239b2734f8050c5a98d8d",
+      "sig": "taOgfnYCXnanx+8bo0vJSNsFc1ZT0IuTFb5Y8X14fDgp/qOPZBeIdQTrUwQCnaUQaZkPtA8c3bhK/fjQ5nAG87jF+MPU0XMLYRxbIjij9Lo40clN+pfbcjAC7e34HZtWZAxGfKpGopGjEGCSwLBJxQ6qOph+HqQI+KC/xe49VPagda78n/FQjKPdhzMgt8Pz5m+lYtWDbEQmX4YiZ0znJbQYqGZ3Dm8vuS8e3Tb4dC9lfr/+tLnDWF9WaDJf5d6F3O2AZM6QlLWmjusj4NDoETZckEIsuK1S+QOR+N9oeT21G7t2Wi++binlWCSkGev26OZ1TFB4YZZCrl0+oo6WeA==",
+      "size": 42604
     },
     {
       "id": "clock",
@@ -2739,7 +2739,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.2",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -2885,9 +2885,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "c6343d0a6061d65d539c81eaf47276d2d39fd824e43abe1e9dd0b290b7f8c485",
-      "sig": "bntauAG2bpCCrr/N2Ibuw+8vIUry0IbBCrGLxl119L2ZsdTCSsk1aZ/QfBI8IGsXSiK0P663kv/EI0YahoO60nvyOh1NB3tZOxmnEC3Zu6A4sPSS90JFukxGOrfGDcutCyq/E1EQSZfgGewhGSPrV/l7Q3KY2NrqbsYUJBOg/lnzoscc+0l1nSwAiA2QdlbCdNjcEFNGW27NR2TssXIwSQeyxTa2pzJ59mZk4IEuMqEeXC74nqCOSCvGxUrjJhRK5ICFPl2egTWbiEwCDWoWVNhgydYyN/oTlmgIiQ4Xat79Uit+xP15a1EySUFbq0q25apJdov2W8wbBpYB3n0UEg==",
-      "size": 61099
+      "sha256": "a600d0e943dd1e63979366886607030f35cc2d7d1d567ef9f19d255caa87ff81",
+      "sig": "ezdaLu2idc2rabvBYJQ81kBCs9kY61m2LNbSS+PyxYchGQ/laHO63MlqCiOkX0Fdq5NCQvJSn12adi1W86lixqw/H2EyyaZ0My2kE4oIdvpjufJmKGO4wEHduyfJUPWBYyB3BzsQdyhWjtd31zzrHuhDMbXh3SLTLCCgYB1QS2KZ6V6F91mi74RWow7Jqsfvmtntj20Qc8gBl7JNm7x5eGViF1cmLkl5KUgiMjYb99Aa9QCFxHnKyKGhtRpa2ObLjgite3lETPmGe2QLS0/7M99lJAbmNDxBkA1Vy+kXXcBfB0pILnnP0ojJjxVSranhKdOD0++yNAlapFlm9b8fZA==",
+      "size": 61539
     },
     {
       "id": "wikipedia-today",
