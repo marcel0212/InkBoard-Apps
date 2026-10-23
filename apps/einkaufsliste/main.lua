@@ -1,6 +1,7 @@
 -- Einkaufsliste (Paket einkaufsliste): gemeinsame Liste fuer alle InkBoards im Netzwerk. Eingabe per Handy-Seite (QR-Code),
 -- Abhaken per Drehrad. Skript-API Level 20. Eintraege: Datei "items" (lokal) und optional "einkauf.txt" auf dem externen Speicher
--- (storagePath-Feld "dir"), pro Zeile "id TAB zeit TAB status TAB text" (status 0 offen, 1 erledigt, 2 geloescht = Grabstein).
+-- (storagePath-Feld "dir"), pro Zeile "id TAB zeit TAB status TAB text [TAB menge TAB einheit TAB beschreibung TAB link TAB bild]" (status 0 offen,
+-- 1 erledigt, 2 geloescht = Grabstein). Die fuenf Zusatzfelder sind optional - aeltere Zeilen nur mit Titel bleiben gueltig.
 -- Abgleich in on_fetch: je Eintrag gewinnt die neuere Zeit - so bleiben mehrere Geraete und Handys konfliktfrei.
 -- Ohne externen Speicher arbeitet die Liste lokal ("nicht synchronisiert").
 
@@ -15,8 +16,13 @@ local function T(ctx, de, en) return (ctx.lang == "en") and en or de end
 local function parse(text)
   local m = {}
   if text then
-    for id, ts, st, tx in text:gmatch("([^\t\n]+)\t(%d+)\t(%d)\t([^\n]*)") do
-      m[id] = { id = id, ts = tonumber(ts), st = tonumber(st), text = tx }
+    for line in text:gmatch("[^\n]+") do
+      local f = {}
+      for x in (line .. "\t"):gmatch("([^\t]*)\t") do f[#f + 1] = x end
+      if f[1] ~= "" and f[2] and f[2]:match("^%d+$") and f[3] and f[3]:match("^%d$") then
+        m[f[1]] = { id = f[1], ts = tonumber(f[2]), st = tonumber(f[3]), text = f[4] or "",
+          qty = f[5] or "", unit = f[6] or "", note = f[7] or "", link = f[8] or "", img = f[9] or "" }
+      end
     end
   end
   return m
@@ -32,7 +38,11 @@ local function serialize(m, now, cleanup)
   -- zu gross: aelteste erledigte/geloeschte Eintraege zuerst weglassen
   local function join()
     local out = {}
-    for i = 1, #list do out[i] = string.format("%s\t%d\t%d\t%s", list[i].id, list[i].ts, list[i].st, list[i].text) end
+    for i = 1, #list do local e = list[i]; out[i] = string.format("%s\t%d\t%d\t%s", e.id, e.ts, e.st, e.text)
+      if (e.qty or "") ~= "" or (e.unit or "") ~= "" or (e.note or "") ~= "" or (e.link or "") ~= "" or (e.img or "") ~= "" then
+        out[i] = out[i] .. string.format("\t%s\t%s\t%s\t%s\t%s", e.qty or "", e.unit or "", e.note or "", e.link or "", e.img or "")
+      end
+    end
     return table.concat(out, "\n")
   end
   local s = join()
@@ -83,14 +93,36 @@ local function cleanup_sec(ctx)
   return h * 3600
 end
 
-local function clean_text(t)
+local function clean_field(t, max)
   t = tostring(t or ""):gsub("[%c]", " "):gsub("^%s+", ""):gsub("%s+$", "")
-  if #t > 60 then
-    local i = 60
+  if #t > max then
+    local i = max
     while i > 1 and (t:byte(i + 1) or 0) & 0xC0 == 0x80 do i = i - 1 end
     t = t:sub(1, i)
   end
   return t
+end
+
+local function clean_text(t) return clean_field(t, 60) end
+
+-- Links und Bild-Adressen: nur http(s), ohne Leerzeichen (kein javascript: o. ae. auf der Handy-Seite)
+local function clean_url(t)
+  t = tostring(t or ""):gsub("[%c%s]", "")
+  if #t > 300 or not (t:match("^https?://[^/]") ~= nil) then return "" end
+  return t
+end
+
+-- Zusatzfelder eines Eintrags aus einer Anfrage (Handy-Seite, App-Abgleich)
+local function fields(q)
+  return clean_field(q.qty, 8), clean_field(q.unit, 12), clean_field(q.note, 200), clean_url(q.link), clean_url(q.img)
+end
+
+-- Anzeigetext mit Menge: "2 Stueck Milch"
+local function label(e)
+  local a = e.qty or ""
+  if a == "" then return e.text end
+  if (e.unit or "") ~= "" then a = a .. " " .. e.unit end
+  return a .. " " .. e.text
 end
 
 -- ===== Abruf: Abgleich mit dem externen Speicher =====
@@ -153,7 +185,8 @@ local function list_json(ctx, m, full)
   local v, open, done = visible(m)
   local parts = {}
   for i = 1, #v do
-    parts[i] = string.format('{"id":"%s","text":"%s","done":%s}', esc(v[i].id), esc(v[i].text), v[i].st == 1 and "true" or "false")
+    local e = v[i]
+    parts[i] = string.format('{"id":"%s","text":"%s","done":%s,"qty":"%s","unit":"%s","note":"%s","link":"%s","img":"%s"}', esc(e.id), esc(e.text), e.st == 1 and "true" or "false", esc(e.qty or ""), esc(e.unit or ""), esc(e.note or ""), esc(e.link or ""), esc(e.img or ""))
   end
   local sync = ctx.data.get("sync") or "local"
   local extra = ""
@@ -161,7 +194,7 @@ local function list_json(ctx, m, full)
     -- alle Eintraege inkl. Grabsteine (Mac-/iOS-App haelt eine eigene Kopie und gleicht sie ueber "sync" ab)
     local ents = {}
     for _, e in pairs(m) do
-      ents[#ents + 1] = string.format('{"id":"%s","ts":%d,"st":%d,"text":"%s"}', esc(e.id), e.ts, e.st, esc(e.text))
+      ents[#ents + 1] = string.format('{"id":"%s","ts":%d,"st":%d,"text":"%s","qty":"%s","unit":"%s","note":"%s","link":"%s","img":"%s"}', esc(e.id), e.ts, e.st, esc(e.text), esc(e.qty or ""), esc(e.unit or ""), esc(e.note or ""), esc(e.link or ""), esc(e.img or ""))
     end
     extra = ',"entries":[' .. table.concat(ents, ",") .. ']'
   end
@@ -180,8 +213,16 @@ function on_http(ctx, req)
     if t == "" then return reply(400, '{"error":"leer"}') end
     -- mehrere Eintraege mit Komma/Zeilenumbruch? nein: ein Eintrag je Aufruf
     local id = new_id(ctx)
-    m[id] = { id = id, ts = now, st = 0, text = t }
+    local qty, unit, note, link, img = fields(q)
+    m[id] = { id = id, ts = now, st = 0, text = t, qty = qty, unit = unit, note = note, link = link, img = img }
     changed = true
+  elseif op == "edit" then
+    -- Titel, Menge, Einheit, Beschreibung, Link und Bild eines Eintrags aendern (Detailansicht)
+    local e = m[tostring(q.id or "")]
+    local t = clean_text(q.text)
+    if e and e.st ~= 2 and t ~= "" then
+      e.text = t; e.qty, e.unit, e.note, e.link, e.img = fields(q); e.ts = now; changed = true
+    end
   elseif op == "toggle" then
     local e = m[tostring(q.id or "")]
     if e and e.st ~= 2 then e.st = (e.st == 0) and 1 or 0; e.ts = now; changed = true end
@@ -206,7 +247,8 @@ function on_http(ctx, req)
           if id ~= "" and #id <= 24 and (st == 0 or st == 1 or st == 2) and (tx ~= "" or st == 2) then
             local cur = m[id]
             if cur == nil or ts > cur.ts then
-              m[id] = { id = id, ts = ts, st = st, text = tx }
+              local qty, unit, note, link, img = fields(x)
+              m[id] = { id = id, ts = ts, st = st, text = tx, qty = qty, unit = unit, note = note, link = link, img = img }
               changed = true
             end
           end
@@ -344,7 +386,7 @@ function on_draw(ctx, page)
       local bs = compact and 32 or 26
       checkbox(42, y + (rowH - bs) // 2, bs, isDone)
       local tx = 42 + bs + 16
-      local text = cut(e.text, draw.width - tx - 44, font)
+      local text = cut(label(e), draw.width - tx - 44, font)
       draw.text(tx, y + rowH // 2 + (compact and 9 or 7), text, font, color.BLACK, "left")
       if isDone then
         local w = draw.measure(text, font)
@@ -399,7 +441,7 @@ function on_widget(ctx, box)
     if v[i].st == 0 then
       local y = box.y + 4 + shown * lh
       checkbox(box.x + left + 8, y + (lh - bs) // 2, bs, false)
-      draw.text(tx, y + lh // 2 + (small and 4 or 6), cut(v[i].text, box.x + box.w - tx - 8, font), font, color.BLACK, "left")
+      draw.text(tx, y + lh // 2 + (small and 4 or 6), cut(label(v[i]), box.x + box.w - tx - 8, font), font, color.BLACK, "left")
       shown = shown + 1
     end
   end

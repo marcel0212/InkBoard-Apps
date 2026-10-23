@@ -571,7 +571,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.3",
+      "version": "1.3.0",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -645,9 +645,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "017ecb2fddb40caf77d01526644154112fe52aeb102254c9178695c5b5c74657",
-      "sig": "mOZIPz1WTWqq8Qe25DkwigKCzLWHrFVlkyvK6vx0rtjAD6x740Fi4u3DH5ZGTkonaxryhU0Z6rWa66KhdbfO2y8P8fq/F9ubP0ZpnVcdf2F1VH8yPTuIurGXGCAu8CPoSw7s4qsXV+dPfXuajiLLHErlV4Gf2qBCQFLircMEKahozt77eprx5zk6XSWQg6PrLUhVHFBDUr7tcCd3GdYwyUbEnlw6C2zAy835Pk3W2P21cUctXEndTfrrrVEdKBumY6M9A3AZ82l8FpPl3HIUI6vWzSN1jKOGw7b9xmwzBgufb2YU8idtFWvtcKGZNuVq6m9wcMSrs1KzHMshsMgTGg==",
-      "size": 26248
+      "sha256": "a095c848a76cc43a19bbbba1fd9408ac4f0473167b4eb0ff0dd2b651df7ecbd1",
+      "sig": "FC/+wkgtNCiQbV3r1u24rURvjNC1mhZ32v4IuQpvaDQIHK6E6aU4nX7YS3OHvTm+1U0+lyEUQJhooQ6Y0XxQLrs9JE2tHtzp24sO/Hwyw8wf6N2eFSxasAwzGrhPfm4AOZB2WNwixBqx4oG40w5TjsygiDuVneu3vrEdKMnwZrYu+sTXWlej6EwTl7bXMPcM6Gy+1X/WjRdoy2EivDPZ332mUR5JnWdJUA3/Wew6MYG0hcxPwxCIxcdLfcNqlruCWv4Sogg7lAoXRjhoMPfr4dAsCXxTB8LMm1l/zHuTuMlaiFTqlxsjD6zpypwvzjsULp8GjEPfuZzidN4cuqkyuw==",
+      "size": 35125
     },
     {
       "id": "flight-radar",

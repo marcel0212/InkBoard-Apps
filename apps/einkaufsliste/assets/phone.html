@@ -13,7 +13,10 @@
   h1 { font-size:22px; margin:6px 4px 2px; }
   .sub { color:var(--sub); font-size:13px; margin:0 4px 14px; }
   .card { background:var(--card); border:1px solid var(--border); border-radius:22px; padding:12px; box-shadow:0 10px 30px rgba(90,99,140,.10); }
-  form { display:flex; gap:8px; margin-bottom:12px; }
+  form { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+  #q { width:64px; flex:none; text-align:center; }
+  #u { flex:none; width:96px; }
+  select, input[type=url], textarea { font-size:17px; padding:13px 10px; border-radius:14px; border:1px solid var(--border); background:var(--input); color:var(--text); font-family:inherit; }
   input[type=text] { flex:1; min-width:0; font-size:17px; padding:13px 14px; border-radius:14px; border:1px solid var(--border); background:var(--input); color:var(--text); }
   button { font-size:16px; border:0; border-radius:14px; padding:0 18px; color:#fff; background:var(--grad); font-weight:600; }
   ul { list-style:none; margin:0; padding:0; }
@@ -23,6 +26,20 @@
   li.done .t { text-decoration:line-through; color:var(--sub); }
   .box { width:28px; height:28px; border-radius:8px; border:2px solid var(--sub); flex:none; display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff; }
   li.done .box { background:var(--ok); border-color:var(--ok); }
+  li .amt { color:var(--accent); font-weight:600; margin-right:6px; white-space:nowrap; }
+  li .nt { display:block; color:var(--sub); font-size:13px; margin-top:2px; }
+  li img.pic { width:44px; height:44px; border-radius:10px; object-fit:cover; flex:none; border:1px solid var(--border); }
+  .i { background:none; color:var(--sub); font-size:20px; padding:0 8px; font-weight:400; }
+  #det { position:fixed; inset:0; background:rgba(0,0,0,.45); display:flex; align-items:flex-end; justify-content:center; z-index:5; }
+  #det[hidden] { display:none; }
+  #det .sheet { width:100%; max-width:560px; background:var(--bg); border-radius:22px 22px 0 0; padding:16px; max-height:92vh; overflow:auto; }
+  #det label { display:block; font-size:13px; color:var(--sub); margin:10px 2px 4px; }
+  #det input[type=text], #det input[type=url], #det textarea, #det select { width:100%; }
+  #det .row { display:flex; gap:8px; } #det .row > * { min-width:0; }
+  #det .btns { display:flex; gap:8px; margin-top:14px; } #det .btns button { flex:1; padding:13px 0; }
+  #det .btns .sec { background:var(--input); color:var(--text); }
+  #det img { max-width:100%; max-height:200px; border-radius:14px; margin-top:10px; display:block; }
+  #det a { color:var(--accent); font-size:14px; word-break:break-all; }
   .x { background:none; color:var(--sub); font-size:22px; padding:0 8px; font-weight:400; }
   .bar { display:flex; justify-content:space-between; align-items:center; margin:12px 4px 0; font-size:13px; color:var(--sub); }
   .bar button { background:none; color:var(--accent); padding:6px 4px; font-size:14px; }
@@ -35,20 +52,58 @@
   <h1 id="h1">Einkaufsliste</h1>
   <p class="sub" id="sub">&nbsp;</p>
   <div class="card">
-    <form id="f"><input type="text" id="in" maxlength="60" placeholder="Was fehlt?" autocomplete="off" enterkeyhint="done"><button type="submit" id="add">Hinzufügen</button></form>
+    <form id="f"><input type="text" id="q" maxlength="8" inputmode="decimal" placeholder="1" autocomplete="off" aria-label="Menge"><select id="u" aria-label="Einheit"></select><input type="text" id="in" maxlength="60" placeholder="Was fehlt?" autocomplete="off" enterkeyhint="done" style="flex:1 1 100%;order:3"><button type="submit" id="add" style="order:4;flex:1 1 100%;padding:13px 0">Hinzufügen</button></form>
     <ul id="list"></ul>
     <div class="empty" id="empty" hidden>Die Liste ist leer.</div>
   </div>
   <div class="bar"><span id="sync"></span><button id="clr" type="button">Erledigte entfernen</button></div>
   <div id="msg"></div>
 </main>
+<div id="det" hidden><div class="sheet">
+  <label id="lT" for="dT">Titel</label><input type="text" id="dT" maxlength="60">
+  <div class="row"><div style="flex:1"><label id="lQ" for="dQ">Menge</label><input type="text" id="dQ" maxlength="8" inputmode="decimal"></div><div style="flex:1"><label id="lU" for="dU">Einheit</label><select id="dU"></select></div></div>
+  <label id="lN" for="dN">Beschreibung</label><textarea id="dN" rows="3" maxlength="200"></textarea>
+  <label id="lL" for="dL">Link zum Produkt</label><input type="url" id="dL" maxlength="300" placeholder="https://" autocapitalize="off">
+  <a id="dLa" target="_blank" rel="noopener noreferrer" hidden></a>
+  <label id="lI" for="dI">Bild-Adresse</label><input type="url" id="dI" maxlength="300" placeholder="https://" autocapitalize="off">
+  <img id="dImg" alt="" hidden>
+  <div class="btns"><button type="button" class="sec" id="dC">Abbrechen</button><button type="button" id="dS">Speichern</button></div>
+</div></div>
 <script>
 (function () {
   var en = (navigator.language || "de").slice(0, 2) === "en";
-  var L = en ? { h: "Shopping list", ph: "What is missing?", add: "Add", empty: "The list is empty.", clr: "Remove done", open: "open", done: "done", ok: "synced with the network", local: "not synced (no external storage)", error: "sync error - will retry", busy: "Device busy, retrying…", fail: "No connection to the InkBoard" }
-               : { h: "Einkaufsliste", ph: "Was fehlt?", add: "Hinzufügen", empty: "Die Liste ist leer.", clr: "Erledigte entfernen", open: "offen", done: "erledigt", ok: "mit dem Netzwerk synchronisiert", local: "nicht synchronisiert (kein externer Speicher)", error: "Sync-Fehler, wird wiederholt", busy: "Gerät beschäftigt, neuer Versuch…", fail: "Keine Verbindung zum InkBoard" };
+  var L = en ? { h: "Shopping list", ph: "What is missing?", add: "Add", empty: "The list is empty.", clr: "Remove done", t: "Title", q: "Quantity", u: "Unit", n: "Description", l: "Link to the product", i: "Image address", save: "Save", cancel: "Cancel", units: ["pcs", "g", "kg", "ml", "l", "pack", "can", "bunch", "bottle", "jar"], open: "open", done: "done", ok: "synced with the network", local: "not synced (no external storage)", error: "sync error - will retry", busy: "Device busy, retrying…", fail: "No connection to the InkBoard" }
+               : { h: "Einkaufsliste", ph: "Was fehlt?", add: "Hinzufügen", empty: "Die Liste ist leer.", clr: "Erledigte entfernen", t: "Titel", q: "Menge", u: "Einheit", n: "Beschreibung", l: "Link zum Produkt", i: "Bild-Adresse", save: "Speichern", cancel: "Abbrechen", units: ["Stück", "g", "kg", "ml", "l", "Pck.", "Dose", "Bund", "Flasche", "Glas"], open: "offen", done: "erledigt", ok: "mit dem Netzwerk synchronisiert", local: "nicht synchronisiert (kein externer Speicher)", error: "Sync-Fehler, wird wiederholt", busy: "Gerät beschäftigt, neuer Versuch…", fail: "Keine Verbindung zum InkBoard" };
   var $ = function (id) { return document.getElementById(id); };
   $("h1").textContent = L.h; $("in").placeholder = L.ph; $("add").textContent = L.add; $("empty").textContent = L.empty; $("clr").textContent = L.clr;
+  $("lT").textContent = L.t; $("lQ").textContent = L.q; $("lU").textContent = L.u; $("lN").textContent = L.n; $("lL").textContent = L.l; $("lI").textContent = L.i; $("dS").textContent = L.save; $("dC").textContent = L.cancel;
+  $("q").setAttribute("aria-label", L.q); $("u").setAttribute("aria-label", L.u);
+  function fillUnits(sel, cur) {
+    sel.innerHTML = "";
+    var list = L.units.slice(); if (cur && list.indexOf(cur) < 0) list.push(cur);
+    list.forEach(function (x, k) { var o = document.createElement("option"); o.value = x; o.textContent = x; sel.appendChild(o); });
+    sel.value = cur || L.units[0];
+  }
+  fillUnits($("u"), "");
+  function safeUrl(v) { return /^https?:\/\/[^\s]+$/.test(v) ? v : ""; }
+  var items = [], cur = null;
+  function openDet(it) {
+    cur = it; $("dT").value = it.text; $("dQ").value = it.qty || ""; fillUnits($("dU"), it.unit || L.units[0]);
+    $("dN").value = it.note || ""; $("dL").value = it.link || ""; $("dI").value = it.img || ""; showPrev(); $("det").hidden = false;
+  }
+  function showPrev() {
+    var l = safeUrl($("dL").value.trim()), i = safeUrl($("dI").value.trim());
+    var a = $("dLa"); a.hidden = !l; if (l) { a.href = l; a.textContent = l; }
+    var im = $("dImg"); im.hidden = !i; if (i) im.src = i;
+  }
+  $("dL").oninput = showPrev; $("dI").oninput = showPrev;
+  $("dC").onclick = function () { $("det").hidden = true; };
+  $("dS").onclick = function () {
+    var t = $("dT").value.trim(); if (!cur || !t) return;
+    var q = $("dQ").value.trim();
+    $("det").hidden = true;
+    act({ op: "edit", id: cur.id, text: t, qty: q, unit: q ? $("dU").value : "", note: $("dN").value.trim(), link: safeUrl($("dL").value.trim()), img: safeUrl($("dI").value.trim()) });
+  };
   var busy = false;
   function api(body, retry) {
     return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "InkBoardStudio", "Content-Type": "application/json" }, body: JSON.stringify(body) })
@@ -61,14 +116,22 @@
   function render(d) {
     $("msg").textContent = "";
     var ul = $("list"); ul.innerHTML = "";
+    items = d.items;
     d.items.forEach(function (it) {
       var li = document.createElement("li"); if (it.done) li.className = "done";
       var b = document.createElement("div"); b.className = "box"; b.textContent = it.done ? "✓" : "";
-      var t = document.createElement("div"); t.className = "t"; t.textContent = it.text;
+      var t = document.createElement("div"); t.className = "t";
+      if (it.qty) { var am = document.createElement("span"); am.className = "amt"; am.textContent = it.qty + (it.unit ? " " + it.unit : ""); t.appendChild(am); }
+      t.appendChild(document.createTextNode(it.text));
+      if (it.note) { var nt = document.createElement("span"); nt.className = "nt"; nt.textContent = it.note; t.appendChild(nt); }
+      var pic = null;
+      if (safeUrl(it.img || "")) { pic = document.createElement("img"); pic.className = "pic"; pic.alt = ""; pic.loading = "lazy"; pic.referrerPolicy = "no-referrer"; pic.src = it.img; pic.onerror = function () { pic.remove(); }; }
+      var inf = document.createElement("button"); inf.className = "i"; inf.type = "button"; inf.textContent = "⋯"; inf.setAttribute("aria-label", L.n);
       var x = document.createElement("button"); x.className = "x"; x.type = "button"; x.textContent = "×"; x.setAttribute("aria-label", "Delete");
-      li.onclick = function (e) { if (e.target === x) return; act({ op: "toggle", id: it.id }); };
+      inf.onclick = function () { openDet(it); };
+      li.onclick = function (e) { if (e.target === x || e.target === inf) return; act({ op: "toggle", id: it.id }); };
       x.onclick = function () { act({ op: "del", id: it.id }); };
-      li.appendChild(b); li.appendChild(t); li.appendChild(x); ul.appendChild(li);
+      li.appendChild(b); if (pic) li.appendChild(pic); li.appendChild(t); li.appendChild(inf); li.appendChild(x); ul.appendChild(li);
     });
     $("empty").hidden = d.items.length > 0;
     $("sub").textContent = d.open + " " + L.open + (d.done ? ", " + d.done + " " + L.done : "");
@@ -78,7 +141,7 @@
   function act(body) {
     return api(body).then(render).catch(function () { $("msg").textContent = L.fail; });
   }
-  $("f").onsubmit = function (e) { e.preventDefault(); var v = $("in").value.trim(); if (!v) return; $("in").value = ""; act({ op: "add", text: v }); };
+  $("f").onsubmit = function (e) { e.preventDefault(); var v = $("in").value.trim(); if (!v) return; var q = $("q").value.trim(); $("in").value = ""; $("q").value = ""; act({ op: "add", text: v, qty: q, unit: q ? $("u").value : "" }); fillUnits($("u"), ""); };
   $("clr").onclick = function () { act({ op: "clear" }); };
   act({ op: "list" });
   setInterval(function () { if (!document.hidden) api({ op: "list" }).then(render).catch(function () {}); }, 6000);
