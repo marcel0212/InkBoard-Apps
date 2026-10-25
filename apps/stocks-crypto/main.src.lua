@@ -400,7 +400,7 @@ end
 -- "Bento": Kacheln mit Symbol, Aenderung, Kurs und Verlauf (3 Spalten)
 local function drawCards(ctx, items)
   local en = ctx.lang == "en"
-  local pos, tileW, tileH = gridLayout(#items, 3, draw.top + 2, draw.height - 16, 20, 12, 140)
+  local pos, tileW, tileH = gridLayout(#items, draw.height > draw.width and 1 or 3, draw.top + 2, draw.height - 16, 20, 12, 140)
   for i, r in ipairs(items) do
     local tx, ty = pos(i)
     card(tx, ty, tileW, tileH, color.ACCENT, 10)

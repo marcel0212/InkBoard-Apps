@@ -17,19 +17,28 @@ function on_draw(ctx, page)
   draw.clear(color.WHITE)
   draw.rect(0, draw.top, 24, draw.height - draw.top, accent, true)
 
-  draw.text(80, 90, cfg.label, "large", color.BLACK, "left")
+  local tall = draw.height > draw.width
+  local lf = (draw.measure(cfg.label or "", "large") <= draw.width - 100) and "large" or ((draw.measure(cfg.label or "", "medium") <= draw.width - 100) and "medium" or "normal")
+  draw.text(80, 90, cfg.label, lf, color.BLACK, "left")
   if days == nil then
-    draw.text(80, 240, "Datum ungültig", "large", color.RED, "left")
+    draw.text(80, 240, "Datum ungültig", lf, color.RED, "left")
     return
   end
+  local cy = tall and (draw.height // 2) or 300
+  local function sc(t)
+    for k = 3, 2, -1 do if draw.measure(t, "huge", k) <= draw.width - 100 then return k end end
+    return 1
+  end
   if days < 0 then
-    draw.text(draw.width // 2, 300, tostring(-days), "huge", color.BLACK, "center", 3)
-    draw.text(draw.width // 2, 370, "Tage vorbei", "medium", color.BLACK, "center")
+    local t = tostring(-days)
+    draw.text(draw.width // 2, cy, t, "huge", color.BLACK, "center", sc(t))
+    draw.text(draw.width // 2, cy + 70, "Tage vorbei", "medium", color.BLACK, "center")
   elseif days == 0 then
-    draw.text(draw.width // 2, 290, "Heute!", "large", accent, "center", 3)
+    draw.text(draw.width // 2, cy - 10, "Heute!", "large", accent, "center", 3)
   else
-    draw.text(draw.width // 2, 300, tostring(days), "huge", accent, "center", 3)
-    draw.text(draw.width // 2, 370, days == 1 and "Tag" or "Tage", "normal", color.BLACK, "center")
+    local t = tostring(days)
+    draw.text(draw.width // 2, cy, t, "huge", accent, "center", sc(t))
+    draw.text(draw.width // 2, cy + 70, days == 1 and "Tag" or "Tage", "normal", color.BLACK, "center")
   end
   if cfg.showDate then
     draw.text(draw.width - 40, draw.height - 30, cfg.date, "small", color.BLACK, "right")

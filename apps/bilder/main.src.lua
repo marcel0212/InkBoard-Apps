@@ -57,8 +57,15 @@ local function imageRot()
   return r
 end
 
+-- Das Bild im Speicher passt zur Ausrichtung UND zur Zeichenflaeche (Hochformat-Anzeige: draw.width = 480): beides steckt im Schluessel
+local function rotKey(rot)
+  return rot + draw.width
+end
+
 local function loadPicture(name, rot)
-  local bw, bh = 800, 480
+  -- Zeichenflaeche des Displays (quer 800 x 480, bei der Anzeige-Ausrichtung "hoch" 480 x 800); bei einem physisch gedrehten Display (images_rot)
+  -- wird im Hochformat geladen und gedreht gezeichnet
+  local bw, bh = draw.width, draw.height
   if rot ~= 0 then bw, bh = 480, 800 end
   local w, h = storage.image("dir", name, PIC, { w = bw, h = bh, style = "photo", maxBytes = MAX_BYTES })
   return w, h
@@ -84,7 +91,7 @@ function on_fetch(ctx)
   local opened = ctx.opened == true
   local picLoaded = draw.image_size(PIC) ~= nil
   local rot = imageRot()
-  local sameRot = (tonumber(d.get("ro")) or 0) == rot          -- das Bild im Speicher wurde fuer diese Ausrichtung geladen
+  local sameRot = (tonumber(d.get("ro")) or 0) == rotKey(rot)          -- das Bild im Speicher wurde fuer diese Ausrichtung geladen
   local showing = picLoaded and d.get("st") == "ok"
 
   local names, count = storage.list("dir", { max = 60 })
@@ -141,7 +148,7 @@ function on_fetch(ctx)
   while tried < TRIES and tried < #names do
     local w, h = loadPicture(names[target], rot)
     if w ~= nil then
-      d.set("ro", rot)
+      d.set("ro", rotKey(rot))
       if names[target] == d.get("n") then
         d.set("rl", (tonumber(d.get("rl")) or 0) + 1) -- dasselbe Bild neu geladen (Neustart): Daten aendern, damit neu gezeichnet wird
       end
@@ -206,7 +213,18 @@ local function drawQrPage(cx)
     return
   end
   draw.text(cx, 52, T("Noch keine Bilder", "No pictures yet"), "large", color.BLACK, "center")
-  draw.text(cx, 100, T("Das Gerät braucht eine WLAN-Verbindung, dann erscheint hier ein QR-Code.", "The device needs a Wi-Fi connection; a QR code will appear here."), "normal", color.BLACK, "center")
+  local msg = T("Das Gerät braucht eine WLAN-Verbindung, dann erscheint hier ein QR-Code.", "The device needs a Wi-Fi connection; a QR code will appear here.")
+  local line, y = "", 100
+  for word in msg:gmatch("%S+") do
+    local try = (line == "") and word or (line .. " " .. word)
+    if line ~= "" and draw.measure(try, "normal") > draw.width - 40 then
+      draw.text(cx, y, line, "normal", color.BLACK, "center")
+      y, line = y + 30, word
+    else
+      line = try
+    end
+  end
+  if line ~= "" then draw.text(cx, y, line, "normal", color.BLACK, "center") end
 end
 
 -- Die Handy-Seite (assets/phone.html) spricht direkt die Studio-Endpunkte an (/api/image-upload); eine eigene API gibt es nicht.
@@ -226,9 +244,16 @@ function on_draw(ctx, page)
     local rot = imageRot()
     local rw, rh = w, h
     if rot ~= 0 then rw, rh = h, w end
+    -- Passt das geladene Bild nicht in die Zeichenflaeche (Anzeige-Ausrichtung gerade gewechselt, neu geladen wird beim naechsten Abruf), verkleinern
+    local dw, dh = 0, 0
+    if rot == 0 and (rw > draw.width or rh > draw.height) then
+      local sc = math.min(draw.width / rw, draw.height / rh)
+      rw, rh = math.floor(rw * sc), math.floor(rh * sc)
+      dw, dh = rw, rh
+    end
     local x = (draw.width - rw) // 2
     local y = (draw.height - rh) // 2
-    draw.image(PIC, x, y, 0, 0, rot)
+    draw.image(PIC, x, y, dw, dh, rot)
     if cfg.frame ~= false then draw.rect(x - 1, y - 1, rw + 2, rh + 2, color.BLACK) end
     if browsing(d) then
       pill(string.format("%s %d %s %d", T("Bild", "Picture"), tonumber(d.get("i")) or 1, T("von", "of"), tonumber(d.get("c")) or 1), cx)

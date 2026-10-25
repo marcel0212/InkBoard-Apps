@@ -638,7 +638,8 @@ local function weekSlate(m, si, top)
   local days = math.min(7, #m.days - si + 1)
   local y = top + 10
   draw.rect(margin, y, contentW, 2, color.BLACK, true)
-  local rowH = math.min(56, (draw.height - 14 - y) // math.max(days, 1))
+  local tallW = draw.height > draw.width
+  local rowH = math.min(tallW and 104 or 56, (draw.height - 14 - y) // math.max(days, 1))
   local ti, isToday = todayIndex(m)
   -- Eintragsspalte ab 170 Pixel; die fette Heute-Zeile ("Do 20.08." in large) ist breiter, dann ruecken alle Zeilen mit
   local tx = margin + 170
@@ -649,6 +650,28 @@ local function weekSlate(m, si, top)
     local today = isToday and (si + i) == ti
     draw.text(margin, ry + (today and 34 or 28), dayShort(d), today and "large" or "normal", color.BLACK)
     local tw = margin + contentW - tx
+    if tallW then
+      -- Hochformat: Tag oben, Eintraege darunter ueber die volle Breite (umgebrochen statt abgeschnitten)
+      if #d.es == 0 then
+        draw.text(margin + 150, ry + 28, T("frei", "free"), "normal", color.GREEN)
+      else
+        local ly = ry + 54
+        for k = 1, math.min(2, #d.es) do
+          local e = d.es[k]
+          square(margin + 2, ly - 9, 11, e.col)
+          local txt = timeRange(e) .. " · " .. e.ev
+          if draw.measure(txt, "small") <= contentW - 24 or ry + rowH - ly < 40 then
+            draw.text(margin + 20, ly, fit(txt, contentW - 24, "small"), "small", color.BLACK)
+            ly = ly + 22
+          else
+            local n = draw.wrap(margin + 20, ly, contentW - 24, txt, "small", color.BLACK)
+            ly = ly + 20 * math.max(1, math.min(n or 2, 2)) + 4
+          end
+        end
+      end
+      draw.line(margin, ry + rowH - 1, margin + contentW - 1, ry + rowH - 1, color.BLACK)
+      goto continue
+    end
     if #d.es == 0 then
       draw.text(tx, ry + 28, T("frei", "free"), "normal", color.GREEN)
     else
@@ -661,12 +684,15 @@ local function weekSlate(m, si, top)
       end
     end
     draw.line(margin, ry + rowH - 1, margin + contentW - 1, ry + rowH - 1, color.BLACK)
+    ::continue::
   end
 end
 
 -- Nano-Volltabelle (Woche: bis zu zwei Eintraege je Tag; 14 Tage: ein Eintrag + Hinweisspalte) mit Legende
 local function nanoTable(m, top, si, dayLimit, withNote)
   local margin, contentW = 16, draw.width - 32
+  local tall = draw.height > draw.width
+  local showNote = withNote and not tall -- Hochformat: keine Hinweisspalte, mehr Platz fuers Ereignis
   local y = top + 8
   draw.rect(margin, y, contentW, 20, color.BLACK, true)
   local cTag, cZeit, cBer, cEv, cNote = margin + 6, margin + 86, margin + 196, margin + 236, margin + contentW - 150
@@ -674,11 +700,11 @@ local function nanoTable(m, top, si, dayLimit, withNote)
   draw.text(cZeit, y + 14, T("ZEIT", "TIME"), "small", color.WHITE)
   draw.text(cBer, y + 14, T("BER.", "AREA"), "small", color.WHITE)
   draw.text(cEv, y + 14, T("EREIGNIS", "EVENT"), "small", color.WHITE)
-  if withNote then draw.text(cNote, y + 14, T("HINWEIS", "NOTE"), "small", color.WHITE) end
+  if showNote then draw.text(cNote, y + 14, T("HINWEIS", "NOTE"), "small", color.WHITE) end
   y = y + 20
   local days = math.min(dayLimit, #m.days - si + 1)
   local maxRows = withNote and 14 or 16
-  local rowH = math.max(19, math.min(24, (draw.height - 30 - y) // maxRows))
+  local rowH = math.max(19, math.min(tall and 40 or 24, (draw.height - 30 - y) // maxRows))
   local rows = 0
   for i = 0, days - 1 do
     if rows >= maxRows then break end
@@ -696,10 +722,10 @@ local function nanoTable(m, top, si, dayLimit, withNote)
         local e = d.es[k]
         draw.text(cZeit, base, timeRange(e), "small", color.BLACK)
         chip(cBer, ry + rowH - 17, e.col)
-        local evW = (withNote and cNote - 8 or margin + contentW) - cEv
-        if k == perDay and #d.es > perDay then evW = evW - (withNote and 0 or 26) end
+        local evW = (showNote and cNote - 8 or margin + contentW) - cEv
+        if k == perDay and #d.es > perDay then evW = evW - (showNote and 0 or 26) end
         draw.text(cEv, base, fit(e.ev, evW, "small"), "small", color.BLACK)
-        if withNote and e.note ~= "" then
+        if showNote and e.note ~= "" then
           draw.text(cNote, base, fit(e.note, margin + contentW - cNote - (#d.es > perDay and 26 or 0), "small"), "small", color.BLACK)
         end
         if k == perDay and #d.es > perDay then
@@ -724,9 +750,9 @@ end
 -- ---------------------------------------------------------------------------
 
 -- Bento: Wochenkarte mit Kopfband "KW 34 · 20.08.-26.08." und sieben kompakten Tageszeilen
-local function fortnightCard(m, x, w, top, si, count)
+local function fortnightCard(m, x, w, top, si, count, ovH)
   local cardTop = top + 8
-  local cardH = draw.height - 14 - cardTop
+  local cardH = ovH or (draw.height - 14 - cardTop)
   draw.rect(x, cardTop, w, cardH, color.BLACK, false, 12)
   draw.rect(x, cardTop, w, 24, color.BLACK, true, 12)
   draw.rect(x, cardTop + 12, w, 12, color.BLACK, true)
@@ -761,25 +787,35 @@ local function fortnightBento(m, top)
   local margin = 20
   local cardW = (draw.width - 2 * margin - 14) // 2
   local n = #m.days
-  fortnightCard(m, margin, cardW, top, 1, math.min(7, n))
   local second = math.max(0, math.min(7, n - 7))
+  if draw.height > draw.width then
+    -- Hochformat: zwei Wochenkarten uebereinander in voller Breite
+    local fullW = draw.width - 2 * margin
+    local h = (draw.height - 14 - (top + 8) - 12) // 2
+    fortnightCard(m, margin, fullW, top, 1, math.min(7, n), h)
+    if second > 0 then fortnightCard(m, margin, fullW, top + h + 12, 8, second, h) end
+    return
+  end
+  fortnightCard(m, margin, cardW, top, 1, math.min(7, n))
   if second > 0 then fortnightCard(m, margin + cardW + 14, cardW, top, 8, second) end
 end
 
 -- Slate: zwei flache Wochenspalten "WOCHE 1"/"WOCHE 2"
 local function fortnightSlate(m, top)
   local margin = 26
-  local colW = (draw.width - 2 * margin - 40) // 2
+  local tallS = draw.height > draw.width
+  local colW = tallS and (draw.width - 2 * margin) or ((draw.width - 2 * margin - 40) // 2)
+  local blockH = (draw.height - 14 - top) // 2
   for c = 0, 1 do
-    local x = margin + c * (colW + 40)
+    local x = tallS and margin or (margin + c * (colW + 40))
     local si = c * 7 + 1
     local count = math.min(7, #m.days - si + 1)
     if count > 0 then
-      local y = top + 10
+      local y = top + 10 + (tallS and c * blockH or 0)
       draw.text(x, y + 10, c == 0 and T("WOCHE 1", "WEEK 1") or T("WOCHE 2", "WEEK 2"), "small", color.BLACK)
       draw.rect(x, y + 16, colW, 3, color.BLACK, true)
       local rowTop = y + 24
-      local rowH = math.min(52, (draw.height - 14 - rowTop) // 7)
+      local rowH = math.min(52, ((tallS and (y - 10 + blockH) or draw.height - 14) - rowTop) // 7)
       for i = 0, count - 1 do
         local d = m.days[si + i]
         local ry = rowTop + i * rowH

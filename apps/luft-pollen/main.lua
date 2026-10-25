@@ -258,14 +258,20 @@ local function page_air(ctx)
   local col = LEVEL_COLORS[lv]
   local pm25, pm10, uv = num(ctx, "pm25"), num(ctx, "pm10"), num(ctx, "uv")
   local function f1(v) return v and string.format("%.0f", v) or "-" end
+  local tall = H > W
   if style == "compact" then
+    if tall then y0 = y0 + 150 end
     draw.text(W // 2, y0 + 150, string.format("%.0f", aqi), "huge", color.BLACK, "center")
     draw.text(W // 2, y0 + 192, T(ctx, "Luftqualität", "Air quality") .. ": " .. aqi_label(ctx, lv), "large", color.BLACK, "center")
     seg_bar(W // 2 - 160, y0 + 214, 320, 22, 5, lv, col)
     local line = {}
     if uv then line[#line + 1] = "UV " .. string.format("%.0f", uv) .. " (" .. uv_label(ctx, uv_level(uv)) .. ")" end
     if pm25 then line[#line + 1] = "PM2.5 " .. f1(pm25) end
-    draw.text(W // 2, y0 + 276, table.concat(line, "   ·   "), "large", color.BLACK, "center")
+    if tall then
+      for i = 1, #line do draw.text(W // 2, y0 + 276 + (i - 1) * 40, line[i], "large", color.BLACK, "center") end
+    else
+      draw.text(W // 2, y0 + 276, table.concat(line, "   ·   "), "large", color.BLACK, "center")
+    end
     footer(ctx)
     return
   end
@@ -273,8 +279,9 @@ local function page_air(ctx)
   local top = y0 + 52
   local ch = H - top - 40
   local lw = W // 2 - 30
+  if tall then lw, ch = W - 48, 330 end
   frame(style, 24, top, lw, ch)
-  if style == "flat" then draw.line(24 + lw + 14, top, 24 + lw + 14, top + ch, color.BLACK) end
+  if style == "flat" and not tall then draw.line(24 + lw + 14, top, 24 + lw + 14, top + ch, color.BLACK) end
   draw.circle(24 + 36, top + 38, 12, col, true)
   draw.circle(24 + 36, top + 38, 12, color.BLACK, false)
   draw.text(24 + 58, top + 46, aqi_label(ctx, lv), "large", color.BLACK, "left")
@@ -284,19 +291,26 @@ local function page_air(ctx)
   local rx = 24 + lw + 28
   local rw = W - rx - 24
   local hh = (ch - 14) // 2
-  frame(style, rx - 14, top, rw + 14, hh)
-  draw.text(rx, top + 30, T(ctx, "Feinstaub", "Particulates"), "small", color.BLACK, "left")
-  draw.text(rx, top + 72, "PM2.5  " .. f1(pm25), "large", color.BLACK, "left")
-  draw.text(rx, top + 108, "PM10   " .. f1(pm10) .. "  µg/m³", "normal", color.BLACK, "left")
-  local uy = top + hh + 14
-  frame(style, rx - 14, uy, rw + 14, hh)
+  local ptop, uy = top, top + hh + 14
+  local uhh = hh
+  if tall then
+    rx, rw, hh, uhh = 38, W - 76, 130, 150
+    ptop = top + ch + 14
+    uy = ptop + hh + 14
+  end
+  frame(style, rx - 14, ptop, rw + 14, hh)
+  if tall and style == "flat" then draw.line(24, ptop - 7, W - 24, ptop - 7, color.BLACK) end
+  draw.text(rx, ptop + 30, T(ctx, "Feinstaub", "Particulates"), "small", color.BLACK, "left")
+  draw.text(rx, ptop + 72, "PM2.5  " .. f1(pm25), "large", color.BLACK, "left")
+  draw.text(rx, ptop + 108, "PM10   " .. f1(pm10) .. "  µg/m³", "normal", color.BLACK, "left")
+  frame(style, rx - 14, uy, rw + 14, uhh)
   if style == "flat" then draw.line(rx - 14, uy - 7, W - 24, uy - 7, color.BLACK) end
   draw.text(rx, uy + 30, T(ctx, "UV-Index", "UV index"), "small", color.BLACK, "left")
   if uv then
     local ul = uv_level(uv)
     draw.text(rx, uy + 76, string.format("%.0f", uv), "huge", color.BLACK, "left")
     draw.text(rx + 70, uy + 72, uv_label(ctx, ul), "large", color.BLACK, "left")
-    if uv >= 3 then draw.text(rx, uy + hh - 14, T(ctx, "Sonnenschutz nutzen", "Use sun protection"), "small", color.BLACK, "left") end
+    if uv >= 3 then draw.text(rx, uy + uhh - 14, T(ctx, "Sonnenschutz nutzen", "Use sun protection"), "small", color.BLACK, "left") end
   else
     draw.text(rx, uy + 72, "-", "large", color.BLACK, "left")
   end
@@ -342,7 +356,9 @@ local function page_vent(ctx)
   local W, H, y0 = draw.width, draw.height, draw.top
   local v = verdict(ctx)
   if num(ctx, "aqi") == nil and #v.rooms == 0 then return status_screen(ctx) end
+  local tall = H > W
   if style == "compact" then
+    if tall then y0 = y0 + 160 end
     draw.circle(W // 2, y0 + 90, 40, v.col, true)
     draw.circle(W // 2, y0 + 90, 40, color.BLACK, false)
     draw.text(W // 2, y0 + 190, cut(v.title, W - 60, "large"), "large", color.BLACK, "center")
@@ -355,7 +371,8 @@ local function page_vent(ctx)
   if style == "cards" then draw.rect(24, top, W - 48, bh, color.BLACK, false, 14) else draw.line(28, top + bh + 6, W - 28, top + bh + 6, color.BLACK) end
   draw.circle(24 + 48, top + bh // 2, 26, v.col, true)
   draw.circle(24 + 48, top + bh // 2, 26, color.BLACK, false)
-  draw.text(24 + 96, top + 40, cut(v.title, W - 170, "large"), "large", color.BLACK, "left")
+  local tf = draw.measure(v.title, "large") <= W - 170 and "large" or "normal"
+  draw.text(24 + 96, top + 40, cut(v.title, W - 170, tf), tf, color.BLACK, "left")
   draw.text(24 + 96, top + 74, cut(v.sub, W - 170, "small"), "small", color.BLACK, "left")
   local y = top + bh + 34
   draw.text(28, y, T(ctx, "Drinnen", "Indoors"), "small", color.BLACK, "left")
@@ -364,11 +381,14 @@ local function page_vent(ctx)
     y = y + 30
     draw.circle(40, y - 7, 7, r.need and color.RED or color.GREEN, true)
     draw.circle(40, y - 7, 7, color.BLACK, false)
-    draw.text(58, y, nice_room(r.name, ctx) .. (r.own and T(ctx, " (hier)", " (here)") or ""), "normal", color.BLACK, "left")
-    draw.text(W // 2 - 20, y, string.format("%d ppm", r.co2), "normal", color.BLACK, "right")
+    local rv = string.format("%d ppm", r.co2)
+    local rvx = tall and W - 40 or W // 2 - 20
+    draw.text(58, y, cut(nice_room(r.name, ctx) .. (r.own and T(ctx, " (hier)", " (here)") or ""), rvx - 58 - draw.measure(rv, "normal") - 12, "normal"), "normal", color.BLACK, "left")
+    draw.text(rvx, y, rv, "normal", color.BLACK, "right")
   end
   local ox = W // 2 + 20
   local oy = top + bh + 34
+  if tall then ox, oy = 28, y + 50 end
   draw.text(ox, oy, T(ctx, "Draußen", "Outdoors"), "small", color.BLACK, "left")
   local a = num(ctx, "aqi")
   if a then

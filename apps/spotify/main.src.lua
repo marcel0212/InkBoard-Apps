@@ -122,7 +122,9 @@ local function notice(kind, line1, line2, y)
     draw.text(cx, cy + 7, glyph, "large", color.WHITE, "center")
   end
   local l1 = cy + r + 32
-  draw.text(cx, l1, line1, "large", color.BLACK, "center")
+  local f1 = "large"
+  if draw.measure and draw.measure(line1, "large") > draw.width - 24 then f1 = "normal" end
+  draw.text(cx, l1, line1, f1, color.BLACK, "center")
   if line2 then draw.text(cx, l1 + 26, line2, "normal", color.BLACK, "center") end
 end
 
@@ -145,7 +147,75 @@ local function emptyState(n, en, y)
 end
 
 -- Bento: grosses Cover mit Steuer-Kacheln links, Titel/Status/Fortschritt in Karten rechts
+-- CHANGELOG 932: Hochformat (480x800) - Cover oben mittig, darunter Karten untereinander
+local function drawCardsTall(n, en, topY)
+  local accent, onAccent = color.ACCENT, color.ACCENT_INK
+  local W = draw.width
+  local margin, cardR = 20, 16
+  local cw = W - 2 * margin
+  local coverPx = 300
+  local coverX = (W - coverPx) // 2
+  cover(coverX, topY, coverPx, true, en)
+  local pillH = 38
+  local pillY = topY + coverPx + 12
+  draw.rect(coverX, pillY, coverPx, pillH, color.BLACK, false, pillH // 2)
+  draw.text(W // 2, pillY + pillH - 12, fit(n.album, coverPx - 28, "normal"), "normal", color.BLACK, "center")
+
+  local y = pillY + pillH + 14
+  local card1H = 118
+  draw.rect(margin, y, cw, card1H, color.BLACK, false, cardR)
+  spaced(margin + 20, y + 26, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
+  titleFit(n.title, margin + 20, y + 66, cw - 40)
+  draw.text(margin + 20, y + 94, fit(n.artist, cw - 40, "normal"), "normal", color.BLACK, "left")
+
+  y = y + card1H + 12
+  local row2H, gap2 = 62, 12
+  local halfW = (cw - gap2) // 2
+  draw.rect(margin, y, halfW, row2H, accent, true, cardR)
+  playOrPause(n.playing, margin + 30, y + row2H // 2, 22, onAccent)
+  draw.text(margin + 54, y + row2H // 2 + 7, statusText(n, en), "normal", onAccent, "left")
+  local p, d = progOf(n)
+  local restX = margin + halfW + gap2
+  draw.rect(restX, y, halfW, row2H, color.BLACK, false, cardR)
+  local remain = d > p and (d - p) or 0
+  draw.text(restX + halfW // 2, y + 30, "-" .. fmtMs(remain), "large", color.BLACK, "center")
+  draw.text(restX + halfW // 2, y + row2H - 10, en and "remaining" or "verbleibend", "small", color.BLACK, "center")
+
+  y = y + row2H + 12
+  local row3H = 78
+  draw.rect(margin, y, cw, row3H, color.BLACK, false, cardR)
+  local segCount, segGap = 18, 3
+  local segAreaW = cw - 40
+  local segW = (segAreaW - (segCount - 1) * segGap) // segCount
+  local segY = y + 16
+  local filled = 0
+  if d > 0 then filled = math.min(segCount, segCount * p // d) end
+  local segX = margin + 20
+  for s = 0, segCount - 1 do
+    if s < filled then draw.rect(segX, segY, segW, 18, accent, true, 4) else draw.rect(segX, segY, segW, 18, color.BLACK, false, 4) end
+    segX = segX + segW + segGap
+  end
+  draw.text(margin + 20, segY + 18 + 22, fmtMs(p), "normal", color.BLACK, "left")
+  draw.text(margin + cw - 20, segY + 18 + 22, fmtMs(d), "normal", color.BLACK, "right")
+
+  y = y + row3H + 12
+  local tileGap = 12
+  local tileW = (cw - 2 * tileGap) // 3
+  local tileH = 62
+  draw.rect(margin, y, tileW, tileH, color.BLACK, false, 14)
+  draw.rect(margin + 1, y + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
+  prevIcon(margin + tileW // 2, y + tileH // 2, 20, color.BLACK)
+  local txm = margin + tileW + tileGap
+  draw.rect(txm, y, tileW, tileH, accent, true, 14)
+  playOrPause(n.playing, txm + tileW // 2, y + tileH // 2, 24, onAccent)
+  local txr = txm + tileW + tileGap
+  draw.rect(txr, y, tileW, tileH, color.BLACK, false, 14)
+  draw.rect(txr + 1, y + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
+  nextIcon(txr + tileW // 2, y + tileH // 2, 20, color.BLACK)
+end
+
 local function drawCards(n, en, topY)
+  if draw.height > draw.width then return drawCardsTall(n, en, topY) end
   local accent, onAccent = color.ACCENT, color.ACCENT_INK
   local margin, cardR = 14, 16
   local coverPx, coverX, coverY = 250, margin, topY
@@ -232,6 +302,36 @@ end
 -- Slate: schlichte zweispaltige Ansicht, links Cover ohne Rahmen, rechts Texte
 local function drawFlat(n, en, topY)
   local accent = color.ACCENT
+  if draw.height > draw.width then
+    local W = draw.width
+    local coverPx = 300
+    local coverX = (W - coverPx) // 2
+    cover(coverX, topY + 10, coverPx, false, en)
+    draw.text(W // 2, topY + 10 + coverPx + 28, fit(n.album, W - 60, "normal"), "normal", color.BLACK, "center")
+    local x0, x1 = 24, W - 24
+    local y = topY + 10 + coverPx + 50
+    draw.line(x0, y, x1, y, color.BLACK)
+    spaced(x0, y + 34, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
+    titleFit(n.title, x0, y + 78, x1 - x0)
+    draw.text(x0, y + 108, fit(n.artist, x1 - x0, "normal"), "normal", color.BLACK, "left")
+    draw.line(x0, y + 128, x1, y + 128, color.BLACK)
+    draw.circle(x0 + 5, y + 156, 5, n.playing and accent or color.BLACK, true)
+    draw.text(x0 + 18, y + 160, statusText(n, en), "normal", color.BLACK, "left")
+    local p, d = progOf(n)
+    local barY = y + 190
+    if d > 0 then
+      draw.line(x0, barY, x1, barY, color.BLACK)
+      local fw = math.min(x1 - x0, (x1 - x0) * p // d)
+      if fw > 0 then draw.rect(x0, barY - 2, fw, 4, accent, true) end
+      draw.text(x0, barY + 26, fmtMs(p), "small", color.BLACK, "left")
+      draw.text(x1, barY + 26, fmtMs(d), "small", color.BLACK, "right")
+    end
+    local ctrlY = barY + 70
+    prevIcon(W // 2 - 70, ctrlY, 18, color.BLACK)
+    playOrPause(n.playing, W // 2, ctrlY, 22, color.BLACK)
+    nextIcon(W // 2 + 70, ctrlY, 18, color.BLACK)
+    return
+  end
   local coverPx, coverX, coverY = 200, 108, topY + 20
   cover(coverX, coverY, coverPx, false, en)
   draw.text(coverX + coverPx // 2, coverY + coverPx + 26, fit(n.album, 380, "normal"), "normal", color.BLACK, "center")
@@ -274,15 +374,16 @@ end
 -- Nano: Datenblatt kompakt - sieben Zeilen Etikett/Wert, kleines Cover rechts, Fortschrittsbalken und Steuer-Pille unten
 local function drawCompact(n, en, topY)
   local accent = color.ACCENT
-  local coverPx = 132
-  local coverX = draw.width - 16 - coverPx
+  local tall = draw.height > draw.width
+  local coverPx = tall and 190 or 132
+  local coverX = tall and (draw.width - coverPx) // 2 or (draw.width - 16 - coverPx)
   cover(coverX, topY, coverPx, true, en)
 
-  local lineRight = coverX - 16
+  local lineRight = tall and (draw.width - 16) or (coverX - 16)
   local labelX, valueX = 16, 170
   local maxValueW = lineRight - valueX
-  local rowH = 44
-  local rowTop0 = topY + 20
+  local rowH = tall and 52 or 44
+  local rowTop0 = topY + (tall and coverPx + 24 or 20)
 
   local p, d = progOf(n)
   local remain = d > p and (d - p) or 0
@@ -310,6 +411,7 @@ local function drawCompact(n, en, topY)
   local footerY = rowTop0 + 7 * rowH + 16
   local pillW, pillH = 90, 40
   local pillX = draw.width - 16 - pillW
+  if tall then footerY = footerY + 14 end
   local barX = labelX
   local barY = footerY + (pillH - 10) // 2
   local barW = pillX - 20 - barX

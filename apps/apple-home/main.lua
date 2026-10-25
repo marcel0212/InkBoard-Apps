@@ -13,6 +13,7 @@
 local MAXI = 40
 local PER_PAGE = 8      -- Zeilenstile (flat/compact)
 local TILE_COLS, TILE_ROWS = 5, 3
+if draw.height > draw.width then TILE_COLS, TILE_ROWS = 3, 5 end   -- Hochformat: 3 x 5
 local PER_TILES = TILE_COLS * TILE_ROWS   -- Kachelstile (apple/cards): 15 je Seite
 
 -- Eintraege je Seite: Kacheln sind klein genug fuer 5 x 3, die Zeilenstile zeigen weiter 8
@@ -316,7 +317,8 @@ local function tileBento(ctx, it, x, y, w, h, dim)
   if it.a then txt, col = T(ctx, "Offline", "Offline"), color.RED end
   draw.rect(x, y, w, h, color.WHITE, true, 16)
   draw.rect(x, y, w, h, color.BLACK, false, 16)
-  draw.text(x + 14, y + 30, cut(it.n, w - 52, "normal"), "normal", color.BLACK, "left")
+  local nf = (draw.measure(it.n, "normal") <= w - 52) and "normal" or "small"
+  draw.text(x + 14, y + 30, cut(it.n, w - 52, nf), nf, color.BLACK, "left")
   if it.r ~= "" then draw.text(x + 14, y + 54, cut(it.r, w - 28, "small"), "small", color.BLACK, "left") end
   if col ~= nil then
     draw.circle(x + w - 20, y + 22, 8, col, true)
@@ -378,12 +380,14 @@ local function drawSlate(ctx, items, first)
   draw.clear(color.WHITE)
   local mx = 28
   local top = draw.top + 34
-  local colW = (draw.width - 2 * mx - 24) // 2
-  local rowH = (draw.height - top - 12) // 4
+  local tall = draw.height > draw.width
+  local colW = tall and (draw.width - 2 * mx) or (draw.width - 2 * mx - 24) // 2
+  local rowH = (draw.height - top - 12) // (tall and 8 or 4)
   for i = 0, PER_PAGE - 1 do
     local it = items[first + i]
     if it == nil then break end
     local col, row = i // 4, i % 4
+    if tall then col, row = 0, i end
     local x, y = mx + col * (colW + 24), top + row * rowH
     local txt, c = fmt(ctx, it)
     if it.a then txt, c = T(ctx, "Offline", "Offline"), nil end
@@ -413,7 +417,7 @@ local function drawNano(ctx, items, first)
     if c ~= nil then draw.circle(mx + 12, cy, 13, c, true) end
     glyph(it, mx + 2, cy - 10, 20, (c == color.RED) and color.WHITE or color.BLACK)
     local label = it.r ~= "" and (it.n .. " · " .. it.r) or it.n
-    draw.text(mx + 36, y + rowH // 2 + 6, cut(label, draw.width - 2 * mx - 220, "normal"), "normal", color.BLACK, "left")
+    draw.text(mx + 36, y + rowH // 2 + 6, cut(label, draw.width - 2 * mx - (draw.height > draw.width and 150 or 220), "normal"), "normal", color.BLACK, "left")
     draw.text(draw.width - mx, y + rowH // 2 + 6, txt, "normal", color.BLACK, "right")
   end
 end

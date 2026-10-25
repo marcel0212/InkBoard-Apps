@@ -241,8 +241,9 @@ local function drawOverview(ctx, d)
   local en = en_(ctx)
   local W = draw.width
   local x0 = 28
-  local qrBox = 210
-  local textW = W - 2 * x0 - qrBox - 24
+  local tall = draw.height > W
+  local qrBox = tall and 320 or 210
+  local textW = tall and (W - 2 * x0) or (W - 2 * x0 - qrBox - 24)
   local y = draw.top + 78
   local tl = wrapLines(d.title, textW, "large", 3)
   for _, l in ipairs(tl) do
@@ -274,7 +275,11 @@ local function drawOverview(ctx, d)
     if size > 0 then
       local qx = W - x0 - qrBox + (qrBox - size) // 2
       local qy = draw.top + 96
-      draw.text(W - x0 - qrBox // 2, qy - 14, en and "Open recipe online:" or "Rezept online öffnen:", "small", color.BLACK, "center")
+      if tall then
+        qx = (W - size) // 2
+        qy = math.max(y + 70, draw.top + 300)
+      end
+      draw.text(tall and W // 2 or (W - x0 - qrBox // 2), qy - 14, en and "Open recipe online:" or "Rezept online öffnen:", "small", color.BLACK, "center")
       draw.rect(qx - 8, qy - 4, size + 16, size + 16, color.BLACK, false, 10)
       draw.qr(d.url, qx, qy + 4, qrBox)
     end

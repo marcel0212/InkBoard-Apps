@@ -89,6 +89,9 @@ local SUB, SUBWAY, OTHER = 0, 1, 2
 local MODECOL = { [0] = color.GREEN, color.RED, color.BLUE }
 local PK = { hvv = "h", transitous = "t", db = "d" }
 local MX = 24 -- Seitenrand (TRANSIT_MARGIN_X)
+local SW, SH = draw.width, draw.height -- Anzeigegroesse (Hochformat 480x800)
+local SB = SH - 30 -- untere Nutzkante (ueber der Fusszeile)
+local TALL = SH > SW
 local NET = 0
 local WROTE = {} -- in diesem Abruf geschriebene Dateien (fuer die Pruefsumme "v", spart Dateizugriffe)
 local OFF = 0 -- Abstand Ortszeit - UTC in Sekunden
@@ -997,12 +1000,12 @@ local function disruptTag(x, base, has)
 end
 
 local function footer(shown, total, de, en, prov)
-  local y = 480 - 30
-  hline(MX, y, 800 - 2 * MX)
+  local y = SH - 30
+  hline(MX, y, SW - 2 * MX)
   local unit = T(de, en)
   local l = total > shown and (shown .. " " .. T("von", "of") .. " " .. total .. " " .. unit) or (shown .. " " .. unit)
   draw.text(MX, y + 20, l, "small", color.BLACK)
-  if total > shown then textR(800 - MX, y + 20, "+" .. (total - shown) .. " " .. T("weitere", "more"), "small") end
+  if total > shown then textR(SW - MX, y + 20, "+" .. (total - shown) .. " " .. T("weitere", "more"), "small") end
   if prov == "hvv" then textC(400, y + 20, T("Daten: hvv.de", "Data: hvv.de"), "small") end
 end
 
@@ -1095,7 +1098,7 @@ local function timeline(x, y, c, maxW)
     local sc = l.t == "W" and color.BLACK or lineColor(l.line, l.mode)
     draw.rect(curX, y, segW, 2, sc, true)
     draw.circle(curX, y, dotR, color.BLACK, true)
-    if l.dep > 0 then textCB(curX, y - 20, clock(l.dep), "normal", x, x + maxW) end
+    if l.dep > 0 and not (TALL and l.t == "W") then textCB(curX, y - 20, clock(l.dep), "normal", x, x + maxW) end
     if l.origin ~= "" then labels[#labels + 1] = { cx = curX, s = k == 1 and (T("Start: ", "Start: ") .. l.origin) or l.origin, p = k == 1 and 2 or 3 + k } end
     local icx = curX + segW // 2
     if l.t == "W" then walkIcon(icx - 13, y - 13, 26) else badge(icx - 23, y - 13, l.line, l.mode, true) end
@@ -1214,8 +1217,8 @@ local function stopSubline(top, d)
   local stand = (d and d.at and d.at > 0) and (T("Stand ", "as of ") .. clock(d.at)) or ""
   local sw = stand ~= "" and draw.measure(stand, "small") or 0
   local name = short(d and d.stop ~= "" and d.stop or T("Haltestelle", "Stop"))
-  draw.text(MX, top + 18, fit(name, 800 - 2 * MX - sw - 20, "normal"), "normal", color.BLACK)
-  if stand ~= "" then textR(800 - MX, top + 18, stand, "small") end
+  draw.text(MX, top + 18, fit(name, SW - 2 * MX - sw - 20, "normal"), "normal", color.BLACK)
+  if stand ~= "" then textR(SW - MX, top + 18, stand, "small") end
   return top + 30
 end
 
@@ -1245,14 +1248,16 @@ local function depsCards(top, d, prov)
     if #g.times < 4 then g.times[#g.times + 1] = x.when; g.delays[#g.delays + 1] = x.delay end
   end
   local tw, th, gap = 370, 176, 12
-  local gx = (800 - (2 * tw + gap)) // 2
+  local gx = (SW - (2 * tw + gap)) // 2
+  if TALL then tw = SW - 2 * MX; gx = MX end
   local cw, chh, cg = 79, 34, 8
   local drawnT = 0
   for gi = 1, #groups do
-    if drawnT >= 4 then break end
+    if drawnT >= (TALL and 5 or 4) then break end
     local g = groups[gi]
     local tx, ty = gx + (drawnT % 2) * (tw + gap), ct + (drawnT // 2) * (th + gap)
-    if ty + th > 450 then break end
+    if TALL then tx, ty = gx, ct + drawnT * (th + gap) end
+    if ty + th > SB then break end
     thickRR(tx, ty, tw, th, 12, color.BLACK)
     badge(tx + 14, ty + 12, g.line, g.mode, true)
     draw.text(tx + 72, ty + 32, fit(g.dest, tw - 86, "normal"), "normal", color.BLACK)
@@ -1282,8 +1287,9 @@ local function depsFlat(top, d, prov)
   local ct = stopSubline(top, d)
   if #d.list == 0 then notice("info", T("Keine Abfahrten gefunden.", "No departures found.")); return end
   local rowH, splitX, cntR, bx = 60, 168, 152, 192
-  local dx, re = bx + 60, 800 - MX
-  local cap = math.max(1, (450 - ct) // rowH)
+  local dx, re = bx + 60, SW - MX
+  if TALL then rowH, splitX, cntR, bx = 76, 104, 88, 120; dx = bx + 60 end
+  local cap = math.max(1, (SB - ct) // rowH)
   local shown = math.min(#d.list, cap)
   vline(splitX, ct, shown * rowH)
   for i = 1, shown do
@@ -1293,10 +1299,17 @@ local function depsFlat(top, d, prov)
     local le = leave(x.when)
     textR(cntR, ry + 34, tostring(minsTo(le)), "large")
     textR(cntR, ry + 52, T("Minuten", "minutes"), "small")
-    badge(bx, ry + 17, x.line, x.mode, true)
-    draw.text(dx, ry + 39, fit(x.dest, re - 130 - dx, "medium"), "medium", color.BLACK)
-    textR(re, ry + 34, T("ab ", "at ") .. clock(le), "normal")
-    if x.delay ~= 0 then textR(re, ry + 54, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+    if TALL then
+      badge(bx, ry + 12, x.line, x.mode, true)
+      draw.text(dx, ry + 34, fit(x.dest, re - dx, "medium"), "medium", color.BLACK)
+      draw.text(bx, ry + 64, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
+      if x.delay ~= 0 then textR(re, ry + 64, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+    else
+      badge(bx, ry + 17, x.line, x.mode, true)
+      draw.text(dx, ry + 39, fit(x.dest, re - 130 - dx, "medium"), "medium", color.BLACK)
+      textR(re, ry + 34, T("ab ", "at ") .. clock(le), "normal")
+      if x.delay ~= 0 then textR(re, ry + 54, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+    end
   end
   footer(shown, #d.list, "Abfahrten", "departures", prov)
 end
@@ -1304,8 +1317,9 @@ end
 local function depsCompact(top, d, prov)
   local ct = stopSubline(top, d)
   if #d.list == 0 then notice("info", T("Keine Abfahrten gefunden.", "No departures found.")); return end
-  local rowH, re = 36, 800 - MX
-  local cap = math.max(1, math.min(10, (450 - ct) // rowH))
+  local rowH, re = 36, SW - MX
+  if TALL then rowH = 40 end
+  local cap = math.max(1, math.min(TALL and 16 or 10, (SB - ct) // rowH))
   local shown = math.min(#d.list, cap)
   for i = 1, shown do
     local x = d.list[i]
@@ -1313,10 +1327,12 @@ local function depsCompact(top, d, prov)
     local base = ry + 24
     hline(MX, ry, re - MX)
     badge(MX, ry + 8, x.line, x.mode, false)
-    draw.text(74, base, fit(x.dest, 420, "normal"), "normal", color.BLACK)
     local le = leave(x.when)
-    textR(re - 216, base, clock(le), "normal")
-    if x.delay ~= 0 then textR(re - 150, base, dShort(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
+    local cl, dl = re - 216, re - 150
+    if TALL then cl, dl = re - 168, re - 70 end
+    draw.text(74, base, fit(x.dest, cl - 62 - 74, "normal"), "normal", color.BLACK)
+    textR(cl, base, clock(le), "normal")
+    if x.delay ~= 0 then textR(dl, base, dShort(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
     textR(re, base, minsTo(le) .. " min", "normal")
   end
   footer(shown, #d.list, "Abfahrten", "departures", prov)
@@ -1366,12 +1382,14 @@ local function routesCards(top, list, urgent, prov)
   if routesEmpty(list) then return end
   urgent = urgent or 1
   local ct, heroH, cardH, gap = top + 4, 228, 76, 10
-  local bx, bw = MX, 800 - 2 * MX
+  if TALL then heroH, cardH = 298, 118 end
+  local bx, bw = MX, SW - 2 * MX
   local re = bx + bw
   local hero = list[urgent]
   local hy = ct
   thickRR(bx, hy, bw, heroH, 12, color.BLACK)
   local boxW, boxH = 212, 88
+  if TALL then boxW = 132 end
   local boxX, boxY, tx = re - 22 - boxW, hy + 22, bx + 22
   draw.text(tx, hy + 26, T("JETZT LOSGEHEN", "LEAVE NOW"), "small", color.BLACK)
   local ne = routeLabel(tx, hy + 62, hero, "large", boxX - 16 - tx)
@@ -1384,12 +1402,13 @@ local function routesCards(top, list, urgent, prov)
     local sub = T("Minuten", "minutes")
     if f.delay ~= 0 then sub = sub .. " \194\183 " .. dLong(f.delay) end
     textC(boxX + boxW // 2, boxY + 76, sub, "small", color.ACCENT_INK)
-    if #hero.conns > 1 then chips(boxX, boxY + boxH + 8, hero.conns, 2, 100, 32, 12, false, re - 22, 2) end
-    timeline(tx, hy + 120, f, boxX - 16 - tx)
+    if #hero.conns > 1 then chips(boxX, boxY + boxH + 8, hero.conns, 2, TALL and 60 or 100, 32, TALL and 10 or 12, false, re - 22, 2) end
+    local o = TALL and 76 or 0
+    timeline(tx, hy + 120 + o, f, TALL and bw - 44 or boxX - 16 - tx)
     local meta = metaText(f)
-    if meta ~= "" then draw.text(tx, hy + 200, fit(meta, bw - 44, "small"), "small", color.BLACK) end
+    if meta ~= "" then draw.text(tx, hy + 200 + o, fit(meta, bw - 44, "small"), "small", color.BLACK) end
     local dl = disruptLine(f)
-    if dl then draw.text(tx, hy + 220, fit(dl, bw - 44, "small"), "small", color.RED) end
+    if dl then draw.text(tx, hy + 220 + o, fit(dl, bw - 44, "small"), "small", color.RED) end
   else
     draw.text(tx, hy + 120, noConn(hero), "normal", color.BLACK)
   end
@@ -1398,18 +1417,23 @@ local function routesCards(top, list, urgent, prov)
   local cy, drawnR = hy + heroH + gap, 1
   for s = 1, #list do
     if s ~= urgent then
-      if cy + cardH > 450 then break end
+      if cy + cardH > SB then break end
       local r = list[s]
       thickRR(bx, cy, bw, cardH, 10, color.BLACK)
       local ctx_ = bx + 16
-      local cne = routeLabel(ctx_, cy + 30, r, "normal", bw - 200)
+      local cne = routeLabel(ctx_, cy + 30, r, "normal", TALL and bw - 150 or bw - 200)
       if #r.conns > 0 then
         local c = r.conns[1]
         if c.dis == 1 then disruptTag(cne + 10, cy + 30, true) end
         textR(re - 16, cy + 32, T("in ", "in ") .. minsTo(leave(c.when)) .. " min", "large", c.delay > 0 and color.RED or color.BLACK)
         local chipsX = re - 16 - chipsW
-        chips(chipsX, cy + 40, r.conns, 3, cw, chh, cg, true, re - 16, 1)
-        strand(ctx_, cy + 42, c, chipsX - 14 - ctx_, false, false)
+        if TALL then
+          chips(ctx_, cy + 78, r.conns, 3, cw, chh, cg, true, re - 16, 1)
+          strand(ctx_, cy + 42, c, bw - 32, false, false)
+        else
+          chips(chipsX, cy + 40, r.conns, 3, cw, chh, cg, true, re - 16, 1)
+          strand(ctx_, cy + 42, c, chipsX - 14 - ctx_, false, false)
+        end
       else
         draw.text(ctx_, cy + 56, noConn(r), "small", color.BLACK)
       end
@@ -1430,15 +1454,16 @@ end
 local function routesFlat(top, list, prov)
   if routesEmpty(list) then return end
   local ct, bh, splitX = top + 4, 130, 556
-  local tx, re = splitX + 16, 800 - MX
-  local cap = math.max(1, (450 - ct) // bh)
+  local tx, re = splitX + 16, SW - MX
+  if TALL then bh, splitX, tx = 176, SW, MX end
+  local cap = math.max(1, (SB - ct) // bh)
   local shown = math.min(#list, cap)
-  vline(splitX, ct, shown * bh)
+  if not TALL then vline(splitX, ct, shown * bh) end
   for s = 1, shown do
     local r = list[s]
     local by = ct + (s - 1) * bh
     if s > 1 then hline(MX, by, re - MX) end
-    local ne = routeLabel(MX, by + 34, r, "large", splitX - 24 - MX)
+    local ne = routeLabel(MX, by + 34, r, "large", TALL and 280 or splitX - 24 - MX)
     if #r.conns == 0 then
       draw.text(MX, by + 72, noConn(r), "small", color.BLACK)
       textR(re, by + 34, "--:--", "normal")
@@ -1450,12 +1475,13 @@ local function routesFlat(top, list, prov)
       if meta ~= "" then draw.text(MX, by + 110, fit(meta, splitX - 24 - MX, "small"), "small", color.BLACK) end
       local le = leave(c.when)
       local cnt = minsTo(le) .. " min"
-      draw.text(tx, by + 34, cnt, "large", color.BLACK)
-      if c.delay ~= 0 then draw.text(tx + draw.measure(cnt, "large") + 10, by + 34, dShort(c.delay), "normal", c.delay > 0 and color.RED or color.GREEN) end
-      draw.text(tx, by + 60, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
+      local ty = TALL and by + 140 or by + 60
+      if TALL then textR(re, by + 34, cnt, "large") else draw.text(tx, by + 34, cnt, "large", color.BLACK) end
+      if c.delay ~= 0 then draw.text(TALL and re - draw.measure(cnt, "large") - 50 or tx + draw.measure(cnt, "large") + 10, by + 34, dShort(c.delay), "normal", c.delay > 0 and color.RED or color.GREEN) end
+      draw.text(tx, ty, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
       local nx = nextTimes(r, " \194\183 ", T("dann ", "then "))
-      if nx then draw.text(tx, by + 84, fit(nx, re - tx, "small"), "small", color.BLACK) end
-      if c.dis == 1 then draw.text(tx, by + 108, fit("! " .. T("Störung auf der Strecke", "Disruption en route"), re - tx, "small"), "small", color.RED) end
+      if nx then draw.text(tx + (TALL and 110 or 0), ty + (TALL and 0 or 24), fit(nx, re - tx - (TALL and 110 or 0), "small"), "small", color.BLACK) end
+      if c.dis == 1 then draw.text(tx, ty + (TALL and 22 or 48), fit("! " .. T("Störung auf der Strecke", "Disruption en route"), re - tx, "small"), "small", color.RED) end
     end
   end
   footer(shown, #list, "Routen", "routes", prov)
@@ -1464,12 +1490,13 @@ end
 local function routesCompact(top, list, prov)
   if routesEmpty(list) then return end
   local stripH, sx0, sw, lz = 72, 310, 310, 276
-  local re = 800 - MX
-  draw.text(MX, top + 18, T("ZEIT BIS LOSGEHEN", "TIME UNTIL DEPARTURE"), "small", color.BLACK)
-  for m = 0, 30, 10 do textC(sx0 + m * sw // 30, top + 18, tostring(m), "small") end
+  if TALL then stripH, sx0, sw, lz = 100, MX + 12, SW - 2 * MX - 24, 280 end
+  local re = SW - MX
+  draw.text(MX, top + 18, TALL and T("MIN BIS LOSGEHEN", "MIN TO GO") or T("ZEIT BIS LOSGEHEN", "TIME UNTIL DEPARTURE"), "small", color.BLACK)
+  for m = TALL and 10 or 0, 30, 10 do textC(sx0 + m * sw // 30, top + 18, tostring(m), "small") end
   hline(MX, top + 28, re - MX)
   local st = top + 34
-  local cap = math.max(1, math.min(5, (450 - st) // stripH))
+  local cap = math.max(1, math.min(5, (SB - st) // stripH))
   local shown = math.min(#list, cap)
   for s = 1, shown do
     local r = list[s]
@@ -1483,22 +1510,22 @@ local function routesCompact(top, list, prov)
       local c = r.conns[1]
       if c.dis == 1 then disruptTag(ne + 8, sy + 26, true) end
       local meta = metaText(c)
-      if meta ~= "" then draw.text(MX, sy + 46, fit(meta, lz, "small"), "small", color.BLACK) end
+      if meta ~= "" and not TALL then draw.text(MX, sy + 46, fit(meta, lz, "small"), "small", color.BLACK) end
       local le = leave(c.when)
       local m = minsTo(le)
       local mx = sx0 + math.min(m, 30) * sw // 30
       local mc = m < 5 and color.RED or color.ACCENT
-      local ay = sy + 30
+      local ay = TALL and sy + 62 or sy + 30
       if mx > sx0 then draw.rect(sx0, ay - 1, mx - sx0, 3, mc, true) end
       if mx < sx0 + sw then hline(mx, ay, sx0 + sw - mx) end
       draw.circle(mx, ay, 8, color.WHITE, true)
       draw.circle(mx, ay, 8, mc, false)
       draw.circle(mx, ay, 7, mc, false)
-      textC(mx, sy + 16, tostring(m), "small")
-      strand(sx0, sy + 42, c, sw, false, false)
+      textC(mx, ay - 14, tostring(m), "small")
+      strand(TALL and MX or sx0, ay + 12, c, TALL and SW - 2 * MX or sw, false, false)
       textR(re, sy + 30, clock(le), "large", c.delay > 0 and color.RED or color.BLACK)
       local nx = nextTimes(r, " \194\183 ")
-      if nx then textR(re, sy + 52, nx, "small") end
+      if nx then textR(re, sy + (TALL and 46 or 52), nx, "small") end
     end
   end
   footer(shown, #list, "Routen", "routes", prov)
@@ -1509,7 +1536,7 @@ end
 local function routeSingle(top, r, style, prov)
   local cs = {}
   for _, c in ipairs(r.conns) do if #cs < 3 or leave(c.when) <= NOW + 600 then cs[#cs + 1] = c end end
-  local re = 800 - MX
+  local re = SW - MX
   local ne = routeLabel(MX, top + 30, r, "large", 500)
   if #cs > 0 and cs[1].dis == 1 then disruptTag(ne + 10, top + 30, true) end
   textR(re, top + 30, T("Losgehen in den n\195\164chsten 10 Min.", "Leave within the next 10 min"), "small")
@@ -1517,7 +1544,7 @@ local function routeSingle(top, r, style, prov)
   local cards, flat = style ~= "flat" and style ~= "compact", style == "flat"
   local rowH = cards and 118 or (flat and 96 or 60)
   local y0 = top + 44
-  local shown = math.min(#cs, math.max(1, (450 - y0) // rowH))
+  local shown = math.min(#cs, math.max(1, (SB - y0) // rowH))
   for k = 1, shown do
     local c = cs[k]
     local y = y0 + (k - 1) * rowH

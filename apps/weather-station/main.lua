@@ -19,7 +19,7 @@ local SHORT_EN = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}
 local MONTHS_DE = {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"}
 local MONTHS_EN = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
 
-local W = 800
+local W = (draw and draw.width) or 800 -- CHANGELOG 932: folgt der Display-Ausrichtung
 local CARD_MARGIN = 14
 local CARD_RADIUS = 8
 
@@ -211,8 +211,11 @@ local function feelsText(w, ctx)
   return string.format(tr("feels like %.0f °C", "gefühlt %.0f °C", ctx), w.feels)
 end
 
+local drawPortrait -- unten definiert (Hochformat)
+
 -- Bento (cards) und Slate (flat): gleiche Positionen, Slate ohne Karten (dünne Trennlinien)
 local function drawBigStyle(w, ctx, flat)
+  if draw.height > draw.width then return drawPortrait(w, ctx, flat, false) end
   local y = draw.top + 2
   titleBlock(w, ctx, y, 20, 38)
   y = y + 54
@@ -241,8 +244,50 @@ local function drawBigStyle(w, ctx, flat)
   end
 end
 
+-- CHANGELOG 932: Hochformat (480x800): Kopf, grosse Karte mit Symbol + Temperatur, Fakten in einer Spalte, Stundenverlauf, Tage
+drawPortrait = function(w, ctx, flat, compact)
+  local y = draw.top + 10
+  titleBlock(w, ctx, y, 26, 46)
+  y = y + 70
+  local cardW = W - 2 * CARD_MARGIN
+  local function section(top, h)
+    if flat then hline(CARD_MARGIN, top, cardW) else accentCard(CARD_MARGIN, top, cardW, h) end
+  end
+  local heroH = compact and 130 or 170
+  section(y - 6, heroH)
+  draw.weather_icon(w.cond, 86, y + heroH // 2 - 8, compact and 70 or 96, w.night)
+  if compact then
+    draw.text(150, y + 62, string.format("%.0f °C", w.temp), "large", color.BLACK)
+    draw.text(150, y + 88, feelsText(w, ctx), "normal", color.BLACK)
+  else
+    bigTemp(160, y + 92, w.temp)
+    draw.text(160, y + 122, feelsText(w, ctx), "normal", color.BLACK)
+  end
+  y = y + heroH + 22
+  local rowH = compact and 44 or 52
+  local fh = rowH * 4 + 18
+  section(y - 10, fh)
+  factGrid(w, ctx, CARD_MARGIN + 22, 20, CARD_MARGIN + 14, rowH, y + 8, 20)
+  y = y + fh + 14
+  if #w.hourly >= 2 then
+    section(y - 10, 112)
+    hourlyBlock(w, y + 4, 60, 28, 44, CARD_MARGIN + 14, 8, 18, 15, 38)
+    y = y + 44 + 74
+  end
+  if #w.daily > 0 then
+    section(y - 10, 112)
+    local keep = {}
+    for i = 1, math.min(#w.daily, 5) do keep[i] = w.daily[i] end
+    local w2 = {daily = keep}
+    dailyBlock(w2, ctx, y + 2, 22, 16, 34, 48, 82)
+  else
+    notice(W // 2, y, "loading", tr("Forecast is loading ...", "Vorhersage wird geladen ...", ctx))
+  end
+end
+
 -- Nano (compact): engere Abstände, kleineres Symbol
 local function drawCompact(w, ctx)
+  if draw.height > draw.width then return drawPortrait(w, ctx, false, true) end
   local y = draw.top + 2
   titleBlock(w, ctx, y, 18, 34)
   y = y + 46
@@ -531,7 +576,7 @@ end
 -- ====================================================================================== Seiten/Widget Innen + Netzwerk
 do
 
-local W = 800
+local W = (draw and draw.width) or 800 -- CHANGELOG 932: folgt der Display-Ausrichtung
 local CARD_MARGIN = 14
 local CARD_RADIUS = 8
 local HISTORY_DAYS = 1 -- lokal ist der Verlauf fest auf 1 Tag begrenzt
@@ -874,15 +919,23 @@ local function pageCards(s, ctx)
   local x1 = CARD_MARGIN
   local x2 = x1 + statW + statGap
   local x3 = x2 + statW + statGap
+  local y1, y2, y3 = statY, statY, statY
+  local stacked = draw.height > draw.width -- Hochformat: drei Kacheln untereinander
+  if stacked then
+    statW = cardW
+    x2, x3 = x1, x1
+    y2 = y1 + statH + 8
+    y3 = y2 + statH + 8
+  end
   local tempStatus = s.temp < 18 and tr("cool", "kühl", ctx) or (s.temp > 24 and tr("warm", "warm", ctx) or tr("comfortable", "angenehm", ctx))
-  statCell(x1, statY, statW, statH, "temp", TEMP_COLOR, tr("Temperature", "Temperatur", ctx),
+  statCell(x1, y1, statW, statH, "temp", TEMP_COLOR, tr("Temperature", "Temperatur", ctx),
     string.format(tr("%.1f°C", "%.1f °C", ctx), s.temp), 2, tempStatus, color.BLACK)
-  statCell(x2, statY, statW, statH, "co2", CO2_COLOR, "CO2", string.format("%d ppm", s.co2),
+  statCell(x2, y2, statW, statH, "co2", CO2_COLOR, "CO2", string.format("%d ppm", s.co2),
     s.co2_warn and 1 or 0, co2Status(s, ctx), CO2_COLORS[co2Zone(s)])
-  statCell(x3, statY, statW, statH, "hum", HUM_COLOR, tr("Humidity", "Luftfeuchtigkeit", ctx), string.format("%.0f %%", s.humidity),
+  statCell(x3, y3, statW, statH, "hum", HUM_COLOR, tr("Humidity", "Luftfeuchtigkeit", ctx), string.format("%.0f %%", s.humidity),
     s.hum_warn and 1 or 0, humStatus(s, ctx), HUM_COLORS[humZone(s)])
 
-  local divider1 = statY + statH + 10
+  local divider1 = y3 + statH + 10
   hline(CARD_MARGIN, divider1, cardW)
   if not h then
     noticeCompact(W // 2, divider1 + 50, "empty", tr("Not enough trend data yet", "Noch nicht genug Verlaufsdaten", ctx))
@@ -903,7 +956,8 @@ local function pageCards(s, ctx)
   draw.text(CARD_MARGIN, focusY + 14, title, "normal", color.BLACK)
   draw.text(CARD_MARGIN + cardW, focusY + 14, fval, "normal", color.BLACK, "right")
   local chartY = focusY + 26
-  local chartH = 140
+  local tall = draw.height > draw.width
+  local chartH = tall and 170 or 140
   axisChart(CARD_MARGIN, chartY, cardW, chartH, series, h.time, h.n, fcol, fdec)
   local divider2 = chartY + chartH + 12
 
@@ -915,7 +969,7 @@ local function pageCards(s, ctx)
   hline(CARD_MARGIN, divider2, cardW)
   local miniGap = 12
   local miniW = count == 1 and cardW or (cardW - miniGap) // 2
-  local miniH = 100
+  local miniH = tall and 170 or 100
   local miniY = divider2 + 14
   local sx = CARD_MARGIN
   local function secondary(label, value, col, vals, dec)
@@ -983,7 +1037,8 @@ local function pageCompact(s, ctx)
   local h = loadHistory(0)
   if h then
     local histY = valuesY + valuesCardH + 10
-    accentCard(CARD_MARGIN, histY, cardW, 118)
+    local gx = (draw.height > draw.width) and 190 or 0 -- Hochformat: hoehere Verlaufsgrafiken
+    accentCard(CARD_MARGIN, histY, cardW, 118 + gx)
     draw.text(cx, histY + 20, histTitle(h.hours, ctx), "normal", color.BLACK, "center")
     local graphY = histY + 34
     local colGap = 20
@@ -992,11 +1047,11 @@ local function pageCompact(s, ctx)
     local c2 = c1 + colW + colGap
     local c3 = c2 + colW + colGap
     draw.text(c1 + colW // 2, graphY + 10, tr("Temperature", "Temperatur", ctx), "normal", color.BLACK, "center")
-    sparkline(c1, graphY + 16, colW, 56, h.temp, h.n, TEMP_COLOR, true, 1)
+    sparkline(c1, graphY + 16, colW, 56 + gx, h.temp, h.n, TEMP_COLOR, true, 1)
     draw.text(c2 + colW // 2, graphY + 10, tr("Humidity", "Feuchte", ctx), "normal", color.BLACK, "center")
-    sparkline(c2, graphY + 16, colW, 56, h.humidity, h.n, HUM_COLOR, true, 0)
+    sparkline(c2, graphY + 16, colW, 56 + gx, h.humidity, h.n, HUM_COLOR, true, 0)
     draw.text(c3 + colW // 2, graphY + 10, "CO2", "normal", color.BLACK, "center")
-    sparkline(c3, graphY + 16, colW, 56, h.co2, h.n, CO2_COLOR, true, 0)
+    sparkline(c3, graphY + 16, colW, 56 + gx, h.co2, h.n, CO2_COLOR, true, 0)
   end
 end
 
@@ -1026,17 +1081,18 @@ local function pageFlat(s, ctx)
     draw.text(cx, lineY, histTitle(h.hours, ctx), "normal", color.BLACK, "center")
     lineY = lineY + 18
     local graphY = lineY
+    local gx = (draw.height > draw.width) and 230 or 0
     local colGap = 20
     local colW = (W - 80 - 2 * colGap) // 3
     local c1 = 40
     local c2 = c1 + colW + colGap
     local c3 = c2 + colW + colGap
     draw.text(c1 + colW // 2, graphY + 10, tr("Temperature", "Temperatur", ctx), "normal", color.BLACK, "center")
-    sparkline(c1, graphY + 16, colW, 70, h.temp, h.n, TEMP_COLOR, true, 1)
+    sparkline(c1, graphY + 16, colW, 70 + gx, h.temp, h.n, TEMP_COLOR, true, 1)
     draw.text(c2 + colW // 2, graphY + 10, tr("Humidity", "Feuchte", ctx), "normal", color.BLACK, "center")
-    sparkline(c2, graphY + 16, colW, 70, h.humidity, h.n, HUM_COLOR, true, 0)
+    sparkline(c2, graphY + 16, colW, 70 + gx, h.humidity, h.n, HUM_COLOR, true, 0)
     draw.text(c3 + colW // 2, graphY + 10, "CO2", "normal", color.BLACK, "center")
-    sparkline(c3, graphY + 16, colW, 70, h.co2, h.n, CO2_COLOR, true, 0)
+    sparkline(c3, graphY + 16, colW, 70 + gx, h.co2, h.n, CO2_COLOR, true, 0)
   end
 end
 
@@ -1087,19 +1143,21 @@ local function pageNetwork(ctx)
 
   local cardW = W - 2 * CARD_MARGIN
   local gridGap = 12
-  local tileW = (cardW - gridGap) // 2
+  local cols = (draw.height > draw.width) and 1 or 2 -- Hochformat: eine Spalte
+  local tileW = cols == 2 and (cardW - gridGap) // 2 or cardW
   local headerOffset = 0
   if valid >= 1 then
-    draw.text(cx, top + 14, string.format(tr("Avg %.1f°C · %.0f%% humidity across %d rooms", "Ø %.1f°C · %.0f%% Feuchte über %d Räume", ctx),
-      sumT / valid, sumH / valid, valid), "normal", color.BLACK, "center")
+    local fmtAvg = cols == 2 and tr("Avg %.1f°C · %.0f%% humidity across %d rooms", "Ø %.1f°C · %.0f%% Feuchte über %d Räume", ctx)
+      or tr("Avg %.1f°C · %.0f%% · %d rooms", "Ø %.1f°C · %.0f%% · %d Räume", ctx)
+    draw.text(cx, top + 14, string.format(fmtAvg, sumT / valid, sumH / valid, valid), "normal", color.BLACK, "center")
     headerOffset = 24
   end
-  local tileH = (compact and 108 or 124) + 18
+  local tileH = (compact and 108 or 124) + 18 + (cols == 1 and 34 or 0)
   local col1X = CARD_MARGIN
   local col2X = CARD_MARGIN + tileW + gridGap
 
   for i, t in ipairs(tiles) do
-    local row, col = (i - 1) // 2, (i - 1) % 2
+    local row, col = (i - 1) // cols, (i - 1) % cols
     local tx = (col == 0) and col1X or col2X
     local ty = top + 6 + headerOffset + row * (tileH + gridGap)
     local alarm = warnOn and t.valid and t.co2 >= warnPpm

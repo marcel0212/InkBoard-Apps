@@ -353,7 +353,7 @@ local function drawCards(ctx, st)
   local sec = secondaries(ctx, primary)
   local shown = #st
   local top = draw.top + 6
-  local at, tileW, tileH = gridLayout(shown, 2, top, draw.height - 16, 20, 14, 130)
+  local at, tileW, tileH = gridLayout(shown, draw.height > draw.width and 1 or 2, top, draw.height - 16, 20, 14, 130)
   for i = 1, shown do
     local s = st[i]
     local tx, ty = at(i)
@@ -365,7 +365,7 @@ local function drawCards(ctx, st)
     local nameX = tx + 14 + 28 + 6
     draw.text(nameX, ty + 24, fit(s.name, distX - 8 - nameX, "normal"), "normal", color.BLACK, "left")
     draw.text(distX, ty + 22, dist, "small", color.BLACK, "left")
-    if tileH > 100 and s.addr ~= "" then
+    if tileH > ((draw.height > draw.width) and 126 or 100) and s.addr ~= "" then
       draw.text(tx + 18, ty + 40, fit(s.addr, tileW - 36, "small"), "small", color.BLACK, "left")
     end
     local lift = tileH > 90 and 42 or 18
@@ -386,10 +386,26 @@ local function drawFlat(ctx, st, en)
   local sec = secondaries(ctx, primary)
   local W = draw.width
   local y = draw.top + 10
-  local shown, rowH, truncated = rowLayout(#st, y, draw.height - 16, 54, 64, 16)
+  local tall = draw.height > draw.width
+  local shown, rowH, truncated = rowLayout(#st, y, draw.height - 16, tall and 104 or 54, tall and 112 or 64, 16)
   for i = 1, shown do
     local s = st[i]
     local rowY = y + (i - 1) * rowH
+    if tall then
+      badge(24, rowY + 4, s.brand, true, ctx.cfg.logos ~= false)
+      local tx = 24 + 28 + 8
+      local dist = string.format("%.1f km", s.dist)
+      draw.text(W - 26, rowY + 22, dist, "small", color.BLACK, "right")
+      draw.text(tx, rowY + 22, fit(s.name, W - 26 - tx - draw.measure(dist, "small") - 10, "normal"), "normal", color.BLACK, "left")
+      if s.addr ~= "" then draw.text(tx, rowY + 40, fit(s.addr, W - 26 - tx, "small"), "small", color.BLACK, "left") end
+      local pt = priceText(s[primary])
+      swatch(tx, rowY + 69, primary, 12)
+      draw.text(tx + 20, rowY + 82, pt, "large", color.BLACK, "left")
+      local sx = tx
+      for _, t in ipairs(sec) do sx = sx + segment(sx, rowY + 100, t, s[t]) + 14 end
+      if i < shown then draw.line(24, rowY + rowH - 6, W - 24, rowY + rowH - 6, color.BLACK) end
+      goto continue
+    end
     badge(24, rowY + 4, s.brand, true, ctx.cfg.logos ~= false)
     local textX = 24 + 28 + 8
     draw.text(textX, rowY + 22, s.name, "normal", color.BLACK, "left")
@@ -412,6 +428,7 @@ local function drawFlat(ctx, st, en)
       for _, t in ipairs(sec) do sx = sx + segment(sx, rowY + 42, t, s[t]) + 14 end
     end
     if i < shown then draw.line(24, rowY + rowH - 6, W - 24, rowY + rowH - 6, color.BLACK) end
+    ::continue::
   end
   if truncated then
     local hint = string.format(en and "+%d more stations ('Nano' style)" or "+%d weitere Tankstellen (Stil 'Nano')", #st - shown)
@@ -437,9 +454,21 @@ local function drawCompact(ctx, st)
   end
   local xs = columns(widths, W - 26)
   local distColX = xs[1]
+  local tall = draw.height > draw.width
+  if tall then rowH = math.min(64, (draw.height - 12 - y) // math.max(shown, 1)) end
   for i = 1, shown do
     local s = st[i]
     local rowY = y + (i - 1) * rowH
+    if tall then
+      badge(24, rowY + 6, s.brand, false, ctx.cfg.logos ~= false)
+      local dist = string.format("%.1f km", s.dist)
+      draw.text(W - 26, rowY + 20, dist, "small", color.BLACK, "right")
+      draw.text(24 + 18 + 5, rowY + 20, fit(s.name, W - 26 - 47 - draw.measure(dist, "small") - 10, "small"), "small", color.BLACK, "left")
+      local sx = 24 + 18 + 5
+      for _, t in ipairs(cols) do sx = sx + segment(sx, rowY + 44, t, s[t]) + 14 end
+      if i < shown then draw.line(24, rowY + rowH - 2, W - 24, rowY + rowH - 2, color.BLACK) end
+      goto continue
+    end
     badge(24, rowY + (rowH - 13) // 2, s.brand, false, ctx.cfg.logos ~= false)
     local base = rowY + rowH // 2 + 4
     local dist = string.format("%.1f km", s.dist)
@@ -453,6 +482,7 @@ local function drawCompact(ctx, st)
       segment(xs[c] + widths[c] - 10 - w, base, t, s[t])
     end
     if i < shown then draw.line(24, rowY + rowH - 2, W - 24, rowY + rowH - 2, color.BLACK) end
+    ::continue::
   end
 end
 

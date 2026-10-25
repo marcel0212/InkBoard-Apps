@@ -4,7 +4,7 @@
     "de": "Countdown",
     "en": "Countdown"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "apiLevel": 1,
   "pages": 1,
   "refreshMinutes": 60,

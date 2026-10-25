@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.2",
       "apiLevel": 25,
       "pages": 3,
       "pageNames": [
@@ -169,9 +169,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "6e75400fd76b9e2ceead84afe98ca930db80633cf1808f672e93e2520e9b9de2",
-      "sig": "GqD0Vw727oYP9Yh5r00MWvPiFhT84F6XdTkBGOWNEsZ3rUxLgu6FeMC1gnPD5JfgObEMpV2mzdFPiHax176IbAcGzocfQCqIAR3Kc8/mDXkJaEz3xd0qajhdLKCtIs+Cg2//RXW/5+XO4IqBonHZQ3cvvGF+Hu1b8ciRs45InitVyC40o03j3QLhpm0X/mfvUvnBV1BTfTPfb8yc2j6MVGcDnTqmd2aE9vSDXm3GEpThVp+mBizaA2XV6WZeVHW9xXn8ZlVp3cp5DCls+jgJSLi17+8iuAWzpFwPneiP8j1uAouiU2iyOPaskMLz0Ww8/mCLBnZegtloVT0mZDtm0Q==",
-      "size": 34209
+      "sha256": "06f3dcd30871c46277fc85f7d04eb331f7f0d13362ddfc714ad5c846584b6433",
+      "sig": "TmHCo254xTnklc5FFaYG/H/UBfkVMQSK+vM4DF3PYRrURarQITdlT5M3wYInlJv0p0i8E2WNRr9YtRkfg+zMy9qFe9o2dnUVB+qAd8oHFbt9r8pYEb2fvvVPks0bpFlAZUvrTz3P88o8bYWCmnBt2TRXeW3g/OXa5u1Ar0LftSnVA5OcVJJ3KSYtE5s9HbW5xJxB3N0ifzCHinJ5CnhqvHsrC4dzSA950xxyxR0F/IZBnWCjgNcd0jO5hTCzB3/ndAj4/JwlyKT5Z4mlQLSB/B2BSagfG6bKlZ3VSKvNobYFB3JgihNIOH6oY4RLf5bxmEsz4k7m4kw+IGCNtS+gZw==",
+      "size": 36919
     },
     {
       "id": "apple-home",
@@ -189,7 +189,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.9",
+      "version": "1.4.14",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -301,9 +301,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "f9fd9b9813530333ead0d9a28f5b0a465a5ee370351608921ce730d020746167",
-      "sig": "RrQBOPu68MeiDGPq8lLQyG/TdfhzSt3q2BuriRifaA+7nafa6aGO3AKjgYpahA4rpE8PZ6XRH3yvhJM5plRDp+7z0SpTxP/q+NKPLWl0oKJeDL+qfP50yFCzAuXvxguQVAzmY1aSJpAihDVTsVdsbB4NzEFEcqWW3FN3SxmRl4br/925aFToVypWST9M0p909Fb6i+PiX2vbtgLdloL5Ga9nwlJ7VKwH0w7WVPxTJg0jjCUahxTa0HtLTZar4Dn4qRzUqiw9WcnAxtx5K3rZt8ABOIV6pVVv1mKztZVFTfehn3NvymrEMvMc4RR3xTCW4siKWU8hMR9ijBc0uS8lUw==",
-      "size": 38252
+      "sha256": "da4c62264e6187bae7f721a0c8c87f6b413155f1764029de1032ba8e0bda18c3",
+      "sig": "GDwFOaLmZiUVGJvlh8yPlUbEZKKUQnCh/i/BYcPuyzC72kJFwadd0B1Q1rUishL5qZFW6iaoFXSHxTnh1ibOsdaLeNMwnbdrSU0CSJzczsTg4SNO3FE72KpVTTqJlc4mAcAX5ArH7Wahizu8i97f86dNK2B7+B2vgkGX8sn8PbjeQvUi/rNPRyf0YHUYiobfL/HvjEswbiNywBpZLBb67x2SlSELcppqkBBhInMF8LNp5cDTrTkhxgTt90AVvAIo60Sd1GL2GqTnJ8iHcC/HZ0WONRss1tCgFCGYijk4X4PLpWS1wZOTjswA9MrvkjbV1qywq8UU+CR4FvQAQcDSQg==",
+      "size": 38578
     },
     {
       "id": "bilder",
@@ -321,7 +321,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.5.1",
       "apiLevel": 30,
       "pages": 1,
       "pageNames": [
@@ -377,9 +377,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "ebe1196d5c8781c443f39a6aef10099a1b3190a525b5e217f1c0d35ebe678452",
-      "sig": "tLA6a856Mtr5URrt6LtRoLTCNnFFcr3WlWl4fHEEuBwaWYw0dbkUwQhtfEqJom1m5qO2ZByPV5cLxQjXX+MWDnqiq77ahpUO10v5PYcrxfx+sbn1M1Lw1uCs3RIwx7bTAOmALrdr8PvIDgWhxnQrB6Cvo3pst3lmwb0TrS84SvLWvywZhUe+XU4XvvGdmrV/Vpc0OxZxDrB/+6oJ9vdMs5rSZ8hPtQkQQEG4FZQ0rWvr4cDFVZTcqdKIXwAxrM2fc7fMhE5rwbIJ0pUpIbb93pp0lbl4Crqg5RRCPxayU8ELwmmC5m313dh1AEqgczBjMdb2WUBS46SUYg9aNuirFA==",
-      "size": 23861
+      "sha256": "3eaaf797f7bddaa6a5d1eb87eac09d298a998d80c1da42e63cf4364f2d3edce0",
+      "sig": "VvomSyaxMhtPXcR/vP+VaCTNvqR6QiQ1/AjZXUkeND++p6rybcoO3JUXpMilW8mL8aQfG3n2JLqYo77tN9epdW4h8EYwMTfA6SBuThmLl9J9knbscUjE1VlFwaLzQ3I+UpE1S6sP/65KZrenJ9iIkNG3ZmjrBMBY6V90urW5EZv/KCIF5ChhUg+v1Op+774K/f8WlcsqgdOr0bNScl2Q+A0o+1PBIcAm8lXZ0QKhAGWmFuX/7Q14Pm21Uit3ZUxQ1ClaVQaot6L25B/7WDsMPYNPQlj3g2krjSfIzlHyDYVHSydVHtUK5WSRD7E7LYIu+wde7FySW6/+zTqGW2leQw==",
+      "size": 23460
     },
     {
       "id": "calendar-app",
@@ -397,7 +397,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -541,9 +541,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "9206934ffa16457ba209989f66107ebc909eb79b029f04f28b2063b2dc905b3e",
-      "sig": "t/7BwSfV3XQlQtIH5VDIY0V/QiR3oXfFloWy2/LfHAogx3fdGd19yijvZ+dKXqFMwBs54nspTZe4Ah18F1D/Lx/gUv1+nIHmpzYHzjIjT7/qE+TzTAu7/7IHuo0LVrNnDbMoU/BZ5MheEPgeExIzyiTvDEBYofoXN+h35X4LUIDNSwDILqyyYtU2UXQiFZ5cVC2KJcI0SZNDizR3z1vOM4uXPAAvO38B5RfzwF+QpqT8+j903qyoY2neGYtOIzWdCKNtSwX7QR4rXQR0x6Yz5Jwrulr4gLYXCABMrsjbdPhMOcPqr806+QBp8f4V+MjeOgAXNHMj9oMnvPd9A3fCVw==",
-      "size": 43786
+      "sha256": "292e9b8a7c728ca5ed953238d7fa8498f621e8b3330e48598bd7794698165f34",
+      "sig": "GET3lLhcGDx0fRl5TzNk6wxge09jo9uztOuW08SGrQd8NDFw9d7WiMcaxAa0XEYCr1Cn6mYLo9H9lbL7JM66eQWpbfNgvjzQfN5+F4qSdo1wyRtszDzFlW0yd8gy3tWvO631LUHsoQDJF0RDiy5bu0ZgaWYYqBDE2wq58X8owaDo9+CZ0mQjAb2wwGEbkmx8NiJsm2ahJ9xIIVrPqf3FnkG2zoE+3pHP0EMHBKtVNzlhDsN4+e00Q3PhJhruW9Fgk9l0Ltl+b73MqA/n9JCzME3uwhp7PwdVszARLcpmiI54LpYgdZSipG93IfECn+UDxY03YYrZKLkvdIMl2i0GEQ==",
+      "size": 42272
     },
     {
       "id": "clock",
@@ -561,7 +561,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
@@ -623,9 +623,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "ba30e04c16e6a3c99364c70c4dde1c190872f04313becfa486a982402fc6aea0",
-      "sig": "J9imRuTJ+QoUtmJ5ym1HyPMPfLe41Q9tScn+D15WQKJj2i1KEGdgbnH5t3/ubsI5MfxXFKNwG9Sh/CXNrU4axTPsmMM8FdcM6MhueFZZhn77R9mqs8L6n9O/vHEenWXqhb//L0AjW9kpCVOVrhQOhPzNUVl4YavAg1CgeL/cKGTLM2Sh1VdG4y+M1jfnc9xOH5xvmqFHT4Wlt0hhu8A9GpAovbx4zEH/BtBnMtMehmq7l4LlWhWlZtlx+bh0oddLbDc1MoqHwogYrkWSB6DZhpapzipD/4gw5IGCssvjKp+cylv4KUuFFaXYA/VnlH6KQ0sQQNuUBhLiZ+vaCWjvog==",
-      "size": 10187
+      "sha256": "3ef08ae602abe1ebc86d7fec0c6090bfe885cef9da6d01e9227e935c11951575",
+      "sig": "uXG6t1O/lIPQ70/e+LLvNC+nORuAVUn8xWGiKLicblJC8Ih0jwzkiyMuTVW+wB+DblFAwE2bJ1pC2m3OmKdmYaYgiVyt3fpZzav/wqx4ieSyWhCPfXWX/GP90BTQmp/JcqAL/VkDr08IBcEuwjZARAPQQS+6sEJmOHaObuRSAQm6Tr5bYRDOZ8RCk81gpygBiWIqc7o6qy4uAAWZEc4SOchiZYD3ujM5CpL7EoUeF6VP6t4LoAnstfGZkoUp18MBwFYEK7mknSw1SATM9bcrhn3Af06FnKQvGReos4vCIaoXVkBsEZzqvfKCOWBKQycNSIaCCn5QkNtWVGSDhNTNwA==",
+      "size": 14334
     },
     {
       "id": "countdown",
@@ -643,7 +643,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "apiLevel": 1,
       "pages": 1,
       "hasWidget": true,
@@ -683,9 +683,9 @@
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "0a64bdd4776b3b793ed2fdf1ec8814ee432a8d977d1d5e8ade1409abe101c2b5",
-      "sig": "fGXaOgpv3rBBBSLec+OMo8Yvrb1oy6TpSqauU/aof8wDhByB9+bLrre+rwIXhY0zQSI2xMVs/WTq8hI1MjY9mA2nXb/vLLVGCHUP619q71mqwfKzxQQqLT7wf7sCU6j4C2Wp41V4qToyZGKNxF6P2ojnIZWmENyVUMiymFvu2Q+1m/zT9nLWrlAh8MIuYXoJ4TLSUZad7SR780WKFYO4cny6z0gvgm+vtMfP2pLONxs0o0Qze24KBMmywTxkhZtprXjOQmYiJUqcDVzjLPLi9QJgCD7CrqUOAtNkQlsEFWBYshOxqE0DhtuzVpN68bhUEk74q3OSuzM/Y/Wdso9kuw==",
-      "size": 3444
+      "sha256": "1ae2e762553868188678b891b7cfea087d266a89f88258f066b3f9c0b06eeccc",
+      "sig": "gFv7G2KJgQ0IDmf1wLsLWwKrfOymsyFUOEp9j7z34U1tQlD7ckjQDmEATKcpfjlPl5Jr3lBzy08v5CyA3/rX5ceuVI2HlRmlWV+69r0wTnThZeV/eZ3TNHFEjHhRVsfuSYOX3coCLCr5G4R05Oh7GchXzviNAe/UjH3ofvinX6r1swFvOFcJT/5bOfKO0oYQFHgrbfZwfBZ548S0v8xEvLZukis9m1HAwAVgKs1okj/4FLbuyw81K7UoNi8tmheek0OprBiicxcaQ9MLrgVTwdmzkoEtBuG8CvM04L/BhaaIjjgUqG2nvy8Qr0uUhUpv7LnxffjLlHvYIrgpQ5tkmA==",
+      "size": 3909
     },
     {
       "id": "datenquelle",
@@ -703,7 +703,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.3",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -771,9 +771,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "9acc99f7ce30f2a53d31cb2c9624f8563786f4f9767bd1b7939913edcd93ecdf",
-      "sig": "qm2bUHTWPm0STvYUkXI4DIr/7gOZ1Qn0gDGF4SbDX940O5sBtmsX54sOPIp6ZvaWey7oBNz282E0iJScnu7NP5Op046wQLFRtL1LlRlpR9AE/3UPjV4V935BYUX5ubz+C4YrWvgxLcxlBzqRst6pFqtxz4MqYuPHhLLXy/SoD8wnFEfx24TCCyYbXXT3Oj4qE0Omasj7QcZbiCUbQSTN/fcSSJL0J9pPvHcI9qbhXMH/wbWy2CpMEA/QvFAB1d/Qv1UeKD+JqOMGIkT0/nrXYvWpt9sbS032gHjXta/KRIcaFJR9dVMVOSc1QX7cA9+UCOvmIKz9EjeOmRM/Vk+uCA==",
-      "size": 25092
+      "sha256": "060af374cd6f379a238b3e22c24fe593ae2116f5c6c823459b41493dbbd41910",
+      "sig": "kpcZm9GbZT1oQCUaJzUOwsfBCBYh/3TSJxC/4FcoWMg8Ha09Qp5N+ggUJghARm2R5PmopbqvC5NsaIhtQb2tkV+3Ua4AgYr7cGtyLbnTa6sGIDG+4o4T2DDRBW0LW6SWbV9BVF29TvGdxkJcrMi9nNAVasFUaX9aPpv07+FuZE38CNbZUBugrJfXcbRWCe6sbO2WyRlSqBsQgj0yXVdunHtoP8cu1Hd5YIhmVOTlYpj0vUW6dpUZiSHyK7GSpF2P8VpLylltB4d5wciA9A2K0UxojQguXoEIP8/dwO7y5sfkTsDNX3iayFPdEeLuyoVigwqhR+XJLTiV1Xqql569Zw==",
+      "size": 25398
     },
     {
       "id": "einkaufsliste",
@@ -791,7 +791,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -865,9 +865,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "3d717cafa2918dcf3764f382e6d29f74757cac9225c920b5e57d645e098d616b",
-      "sig": "CKSF9GbGPuVtGDWycbfEzQ4V66cq2SMzXrHhDFWjzlu6R9Z8gXOV7J6LaX0MX/V1Ji1kOozFj8hD3OaCqq4m/twVEqGvXUFUoKjvL3WXP9zuucCVbBkaE3jB/2NmAzvjG1APwGCf+aNOoXUqF10D9A999qyic5Fc5i+elTr3x2gM86DVW3nbPYBaSoQt4fvBRJmFO6tTO5mPVDvvBssps784WPzfOdwLnp47qwq58N6XFkW8pmTBkG4Tek8z7iNkXki7UkoQBcRegVDf9/zGvJZKREhNs/I5yWumTNWfV6spSvmEk1VRf9ebi2I640wUWH9ewh4ylC4TXrfL3ZhWrA==",
-      "size": 36111
+      "sha256": "e6d3f276ff141a7e282deef0bdce1b2ae8acde3b3cf61439683e7eeac8962532",
+      "sig": "qIORfj3pJaBUUtwxfxQF6uLMDOpmb2G2dVAZ2+Ph8yqWv498IcDC/6ZxLkfJjqv5B1BMgi7WXb6lJHl5EICNCppIdXkEKlPQZvQFa2mbTkp4nyuOVYR9nnwFJz3jgAt17mwzWwR8vVKXJYngUnavXTYMUNW/CxyHWI8PtXrxjoBEwnWOmRFiusxV/EVyO/dIdtsh/0XJ3JC7IBXbvm9bKcL/qeY/UxzwRYHl4Vg2FcaSmTTiI9o73LzAleNVBuBea1quQo7/XuMrat4JgbR+eRNXTFb+ycYuuaBSPWjlxA5RcLf4q77NZnVDomE88PL8iWpClVidW7raHg8E+dWsRg==",
+      "size": 36316
     },
     {
       "id": "flight-radar",
@@ -885,7 +885,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -974,9 +974,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "50f7dbd565b76604ba9d218169a57d971d50d3ec3e1a91ed22f0aa5130b969ff",
-      "sig": "X6UT6jNiK7Yq72/6KcNyBVdv25fPv1rxsAolqVvbAClKjGIjLd97bg6hv1/oNS6kZTejcXT0/lhp0LZ/SswXXy6xZ6m6q15KygAB9+JFZPeCrjwfE/SbjVD5lwIiPwYMLjxwoz8r9VJBMRLkhujzSh3tLG8Fh8wBVyapC1XxLWlTzQO1E8eIgNQtgjMtN82IOPlNL5/MOFXlN21MIoPak6/emkObvOEbYyG7u6x5/C82ltyoszv4u9Ty72mhWZs/y8sd4WELGa85MTjAsVanZk9UHm277cLI049vpJ+UhLBp/KpkFNKpQEepJIFXQzoukh5rrKF4LUXZ0wYKak0Xgw==",
-      "size": 71889
+      "sha256": "2bb4bd763c022ce8c6f9d423af94e6c2d6f8273079821e9586f45cc80518338f",
+      "sig": "p33cdKe7pbig2X6whGVdXRXJuiofHoF+baOzjsQetFPdeXinTRY0bgaJLcFheLNOdjMrCIT9Hb3p2x+UZ/iogAw5k0UOUZOvQryrny5MCFgDln6ivRYwDRyYtKEh9EEVzzBrg95iM/JYrIj+vQ0WQEC1jrrIWihhHJMTGsHBfIb0jSjnyL5WUa+N3LDWu8eGpF7pRoHHoRhZQ8QRP9rRBQG54LPpmYoUQyq4U8RN2h4/q6TKBRDKlN93flG839XDDrPJLTbt4qt0CICHw2sZE1aswDFP+XVXtp6Xg7lKKAmQPF6ALtIKvhxcLHr8+Mxonr+SIk1aE5OVD1q9H9GTmg==",
+      "size": 68107
     },
     {
       "id": "formel-1",
@@ -994,7 +994,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "apiLevel": 11,
       "pages": 3,
       "pageNames": [
@@ -1131,9 +1131,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "8990e5439819c98cbfd48f7e35a3a09c37bdc79ad7be38cb119339ef61d3a4f6",
-      "sig": "XNGZ5P7MB7K71vbMur0Vx6xm6Q9PamwaEMWmYICe5SUf+ArtkvjKL/sTOBafufPMUyh7NLaHuEzSqKzFLh5MlHL3lmAd6XtP8Ul5ks0EpVL7zX7NnxpvcVB8cOBxS0bYFVcIVlGoucqgta4ArCipzatUW1gYJRW3KGb2eLHRTkCWrP4xzEIZD2MKvIQmHmM5Rsar6k/jG9x3Dd3m1/K/95yB5Q8XWPuQO200YIGISBWcfWazpr6REG8OIa1trlmUnNnt2SuJLNDsq35KP61iQ1fgs5V01UjIdjbcErk6gpTrXTmrnaEcRvoVNeftaZ4gccEGpb///LTOky8J5lWEfw==",
-      "size": 67232
+      "sha256": "94f733cf2a6660d6a7fe58ad1519dd2cb4866e39f7faa8176d093eb553426b4a",
+      "sig": "eJSRqV7kMyCVhpqCv8JAKn5uHBLmOdZFBD+lp1zBquoX1sZJD3Y9A5u4KnuaPrgMwoIpDTnfH33c3i8lxbe0q3UgGxzwnWW+14DnGIVtZh+onnVizaH6ZXzz5+49o7XBvGzmzvV4IbAdJDRxKMlfvhtge5jX0T1lSiR3SLmwNsoe6rt/YE4+R4j/MWQYgZxe8GxtyEICUL3UpHB1yEEuSVSiWNPCpakVOUOz9lAzA6d8jLm+3ZA2NSxK0fGLDkiuTvuAJjS1sMuvI8+q+xVcCRlIEiDgmGsGFMfEDOsL6dgPeJX0zX/5zXSp0IOYorljsRAWP//lSLBkp9RVxB/bJw==",
+      "size": 67812
     },
     {
       "id": "fuel-prices",
@@ -1151,7 +1151,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.11",
+      "version": "1.1.14",
       "apiLevel": 7,
       "pages": 1,
       "pageNames": [
@@ -1222,9 +1222,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "54de9444207729d0b37fc86f6f90c4ac5ebf561edda986e581b46271d94b00d4",
-      "sig": "q4Cwzp2wsOp+FWbzbpB14L+phNYqMlRlWFGalxVWzl1aLMgY6wtlGD1QxXWD6F5niY1/pujX9Vw/GZ5ntfUagcgF30Sudz4wctOXZan0kU3qQhZ+sHfer4ENgySbkcNa1Cd/nGQwnamrZ8NcUO/QuM8L5rYuEd/VzHrotCExnfUjl8b6bKe7QJaYobqHM3iohg0jO8we0fBUrr4BJMmR3QCcjW0n+bwq0aQuja2mWg5iEALtcMwNVvC/WFnFjeMDI5cd2QFwdgQ7XXrJjs+Te25lKLhII/XNy01kpWviTJA1BhCQnLUs1cyxsrRBRlx0Eq3cc9KlWIq16wP947WaTA==",
-      "size": 25889
+      "sha256": "23d05dfa5081bded361ea40bf94ff32c5307923241138d728308e84ecfc3cb25",
+      "sig": "CRG+STgB09x74Qh+QnQDxkRpNc9ugqZpWL/EiE4Rwh1Sn9IYXQh/cMnylJjpwnJfaantFR+NKDZY/g95ISu1lbUI9Mr4JOYXcE38/9p34oJFGfzklCXWKdUflZmdT+zY/doFC7NJlvORuixt+dkvyxzCtoxAjVGnnlCWjNULBMDtnUKtrq/ff3JsfX+d51jbqr7azQUj6jWGACf+z/Ul1d6lBisWoJbfnjrRvOKnO2WznOnXpZ18/9xKZi+UKEL9KYdMGQ479VYqzzP8MxI7EAUPETHHKM+83tAvB0Us8p9nbjPoX1Cv8ro3WNRYk0wQgnc/KLqycPLaeTEV/vPvZQ==",
+      "size": 26608
     },
     {
       "id": "fussball-liga",
@@ -1242,7 +1242,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.15",
+      "version": "1.0.16",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -1351,9 +1351,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "6eac93c9231331450e1f654069694c27fedd8ae0a16bdd8d2bd278e8905e5de3",
-      "sig": "PWMfQTRoUyTcSEOzvTU75JE5WOpi6xKa5dcAY7ZF4PAq6WuPavCrP8W+/H+hrZqvzXClzUFBQuU47dnNJxP3XMsYQlxYuE7cp9ThC0G8tNxOJYnCbxTvWSvbeb+MsRkFkCeYNqC5fxJ40a7N7XgGDD43Fi1/Wk34t/ZS2YVy9mF5/T+u575JR9BTOYSOb+WRfkOQGTdH/ZlPnyFBzIR6BvNfrD9LYyY6W4Z1VtkQBJGc+vsnXLLqI3tggAsODjJH0G89OFZ7dl13pDwnsV/RYsVCGTt2buM/GpK9c3nkLpbCyQEDujH9h7pJC6aTC4A0H5goLbAkqGpFKXsBspiGWQ==",
-      "size": 70667
+      "sha256": "96d0d608f377af5f3df6eb010dbdd834f7a6dd20252ca2e2cddb58daca77238e",
+      "sig": "P5t/ny5hpbCev43EbPpp7GxTGTyBHxHGpPpPM8Y/D73IGfs/YAK02yR2y573aIElAmrpgRomzdkBk6w5LQAyyb1HQ9Zg7yUtFvukrHcUBDzeCUz3M+AKdsPJ+IqVyEHFXKnkGK18LtinvU16twIs64RMlZh4Nqkia6157a1bL6rUv++bieyjdHge/TpxY927U3h+a2tJ8Mtyjl1vOGwfcthgqfMxYYB+oIlqMHpkrBmMZRWWldfJhu+bt+TS5i9UKGIoZ7Vk7leqI6QaM8ZUrcJyruBmHPplBxsavqpSJijcRLatIKKL/RJSltWWdqYT6nR4p/EHmo/Eo9emvt/2cQ==",
+      "size": 70305
     },
     {
       "id": "gaeste-wlan",
@@ -1371,7 +1371,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 29,
       "pages": 2,
       "pageNames": [
@@ -1454,9 +1454,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "169813a308fd7985794212774f8554516a7c78c20913d5796bc91b0a3a368f28",
-      "sig": "N+2gH/nB6WHlGrovkANrcTPAgCvXtKtkivWaiBW5CybP9zoAzOzCALEzuNrXJL/iRvnUg8rIu1juhZ0oxGbCQn10LvbyJMOw3G/sIsIA5+8b7Pz+qmTo60fjnuVLJnm4l1AD9RCijsMq4Ga7zAMaBNuxTzexxI9It2k1lvWiSWVKtO5SULQe8nDjPeHHWVmT0jRPdu3DQgnED6i5j3K5AMSWZt00QbhHuo6NJ7/PlZD1B/q7AQkPFNr4EFrRokoR3T01BNinh2j3mr80OADEil2y4h3bGulHb4CWXAEmklW+bShdtFXFmEGblDJvFfcaoXjL/KJOwomvla8dhRTQiw==",
-      "size": 31867
+      "sha256": "a9da0c79ce501fa5e81d481acda557bc5404006a9140f1250cdf6985d4a0155d",
+      "sig": "bfY5G98Y6BodpYBylLwbQd5KJUKY2IHiEJzo9AauRRVwCMadvrB8q+q1vL7SdQWXcYRtpHDMyNAXz+kMx1m3YBOMkrxdWm454bWQZX5DdEwCn7txIwSTQ2XikpxBL5MZWJB9nd3Fq57uEwKuZpil1iLgcguLSn/FFY8u5XSE1NVjLxj9UPsSy25vLhSTeJLNPP5eBTS9/KFfa6TIjGC7rX/2Ryw3XUKWJDdbC1WmzyaNnl5Fz2UKlgZYHFAcxtyRhVF5SvVD97qTetlVsaniv2AiJ3b39GRyhBnYnvwBmMFayPU7QQ6JtceICowEzQDERvkt8APKLHdMeOdwtt98Ww==",
+      "size": 34660
     },
     {
       "id": "geraete-check",
@@ -1474,7 +1474,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.3",
+      "version": "1.1.5",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -1534,9 +1534,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "d8b6927521b8d423c1bcb8f9f6da4093c63523659aeb1eeb9d7a4925d6e8507b",
-      "sig": "UfOlCfPqV+Fnvx2COTkdQm7Wi9vUDIHM+0CpSSUuomKpQ8Hnry6wkGsLgS9HMiftU7nWV1/zLEKviZwvIqM4inzOZWsbDMU+u0eOIleaE1njuBa844I1R5Dm6CvRw6zlI1e90zscOhSLAWDTxg/5EjcmfNaUkRSEQ4euMQnRmPs57VPkAMiOt/skLXwM+1g5xRF89pakX0EQk6z9rdyDB7Borx7mwt0zmVdhJTjBHnhkkY9KTpagMiU3QcRQxTsa6FicWbatCmyeuuXVoOgyDHEGQ80GvxRpNbC7aAIrBFUAglOA07QapajfrcPV65Lh85XiOIyhnlTSnUjDoAmcSg==",
-      "size": 11621
+      "sha256": "93fbcab0b2ee71aa928daa14bca1d9ba88244a1eb691388428bc376289c89957",
+      "sig": "Y/GWsJowxxO+Bazfn7PYib51rk8ADNYh9v7A3KSZVZabcM/pPAHdvbLSals7kBKJN1p+Pgd56fUPb3lT8ku+IogXFGW7i6snjlgTBQ9y+lWzqDWUJnmz9YJC398F75dOB50JzQ14GGjCxwEARNZdnfdxxeg4jWZjMwbJQ9R/YhS1Dt6RBIrmfGihKDo0gzorB/L2G/K7+wK6FsO3U/xhLmjKPKqoVKSskuf4bx62tNpiDzy6mmLVeSRGPnYDGPEy2oeXLvIzkt9E92I2O/F9OX6dHjw66ZXOcEEKunQVz3sLYoktejayL5/RBkdm4Pn3cd+DEYlzJjm54xa0IFfpOA==",
+      "size": 14047
     },
     {
       "id": "gericht-des-tages",
@@ -1554,7 +1554,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1620,9 +1620,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "0037eb4f5957294495ebeacfb7f619edd31042ee6a8b3c18918727c13f78dcc1",
-      "sig": "JSpBpqiwYZol3Ox5zmrqLWOyChUOuShlRLecwZgQmaqkgcbr/7buagQD4xH8nWktw1zWoXXewabxbAeq1fJiSfT3o3GEZQiLgOFvNAXokb7oNktvZMMXfP8nDPpQDYqmYYSbPJFEwttuinqMoWQY+npmEfav3Eq7SVv8/ZyupwJYOl7XCiEf5Bw4udZeerb1iiyHl2y4QA8+fIVG5EmhqEs0ljCClBkiQkomu/hzK6bqeuVViUr3BQZUi1vx1LpNUYym0Me+BT1YllkEPLfZcLNnB4n4GFSy79r6OIpG8ZuJda7V6fqgG2/KdErKA86EqgOZOYhj8wkz66Vcr69w7w==",
-      "size": 22652
+      "sha256": "14ab08151d649a2c4c5eb0f5c7dcb053c5846896a63c7ca9ebdde259e91c7770",
+      "sig": "KNdf6AOE0m/U0wmwFZOH56wvI9LEr4IAE36I31buqMQiq5AV1VZfmMzkia0bC3G+3psF0we308TocDYZhP5tkqA54tyztD4YRczarJXLooPIncX6yyyqJCo3b7UnIg8eLA2VL/hfg/+SsNuUv2leMupDFry8MJFTRAPtBROAZeKiYo19XDIncnuQHuktelB1swPOFtxy2xH1YEIxiRX+OPk/3fugzAIS4qjSnKM1Q6MmFiFKSWThDSacMjmR7CGdnL5RigFGEJJUJqmyDT3EePgaweTUTQ2nOJnsRt3fwoaYrsZdHJhggHOEIcY8PDLwVwIkT2UajDSI9kFVv9t/LA==",
+      "size": 22028
     },
     {
       "id": "golf-tour",
@@ -1710,9 +1710,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "27d65c53b845e070719d9058d807d743ad5b87b43c86e96fc4541126b51b275c",
-      "sig": "pCuuRWKCuUQSiuc6UhrPa5n5A5LGPbSJbxrlN9zXaYWZOKHL0iIag5MXpSxS5M+0kAjtBEXsTeDlOnWfOZsM8Ch/dkxbNbUCNZvWMAejH4nPmVKlba1L3xCDH/N0y9Yv6FI6+1eBta5RMXVcQ6y24e+7lXBzZtpQMlD7psvoA4R2oQS1Sijl1f6CuP/Nqc1Ue4klRRmRrMngbLdmg1zbGLO6COihzOdbdljIJiiHx/Dgm5JiEfORpRBWUScOeo52Ni/Db7A1GWYiPzAVb+vOantejzqrlpjOb9chPK0k8KHHhqrXi9jWAELMw53oDX9Q31EOVCwYnqf+xUxWZIVYqg==",
-      "size": 26086
+      "sha256": "02c89fd981e6ac84ff8817fe1553e8b2d1298535c7a3466cc13335afeda18178",
+      "sig": "QyCPRC75gGXE3B7uxQEzKQ0Id3l6YNqidPeWppk1TbEb+xMpocOcwqfXi7wDuaLAxSMy8myjT/2T8cS9oR4uf1f3uUtrOcFDukSKh/DiUUKuxjBunCAkpz6lGdzOyAdYTzPLHfhR5kJusOwV6J4Ids49yYT+D9t9gIz9nXYVKpZBbc9g4gmnF0M6FTRVPIDGAm11y1/E9k0rjnPCCmK+CKbjdG9AFnNx7EH6iRl2nQn/xCIONbQGqWnqeusMpethlqh7HarEaaP37LyWyJy6GWWc9dN29FHTlTeOUsjWNOZmpa60Sx1z0o1847EgyQqMbpwztw7tYSdjv4jhqbegdg==",
+      "size": 24948
     },
     {
       "id": "golfplatz",
@@ -1730,7 +1730,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.5",
+      "version": "1.0.7",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -1868,9 +1868,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "c3540bb20b67433159ac1f6b1b9391a675a06734115dc3c05f8d044ff1f3fa6a",
-      "sig": "MU51zTWljrRQoN7JybINF89MFcpiNtQ/DDb6oYipv0FXS6GRKAe4Eh+2WX0svAvKe3Z8oc0vWBdhw2sCXmDvQWxv/nVNFVsEDEM4wujzf2/q+WbyePQGrS0uxhX/lCsYcb6AnGOc75XPfeN3ghexPh5zjmiAV0Auol59QYQICxvm35gQKgENIovhULYOk7Ap+DBQiCmThWM4u3Rf1+GtDteuRx0WYWZ2/ezB+0UFEtV8DzurNtI4VTfSXb5HT82Qt89b+ijYqGcDlYptaMwZS+XMpc9unwhUc8zb4RckljCSvVrBbZfh8fGuElfcVF67ewROOz0A8TQ9aXL5LpgYIQ==",
-      "size": 41387
+      "sha256": "9c68d76a497bac0720bc79b67ef36ab65d1d5c1ab36ed65df750681e1e1f57ce",
+      "sig": "SuRLwabBhIOry2HfuCcw6benKONXBNp2gTmCFrxs+8sp5ZZ1Ks615vvUgMSG8qgplUvnghRaIUYvrYG5J3M0Q0/3yCMFJKcTyeabNP7nfo8Gg/fZ7AQTKHHNf/tUya45ZP/NoE9q4pBUZLcGNv+Il4vVSKRu5Ac8XMVVpBpWM3czcozQmIDQPkUgZp8nyfWtF8QgiprLNcpBzB/LzKD2Z6WWAo/BjX7MiCJASUvM9RIV2gkybaUTpuXB3fmy0EGLV4a440qsuohr+JCUYGjspfo2TDWViS8t0jHa+S6/0Jcgyoxonkmx1vW5DjnrJV9SD+/gjvXXLwf9FyXTYWyOeg==",
+      "size": 40835
     },
     {
       "id": "homeoffice",
@@ -1888,7 +1888,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1960,9 +1960,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "12d373c5191328bd04794321ffe540502d4503073c162334427bf78292d1153c",
-      "sig": "VGEACKXxB8IiaNjlsEIZcU1ykZRwzfG0ljihqyZ4LnlAyrk0qb4prFaL1OxZ7kqOVJRyVUSMbNktMZgn/odw25ks+BUFPFz32cXzW2cSb094DpA+jexZMWAPmpvnuc1Aba46BATGmzAWXCPcf52WVr2L6CM/akc5gDs3XN0YiK5+eEB0rEvtpFwR7vF9C8JUtSSIsjjr2DCXP8jgUonE+9YCXOKswDMRH8fMZtiJ9kmtFfIbgrMWDt3hwrDOza/7f2+zRJ6xeQHTh7rTPw3P9bGLZ9F/gajjMFPX8+aqfk5h3CYo62lBcp8b8ryBMVut+oHTvH/TNpgsfpzSeiCvRA==",
-      "size": 27000
+      "sha256": "0ed6a0b19cf977e08863fbdd9b6595b5524d765cd159858a23348b91deef40fe",
+      "sig": "BRmkVR9XXlyfNkUwDY1lSXpI8Ehyk3dBaWzbOZfUnnf7iCs+jvZWD4C1kV2LyjztcitLjFE4zlLbBn2iA9NFIfOFUKjuECCLSgCT+mU9q9PJIoTtOe7PxbtMe12y7ufV0BdQI9x98PvX47dkgS8SQgWGtiTS+FYwHqaulPvcj3sTnPPT+kPjFhmqPZRuwLvfxKN1+IqgWz5fO2L7KoA4iWoO97swlMsCcZu9libHraBE8+5px7CGXCwOaPx7L2ZZreaxejgJ6Sz7jTtYniykGc9Rug5yCUwkHGKGX72TFfQOLysstoI6UEJJZB6BlphLOZ6tqXtXdIQpdiE6VKTDrQ==",
+      "size": 28745
     },
     {
       "id": "iphone-hinweise",
@@ -2061,7 +2061,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -2147,9 +2147,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "5b90a0bc25f3845f3d858a6a0e233cb16fc269737ce11e5639c70051dd3eb331",
-      "sig": "K1jgFHtZF5SM1VJb5rWlIjuRnyTpfe+1YBZSWAVStvhXg/MCiaQ1eHTCYa7XuCtQM56sUmKtkEfaOYrcguUf/Va31WnLo8VotAhGljkT15VwR/Gx3E0pjalf0rNuzWsA5fH+XqqIckNtZEuLJ79CRFuaxpLlJYXzVmXU9tmpRa9YWd4NJlBPXJzXnuV2avNgtwvUg2DuhljVa1NxuPMo/VWzgNi5LUB0zCZ5tUeN+vbtJRuPSWmVaMENqHgzFCNF/YIKMlLcP7EwGQpeuDPl1X8ju2NfJMG7CSyX1LbVkPdYhJilv6Dwp6jMD/VJXd6T5HyGaAxQwHEf5LSg/wDxTw==",
-      "size": 23308
+      "sha256": "1a937f316d5b6fb21443f91db8aa8ec4ccc57fac890efa6abd45259faec28c0f",
+      "sig": "Q6zzTViB6V4MAXvqwOveyN+t9rRqvzHxykCanvGPOTIxCfyQpEytGqicbPiv7Ipi9hj5qFusrgEeBjFwj0f7TIbYb9+xwoUS2sAsn0X9XOqkzlADIjr006E8KM+by1evzjPN9JrfhtjyXc020one1/sQQ+6DX0qaLpBtOO7/Ku2k9U+yUywehIXVBMyQZk6R0WayyYfOLxbziXn6lYNpFxxeE/Ppc2Kb+42BnCIi2KZ+AQmhVpx2ybyAz3R1vg0QKEWZQUEykgqDm7jH1LZY/sL/qRW6iEHnBvecGZOt0DTtW2nX2ijYQxy3U2zjvQZxcozcOW+FdCrvCfP55n2Bhw==",
+      "size": 24120
     },
     {
       "id": "news-feeds",
@@ -2251,9 +2251,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "9acecc80d121f556d6e149cf804517de7f86ca49b9fba99351238c549f27cae6",
-      "sig": "tPFoJ190yEaqAuxJzX2zFJw3RRRp1gurELKJjs7fac9WVBe2spxHhIg4wHjSr/e0gEJALShldzD4fqFMajXiLJ/4oxw9a1zkCeyOlk2842f4EwXgzn0kLCzE595Tu18x6oR/4sRpnQ1RVKJf5Jj9mYJtewgXWOpILDQdAX/RBJjHH8XMVxt+0IJuLBW/RvytnXH3mpbIrzjfBb3Rm1bRRINwDj0lM2e2W5zgTHCVExmZdI7ZPfub/x5QsB6iMCreGpqZN5n7WsklQMY4zz4PSHPSnsEL/tMBuvqk8G+bsOWa5uJpSVi/H6TFoLGB6CM63YnekzMJhbLFnUWfulRSvg==",
-      "size": 25494
+      "sha256": "578c3b5fa86c4ccd80272168fcbcd7c2b76098dea56811912a782a67c9bfb417",
+      "sig": "BpPpVn8uZjhMvm2y3aotmvxbw8RutJn9K5S9x/SRjBDHqgVno95s7LkJNi6RWXcdZ1GWKqrwkBgW6aEaJOqXyoN2tuhZ/fbZT99TR3gYhId+DQBEcg9wFmbEe8xNpR54cup0+VAl6VVD+U31CjuqoKTWgcwD+iC0zI1/oX2btpi4MDbiCojbvVZuDGty/hn/r3uUwjikyUL779AM1hWKpgaCu5mOjLYftSKnSPBS+9NeYCvrtvBSizS1+B60ZMO5EtyIae/lDyw8uMlE9jiKu55OAvxtPcZU+HyHDkkkrRko7ni9jrGRQWar8GAcUaDqHNrWAmhOYgswGCLg7tKHVw==",
+      "size": 24918
     },
     {
       "id": "oepnv",
@@ -2271,7 +2271,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.9",
+      "version": "1.2.10",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -2385,9 +2385,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "2bcd13eeb27baa92ec2f8ba6434b8874d686dc4d9bbe4e286c26ee68ca661920",
-      "sig": "T1PPIINORA/mdMjtCR3kxsXPhBZEKDEhTZUeBapJt1xqcebiMvcE9tQtc7LzkoPpAIh2dAm1bpufifekSqiacZkL6GSoAlOtnM4moTeHD70ppjqnyzqE1eDXZJAKK0Yt1j7BBK/XGG17c2kQxg2sTLkSasfC4eu4GY6UfczeiSB6XsFQ3JtDRUSzmO/TCKuaGcI9LvsPlKZ7KNaTJJVT+t22c1kyOBhcz3tc1quLItaj8y8at3bxihXWjv1qiN7I9Sc2bXc7qO6R3FFuT40qse6Ff/V2tVJHByAtOgoRAsnXrlXQXYUzMpH02Gx/E+anm2pUKsgWeSOsK3NBjFKuVg==",
-      "size": 82744
+      "sha256": "36493f6cc679f8b8ddfd13090136f0b425f8afe5502d643a03f1f67ad6970d54",
+      "sig": "aTWefQZpm9LBnfl0nbe//a944qsWIrgOqCEdiwplH9VFtHrxFi71Bu2dlOscWdELk8hmWvYa6NUMmVNTJfCal7fXbgk5KZbtmXC9JPZWK7OFu8z2n8d78Oonqqd9wkhNh8QkUyv2L8oUDQ2h4L/W5QwiNAVkCF4y6owcEaOpHpkoSt9FlUtI3EMN0OD7tN6zkDCsOLCbaj7w+9/nkfBgnadUlu0+W7bBbyaeTqp71JNFDW/LhLHPCUyUMvqbC1cyHgoKe5+fnoahe6Wjg8sKmu2GlH5FdMsvaLbi8GUJFnTTAnZ928SBi2YLtPNH+5CEWdM2CsskeRiZlxEMsVDE/A==",
+      "size": 81785
     },
     {
       "id": "pinnwand-app",
@@ -2456,9 +2456,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "ae9bf126470d64cf09367ccec6b31cc02088c0e9c731a0b1ed2a11d6b1d5227b",
-      "sig": "rs3c15mIVn1XqATIuXnd4ZRzoNcxjI9AtFXLqnokN1jKR3XgMZFtMmD8BKckKRJk+lNX9Gohf48+e8kHU4Kb1EZdu1DlEXXfEZD3egsuOK51HnjAXCs39RyNa3TTfvgbP2Pfph2GgOGXq+tPz5jkhyVfXXY6IM3vL6Tm63pxxJYoVCPHQmbU1FOztGQ21VHpRuuAd0ZoZyRyReW66zs3LU8Edoi1j/cbG7mjRfkLnh8s730VYoYdhz421isq2utRPc5v1ROa2eOEr1M4gP3zGvH/tULTwDhFrG6yF6/1S1q32SdVTgSfT2PrMqayEVeDD8o+oMBTkXpLOvYjDEnYXQ==",
-      "size": 9093
+      "sha256": "e16dbcb02fc92b35563fb96c704abb00c84fefb7de31a73c4743005ef33c5a1a",
+      "sig": "Ys2q8auljyOxYq7Tr0k0WK7zhqXS9WnKuv3o/xEi6QQcH+1KCDsnfrJg/3/FJ8nUOq0DYrj4cwkZ8Ao8xGZ/Q/FDTlCVL9dfchjUCps7+jXQp5LNofdcJiNfeP4cGhr5XIoOfjGMYmbgPutML/G56LhBUT5cS/f3oG/h3pWqfgdR4ZmJ+kWHdM4i2qEchMJ/RUQaV9bUPNkixCRGVRn7VYbHQMFt8PtP6If0Yg1OpXL6wV1ECfKJqLLpYUUEnsPxRoXiD8givKz8n7WTtQUerhj9rolVi6+1XNsgMWNYhrYSwZFAHUcoH1UTZ2d4j0TxGNsiRFMmxhpHL8uUPs0dHw==",
+      "size": 8847
     },
     {
       "id": "rezepte",
@@ -2525,9 +2525,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "16c65cf1e730e7d1d087d2a4daaf08805ef304cdea27e49047d444e044377f61",
-      "sig": "LncXlx0P6eyr6FVx/7RbGr83WPXQFrytOE2XLqLmRL5KVocUYJf4QnDAGSBXNHU2uCUyYO7w/MyH2qUUT5IkvuIlmZfxv60X16+7YX3SItBMVrNTjKwFzugp/HJBfrqxdIDBXPTCEVLNOfsQyzqLKwH3tSZijUZsNIMvmTYkIE/pk84iP9YeJVNuvJWo3cEk9jzISh/LmncJ7OTD7hT1q/9VxZh3q3aoE+VuUlBAQsB2OA5HWhCxA5S771tBP17Vufp5UqE9aQId9GF8JI8Egk8mggXA3ltSl9WdtUv3iGQ3RqRBw+0cqLAD6Nv5Sep/WhfDDiccZ5C3SCYW+VNLJg==",
-      "size": 45608
+      "sha256": "ca87d123a4b4c83c4b2f745fef794359a2eafbca7fcbd648761259b9b194dbaf",
+      "sig": "oQwK4AW1BMmZEj8NTefZbq+MgmK/EUiyUeB5Oq6YF+U2iygxFcIFK30mdKyoNIqi4pWWSoOYdU1hRFQvQwUbLHIROGlaRQqJLori9TWRvLXgq6kgfd1AUEMa9O1ouRv/W+qckXf2lRs7WcceD0gZpvBQ/U9qXRGUIWPANRy01mWruamY3LB0+hcWZW3KMgcSDTfqGE6r+DsFnl9/FWezkV2NuYfg6woXYS6F8xL7UoAqnwT4qR9gs/jvc5aLtFxX5BfEoU0aPUmYvTkDXhv11dUyIoHrZajzatxDYq6Cdy4mNDz1lqjjvofzSBfUoMZk4EfTq/FuZXyFE1X85ACy7A==",
+      "size": 44704
     },
     {
       "id": "sport-tabellen",
@@ -2545,7 +2545,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.18",
+      "version": "1.0.19",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2653,9 +2653,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "5d05c8e303b38ddcce60711f9f441f6bbb5379e165e2fa83cbe3ae330ebbaf86",
-      "sig": "QKzLNgnj+nuzMbOI+2u8S2X7d3tvFse9LVpLOWWnM3MJecw72z5C9J6s8pkQUAXQ5mp5sVH3qU8QiGAgb6IBnRU+zrwvx3Ql8k4Cgb1DfHuKET/Xqu1COzQu8QS8TnqdWhjCC7zJpdsGC4/9xxV978PwyeuUMqp3mAl4ZpqkarBFZ7ojmFaClnxjsRzMYUSD2V6S0YL9USVsE/nVbjLuJmb3lD4hGI3RH6HKDGLc7zTbp7Mbg4Gx7RhVKeWxgELj9NanWQDelUrwWVkRsaOBCiFtG4SATz24Lbp1lzEecypYcJnPyJP4wKiibkxdj1tqq6vqOjk/WfS0PK/c31gAEw==",
-      "size": 58737
+      "sha256": "8c6809b8c193ce03db43f936d20c93e345018598e96835a63d004e60d9821bc7",
+      "sig": "es/pb6OaxsWVOvfrHy9KO34X2F8A2fOegVoZhjy+muVNmrK5d1m0O3vWC3bmhsoR6UMNsf8E+3beSpgFFMohrP3M1aEHEkYYI4opfKYzaqsinKRFiyWf83J6oHhG7W/7iVeFHB7nUiJdU8gsOogrXKhxP/7nZRn1haU+00s2pC2ypnaJXNhPQfmdsIvl+PTdI2t3Bm++i9uIAVzP/9GhT+1wI9b0l15BbIlgWaNm0Ka3c7lAQL5JDzKZ3Qq/kVnhfyffFUTqkSjTC4z5Dg1NzVT9I2NEBUvOc+fnODJ6DlLINr7IywkM81AmVoJ0mi9Hb/TQ6IJla3zxvFD5xeitBQ==",
+      "size": 58445
     },
     {
       "id": "spotify",
@@ -2673,7 +2673,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -2746,9 +2746,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "8df3def5f755eda75dff852780a740f1663a72e95b33447075890553f7281712",
-      "sig": "oBdcEosCI2K+L2GFH7jUSKcDJwYn8n+LMUuFdm4dRA1RZaCjLq7MKnti6bK/sSkBkmGosxJCvcmCdPB/QKPyQwDPizzhcuEbJnQOsyrh1aqVUj0jRTnL4loE9da0DdDH42g8sXT+58W/Hz5Kd914Mqjt9JJInYF90T7r3GPXmvpDnBChl/fA9s4MJRAzZKp2dmRNzDsPFzbydlob949m9fZ6E9rXHXrI0fMvBXQkf6AMeaaHvuZxRC/GK9d9jabtux5WEeZ9vUFJh6BX5pJ9A7XfV3HhLDvP9NPy+yOF1mlszmCe7yuO1HgRRCjCZig523CqZuoW5b1ADub4x53UbA==",
-      "size": 16341
+      "sha256": "40120383c03851493059467a66afa1c03a6372e6364f599cb1263eaf949745f8",
+      "sig": "t7jFFjsSTORkKWF4dwtE/tWNxNEb3TYTno3EI+0BeD+2gCn+00doX1aGcZv1mFodRLdbbiWbVhA6BtFS9W+o2Ai1auC7VXqBpTw4DMRLGPvNPxJ/t31vD6ChKrdDFkuHTZ7q6d9AJCn422F0SCjeAiDjRPB0iUzmow1GvlJ98zyXYZY224irbp6WrN3vbbmigIyKFm1Lh7bTF2ll94wldVphwnNGqh5evn/GkeBdpSN7+nORMOTIvRG8leWDNzUL190KQDGkv1vvdzvggHgiK2+Z7h74/VcxYrrxxbNu0oUkpeCMVahbakaqSdIqDt5TY+mzaQt3p+AT2BXLtc13SA==",
+      "size": 20232
     },
     {
       "id": "stocks-crypto",
@@ -2766,7 +2766,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "apiLevel": 7,
       "pages": 2,
       "pageNames": [
@@ -2838,9 +2838,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "3219b89c7aefe29972dbbe26d5c1a1926deb5ea43e5a09b2c48f3e396263ba03",
-      "sig": "XJd5pNeinpJzCCh0e0NjlTfOsrCXA7c0M5KmuOI4LJkgxFIbyixz3v8T6wUidMC/4yFprdhJ/HvDuEieqYfilqd4wYmDNRyJYlr5PHTn3811bsF/kYewYz4pEal6+ohUswwMTu2tpA/XoiKUErbf6ojRRZxmB/mvf9kOpE4K/0gFrG9G7I1SFg5QgncVqIF3xeZaCF1MTtPtJbxPaAXyTPH34ip3ecoQXCmyGVnZwOtnfMvPK/xfZcogMXvhwoyl5GJzgz3y9KHnPTDXss/D+eWTDVrJ4zzXJbY9H9pWtOAg7Y1apb8MD364ondhKsQmJbliGKQsXkmJPTUyZu58xw==",
-      "size": 27090
+      "sha256": "0b34e96788b93b49a3249bca4a36cf428b081270149ab126c45f8d27430c1f2c",
+      "sig": "fEsHa9jxDjb/vYrm5TNhyp77/Bbks/4CSDVA/u/RLmaymZVjK21emTYxj8sUpIDhYGqDk/r10AVB8CicN1nCHgSp2N/emzTEvLHWaxXKvLXNd384To3oR4fg7kYlSR5HDRKo8oEWJQzOa2fA3OsyhnvgsVI9QG6ir6eQFP9fkHz0lTPi8IGGtoLLf6NIU15GzbxpZwXBHz0WCvxXdbrLMZhd+oJfcg2933MB/AoN9wdMmTYHfZPWzQAioIJu7Z/SCQotv9NON5wSlIOIEHS4uhVIE+SO4FHK3p2Xt7f1vea1/9R91cY/GB8YPFvy0hn0H4VKc1KXj+qq9rmsEzmYrA==",
+      "size": 26354
     },
     {
       "id": "todo-list",
@@ -2950,7 +2950,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -3018,9 +3018,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "f1d91fb37d915aa35df24f869a2d12dcfad1bee7c85152945872f6158a963f2d",
-      "sig": "kfgcgmwul0NbdYFjguOZuF84ACWBKjQEz4Iq1BzVpdIHuPGHD9lBkwjIN3li5vNiha3jRS//QtNIdSvbNOXJUrF0tdp8Fd+nS/9q/J4/aIsolMFZrDinlN++hMB1pM2XsmnFcigYVEw0xaKrC+XL77wnQ6NRmPUOOXjRL13RV6k2MgftPB9uhM2pQZw5tlW+NyOVJZuOE3KUGLzUpTfselG5PF+CTLGz5p/JviVBbDxqI3HL+iUTm3vmIwRLyKo1Z+xW2HGQe7uY8O8Aisn5/i3SFhtGoStOV+yKYY6xND/M0oAlv1KT2pV7T1Fvq4j5LX/tQxbzobc8yVOkLjW3tA==",
-      "size": 20973
+      "sha256": "bd0043e214fd1782f3fe59ef55fe7d6de081ffbb20a87372ea5ff6bd5d009e9d",
+      "sig": "J1cd4pK4fu/PoK81pZM7FmORd8D9s31bWtulmJBBXVBsNCa8YXByCJnft9+iFol5K6eOC7JlP2Rtz5SIACIhvS2d8AHBiPXk0SbPfW6Q8l4LqK0LLXXxExlJ5lRvKKQ9PWcGTnuziqeIIGRs0TBnu8/SQTBTNA7TcEQUNj5tKg5AALe0V8Xg9zJZLsMtYgEDkhtiLa9oYP7o5ittrEuB2rT78geMncS75tsvACIixIWwoY8DTNnI/lm4GiZy6HKZSEP8nbqYpl2XANU21pPBfrNE1E29VQtlRSjLiqMXs/hasG+AVCo2iwnM4CzVKNt6anaTYIAr30VT7g1z0AaxcA==",
+      "size": 21081
     },
     {
       "id": "waste-calendar",
@@ -3038,7 +3038,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "apiLevel": 9,
       "pages": 1,
       "pageNames": [
@@ -3109,9 +3109,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "26d26e059894f7238d373ecc860cd4a5ac0697369f1a150b0634ba213b7b7913",
-      "sig": "JiGSE1gKiL7+8fj/77Pq87iq/6k2InF+XvuE26/dMxKXPHke0MBFYYSmoYLOM8PUvywJ7c4N71dcFqGzFi2DJ5BJYza9qcjCpz0PxUH6iSILQ6YLsO3hj6+3h09WqGpznXkQ0jTeMLEsnAZzmbFty9gvwLbJdIN2DW/ooci7zgRgvUckxrKN+UAqFhe2zcWDgK8j/37EBYtQqUXUEfHMoAM2pjcVwz8W72xG8EB8EHmwRJ7Oc3QFkr2+FdZhflIy83f/LemhcbEIZ1L3cRgJTLJcRS70T7az/QmMVImozfbYQ046Eui24Sed2Jh2+FW9hxBpnVsWwbfWjkZUeQdAhw==",
-      "size": 30203
+      "sha256": "fa68689136d1b71c499710e4f13c233cbcad25d6ddca795033d6013a34a8378a",
+      "sig": "XnvxBtn8igtCqySAqC+RUokV5HIw/mc+RM0t0EXPNBlzXNTC1pVZNifPegARKafNha4rEWPUiZJo6F+66zQD7lkNMlCrMq75oVbc28b/5AP+y+uYvZpZiQjqADsJGOXrF6JkJv3ToRT8RSyvpS8H8j8GitMKe/RDYepn3V/4V/RFvwOShQQN4cOOpz8zCbwVpRnnbZMwTWb2xsAeqbWlNCpiZnzqcdnL3Wo6UVcvhatqNUs0LjupGP8ZdLJZnNqhHADzyslN33995/2VLmWU3gEZpK2OVZJvjSff8y7b20gqBEY+cSTeVuORLr25RVtbmxfnQ4T8LqcV3U860szRDw==",
+      "size": 29626
     },
     {
       "id": "weather-station",
@@ -3129,7 +3129,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -3275,9 +3275,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "a600d0e943dd1e63979366886607030f35cc2d7d1d567ef9f19d255caa87ff81",
-      "sig": "ezdaLu2idc2rabvBYJQ81kBCs9kY61m2LNbSS+PyxYchGQ/laHO63MlqCiOkX0Fdq5NCQvJSn12adi1W86lixqw/H2EyyaZ0My2kE4oIdvpjufJmKGO4wEHduyfJUPWBYyB3BzsQdyhWjtd31zzrHuhDMbXh3SLTLCCgYB1QS2KZ6V6F91mi74RWow7Jqsfvmtntj20Qc8gBl7JNm7x5eGViF1cmLkl5KUgiMjYb99Aa9QCFxHnKyKGhtRpa2ObLjgite3lETPmGe2QLS0/7M99lJAbmNDxBkA1Vy+kXXcBfB0pILnnP0ojJjxVSranhKdOD0++yNAlapFlm9b8fZA==",
-      "size": 61539
+      "sha256": "be2b324b598464cbf5abd88e67b8502f32c31d6e5422036a1ed232f458f15da5",
+      "sig": "HLX7C1ERgPtIsy5OKfpdrF/Be7E/oq7JwmzND1MVxCRCL23/HZsT+lGr4L4zorKIssEZkZd4bJ/hDsOSdhh+CyAwjJa8AAv8YfFdUyz/Sc0rzsLjDO5AActhlmd/sEbJkM/9TeZW8RrU5HcqwJ8vr60kngsJTrNdenBs8H4mHsG4vkfGt+yI7K/cmjpyR/nq7Wtla8ev+OJdxHSSsfCW7LDQHWZWypwXDDrx+OHSMaiTGy6BSla1zOtFWY27NNy4QmFaUsKns9ehm18uPSA7d9oUAewnOcGZYJmnhCI4Su6slBQ6/TBPo48FOdb3Vo4kaonr18JSWAOSITNOcqoWbA==",
+      "size": 64244
     },
     {
       "id": "wikipedia-today",
@@ -3295,7 +3295,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "apiLevel": 8,
       "pages": 1,
       "pageNames": [
@@ -3369,9 +3369,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "8fcad1e4392fddb721b53ddef25c7c07cd389f44ec91f6d83a9111487329dcbd",
-      "sig": "MIgZvLXyDymn/negJbDKb6tJC9/ostaUpc8AamZN8wuVfYJUiKjKUTIO8BRqfkq8y/xduM3rI5xr6onGaInnb7hbq5snZK21LVtvbRxBSocDs2+UzgZhaPxlSrrSJhGzbPIw2mOzP1zGMZtKxtWShyWT5wExCMtEr/dYSs/qhT1a3P/6navcC70HfgeIZQr2Svkt8+cktnbUUqFfHsw9vD3+03Ys2mDXNFJ69zrs66PpRBRomI/UylusHjwpuPRo70JbzchTFfM7FZGErBr5BGBAWUnqBbL5bw0FDM0pJ+cg3HpE7K6bOSsXb64bNZyQ6onlDn9dD8+cvg3Ru1QKRQ==",
-      "size": 25889
+      "sha256": "6afdb4f87479ac50c1b8ac77a37c248934c20f8c9dcb8594a1a3191c981b1457",
+      "sig": "N6idf/f/kdd0KD5ADi+R0IJy279w/LuPdC2tfxpXkWPp55MIEppUy+YhKgRlO7r3rf6mZ+Yqz1vpZ7QP7OAGDcVjHbQX0kzv16ylylrjWDA0M21u2skuwnBtHfqZZLpfkuaLci+oN18uea6oxcjKwHS6ULF3iJkks6UELXgz/uVtPFm63zlVfPLfHPLl8xgwjMDL9kX5ispr076EuH/zi+RgjB1wXVi1wPdHJrduk66HhWPgolSE6P0pANNzhPf1vT5tEz1u29XtS1UzPW6Y2QmkoTlpxcuMXGv4xSiWielnGLjVfPiwMTbfgexW0HlvYIuyCgFq3GRt19bsWY9GYA==",
+      "size": 26178
     },
     {
       "id": "wochenplan",
@@ -3489,7 +3489,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.3",
+      "version": "1.4.4",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -3539,9 +3539,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "99564916137e2309bb29c3dd5da2cd524a08ee8497808d8596db600518243116",
-      "sig": "jZoyPyoDmoOnJi3oFLkv6FxRIDfeG1J9UQKFt3o5nUGlZy+3TziA4mYotbKmYDC0fh8bqqoZXDc7l2jw9eUYwBFaeDOKiFtotk+74yo22NYr/YphcQDa/VqWhKSnzfiikBqoxEEMt3JqC426spltX0CSjHITeRbJAHSQf0aTOf8YmY0o8UzVJIOg5H1CfjHzYTc2OnxuRcwZGNQKWBfqFn0zR3Hc5jrh5kntOYgD5NNTpQXYKYbWvR38ZrSzqIf0Ck/YXY+PEqAF7isGrDapCrDeRFMepFnQToU5Kt0JSIOIRdqyKQFSijWc1xaw5iZ15lOnJb3uH/RUwh1JkbVNcw==",
-      "size": 15854
+      "sha256": "489c68d5c39b1ea531a1c1de4ea38462549f86ac63a02885387fe6e942392a20",
+      "sig": "nTsTjFHNT9MvbAHDIG0FDscHRok7gwfGYmXLY/Czo6uIt1F0ImZBgiPOYEn1mJGEPwMMp7GnSieAtKJXDsRIFQlpZJY9aUVqw33G6/6UJRP9kVaRjPz7nkuXQhznsHROYbIAfpKpZWN6KuDt5vv2JSd5eGNMw1SAV/SbtX8dP4TzmqbP1pdiwdwQnNNhfe0gmDA+8/GHaSohWf+fOAu3nJ3UZvm1e5a/PnQ2QhHPawIYj2v25DHpGVQXJU5ixEUwZqKMwQ/+ICuc6b0gt0dIcG9JQZeFUBxNQVc6+RgtOExoAKpvJVDd6Jh8qMG0+vtcWoXCiJIw6um8i8Mx1S2rDA==",
+      "size": 16133
     }
   ]
 }

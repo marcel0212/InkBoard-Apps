@@ -465,5 +465,13 @@ function on_widget(ctx, box)
   if open > shown and shown > 0 then
     draw.text(box.x + box.w - 8, box.y + box.h - 4, string.format("+%d", open - shown), "small", color.BLACK, "right")
   end
-  if open == 0 then draw.text(cx, box.y + box.h // 2 + 6, T(ctx, "Alles erledigt", "All done"), "large", color.GREEN, "center") end
+  if open == 0 then
+    local msg = T(ctx, "Alles erledigt", "All done")
+    local f = "large"
+    for _, c in ipairs({ "large", "medium", "normal", "small" }) do
+      f = c
+      if draw.measure(msg, c) <= box.w - 12 then break end
+    end
+    draw.text(cx, box.y + box.h // 2 + 6, msg, f, color.GREEN, "center")
+  end
 end

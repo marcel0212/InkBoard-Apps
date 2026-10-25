@@ -796,6 +796,8 @@ local function nextBento(n, total)
 	local leftX, leftW, rightX = 20, 460, 492
 	local rightW = draw.width - rightX - 20
 	local cardH = 232
+	local tall = draw.height > draw.width
+	if tall then leftW = draw.width - 40 end
 
 	card(leftX, y, leftW, cardH, color.ACCENT, 12)
 	local cx = leftX + 24
@@ -806,24 +808,39 @@ local function nextBento(n, total)
 	draw.text(cx, y + 168, raceLine(n), "normal", color.BLACK, "left")
 	pill(cx, y + 186, countdown(n.start, true), true)
 
-	draw.rect(rightX, y, rightW, cardH, color.BLACK, false, 12)
-	drawTrack(rightX + 16, y + 12, rightW - 32, 140, n.cid)
+	local trY, trH = y, cardH
+	if tall then rightX, rightW, trY, trH = leftX, draw.width - 40, y + cardH + 14, 270 end
+	draw.rect(rightX, trY, rightW, trH, color.BLACK, false, 12)
+	drawTrack(rightX + 16, trY + 12, rightW - 32, trH - 92, n.cid)
 	local mid = rightX + rightW // 2
 	if ci then
-		draw.text(mid, y + 176, fit(statLine(ci, true), rightW - 24, "small"), "small", color.BLACK, "center")
+		draw.text(mid, trY + trH - 56, fit(statLine(ci, true), rightW - 24, "small"), "small", color.BLACK, "center")
 		local rec = ci.rec and string.format(T("Rundenrekord %s", "Lap record %s"), dsp(ci.rec)) or T("Noch kein Rundenrekord", "No lap record yet")
-		draw.text(mid, y + 200, fit(rec, rightW - 24, "small"), "small", color.BLACK, "center")
+		draw.text(mid, trY + trH - 30, fit(rec, rightW - 24, "small"), "small", color.BLACK, "center")
 	else
-		draw.text(mid, y + 188, fit(n.loc .. ", " .. n.country, rightW - 24, "small"), "small", color.BLACK, "center")
+		draw.text(mid, trY + trH - 44, fit(n.loc .. ", " .. n.country, rightW - 24, "small"), "small", color.BLACK, "center")
 	end
 
-	local schedY = y + cardH + 14
+	local schedY = (tall and trY + trH or y + cardH) + 14
 	local schedH = bottom - schedY
 	if schedH < 90 then return end
 	draw.rect(leftX, schedY, draw.width - 2 * leftX, schedH, color.BLACK, false, 12)
 	draw.text(leftX + 22, schedY + 26, T("ZEITPLAN", "SCHEDULE"), "small", color.BLACK, "left")
 	local sess = allSessions(n)
 	local cnt = #sess
+	if tall then
+		local rh = math.min(36, (schedH - 44) // cnt)
+		for i, s in ipairs(sess) do
+			local base = schedY + 44 + (i - 1) * rh + rh - 10
+			local tt = fmtTime(s.s)
+			if s.t == "r" then draw.circle(leftX + 30, base - 6, 5, color.ACCENT, true) end
+			draw.text(leftX + 44, base, fit(lab(SES_LABEL, s.t), 170, "normal"), "normal", color.BLACK, "left")
+			draw.text(draw.width - leftX - 100, base, fmtDate(s.s), "small", color.BLACK, "right")
+			draw.text(draw.width - leftX - 22, base, tt, "normal", color.BLACK, "right")
+			if i < cnt then draw.line(leftX + 22, schedY + 44 + i * rh - 4, draw.width - leftX - 22, schedY + 44 + i * rh - 4, color.BLACK) end
+		end
+		return
+	end
 	local colsX = leftX + 22
 	local colW = (draw.width - 2 * leftX - 44) // cnt
 	for i, s in ipairs(sess) do
@@ -863,9 +880,21 @@ local function nextSlate(n, total)
 	local pw = draw.measure(cd, "normal") + 26
 	pill(cx - pw // 2, y + 142, cd, true)
 
-	local trackTop, trackBottom = y + 186, bottom - 52
+	local tallS = draw.height > draw.width
+	local sessL = allSessions(n)
+	local footH = tallS and (#sessL * 24 + 20) or 52
+	local trackTop, trackBottom = y + 186, bottom - footH
 	if trackBottom - trackTop > 60 then drawTrack(cx - 190, trackTop, 380, trackBottom - trackTop, n.cid) end
 
+	if tallS then
+		draw.line(40, bottom - footH + 8, W - 40, bottom - footH + 8, color.BLACK)
+		for i, s in ipairs(sessL) do
+			local t = lab(SES_LABEL, s.t)
+			draw.text(48, bottom - footH + 8 + i * 24, fit(t, 200, "small"), "small", color.BLACK, "left")
+			draw.text(W - 48, bottom - footH + 8 + i * 24, fmtDate(s.s) .. "  " .. fmtTime(s.s), "small", color.BLACK, "right")
+		end
+		return
+	end
 	draw.line(40, bottom - 40, W - 40, bottom - 40, color.BLACK)
 	local parts = {}
 	for _, s in ipairs(allSessions(n)) do
@@ -946,10 +975,17 @@ local function standBento(drv, con)
 	local cardH = bottom - y
 	local cardW, leftX = 372, 20
 	local rightX = draw.width - 20 - cardW
+	local yR = y
+	local tall = draw.height > draw.width
+	if tall then
+		cardW, rightX = draw.width - 40, leftX
+		cardH = (bottom - y - 14) // 2
+		yR = y + cardH + 14
+	end
 	card(leftX, y, cardW, cardH, color.ACCENT, 12)
-	card(rightX, y, cardW, cardH, color.ACCENT, 12)
+	card(rightX, yR, cardW, cardH, color.ACCENT, 12)
 	draw.text(leftX + 24, y + 26, T("FAHRERWERTUNG", "DRIVER STANDINGS"), "small", color.BLACK, "left")
-	draw.text(rightX + 24, y + 26, T("KONSTRUKTEURSWERTUNG", "CONSTRUCTOR STANDINGS"), "small", color.BLACK, "left")
+	draw.text(rightX + 24, yR + 26, T("KONSTRUKTEURSWERTUNG", "CONSTRUCTOR STANDINGS"), "small", color.BLACK, "left")
 	local rowsTop, rowsH = y + 40, cardH - 54
 	local dH = #drv.rows > 0 and rowsH // #drv.rows or rowsH
 	local mD = maxPtsWidth(drv.rows)
@@ -959,7 +995,7 @@ local function standBento(drv, con)
 	local tH = #con.rows > 0 and rowsH // #con.rows or rowsH
 	local mT = maxPtsWidth(con.rows)
 	for i, r in ipairs(con.rows) do
-		standRow(rightX + 24, rowsTop + (i - 1) * tH + tH // 2 + 8, r, rightX + cardW - 24, mT)
+		standRow(rightX + 24, yR + 40 + (i - 1) * tH + tH // 2 + 8, r, rightX + cardW - 24, mT)
 	end
 end
 
@@ -967,23 +1003,34 @@ local function standSlate(drv, con)
 	local y = draw.top + 2
 	local bottom = draw.height - 14
 	local cx = draw.width // 2
-	draw.line(cx, y + 6, cx, bottom - 6, color.BLACK)
 	local leftX, leftRight, rightX, rightRight = 28, cx - 28, cx + 28, draw.width - 28
+	local yR = y
+	local tall = draw.height > draw.width
+	local secH = bottom - y
+	if tall then
+		leftRight, rightX = draw.width - 28, 28
+		secH = (bottom - y) // 2
+		yR = y + secH
+		draw.line(28, yR - 2, draw.width - 28, yR - 2, color.BLACK)
+	else
+		draw.line(cx, y + 6, cx, bottom - 6, color.BLACK)
+	end
 	draw.text(leftX, y + 22, T("FAHRERWERTUNG", "DRIVER STANDINGS"), "small", color.BLACK, "left")
-	draw.text(rightX, y + 22, T("KONSTRUKTEURSWERTUNG", "CONSTRUCTOR STANDINGS"), "small", color.BLACK, "left")
-	local rowsTop = y + 36
-	local rowsH = bottom - rowsTop - 6
+	draw.text(rightX, yR + 22, T("KONSTRUKTEURSWERTUNG", "CONSTRUCTOR STANDINGS"), "small", color.BLACK, "left")
+	local rowsH = secH - 36 - 6
 	local dH = #drv.rows > 0 and rowsH // #drv.rows or rowsH
 	local mD = maxPtsWidth(drv.rows)
+	local rowsTop = y + 36
 	for i, r in ipairs(drv.rows) do
 		standRow(leftX, rowsTop + (i - 1) * dH + dH // 2 + 8, r, leftRight, mD)
 		if i < #drv.rows then draw.line(leftX, rowsTop + i * dH, leftRight, rowsTop + i * dH, color.BLACK) end
 	end
 	local tH = #con.rows > 0 and rowsH // #con.rows or rowsH
 	local mT = maxPtsWidth(con.rows)
+	local rowsTopR = yR + 36
 	for i, r in ipairs(con.rows) do
-		standRow(rightX, rowsTop + (i - 1) * tH + tH // 2 + 8, r, rightRight, mT)
-		if i < #con.rows then draw.line(rightX, rowsTop + i * tH, rightRight, rowsTop + i * tH, color.BLACK) end
+		standRow(rightX, rowsTopR + (i - 1) * tH + tH // 2 + 8, r, rightRight, mT)
+		if i < #con.rows then draw.line(rightX, rowsTopR + i * tH, rightRight, rowsTopR + i * tH, color.BLACK) end
 	end
 end
 
@@ -1041,7 +1088,8 @@ local function lastBento(L)
 	local bottom = draw.height - 14
 	local headX = 20
 	local headW = draw.width - 2 * headX
-	local headH = 84
+	local tall = draw.height > draw.width
+	local headH = tall and 128 or 84
 	card(headX, y, headW, headH, color.ACCENT, 12)
 	draw.text(headX + 24, y + 26, string.format(T("RUNDE %d · %s", "ROUND %d · %s"), L.round, fmtDate(L.date)), "small", color.BLACK, "left")
 
@@ -1051,13 +1099,25 @@ local function lastBento(L)
 	local siegerW = draw.measure(T("SIEGER", "WINNER"), "small")
 	local winnerBlockW = math.max(winnerW, siegerW)
 	local winnerRight = headX + headW - 24
-	draw.text(winnerRight, y + 26, T("SIEGER", "WINNER"), "small", color.BLACK, "right")
-	draw.text(winnerRight, y + 56, winnerLine, "normal", color.BLACK, "right")
-	draw.text(headX + 24, y + 68, fit(gpName(L.cid, L.name), winnerRight - winnerBlockW - 24 - (headX + 24), "large"), "large", color.BLACK, "left")
+	if tall then
+		local gpn = gpName(L.cid, L.name)
+		local gpf = (draw.measure(gpn, "large") <= headW - 48) and "large" or "medium"
+		draw.text(headX + 24, y + 66, fit(gpn, headW - 48, gpf), gpf, color.BLACK, "left")
+		draw.text(headX + 24, y + 98, T("SIEGER", "WINNER"), "small", color.BLACK, "left")
+		draw.text(headX + 24 + siegerW + 14, y + 100, fit(winnerLine, headW - 48 - siegerW - 14, "normal"), "normal", color.BLACK, "left")
+	else
+		draw.text(winnerRight, y + 26, T("SIEGER", "WINNER"), "small", color.BLACK, "right")
+		draw.text(winnerRight, y + 56, winnerLine, "normal", color.BLACK, "right")
+		draw.text(headX + 24, y + 68, fit(gpName(L.cid, L.name), winnerRight - winnerBlockW - 24 - (headX + 24), "large"), "large", color.BLACK, "left")
+	end
 
 	local y2 = y + headH + 14
 	local mainH = bottom - y2
 	local listW = 460
+	if tall then
+		listW = headW
+		mainH = math.min(mainH - 3 * 62 - 14 - 10, 8 * 44 + 24)
+	end
 	draw.rect(headX, y2, listW, mainH, color.BLACK, false, 12)
 	local rows = math.min(#L.rows, 8)
 	local rowH = (mainH - 24) // math.max(rows, 1)
@@ -1083,9 +1143,11 @@ local function lastBento(L)
 	local infoX = headX + listW + 12
 	local infoW = draw.width - 20 - infoX
 	local infoH = (mainH - 20) // 3
+	local infoTop = y2
+	if tall then infoX, infoW, infoH, infoTop = headX, headW, 62, y2 + mainH + 14 end
 	local labels = { T("SCHN. RUNDE", "FASTEST LAP"), T("AUSFÄLLE", "RETIREMENTS"), T("POLE-POSITION", "POLE POSITION") }
 	for c = 1, 3 do
-		local cy = y2 + (c - 1) * (infoH + 10)
+		local cy = infoTop + (c - 1) * (infoH + 10)
 		draw.rect(infoX, cy, infoW, infoH, color.BLACK, false, 10)
 		draw.text(infoX + 16, cy + 24, labels[c], "small", color.BLACK, "left")
 		local v
@@ -1096,7 +1158,7 @@ local function lastBento(L)
 		else
 			v = L.pole ~= "" and L.pole or "-"
 		end
-		local lines = wrapLines(v, infoW - 32, "normal", 2)
+		local lines = wrapLines(v, infoW - 32, "normal", tall and 1 or 2)
 		for l, line in ipairs(lines) do
 			draw.text(infoX + 16, cy + 52 + (l - 1) * 24, line, "normal", color.BLACK, "left")
 		end

@@ -261,7 +261,10 @@ local function drawTiles(ctx, x, y, w, h)
       local cx, cy = x + (k % cols) * (tw + gap), y + (k // cols) * (th + gap)
       draw.rect(cx, cy, tw, th, color.WHITE, true, 14)
       draw.rect(cx, cy, tw, th, color.BLACK, false, 14)
-      if label(ctx, i) ~= "" then draw.text(cx + 14, cy + 28, cut(label(ctx, i), tw - 28, "normal"), "normal", color.BLACK, "left") end
+      if label(ctx, i) ~= "" then
+        local lf = (draw.measure(label(ctx, i), "normal") <= tw - 48) and "normal" or "small"
+        draw.text(cx + 14, cy + 28, cut(label(ctx, i), tw - 28, lf), lf, color.BLACK, "left")
+      end
       local txt = fmtVal(ctx, i)
       bigValue(cx + tw // 2, cy + th - 26, txt, tw - 28, (i == 1 and sig == color.RED) and color.RED or color.BLACK, "center", 1)
       if i == 1 and sig then draw.circle(cx + tw - 22, cy + 22, 9, sig, true); draw.circle(cx + tw - 22, cy + 22, 9, color.BLACK, false) end
@@ -283,7 +286,13 @@ local function drawBig(ctx, x, y, w, h)
     local cw = w // #others
     for k, i in ipairs(others) do
       local cx = x + (k - 1) * cw + cw // 2
-      draw.text(cx, y + h - 46, fmtVal(ctx, i), "large", color.BLACK, "center")
+      local vt = fmtVal(ctx, i)
+      local vf = "large"
+      for _, c in ipairs({ "large", "medium", "normal", "small" }) do
+        vf = c
+        if draw.measure(vt, c) <= cw - 8 then break end
+      end
+      draw.text(cx, y + h - 46, vt, vf, color.BLACK, "center")
       if label(ctx, i) ~= "" then draw.text(cx, y + h - 14, cut(label(ctx, i), cw - 10, "small"), "small", color.BLACK, "center") end
     end
   end

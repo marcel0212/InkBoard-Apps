@@ -138,6 +138,60 @@ function on_draw(ctx, page)
   local list = rows(s, en)
   local fill, ink, msg = summary(list, en)
   local top = draw.top + 10
+  local tall = draw.height > draw.width -- CHANGELOG 932: Hochformat
+  if tall then
+    local W = draw.width
+    local n = #list
+    local function titleBar(h)
+      draw.rect(20, top, W - 40, h, fill, true, 14)
+      local mf = draw.measure(msg, "large") <= W - 80 and "large" or "normal"
+      draw.text(40, top + 36, cut(msg, W - 80, mf), mf, ink, "left")
+      draw.text(40, top + 62, cut(who_of(s, en), W - 80, "normal"), "normal", ink, "left")
+    end
+    if style == "compact" then
+      draw.rect(30, top + 20, W - 60, 150, fill, true, 20)
+      local mf = draw.measure(msg, "large") <= W - 90 and "large" or "normal"
+      draw.text(W // 2, top + 108, cut(msg, W - 90, mf), mf, ink, "center")
+      local cols = 3
+      local colw = (W - 60) // cols
+      for i = 1, n do
+        local c, r = (i - 1) % cols, (i - 1) // cols
+        local cx = 30 + colw * c + colw // 2
+        local cy = top + 250 + r * 130
+        light(cx, cy, 24, list[i][3])
+        local nf = (draw.measure(list[i][1], "normal") <= colw - 8) and "normal" or "small"
+        draw.text(cx, cy + 52, cut(list[i][1], colw - 8, nf), nf, color.BLACK, "center")
+      end
+      draw.text(W // 2, top + 560, cut(who_of(s, en) .. "  -  " .. s.version, W - 40, "normal"), "normal", color.BLACK, "center")
+      return
+    end
+    titleBar(78)
+    local y = top + 94
+    if style == "cards" then
+      local th = 96
+      for i = 1, n do
+        draw.rect(20, y, W - 40, th, color.BLACK, false, 14)
+        light(52, y + 30, 14, list[i][3])
+        draw.text(78, y + 36, list[i][1], "normal", color.BLACK, "left")
+        local v = list[i][2]
+        local font = draw.measure(v, "large") <= W - 80 and "large" or "normal"
+        draw.text(40, y + 80, cut(v, W - 80, font), font, color.BLACK, "left")
+        y = y + th + 10
+      end
+    else
+      local rowH = 88
+      for i = 1, n do
+        light(48, y + 30, 14, list[i][3])
+        draw.text(76, y + 36, list[i][1], "normal", color.BLACK, "left")
+        local v = list[i][2]
+        local font = draw.measure(v, "large") <= W - 100 and "large" or "normal"
+        draw.text(76, y + 74, cut(v, W - 100, font), font, color.BLACK, "left")
+        if i < n then draw.line(40, y + rowH, W - 24, y + rowH, color.BLACK) end
+        y = y + rowH + 6
+      end
+    end
+    return
+  end
   if style == "compact" then
     -- Nano: grosses Ergebnis, darunter eine Reihe Ampeln mit Namen
     draw.rect(60, top + 20, draw.width - 120, 130, fill, true, 20)

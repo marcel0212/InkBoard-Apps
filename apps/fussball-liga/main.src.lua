@@ -994,7 +994,8 @@ local function teamBento(ctx, lg, d, top)
   local bottom = draw.height - 14
   local heroX = 20
   local heroW = draw.width - 2 * heroX
-  local heroH = 256
+  local tall = draw.height > draw.width
+  local heroH = tall and 310 or 256
   draw.rect(heroX, y, heroW, heroH, color.BLACK, false, 12)
   local oname, otla, ocol = ownOf(d)
   local nx = d.nxt[1]
@@ -1002,20 +1003,22 @@ local function teamBento(ctx, lg, d, top)
     local line = fmtDateTime(nx.when)
     draw.text(cx, y + 28, T(line .. " Uhr", line), "normal", color.BLACK, "center")
     local crestW, crestH = 203, 135
-    local crestY = y + 44
+    local crestOff = 150
+    if tall then crestW, crestH, crestOff = 150, 100, 64 end
+    local crestY = y + 44 + (tall and 24 or 0)
     local lt, lc, ls, ln = otla, ocol, "own", cname(d.own.full, oname)
     local rt, rc, rs, rn = nx.tla, nx.col, "opp", cname(nx.oppFull, nx.opp)
     if not nx.home then lt, lc, ls, ln, rt, rc, rs, rn = rt, rc, rs, rn, lt, lc, ls, ln end
-    crestBig(ctx, cx - 150 - crestW, crestY, crestW, crestH, lt, lc, ls, ln, 18)
-    crestBig(ctx, cx + 150, crestY, crestW, crestH, rt, rc, rs, rn, 18)
+    crestBig(ctx, cx - crestOff - crestW, crestY, crestW, crestH, lt, lc, ls, ln, 18)
+    crestBig(ctx, cx + crestOff, crestY, crestW, crestH, rt, rc, rs, rn, 18)
     draw.text(cx, crestY + crestH // 2 + 10, "vs", "large", color.BLACK, "center")
-    draw.text(cx - 150 - crestW // 2, crestY + crestH + 16, fit(ln, 280, "small"), "small", color.BLACK, "center")
-    draw.text(cx + 150 + crestW // 2, crestY + crestH + 16, fit(rn, 280, "small"), "small", color.BLACK, "center")
-    draw.text(cx, y + 205, nx.home and T("Heim", "Home") or T("Auswärts", "Away"), "small", color.BLACK, "center")
+    draw.text(cx - crestOff - crestW // 2, crestY + crestH + 16, fit(ln, tall and 200 or 280, "small"), "small", color.BLACK, "center")
+    draw.text(cx + crestOff + crestW // 2, crestY + crestH + 16, fit(rn, tall and 200 or 280, "small"), "small", color.BLACK, "center")
+    draw.text(cx, y + heroH - 51, nx.home and T("Heim", "Home") or T("Auswärts", "Away"), "small", color.BLACK, "center")
     local venue = ""
     if nx.home and d.own.venue ~= "" then venue = d.own.venue
     elseif not nx.home then venue = T("bei ", "at ") .. nx.opp end
-    if venue ~= "" then draw.text(cx, y + 225, venue, "small", color.BLACK, "center") end
+    if venue ~= "" then draw.text(cx, y + heroH - 31, venue, "small", color.BLACK, "center") end
   else
     noticeCompact(cx, y + heroH // 2, "-", T("Kein anstehendes Spiel gefunden.", "No upcoming match found."))
   end
@@ -1024,6 +1027,7 @@ local function teamBento(ctx, lg, d, top)
   draw.text(heroX, labelY, T("LETZTE 5 SPIELE", "LAST 5 MATCHES"), "small", color.BLACK, "left")
   local tilesTop = labelY + 8
   local tileH = math.min(bottom - tilesTop, 128)
+  if tall then tileH = 70 end
   if #d.last == 0 then
     noticeCompact(cx, tilesTop + tileH // 2, "-", T("Noch keine Ergebnisse in dieser Saison.", "No results yet this season."))
     return
@@ -1034,63 +1038,89 @@ local function teamBento(ctx, lg, d, top)
     local m = d.last[#d.last - i]
     local tx = heroX + i * (tileW + gap)
     local rc = resColor(m.res)
+    if tall then
+      local ty = tilesTop + i * (tileH + 8)
+      draw.rect(heroX, ty, heroW, tileH, rc, false, 10)
+      draw.circle(heroX + 26, ty + tileH // 2, 11, rc, true)
+      draw.text(heroX + 26, ty + tileH // 2 + 5, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
+      badge(heroX + 50, ty + tileH // 2 - 11, 42, 22, m.tla, m.col, 7)
+      local sc = scoreText(m)
+      draw.text(heroX + heroW - 16, ty + tileH // 2 + 9, sc, "large", color.BLACK, "right")
+      draw.text(heroX + 104, ty + tileH // 2 + 6, fit(m.opp, heroW - 104 - draw.measure(sc, "large") - 36, "normal"), "normal", color.BLACK, "left")
+      goto continue
+    end
     draw.rect(tx, tilesTop, tileW, tileH, rc, false, 10)
     draw.circle(tx + 18, tilesTop + 19, 9, rc, true)
     draw.text(tx + 18, tilesTop + 24, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
     draw.text(tx + 32, tilesTop + 24, fit(m.opp, tileW - 40, "small"), "small", color.BLACK, "left")
     draw.text(tx + tileW // 2, tilesTop + tileH // 2 + 16, scoreText(m), "large", color.BLACK, "center")
     badge(tx + tileW // 2 - 21, tilesTop + tileH - 30, 42, 22, m.tla, m.col, 7)
+    ::continue::
   end
 end
 
 -- Team, Slate: zwei Spalten (Letzte / Naechste)
 local function teamSlate(ctx, lg, d, top)
   local y = top + 6
-  local cx = draw.width // 2
+  local W = draw.width
+  local cx = W // 2
   local bottom = draw.height - 14
-  draw.rect(cx, y + 4, 1, bottom - y - 8, color.BLACK, true)
-  draw.text(24, y + 18, T("Letzte Spiele", "Last matches"), "normal", color.BLACK, "left")
-  draw.text(cx + 20, y + 18, T("Nächste Spiele", "Next matches"), "normal", color.BLACK, "left")
-  hline(24, y + 28, cx - 48)
-  hline(cx + 20, y + 28, cx - 44)
-  local listTop = y + 40
-  local rowH = math.min((bottom - listTop) // 5, 76)
+  local tall = draw.height > draw.width
+  local lx0, lx1 = 24, cx - 24
+  local rx0, rx1 = cx + 20, W - 24
+  local topL, topR = y, y
+  local rowH
+  if tall then
+    lx1, rx0 = W - 24, 24
+    local sect = (bottom - y) // 2
+    topR = y + sect
+    rowH = math.min((sect - 44) // 5, 64)
+  else
+    draw.rect(cx, y + 4, 1, bottom - y - 8, color.BLACK, true)
+    rowH = math.min((bottom - (y + 40)) // 5, 76)
+  end
+  draw.text(lx0, topL + 18, T("Letzte Spiele", "Last matches"), "normal", color.BLACK, "left")
+  draw.text(rx0, topR + 18, T("Nächste Spiele", "Next matches"), "normal", color.BLACK, "left")
+  hline(lx0, topL + 28, lx1 - lx0)
+  hline(rx0, topR + 28, rx1 - rx0)
+  local listTop = topL + 40
+  local listTopR = topR + 40
   if #d.last == 0 then
-    draw.text(24, listTop + 16, T("Noch keine Ergebnisse.", "No results yet."), "small", color.BLACK, "left")
+    draw.text(lx0, listTop + 16, T("Noch keine Ergebnisse.", "No results yet."), "small", color.BLACK, "left")
   end
   for i = 0, #d.last - 1 do
     local m = d.last[#d.last - i]
     local rowY = listTop + i * rowH
     local base = rowY + rowH // 2 + 6
     local rc = resColor(m.res)
-    draw.circle(24 + 8, base - 6, 8, rc, true)
-    draw.text(24 + 8, base - 1, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
-    badge(24 + 26, base - 16, 36, 20, m.tla, m.col, 7)
+    draw.circle(lx0 + 8, base - 6, 8, rc, true)
+    draw.text(lx0 + 8, base - 1, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
+    badge(lx0 + 26, base - 16, 36, 20, m.tla, m.col, 7)
     local sc = scoreText(m)
-    local scoreX = cx - 22 - draw.measure(sc, "normal")
-    local nameX = 24 + 26 + 36 + 8
+    local scoreX = lx1 - draw.measure(sc, "normal") - (tall and 4 or -2) - 22
+    local nameX = lx0 + 26 + 36 + 8
     local maxW = scoreX - nameX - 10
     draw.text(nameX, base, maxW > 0 and fit(m.opp, maxW, "normal") or m.opp, "normal", color.BLACK, "left")
     draw.text(scoreX, base, sc, "normal", color.BLACK, "left")
-    if i < #d.last - 1 then hline(24, rowY + rowH - 2, cx - 48) end
+    if i < #d.last - 1 then hline(lx0, rowY + rowH - 2, lx1 - lx0) end
   end
   if #d.nxt == 0 then
-    draw.text(cx + 20, listTop + 16, T("Keine anstehenden Spiele.", "No upcoming matches."), "small", color.BLACK, "left")
+    draw.text(rx0, listTopR + 16, T("Keine anstehenden Spiele.", "No upcoming matches."), "small", color.BLACK, "left")
   end
   for i, m in ipairs(d.nxt) do
-    local rowY = listTop + (i - 1) * rowH
+    local rowY = listTopR + (i - 1) * rowH
     local base = rowY + rowH // 2 - 2
-    badge(cx + 20, base - 16, 36, 20, m.tla, m.col, 7)
+    badge(rx0, base - 16, 36, 20, m.tla, m.col, 7)
     local ds = fmtDate(m.when)
-    local dateX = draw.width - 26 - draw.measure(ds, "normal")
-    local nameX = cx + 20 + 36 + 8
+    local dateX = rx1 - 2 - draw.measure(ds, "normal")
+    local nameX = rx0 + 36 + 8
     local maxW = dateX - nameX - 10
     draw.text(nameX, base, maxW > 0 and fit(m.opp, maxW, "normal") or m.opp, "normal", color.BLACK, "left")
     draw.text(dateX, base, ds, "normal", color.BLACK, "left")
     local p = localParts(m.when)
     local ha = m.home and T("Heim", "Home") or T("Auswärts", "Away")
     draw.text(nameX, base + 18, string.format(T("%02d:%02d Uhr · %s", "%02d:%02d · %s"), p.hour, p.min, ha), "small", color.BLACK, "left")
-    if i < #d.nxt then hline(cx + 20, rowY + rowH - 2, cx - 44) end
+    if i < #d.nxt then hline(rx0, rowY + rowH - 2, rx1 - rx0) end
   end
 end
 
@@ -1107,6 +1137,34 @@ local function teamNano(ctx, lg, d, top)
   local count = nl + 1 + nn
   if count < 2 then
     noticeCompact(cx, y + 180, "-", T("Noch keine Spiele gefunden.", "No matches found yet."))
+    return
+  end
+  if draw.height > draw.width then
+    local W = draw.width
+    local ntop, nbot = y + 52, draw.height - 20
+    local rh = math.min(64, (nbot - ntop) // count)
+    local lx = 120
+    draw.line(lx, ntop + rh // 2, lx, ntop + (count - 1) * rh + rh // 2, color.BLACK)
+    for i = 0, count - 1 do
+      local cy = ntop + i * rh + rh // 2
+      local inner, name, tla, col = "", "", nil, nil
+      if i < nl then
+        local m = d.last[i + 1]
+        draw.circle(lx, cy, 8, resColor(m.res), true)
+        inner, name, tla, col = scoreText(m), m.opp, m.tla, m.col
+      elseif i == nl then
+        draw.circle(lx, cy, 8, color.BLACK, true)
+        inner = T("heute", "today")
+      else
+        local m = d.nxt[i - nl]
+        draw.circle(lx, cy, 8, color.BLACK)
+        draw.circle(lx, cy, 7, color.BLACK)
+        inner, name, tla, col = fmtDate(m.when), m.opp, m.tla, m.col
+      end
+      draw.text(lx - 20, cy + 7, inner, "normal", color.BLACK, "right")
+      if tla then badge(lx + 24, cy - 11, 40, 22, tla, col, 7) end
+      if name ~= "" then draw.text(lx + 74, cy + 7, fit(name, W - lx - 74 - 16, "normal"), "normal", color.BLACK, "left") end
+    end
     return
   end
   local lineY = 268
@@ -1332,7 +1390,7 @@ function on_draw(ctx, page)
     local ie = ctx.data.get("ie")
     if type(ie) ~= "string" or ie == "" then ie = T("noch kein Wappenabruf", "no crest fetch yet") end
     if ctx.cfg.crests ~= false and style ~= "flat" and (ctx.data.get("im_own") == nil or ctx.data.get("im_opp") == nil) then
-      draw.text(790, 474, "Wappen: " .. ie, "small", color.BLACK, "right")
+      draw.text(draw.width - 10, draw.height - 6, fit("Wappen: " .. ie, draw.width - 24, "small"), "small", color.BLACK, "right")
     end
   end
 end

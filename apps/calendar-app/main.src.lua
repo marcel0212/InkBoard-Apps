@@ -29,7 +29,7 @@ local WDS_EN = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
 local WDF_DE = { "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag" }
 local WDF_EN = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }
 
-local W, H = 800, 480
+local W, H = (draw and draw.width) or 800, (draw and draw.height) or 480 -- CHANGELOG 932: folgt der Display-Ausrichtung (Hochformat 480x800)
 local FILE_MAX = 23000
 local MAX_EVENTS = 160
 local FAR = 2147000000 -- "kein Ende" fuer Einzeltermine (wie die eingebaute App: nur die fruehesten 160 bleiben)
@@ -523,8 +523,9 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
       draw.rect(colX + 3, headerY + 2, colW - 6, headerH - 4, color.ACCENT, true, 10)
       hc = color.ACCENT_INK
     end
-    draw.text(ccx, headerY + 13, (en and WDS_EN or WDS_DE)[d + 1], "normal", hc, "center")
-    draw.text(ccx, headerY + headerH - 6, tostring(dd.day), "large", hc, "center")
+    local narrowCol = colW < 70 -- Hochformat: schmale Spalten brauchen kleinere Schrift
+    draw.text(ccx, headerY + 13, (en and WDS_EN or WDS_DE)[d + 1], narrowCol and "small" or "normal", hc, "center")
+    draw.text(ccx, headerY + headerH - 6, tostring(dd.day), narrowCol and "normal" or "large", hc, "center")
 
     local adCount, adFirst = 0, nil
     for _, e in ipairs(evs) do
@@ -661,6 +662,9 @@ local function monthPage(ctx, evs, st, en, t, topY)
   local fw = isoWd(first.wday)
   local nDays = daysIn(t.year, t.month)
   local rows = (fw - 1 + nDays + 6) // 7
+  if H > W then -- Hochformat: Zeilen fuellen die Hoehe
+    bandH = math.min(130, (H - gridTop - 20 - (rows - 1) * bandGap) // rows)
+  end
   local curRow = (fw - 1 + t.day - 1) // 7
   for row = 0, rows - 1 do
     local by = gridTop + row * (bandH + bandGap)

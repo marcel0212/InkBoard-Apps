@@ -375,8 +375,28 @@ local function accentFor(m)
   return color.ACCENT
 end
 
+local function bigScale(t, unit, avail)
+  for k = 3, 2, -1 do
+    local uw = (unit ~= "") and (draw.measure(unit, "large") + 16) or 0
+    if draw.measure(t, "huge", k) + uw <= avail then return k end
+  end
+  return 1
+end
+
 local function tabs(ctx, models, idx, y, style)
   local n = #models
+  if draw.height > draw.width and style ~= "nano" then
+    -- Hochformat: nur der aktive Reiter als Pille, darunter Punkte fuer alle Ansichten
+    local t = models[idx].title
+    local w = math.min(draw.width - 40, draw.measure(t, "small") + 44)
+    draw.rect((draw.width - w) // 2, y, w, 36, color.ACCENT, true, 18)
+    draw.text(draw.width // 2, y + 25, t, "small", color.ACCENT_INK, "center")
+    for i = 1, n do
+      local cx = draw.width // 2 + (i - (n + 1) / 2) * 22
+      draw.circle(math.floor(cx), y + 52, 5, (i == idx) and color.ACCENT or color.BLACK, i == idx)
+    end
+    return
+  end
   local gap = 10
   local w = (n == 1) and 200 or 170
   local total = n * w + (n - 1) * gap
@@ -403,18 +423,27 @@ end
 local function drawBento(ctx, m, models, idx)
   local col = accentFor(m)
   tabs(ctx, models, idx, draw.top + 12, "bento")
+  local tall = draw.height > draw.width
   local cx, cy, cw, ch = 40, draw.top + 64, draw.width - 80, 306
+  if tall then cx, cy, cw, ch = 24, draw.top + 84, draw.width - 48, draw.height - draw.top - 84 - 50 end
   draw.rect(cx, cy, cw, ch, color.BLACK, false, 20)
   draw.rect(cx + 1, cy + 1, cw - 2, ch - 2, color.BLACK, false, 19)
   draw.rect(cx + 24, cy + 16, 110, 8, col, true, 4)
   draw.icon(m.icon, cx + cw - 66, cy + 20, 40, col)
   draw.text(cx + 30, cy + 66, m.label, "large", m.alert and color.RED or color.BLACK, "left")
-  draw.text(cx + 30, cy + 206, m.big, "huge", col == color.ACCENT and color.ACCENT_TEXT or col, "left", 3)
-  local bw = draw.measure(m.big, "huge", 3)
-  if m.unit ~= "" then draw.text(cx + 30 + bw + 16, cy + 206, m.unit, "large", color.BLACK, "left") end
-  draw.text(cx + 30, cy + 246, m.sub, "normal", color.BLACK, "left")
+  local bsc = bigScale(m.big, m.unit, cw - 60)
+  local by = tall and (cy + ch // 2 + 40) or (cy + 206)
+  draw.text(cx + 30, by, m.big, "huge", col == color.ACCENT and color.ACCENT_TEXT or col, "left", bsc)
+  local bw = draw.measure(m.big, "huge", bsc)
+  if m.unit ~= "" then draw.text(cx + 30 + bw + 16, by, m.unit, "large", color.BLACK, "left") end
+  if tall then
+    draw.wrap(cx + 30, by + 50, cw - 60, m.sub, "normal", color.BLACK)
+    draw.text(cx + 30, cy + 104, m.sub2, "small", color.BLACK, "left")
+  else
+    draw.text(cx + 30, cy + 246, m.sub, "normal", color.BLACK, "left")
+    draw.text(cx + cw - 80, cy + 120, m.sub2, "small", color.BLACK, "right")
+  end
   bar(cx + 30, cy + ch - 34, cw - 60, 18, m.frac, col)
-  draw.text(cx + cw - 80, cy + 120, m.sub2, "small", color.BLACK, "right")
   draw.text(draw.width // 2, draw.height - 22, m.hint .. "   |   " .. tx(ctx, "Drehen: Ansicht", "Turn: switch view"), "small", color.BLACK, "center")
 end
 
@@ -422,15 +451,19 @@ local function drawSlate(ctx, m, models, idx)
   local col = accentFor(m)
   tabs(ctx, models, idx, draw.top + 12, "slate")
   local x = 60
-  draw.rect(24, draw.top + 70, 14, 300, col, true)
+  local tall = draw.height > draw.width
+  local d = tall and 200 or 0   -- Hochformat: alles unter dem Label um d nach unten, Sub2 unter dem Label
+  draw.rect(24, draw.top + 70, 14, 300 + (tall and 300 or 0), col, true)
   draw.text(x, draw.top + 106, m.label, "large", m.alert and color.RED or color.BLACK, "left")
-  draw.text(x, draw.top + 250, m.big, "huge", color.BLACK, "left", 3)
-  local bw = draw.measure(m.big, "huge", 3)
-  if m.unit ~= "" then draw.text(x + bw + 16, draw.top + 250, m.unit, "large", col == color.ACCENT and color.ACCENT_TEXT or col, "left") end
-  draw.line(x, draw.top + 276, draw.width - 60, draw.top + 276, color.BLACK)
-  draw.wrap(x, draw.top + 310, draw.width - 120, m.sub, "normal", color.BLACK)
-  draw.text(draw.width - 60, draw.top + 106, m.sub2, "small", color.BLACK, "right")
-  bar(x, draw.top + 350, draw.width - 120, 14, m.frac, col)
+  local bsc = bigScale(m.big, m.unit, draw.width - 2 * x - 10)
+  draw.text(x, draw.top + 250 + d, m.big, "huge", color.BLACK, "left", bsc)
+  local bw = draw.measure(m.big, "huge", bsc)
+  if m.unit ~= "" then draw.text(x + bw + 16, draw.top + 250 + d, m.unit, "large", col == color.ACCENT and color.ACCENT_TEXT or col, "left") end
+  draw.line(x, draw.top + 276 + d, draw.width - 60, draw.top + 276 + d, color.BLACK)
+  draw.wrap(x, draw.top + 310 + d, draw.width - 120, m.sub, "normal", color.BLACK)
+  if tall then draw.text(x, draw.top + 140, m.sub2, "small", color.BLACK, "left")
+  else draw.text(draw.width - 60, draw.top + 106, m.sub2, "small", color.BLACK, "right") end
+  bar(x, draw.top + 350 + d + (tall and 60 or 0), draw.width - 120, 14, m.frac, col)
   draw.text(draw.width // 2, draw.height - 22, m.hint .. "   |   " .. tx(ctx, "Drehen: Ansicht", "Turn: switch view"), "small", color.BLACK, "center")
 end
 
@@ -438,16 +471,17 @@ local function drawNano(ctx, m, models, idx)
   local col = accentFor(m)
   tabs(ctx, models, idx, draw.top + 18, "nano")
   local cx = draw.width // 2
-  draw.icon(m.icon, cx - 20, draw.top + 52, 40, col)
-  draw.text(cx, draw.top + 128, m.label, "medium", m.alert and color.RED or color.BLACK, "center")
+  local top0 = draw.top + ((draw.height > draw.width) and 150 or 0)
+  draw.icon(m.icon, cx - 20, top0 + 52, 40, col)
+  draw.text(cx, top0 + 128, m.label, "medium", m.alert and color.RED or color.BLACK, "center")
   local bw = draw.measure(m.big, "huge", 2)
   local uw = (m.unit ~= "") and (draw.measure(m.unit, "large") + 14) or 0
   local x = cx - (bw + uw) // 2
-  draw.text(x, draw.top + 236, m.big, "huge", col == color.ACCENT and color.ACCENT_TEXT or col, "left", 2)
-  if m.unit ~= "" then draw.text(x + bw + 14, draw.top + 236, m.unit, "large", color.BLACK, "left") end
-  bar(cx - 260, draw.top + 262, 520, 12, m.frac, col)
-  draw.text(cx, draw.top + 308, m.sub, "normal", color.BLACK, "center")
-  draw.text(cx, draw.top + 336, m.sub2, "small", color.BLACK, "center")
+  draw.text(x, top0 + 236, m.big, "huge", col == color.ACCENT and color.ACCENT_TEXT or col, "left", 2)
+  if m.unit ~= "" then draw.text(x + bw + 14, top0 + 236, m.unit, "large", color.BLACK, "left") end
+  bar(math.max(30, cx - 260), top0 + 262, math.min(520, draw.width - 60), 12, m.frac, col)
+  draw.text(cx, top0 + 308, m.sub, "normal", color.BLACK, "center")
+  draw.text(cx, top0 + 336, m.sub2, "small", color.BLACK, "center")
   draw.text(cx, draw.height - 22, m.hint, "small", color.BLACK, "center")
 end
 

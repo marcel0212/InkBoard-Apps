@@ -409,8 +409,9 @@ local function drawCards(ctx, events, today)
   local margin, gap = 20, 12
   local areaTop = draw.top + 10
   local areaH = draw.height - 16 - areaTop
-  local tileW = (draw.width - 2 * margin - 3 * gap) // 4
-  local tileH = math.min(areaH, 290)
+  local tall = draw.height > draw.width
+  local tileW = tall and ((draw.width - 2 * margin - gap) // 2) or ((draw.width - 2 * margin - 3 * gap) // 4)
+  local tileH = tall and ((areaH - gap) // 2) or math.min(areaH, 290)
   local hot, hotDay = nil, nil
   local nexts = {}
   for i, k in ipairs(order) do
@@ -420,6 +421,7 @@ local function drawCards(ctx, events, today)
   for i, k in ipairs(order) do
     local tx = margin + (i - 1) * (tileW + gap)
     local ty = areaTop
+    if tall then tx, ty = margin + ((i - 1) % 2) * (tileW + gap), areaTop + ((i - 1) // 2) * (tileH + gap) end
     local col = KIND[k][1]
     local isHot = (i == hot)
     draw.rect(tx, ty, tileW, tileH, isHot and col or color.BLACK, false, 8)
@@ -430,8 +432,8 @@ local function drawCards(ctx, events, today)
       draw.text(tx + tileW // 2, ty + 18, en and "NEXT" or "NÄCHSTE", "small", col == color.YELLOW and color.BLACK or color.WHITE, "center")
       iconY = ty + 52
     end
-    local iconSize = 80
-    binIcon(tx + (tileW - iconSize) // 2, iconY, iconSize, k)
+    local iconSize = tall and 120 or 80
+    binIcon(tx + (tileW - iconSize) // 2, iconY + (tall and 20 or 0), iconSize, k)
     draw.text(tx + tileW // 2, ty + tileH - 56, fit(kindName(k, en), tileW - 12, "normal"), "normal", color.BLACK, "center")
     local e = nexts[i]
     if e then
@@ -451,7 +453,8 @@ local function drawFlat(ctx, events, today)
   local y = draw.top + 10
   local nxt = events[1]
   local col = KIND[nxt.kind][1]
-  draw.text(margin, y + 30, (en and "Next collection: " or "Nächste Abfuhr: ") .. eventName(nxt, en), "large", color.BLACK, "left")
+  local ht = (en and "Next collection: " or "Nächste Abfuhr: ") .. eventName(nxt, en)
+  draw.text(margin, y + 30, ht, (draw.measure(ht, "large") <= W - 2 * margin) and "large" or "medium", color.BLACK, "left")
   draw.text(margin, y + 56, relText(nxt.day, today, en) .. " - " .. dayText(nxt.day, en), "normal", color.BLACK, "left")
   local barY = y + 70
   draw.rect(margin, barY, W - 2 * margin, 3, col, true)

@@ -289,6 +289,61 @@ local function page_wifi(ctx)
   local pass = wifi_pass(ctx)
   local open = (ctx.cfg.sec == "nopass")
   local lt = left_text(ctx, left)
+  if H > W then
+    -- Hochformat: QR-Code oben, Name und Passwort darunter
+    local cards = style == "cards"
+    if style == "compact" then
+      local side = draw.qr(payload, 0, 0, 400) or 0
+      draw.rect(0, 0, side, side, color.WHITE, true, 0)
+      local qy = y0 + 70
+      draw.qr(payload, (W - side) // 2, qy, 400)
+      local ty = qy + side + 56
+      local t1, f1 = fit(ssid, W - 48, { "large", "normal" })
+      draw.text(W // 2, ty, t1, f1, color.BLACK, "center")
+      if not open then
+        local t2, f2 = fit(pass, W - 48, { "large", "normal" })
+        draw.text(W // 2, ty + 50, t2, f2, color.BLACK, "center")
+      end
+      if lt ~= "" then draw.text(W // 2, ty + 100, lt, "normal", color.BLACK, "center") end
+      return
+    end
+    local wt, wf = fit(welcome_of(ctx, m), W - 56, { "large", "normal" })
+    draw.text(28, y0 + 34, wt, wf, color.BLACK, "left")
+    local top = y0 + 52
+    local q = math.min(W - 72, 360)
+    local cw = W - 48
+    if cards then draw.rect(24, top, cw, q + 24, color.BLACK, false, 14) end
+    local side = draw.qr(payload, 24 + 12, top + 12, q) or q
+    draw.rect(24 + 2, top + 2, cw - 4, q + 20, color.WHITE, true, 12)
+    draw.qr(payload, 24 + (cw - side) // 2, top + (q + 24 - side) // 2, side)
+    local iy = top + q + 24 + 20
+    local maxw = W - 80
+    if cards then draw.rect(24, iy, cw, 150, color.BLACK, false, 14) else draw.line(24, iy, W - 24, iy, color.BLACK) end
+    draw.text(40, iy + 32, T(ctx, "WLAN", "Wi-Fi"), "small", color.BLACK, "left")
+    local t1, f1 = fit(ssid, maxw, { "large", "normal" })
+    draw.text(40, iy + 66, t1, f1, color.BLACK, "left")
+    if not open then
+      draw.text(40, iy + 96, T(ctx, "Passwort", "Password"), "small", color.BLACK, "left")
+      local t2, f2 = fit(pass, maxw, { "large", "normal" })
+      draw.text(40, iy + 132, t2, f2, color.BLACK, "left")
+    else
+      draw.text(40, iy + 100, T(ctx, "ohne Passwort", "no password"), "normal", color.BLACK, "left")
+    end
+    draw.text(40, iy + 176, cut(T(ctx, "Kamera auf den QR-Code halten", "Point your camera at the QR code"), maxw, "small"), "small", color.BLACK, "left")
+    if lt ~= "" then
+      local bw = draw.measure(lt, "normal") + 28
+      local by = H - 22
+      if cards then
+        draw.rect(W - 28 - bw, by - 24, bw, 34, color.YELLOW, true, 17)
+        draw.rect(W - 28 - bw, by - 24, bw, 34, color.BLACK, false, 17)
+        draw.text(W - 28 - bw // 2, by, lt, "normal", color.BLACK, "center")
+      else
+        draw.text(W - 28, by, lt, "normal", color.BLACK, "right")
+      end
+    end
+    draw.text(28, H - 10, sync_text(ctx), "small", color.BLACK, "left")
+    return
+  end
   if style == "compact" then
     -- Nano: QR-Code links, Name und Passwort gross daneben - ohne Rahmen, mittig auf dem Schirm
     local side = draw.qr(payload, 0, 0, 400) or 0

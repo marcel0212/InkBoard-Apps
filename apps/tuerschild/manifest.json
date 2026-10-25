@@ -1,7 +1,7 @@
 {
   "id": "tuerschild",
   "name": {"de": "Türschild", "en": "Door sign"},
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 20,
   "pages": [
     {"de": "Status", "en": "Status"}

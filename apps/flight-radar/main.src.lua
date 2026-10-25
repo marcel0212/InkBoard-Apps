@@ -927,14 +927,21 @@ end
 
 -- Formation (FR_SKY_SLOTS_1/2/3): Leader gross unten rechts, weitere versetzt darueber, disjunkte Zeilenbaender -> keine Ueberlappung.
 -- Je Eintrag: x0, x1, y0, y1, Mittelpunkt x, Label unter dem Bild
+local SLOTS_P = { -- Hochformat 480 x 800: alle Label unter dem Bild
+  { { 20, 460, 40, 760, 240, true } },
+  { { 20, 460, 420, 760, 240, true }, { 20, 460, 40, 380, 240, true } },
+  { { 20, 460, 520, 760, 240, true }, { 20, 460, 290, 500, 240, true }, { 20, 460, 40, 270, 240, true } },
+}
 local SLOTS = {
   { { 20, 780, 20, 414, 400, true } },
   { { 200, 785, 168, 414, 520, true }, { 15, 520, 24, 160, 250, false } },
   { { 230, 785, 230, 414, 520, true }, { 110, 500, 122, 222, 290, false }, { 15, 320, 24, 114, 160, false } },
 }
 
+local function skyOri() return draw.height > draw.width and "P" or "L" end
+
 local function skySig(ctx, ac)
-  local p = { SKY_VER, skyOf(ctx.cfg) }
+  local p = { SKY_VER .. skyOri(), skyOf(ctx.cfg) }
   for i = 1, math.min(#ac.list, POOL) do
     local a = ac.list[i]
     p[#p + 1] = (a.grp ~= "" and a.grp or "-") .. ":" .. ((a.lv and a.ia ~= "") and a.ia or "-")
@@ -1001,7 +1008,7 @@ local function skyStep(ctx, ac, now)
     end
   end
   if #cands == 0 and partial then return end -- Budget leer: naechster Lauf sucht mit Negativ-Cache weiter
-  local slots = SLOTS[#cands]
+  local slots = (skyOri() == "P" and SLOTS_P or SLOTS)[#cands]
   local ent = {}
   local ol = (skyOf(ctx.cfg) == "blue" or skyOf(ctx.cfg) == "black") and color.WHITE or color.BLACK -- Kontur: Weiss auf Blau/Schwarz
   for c, cand in ipairs(cands) do
@@ -1016,7 +1023,7 @@ local function skyStep(ctx, ac, now)
       local y = math.max(y0, math.min(y0 + slotH - h, y0 + slotH // 2 - h // 2))
       local lx, ly, lw
       if below then
-        lx, ly, lw = x + w // 2, math.min(474, y + h + 16), math.min(slotW - 16, 380)
+        lx, ly, lw = x + w // 2, math.min(draw.height - 6, y + h + 16), math.min(slotW - 16, 380)
       else
         local rightFree, leftFree = 790 - (x + w), x - 10
         if rightFree >= leftFree then lx = x + w + math.min(rightFree, 190) // 2 + 4 else lx = x - math.min(leftFree, 190) // 2 - 4 end
@@ -1293,6 +1300,7 @@ local function flightPage(ctx, ac)
   local rx = 472
   local maxW = draw.width - rx - 20
   local y = top + 38 -- ohne Logo-Kaestchen daneben: Rufzeichen ueber die ganze Spaltenbreite, Airline in der Normalschrift
+  if draw.height > draw.width then rx, maxW, y = PX + 4, draw.width - 2 * PX - 8, py + PH + 54 end -- Hochformat: Daten unter dem Bild
   draw.text(rx, y, fit(nameOf(a), maxW, "large"), "large", color.BLACK)
   y = y + 8
   if a.air ~= "" then
@@ -1343,7 +1351,8 @@ local function skyPage(ctx, st, ac, radius)
     draw.text(W // 2, H // 2 - 8, line, "normal", fg, "center")
     return
   end
-  local _, ent = skyParse(ctx.data.get("sk"))
+  local sg, ent = skyParse(ctx.data.get("sk"))
+  if sg and sg:sub(1, #SKY_VER + 1) ~= SKY_VER .. skyOri() then ent = {} end -- Layout stammt aus der anderen Ausrichtung: neu komponieren lassen
   for _, e in ipairs(ent) do
     local a
     for _, x in ipairs(ac.list) do

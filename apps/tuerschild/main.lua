@@ -98,7 +98,7 @@ local function drawBento(ctx, s)
   local inner = x + w - 28 - left
   local name = tostring(ctx.cfg.name or "")
   if name ~= "" and ctx.cfg.showName ~= false then
-    draw.text(left, y + 48, name, "large", color.BLACK, "left")
+    draw.text(left, y + 48, name, fit(name, inner - 56, { "large", "medium", "normal" }), color.BLACK, "left")
   end
   draw.circle(x + w - 60, y + 52, 22, bg, true)
   draw.circle(x + w - 60, y + 52, 22, color.BLACK, false)
@@ -133,7 +133,7 @@ local function drawSlate(ctx, s)
   draw.text(cx, draw.height // 2 + 28, t, f, ink, "center", sc)
   local ul = untilLine(ctx, s)
   local y = draw.height // 2 + 84
-  if s.text ~= "" then draw.text(cx, y, s.text, "medium", ink, "center"); y = y + 40 end
+  if s.text ~= "" then draw.text(cx, y, s.text, fit(s.text, draw.width - 40, { "medium", "normal", "small" }), ink, "center"); y = y + 40 end
   if ul ~= "" and ctx.cfg.showUntil ~= false then draw.text(cx, y, ul, "large", ink, "center") end
   if s.next ~= "" then draw.text(cx, draw.height - 22, T(ctx, "Danach: ", "Next: ") .. s.next, "normal", ink, "center") end
 end

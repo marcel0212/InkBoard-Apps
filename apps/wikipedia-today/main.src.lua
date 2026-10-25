@@ -250,11 +250,15 @@ local function drawCards(ctx, list, en)
     local tilesBottom = H - 20
     local tilesH = tilesBottom - tilesTop
     local gap = 14
+    local tall = H > W
     local count = (#list > 2) and 2 or 1
-    local tileW = (heroW - (count - 1) * gap) // count
+    if tall then count = math.min(#list - 1, 4) end
+    local tileW = tall and heroW or (heroW - (count - 1) * gap) // count
+    local tileHh = tall and ((tilesH - (count - 1) * gap) // count) or tilesH
     for i = 1, count do
       local e = list[1 + i]
-      local tx = marginX + (i - 1) * (tileW + gap)
+      local tx = marginX + (tall and 0 or (i - 1) * (tileW + gap))
+      local tilesTop, tilesH = tall and (tilesTop + (i - 1) * (tileHh + gap)) or tilesTop, tileHh
       draw.rect(tx, tilesTop, tileW, tilesH, color.BLACK, false, 12)
       local padX, yearCol = 16, 60
       local cyT = tilesTop + tilesH // 2

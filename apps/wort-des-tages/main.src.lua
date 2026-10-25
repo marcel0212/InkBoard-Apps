@@ -172,13 +172,16 @@ function on_draw(ctx, page)
   local areaBottom = draw.height - 20
 
   -- Linke Spalte: Akzentflaeche mit Buch, grossem Wort, Original-Hinweis.
+  local tall = draw.height > draw.width
   local panelX, panelW = 40, 240
-  draw.rect(panelX, areaTop, panelW, areaBottom - areaTop, accent, true, 18)
+  local panelH = areaBottom - areaTop
+  if tall then panelX, panelW, panelH = 20, draw.width - 40, 230 end
+  draw.rect(panelX, areaTop, panelW, panelH, accent, true, 18)
   local tx, tw = panelX + 24, panelW - 48
   bookIcon(tx, areaTop + 26, 40, color.WHITE)
   draw.wrap(tx, areaTop + 26 + 40 + 38, tw, word, "large", color.WHITE)
   if not en then
-    local metaY = areaBottom - 40
+    local metaY = areaTop + panelH - 40
     if translated and word:lower() ~= wordEn:lower() then
       draw.text(tx, metaY, wordEn, "small", color.WHITE, "left")
       draw.text(tx, metaY + 16, "EN -> DE", "small", color.WHITE, "left")
@@ -192,9 +195,11 @@ function on_draw(ctx, page)
   -- Rechte Spalte: Bedeutung und Beispiel.
   local cl = panelX + panelW + 32
   local cw = draw.width - 40 - cl
+  local top2 = areaTop
+  if tall then cl, cw, top2 = 28, draw.width - 56, areaTop + panelH + 20 end
   -- Dekoratives Anfuehrungszeichen ueber der Bedeutung (wie die eingebaute App)
-  draw.text(cl - 4, areaTop + 42, '"', "large", color.ACCENT_TEXT, "left")
-  local cy = areaTop + 58
+  if not tall then draw.text(cl - 4, areaTop + 42, '"', "large", color.ACCENT_TEXT, "left") end
+  local cy = top2 + (tall and 24 or 58)
   draw.text(cl, cy, en and "MEANING" or "BEDEUTUNG", "small", color.ACCENT_TEXT, "left")
   cy = cy + 22
   local lines = draw.wrap(cl, cy, cw, def, "normal", color.BLACK)

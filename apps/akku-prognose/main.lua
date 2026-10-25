@@ -336,6 +336,20 @@ local function cut(text, maxw, font)
   return text
 end
 
+-- Hochformat: lange Zeile auf hoechstens zwei Zeilen umbrechen (an Leerzeichen)
+local function wrap2(text, maxw, font)
+  if draw.measure(text, font) <= maxw then return { text } end
+  local first, rest = "", text
+  for word in text:gmatch("%S+") do
+    local try = first == "" and word or (first .. " " .. word)
+    if draw.measure(try, font) > maxw then break end
+    first = try
+  end
+  if first == "" then return { cut(text, maxw, font) } end
+  rest = text:sub(#first + 2)
+  return { first, cut(rest, maxw, font) }
+end
+
 local function empty_date(days, en)
   local s = system.get()
   if not days or days > 365 or not s then return nil end
@@ -415,7 +429,9 @@ local function page_forecast(ctx)
   local pctTxt = pct and string.format("%d %%", math.floor(pct + 0.5)) or "-"
   local rateTxt = an.drain and string.format(en and "%.1f %%/day" or "%.1f %%/Tag", an.drain):gsub("%.", en and "." or ",") or "-"
   local emptyTxt = empty_date(an.days, en) or "-"
+  local tall = draw.height > draw.width
   if style == "compact" then
+    if tall then top = top + 130 end
     battery_icon(draw.width // 2 - 60, top + 30, 120, 48, pct)
     draw.text(draw.width // 2, top + 150, pctTxt, "large", color.BLACK, "center")
     local dn, du = days_parts(an.days, en)
@@ -435,18 +451,22 @@ local function page_forecast(ctx)
       { en and "Readings" or "Messwerte", tostring(an.n) },
     }
     local y = top + 12
+    local step = tall and 92 or 56
     for i = 1, #rows do
-      draw.text(40, y + 36, rows[i][1], "normal", color.BLACK, "left")
-      draw.text(draw.width - 40, y + 36, rows[i][2], "large", i == 2 and pct_color(pct) or color.BLACK, "right")
-      draw.line(40, y + 52, draw.width - 40, y + 52, color.BLACK)
-      y = y + 56
+      local vf = "large"
+      if draw.measure(rows[i][1], "normal") + draw.measure(rows[i][2], "large") + 30 > draw.width - 80 then vf = "normal" end
+      local o = tall and (step - 56) // 2 or 0
+      draw.text(40, y + 36 + o, rows[i][1], "normal", color.BLACK, "left")
+      draw.text(draw.width - 40, y + 36 + o, rows[i][2], vf, i == 2 and pct_color(pct) or color.BLACK, "right")
+      draw.line(40, y + 52 + o * 2, draw.width - 40, y + 52 + o * 2, color.BLACK)
+      y = y + step
     end
     if note then draw.text(40, y + 30, cut(note, draw.width - 80, "normal"), "normal", color.BLACK, "left") end
     return
   end
   -- Bento
   local gap = 12
-  local lw = 300
+  local lw = draw.height > draw.width and draw.width - 48 or 300
   draw.rect(24, top + 10, lw, 140, color.BLACK, false, 14)
   battery_icon(44, top + 28, 90, 36, pct)
   draw.text(150, top + 58, pctTxt, "large", color.BLACK, "left")
@@ -454,14 +474,20 @@ local function page_forecast(ctx)
   draw.text(44, top + 138, an.st and (string.format(en and "wakes every %d min" or "weckt alle %d Min.", an.st.wake_min) .. (((an.st.quiet_pct or 0) > 0) and string.format(en and ", quiet %d%%" or ", Ruhe %d%%", an.st.quiet_pct) or "")) or "", "small", color.BLACK, "left")
   local rx = 24 + lw + gap
   local rw = draw.width - rx - 24
-  draw.rect(rx, top + 10, rw, 140, pct_color(pct), an.days ~= nil, 14)
-  draw.rect(rx, top + 10, rw, 140, color.BLACK, false, 14)
-  draw.text(rx + 24, top + 44, en and "Estimated runtime" or "Geschätzte Restlaufzeit", "normal", color.BLACK, "left")
+  local ry = top
+  if tall then rx, rw, ry = 24, draw.width - 48, top + 152 end
+  draw.rect(rx, ry + 10, rw, 140, pct_color(pct), an.days ~= nil, 14)
+  draw.rect(rx, ry + 10, rw, 140, color.BLACK, false, 14)
+  draw.text(rx + 24, ry + 44, en and "Estimated runtime" or "Geschätzte Restlaufzeit", "normal", color.BLACK, "left")
   local dn, du = days_parts(an.days, en)
-  draw.text(rx + 24, top + 112, dn, "huge", color.BLACK, "left")
-  if du ~= "" then draw.text(rx + 24 + draw.measure(dn, "huge") + 14, top + 112, du, "large", color.BLACK, "left") end
-  draw.text(rx + rw - 24, top + 138, rateTxt, "small", color.BLACK, "right")
-  chart(an, 24, top + 10 + 140 + gap, draw.width - 48, draw.height - top - 10 - 140 - gap - 50, en)
+  draw.text(rx + 24, ry + 112, dn, "huge", color.BLACK, "left")
+  if du ~= "" then draw.text(rx + 24 + draw.measure(dn, "huge") + 14, ry + 112, du, "large", color.BLACK, "left") end
+  draw.text(rx + rw - 24, ry + 138, rateTxt, "small", color.BLACK, "right")
+  if tall then
+    chart(an, 24, ry + 10 + 140 + gap, draw.width - 48, draw.height - (ry + 10 + 140 + gap) - 50, en)
+  else
+    chart(an, 24, top + 10 + 140 + gap, draw.width - 48, draw.height - top - 10 - 140 - gap - 50, en)
+  end
   local ny = draw.height - 18
   draw.text(28, ny, note or ((en and "Empty around " or "Leer etwa ") .. emptyTxt), "normal", color.BLACK, "left")
 end
@@ -487,7 +513,13 @@ local function page_advisor(ctx)
   else
     sub = en and "Runtime needs about 3 h of readings" or "Laufzeit-Rechnung braucht ca. 3 Std. Messwerte"
   end
-  draw.text(draw.width - 40, top + 38, cut(sub, 420, "normal"), "normal", color.BLACK, "right")
+  local tall = draw.height > draw.width
+  if tall then
+    draw.text(40, top + 72, cut(sub, draw.width - 80, "normal"), "normal", color.BLACK, "left")
+    top = top + 28
+  else
+    draw.text(draw.width - 40, top + 38, cut(sub, 420, "normal"), "normal", color.BLACK, "right")
+  end
   draw.line(40, top + 52, draw.width - 40, top + 52, color.BLACK)
   local y = top + 66
   if #adv.list == 0 and #adv.tips == 0 then
@@ -497,16 +529,18 @@ local function page_advisor(ctx)
   end
   for i = 1, math.min(adv.all and 2 or 3, #adv.list) do
     local r = adv.list[i]
-    draw.rect(40, y, draw.width - 80, 84, color.BLACK, false, 12)
-    draw.text(58, y + 28, cut(r.text, 470, "normal"), "normal", color.BLACK, "left")
-    if r.where then draw.text(58, y + 76, cut(r.where, draw.width - 116, "small"), "small", color.BLACK, "left") end
+    local ch = tall and 118 or 84
+    draw.rect(40, y, draw.width - 80, ch, color.BLACK, false, 12)
+    draw.text(58, y + 28, cut(r.text, tall and draw.width - 116 or 470, "normal"), "normal", color.BLACK, "left")
+    if r.where then draw.text(58, y + ch - 8, cut(r.where, draw.width - 116, "small"), "small", color.BLACK, "left") end
+    local gy = tall and y + 88 or y + 30
     local gain
     if r.days and an.days and not r.other then
       gain = string.format("+%s", fmt_days(math.max(0, r.days - an.days), en))
-      draw.text(draw.width - 58, y + 30, gain, "large", color.GREEN, "right")
+      draw.text(draw.width - 58, gy, gain, "large", color.GREEN, "right")
       draw.text(58, y + 54, string.format(en and "%s -> %s, %d%% fewer wake-ups" or "%s -> %s, %d%% weniger Weckungen", fmt_days(an.days, en), fmt_days(r.days, en), r.cut), "small", color.BLACK, "left")
     else
-      draw.text(draw.width - 58, y + 30, string.format(en and "-%d%% wake-ups" or "-%d%% Weckungen", r.cut), "normal", color.GREEN, "right")
+      draw.text(draw.width - 58, gy, string.format(en and "-%d%% wake-ups" or "-%d%% Weckungen", r.cut), "normal", color.GREEN, "right")
       if r.other then
         local msg
         if r.dash then msg = en and "saves battery while the dashboard is shown" or "Spart Akku, solange das Dashboard angezeigt wird"
@@ -514,20 +548,30 @@ local function page_advisor(ctx)
         draw.text(58, y + 54, msg, "small", color.BLACK, "left")
       end
     end
-    y = y + 92
+    y = y + ch + 8
   end
   if adv.all and adv.all.days and an.days then
     draw.rect(40, y, draw.width - 80, 56, color.GREEN, true, 12)
-    draw.text(58, y + 36, string.format(en and "All together: %s -> %s" or "Alles zusammen: %s -> %s", fmt_days(an.days, en), fmt_days(adv.all.days, en)), "large", color.BLACK, "left")
+    local at = string.format(en and "All together: %s -> %s" or "Alles zusammen: %s -> %s", fmt_days(an.days, en), fmt_days(adv.all.days, en))
+    draw.text(58, y + 36, at, draw.measure(at, "large") > draw.width - 116 and "normal" or "large", color.BLACK, "left")
     y = y + 64
   end
   for i = 1, #adv.tips do
     if y + 26 > draw.height - 54 then break end
-    draw.text(44, y + 22, cut("- " .. adv.tips[i], draw.width - 88, "small"), "small", color.BLACK, "left")
-    y = y + 26
+    local tl = tall and wrap2("- " .. adv.tips[i], draw.width - 88, "small") or { cut("- " .. adv.tips[i], draw.width - 88, "small") }
+    for k = 1, #tl do
+      draw.text(44, y + 22, tl[k], "small", color.BLACK, "left")
+      y = y + 26
+    end
   end
   local st = an.st
-  draw.text(40, draw.height - 40, string.format(en and "Now: wake %d min, view %d min, sensor log %d min" or "Aktuell: Weckabstand %d Min., Anzeige %d Min., Sensor-Verlauf %d Min.", st.wake_min, st.view_min, st.sensor_log_min), "small", color.BLACK, "left")
+  local nowTxt = string.format(en and "Now: wake %d min, view %d min, sensor log %d min" or "Aktuell: Weckabstand %d Min., Anzeige %d Min., Sensor-Verlauf %d Min.", st.wake_min, st.view_min, st.sensor_log_min)
+  if tall then
+    local nl = wrap2(nowTxt, draw.width - 80, "small")
+    for k = 1, #nl do draw.text(40, draw.height - 40 - (#nl - k) * 22 - 14, nl[k], "small", color.BLACK, "left") end
+  else
+    draw.text(40, draw.height - 40, nowTxt, "small", color.BLACK, "left")
+  end
   draw.text(40, draw.height - 12, en and "Estimate based on your own readings" or "Schätzung nach deinen eigenen Messwerten", "small", color.BLACK, "left")
 end
 
@@ -570,11 +614,14 @@ local function page_check(ctx)
   local bad = 0
   for i = 1, #rows do if rows[i][3] == color.RED or rows[i][3] == color.YELLOW then bad = bad + 1 end end
 
+  local tall = draw.height > draw.width
   draw.text(40, top + 40, en and "Settings check" or "Einstellungen-Check", "large", color.BLACK, "left")
+  if tall then top = top + 28 end
   draw.line(40, top + 52, draw.width - 40, top + 52, color.BLACK)
   local lx, lw = 40, 350
   local rx = 420
   local y = top + 64
+  if tall then lw = draw.width - 80 end
   for i = 1, #rows do
     local r = rows[i]
     if r[3] then draw.circle(lx + 7, y + 12, 6, r[3], true) end
@@ -584,6 +631,7 @@ local function page_check(ctx)
   end
   -- Apps
   local y2 = top + 64
+  if tall then rx, y2 = 40, y + 12 end
   if an.apps == nil then
     draw.text(rx, y2 + 18, en and "Update the firmware for the app check" or "Für die App-Prüfung bitte die Firmware aktualisieren", "small", color.BLACK, "left")
   else
@@ -592,7 +640,7 @@ local function page_check(ctx)
     table.sort(act, function(a, b) return (a.refresh_min or 0) < (b.refresh_min or 0) end)
     draw.text(rx, y2 + 18, string.format(en and "Apps (%d active), Dashboard %d widgets" or "Apps (%d aktiv), Dashboard %d Widgets", #act, st.widgets or 0), "small", color.BLACK, "left")
     y2 = y2 + 27
-    local maxRows = 8
+    local maxRows = tall and math.max(4, (draw.height - 80 - y2) // 27 - 1) or 8
     for i = 1, math.min(maxRows, #act) do
       local a = act[i]
       local c = rate_min(a.refresh_min)
@@ -602,7 +650,7 @@ local function page_check(ctx)
       local flags = ""
       if a.bg then flags = flags .. (en and " +background" or " +Hintergrund") end
       if (a.widgets or 0) > 0 then flags = flags .. " +" .. a.widgets .. (en and " widget" or " Widget") end
-      draw.text(rx + 22, y2 + 18, cut(nm, 175, "small"), "small", color.BLACK, "left")
+      draw.text(rx + 22, y2 + 18, cut(nm, tall and 190 or 175, "small"), "small", color.BLACK, "left")
       draw.text(draw.width - 40, y2 + 18, (a.refresh_min or 0) .. mn .. flags, "small", color.BLACK, "right")
       y2 = y2 + 27
     end
@@ -613,9 +661,19 @@ local function page_check(ctx)
   local sub
   if bad == 0 then sub = en and "All settings are frugal" or "Alle Einstellungen sind sparsam"
   else sub = string.format(en and "%d points could be improved" or "%d Punkte mit Sparpotenzial", bad) end
-  draw.text(draw.width - 40, top + 38, cut(sub, 420, "normal"), "normal", color.BLACK, "right")
-  draw.text(40, draw.height - 40, en and "Green: frugal, yellow: could be better, red: costs a lot" or "Grün: sparsam, gelb: ginge besser, rot: kostet viel", "small", color.BLACK, "left")
-  draw.text(40, draw.height - 12, en and "H = fetches in the background, W = widgets in the dashboard, > = shown now" or "H = ruft im Hintergrund ab, W = Widgets im Dashboard, > = gerade sichtbar", "small", color.BLACK, "left")
+  if tall then draw.text(40, top + 38, cut(sub, draw.width - 80, "normal"), "normal", color.BLACK, "left")
+  else
+    draw.text(draw.width - 40, top + 38, cut(sub, 420, "normal"), "normal", color.BLACK, "right")
+    draw.text(40, draw.height - 40, en and "Green: frugal, yellow: could be better, red: costs a lot" or "Grün: sparsam, gelb: ginge besser, rot: kostet viel", "small", color.BLACK, "left")
+  end
+  local hl = en and "H = fetches in the background, W = widgets in the dashboard, > = shown now" or "H = ruft im Hintergrund ab, W = Widgets im Dashboard, > = gerade sichtbar"
+  if tall then
+    local hw = wrap2(hl, draw.width - 80, "small")
+    for k = 1, #hw do draw.text(40, draw.height - 12 - (#hw - k) * 22, hw[k], "small", color.BLACK, "left") end
+    draw.text(40, draw.height - 40 - (#hw - 1) * 22, en and "Green: frugal, yellow: could be better, red: costs a lot" or "Grün: sparsam, gelb: ginge besser, rot: kostet viel", "small", color.BLACK, "left")
+  else
+    draw.text(40, draw.height - 12, hl, "small", color.BLACK, "left")
+  end
 end
 
 function on_draw(ctx, page)

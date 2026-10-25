@@ -48,6 +48,32 @@ local function drawTime(str, cx, y, w, h, t, col, colonCol)
   return y + h
 end
 
+-- CHANGELOG 932 (Hochformat): zwei Ziffern nebeneinander (HH bzw. MM), zentriert um cx; gibt die Unterkante zurueck.
+local function drawPair(str2, cx, y, w, h, t, col)
+  local x = cx - (2 * w + t) // 2
+  for i = 1, 2 do
+    local d = tonumber(str2:sub(i, i))
+    if d then digit(x, y, w, h, t, d, col) end
+    x = x + w + t
+  end
+  return y + h
+end
+
+-- Hochformat: Stunden ueber Minuten, mit einem Punktpaar dazwischen; gibt die Unterkante zurueck.
+local function drawStacked(str, cx, y, h, col, colonCol)
+  local w = h * 11 // 21
+  local t = h // 8
+  if t < 6 then t = 6 end
+  local gap = t * 2
+  drawPair(str:sub(1, 2), cx, y, w, h, t, col)
+  local y2 = y + h + gap
+  local cy = y + h + gap // 2
+  draw.rect(cx - 2 * t - t // 2, cy - t // 2, t, t, colonCol, true)
+  draw.rect(cx + 2 * t - t // 2, cy - t // 2, t, t, colonCol, true)
+  drawPair(str:sub(4, 5), cx, y2, w, h, t, col)
+  return y2 + h, (2 * w + t) // 2
+end
+
 -- "HH:MM" (immer zwei Ziffern) und AM/PM; im 12-h-Modus 12 statt 0.
 local function clockStrings(ctx, lt)
   local h = lt.hour
@@ -81,6 +107,59 @@ function on_draw(ctx, page)
   local dateLong = string.format("%s, %02d.%02d.%04d", days[lt.wday + 1], lt.day, lt.month, lt.year)
   local kw = (en and "Week " or "KW ") .. lt.week
   local style = ctx.cfg.style
+  local portrait = draw.height > draw.width
+
+  if portrait then
+    -- CHANGELOG 932: Hochformat - Stunden ueber Minuten, volle Breite; Datum darunter
+    local avail = draw.height - draw.top
+    if style == "slate" then
+      local h = 230
+      local top = draw.top + (avail - (2 * h + 2 * (h // 4) + 120)) // 2
+      local bottom, halfW = drawStacked(str, cx, top, h, color.BLACK, accent)
+      if ampm ~= "" then draw.text(cx + halfW + 8, bottom - 4, ampm, "normal", color.BLACK, "left") end
+      draw.line(24, bottom + 30, draw.width - 24, bottom + 30, color.BLACK)
+      draw.text(cx, bottom + 74, dateLong, "large", color.BLACK, "center")
+      draw.text(cx, bottom + 106, kw, "normal", color.BLACK, "center")
+    elseif style == "nano" then
+      local h = 160
+      local top = draw.top + (avail - (2 * h + h // 4 + 140)) // 2
+      local bottom, halfW = drawStacked(str, cx, top, h, color.BLACK, accent)
+      if ampm ~= "" then draw.text(cx + halfW + 8, bottom - 4, ampm, "normal", color.BLACK, "left") end
+      draw.text(cx, bottom + 40, dateLong, "normal", color.BLACK, "center")
+      draw.text(cx, bottom + 66, kw, "normal", color.BLACK, "center")
+      local barW, barH = draw.width - 80, 14
+      local barX = cx - barW // 2
+      local barY = bottom + 90
+      local minutes = lt.hour * 60 + lt.min
+      local fillW = barW * minutes // 1440
+      draw.rect(barX, barY, barW, barH, color.BLACK, false)
+      if fillW > 2 then draw.rect(barX + 1, barY + 1, fillW - 2, barH - 2, accent, true) end
+      draw.text(barX, barY + barH + 18, "0", "small", color.BLACK, "left")
+      draw.text(barX + barW - 14, barY + barH + 18, "24", "small", color.BLACK, "left")
+    else
+      local cardX, cardW = 20, draw.width - 40
+      local h = 200
+      local cardH = 2 * h + h // 4 + 60
+      local tileH, gap = 130, 16
+      local cardY = draw.top + (avail - (cardH + gap + tileH)) // 2
+      draw.rect(cardX, cardY, cardW, cardH, color.BLACK, false, 16)
+      draw.rect(cardX + 1, cardY + 1, cardW - 2, cardH - 2, color.BLACK, false, 15)
+      local bottom, halfW = drawStacked(str, cx, cardY + 30, h, color.BLACK, accent)
+      if ampm ~= "" then draw.text(cx + halfW + 8, bottom - 4, ampm, "normal", color.BLACK, "left") end
+      local tileY = cardY + cardH + gap
+      local tileW = (cardW - gap) // 2
+      draw.rect(cardX, tileY, tileW, tileH, color.BLACK, false, 16)
+      draw.rect(cardX + 1, tileY + 1, tileW - 2, 8, accent, true)
+      draw.text(cardX + tileW // 2, tileY + 66, days[lt.wday + 1], "large", color.BLACK, "center")
+      draw.text(cardX + tileW // 2, tileY + 102, string.format("%02d.%02d.%04d", lt.day, lt.month, lt.year), "normal", color.BLACK, "center")
+      local tile2X = cardX + tileW + gap
+      draw.rect(tile2X, tileY, tileW, tileH, color.BLACK, false, 16)
+      draw.rect(tile2X + 1, tileY + 1, tileW - 2, 8, accent, true)
+      draw.text(tile2X + tileW // 2, tileY + 66, months[lt.month], "large", color.BLACK, "center")
+      draw.text(tile2X + tileW // 2, tileY + 102, kw, "normal", color.BLACK, "center")
+    end
+    return
+  end
 
   if style == "slate" then
     -- Slate: reduziert - riesige schwarze Ziffern, Haarlinie, Datum.
