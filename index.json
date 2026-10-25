@@ -189,7 +189,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.4",
+      "version": "1.4.7",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -301,9 +301,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "e153464bd7bac2980a802dac7a099213ac671b0d162b31c172d109fa82df1924",
-      "sig": "afsPvIYqYlq7PLK8KxodQlmPATfSvBlMoJsEKCWCuVQdQU1i6q5LzpL7zEiDZm6bGhE/rF5hLUTKdeyg1x+EkabvdCfdl9lfg3YTy0+WPFU4tBN2zIHhVjo6lKwuaEuMWBHj3VytxA8YmM7imwjUZOSc3B9c4Hbeyrmxdpedt3wn0syYmSeW8qt2nrKMKjmebFR5sJK0gBoztORxrr9hqNYXbQsXcuZdO95HGRJc/na8sGKLCGCIMfpiLMF6TcnfFNSXhcC9VjYTJzI+OfjWk9nVKM6st84Gd/hhMUavchgemtEX09xELezW+FiL4NOncakLTgRUusqVEu0xstUTiQ==",
-      "size": 33043
+      "sha256": "6a6505e26f59a8abcc299a55a00bb556c5e31bc3ee66fb54528cc29cf607ec83",
+      "sig": "Gh1PoLoQ8taA4nIuL6pcsgezuPdpd2xc87YRNV3b3HAoB0rfQjHiS29A1WP9e8jez0U584rcATkVHTy5tuhXGIREqRH77xahFlN8mX6qiGUSbXNY1ho0NfSKnjf4D1Nv6PuBCNE0sHOKlZHrwEiufvPaSgoWd09IyFa4DY4W9/Ibu9WFTorKrpTf13owe02sVE/QqJ6F8t4dFdgUXom0ODyOjg8DEpq41lXZ/fraJl5LdA8lK/OQ4h3vrVnLDntJ2Evm0ZD6jFewG8AMBjuKAeg+uzvkH3zGGYc54liozHwykOGnDKjOWGLi6XnZ1CGc4KEa7O3qdoHgqZFrjadTrg==",
+      "size": 34479
     },
     {
       "id": "bilder",

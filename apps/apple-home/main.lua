@@ -10,8 +10,17 @@
 -- f = 1: Favorit (steht auf den ersten Seiten "Favoriten"). scene (Aktion/Szene): v = Zeitpunkt der letzten Ausfuehrung (Unix-Sekunden, 0 = nie).
 -- k (Art): temp, hum, co2, contact (1 = offen), light (1 = an), lock (1 = verriegelt), motion (1 = Bewegung), power (Watt), switch (1 = an), group, scene, number.
 
-local MAXI = 16
-local PER_PAGE = 8
+local MAXI = 40
+local PER_PAGE = 8      -- Zeilenstile (flat/compact)
+local TILE_COLS, TILE_ROWS = 5, 3
+local PER_TILES = TILE_COLS * TILE_ROWS   -- Kachelstile (apple/cards): 15 je Seite
+
+-- Eintraege je Seite: Kacheln sind klein genug fuer 5 x 3, die Zeilenstile zeigen weiter 8
+local function perPage(ctx)
+  local st = ctx.cfg.style or "apple"
+  if st == "flat" or st == "compact" then return PER_PAGE end
+  return PER_TILES
+end
 
 local function T(ctx, de, en) return (ctx.lang == "en") and en or de end
 
@@ -100,10 +109,10 @@ local function fmt(ctx, it)
 end
 
 -- "huge" kann nur Ziffern und Punkt: die Zahl gross, den Rest (Einheit, Woerter) in lesbarer Schrift daneben.
-local function bigValue(x, y, txt, maxW, col, align, maxScale)
+local function bigValue(x, y, txt, maxW, col, align, maxScale, small)
   maxScale = maxScale or 1
   local num, rest = txt:match("^(%-?[%d%.]+)(.*)$")
-  if num ~= nil then
+  if num ~= nil and not small then   -- small: kleine Kacheln ohne die sehr hohe Ziffernschrift
     for sc = maxScale, 1, -1 do
       local wn = draw.measure(num, "huge", sc)
       local wr = (rest ~= "") and draw.measure(rest, "large") or 0
@@ -182,11 +191,9 @@ local function glyph(it, x, y, s, ink)
     end
   elseif k == "switch" then
     -- Schieberegler: nur ganze Pixel, gerade Hoehe, Knopf exakt im Rund der Pille (sonst sitzt er schief und ragt ueber den Rand)
-    local h = fl(s * 0.5 / 2) * 2
-    if h < 10 then h = 10 end
-    local w = fl(s * 0.9)
-    if w < h * 2 then w = h * 2 end
-    if w > s then w = s; h = fl(w / 4) * 2 end
+    -- feste Masse (44 x 24, Knopf 14, im Aus-Zustand 3 px Luft zur Kontur), nur in kleinen Symbolfeldern verkleinert: in jeder Kachel exakt gleich
+    local w = math.min(44, fl(s * 0.95))
+    local h = fl(w * 6 / 11 / 2) * 2
     local px, py = fl(x + (s - w) / 2), fl(y + (s - h) / 2)
     local r = h // 2
     -- Pille aus zwei Kreisen und einem Rechteck (statt Rundrechteck mit Radius: das zeichnet das Display je nach Groesse unterschiedlich)
@@ -198,7 +205,7 @@ local function glyph(it, x, y, s, ink)
     end
     stadium(px, py, w, h, ink)
     if not on then stadium(px + 2, py + 2, w - 4, h - 4, color.WHITE) end
-    local kr = r - (h >= 14 and 4 or 3)
+    local kr = r - (h >= 20 and 5 or 3)
     local kx = on and (px + w - r - 1) or (px + r)
     draw.circle(kx, py + r, kr, on and color.WHITE or ink, true)
   elseif k == "group" then -- Gruppe: drei Kreise
@@ -268,50 +275,54 @@ local function tileBento(ctx, it, x, y, w, h, dim)
     draw.circle(x + w - 20, y + 22, 8, col, true)
     draw.circle(x + w - 20, y + 22, 8, color.BLACK, false)
   end
-  bigValue(x + w // 2, y + h - 34, txt, w - 24, (not dim and col == color.RED) and color.RED or color.BLACK, "center", 1)
+  bigValue(x + w // 2, y + h - (h < 150 and 22 or 34), txt, w - 24, (not dim and col == color.RED) and color.RED or color.BLACK, "center", 1, h < 150)
 end
 
 local function drawBento(ctx, items, first)
   draw.clear(color.WHITE)
-  local mx, gap = 24, 10
+  local mx, gap = 20, 8
   local top = draw.top + 36
-  local w = (draw.width - 2 * mx - 3 * gap) // 4
-  local h = (draw.height - top - 14 - gap) // 2
-  for i = 0, PER_PAGE - 1 do
+  local w = (draw.width - 2 * mx - (TILE_COLS - 1) * gap) // TILE_COLS
+  local h = (draw.height - top - 14 - (TILE_ROWS - 1) * gap) // TILE_ROWS
+  for i = 0, PER_TILES - 1 do
     local it = items[first + i]
     if it == nil then break end
-    local col, row = i % 4, i // 4
+    local col, row = i % TILE_COLS, i // TILE_COLS
     tileBento(ctx, it, mx + col * (w + gap), top + row * (h + gap), w, h, stale(ctx))
   end
 end
 
 local function tileApple(ctx, it, x, y, w, h, dim)
-  local txt, fill, ink, ok = tileLook(ctx, it, true)
-  draw.rect(x, y, w, h, fill or color.WHITE, true, 24)
-  draw.rect(x, y, w, h, color.BLACK, false, 24)
-  local is = math.min(46, h // 4)
-  glyph(it, x + 16, y + 16, is, ink)
-  if it.a then draw.icon("warning", x + w - 40, y + 12, 26, color.RED)
+  local txt, fill, ink, ok = tileLook(ctx, it, h >= 150)
+  local small = h < 150
+  local pad = small and 12 or 16
+  draw.rect(x, y, w, h, fill or color.WHITE, true, small and 18 or 24)
+  draw.rect(x, y, w, h, color.BLACK, false, small and 18 or 24)
+  local is = small and 28 or math.min(46, h // 4)
+  glyph(it, x + pad, y + (small and 10 or 16), is, ink)
+  if it.a then draw.icon("warning", x + w - (small and 34 or 40), y + (small and 8 or 12), small and 22 or 26, color.RED)
   elseif ok ~= nil then
-    draw.circle(x + w - 22, y + 24, 8, ok, true)
-    draw.circle(x + w - 22, y + 24, 8, color.BLACK, false)
+    draw.circle(x + w - (small and 18 or 22), y + (small and 20 or 24), small and 6 or 8, ok, true)
+    draw.circle(x + w - (small and 18 or 22), y + (small and 20 or 24), small and 6 or 8, color.BLACK, false)
   end
-  if it.a or it.k == "scene" then draw.text(x + 16, y + h - 64, cut(txt, w - 32, "normal"), "normal", ink, "left")
-  else bigValue(x + 16, y + h - 64, txt, w - 32, ink, "left", 1) end
-  draw.text(x + 16, y + h - 34, cut(it.n, w - 32, "normal"), "normal", ink, "left")
-  if it.r ~= "" then draw.text(x + 16, y + h - 12, cut(it.r, w - 32, "small"), "small", ink, "left") end
+  local vy, ny, ry = h - 64, h - 34, h - 12
+  if small then vy, ny, ry = h - 50, h - 29, h - 9 end
+  if it.a or it.k == "scene" then draw.text(x + pad, y + vy, cut(txt, w - 2 * pad, small and "small" or "normal"), small and "small" or "normal", ink, "left")
+  else bigValue(x + pad, y + vy, txt, w - 2 * pad, ink, "left", 1, small) end
+  draw.text(x + pad, y + ny, cut(it.n, w - 2 * pad, small and "small" or "normal"), small and "small" or "normal", ink, "left")
+  if it.r ~= "" then draw.text(x + pad, y + ry, cut(it.r, w - 2 * pad, "small"), "small", ink, "left") end
 end
 
 local function drawApple(ctx, items, first)
   draw.clear(color.WHITE)
-  local mx, gap = 24, 12
+  local mx, gap = 20, 8
   local top = draw.top + 36
-  local w = (draw.width - 2 * mx - 3 * gap) // 4
-  local h = (draw.height - top - 14 - gap) // 2
-  for i = 0, PER_PAGE - 1 do
+  local w = (draw.width - 2 * mx - (TILE_COLS - 1) * gap) // TILE_COLS
+  local h = (draw.height - top - 14 - (TILE_ROWS - 1) * gap) // TILE_ROWS
+  for i = 0, PER_TILES - 1 do
     local it = items[first + i]
     if it == nil then break end
-    local col, row = i % 4, i // 4
+    local col, row = i % TILE_COLS, i // TILE_COLS
     tileApple(ctx, it, mx + col * (w + gap), top + row * (h + gap), w, h, stale(ctx))
   end
 end
@@ -362,10 +373,11 @@ end
 
 -- Seitenplan: "rooms" = ein Raum je Seite (kleine Raeume teilen sich eine Seite, grosse laufen auf eine Folgeseite), "blocks" = je 8 Werte.
 local function planOf(ctx, items, pages)
+  local PP = perPage(ctx)
   if (ctx.cfg.grouping or "rooms") == "blocks" then
-    for i = 1, #items, PER_PAGE do
+    for i = 1, #items, PP do
       local p = { items = {}, label = "" }
-      for j = i, math.min(i + PER_PAGE - 1, #items) do p.items[#p.items + 1] = items[j] end
+      for j = i, math.min(i + PP - 1, #items) do p.items[#p.items + 1] = items[j] end
       pages[#pages + 1] = p
     end
     return pages
@@ -379,16 +391,18 @@ local function planOf(ctx, items, pages)
   local cur
   for _, r in ipairs(order) do
     local list = by[r]
-    local chunks = (#list + PER_PAGE - 1) // PER_PAGE
+    -- Szenen und Gruppen teilen sich nie eine Seite mit echten Raeumen (sonst steht "Szenen · Wohnzimmer" auf einer Seite)
+    local cls = list[1].k == "scene" and "s" or (list[1].k == "group" and "g" or "r")
+    local chunks = (#list + PP - 1) // PP
     for c = 1, chunks do
       local part = {}
-      for j = (c - 1) * PER_PAGE + 1, math.min(c * PER_PAGE, #list) do part[#part + 1] = list[j] end
+      for j = (c - 1) * PP + 1, math.min(c * PP, #list) do part[#part + 1] = list[j] end
       local lbl = (chunks > 1) and (r .. " (" .. c .. "/" .. chunks .. ")") or r
-      if cur ~= nil and #cur.items + #part <= PER_PAGE and chunks == 1 and not cur.split then
+      if cur ~= nil and cur.cls == cls and #cur.items + #part <= PP and chunks == 1 and not cur.split then
         for _, it in ipairs(part) do cur.items[#cur.items + 1] = it end
         cur.label = cur.label .. " · " .. lbl
       else
-        cur = { items = part, label = lbl, split = chunks > 1 }
+        cur = { items = part, label = lbl, split = chunks > 1, cls = cls }
         pages[#pages + 1] = cur
       end
     end
@@ -398,14 +412,15 @@ end
 
 -- Favoriten (in der iPhone-App mit dem Stern gewaehlt) stehen immer auf den ersten Seiten, danach der Rest nach Raum bzw. in Bloecken.
 local function pagePlan(ctx, items)
+  local PP = perPage(ctx)
   local favs, rest = {}, {}
   for _, it in ipairs(items) do if it.f then favs[#favs + 1] = it else rest[#rest + 1] = it end end
   local pages = {}
   if #favs > 0 then
-    local n = (#favs + PER_PAGE - 1) // PER_PAGE
+    local n = (#favs + PP - 1) // PP
     for c = 1, n do
       local part = {}
-      for j = (c - 1) * PER_PAGE + 1, math.min(c * PER_PAGE, #favs) do part[#part + 1] = favs[j] end
+      for j = (c - 1) * PP + 1, math.min(c * PP, #favs) do part[#part + 1] = favs[j] end
       local lbl = T(ctx, "Favoriten", "Favourites")
       if n > 1 then lbl = lbl .. " (" .. c .. "/" .. n .. ")" end
       pages[#pages + 1] = { items = part, label = lbl, split = true }
