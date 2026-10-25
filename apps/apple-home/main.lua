@@ -8,7 +8,7 @@
 -- Anfrage (JSON): {"op":"set","items":[{"n":"Wohnzimmer","r":"EG","k":"temp","v":21.4,"u":"°C","a":0}, ...]}  op "get" liefert den Stand.
 -- a = 1: Zubehoer gerade nicht erreichbar (wird gekennzeichnet). group: v = Zahl der eingeschalteten Mitglieder, u = Zahl aller Mitglieder.
 -- f = 1: Favorit (steht auf den ersten Seiten "Favoriten"). scene (Aktion/Szene): v = Zeitpunkt der letzten Ausfuehrung (Unix-Sekunden, 0 = nie).
--- k (Art): temp, hum, co2, contact (1 = offen), light (1 = an), lock (1 = verriegelt), motion (1 = Bewegung), power (Watt), switch (1 = an), group, scene, number.
+-- k (Art): temp, hum, co2, contact (1 = offen), light (1 = an), lock (1 = verriegelt), motion (1 = Bewegung), power (Watt), switch (1 = an), outlet (Steckdose), lswitch (Lichtschalter), fan (Ventilator; alle 1 = an), group, scene, number.
 
 local MAXI = 40
 local PER_PAGE = 8      -- Zeilenstile (flat/compact)
@@ -34,7 +34,7 @@ local function clean(t, max)
   return t
 end
 
-local KINDS = { temp = 1, hum = 1, co2 = 1, contact = 1, light = 1, lock = 1, motion = 1, power = 1, switch = 1, group = 1, scene = 1, number = 1 }
+local KINDS = { temp = 1, hum = 1, co2 = 1, contact = 1, light = 1, lock = 1, motion = 1, power = 1, switch = 1, outlet = 1, lswitch = 1, fan = 1, group = 1, scene = 1, number = 1 }
 
 -- ===== Daten =====
 
@@ -95,7 +95,7 @@ local function fmt(ctx, it)
     return string.format("%d", math.floor(v + 0.5)), (v >= 1400 and color.RED) or (v >= 1000 and color.YELLOW) or color.GREEN
   end
   if k == "contact" then return v ~= 0 and T(ctx, "Offen", "Open") or T(ctx, "Zu", "Closed"), v ~= 0 and color.RED or color.GREEN end
-  if k == "light" or k == "switch" then return v ~= 0 and T(ctx, "An", "On") or T(ctx, "Aus", "Off"), v ~= 0 and color.YELLOW or nil end
+  if k == "light" or k == "switch" or k == "outlet" or k == "lswitch" or k == "fan" then return v ~= 0 and T(ctx, "An", "On") or T(ctx, "Aus", "Off"), v ~= 0 and color.YELLOW or nil end
   if k == "lock" then return v ~= 0 and T(ctx, "Verriegelt", "Locked") or T(ctx, "Offen", "Unlocked"), v ~= 0 and color.GREEN or color.RED end
   if k == "motion" then return v ~= 0 and T(ctx, "Bewegung", "Motion") or T(ctx, "Ruhig", "Clear"), v ~= 0 and color.YELLOW or nil end
   if k == "power" then return string.format("%d W", math.floor(v + 0.5)), nil end
@@ -208,6 +208,53 @@ local function glyph(it, x, y, s, ink)
     local kr = r - (h >= 20 and 5 or 3)
     local kx = on and (px + w - r - 1) or (px + r)
     draw.circle(kx, py + r, kr, on and color.WHITE or ink, true)
+  elseif k == "outlet" or k == "lswitch" or k == "fan" then
+    -- Apple-Home-Symbole: Steckdose (Typ F), Lichtschalter, Ventilator. Eingeschaltet = gefuellte Form, ausgeschaltet = Kontur.
+    local hc = on and color.WHITE or ink
+    local function rr(rx, ry, rw, rh, r, c) -- Rundrechteck aus Rechteck-Kreuz und vier Kreisen (gleichmaessig auf jedem Display)
+      draw.rect(rx + r, ry, rw - 2 * r, rh, c, true)
+      draw.rect(rx, ry + r, rw, rh - 2 * r, c, true)
+      draw.circle(rx + r, ry + r, r, c, true)
+      draw.circle(rx + rw - r - 1, ry + r, r, c, true)
+      draw.circle(rx + r, ry + rh - r - 1, r, c, true)
+      draw.circle(rx + rw - r - 1, ry + rh - r - 1, r, c, true)
+    end
+    if k == "outlet" then
+      local pw = fl(s * 0.9)
+      local px, py = fl(x + (s - pw) / 2), fl(y + (s - pw) / 2)
+      local r = fl(pw * 0.28)
+      rr(px, py, pw, pw, r, ink)
+      if not on then rr(px + 3, py + 3, pw - 6, pw - 6, math.max(2, r - 3), color.WHITE) end
+      local hr = math.max(2, fl(pw * 0.085))
+      draw.circle(px + fl(pw * 0.33), py + fl(pw * 0.5), hr, hc, true)       -- zwei Steckerloecher
+      draw.circle(px + fl(pw * 0.67), py + fl(pw * 0.5), hr, hc, true)
+      local cw, ch = math.max(4, fl(pw * 0.2)), math.max(2, fl(pw * 0.09))   -- Schutzkontakt-Klammern oben und unten
+      draw.rect(px + fl((pw - cw) / 2), py + (on and 3 or 5), cw, ch, hc, true)
+      draw.rect(px + fl((pw - cw) / 2), py + pw - ch - (on and 3 or 5), cw, ch, hc, true)
+    elseif k == "lswitch" then
+      local pw, ph = fl(s * 0.66), fl(s * 0.94)
+      local px, py = fl(x + (s - pw) / 2), fl(y + (s - ph) / 2)
+      local r = fl(pw * 0.22)
+      rr(px, py, pw, ph, r, ink)
+      if not on then rr(px + 3, py + 3, pw - 6, ph - 6, math.max(2, r - 3), color.WHITE) end
+      local rw, rh = fl(pw * 0.5), fl(ph * 0.58)
+      local rx, ry = px + fl((pw - rw) / 2), py + fl((ph - rh) / 2)
+      draw.rect(rx, ry, rw, rh, hc, false)                                    -- Wippe
+      draw.rect(rx + 1, ry + 1, rw - 2, rh - 2, hc, false)
+      if on then draw.rect(rx, ry, rw, rh // 2, hc, true)                     -- an: obere Haelfte gedrueckt
+      else draw.rect(rx, ry + rh // 2, rw, rh - rh // 2, hc, true) end        -- aus: untere Haelfte
+    else -- fan
+      local cx, cy = x + s / 2, y + s / 2
+      local br = fl(s * 0.2)
+      for i = 0, 2 do
+        local a = math.rad(i * 120 - 90)
+        local bx, by = cx + math.cos(a) * s * 0.26, cy + math.sin(a) * s * 0.26
+        draw.circle(bx, by, br, ink, true)
+        if not on then draw.circle(bx, by, br - 2, color.WHITE, true) end
+      end
+      draw.circle(cx, cy, math.max(3, fl(s * 0.1)), ink, true)
+      draw.circle(cx, cy, math.max(1, fl(s * 0.04)), color.WHITE, true)
+    end
   elseif k == "group" then -- Gruppe: drei Kreise
     local r = s * 0.2
     draw.circle(x + s * 0.3, y + s * 0.35, r, ink, on)
