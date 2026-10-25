@@ -189,7 +189,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.2",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -301,9 +301,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "08b8370a149e598e9c8ae8b6fb11da6c15a4c4da17f9db3141f213f268155810",
-      "sig": "L+6lQFeMWI/v5I+z0ox3ktwEz38mRs2ET8S5oXUberBIiPhiqnS0X6jbnVO08NURHD436bf/iP5UsroF5PKhJ4dP7OGieKpSYnjvvYPyXV5LMfg0A25E28CMKhrv/qFz3PdFoBFcKPyjD5ekJcTTqbcDlByMGNhyqzni3TkBH2ihki2ciAESFFFKCzczy5wVbVIr425DswkmsGwiP6nMsbnAtkA4gFYdtfi2OPiaZyCU2cmYQFWx52kyct6aLBZE8erNwEJpT5H44Rn/hDzomulZETFctb+s7Az0SlUpYaVjpx2CHNN33V2bMBoM8OpnzuGISkiJYmjXGY/o6h5+ZQ==",
-      "size": 31026
+      "sha256": "863add921e6d2e24f1957e4ba3e214ad177801a088cf483e74b0a2a33554f348",
+      "sig": "rWEAe4SrD6u3vymqlFBaXZ+dGprRcKnOP1fM7HaTE0LVAjc1u3dR/uQP6w6D0zrdr0qwkxFME+4C6oJzMYbGtOReQ0gs0OfRCzqU//avH/p0HsHfcoPA7csM7eaB16tYK1O+vW9LDoNPg2a3isRse52WZkRmyyL+ZRmuOHZpwsVsTPUQcOhcLTw7mzdOAocL502fkUrYsMg/pAqcSHqSwXfTrf09SIKRoqYdSC1LQEePTihoVo/gvY41U3+YIV4vP15sqJBdMskbpeKErotcrw7ewN1owHSactQ7UQqpsB0soWG+oiSnxUToKgyIjUVFS5/ENVe2ubH8cGNMDzsdjA==",
+      "size": 32673
     },
     {
       "id": "bilder",
@@ -791,7 +791,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -865,9 +865,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "a095c848a76cc43a19bbbba1fd9408ac4f0473167b4eb0ff0dd2b651df7ecbd1",
-      "sig": "FC/+wkgtNCiQbV3r1u24rURvjNC1mhZ32v4IuQpvaDQIHK6E6aU4nX7YS3OHvTm+1U0+lyEUQJhooQ6Y0XxQLrs9JE2tHtzp24sO/Hwyw8wf6N2eFSxasAwzGrhPfm4AOZB2WNwixBqx4oG40w5TjsygiDuVneu3vrEdKMnwZrYu+sTXWlej6EwTl7bXMPcM6Gy+1X/WjRdoy2EivDPZ332mUR5JnWdJUA3/Wew6MYG0hcxPwxCIxcdLfcNqlruCWv4Sogg7lAoXRjhoMPfr4dAsCXxTB8LMm1l/zHuTuMlaiFTqlxsjD6zpypwvzjsULp8GjEPfuZzidN4cuqkyuw==",
-      "size": 35125
+      "sha256": "3d717cafa2918dcf3764f382e6d29f74757cac9225c920b5e57d645e098d616b",
+      "sig": "CKSF9GbGPuVtGDWycbfEzQ4V66cq2SMzXrHhDFWjzlu6R9Z8gXOV7J6LaX0MX/V1Ji1kOozFj8hD3OaCqq4m/twVEqGvXUFUoKjvL3WXP9zuucCVbBkaE3jB/2NmAzvjG1APwGCf+aNOoXUqF10D9A999qyic5Fc5i+elTr3x2gM86DVW3nbPYBaSoQt4fvBRJmFO6tTO5mPVDvvBssps784WPzfOdwLnp47qwq58N6XFkW8pmTBkG4Tek8z7iNkXki7UkoQBcRegVDf9/zGvJZKREhNs/I5yWumTNWfV6spSvmEk1VRf9ebi2I640wUWH9ewh4ylC4TXrfL3ZhWrA==",
+      "size": 36111
     },
     {
       "id": "flight-radar",

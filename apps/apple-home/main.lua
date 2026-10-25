@@ -181,12 +181,23 @@ local function glyph(it, x, y, s, ink)
       draw.line(x + s * 0.86, y + s * 0.4, x + s * 0.92, y + s * 0.4, ink)
     end
   elseif k == "switch" then
-    local w, h = s * 0.9, s * 0.5
-    local px, py = x + s * 0.05, y + (s - h) / 2
-    draw.rect(px, py, w, h, ink, on, h // 2)
-    if not on then draw.rect(px, py, w, h, ink, false, h // 2) end
-    local kx = on and (px + w - h / 2) or (px + h / 2)
-    draw.circle(kx, py + h / 2, h / 2 - 3, on and color.WHITE or ink, true)
+    -- Schieberegler: nur ganze Pixel, gerade Hoehe, Knopf exakt im Rund der Pille (sonst sitzt er schief und ragt ueber den Rand)
+    local h = fl(s * 0.5 / 2) * 2
+    if h < 10 then h = 10 end
+    local w = fl(s * 0.9)
+    if w < h * 2 then w = h * 2 end
+    if w > s then w = s; h = fl(w / 4) * 2 end
+    local px, py = fl(x + (s - w) / 2), fl(y + (s - h) / 2)
+    local r = h // 2
+    if on then
+      draw.rect(px, py, w, h, ink, true, r)
+    else
+      draw.rect(px, py, w, h, ink, false, r)
+      draw.rect(px + 1, py + 1, w - 2, h - 2, ink, false, r - 1)
+    end
+    local kr = r - (h >= 14 and 4 or 3)
+    local kx = on and (px + w - r) or (px + r)
+    draw.circle(kx, py + r, kr, on and color.WHITE or ink, true)
   elseif k == "group" then -- Gruppe: drei Kreise
     local r = s * 0.2
     draw.circle(x + s * 0.3, y + s * 0.35, r, ink, on)
@@ -411,6 +422,31 @@ function on_header(ctx, page)
   local pg = pagePlan(ctx, load(ctx))[page]
   if pg == nil or pg.label == "" then return nil end
   return pg.label
+end
+
+-- Tab-Reihe der Kopfzeile: Raumname abgekuerzt (2 Grossbuchstaben, z. B. "Wohnzimmer" -> "WO", "Kueche" -> "KU"), Favoriten als "F" statt "Seite N".
+-- Die Firmware macht aus zwei Grossbuchstaben am Anfang eine breitere Pille; der volle Raumname steht in der Mitte der Kopfzeile (on_header).
+local UML = { ["ä"] = "A", ["ö"] = "O", ["ü"] = "U", ["Ä"] = "A", ["Ö"] = "O", ["Ü"] = "U", ["ß"] = "S" }
+local function abbrev(name)
+  local out = ""
+  for ch in name:gmatch("[%z\1-\127\194-\244][\128-\191]*") do
+    local c = UML[ch] or ch
+    if #c == 1 and c:match("%a") then out = out .. c:upper() end
+    if #out >= 2 then break end
+  end
+  return out
+end
+
+function on_tab(ctx, page)
+  local pg = pagePlan(ctx, load(ctx))[page]
+  if pg == nil then return "-" end
+  if pg.label == "" then return tostring(page) end
+  if pg.label:sub(1, #T(ctx, "Favoriten", "Favourites")) == T(ctx, "Favoriten", "Favourites") then return "F" end
+  local first = (pg.label:match("^([^·(]+)") or pg.label):gsub("%s+$", "")
+  local ab = abbrev(first)
+  if ab == "" then return "-" end
+  if #ab == 1 then return ab:upper() .. "." end
+  return ab
 end
 
 function on_draw(ctx, page)

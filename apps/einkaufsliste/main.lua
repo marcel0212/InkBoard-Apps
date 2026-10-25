@@ -181,24 +181,41 @@ end
 local function reply(status, body) return { status = status, body = body } end
 
 -- Antwort der Handy-Seite als JSON-Text (es gibt kein json.encode)
+local REPLY_BUDGET = 15000 -- Firmware kappt Antworten bei 16384 Byte ab (SCRIPT_HTTP_REPLY_MAX): zu lange Antwort = kaputtes JSON in der App
+
 local function list_json(ctx, m, full)
   local v, open, done = visible(m)
   local parts = {}
+  local sync = ctx.data.get("sync") or "local"
+  local tail = string.format(',"open":%d,"done":%d,"sync":"%s","nas":%s', open, done, esc(sync), sync ~= "local" and "true" or "false")
+  local extra = ""
+  if full then
+    -- Abgleich: nur "entries" (alle Eintraege inkl. Grabsteine; die App haelt eine eigene Kopie). "items" bleibt leer, sonst steht jeder Eintrag
+    -- doppelt in der Antwort und sie passt bei laengeren Listen nicht mehr in 16 KB. Grabsteine tragen nur Id/Zeit, sie kommen zuletzt und
+    -- werden bei Platzmangel weggelassen (sie laufen ohnehin nach 7 Tagen ab).
+    local live, tombs = {}, {}
+    for _, e in pairs(m) do
+      if e.st == 2 then
+        tombs[#tombs + 1] = string.format('{"id":"%s","ts":%d,"st":2,"text":"","qty":"","unit":"","note":"","link":"","img":""}', esc(e.id), e.ts)
+      else
+        live[#live + 1] = string.format('{"id":"%s","ts":%d,"st":%d,"text":"%s","qty":"%s","unit":"%s","note":"%s","link":"%s","img":"%s"}', esc(e.id), e.ts, e.st, esc(e.text), esc(e.qty or ""), esc(e.unit or ""), esc(e.note or ""), esc(e.link or ""), esc(e.img or ""))
+      end
+    end
+    local ents, size = {}, #tail + 40
+    for _, list in ipairs({ live, tombs }) do
+      for i = 1, #list do
+        if size + #list[i] + 1 > REPLY_BUDGET then break end
+        ents[#ents + 1] = list[i]; size = size + #list[i] + 1
+      end
+    end
+    extra = ',"entries":[' .. table.concat(ents, ",") .. ']'
+    return '{"items":[]' .. tail .. extra .. '}'
+  end
   for i = 1, #v do
     local e = v[i]
     parts[i] = string.format('{"id":"%s","text":"%s","done":%s,"qty":"%s","unit":"%s","note":"%s","link":"%s","img":"%s"}', esc(e.id), esc(e.text), e.st == 1 and "true" or "false", esc(e.qty or ""), esc(e.unit or ""), esc(e.note or ""), esc(e.link or ""), esc(e.img or ""))
   end
-  local sync = ctx.data.get("sync") or "local"
-  local extra = ""
-  if full then
-    -- alle Eintraege inkl. Grabsteine (Mac-/iOS-App haelt eine eigene Kopie und gleicht sie ueber "sync" ab)
-    local ents = {}
-    for _, e in pairs(m) do
-      ents[#ents + 1] = string.format('{"id":"%s","ts":%d,"st":%d,"text":"%s","qty":"%s","unit":"%s","note":"%s","link":"%s","img":"%s"}', esc(e.id), e.ts, e.st, esc(e.text), esc(e.qty or ""), esc(e.unit or ""), esc(e.note or ""), esc(e.link or ""), esc(e.img or ""))
-    end
-    extra = ',"entries":[' .. table.concat(ents, ",") .. ']'
-  end
-  return string.format('{"items":[%s],"open":%d,"done":%d,"sync":"%s","nas":%s%s}', table.concat(parts, ","), open, done, esc(sync), sync ~= "local" and "true" or "false", extra)
+  return '{"items":[' .. table.concat(parts, ",") .. ']' .. tail .. '}'
 end
 
 function on_http(ctx, req)
