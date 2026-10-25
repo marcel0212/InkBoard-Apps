@@ -544,9 +544,15 @@ function on_http(ctx, req)
         end
       end
     end
-    ctx.data.set("items", table.concat(lines, "\n"))
-    ctx.data.set("ts", time.now() or 1)
-    return { status = 200, body = stateJson(ctx), redraw = true }
+    -- Nur neu zeichnen, wenn sich etwas geaendert hat: die iPhone-App sendet alle 30 Sekunden, ein Voll-Refresh des e-Papers dauert ~30 s und flackert.
+    -- Auch ohne Aenderung wird neu gezeichnet, wenn der letzte Stand aelter als 10 Minuten war (die Altersanzeige "Stand vor ..." soll nicht haengen bleiben).
+    local joined = table.concat(lines, "\n")
+    local changed = joined ~= tostring(ctx.data.get("items") or "")
+    local prev = tonumber(ctx.data.get("ts")) or 0
+    local now = time.now() or 1
+    if changed then ctx.data.set("items", joined) end
+    ctx.data.set("ts", now)
+    return { status = 200, body = stateJson(ctx), redraw = changed or (now - prev > 600) }
   end
   return { status = 200, body = stateJson(ctx) }
 end
@@ -586,8 +592,13 @@ function on_fetch(ctx)
   if rts > lts then
     local lines = cleanLines(rest)
     if lines ~= "" then
-      ctx.data.set("items", lines)
-      ctx.data.set("ts", rts)
+      -- unveraendert: Zeitstempel nur nachziehen, wenn der Stand >= 10 Minuten abweicht (sonst zaehlt jeder Abruf als "neue Daten" und zeichnet neu)
+      if lines ~= items then
+        ctx.data.set("items", lines)
+        ctx.data.set("ts", rts)
+      elseif rts - lts >= 600 then
+        ctx.data.set("ts", rts)
+      end
     end
   elseif lts > rts and items ~= "" then
     storage.write("dir", NAS_FILE, tostring(lts) .. "\n" .. items)

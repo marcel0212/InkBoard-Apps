@@ -48,8 +48,19 @@ local function pickRandom(count, avoid)
   return i
 end
 
-local function loadPicture(name)
-  local w, h = storage.image("dir", name, PIC, { w = 800, h = 480, style = "photo", maxBytes = MAX_BYTES })
+-- Ausrichtung des Displays (Geraete-Einstellung "Bilder-Ausrichtung", API-Stufe 30): 0 quer, 90 / 270 = Display physisch gedreht,
+-- dann wird im Hochformat (480 x 800) geladen und gedreht gezeichnet
+local function imageRot()
+  local s = system.settings()
+  local r = s and tonumber(s.images_rot) or 0
+  if r ~= 90 and r ~= 270 then r = 0 end
+  return r
+end
+
+local function loadPicture(name, rot)
+  local bw, bh = 800, 480
+  if rot ~= 0 then bw, bh = 480, 800 end
+  local w, h = storage.image("dir", name, PIC, { w = bw, h = bh, style = "photo", maxBytes = MAX_BYTES })
   return w, h
 end
 
@@ -72,6 +83,8 @@ function on_fetch(ctx)
   d.set("to", nil)
   local opened = ctx.opened == true
   local picLoaded = draw.image_size(PIC) ~= nil
+  local rot = imageRot()
+  local sameRot = (tonumber(d.get("ro")) or 0) == rot          -- das Bild im Speicher wurde fuer diese Ausrichtung geladen
   local showing = picLoaded and d.get("st") == "ok"
 
   local names, count = storage.list("dir", { max = 60 })
@@ -119,15 +132,16 @@ function on_fetch(ctx)
     if cfg.order == "zufall" then target = pickRandom(#names, cur) else target = cur % #names + 1 end
   end
 
-  if target == cur and had and picLoaded and d.get("st") == "ok" and (want == nil or want == d.get("n")) then
+  if target == cur and had and picLoaded and sameRot and d.get("st") == "ok" and (want == nil or want == d.get("n")) then
     return true -- nichts zu tun (Oeffnen mit Bild im Speicher, ein einziges Bild)
   end
 
   local tried = 0
   local lastErr = nil
   while tried < TRIES and tried < #names do
-    local w, h = loadPicture(names[target])
+    local w, h = loadPicture(names[target], rot)
     if w ~= nil then
+      d.set("ro", rot)
       if names[target] == d.get("n") then
         d.set("rl", (tonumber(d.get("rl")) or 0) + 1) -- dasselbe Bild neu geladen (Neustart): Daten aendern, damit neu gezeichnet wird
       end
@@ -209,10 +223,13 @@ function on_draw(ctx, page)
   local st = d.get("st")
   local w, h = draw.image_size(PIC)
   if st == "ok" and w ~= nil then
-    local x = (draw.width - w) // 2
-    local y = (draw.height - h) // 2
-    draw.image(PIC, x, y)
-    if cfg.frame ~= false then draw.rect(x - 1, y - 1, w + 2, h + 2, color.BLACK) end
+    local rot = imageRot()
+    local rw, rh = w, h
+    if rot ~= 0 then rw, rh = h, w end
+    local x = (draw.width - rw) // 2
+    local y = (draw.height - rh) // 2
+    draw.image(PIC, x, y, 0, 0, rot)
+    if cfg.frame ~= false then draw.rect(x - 1, y - 1, rw + 2, rh + 2, color.BLACK) end
     if browsing(d) then
       pill(string.format("%s %d %s %d", T("Bild", "Picture"), tonumber(d.get("i")) or 1, T("von", "of"), tonumber(d.get("c")) or 1), cx)
     end

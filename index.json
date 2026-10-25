@@ -189,7 +189,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.7",
+      "version": "1.4.8",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -301,9 +301,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "6a6505e26f59a8abcc299a55a00bb556c5e31bc3ee66fb54528cc29cf607ec83",
-      "sig": "Gh1PoLoQ8taA4nIuL6pcsgezuPdpd2xc87YRNV3b3HAoB0rfQjHiS29A1WP9e8jez0U584rcATkVHTy5tuhXGIREqRH77xahFlN8mX6qiGUSbXNY1ho0NfSKnjf4D1Nv6PuBCNE0sHOKlZHrwEiufvPaSgoWd09IyFa4DY4W9/Ibu9WFTorKrpTf13owe02sVE/QqJ6F8t4dFdgUXom0ODyOjg8DEpq41lXZ/fraJl5LdA8lK/OQ4h3vrVnLDntJ2Evm0ZD6jFewG8AMBjuKAeg+uzvkH3zGGYc54liozHwykOGnDKjOWGLi6XnZ1CGc4KEa7O3qdoHgqZFrjadTrg==",
-      "size": 34479
+      "sha256": "35099faf8b66575ebb44a339f5070f64feba029d48b170b00999caf662682f16",
+      "sig": "pn9xiGqtV3hVKDe9I69ILJHhAMhakhqLZRFABp6QLzoel+EF8m8ySyMTXYEsxpR7P2cJ2mVtP+IWTr9dgMxeIfVRXZFC74PTAOUB3UjHyMN9RTK2BoHFWWHqn9qqnxvBxWVF63djOJDWId5KIkzAQcfVT/vcsjilPn65/xnhl3bXWlKszr2HZP8UGkJ3blyXl7hUawzUig+L8zpSRWDPaUh9HzJ7ogqvg4sEQxm2MjhkC55TeP+ct6/M0YFuds0LzcKyitwT4tSSFjHIAA+2jLvzrRPnlYYyVo6FLgzXC3QuqajpWQJp07hK4w5OB9I9fGFFts0GQbVskOu382FXeQ==",
+      "size": 35285
     },
     {
       "id": "bilder",
@@ -321,8 +321,8 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.3.1",
-      "apiLevel": 20,
+      "version": "1.4.0",
+      "apiLevel": 30,
       "pages": 1,
       "pageNames": [
         {
@@ -377,9 +377,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "35a2c17f375d8275e4f1dd43e0564eb68b53a002e6d63c160012e663f4d60cec",
-      "sig": "qYh5rwqxQcR+/B5hiwX7uPp7MzeJuT/yBAOobf1zJnBmuY2h1AZzBARMcYMVa/GpMPMpWDmMHPvp8SJ5lhlp/Av2cwDE//s6iskz/BtVy8BKvpc7KUAH+Zaim937koFVRtcjETMzVz0rg79AXhu14kBhJEh2TMNYQ6XuE1gc0FBp6ae3HZBJAtdO49sFh46t68/JPMbJJTQh8ImX8D6k6+b6KMlWHxB6tTNwBSTybTm793eb9SQNc3MQievRsroBT4qCsLoD3ypDpujHGxh++wlehUk+ImRNRc0Yj3XfmbHimKlZ7kGiRWmtVL8DOP7eg6AlrQuYaWV1CiyxFK9VQw==",
-      "size": 23355
+      "sha256": "ebe1196d5c8781c443f39a6aef10099a1b3190a525b5e217f1c0d35ebe678452",
+      "sig": "tLA6a856Mtr5URrt6LtRoLTCNnFFcr3WlWl4fHEEuBwaWYw0dbkUwQhtfEqJom1m5qO2ZByPV5cLxQjXX+MWDnqiq77ahpUO10v5PYcrxfx+sbn1M1Lw1uCs3RIwx7bTAOmALrdr8PvIDgWhxnQrB6Cvo3pst3lmwb0TrS84SvLWvywZhUe+XU4XvvGdmrV/Vpc0OxZxDrB/+6oJ9vdMs5rSZ8hPtQkQQEG4FZQ0rWvr4cDFVZTcqdKIXwAxrM2fc7fMhE5rwbIJ0pUpIbb93pp0lbl4Crqg5RRCPxayU8ELwmmC5m313dh1AEqgczBjMdb2WUBS46SUYg9aNuirFA==",
+      "size": 23861
     },
     {
       "id": "calendar-app",
