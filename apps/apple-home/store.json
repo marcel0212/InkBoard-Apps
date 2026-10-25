@@ -1,0 +1,93 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Temperatur, Türen, Licht und Schlösser aus Apple Home",
+    "en": "Temperature, doors, lights and locks from Apple Home"
+  },
+  "description": {
+    "de": "NUR MIT DER iPHONE-/iPAD-APP NUTZBAR. Zeigt Werte aus deinem Apple-Home-Zuhause (HomeKit) auf dem Display: Raumtemperatur und Luftfeuchte, Fenster- und Türkontakte, Lichter, Schlösser, Bewegungsmelder, Steckdosen. Apple Home lässt sich nur von Apple-Geräten lesen: Die iOS-/iPadOS-App liest HomeKit und sendet die Werte an das Gerät – direkt im Heimnetz oder über deinen externen Speicher (WebDAV, Google Drive) auch von unterwegs. Das Gerät braucht kein Konto und keine Cloud. Das Alter der Werte steht immer dabei.",
+    "en": "ONLY USABLE WITH THE iPHONE/iPAD APP. Shows values from your Apple Home (HomeKit) setup on the display: room temperature and humidity, window and door contacts, lights, locks, motion sensors, outlets. Apple Home can only be read from Apple devices: the iOS/iPadOS app reads HomeKit and sends the values to the device – directly on the home network or via your external storage (WebDAV, Google Drive) from anywhere. The device needs no account and no cloud. The age of the values is always shown."
+  },
+  "features": {
+    "de": [
+      "Nur mit der iPhone-/iPad-App nutzbar",
+      "Erste Seite: deine Favoriten (in der iPhone-App mit dem Stern gewählt)",
+      "Danach eine Seite je Raum, auch Gerätegruppen und Aktionen/Szenen",
+      "Nicht erreichbare Geräte sind gekennzeichnet",
+      "Apple-Home-Optik: Symbole, aktive Kacheln farbig gefüllt",
+      "Auch von unterwegs über deinen externen Speicher",
+      "Alter der Werte, Warnung bei veralteten Daten",
+      "Widget mit frei wählbaren Einträgen (sonst die Favoriten)"
+    ],
+    "en": [
+      "Only usable with the iPhone/iPad app",
+      "First page: your favourites (starred in the iPhone app)",
+      "Then one page per room, also device groups and actions/scenes",
+      "Unreachable devices are marked",
+      "Apple Home look: icons, active tiles filled with colour",
+      "Also from anywhere via your external storage",
+      "Age of the values, warning when outdated",
+      "Widget with freely chosen entries (otherwise the favourites)"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "page": 0,
+      "caption": {
+        "de": "Favoriten (erste Seite)",
+        "en": "Favourites (first page)"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-rooms.svg",
+      "page": 1,
+      "caption": {
+        "de": "Räume, nicht erreichbares Gerät markiert",
+        "en": "Rooms, unreachable device marked"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-bento.svg",
+      "page": 0,
+      "style": "cards",
+      "caption": {
+        "de": "Kacheln (Bento)",
+        "en": "Tiles (Bento)"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "page": 0,
+      "style": "flat",
+      "caption": {
+        "de": "Zwei Spalten (Slate)",
+        "en": "Two columns (Slate)"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "page": 0,
+      "style": "compact",
+      "caption": {
+        "de": "Liste (Nano)",
+        "en": "List (Nano)"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

@@ -174,6 +174,138 @@
       "size": 34209
     },
     {
+      "id": "apple-home",
+      "name": {
+        "de": "Apple Home",
+        "en": "Apple Home"
+      },
+      "tagline": {
+        "de": "Temperatur, Türen, Licht und Schlösser aus Apple Home",
+        "en": "Temperature, doors, lights and locks from Apple Home"
+      },
+      "description": {
+        "de": "NUR MIT DER iPHONE-/iPAD-APP NUTZBAR. Zeigt Werte aus deinem Apple-Home-Zuhause (HomeKit) auf dem Display: Raumtemperatur und Luftfeuchte, Fenster- und Türkontakte, Lichter, Schlösser, Bewegungsmelder, Steckdosen. Apple Home lässt sich nur von Apple-Geräten lesen: Die iOS-/iPadOS-App liest HomeKit und sendet die Werte an das Gerät – direkt im Heimnetz oder über deinen externen Speicher (WebDAV, Google Drive) auch von unterwegs. Das Gerät braucht kein Konto und keine Cloud. Das Alter der Werte steht immer dabei.",
+        "en": "ONLY USABLE WITH THE iPHONE/iPAD APP. Shows values from your Apple Home (HomeKit) setup on the display: room temperature and humidity, window and door contacts, lights, locks, motion sensors, outlets. Apple Home can only be read from Apple devices: the iOS/iPadOS app reads HomeKit and sends the values to the device – directly on the home network or via your external storage (WebDAV, Google Drive) from anywhere. The device needs no account and no cloud. The age of the values is always shown."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.4.0",
+      "apiLevel": 23,
+      "pages": 6,
+      "pageNames": [
+        {
+          "de": "Seite 1",
+          "en": "Page 1"
+        },
+        {
+          "de": "Seite 2",
+          "en": "Page 2"
+        },
+        {
+          "de": "Seite 3",
+          "en": "Page 3"
+        },
+        {
+          "de": "Seite 4",
+          "en": "Page 4"
+        },
+        {
+          "de": "Seite 5",
+          "en": "Page 5"
+        },
+        {
+          "de": "Seite 6",
+          "en": "Page 6"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Nur mit der iPhone-/iPad-App nutzbar",
+          "Erste Seite: deine Favoriten (in der iPhone-App mit dem Stern gewählt)",
+          "Danach eine Seite je Raum, auch Gerätegruppen und Aktionen/Szenen",
+          "Nicht erreichbare Geräte sind gekennzeichnet",
+          "Apple-Home-Optik: Symbole, aktive Kacheln farbig gefüllt",
+          "Auch von unterwegs über deinen externen Speicher",
+          "Alter der Werte, Warnung bei veralteten Daten",
+          "Widget mit frei wählbaren Einträgen (sonst die Favoriten)"
+        ],
+        "en": [
+          "Only usable with the iPhone/iPad app",
+          "First page: your favourites (starred in the iPhone app)",
+          "Then one page per room, also device groups and actions/scenes",
+          "Unreachable devices are marked",
+          "Apple Home look: icons, active tiles filled with colour",
+          "Also from anywhere via your external storage",
+          "Age of the values, warning when outdated",
+          "Widget with freely chosen entries (otherwise the favourites)"
+        ]
+      },
+      "net": [],
+      "icon": "apps/apple-home/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display.svg",
+          "caption": {
+            "de": "Favoriten (erste Seite)",
+            "en": "Favourites (first page)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-rooms.svg",
+          "caption": {
+            "de": "Räume, nicht erreichbares Gerät markiert",
+            "en": "Rooms, unreachable device marked"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-bento.svg",
+          "caption": {
+            "de": "Kacheln (Bento)",
+            "en": "Tiles (Bento)"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-flat.svg",
+          "caption": {
+            "de": "Zwei Spalten (Slate)",
+            "en": "Two columns (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-compact.svg",
+          "caption": {
+            "de": "Liste (Nano)",
+            "en": "List (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/apple-home/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/apple-home/package.json",
+      "sha256": "08b8370a149e598e9c8ae8b6fb11da6c15a4c4da17f9db3141f213f268155810",
+      "sig": "L+6lQFeMWI/v5I+z0ox3ktwEz38mRs2ET8S5oXUberBIiPhiqnS0X6jbnVO08NURHD436bf/iP5UsroF5PKhJ4dP7OGieKpSYnjvvYPyXV5LMfg0A25E28CMKhrv/qFz3PdFoBFcKPyjD5ekJcTTqbcDlByMGNhyqzni3TkBH2ihki2ciAESFFFKCzczy5wVbVIr425DswkmsGwiP6nMsbnAtkA4gFYdtfi2OPiaZyCU2cmYQFWx52kyct6aLBZE8erNwEJpT5H44Rn/hDzomulZETFctb+s7Az0SlUpYaVjpx2CHNN33V2bMBoM8OpnzuGISkiJYmjXGY/o6h5+ZQ==",
+      "size": 31026
+    },
+    {
       "id": "bilder",
       "name": {
         "de": "Bilder",
@@ -554,6 +686,94 @@
       "sha256": "0a64bdd4776b3b793ed2fdf1ec8814ee432a8d977d1d5e8ade1409abe101c2b5",
       "sig": "fGXaOgpv3rBBBSLec+OMo8Yvrb1oy6TpSqauU/aof8wDhByB9+bLrre+rwIXhY0zQSI2xMVs/WTq8hI1MjY9mA2nXb/vLLVGCHUP619q71mqwfKzxQQqLT7wf7sCU6j4C2Wp41V4qToyZGKNxF6P2ojnIZWmENyVUMiymFvu2Q+1m/zT9nLWrlAh8MIuYXoJ4TLSUZad7SR780WKFYO4cny6z0gvgm+vtMfP2pLONxs0o0Qze24KBMmywTxkhZtprXjOQmYiJUqcDVzjLPLi9QJgCD7CrqUOAtNkQlsEFWBYshOxqE0DhtuzVpN68bhUEk74q3OSuzM/Y/Wdso9kuw==",
       "size": 3444
+    },
+    {
+      "id": "datenquelle",
+      "name": {
+        "de": "Eigene Daten",
+        "en": "Custom data"
+      },
+      "tagline": {
+        "de": "Eigene Datenquelle ohne Programmieren auf das Display",
+        "en": "Put your own data source on the display without coding"
+      },
+      "description": {
+        "de": "Das No-Code-Plugin für InkBoard: Trage eine Adresse ein, die JSON liefert (oder lass ein Programm per Webhook Daten schicken), gib an, wo im JSON die Zahlen stehen, und wähle eine Vorlage – Kacheln, ein großer Wert, Ampel, Liste oder ein Satz mit Platzhaltern. Das Gerät rendert alles selbst, es gibt keinen Server dazwischen und kein Konto. Geeignet für Pegelstände, Strom- und Spritpreise, Heimserver, Wetter-Schnittstellen, Node-RED und Skripte im eigenen Netzwerk.",
+        "en": "Put your own data on the display without coding: enter an address that returns JSON (or let a program send data by webhook), say where the numbers are in the JSON and choose a template – tiles, one big value, traffic light, list or a sentence with placeholders. The device renders everything itself, with no server in between and no account. Good for water levels, power and fuel prices, home servers, weather APIs, Node-RED and scripts in your own network."
+      },
+      "category": "info",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 20,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Daten",
+          "en": "Data"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Adresse abfragen oder Webhook empfangen",
+          "Pfade im JSON statt Programmcode",
+          "Kacheln, großer Wert, Ampel, Liste, Satz",
+          "Schwellen für Gelb und Rot",
+          "Dashboard-Widget und drei Stile"
+        ],
+        "en": [
+          "Poll an address or receive a webhook",
+          "JSON paths instead of code",
+          "Tiles, big value, traffic light, list, sentence",
+          "Thresholds for yellow and red",
+          "Dashboard widget and three styles"
+        ]
+      },
+      "net": [],
+      "icon": "apps/datenquelle/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/datenquelle/preview-display.svg",
+          "caption": {
+            "de": "Kacheln (Bento)",
+            "en": "Tiles (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/datenquelle/preview-display-flat.svg",
+          "caption": {
+            "de": "Großer Wert (Slate)",
+            "en": "Big value (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/datenquelle/preview-display-compact.svg",
+          "caption": {
+            "de": "Liste (Nano)",
+            "en": "List (Nano)"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/datenquelle/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/datenquelle/package.json",
+      "sha256": "9acc99f7ce30f2a53d31cb2c9624f8563786f4f9767bd1b7939913edcd93ecdf",
+      "sig": "qm2bUHTWPm0STvYUkXI4DIr/7gOZ1Qn0gDGF4SbDX940O5sBtmsX54sOPIp6ZvaWey7oBNz282E0iJScnu7NP5Op046wQLFRtL1LlRlpR9AE/3UPjV4V935BYUX5ubz+C4YrWvgxLcxlBzqRst6pFqtxz4MqYuPHhLLXy/SoD8wnFEfx24TCCyYbXXT3Oj4qE0Omasj7QcZbiCUbQSTN/fcSSJL0J9pPvHcI9qbhXMH/wbWy2CpMEA/QvFAB1d/Qv1UeKD+JqOMGIkT0/nrXYvWpt9sbS032gHjXta/KRIcaFJR9dVMVOSc1QX7cA9+UCOvmIKz9EjeOmRM/Vk+uCA==",
+      "size": 25092
     },
     {
       "id": "einkaufsliste",
@@ -1668,7 +1888,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1740,9 +1960,90 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "b443c161cdf236f72e7a9dd6ee65646631834d6551134be058797a6cd54d0d97",
-      "sig": "wEUvY8yR5Sm80tKBrb8C+6sgRoNk+R7RVe1ix85/mzgHzWIBPfMoRLGg21iu/RfapG7IwLY8T5SB6PPmzbZZY6coceSsJGC3psORrRE8Jv2sPoDPRA0eeXfho3KS2f5bX1GIZRur8PU12lvaHFLA04cRbi38CCwpnarhePdT6VC+vLVVuvj1bqwZVkTJVv8rkXC4NOeAreocXAbFhh+/0riS6uCfrXpHpfWI663M1S02ZwZU1Ohc0+caTjJliJuHcKSeuDuEnRmAWrM4KsAwPRGUirh0c1jcK3HPwZmDSow3/HmmqQc6lDLrsoj40ja6Z9iw+t8BvDKp4Jg5umbTMw==",
-      "size": 26979
+      "sha256": "12d373c5191328bd04794321ffe540502d4503073c162334427bf78292d1153c",
+      "sig": "VGEACKXxB8IiaNjlsEIZcU1ykZRwzfG0ljihqyZ4LnlAyrk0qb4prFaL1OxZ7kqOVJRyVUSMbNktMZgn/odw25ks+BUFPFz32cXzW2cSb094DpA+jexZMWAPmpvnuc1Aba46BATGmzAWXCPcf52WVr2L6CM/akc5gDs3XN0YiK5+eEB0rEvtpFwR7vF9C8JUtSSIsjjr2DCXP8jgUonE+9YCXOKswDMRH8fMZtiJ9kmtFfIbgrMWDt3hwrDOza/7f2+zRJ6xeQHTh7rTPw3P9bGLZ9F/gajjMFPX8+aqfk5h3CYo62lBcp8b8ryBMVut+oHTvH/TNpgsfpzSeiCvRA==",
+      "size": 27000
+    },
+    {
+      "id": "iphone-hinweise",
+      "name": {
+        "de": "Hinweise aufs iPhone",
+        "en": "iPhone notices"
+      },
+      "tagline": {
+        "de": "CO₂-, Feuchte-, Akku- und Offline-Warnungen aufs iPhone",
+        "en": "CO₂, humidity, battery and offline alerts to your iPhone"
+      },
+      "description": {
+        "de": "Bringt die Warnungen des InkBoards dorthin, wo du sie sofort siehst: als Mitteilung auf dem iPhone. Überwacht CO₂ und Luftfeuchte, den Akkustand dieses und aller Geräte im Netzwerk und meldet, wenn ein Gerät sich nicht mehr meldet. Der Versand läuft über die kostenlose iPhone-App ntfy (ntfy.sh oder eigener Server) oder per E-Mail. Die App läuft im Hintergrund, auch wenn sie nicht angezeigt wird. Sendet Meldungen an ntfy.sh bzw. den eingetragenen Server und optional per E-Mail.",
+        "en": "Brings the InkBoard's warnings to where you see them right away: as a notification on your iPhone. Watches CO₂ and humidity, the battery level of this and all devices in the network, and reports when a device stops responding. Sending uses the free iPhone app ntfy (ntfy.sh or your own server) or e-mail. The app runs in the background even when it is not shown. Sends messages to ntfy.sh or the server you enter and optionally by e-mail."
+      },
+      "category": "home",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 26,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Überwachung",
+          "en": "Monitoring"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Mitteilungen auf dem iPhone, auch unterwegs",
+          "CO₂, Luftfeuchte, Akku, Gerät offline",
+          "Eigene Grenzwerte und Sperrzeit gegen Wiederholungen",
+          "ntfy.sh, eigener Server oder E-Mail",
+          "Test-Knopf in den Einstellungen"
+        ],
+        "en": [
+          "Notifications on your iPhone, also on the go",
+          "CO₂, humidity, battery, device offline",
+          "Your own limits and a pause against repeats",
+          "ntfy.sh, own server or e-mail",
+          "Test button in the settings"
+        ]
+      },
+      "net": [
+        "ntfy.sh"
+      ],
+      "mail": true,
+      "icon": "apps/iphone-hinweise/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/iphone-hinweise/preview-display.svg",
+          "caption": {
+            "de": "Überwachung (Bento)",
+            "en": "Monitoring (Bento)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/iphone-hinweise/preview-display-flat.svg",
+          "caption": {
+            "de": "Warnung (Slate)",
+            "en": "Warning (Slate)"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/iphone-hinweise/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/iphone-hinweise/package.json",
+      "sha256": "fee51aa8d89513f3746993e7ed4bb0238451e01883397779cd53cade8e56cd3c",
+      "sig": "UH3s26u1faWxpZ+IcsQ+n8lutAaGWKPFPJanUNIfu9NfcLWixkaQDVZGHZcS3Sq7ZbpYgECGwg5MEheSimbgWYhj3zl7reZ6QEfOdKbHQ8W6+zc5NwlG6hLaEJJeQdtnygF4o7t5BxapOwWS9qBN83Ol9Tj/ASp6Pw8XdJBBjkvQ3slKmOCop/IeBkO6kGsTysf7Et4/ze03KNfqNoLAH8T0/NY2vu0B054y0bU1dFFW8DaBfDBlTKhoiPEjQK3MonDy+T3p+6mBJBXCdgp5FiWF88I9LjjjMixi9XRFJmW+wktPsiBHfcjzdEzsx17lROWVVy2dmX401OXiLMmoOg==",
+      "size": 18736
     },
     {
       "id": "luft-pollen",
@@ -2632,6 +2933,94 @@
       "sha256": "d7beb659f4344a628ce477b2535a8fe362cc5f4f99ed9d180619d82b362d8823",
       "sig": "elA3rskyhQt1WZ4dDWC400ft/OxoNDZ5f5//+v2jSa8l82pAjd7Xs5cBztT9sp1PfPDlyIBDNCN2Ov1WpoJM5NyvK7otBikRD0B5gen7FCk9SLKO+gkOJ3p14mQHCkBLgy0DLQUjPpaQxgrpKiRPnuF8tzpqMRk3UbDDwPCJsRJPBsSSj+ohBlPrlf62QltEeI34XdrsnHA8PMbIGVxYSI+uHDNW0UhLZF37+CQg8deusdKSaJe7Z/lDNrYUDGaGSoRsv+W2dTmi6E+VtAo914UAQtEgiM7Vh3TPj0a1yCLUiSYTIEy8UcFygXXfm9zXsTOesqGzWF2gynHxzhb2yA==",
       "size": 51178
+    },
+    {
+      "id": "tuerschild",
+      "name": {
+        "de": "Türschild",
+        "en": "Door sign"
+      },
+      "tagline": {
+        "de": "Zeigt vor dem Zimmer: frei, im Meeting oder bitte nicht stören",
+        "en": "Shows outside the room: free, in a meeting or do not disturb"
+      },
+      "description": {
+        "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Bento-Karte, Vollfläche in Ampelfarben, schlicht.",
+        "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Bento card, full-colour traffic light, plain."
+      },
+      "category": "organize",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 20,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Status",
+          "en": "Status"
+        }
+      ],
+      "hasWidget": true,
+      "standard": false,
+      "features": {
+        "de": [
+          "Status aus dem Mac-Kalender, automatisch",
+          "Handy-Seite mit Schnellwahl",
+          "Endzeit und „Danach“-Zeile",
+          "Läuft von selbst ab",
+          "Drei Stile und Widget"
+        ],
+        "en": [
+          "Status from the Mac calendar, automatic",
+          "Phone page with quick buttons",
+          "End time and “Next” line",
+          "Expires on its own",
+          "Three styles and a widget"
+        ]
+      },
+      "net": [],
+      "icon": "apps/tuerschild/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/tuerschild/preview-display.svg",
+          "caption": {
+            "de": "Bento",
+            "en": "Bento"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/tuerschild/preview-display-flat.svg",
+          "caption": {
+            "de": "Slate in Ampelfarbe",
+            "en": "Slate in traffic-light colour"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/tuerschild/preview-display-compact.svg",
+          "caption": {
+            "de": "Nano",
+            "en": "Nano"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/tuerschild/preview-widget.svg",
+          "caption": {
+            "de": "Widget im Dashboard",
+            "en": "Widget on the dashboard"
+          }
+        }
+      ],
+      "package": "apps/tuerschild/package.json",
+      "sha256": "f1d91fb37d915aa35df24f869a2d12dcfad1bee7c85152945872f6158a963f2d",
+      "sig": "kfgcgmwul0NbdYFjguOZuF84ACWBKjQEz4Iq1BzVpdIHuPGHD9lBkwjIN3li5vNiha3jRS//QtNIdSvbNOXJUrF0tdp8Fd+nS/9q/J4/aIsolMFZrDinlN++hMB1pM2XsmnFcigYVEw0xaKrC+XL77wnQ6NRmPUOOXjRL13RV6k2MgftPB9uhM2pQZw5tlW+NyOVJZuOE3KUGLzUpTfselG5PF+CTLGz5p/JviVBbDxqI3HL+iUTm3vmIwRLyKo1Z+xW2HGQe7uY8O8Aisn5/i3SFhtGoStOV+yKYY6xND/M0oAlv1KT2pV7T1Fvq4j5LX/tQxbzobc8yVOkLjW3tA==",
+      "size": 20973
     },
     {
       "id": "waste-calendar",

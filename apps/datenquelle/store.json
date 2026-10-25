@@ -1,0 +1,68 @@
+{
+  "category": "info",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Eigene Datenquelle ohne Programmieren auf das Display",
+    "en": "Put your own data source on the display without coding"
+  },
+  "description": {
+    "de": "Das No-Code-Plugin für InkBoard: Trage eine Adresse ein, die JSON liefert (oder lass ein Programm per Webhook Daten schicken), gib an, wo im JSON die Zahlen stehen, und wähle eine Vorlage – Kacheln, ein großer Wert, Ampel, Liste oder ein Satz mit Platzhaltern. Das Gerät rendert alles selbst, es gibt keinen Server dazwischen und kein Konto. Geeignet für Pegelstände, Strom- und Spritpreise, Heimserver, Wetter-Schnittstellen, Node-RED und Skripte im eigenen Netzwerk.",
+    "en": "Put your own data on the display without coding: enter an address that returns JSON (or let a program send data by webhook), say where the numbers are in the JSON and choose a template – tiles, one big value, traffic light, list or a sentence with placeholders. The device renders everything itself, with no server in between and no account. Good for water levels, power and fuel prices, home servers, weather APIs, Node-RED and scripts in your own network."
+  },
+  "features": {
+    "de": [
+      "Adresse abfragen oder Webhook empfangen",
+      "Pfade im JSON statt Programmcode",
+      "Kacheln, großer Wert, Ampel, Liste, Satz",
+      "Schwellen für Gelb und Rot",
+      "Dashboard-Widget und drei Stile"
+    ],
+    "en": [
+      "Poll an address or receive a webhook",
+      "JSON paths instead of code",
+      "Tiles, big value, traffic light, list, sentence",
+      "Thresholds for yellow and red",
+      "Dashboard widget and three styles"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "page": 0,
+      "caption": {
+        "de": "Kacheln (Bento)",
+        "en": "Tiles (Bento)"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "page": 0,
+      "style": "flat",
+      "caption": {
+        "de": "Großer Wert (Slate)",
+        "en": "Big value (Slate)"
+      }
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "page": 0,
+      "style": "compact",
+      "caption": {
+        "de": "Liste (Nano)",
+        "en": "List (Nano)"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

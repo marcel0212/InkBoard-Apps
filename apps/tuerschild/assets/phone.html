@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InkBoard · Türschild</title>
+<style>
+  :root { color-scheme: light dark; --bg:#eceef6; --card:rgba(255,255,255,.78); --border:rgba(38,40,56,.10); --text:#262838; --sub:#5f6480; --input:rgba(38,40,56,.06); --ok:#257a44; --err:#b53f31; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#191b26; --card:rgba(37,40,56,.78); --border:rgba(255,255,255,.10); --text:#e9eaf2; --sub:#a9aec9; --input:rgba(255,255,255,.07); --ok:#6fcf97; --err:#e08a8a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:18px 16px 40px; }
+  h1 { font-size:22px; margin:6px 4px 2px; }
+  .sub { color:var(--sub); font-size:13px; margin:0 4px 14px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:22px; padding:14px; box-shadow:0 10px 30px rgba(90,99,140,.10); margin-bottom:12px; }
+  .now { display:flex; align-items:center; gap:12px; font-size:20px; font-weight:600; }
+  .dot { width:26px; height:26px; border-radius:50%; flex:none; border:2px solid var(--border); }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .grid button { border:0; border-radius:16px; padding:18px 8px; font-size:17px; font-weight:600; color:#fff; }
+  .free { background:#2f9d57; } .busy, .meeting, .dnd { background:#c2483f; } .away { background:#d9a82b; color:#222 !important; } .focus { background:#3f6fbf; }
+  label { display:block; font-size:13px; color:var(--sub); margin:12px 2px 4px; }
+  input[type=text], select { width:100%; font-size:17px; padding:13px 12px; border-radius:14px; border:1px solid var(--border); background:var(--input); color:var(--text); }
+  .row { display:flex; gap:10px; } .row > * { flex:1; min-width:0; }
+  .go { width:100%; margin-top:14px; font-size:17px; border:0; border-radius:14px; padding:14px; color:#fff; background:#5a63a8; font-weight:600; }
+  .clr { background:none; color:var(--sub); border:0; width:100%; margin-top:6px; padding:10px; font-size:15px; }
+  #msg { margin:8px 4px 0; font-size:13px; min-height:16px; color:var(--err); }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="h1">Türschild</h1>
+  <p class="sub" id="sub"></p>
+  <div class="card"><div class="now"><span class="dot" id="dot"></span><span id="now">…</span></div></div>
+  <div class="card">
+    <div class="grid" id="grid"></div>
+    <label id="lDur" for="dur">Dauer</label>
+    <select id="dur"></select>
+    <label id="lTxt" for="txt">Zusatzzeile (optional)</label>
+    <input type="text" id="txt" maxlength="80" autocomplete="off">
+    <label id="lCus" for="cus">Eigener Text statt Status (optional)</label>
+    <input type="text" id="cus" maxlength="40" autocomplete="off">
+    <button class="clr" id="clr" type="button">Status entfernen</button>
+  </div>
+  <div id="msg"></div>
+</main>
+<script>
+(function () {
+  var de = (navigator.language || "de").slice(0, 2) !== "en";
+  var $ = function (i) { return document.getElementById(i); };
+  var K = [["free", "Frei", "Free"], ["busy", "Beschäftigt", "Busy"], ["meeting", "Im Meeting", "In a meeting"], ["dnd", "Nicht stören", "Do not disturb"], ["away", "Nicht da", "Away"], ["focus", "Fokus", "Focus"]];
+  var D = [[0, "Ohne Endzeit", "No end time"], [15, "15 Minuten", "15 minutes"], [30, "30 Minuten", "30 minutes"], [60, "1 Stunde", "1 hour"], [120, "2 Stunden", "2 hours"], [-1, "Bis heute Abend 18:00", "Until 6 pm today"], [-2, "Bis Mitternacht", "Until midnight"]];
+  $("sub").textContent = de ? "Status für das Display vor dem Zimmer." : "Status for the display outside the room.";
+  $("lDur").textContent = de ? "Dauer" : "Duration"; $("lTxt").textContent = de ? "Zusatzzeile (optional)" : "Extra line (optional)";
+  $("lCus").textContent = de ? "Eigener Text statt Status (optional)" : "Custom text instead of status (optional)";
+  $("clr").textContent = de ? "Status entfernen" : "Clear status";
+  D.forEach(function (d) { var o = document.createElement("option"); o.value = d[0]; o.textContent = de ? d[1] : d[2]; $("dur").appendChild(o); });
+  function api(body, retry) {
+    return fetch(location.pathname.replace(/\/+$/, "") + "/api", { method: "POST", headers: { "X-Requested-With": "InkBoardStudio", "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (r.status === 503 && (retry || 0) < 6) return new Promise(function (res) { setTimeout(res, 1200); }).then(function () { return api(body, (retry || 0) + 1); });
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      });
+  }
+  var COL = { free: "#2f9d57", busy: "#c2483f", meeting: "#c2483f", dnd: "#c2483f", away: "#d9a82b", focus: "#3f6fbf", custom: "#5a63a8" };
+  function show(s) {
+    var k = K.filter(function (x) { return x[0] === s.st; })[0];
+    $("dot").style.background = COL[s.st] || "transparent";
+    var t = s.title || (k ? (de ? k[1] : k[2]) : (s.st === "custom" ? (de ? "Hinweis" : "Note") : (de ? "Kein Status" : "No status")));
+    $("now").textContent = t + (s.untilText ? (de ? " · bis " : " · until ") + s.untilText : "");
+    $("msg").textContent = "";
+  }
+  function untilFor(v) {
+    var n = new Date(), e;
+    v = parseInt(v, 10);
+    if (!v) return null;
+    if (v > 0) e = new Date(n.getTime() + v * 60000);
+    else if (v === -1) { e = new Date(n); e.setHours(18, 0, 0, 0); if (e <= n) e = new Date(n.getTime() + 3600000); }
+    else { e = new Date(n); e.setHours(23, 59, 0, 0); }
+    return { until: Math.floor(e.getTime() / 1000), untilText: ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) };
+  }
+  K.forEach(function (k) {
+    var b = document.createElement("button"); b.className = k[0]; b.textContent = de ? k[1] : k[2];
+    b.onclick = function () {
+      var u = untilFor($("dur").value), body = { op: "set", st: k[0], text: $("txt").value.trim() };
+      var c = $("cus").value.trim(); if (c) { body.title = c; }
+      if (u) { body.until = u.until; body.untilText = u.untilText; }
+      api(body).then(show).catch(function () { $("msg").textContent = de ? "Keine Verbindung zum Gerät." : "No connection to the device."; });
+    };
+    $("grid").appendChild(b);
+  });
+  $("clr").onclick = function () { api({ op: "clear" }).then(show).catch(function () { $("msg").textContent = de ? "Keine Verbindung zum Gerät." : "No connection to the device."; }); };
+  api({ op: "get" }).then(show).catch(function () { $("now").textContent = "—"; });
+})();
+</script>
+</body>
+</html>

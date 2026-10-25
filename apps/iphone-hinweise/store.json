@@ -1,0 +1,34 @@
+{
+  "category": "home",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "CO₂-, Feuchte-, Akku- und Offline-Warnungen aufs iPhone",
+    "en": "CO₂, humidity, battery and offline alerts to your iPhone"
+  },
+  "description": {
+    "de": "Bringt die Warnungen des InkBoards dorthin, wo du sie sofort siehst: als Mitteilung auf dem iPhone. Überwacht CO₂ und Luftfeuchte, den Akkustand dieses und aller Geräte im Netzwerk und meldet, wenn ein Gerät sich nicht mehr meldet. Der Versand läuft über die kostenlose iPhone-App ntfy (ntfy.sh oder eigener Server) oder per E-Mail. Die App läuft im Hintergrund, auch wenn sie nicht angezeigt wird. Sendet Meldungen an ntfy.sh bzw. den eingetragenen Server und optional per E-Mail.",
+    "en": "Brings the InkBoard's warnings to where you see them right away: as a notification on your iPhone. Watches CO₂ and humidity, the battery level of this and all devices in the network, and reports when a device stops responding. Sending uses the free iPhone app ntfy (ntfy.sh or your own server) or e-mail. The app runs in the background even when it is not shown. Sends messages to ntfy.sh or the server you enter and optionally by e-mail."
+  },
+  "features": {
+    "de": [
+      "Mitteilungen auf dem iPhone, auch unterwegs",
+      "CO₂, Luftfeuchte, Akku, Gerät offline",
+      "Eigene Grenzwerte und Sperrzeit gegen Wiederholungen",
+      "ntfy.sh, eigener Server oder E-Mail",
+      "Test-Knopf in den Einstellungen"
+    ],
+    "en": [
+      "Notifications on your iPhone, also on the go",
+      "CO₂, humidity, battery, device offline",
+      "Your own limits and a pause against repeats",
+      "ntfy.sh, own server or e-mail",
+      "Test button in the settings"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {"kind": "display", "file": "preview-display.svg", "page": 0, "caption": {"de": "Überwachung (Bento)", "en": "Monitoring (Bento)"}},
+    {"kind": "display", "file": "preview-display-flat.svg", "page": 0, "style": "flat", "caption": {"de": "Warnung (Slate)", "en": "Warning (Slate)"}},
+    {"kind": "widget", "file": "preview-widget.svg", "caption": {"de": "Widget im Dashboard", "en": "Widget on the dashboard"}}
+  ]
+}

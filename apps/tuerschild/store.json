@@ -1,0 +1,68 @@
+{
+  "category": "organize",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Zeigt vor dem Zimmer: frei, im Meeting oder bitte nicht stören",
+    "en": "Shows outside the room: free, in a meeting or do not disturb"
+  },
+  "description": {
+    "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Bento-Karte, Vollfläche in Ampelfarben, schlicht.",
+    "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Bento card, full-colour traffic light, plain."
+  },
+  "features": {
+    "de": [
+      "Status aus dem Mac-Kalender, automatisch",
+      "Handy-Seite mit Schnellwahl",
+      "Endzeit und „Danach“-Zeile",
+      "Läuft von selbst ab",
+      "Drei Stile und Widget"
+    ],
+    "en": [
+      "Status from the Mac calendar, automatic",
+      "Phone page with quick buttons",
+      "End time and “Next” line",
+      "Expires on its own",
+      "Three styles and a widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Bento",
+        "en": "Bento"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "style": "flat",
+      "caption": {
+        "de": "Slate in Ampelfarbe",
+        "en": "Slate in traffic-light colour"
+      },
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "style": "compact",
+      "caption": {
+        "de": "Nano",
+        "en": "Nano"
+      },
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget im Dashboard",
+        "en": "Widget on the dashboard"
+      }
+    }
+  ]
+}

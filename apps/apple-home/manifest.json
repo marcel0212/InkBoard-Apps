@@ -1,0 +1,206 @@
+{
+  "id": "apple-home",
+  "name": {
+    "de": "Apple Home",
+    "en": "Apple Home"
+  },
+  "version": "1.4.0",
+  "apiLevel": 23,
+  "pages": [
+    {
+      "de": "Seite 1",
+      "en": "Page 1",
+      "ownDate": true
+    },
+    {
+      "de": "Seite 2",
+      "en": "Page 2",
+      "ownDate": true
+    },
+    {
+      "de": "Seite 3",
+      "en": "Page 3",
+      "ownDate": true
+    },
+    {
+      "de": "Seite 4",
+      "en": "Page 4",
+      "ownDate": true
+    },
+    {
+      "de": "Seite 5",
+      "en": "Page 5",
+      "ownDate": true
+    },
+    {
+      "de": "Seite 6",
+      "en": "Page 6",
+      "ownDate": true
+    }
+  ],
+  "refreshMinutes": 5,
+  "cycleFetch": true,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 150
+  },
+  "http": {
+    "api": true
+  },
+  "sections": [
+    {
+      "id": "data",
+      "title": {
+        "de": "Werte aus Apple Home",
+        "en": "Values from Apple Home"
+      },
+      "help": {
+        "de": "NUR MIT DER iPHONE-/iPAD-APP NUTZBAR: Apple Home (HomeKit) lässt sich nur von Apple-Geräten lesen. Deshalb liest die iOS-/iPadOS-App (Werkzeug „Apple Home“ im Reiter Werkzeuge) deine Zubehörwerte und schickt sie an dieses Gerät: von Hand mit „Jetzt senden“, nach dem Öffnen der App und in regelmäßigen Abständen, solange sie läuft (im Hintergrund nur, wenn iOS es erlaubt). Die Werte bleiben auf dem Display, bis neue kommen; das Alter steht oben rechts.",
+        "en": "ONLY USABLE WITH THE iPHONE/iPAD APP: Apple Home (HomeKit) can only be read from Apple devices. The iOS/iPadOS app (tool “Apple Home” under Tools) therefore reads your accessory values and sends them to this device: by hand with “Send now”, when the app opens and at regular intervals while it runs (in the background only when iOS allows it). The values stay on the display until new ones arrive; their age is shown at the top right."
+      },
+      "helpTitle": {
+        "de": "Wie kommen die Werte aufs Display?",
+        "en": "How do the values reach the display?"
+      }
+    },
+    {
+      "id": "nas",
+      "title": {
+        "de": "Von unterwegs",
+        "en": "From anywhere"
+      },
+      "help": {
+        "de": "Ist ein externer Speicher eingerichtet (Einstellungen → Speicher bzw. App-Speicher; FTP, WebDAV oder Google Drive), legt die iOS-App die Werte zusätzlich als Datei home.txt in dem hier gewählten Ordner ab, und dieses Gerät holt sie bei jedem planmäßigen Abruf dort ab (Aufwachen, Dashboard-Aktualisierung, solange die App oder ein Widget auf dem Dashboard liegt). So erreichen die Werte das Display auch, wenn das iPhone nicht im Heim-WLAN ist. In der iOS-App den Speicher unter „Apple Home“ → „Externer Speicher (von unterwegs)“ einrichten (unabhängig von der Einkaufsliste; die Daten lassen sich dort vom InkBoard übernehmen) und denselben Ordner eintragen.",
+        "en": "If external storage is set up (Settings → Storage or App storage; FTP, WebDAV or Google Drive), the iOS app also puts the values into a file home.txt in the folder chosen here, and this device picks it up on every scheduled fetch (wake-up, dashboard refresh, as long as the app or a widget is on the dashboard). The values then reach the display even when the iPhone is not on the home Wi-Fi. Set up the storage in the iOS app under “Apple Home” → “External storage (from anywhere)” (independent of the shopping list; the data can be taken over from the InkBoard) and enter the same folder."
+      },
+      "helpTitle": {
+        "de": "Wie funktioniert das von unterwegs?",
+        "en": "How does this work away from home?"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "apple",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "apple",
+      "optionLabels": {
+        "de": {
+          "apple": "Apple (Symbole)",
+          "cards": "Bento (Kacheln)",
+          "flat": "Slate (zwei Spalten)",
+          "compact": "Nano (Liste)"
+        },
+        "en": {
+          "apple": "Apple (icons)",
+          "cards": "Bento (tiles)",
+          "flat": "Slate (two columns)",
+          "compact": "Nano (list)"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    },
+    {
+      "key": "grouping",
+      "type": "select",
+      "options": [
+        "rooms",
+        "blocks"
+      ],
+      "default": "rooms",
+      "optionLabels": {
+        "de": {
+          "rooms": "Ein Raum je Seite",
+          "blocks": "Je 8 Werte pro Seite"
+        },
+        "en": {
+          "rooms": "One room per page",
+          "blocks": "8 values per page"
+        }
+      },
+      "label": {
+        "de": "Seiten einteilen",
+        "en": "Page layout"
+      },
+      "help": {
+        "de": "Bei „Ein Raum je Seite“ steht der Raumname in der Kopfzeile; kleine Räume teilen sich eine Seite. Nicht gebrauchte Seiten lassen sich im Studio ausblenden.",
+        "en": "With “One room per page” the room name is shown in the header; small rooms share a page. Unused pages can be hidden in Studio."
+      }
+    },
+    {
+      "key": "staleMin",
+      "type": "number",
+      "min": 10,
+      "max": 1440,
+      "default": 90,
+      "label": {
+        "de": "Werte als veraltet markieren nach (Minuten)",
+        "en": "Mark values as outdated after (minutes)"
+      },
+      "section": "data"
+    },
+    {
+      "key": "pin",
+      "type": "text",
+      "maxLen": 120,
+      "default": "",
+      "label": {
+        "de": "Im Widget zeigen (Namen, mit Komma getrennt)",
+        "en": "Show in the widget (names, comma separated)"
+      },
+      "help": {
+        "de": "Zum Beispiel: Wohnzimmer, Haustür, Flurlicht. Leer = die ersten Werte.",
+        "en": "For example: Living room, Front door, Hall light. Empty = the first values."
+      }
+    },
+    {
+      "key": "storageProfile",
+      "type": "select",
+      "options": [
+        "main",
+        "app"
+      ],
+      "default": "main",
+      "optionLabels": {
+        "de": {
+          "main": "Hauptspeicher",
+          "app": "App-Speicher (getrennt)"
+        },
+        "en": {
+          "main": "Main storage",
+          "app": "App storage (separate)"
+        }
+      },
+      "label": {
+        "de": "Speicher",
+        "en": "Storage"
+      },
+      "section": "nas"
+    },
+    {
+      "key": "dir",
+      "type": "storagePath",
+      "default": "/inkboard/home",
+      "label": {
+        "de": "Ordner auf dem externen Speicher",
+        "en": "Folder on the external storage"
+      },
+      "help": {
+        "de": "In der iOS-App denselben Ordner eintragen.",
+        "en": "Enter the same folder in the iOS app."
+      },
+      "section": "nas"
+    }
+  ],
+  "fetchAnywhere": true
+}

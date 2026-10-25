@@ -222,7 +222,7 @@ local function focusModel(ctx, now, lt)
   m.unit = "min"
   m.sub = tx(ctx, "Fertig um ", "Done at ") .. endClock(ctx, lt, st.rem)
   m.sub2 = todayTxt
-  m.hint = tx(ctx, "2x Klick: Fokus beenden", "Double click: stop focus")
+  m.hint = tx(ctx, "Klick, 2. Klick binnen 3 s: beenden", "Click, 2nd click within 3 s: stop")
   if st.kind == "work" then
     m.label = tx(ctx, "Fokus - Runde ", "Focus - round ") .. st.round .. "/" .. st.rounds
     m.short = tx(ctx, "Fokus ", "Focus ") .. m.big .. " min"

@@ -1,0 +1,78 @@
+{
+  "id": "tuerschild",
+  "name": {"de": "Türschild", "en": "Door sign"},
+  "version": "1.0.0",
+  "apiLevel": 20,
+  "pages": [
+    {"de": "Status", "en": "Status"}
+  ],
+  "refreshMinutes": 5,
+  "cycleFetch": true,
+  "widget": {"autoCompact": true, "w": 320, "h": 130},
+  "http": {"page": "assets/phone.html", "api": true},
+  "sections": [
+    {
+      "id": "sign",
+      "title": {"de": "Anzeige", "en": "Display"},
+      "help": {
+        "de": "Der Status kommt von außen: aus der Mac-App (Werkzeug „Türschild“ liest deinen Kalender und schickt den laufenden Termin), von der Handy-Seite des Geräts (QR-Code beim ersten Start) oder von jedem Programm, das eine Anfrage an die Adresse des Geräts senden kann. Ein Status mit Endzeit läuft von selbst ab, danach gilt der Rückfall.",
+        "en": "The status comes from outside: from the Mac app (the “Door sign” tool reads your calendar and sends the current event), from the device's phone page (QR code on first start) or from any program that can send a request to the device. A status with an end time expires on its own and the fallback applies."
+      },
+      "helpTitle": {"de": "Woher kommt der Status?", "en": "Where does the status come from?"}
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": ["cards", "flat", "compact"],
+      "default": "cards",
+      "optionLabels": {
+        "de": {"cards": "Bento", "flat": "Slate (Vollfläche)", "compact": "Nano"},
+        "en": {"cards": "Bento", "flat": "Slate (full colour)", "compact": "Nano"}
+      },
+      "label": {"de": "Stil", "en": "Style"}
+    },
+    {
+      "key": "name",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {"de": "Name am Schild", "en": "Name on the sign"},
+      "section": "sign"
+    },
+    {
+      "key": "showName",
+      "type": "toggle",
+      "default": true,
+      "label": {"de": "Namen anzeigen", "en": "Show name"},
+      "section": "sign"
+    },
+    {
+      "key": "showUntil",
+      "type": "toggle",
+      "default": true,
+      "label": {"de": "Endzeit anzeigen („bis 14:30“)", "en": "Show end time (“until 14:30”)"},
+      "section": "sign"
+    },
+    {
+      "key": "fallback",
+      "type": "select",
+      "options": ["free", "away", "none"],
+      "default": "free",
+      "optionLabels": {
+        "de": {"free": "Frei", "away": "Nicht da", "none": "Kein Status"},
+        "en": {"free": "Free", "away": "Away", "none": "No status"}
+      },
+      "label": {"de": "Wenn nichts gesetzt ist oder der Status abläuft", "en": "When nothing is set or the status expires"},
+      "section": "sign"
+    },
+    {
+      "key": "setupHint",
+      "type": "toggle",
+      "default": true,
+      "label": {"de": "Vor dem ersten Status den QR-Code zur Einrichtung zeigen", "en": "Show the setup QR code before the first status"},
+      "section": "sign"
+    }
+  ]
+}

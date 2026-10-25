@@ -1,0 +1,477 @@
+{
+  "id": "datenquelle",
+  "name": {
+    "de": "Eigene Daten",
+    "en": "Custom data"
+  },
+  "version": "1.0.0",
+  "apiLevel": 20,
+  "pages": [
+    {
+      "de": "Daten",
+      "en": "Data"
+    }
+  ],
+  "refreshMinutes": 15,
+  "cycleFetch": true,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 140
+  },
+  "http": {
+    "api": true
+  },
+  "permissions": {
+    "netFrom": [
+      "url"
+    ]
+  },
+  "sections": [
+    {
+      "id": "source",
+      "title": {
+        "de": "Datenquelle",
+        "en": "Data source"
+      },
+      "help": {
+        "de": "1. Wähle, ob das Gerät eine Adresse abfragt oder ein Programm Daten schickt (Webhook). 2. Trage unter „Werte“ ab, wo im JSON die Zahl steht: Pfad mit Punkten, Zählung ab 0, z. B. main.temp oder data.0.price. 3. Wähle eine Vorlage. Die Antwort darf höchstens 24 KB groß sein. Webhook: POST an die Adresse des Geräts mit /app/datenquelle/api, Header X-Requested-With: InkBoardStudio, Body = JSON.",
+        "en": "1. Choose whether the device polls an address or a program sends data (webhook). 2. Under “Values” enter where the number is in the JSON: path with dots, counting from 0, e.g. main.temp or data.0.price. 3. Choose a template. The response may be at most 24 KB. Webhook: POST to the device address with /app/datenquelle/api, header X-Requested-With: InkBoardStudio, body = JSON."
+      },
+      "helpTitle": {
+        "de": "So geht’s",
+        "en": "How it works"
+      }
+    },
+    {
+      "id": "values",
+      "title": {
+        "de": "Werte und Vorlage",
+        "en": "Values and template"
+      }
+    },
+    {
+      "id": "signal",
+      "title": {
+        "de": "Ampel",
+        "en": "Traffic light"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "list",
+      "title": {
+        "de": "Liste",
+        "en": "List"
+      },
+      "collapsed": true
+    },
+    {
+      "id": "text",
+      "title": {
+        "de": "Satz",
+        "en": "Sentence"
+      },
+      "collapsed": true
+    }
+  ],
+  "settings": [
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "cards",
+      "optionLabels": {
+        "de": {
+          "cards": "Bento",
+          "flat": "Slate (Kopfband)",
+          "compact": "Nano"
+        },
+        "en": {
+          "cards": "Bento",
+          "flat": "Slate (header band)",
+          "compact": "Nano"
+        }
+      },
+      "label": {
+        "de": "Stil",
+        "en": "Style"
+      }
+    },
+    {
+      "key": "title",
+      "type": "text",
+      "maxLen": 40,
+      "default": "",
+      "label": {
+        "de": "Titel der Seite",
+        "en": "Page title"
+      },
+      "section": "source"
+    },
+    {
+      "key": "mode",
+      "type": "select",
+      "options": [
+        "poll",
+        "push"
+      ],
+      "default": "poll",
+      "optionLabels": {
+        "de": {
+          "poll": "Gerät fragt regelmäßig ab",
+          "push": "Webhook: ein Programm schickt Daten"
+        },
+        "en": {
+          "poll": "Device polls regularly",
+          "push": "Webhook: a program sends data"
+        }
+      },
+      "label": {
+        "de": "Datenquelle",
+        "en": "Data source"
+      },
+      "section": "source"
+    },
+    {
+      "key": "url",
+      "type": "url",
+      "label": {
+        "de": "Adresse (liefert JSON)",
+        "en": "Address (returns JSON)"
+      },
+      "section": "source",
+      "showIf": {
+        "key": "mode",
+        "in": [
+          "poll"
+        ]
+      },
+      "help": {
+        "de": "Eine Adresse, die JSON liefert, z. B. eine Wetter-, Pegel- oder Preis-Schnittstelle oder ein Skript in deinem Netzwerk (auch http und eigener Port). Der Schlüssel gehört ins Feld „Zugangstoken“, nie in die Adresse.",
+        "en": "An address that returns JSON, e.g. a weather, water-level or price API or a script in your network (http and own port allowed). Put keys in the “Access token” field, never in the address."
+      }
+    },
+    {
+      "key": "token",
+      "type": "password",
+      "maxLen": 200,
+      "label": {
+        "de": "Zugangstoken (optional, als Bearer)",
+        "en": "Access token (optional, as Bearer)"
+      },
+      "section": "source",
+      "showIf": {
+        "key": "mode",
+        "in": [
+          "poll"
+        ]
+      }
+    },
+    {
+      "key": "template",
+      "type": "select",
+      "options": [
+        "tiles",
+        "big",
+        "signal",
+        "list",
+        "text"
+      ],
+      "default": "tiles",
+      "optionLabels": {
+        "de": {
+          "tiles": "Kacheln (bis 4 Werte)",
+          "big": "Ein großer Wert + Nebenwerte",
+          "signal": "Ampel mit Wert",
+          "list": "Liste aus einem JSON-Array",
+          "text": "Satz mit Platzhaltern"
+        },
+        "en": {
+          "tiles": "Tiles (up to 4 values)",
+          "big": "One big value + side values",
+          "signal": "Traffic light with value",
+          "list": "List from a JSON array",
+          "text": "Sentence with placeholders"
+        }
+      },
+      "label": {
+        "de": "Vorlage",
+        "en": "Template"
+      },
+      "section": "values"
+    },
+    {
+      "key": "l1",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Wert 1: Beschriftung",
+        "en": "Value 1: label"
+      },
+      "section": "values",
+      "group": {
+        "de": "Wert 1",
+        "en": "Value 1"
+      }
+    },
+    {
+      "key": "p1",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Wert 1: Pfad im JSON (z. B. main.temp)",
+        "en": "Value 1: path in the JSON (e.g. main.temp)"
+      },
+      "section": "values"
+    },
+    {
+      "key": "u1",
+      "type": "text",
+      "maxLen": 8,
+      "default": "",
+      "label": {
+        "de": "Wert 1: Einheit",
+        "en": "Value 1: unit"
+      },
+      "section": "values"
+    },
+    {
+      "key": "l2",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Wert 2: Beschriftung",
+        "en": "Value 2: label"
+      },
+      "section": "values",
+      "group": {
+        "de": "Wert 2",
+        "en": "Value 2"
+      }
+    },
+    {
+      "key": "p2",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Wert 2: Pfad im JSON (z. B. main.temp)",
+        "en": "Value 2: path in the JSON (e.g. main.temp)"
+      },
+      "section": "values"
+    },
+    {
+      "key": "u2",
+      "type": "text",
+      "maxLen": 8,
+      "default": "",
+      "label": {
+        "de": "Wert 2: Einheit",
+        "en": "Value 2: unit"
+      },
+      "section": "values"
+    },
+    {
+      "key": "l3",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Wert 3: Beschriftung",
+        "en": "Value 3: label"
+      },
+      "section": "values",
+      "group": {
+        "de": "Wert 3",
+        "en": "Value 3"
+      }
+    },
+    {
+      "key": "p3",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Wert 3: Pfad im JSON (z. B. main.temp)",
+        "en": "Value 3: path in the JSON (e.g. main.temp)"
+      },
+      "section": "values"
+    },
+    {
+      "key": "u3",
+      "type": "text",
+      "maxLen": 8,
+      "default": "",
+      "label": {
+        "de": "Wert 3: Einheit",
+        "en": "Value 3: unit"
+      },
+      "section": "values"
+    },
+    {
+      "key": "l4",
+      "type": "text",
+      "maxLen": 24,
+      "default": "",
+      "label": {
+        "de": "Wert 4: Beschriftung",
+        "en": "Value 4: label"
+      },
+      "section": "values",
+      "group": {
+        "de": "Wert 4",
+        "en": "Value 4"
+      }
+    },
+    {
+      "key": "p4",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Wert 4: Pfad im JSON (z. B. main.temp)",
+        "en": "Value 4: path in the JSON (e.g. main.temp)"
+      },
+      "section": "values"
+    },
+    {
+      "key": "u4",
+      "type": "text",
+      "maxLen": 8,
+      "default": "",
+      "label": {
+        "de": "Wert 4: Einheit",
+        "en": "Value 4: unit"
+      },
+      "section": "values"
+    },
+    {
+      "key": "decimals",
+      "type": "number",
+      "min": 0,
+      "max": 3,
+      "default": 1,
+      "label": {
+        "de": "Nachkommastellen",
+        "en": "Decimal places"
+      },
+      "section": "values"
+    },
+    {
+      "key": "dir",
+      "type": "select",
+      "options": [
+        "above",
+        "below"
+      ],
+      "default": "above",
+      "optionLabels": {
+        "de": {
+          "above": "Ab dem Wert (zu hoch ist schlecht)",
+          "below": "Bis zum Wert (zu niedrig ist schlecht)"
+        },
+        "en": {
+          "above": "From the value up (too high is bad)",
+          "below": "Up to the value (too low is bad)"
+        }
+      },
+      "label": {
+        "de": "Ampel für Wert 1",
+        "en": "Traffic light for value 1"
+      },
+      "section": "signal"
+    },
+    {
+      "key": "warn",
+      "type": "number",
+      "min": -100000,
+      "max": 100000,
+      "default": 0,
+      "label": {
+        "de": "Gelb bei (0 = aus)",
+        "en": "Yellow at (0 = off)"
+      },
+      "section": "signal"
+    },
+    {
+      "key": "alarm",
+      "type": "number",
+      "min": -100000,
+      "max": 100000,
+      "default": 0,
+      "label": {
+        "de": "Rot bei (0 = aus)",
+        "en": "Red at (0 = off)"
+      },
+      "section": "signal"
+    },
+    {
+      "key": "listPath",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Liste: Pfad zum Array (leer = oberste Ebene)",
+        "en": "List: path to the array (empty = top level)"
+      },
+      "section": "list"
+    },
+    {
+      "key": "listField",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Liste: Pfad zum Text im Eintrag",
+        "en": "List: path to the text in each item"
+      },
+      "section": "list"
+    },
+    {
+      "key": "listValue",
+      "type": "text",
+      "maxLen": 80,
+      "default": "",
+      "label": {
+        "de": "Liste: Pfad zum Wert rechts (optional)",
+        "en": "List: path to the value on the right (optional)"
+      },
+      "section": "list"
+    },
+    {
+      "key": "maxRows",
+      "type": "number",
+      "min": 1,
+      "max": 8,
+      "default": 6,
+      "label": {
+        "de": "Liste: Zeilen",
+        "en": "List: rows"
+      },
+      "section": "list"
+    },
+    {
+      "key": "textTpl",
+      "type": "text",
+      "maxLen": 160,
+      "default": "",
+      "label": {
+        "de": "Satz, z. B. Pegel {1} bei {2}",
+        "en": "Sentence, e.g. Level {1} at {2}"
+      },
+      "section": "text",
+      "help": {
+        "de": "{1} bis {4} sind die Werte (mit Einheit), {l1} bis {l4} die Beschriftungen.",
+        "en": "{1} to {4} are the values (with unit), {l1} to {l4} the labels."
+      }
+    }
+  ]
+}
