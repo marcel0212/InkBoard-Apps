@@ -189,14 +189,17 @@ local function glyph(it, x, y, s, ink)
     if w > s then w = s; h = fl(w / 4) * 2 end
     local px, py = fl(x + (s - w) / 2), fl(y + (s - h) / 2)
     local r = h // 2
-    if on then
-      draw.rect(px, py, w, h, ink, true, r)
-    else
-      draw.rect(px, py, w, h, ink, false, r)
-      draw.rect(px + 1, py + 1, w - 2, h - 2, ink, false, r - 1)
+    -- Pille aus zwei Kreisen und einem Rechteck (statt Rundrechteck mit Radius: das zeichnet das Display je nach Groesse unterschiedlich)
+    local function stadium(sx, sy, sw, sh, c)
+      local sr = sh // 2
+      draw.circle(sx + sr, sy + sr, sr, c, true)
+      draw.circle(sx + sw - sr - 1, sy + sr, sr, c, true)
+      draw.rect(sx + sr, sy, sw - 2 * sr, sh, c, true)
     end
+    stadium(px, py, w, h, ink)
+    if not on then stadium(px + 2, py + 2, w - 4, h - 4, color.WHITE) end
     local kr = r - (h >= 14 and 4 or 3)
-    local kx = on and (px + w - r) or (px + r)
+    local kx = on and (px + w - r - 1) or (px + r)
     draw.circle(kx, py + r, kr, on and color.WHITE or ink, true)
   elseif k == "group" then -- Gruppe: drei Kreise
     local r = s * 0.2
@@ -439,7 +442,7 @@ end
 
 function on_tab(ctx, page)
   local pg = pagePlan(ctx, load(ctx))[page]
-  if pg == nil then return "-" end
+  if pg == nil then return false end   -- ungenutzte Seite: kein Tab, wird beim Drehen uebersprungen
   if pg.label == "" then return tostring(page) end
   if pg.label:sub(1, #T(ctx, "Favoriten", "Favourites")) == T(ctx, "Favoriten", "Favourites") then return "F" end
   local first = (pg.label:match("^([^·(]+)") or pg.label):gsub("%s+$", "")
