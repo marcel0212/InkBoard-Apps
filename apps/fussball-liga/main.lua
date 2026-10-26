@@ -1214,7 +1214,72 @@ local function windowHint(d,cx,y,start,shown)
 if start == 0 and shown >= #d.tab then return end
 draw.text(cx,y,string.format(T("Plätze %d-%d von %d","Places %d-%d of %d"),start + 1,start + shown,#d.tab),"small",color.BLACK,"center")
 end
+local function wrapLines(s,width,font,maxLines)
+local lines,line = {},""
+for word in s:gmatch("%S+") do
+local try = line == "" and word or (line .. " " .. word)
+if line == "" or draw.measure(try,font) <= width then line = try
+else
+lines[#lines + 1] = line
+line = word
+if #lines == maxLines then break end
+end
+end
+if #lines < maxLines and line ~= "" then lines[#lines + 1] = line end
+return lines
+end
+local function tableTall(ctx,lg,d,top,font)
+if noTableNotice(lg) then return end
+local lh = font == "small" and 18 or 22
+local y = top + 2
+local cx = draw.width // 2
+local bottom = draw.height - 14
+local c = tableCols(d,font)
+headerRow(c,y + 12)
+y = y + 20
+local labelH = 20
+local nameX = 56 + 34 + 8
+local avail = c.nameRight - nameX
+local function rowInfo(r)
+local lines = wrapLines(r.name,avail,font,12)
+if #lines == 0 then lines = { "" } end
+return lines,math.max(lh + 8,#lines * lh + 8)
+end
+local room = bottom - y - 3 * labelH - 20
+local maxRows = math.max(1,room // (lh + 8))
+local start = windowStart(d,maxRows)
+local shown,used = 0,0
+while start + shown < #d.tab do
+local _,h = rowInfo(d.tab[start + shown + 1])
+if used + h > room and shown > 0 then break end
+used = used + h
+shown = shown + 1
+end
+for i,r in ipairs(d.tab) do
+if r.id == d.own.id and i > start + shown then start = math.max(0,math.min(i - shown,#d.tab - shown)) end
+end
+local prev,yy = -1,y
+for i = 1,shown do
+local r = d.tab[start + i]
+local lines,h = rowInfo(r)
+local z = zoneOf(lg,#d.tab,r.pos)
+if z ~= prev and z ~= 0 then
+draw.text(24,yy + 13,zoneLabel(lg,z),"small",zoneColor(z),"left")
+yy = yy + labelH
+end
+prev = z
+local base = yy + lh + 2
+if r.id == d.own.id then draw.rect(14,yy,draw.width - 28,h,color.BLACK,false,6) end
+draw.text(46,base,r.pos .. ".",font,color.BLACK,"right")
+badge(52,yy + 5,34,20,r.tla,r.col,7)
+for li,l in ipairs(lines) do draw.text(nameX,base + (li - 1) * lh,l,font,color.BLACK,"left") end
+rowNumbers(r,c,base,font)
+yy = yy + h
+end
+windowHint(d,cx,yy + 14,start,shown)
+end
 local function tableBento(ctx,lg,d,top)
+if draw.height > draw.width then return tableTall(ctx,lg,d,top,"normal") end
 if noTableNotice(lg) then return end
 local y = top + 2
 local cx = draw.width // 2
@@ -1247,6 +1312,7 @@ end
 windowHint(d,cx,yy + 12,start,shown)
 end
 local function tableSlate(ctx,lg,d,top)
+if draw.height > draw.width then return tableTall(ctx,lg,d,top,"normal") end
 if noTableNotice(lg) then return end
 local y = top + 4
 local cx = draw.width // 2
@@ -1285,6 +1351,7 @@ end
 windowHint(d,cx,legendY,start,shown)
 end
 local function tableNano(ctx,lg,d,top)
+if draw.height > draw.width then return tableTall(ctx,lg,d,top,"small") end
 if noTableNotice(lg) then return end
 local y = top + 2
 local cx = draw.width // 2

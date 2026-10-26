@@ -4,7 +4,7 @@
     "de": "Gericht des Tages",
     "en": "Meal of the day"
   },
-  "version": "1.1.10",
+  "version": "1.1.11",
   "apiLevel": 10,
   "pages": [
     {

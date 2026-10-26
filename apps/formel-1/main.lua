@@ -951,9 +951,16 @@ local bottom = draw.height - 14
 local W = draw.width
 local cx = W // 2
 local ci = CIRCUITS[n.cid]
-draw.text(cx,y + 44,fit(gpName(n.cid,n.name),W - 48,"large"),"large",color.BLACK,"center")
+local tallH = draw.height > draw.width
+local function centered(yy,str,font,lh)
+if not tallH then draw.text(cx,yy,fit(str,W - 48,font),font,color.BLACK,"center"); return 0 end
+local ls = wrapLines(str,W - 48,font,4)
+for i,l in ipairs(ls) do draw.text(cx,yy + (i - 1) * lh,l,font,color.BLACK,"center") end
+return (#ls - 1) * lh
+end
+y = y + centered(y + 44,gpName(n.cid,n.name),"large",34)
 local info = string.format(T("Runde %d/%d · %s · %s, %s","Round %d/%d · %s · %s, %s"),n.round,total,n.circuit,n.loc,n.country)
-draw.text(cx,y + 74,fit(info,W - 48,"normal"),"normal",color.BLACK,"center")
+y = y + centered(y + 74,info,"normal",24)
 if ci then
 local s
 if ci.rec then
@@ -961,7 +968,7 @@ s = string.format(T("%s · %d Runden · %d Kurven · Rekord %s","%s · %d laps �
 else
 s = statLine(ci,true)
 end
-draw.text(cx,y + 98,fit(s,W - 48,"small"),"small",color.BLACK,"center")
+y = y + centered(y + 98,s,"small",18)
 end
 draw.text(cx,y + 128,raceLine(n),"normal",color.BLACK,"center")
 local cd = countdown(n.start,true)
@@ -976,7 +983,7 @@ if tallS then
 draw.line(40,bottom - footH + 8,W - 40,bottom - footH + 8,color.BLACK)
 for i,s in ipairs(sessL) do
 local t = lab(SES_LABEL,s.t)
-draw.text(48,bottom - footH + 8 + i * 24,fit(t,200,"small"),"small",color.BLACK,"left")
+draw.text(48,bottom - footH + 8 + i * 24,t,"small",color.BLACK,"left")
 draw.text(W - 48,bottom - footH + 8 + i * 24,fmtDate(s.s) .. "  " .. fmtTime(s.s),"small",color.BLACK,"right")
 end
 return
@@ -996,11 +1003,16 @@ local ci = CIRCUITS[n.cid]
 local rd = string.format(T("Lauf %d/%d","Rd %d/%d"),n.round,total)
 local rdW = draw.measure(rd,"normal")
 draw.text(rightX,y + 22,rd,"normal",color.BLACK,"right")
-draw.text(leftX,y + 22,fit(gpName(n.cid,n.name),rightX - rdW - 16 - leftX,"normal"),"normal",color.BLACK,"left")
+local tallN = draw.height > draw.width
+local nl = tallN and wrapLines(gpName(n.cid,n.name),rightX - rdW - 16 - leftX,"normal",4) or { fit(gpName(n.cid,n.name),rightX - rdW - 16 - leftX,"normal") }
+for i,l in ipairs(nl) do draw.text(leftX,y + 22 + (i - 1) * 24,l,"normal",color.BLACK,"left") end
+y = y + (#nl - 1) * 24
 local right = ci and statLine(ci,false) or ""
 local rW = draw.measure(right,"small")
 draw.text(rightX,y + 48,right,"small",color.BLACK,"right")
-draw.text(leftX,y + 48,fit(n.circuit .. ", " .. n.country,rightX - rW - 16 - leftX,"small"),"small",color.BLACK,"left")
+local cl = tallN and wrapLines(n.circuit .. ", " .. n.country,rightX - rW - 16 - leftX,"small",4) or { fit(n.circuit .. ", " .. n.country,rightX - rW - 16 - leftX,"small") }
+for i,l in ipairs(cl) do draw.text(leftX,y + 48 + (i - 1) * 18,l,"small",color.BLACK,"left") end
+y = y + (#cl - 1) * 18
 if ci and ci.rec then
 draw.text(leftX,y + 70,string.format(T("Rundenrekord %s","Lap record %s"),dsp(ci.rec)),"small",color.BLACK,"left")
 end

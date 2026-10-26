@@ -541,12 +541,31 @@ local y = draw.top + 10
 local nxt = events[1]
 local col = KIND[nxt.kind][1]
 local ht = (en and "Next collection: " or "Nächste Abfuhr: ") .. eventName(nxt,en)
-draw.text(margin,y + 30,ht,(draw.measure(ht,"large") <= W - 2 * margin) and "large" or "medium",color.BLACK,"left")
+local tall = draw.height > draw.width
+local hf = (draw.measure(ht,"large") <= W - 2 * margin) and "large" or "medium"
+local hl = tall and wrapLines(ht,W - 2 * margin,hf,4) or { ht }
+for i,l in ipairs(hl) do draw.text(margin,y + 30 + (i - 1) * 34,l,hf,color.BLACK,"left") end
+y = y + (#hl - 1) * 34
 draw.text(margin,y + 56,relText(nxt.day,today,en) .. " - " .. dayText(nxt.day,en),"normal",color.BLACK,"left")
 local barY = y + 70
 draw.rect(margin,barY,W - 2 * margin,3,col,true)
 local ly = barY + 34
 local rowH = 32
+if tall then
+for i = 2,#events do
+local e = events[i]
+local relS = relText(e.day,today,en)
+local tl = wrapLines(dayText(e.day,en) .. " - " .. eventName(e,en),W - 2 * margin - 22 - draw.measure(relS,"normal") - 12,"normal",4)
+local h = #tl * 26 + 10
+if ly - 12 + h > draw.height - 16 and i > 2 then break end
+draw.rect(margin,ly - 12,12,12,KIND[e.kind][1],true)
+for li,l in ipairs(tl) do draw.text(margin + 22,ly + (li - 1) * 26,l,"normal",color.BLACK,"left") end
+draw.text(W - margin,ly,relS,"normal",color.BLACK,"right")
+ly = ly + h
+draw.line(margin,ly - 24,W - margin,ly - 24,color.BLACK)
+end
+return
+end
 local shown = math.min(#events - 1,6,(draw.height - 16 - ly) // rowH + 1)
 for i = 1,shown do
 local e = events[i + 1]

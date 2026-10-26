@@ -147,26 +147,55 @@ local function emptyState(n, en, y)
 end
 
 -- Bento: grosses Cover mit Steuer-Kacheln links, Titel/Status/Fortschritt in Karten rechts
+-- Hochformat: Texte umbrechen statt abkuerzen (die Karten wachsen, das Cover schrumpft entsprechend)
+local function wrapN(s, w, font, n)
+  local ls, l = {}, ""
+  for word in s:gmatch("%S+") do
+    local t = l == "" and word or (l .. " " .. word)
+    if l == "" or draw.measure(t, font) <= w then l = t
+    elseif #ls + 1 < n then ls[#ls + 1] = l; l = word
+    else l = t end
+  end
+  ls[#ls + 1] = fit(l, w, font)
+  return ls
+end
+
+local function titleBlock(title, w)
+  for _, f in ipairs({ "large", "medium" }) do
+    if draw.measure(title, f) <= w then return f, { title } end
+  end
+  return "normal", wrapN(title, w, "normal", 4)
+end
+
+local function putLines(x, y, ls, font, lh, align)
+  for i, l in ipairs(ls) do draw.text(x, y + (i - 1) * lh, l, font, color.BLACK, align or "left") end
+end
+
 -- CHANGELOG 932: Hochformat (480x800) - Cover oben mittig, darunter Karten untereinander
 local function drawCardsTall(n, en, topY)
   local accent, onAccent = color.ACCENT, color.ACCENT_INK
   local W = draw.width
   local margin, cardR = 20, 16
   local cw = W - 2 * margin
-  local coverPx = 300
+  local tf, tl = titleBlock(n.title, cw - 40)
+  local al = wrapN(n.artist, cw - 40, "normal", 3)
+  local alb = wrapN(n.album, 272, "normal", 3)
+  local xt = (#tl - 1) * 24 + (#al - 1) * 24
+  local xa = (#alb - 1) * 22
+  local coverPx = math.max(140, 300 - xt - xa)
   local coverX = (W - coverPx) // 2
   cover(coverX, topY, coverPx, true, en)
-  local pillH = 38
+  local pillH = 38 + xa
   local pillY = topY + coverPx + 12
-  draw.rect(coverX, pillY, coverPx, pillH, color.BLACK, false, pillH // 2)
-  draw.text(W // 2, pillY + pillH - 12, fit(n.album, coverPx - 28, "normal"), "normal", color.BLACK, "center")
+  draw.rect((W - 300) // 2, pillY, 300, pillH, color.BLACK, false, 19)
+  putLines(W // 2, pillY + 26, alb, "normal", 22, "center")
 
   local y = pillY + pillH + 14
-  local card1H = 118
+  local card1H = 118 + xt
   draw.rect(margin, y, cw, card1H, color.BLACK, false, cardR)
   spaced(margin + 20, y + 26, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
-  titleFit(n.title, margin + 20, y + 66, cw - 40)
-  draw.text(margin + 20, y + 94, fit(n.artist, cw - 40, "normal"), "normal", color.BLACK, "left")
+  putLines(margin + 20, y + 66, tl, tf, 24)
+  putLines(margin + 20, y + 94 + (#tl - 1) * 24, al, "normal", 24)
 
   y = y + card1H + 12
   local row2H, gap2 = 62, 12
@@ -304,16 +333,22 @@ local function drawFlat(n, en, topY)
   local accent = color.ACCENT
   if draw.height > draw.width then
     local W = draw.width
-    local coverPx = 300
+    local x0, x1 = 24, W - 24
+    local tf, tl = titleBlock(n.title, x1 - x0)
+    local al = wrapN(n.artist, x1 - x0, "normal", 3)
+    local alb = wrapN(n.album, W - 60, "normal", 3)
+    local xt = (#tl - 1) * 24 + (#al - 1) * 24
+    local xa = (#alb - 1) * 22
+    local coverPx = math.max(140, 300 - xt - xa)
     local coverX = (W - coverPx) // 2
     cover(coverX, topY + 10, coverPx, false, en)
-    draw.text(W // 2, topY + 10 + coverPx + 28, fit(n.album, W - 60, "normal"), "normal", color.BLACK, "center")
-    local x0, x1 = 24, W - 24
-    local y = topY + 10 + coverPx + 50
+    putLines(W // 2, topY + 10 + coverPx + 28, alb, "normal", 22, "center")
+    local y = topY + 10 + coverPx + 50 + xa
     draw.line(x0, y, x1, y, color.BLACK)
     spaced(x0, y + 34, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
-    titleFit(n.title, x0, y + 78, x1 - x0)
-    draw.text(x0, y + 108, fit(n.artist, x1 - x0, "normal"), "normal", color.BLACK, "left")
+    putLines(x0, y + 78, tl, tf, 24)
+    putLines(x0, y + 108 + (#tl - 1) * 24, al, "normal", 24)
+    y = y + (#tl - 1) * 24 + (#al - 1) * 24
     draw.line(x0, y + 128, x1, y + 128, color.BLACK)
     draw.circle(x0 + 5, y + 156, 5, n.playing and accent or color.BLACK, true)
     draw.text(x0 + 18, y + 160, statusText(n, en), "normal", color.BLACK, "left")
@@ -376,12 +411,20 @@ local function drawCompact(n, en, topY)
   local accent = color.ACCENT
   local tall = draw.height > draw.width
   local coverPx = tall and 190 or 132
+  local labelX, valueX = 16, 170
+  local lineRight = tall and (draw.width - 16) or (draw.width - 16 - coverPx - 16)
+  local maxValueW = lineRight - valueX
+  local wrapped = {} -- Hochformat: Titel/Interpret/Album umbrechen, Zeilen wachsen, Cover schrumpft
+  local xtra = 0
+  if tall then
+    for i, t in ipairs({ n.title, n.artist, n.album }) do
+      wrapped[i] = wrapN(t, maxValueW, "normal", 3)
+      xtra = xtra + (#wrapped[i] - 1) * 22
+    end
+    coverPx = math.max(90, coverPx - xtra)
+  end
   local coverX = tall and (draw.width - coverPx) // 2 or (draw.width - 16 - coverPx)
   cover(coverX, topY, coverPx, true, en)
-
-  local lineRight = tall and (draw.width - 16) or (coverX - 16)
-  local labelX, valueX = 16, 170
-  local maxValueW = lineRight - valueX
   local rowH = tall and 52 or 44
   local rowTop0 = topY + (tall and coverPx + 24 or 20)
 
@@ -396,19 +439,24 @@ local function drawCompact(n, en, topY)
     fit(n.title, maxValueW, "normal"), fit(n.artist, maxValueW, "normal"), fit(n.album, maxValueW, "normal"),
     statusText(n, en), fmtMs(p) .. " / " .. fmtMs(d), fmtMs(remain) .. (en and " min" or " Min."), pct .. " %",
   }
+  local rowTop = rowTop0
   for i = 1, 7 do
-    local rowTop = rowTop0 + (i - 1) * rowH
+    local wl = wrapped[i]
+    local rh = rowH + (wl and (#wl - 1) * 22 or 0)
     spaced(labelX, rowTop + 24, labels[i], "small", color.BLACK, 2)
     if i == 4 then
       draw.circle(valueX + 4, rowTop + 22, 4, n.playing and accent or color.BLACK, true)
       draw.text(valueX + 16, rowTop + 27, values[i], "normal", color.BLACK, "left")
+    elseif wl then
+      putLines(valueX, rowTop + 27, wl, "normal", 22)
     else
       draw.text(valueX, rowTop + 27, values[i], "normal", color.BLACK, "left")
     end
-    draw.line(labelX, rowTop + rowH - 6, lineRight, rowTop + rowH - 6, color.BLACK)
+    draw.line(labelX, rowTop + rh - 6, lineRight, rowTop + rh - 6, color.BLACK)
+    rowTop = rowTop + rh
   end
 
-  local footerY = rowTop0 + 7 * rowH + 16
+  local footerY = rowTop + 16
   local pillW, pillH = 90, 40
   local pillX = draw.width - 16 - pillW
   if tall then footerY = footerY + 14 end

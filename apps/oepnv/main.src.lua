@@ -1283,12 +1283,58 @@ local function depsCards(top, d, prov)
   footer(drawnT, #groups, "Linien", "lines", prov)
 end
 
+-- Hochformat: Woerter umbrechen statt abkuerzen
+local function wrapWords(s, w, font, n)
+  local ls, l = {}, ""
+  for word in s:gmatch("%S+") do
+    local t = l == "" and word or (l .. " " .. word)
+    if l == "" or draw.measure(t, font) <= w then l = t
+    elseif #ls + 1 < n then ls[#ls + 1] = l; l = word
+    else l = t end
+  end
+  ls[#ls + 1] = fit(l, w, font)
+  return ls
+end
+
+-- Hochformat (Flat/Nano): Ziel umbrechen statt abkuerzen, Zeilen wachsen mit
+local function tallDeps(ct, d, prov, cp)
+  local re, rowH, lh = SW - MX, cp and 40 or 76, cp and 22 or 26
+  local f, dx = cp and "normal" or "medium", cp and 74 or 180
+  local ry, shown = ct, 0
+  for i, x in ipairs(d.list) do
+    local ls = wrapWords(x.dest, cp and re - 304 or re - dx, f, 5)
+    local ex = (#ls - 1) * lh
+    if ry + rowH + ex > SB and i > 1 then break end
+    if cp or i > 1 then hline(MX, ry, re - MX) end
+    local le = leave(x.when)
+    local base = ry + (cp and 24 or 34)
+    for li, l in ipairs(ls) do draw.text(dx, base + (li - 1) * lh, l, f, color.BLACK) end
+    local dc = x.delay > 0 and color.RED or color.GREEN
+    if cp then
+      badge(MX, ry + 8, x.line, x.mode, false)
+      textR(re - 168, base, clock(le), "normal")
+      if x.delay ~= 0 then textR(re - 70, base, dShort(x.delay), "normal", dc) end
+      textR(re, base, minsTo(le) .. " min", "normal")
+    else
+      textR(88, base, tostring(minsTo(le)), "large")
+      textR(88, ry + 52, T("Minuten", "minutes"), "small")
+      badge(120, ry + 12, x.line, x.mode, true)
+      draw.text(120, ry + 64 + ex, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
+      if x.delay ~= 0 then textR(re, ry + 64 + ex, dLong(x.delay), "normal", dc) end
+    end
+    ry = ry + rowH + ex
+    shown = i
+  end
+  if not cp then vline(104, ct, ry - ct) end
+  footer(shown, #d.list, "Abfahrten", "departures", prov)
+end
+
 local function depsFlat(top, d, prov)
   local ct = stopSubline(top, d)
   if #d.list == 0 then notice("info", T("Keine Abfahrten gefunden.", "No departures found.")); return end
   local rowH, splitX, cntR, bx = 60, 168, 152, 192
   local dx, re = bx + 60, SW - MX
-  if TALL then rowH, splitX, cntR, bx = 76, 104, 88, 120; dx = bx + 60 end
+  if TALL then return tallDeps(ct, d, prov, false) end
   local cap = math.max(1, (SB - ct) // rowH)
   local shown = math.min(#d.list, cap)
   vline(splitX, ct, shown * rowH)
@@ -1299,17 +1345,10 @@ local function depsFlat(top, d, prov)
     local le = leave(x.when)
     textR(cntR, ry + 34, tostring(minsTo(le)), "large")
     textR(cntR, ry + 52, T("Minuten", "minutes"), "small")
-    if TALL then
-      badge(bx, ry + 12, x.line, x.mode, true)
-      draw.text(dx, ry + 34, fit(x.dest, re - dx, "medium"), "medium", color.BLACK)
-      draw.text(bx, ry + 64, T("ab ", "at ") .. clock(le), "normal", color.BLACK)
-      if x.delay ~= 0 then textR(re, ry + 64, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
-    else
-      badge(bx, ry + 17, x.line, x.mode, true)
-      draw.text(dx, ry + 39, fit(x.dest, re - 130 - dx, "medium"), "medium", color.BLACK)
-      textR(re, ry + 34, T("ab ", "at ") .. clock(le), "normal")
-      if x.delay ~= 0 then textR(re, ry + 54, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
-    end
+    badge(bx, ry + 17, x.line, x.mode, true)
+    draw.text(dx, ry + 39, fit(x.dest, re - 130 - dx, "medium"), "medium", color.BLACK)
+    textR(re, ry + 34, T("ab ", "at ") .. clock(le), "normal")
+    if x.delay ~= 0 then textR(re, ry + 54, dLong(x.delay), "normal", x.delay > 0 and color.RED or color.GREEN) end
   end
   footer(shown, #d.list, "Abfahrten", "departures", prov)
 end
@@ -1318,8 +1357,8 @@ local function depsCompact(top, d, prov)
   local ct = stopSubline(top, d)
   if #d.list == 0 then notice("info", T("Keine Abfahrten gefunden.", "No departures found.")); return end
   local rowH, re = 36, SW - MX
-  if TALL then rowH = 40 end
-  local cap = math.max(1, math.min(TALL and 16 or 10, (SB - ct) // rowH))
+  if TALL then return tallDeps(ct, d, prov, true) end
+  local cap = math.max(1, math.min(10, (SB - ct) // rowH))
   local shown = math.min(#d.list, cap)
   for i = 1, shown do
     local x = d.list[i]
@@ -1619,9 +1658,12 @@ end
 
 local function sampleDeps()
   local n = NOW - NOW % 60
-  return { { line = "U1", mode = SUBWAY, dest = "Ohlstedt", when = n + 4 * 60, delay = 0 }, { line = "275", mode = OTHER, dest = "Wildschwanbrook", when = n + 7 * 60, delay = 2 },
-    { line = "U1", mode = SUBWAY, dest = "Norderstedt Mitte", when = n + 9 * 60, delay = 0 }, { line = "S1", mode = SUB, dest = "Wedel", when = n + 12 * 60, delay = 1 },
-    { line = "M8", mode = OTHER, dest = "Hauptbahnhof", when = n + 15 * 60, delay = 0 }, { line = "U1", mode = SUBWAY, dest = "Ohlstedt", when = n + 19 * 60, delay = 0 } }
+  local out = {}
+  for _, v in ipairs({ { "U1", SUBWAY, "Ohlstedt", 4, 0 }, { "275", OTHER, "Wildschwanbrook", 7, 2 }, { "U1", SUBWAY, "Norderstedt Mitte", 9, 0 },
+    { "S1", SUB, "Wedel", 12, 1 }, { "M8", OTHER, "Hauptbahnhof", 15, 0 }, { "U1", SUBWAY, "Ohlstedt", 19, 0 } }) do
+    out[#out + 1] = { line = v[1], mode = v[2], dest = v[3], when = n + v[4] * 60, delay = v[5] }
+  end
+  return out
 end
 
 -- Widget "Abfahrten" (dwDrawTransitNext)

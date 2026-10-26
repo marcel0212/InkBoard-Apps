@@ -386,8 +386,80 @@ end
 -- Stile
 -- ---------------------------------------------------------------------------
 
+-- Hochformat: Namen werden umgebrochen, Zeilen und Kacheln wachsen mit (nie abkuerzen)
+local function tallGolf(ctx, m, style)
+  local en = ctx.lang == "en"
+  local W, cx = draw.width, draw.width // 2
+  local cp = style == "compact"
+  local marginX = cp and 16 or 20
+  local y = draw.top + 10
+  local bottom = draw.height - 12
+  local hf = cp and "small" or "normal"
+  local hl = cp and 17 or 22
+  local hdr = wrapLines(m.name, W - 2 * marginX, hf, 3)
+  for i, l in ipairs(hdr) do draw.text(cx, y + 12 + (i - 1) * hl, l, hf, color.BLACK, "center") end
+  y = y + (#hdr - 1) * hl
+  local st = statusLabel(m, en)
+  if st ~= "" then draw.text(cx, y + (cp and 30 or 30), st, "small", color.BLACK, "center") end
+  local listTop = y + (cp and 40 or 42)
+  if #m.rows < 1 then
+    compactNotice(cx, listTop + 60, en and "No standings yet." or "Noch keine Platzierungen.")
+    return
+  end
+  local first = 1
+  if style == "cards" then
+    local gap, count = 14, math.min(#m.rows, 3)
+    local heroW = W - 2 * marginX
+    local tileW = (heroW - 2 * gap) // 3
+    local nls, k = {}, 1
+    for i = 1, count do
+      nls[i] = wrapLines(m.rows[i].player, tileW - 16, "small", 4)
+      k = math.max(k, #nls[i])
+    end
+    local ex = (k - 1) * 16
+    local podiumH = 152 + ex
+    for i = 1, count do
+      local row = m.rows[i]
+      local tx = marginX + (i - 1) * (tileW + gap)
+      local mid = tx + tileW // 2
+      draw.rect(tx, listTop, tileW, podiumH, i == 1 and color.ACCENT or color.BLACK, false, 12)
+      posBadge(mid, listTop + 30, 20, row.pos, i == 1)
+      for li, l in ipairs(nls[i]) do draw.text(mid, listTop + 70 + (li - 1) * 16, l, "small", color.BLACK, "center") end
+      draw.text(mid, listTop + 112 + ex, row.score, "large", color.BLACK, "center")
+      if row.status ~= "" then draw.text(mid, listTop + 136 + ex, row.status, "small", color.BLACK, "center") end
+    end
+    first = count + 1
+    listTop = listTop + podiumH + 26
+    if #m.rows > 3 then
+      draw.text(marginX, listTop, en and "FURTHER STANDINGS" or "WEITERE PLATZIERUNGEN", "small", color.BLACK, "left")
+      listTop = listTop + 10
+    end
+  end
+  local f = cp and "small" or "normal"
+  local lh = cp and 17 or 22
+  local ry = listTop
+  for i = first, #m.rows do
+    local row = m.rows[i]
+    local sc = scoreText(row)
+    local scoreX = W - marginX - draw.measure(sc, f)
+    local nameX = marginX + (cp and 42 or 60)
+    local nl = wrapLines(row.player, scoreX - nameX - 10, f, 4)
+    local h = math.max(cp and 22 or 28, #nl * lh + 8)
+    if ry + h > bottom and i > first then break end
+    local base = ry + lh
+    if style == "flat" and i == 1 then draw.rect(marginX, ry + 3, 5, h - 6, color.ACCENT, true, 2)
+    elseif style == "flat" and i <= 3 then draw.rect(marginX, ry + 4, 5, h - 8, color.BLACK, true, 2) end
+    draw.text(marginX + (cp and 34 or 46), base, row.pos, f, color.BLACK, "right")
+    for li, l in ipairs(nl) do draw.text(nameX, base + (li - 1) * lh, l, f, color.BLACK, "left") end
+    draw.text(scoreX, base, sc, f, color.BLACK, "left")
+    ry = ry + h
+    if cp then draw.line(marginX, ry - 1, W - marginX, ry - 1, color.BLACK) end
+  end
+end
+
 -- Bento: drei gleich grosse Podium-Kacheln (Rangreihenfolge 1-2-3) + kompakte Liste darunter
 local function drawCards(ctx, m)
+  if draw.height > draw.width then return tallGolf(ctx, m, "cards") end
   local en = ctx.lang == "en"
   local W, cx = draw.width, draw.width // 2
   local y = draw.top + 10
@@ -441,6 +513,7 @@ end
 
 -- Slate: durchgehende Rangliste ab Platz 1, Akzentstreifen fuer den Fuehrenden, schwarzer Streifen fuer Platz 2/3
 local function drawFlat(ctx, m)
+  if draw.height > draw.width then return tallGolf(ctx, m, "flat") end
   local en = ctx.lang == "en"
   local W, cx = draw.width, draw.width // 2
   local y = draw.top + 12
@@ -477,6 +550,7 @@ end
 
 -- Nano: dieselbe Rangliste in kleinster Schrift mit Trennlinien, moeglichst viele Plaetze auf einmal
 local function drawCompact(ctx, m)
+  if draw.height > draw.width then return tallGolf(ctx, m, "compact") end
   local en = ctx.lang == "en"
   local W, cx = draw.width, draw.width // 2
   local y = draw.top + 10

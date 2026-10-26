@@ -330,8 +330,9 @@ end
 local meta = {}
 for _,p in ipairs({ d.source,d.yield,d.time }) do if p ~= "" then meta[#meta + 1] = p end end
 if #meta > 0 then
-draw.text(x0,y + 8,fit(table.concat(meta," · "),textW,"normal"),"normal",color.BLACK,"left")
-y = y + 34
+local ml = wrapLines(table.concat(meta," · "),textW,"normal",4)
+for i,l in ipairs(ml) do draw.text(x0,y + 8 + (i - 1) * 24,l,"normal",color.BLACK,"left") end
+y = y + 34 + (#ml - 1) * 24
 end
 if d.day > 0 then
 local txt = isToday(d.day) and (en and "Drawn today" or "Heute gelost") or ((en and "Drawn on " or "Gelost am ") .. dateText(d.day,en))

@@ -808,6 +808,23 @@ local function fit(s, w, font)
   return s
 end
 
+local function wrapLines(s, width, font, maxLines)
+  local lines, line = {}, ""
+  for word in s:gmatch("%S+") do
+    local try = line == "" and word or (line .. " " .. word)
+    if draw.measure(try, font) <= width or line == "" then
+      line = try
+    else
+      lines[#lines + 1] = line
+      line = word
+      if #lines == maxLines then break end
+    end
+  end
+  if #lines < maxLines and line ~= "" then lines[#lines + 1] = line end
+  for i = 1, #lines do lines[i] = fit(lines[i], width, font) end -- einzelne zu lange Woerter
+  return lines
+end
+
 local function notice(icon, line1, line2)
   local cx = draw.width // 2
   draw.icon(icon, cx - 24, 170, 48, color.ACCENT)
@@ -862,8 +879,62 @@ local function statusMark(it, cx, cy, r)
   if it.done then draw.circle(cx, cy, r, it.col, true) else draw.circle(cx, cy, r, it.col) end
 end
 
+-- Hochformat (alle Stile): Texte werden umgebrochen, die Zeilen wachsen mit (nie abkuerzen)
+local function drawTall(ctx, items, today, st)
+  local W = draw.width
+  local marginX = st == "compact" and 24 or 26
+  local top = draw.top + (st == "compact" and 6 or 10)
+  local bottom = draw.height - 16
+  local font = st == "compact" and "small" or "normal"
+  local lh = st == "compact" and 17 or 24
+  local textX = st == "cards" and marginX + 34 or (st == "flat" and marginX + 28 or marginX + 14)
+  local rowY = top
+  for n = 1, #items do
+    local it = items[n]
+    local showDue = not it.done and it.due ~= nil
+    local dayLabel, tLabel, overdue
+    local dueW = 0
+    if showDue then
+      dayLabel, tLabel, overdue = dueParts(ctx, it, today)
+      if st == "flat" and tLabel then dayLabel, tLabel = dayLabel .. ", " .. tLabel, nil end
+      if st == "compact" then tLabel = nil end
+      dueW = math.max(draw.measure(dayLabel, "small"), tLabel and draw.measure(tLabel, "small") or 0)
+    end
+    local reserve = showDue and (dueW + 14) or 0
+    local tl = wrapLines(it.title, W - marginX - reserve - textX, font, 6)
+    local meta = it.project
+    if it.labels ~= "" then meta = meta .. (meta ~= "" and " - " or "") .. it.labels end
+    local ml = (st == "cards" and meta ~= "") and wrapLines(meta, W - marginX - reserve - textX, "small", 4) or {}
+    local dl = (st == "cards" and it.desc ~= "") and wrapLines(it.desc, W - marginX - textX, "small", 6) or {}
+    local h = 12 + #tl * lh + #ml * 18 + #dl * 18 + 8
+    if h < 40 then h = 40 end
+    if rowY + h > bottom and n > 1 then break end
+    if st ~= "compact" then draw.line(marginX, rowY, W - marginX, rowY, color.BLACK) end
+    local y1 = rowY + 12 + lh - 4
+    statusMark(it, marginX + (st == "compact" and 4 or 10), y1 - 6, st == "compact" and 3 or 7)
+    if not it.done and it.prio >= 2 and st ~= "compact" then
+      draw.circle(marginX + (st == "cards" and 24 or 22), y1 - 15, 4, it.prio >= 3 and color.RED or color.YELLOW, true)
+    end
+    for i, l in ipairs(tl) do
+      local ly = y1 + (i - 1) * lh
+      draw.text(textX, ly, l, font, color.BLACK, "left")
+      if it.done then strike(textX, ly - 6, draw.measure(l, font)) end
+    end
+    if showDue then
+      local c = overdue and color.RED or color.BLACK
+      draw.text(W - marginX, y1 - 2, dayLabel, "small", c, "right")
+      if tLabel then draw.text(W - marginX, y1 + 15, tLabel, "small", c, "right") end
+    end
+    local yy = y1 + (#tl - 1) * lh + 20
+    for _, l in ipairs(ml) do draw.text(textX, yy, l, "small", color.BLACK, "left"); yy = yy + 18 end
+    for _, l in ipairs(dl) do draw.text(textX, yy, l, "small", color.BLACK, "left"); yy = yy + 18 end
+    rowY = rowY + h
+  end
+end
+
 -- "Bento": Detailkarten mit Projekt/Labels und Beschreibung (3 bis 4 Aufgaben).
 local function drawCards(ctx, items, today)
+  if draw.height > draw.width then return drawTall(ctx, items, today, "cards") end
   local W = draw.width
   local marginX = 26
   local contentTop = draw.top + 10
@@ -914,6 +985,7 @@ end
 
 -- "Slate": eine Zeile je Aufgabe, Datum und Uhrzeit rechts in einer Zeile (bis 9 Aufgaben).
 local function drawFlat(ctx, items, today)
+  if draw.height > draw.width then return drawTall(ctx, items, today, "flat") end
   local W = draw.width
   local marginX = 26
   local contentTop = draw.top + 10
@@ -955,6 +1027,7 @@ end
 
 -- "Nano": nur Punkt, Titel und kurzes Datum (bis 14 Aufgaben).
 local function drawCompact(ctx, items, today)
+  if draw.height > draw.width then return drawTall(ctx, items, today, "compact") end
   local W = draw.width
   local marginX = 24
   local contentTop = draw.top + 6

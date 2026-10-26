@@ -296,6 +296,22 @@ end
 local function drawCompact(ctx, items)
   local W, margin = draw.width, 24
   local top, bottom = draw.top + 6, draw.height - 16
+  if draw.height > draw.width then -- Hochformat: Schlagzeilen umbrechen, Zeilen wachsen mit
+    local y = top
+    for i = 1, #items do
+      local it = items[i]
+      local rel = relTime(ctx, it.t)
+      local relW = rel ~= "" and (draw.measure(rel, "small") + 10) or 0
+      local tl = wrapLines(it.title, W - 2 * margin - 14 - relW, "small", 6)
+      local h = #tl * 17 + 12
+      if y + h > bottom and i > 1 then break end
+      draw.circle(margin + 4, y + 15, 3, color.ACCENT, true)
+      for li, l in ipairs(tl) do draw.text(margin + 14, y + 20 + (li - 1) * 17, l, "small", color.BLACK, "left") end
+      if rel ~= "" then draw.text(W - margin, y + 20, rel, "small", color.BLACK, "right") end
+      y = y + h
+    end
+    return
+  end
   local shown = math.min(#items, 16)
   local rowH = (bottom - top) // shown
   if rowH > 40 then rowH = 40 end

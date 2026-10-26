@@ -1237,6 +1237,11 @@ local PX, PW, PH = 20, 430, 296 -- Fotokarte (FR_PHOTO_BOX_W/H)
 
 local function infoRow(x, y, maxW, label, value)
   draw.text(x, y, label, "small", color.ACCENT_TEXT)
+  if draw.height > draw.width then -- Hochformat: umbrechen statt abkuerzen
+    local ls = wrapLines(value, maxW, "normal", 3)
+    for i, l in ipairs(ls) do draw.text(x, y + 20 + (i - 1) * 22, l, "normal", color.BLACK) end
+    return y + 44 + (#ls - 1) * 22
+  end
   draw.text(x, y + 20, fit(value, maxW, "normal"), "normal", color.BLACK)
   return y + 44
 end
@@ -1301,11 +1306,22 @@ local function flightPage(ctx, ac)
   local maxW = draw.width - rx - 20
   local y = top + 38 -- ohne Logo-Kaestchen daneben: Rufzeichen ueber die ganze Spaltenbreite, Airline in der Normalschrift
   if draw.height > draw.width then rx, maxW, y = PX + 4, draw.width - 2 * PX - 8, py + PH + 54 end -- Hochformat: Daten unter dem Bild
-  draw.text(rx, y, fit(nameOf(a), maxW, "large"), "large", color.BLACK)
-  y = y + 8
-  if a.air ~= "" then
-    draw.text(rx, y + 16, fit(a.air, maxW, "normal"), "normal", color.BLACK)
-    y = y + 22
+  if draw.height > draw.width then -- Hochformat: umbrechen statt abkuerzen
+    local nl = wrapLines(nameOf(a), maxW, "large", 3)
+    for i, l in ipairs(nl) do draw.text(rx, y + (i - 1) * 34, l, "large", color.BLACK) end
+    y = y + (#nl - 1) * 34 + 8
+    if a.air ~= "" then
+      local al = wrapLines(a.air, maxW, "normal", 3)
+      for i, l in ipairs(al) do draw.text(rx, y + 16 + (i - 1) * 22, l, "normal", color.BLACK) end
+      y = y + 22 + (#al - 1) * 22
+    end
+  else
+    draw.text(rx, y, fit(nameOf(a), maxW, "large"), "large", color.BLACK)
+    y = y + 8
+    if a.air ~= "" then
+      draw.text(rx, y + 16, fit(a.air, maxW, "normal"), "normal", color.BLACK)
+      y = y + 22
+    end
   end
   y = y + 14
   local from, to = routeOf(ctx, a)

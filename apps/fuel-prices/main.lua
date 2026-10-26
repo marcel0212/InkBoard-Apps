@@ -413,7 +413,65 @@ notice("search",en and "No fuel stations found nearby." or "Keine Tankstellen im
 en and "Widen the radius in the Store" or "Umkreis im Store vergrößern")
 return true
 end
-local function drawCards(ctx,st)
+local function tallFuel(ctx,st,en,style)
+local primary = typeOf(ctx)
+local sec = secondaries(ctx,primary)
+local W = draw.width
+local y = draw.top + 8
+local bottom = draw.height - 16
+local logos = ctx.cfg.logos ~= false
+local cp = style == "compact"
+local nf,lh = cp and "small" or "normal",cp and 17 or 22
+local cols = { primary }
+for _,t in ipairs(sec) do cols[#cols + 1] = t end
+local shown = 0
+for i = 1,#st do
+local s = st[i]
+local dist = string.format("%.1f km",s.dist)
+local tx = style == "cards" and 20 + 14 + 28 + 6 or (cp and 24 + 18 + 5 or 24 + 28 + 8)
+local right = style == "cards" and W - 20 - 16 or W - 26
+local nl = wrapLines(s.name,right - tx - draw.measure(dist,"small") - 10,nf,4)
+local al = (not cp and s.addr ~= "") and wrapLines(s.addr,right - tx,"small",3) or {}
+local ex = (#nl - 1) * lh + math.max(#al - 1,0) * 16
+local base = style == "cards" and 132 or (cp and 64 or 104)
+local h = base + ex + (style == "cards" and 14 or 8)
+if y + h > bottom and i > 1 then break end
+shown = i
+if style == "cards" then
+card(20,y,W - 40,h - 14,s.open and color.ACCENT or color.BLACK)
+local th = h - 14
+badge(34,y + 8,s.brand,true,logos)
+draw.text(right,y + 22,dist,"small",color.BLACK,"right")
+for k,l in ipairs(nl) do draw.text(tx,y + 24 + (k - 1) * lh,l,nf,color.BLACK,"left") end
+for k,l in ipairs(al) do draw.text(38,y + 40 + (#nl - 1) * lh + (k - 1) * 16,l,"small",color.BLACK,"left") end
+draw.text(38,y + th - 42,priceText(s[primary]),"large",color.BLACK,"left")
+typeLabel(38,y + th - 24,primary)
+local sx = 38
+for _,t in ipairs(sec) do sx = sx + segment(sx,y + th - 8,t,s[t]) + 12 end
+else
+badge(24,y + (cp and 6 or 4),s.brand,not cp,logos)
+draw.text(W - 26,y + 22,dist,"small",color.BLACK,"right")
+for k,l in ipairs(nl) do draw.text(tx,y + (cp and 20 or 22) + (k - 1) * lh,l,nf,color.BLACK,"left") end
+for k,l in ipairs(al) do draw.text(tx,y + 40 + (#nl - 1) * lh + (k - 1) * 16,l,"small",color.BLACK,"left") end
+if cp then
+local sx = tx
+for _,t in ipairs(cols) do sx = sx + segment(sx,y + 44 + ex,t,s[t]) + 14 end
+else
+swatch(tx,y + 69 + ex,primary,12)
+draw.text(tx + 20,y + 82 + ex,priceText(s[primary]),"large",color.BLACK,"left")
+local sx = tx
+for _,t in ipairs(sec) do sx = sx + segment(sx,y + 100 + ex,t,s[t]) + 14 end
+end
+if i < #st then draw.line(24,y + h - 6,W - 24,y + h - 6,color.BLACK) end
+end
+y = y + h
+end
+if shown < #st then
+draw.text(W // 2,y + 8,string.format(en and "+%d more stations" or "+%d weitere Tankstellen",#st - shown),"small",color.BLACK,"center")
+end
+end
+local function drawCards(ctx,st,en)
+if draw.height > draw.width then return tallFuel(ctx,st,en,"cards") end
 local primary = typeOf(ctx)
 local sec = secondaries(ctx,primary)
 local shown = #st
@@ -445,6 +503,7 @@ end
 end
 end
 local function drawFlat(ctx,st,en)
+if draw.height > draw.width then return tallFuel(ctx,st,en,"flat") end
 local primary = typeOf(ctx)
 local sec = secondaries(ctx,primary)
 local W = draw.width
@@ -498,7 +557,8 @@ local hint = string.format(en and "+%d more stations ('Nano' style)" or "+%d wei
 draw.text(W // 2,y + shown * rowH + 12,hint,"small",color.BLACK,"center")
 end
 end
-local function drawCompact(ctx,st)
+local function drawCompact(ctx,st,en)
+if draw.height > draw.width then return tallFuel(ctx,st,en,"compact") end
 local primary = typeOf(ctx)
 local W = draw.width
 local y = draw.top + 8
@@ -552,8 +612,8 @@ local st = loadStations(ctx)
 if emptyState(ctx,st) then return end
 local style = ctx.cfg.style
 if style == "flat" then drawFlat(ctx,st,en_(ctx))
-elseif style == "compact" then drawCompact(ctx,st)
-else drawCards(ctx,st) end
+elseif style == "compact" then drawCompact(ctx,st,en_(ctx))
+else drawCards(ctx,st,en_(ctx)) end
 end
 local function pump(x,y,w,h,c)
 draw.rect(x,y,w,h,c,true,4)

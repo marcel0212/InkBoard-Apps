@@ -454,6 +454,9 @@ end
 -- Seite HEUTE
 -- ---------------------------------------------------------------------------
 
+-- Hochformat: nie abkuerzen, sondern in weitere Zeilen umbrechen
+local function wrapAll(s, w, font) return wrapLines(s, w, font, 12) end
+
 -- Bento ("Fokuskarte"): erste Belegung mit Uhrzeit gross in Bereichsfarbe, darunter naechster Eintrag + FREI-Feld
 local function todayBento(m, di, top)
   local margin, contentW = 24, draw.width - 48
@@ -472,6 +475,12 @@ local function todayBento(m, di, top)
   local hero = d.es[hi]
   local hc = colColor(hero.col)
   local cardH = 168
+  local tallB = draw.height > draw.width
+  local heroLines = tallB and wrapAll(hero.ev, contentW - 40, "normal") or wrapLines(hero.ev, contentW - 40, "normal", 2)
+  local noteLines = (tallB and hero.note ~= "") and wrapAll("> " .. hero.note, contentW - 40, "small") or nil
+  if tallB then
+    cardH = math.max(168, 100 + #heroLines * 22 + (noteLines and (#noteLines * 20 + 10) or 0) + 12)
+  end
   draw.rect(margin, y, contentW, cardH, hc, false, 16)
   draw.rect(margin + 1, y + 1, contentW - 2, cardH - 2, hc, false, 15)
   local lab = colLabel(hero.col)
@@ -480,35 +489,55 @@ local function todayBento(m, di, top)
   draw.text(margin + 16 + chipW // 2, y + 26, lab, "small", inkOn(hero.col), "center")
   draw.text(margin + 18, y + 74, timeRange(hero), "large", color.BLACK)
   local ty = y + 100
-  for _, l in ipairs(wrapLines(hero.ev, contentW - 40, "normal", 2)) do
+  for _, l in ipairs(heroLines) do
     draw.text(margin + 18, ty, l, "normal", color.BLACK)
     ty = ty + 22
   end
-  if hero.note ~= "" then
+  if noteLines then
+    ty = ty + 4
+    for _, l in ipairs(noteLines) do
+      draw.text(margin + 18, ty, l, "small", color.BLACK)
+      ty = ty + 20
+    end
+  elseif hero.note ~= "" then
     draw.text(margin + 18, y + cardH - 14, fit("> " .. hero.note, contentW - 40, "small"), "small", color.BLACK)
   end
 
   local rowY = y + cardH + 14
   local rowH = math.max(60, draw.height - 16 - rowY)
   local boxW = (contentW - 14) // 2
+  local tall = draw.height > draw.width
+  if tall then -- Hochformat: beide Kacheln untereinander in voller Breite
+    boxW = contentW
+    rowH = math.max(60, (draw.height - 16 - rowY - 14) // 2)
+  end
   draw.rect(margin, rowY, boxW, rowH, color.BLACK, false, 12)
   if #d.es > 1 then
     local e2 = d.es[hi == 1 and 2 or 1]
     dot(margin + 20, rowY + 22, 6, e2.col)
     draw.text(margin + 34, rowY + 28, timeRange(e2), "normal", color.BLACK)
-    draw.text(margin + 14, rowY + 50, fit(e2.ev, boxW - 28, "small"), "small", color.BLACK)
+    if tall then
+      local ly2 = rowY + 50
+      for _, l in ipairs(wrapAll(e2.ev, boxW - 28, "small")) do
+        draw.text(margin + 14, ly2, l, "small", color.BLACK)
+        ly2 = ly2 + 20
+      end
+    else
+      draw.text(margin + 14, rowY + 50, fit(e2.ev, boxW - 28, "small"), "small", color.BLACK)
+    end
     if #d.es > 2 then
       draw.text(margin + boxW - 12, rowY + rowH - 10, string.format(T("+%d weitere", "+%d more"), #d.es - 2), "small", color.BLACK, "right")
     end
   else
     centerBounded(T("keine weiteren Belegungen", "no further bookings"), margin + boxW // 2, rowY + rowH // 2 + 4, "small", margin + 6, margin + boxW - 6)
   end
-  local fx = margin + boxW + 14
-  dashed(fx, rowY, boxW, rowH)
-  draw.text(fx + boxW // 2, rowY + rowH // 2 + 2, T("FREI", "FREE"), "large", color.GREEN, "center")
+  local fx, fy = margin + boxW + 14, rowY
+  if tall then fx, fy = margin, rowY + rowH + 14 end
+  dashed(fx, fy, boxW, rowH)
+  draw.text(fx + boxW // 2, fy + rowH // 2 + 2, T("FREI", "FREE"), "large", color.GREEN, "center")
   local sub = T("außerhalb der Belegung", "outside the booking")
   if hero.to >= 0 then sub = string.format(T("ab %s · Tee 1", "from %s · Tee 1"), hm(hero.to)) end
-  draw.text(fx + boxW // 2, rowY + rowH // 2 + 24, sub, "small", color.BLACK, "center")
+  draw.text(fx + boxW // 2, fy + rowH // 2 + 24, sub, "small", color.BLACK, "center")
 end
 
 -- Slate ("Zeitleiste"): senkrechte Linie mit farbigen Zeitpunkten, gruener "Platz frei"-Punkt nach der letzten Belegung
@@ -525,19 +554,45 @@ local function todaySlate(m, di, top)
   end
   if #items == 0 then items[1] = { at = -1, free = true }
   elseif lastEnd >= 0 then items[#items + 1] = { at = lastEnd, free = true } end
+  local tallS = draw.height > draw.width
+  local tw = draw.width - margin - (lineX + 24)
+  local pos, blocks = {}, {}
   local step = math.min(118, (yMax - y0) // #items)
-  draw.rect(lineX, y0, 2, (#items - 1) * step + 20, color.BLACK, true)
+  local cur = 0
   for i, it in ipairs(items) do
-    local iy = y0 + (i - 1) * step + 10
+    if tallS and not it.free then
+      local e = it.e
+      local meta = colLabel(e.col) .. " · " .. timeRange(e)
+      if e.note ~= "" then meta = meta .. " · " .. e.note end
+      it.evL, it.metaL = wrapAll(e.ev, tw, "normal"), wrapAll(meta, tw, "small")
+      blocks[i] = #it.evL * 22 + #it.metaL * 20 + 26
+    else
+      blocks[i] = 74
+    end
+    if tallS then pos[i] = cur; cur = cur + blocks[i] else pos[i] = (i - 1) * step end
+  end
+  draw.rect(lineX, y0, 2, pos[#items] + 20, color.BLACK, true)
+  for i, it in ipairs(items) do
+    local iy = y0 + pos[i] + 10
     draw.circle(lineX, iy, 9, it.free and color.GREEN or colColor(it.e.col), true)
     draw.circle(lineX, iy, 9, color.BLACK, false)
     draw.circle(lineX, iy, 3, color.WHITE, true)
     draw.text(lineX - 22, iy + 10, it.at >= 0 and hm(it.at) or T("ganzt.", "all d."), "large", color.BLACK, "right")
     local tx = lineX + 24
-    local tw = draw.width - margin - tx
     if it.free then
       draw.text(tx, iy + 4, T("Platz frei spielbar", "Course free to play"), "normal", color.GREEN)
       draw.text(tx, iy + 24, T("Start auf Tee 1 möglich", "Start on tee 1 possible"), "small", color.BLACK)
+    elseif tallS then
+      local e = it.e
+      local ey = iy + 4
+      for _, l in ipairs(it.evL) do
+        draw.text(tx, ey, l, "normal", color.BLACK)
+        ey = ey + 22
+      end
+      for _, l in ipairs(it.metaL) do
+        draw.text(tx, ey + 2, l, "small", textCol(e.col))
+        ey = ey + 20
+      end
     else
       local e = it.e
       draw.text(tx, iy + 4, fit(e.ev, tw, "normal"), "normal", color.BLACK)
@@ -554,11 +609,15 @@ local function todayNano(m, di, top)
   local d = m.days[di]
   draw.text(margin, top + 18, dayShort(d) .. T(" · Platzbelegung", " · Occupancy"), "normal", color.BLACK)
   local colW = (draw.width - 2 * margin - 20) // 2
+  local tall = draw.height > draw.width
+  if tall then colW = draw.width - 2 * margin end -- Hochformat: Platz und Betrieb untereinander
   local titles = { T("PLATZ", "COURSE"), T("BETRIEB", "OPERATIONS") }
   local groups = { { 1, 2 }, { 3, 4 } }
+  local yEnd = top + 34
   for c = 1, 2 do
     local x = margin + (c - 1) * (colW + 20)
     local y = top + 34
+    if tall then x = margin; y = yEnd + (c == 2 and 12 or 0) end
     draw.rect(x, y, colW, 3, color.BLACK, true)
     y = y + 18
     draw.text(x, y, titles[c], "small", color.BLACK)
@@ -572,10 +631,25 @@ local function todayNano(m, di, top)
       for _, e in ipairs(d.es) do
         if e.col == col then
           y = y + 18
-          draw.text(x + 2, y, fit(timeRange(e) .. "  " .. e.ev, colW - 4, "small"), "small", color.BLACK)
-          if e.note ~= "" and shown == 0 then
-            y = y + 15
-            draw.text(x + 8, y, fit("> " .. e.note, colW - 10, "small"), "small", color.BLACK)
+          if tall then
+            local ls = wrapAll(timeRange(e) .. "  " .. e.ev, colW - 4, "small")
+            for li, l in ipairs(ls) do
+              if li > 1 then y = y + 17 end
+              draw.text(x + 2, y, l, "small", color.BLACK)
+            end
+            if e.note ~= "" and shown == 0 then
+              for _, l in ipairs(wrapAll("> " .. e.note, colW - 10, "small")) do
+                y = y + 17
+                draw.text(x + 8, y, l, "small", color.BLACK)
+              end
+              y = y + 3
+            end
+          else
+            draw.text(x + 2, y, fit(timeRange(e) .. "  " .. e.ev, colW - 4, "small"), "small", color.BLACK)
+            if e.note ~= "" and shown == 0 then
+              y = y + 15
+              draw.text(x + 8, y, fit("> " .. e.note, colW - 10, "small"), "small", color.BLACK)
+            end
           end
           y = y + 3
           draw.line(x, y, x + colW - 1, y, color.BLACK)
@@ -591,6 +665,7 @@ local function todayNano(m, di, top)
       end
       y = y + 4
     end
+    yEnd = y
   end
 end
 
@@ -599,7 +674,65 @@ end
 -- ---------------------------------------------------------------------------
 
 -- Bento ("Zeilenkarten"): je Tag eine Karte mit schwarzem Tagesblock, bis zu zwei Eintraege
+-- Hochformat: Eintraege werden umgebrochen, die Karten wachsen mit (bei Platzmangel weniger Zeilen je Eintrag)
+local function weekBentoTall(m, si, top)
+  local margin, contentW = 22, draw.width - 44
+  local days = math.min(7, #m.days - si + 1)
+  local areaTop, areaBottom = top + 8, draw.height - 12
+  local tx = margin + 110
+  local tw = margin + contentW - 12 - tx - 20
+  local LH, gap = 21, 6
+  local plan, maxL = {}, 12
+  while true do
+    plan = {}
+    local total = (days - 1) * gap
+    for i = 0, days - 1 do
+      local d = m.days[si + i]
+      local ents, h = {}, 0
+      local show = math.min(4, #d.es)
+      for k = 1, show do
+        local e = d.es[k]
+        local ls = wrapLines(timeRange(e) .. "  " .. e.ev, tw, "small", maxL)
+        ents[#ents + 1] = { e = e, ls = ls }
+        h = h + #ls * LH + (k > 1 and 6 or 0)
+      end
+      local cardH = math.max(54, h + 20)
+      if #d.es == 0 then cardH = 54 end
+      plan[#plan + 1] = { d = d, ents = ents, h = cardH }
+      total = total + cardH
+    end
+    break -- nie abkuerzen: Karten wachsen mit dem Text (CHANGELOG 944)
+  end
+  local y = areaTop
+  for _, c in ipairs(plan) do
+    local d, cardH = c.d, c.h
+    draw.rect(margin, y, contentW, cardH, color.BLACK, false, 10)
+    draw.rect(margin, y, 96, cardH, color.BLACK, true, 10)
+    draw.rect(margin + 86, y, 10, cardH, color.BLACK, true)
+    draw.text(margin + 10, y + 24, wdOf(d), "normal", color.WHITE)
+    draw.text(margin + 10, y + 42, string.format("%02d.%02d.", d.d, d.m), "small", color.WHITE)
+    if #d.es == 0 then
+      draw.text(tx, y + cardH // 2 + 6, T("frei", "free"), "normal", color.GREEN)
+    else
+      local ly = y + 10 + 15
+      for _, en in ipairs(c.ents) do
+        square(tx, ly - 10, 12, en.e.col)
+        for _, l in ipairs(en.ls) do
+          draw.text(tx + 20, ly, l, "small", color.BLACK)
+          ly = ly + LH
+        end
+        ly = ly + 6
+      end
+      if #d.es > 4 then
+        draw.text(margin + contentW - 10, y + cardH - 8, "+" .. (#d.es - 4), "small", color.BLACK, "right")
+      end
+    end
+    y = y + cardH + gap
+  end
+end
+
 local function weekBento(m, si, top)
+  if draw.height > draw.width then return weekBentoTall(m, si, top) end
   local margin, contentW = 22, draw.width - 44
   local days = math.min(7, #m.days - si + 1)
   local areaTop, areaBottom = top + 8, draw.height - 12
@@ -644,9 +777,28 @@ local function weekSlate(m, si, top)
   -- Eintragsspalte ab 170 Pixel; die fette Heute-Zeile ("Do 20.08." in large) ist breiter, dann ruecken alle Zeilen mit
   local tx = margin + 170
   if isToday and ti >= si and ti < si + days then tx = math.max(tx, margin + draw.measure(dayShort(m.days[ti]), "large") + 14) end
+  -- Hochformat: Zeilenhoehe waechst mit dem umgebrochenen Text (nie abkuerzen)
+  local tops, hs, wr = {}, {}, {}
+  if tallW then
+    local cur = y
+    for i = 0, days - 1 do
+      local d = m.days[si + i]
+      local lsAll, h = {}, 54
+      for k = 1, math.min(4, #d.es) do
+        local e = d.es[k]
+        local ls = wrapAll(timeRange(e) .. " · " .. e.ev, contentW - 24, "small")
+        lsAll[k] = ls
+        h = h + #ls * 20 + 4
+      end
+      if #d.es == 0 then h = 46 else h = h - 14 end
+      tops[i], hs[i], wr[i] = cur, math.max(46, h), lsAll
+      cur = cur + hs[i]
+    end
+  end
   for i = 0, days - 1 do
     local d = m.days[si + i]
-    local ry = y + i * rowH
+    local ry = tallW and tops[i] or (y + i * rowH)
+    if tallW then rowH = hs[i] end
     local today = isToday and (si + i) == ti
     draw.text(margin, ry + (today and 34 or 28), dayShort(d), today and "large" or "normal", color.BLACK)
     local tw = margin + contentW - tx
@@ -656,17 +808,13 @@ local function weekSlate(m, si, top)
         draw.text(margin + 150, ry + 28, T("frei", "free"), "normal", color.GREEN)
       else
         local ly = ry + 54
-        for k = 1, math.min(2, #d.es) do
-          local e = d.es[k]
-          square(margin + 2, ly - 9, 11, e.col)
-          local txt = timeRange(e) .. " · " .. e.ev
-          if draw.measure(txt, "small") <= contentW - 24 or ry + rowH - ly < 40 then
-            draw.text(margin + 20, ly, fit(txt, contentW - 24, "small"), "small", color.BLACK)
-            ly = ly + 22
-          else
-            local n = draw.wrap(margin + 20, ly, contentW - 24, txt, "small", color.BLACK)
-            ly = ly + 20 * math.max(1, math.min(n or 2, 2)) + 4
+        for k = 1, #wr[i] do
+          square(margin + 2, ly - 9, 11, d.es[k].col)
+          for _, l in ipairs(wr[i][k]) do
+            draw.text(margin + 20, ly, l, "small", color.BLACK)
+            ly = ly + 20
           end
+          ly = ly + 4
         end
       end
       draw.line(margin, ry + rowH - 1, margin + contentW - 1, ry + rowH - 1, color.BLACK)
@@ -706,25 +854,41 @@ local function nanoTable(m, top, si, dayLimit, withNote)
   local maxRows = withNote and 14 or 16
   local rowH = math.max(19, math.min(tall and 40 or 24, (draw.height - 30 - y) // maxRows))
   local rows = 0
+  local yy = y
+  local fullRowH = rowH
   for i = 0, days - 1 do
-    if rows >= maxRows then break end
+    if rows >= maxRows or (tall and yy > draw.height - 60) then break end
     local d = m.days[si + i]
     local perDay = withNote and 1 or math.min(2, #d.es)
     if perDay == 0 then perDay = 1 end
     for k = 1, perDay do
-      if rows >= maxRows then break end
-      local ry = y + rows * rowH
-      local base = ry + rowH - 6
+      if rows >= maxRows or (tall and yy > draw.height - 60) then break end
+      -- Hochformat: Ereignis wird umgebrochen (nie abgekuerzt), die Zeile waechst mit
+      local evLines
+      if tall and #d.es > 0 then
+        local e0 = d.es[k]
+        local evW0 = margin + contentW - cEv - ((k == perDay and #d.es > perDay) and 26 or 0)
+        evLines = wrapAll(e0.ev, evW0, "small")
+        rowH = math.max(fullRowH, #evLines * 18 + 10)
+      else
+        rowH = fullRowH
+      end
+      local ry = tall and yy or (y + rows * rowH)
+      local base = ry + (tall and 20 or (rowH - 6))
       if k == 1 then draw.text(cTag, base, dayShort(d), "small", color.BLACK) end
       if #d.es == 0 then
         draw.text(cZeit, base, T("frei", "free"), "small", color.GREEN)
       else
         local e = d.es[k]
         draw.text(cZeit, base, timeRange(e), "small", color.BLACK)
-        chip(cBer, ry + rowH - 17, e.col)
+        chip(cBer, tall and (ry + 7) or (ry + rowH - 17), e.col)
         local evW = (showNote and cNote - 8 or margin + contentW) - cEv
         if k == perDay and #d.es > perDay then evW = evW - (showNote and 0 or 26) end
-        draw.text(cEv, base, fit(e.ev, evW, "small"), "small", color.BLACK)
+        if evLines then
+          for li, l in ipairs(evLines) do draw.text(cEv, base + (li - 1) * 18, l, "small", color.BLACK) end
+        else
+          draw.text(cEv, base, fit(e.ev, evW, "small"), "small", color.BLACK)
+        end
         if showNote and e.note ~= "" then
           draw.text(cNote, base, fit(e.note, margin + contentW - cNote - (#d.es > perDay and 26 or 0), "small"), "small", color.BLACK)
         end
@@ -734,13 +898,17 @@ local function nanoTable(m, top, si, dayLimit, withNote)
       end
       draw.line(margin, ry + rowH, margin + contentW - 1, ry + rowH, color.BLACK)
       rows = rows + 1
+      if tall then yy = yy + rowH end
     end
   end
   local ly, lx = draw.height - 10, margin
   for c = 1, 4 do
-    chip(lx, ly - 13, c)
+    if tall and c == 3 then lx = margin; ly = ly + 0 end
+    local ry2 = ly
+    if tall then ry2 = (c <= 2) and (draw.height - 34) or (draw.height - 10) end
+    chip(lx, ry2 - 13, c)
     lx = lx + 32
-    draw.text(lx, ly - 2, colLabel(c), "small", color.BLACK)
+    draw.text(lx, ry2 - 2, colLabel(c), "small", color.BLACK)
     lx = lx + draw.measure(colLabel(c), "small") + 16
   end
 end
@@ -752,7 +920,22 @@ end
 -- Bento: Wochenkarte mit Kopfband "KW 34 · 20.08.-26.08." und sieben kompakten Tageszeilen
 local function fortnightCard(m, x, w, top, si, count, ovH)
   local cardTop = top + 8
+  local tallF = draw.height > draw.width
+  local rowHs, wraps = {}, {}
   local cardH = ovH or (draw.height - 14 - cardTop)
+  if tallF then
+    -- Hochformat: Zeilen wachsen mit dem umgebrochenen Eintrag (nie abkuerzen), die Karte mit
+    local sum = 0
+    for i = 0, count - 1 do
+      local d = m.days[si + i]
+      local lw = w - 94 - 12 - 16 - (#d.es > 1 and 26 or 0)
+      local ls = (#d.es > 0) and wrapAll(startOrAllDay(d.es[1]) .. " " .. d.es[1].ev, lw, "small") or { "" }
+      wraps[i] = ls
+      rowHs[i] = math.max(30, #ls * 20 + 10)
+      sum = sum + rowHs[i]
+    end
+    cardH = 30 + sum + 6
+  end
   draw.rect(x, cardTop, w, cardH, color.BLACK, false, 12)
   draw.rect(x, cardTop, w, 24, color.BLACK, true, 12)
   draw.rect(x, cardTop + 12, w, 12, color.BLACK, true)
@@ -764,23 +947,38 @@ local function fortnightCard(m, x, w, top, si, count, ovH)
   draw.text(x + 10, cardTop + 17, head, "small", color.WHITE)
   local rowTop = cardTop + 30
   local rowH = (cardTop + cardH - 6 - rowTop) // 7
+  local ry = rowTop
   for i = 0, count - 1 do
     local d = m.days[si + i]
-    local ry = rowTop + i * rowH
+    if tallF then rowH = rowHs[i] else ry = rowTop + i * rowH end
     local base = ry + rowH - 9
-    draw.text(x + 10, base, dayShort(d), "small", color.BLACK)
     local tx = x + 84
-    if #d.es == 0 then
-      draw.text(tx + 16, base, T("frei", "free"), "small", color.GREEN)
+    if tallF then
+      draw.text(x + 10, ry + 20, dayShort(d), "small", color.BLACK)
+      if #d.es == 0 then
+        draw.text(tx + 16, ry + 20, T("frei", "free"), "small", color.GREEN)
+      else
+        local e = d.es[1]
+        dot(tx + 5, ry + 16, 5, e.col)
+        for li, l in ipairs(wraps[i]) do draw.text(tx + 16, ry + 20 + (li - 1) * 20, l, "small", color.BLACK) end
+        if #d.es > 1 then draw.text(x + w - 10, ry + 20, "+" .. (#d.es - 1), "small", color.BLACK, "right") end
+      end
     else
-      local e = d.es[1]
-      dot(tx + 5, ry + rowH - 13, 5, e.col)
-      local lw = x + w - 12 - (tx + 16) - (#d.es > 1 and 26 or 0)
-      draw.text(tx + 16, base, fit(startOrAllDay(e) .. " " .. e.ev, lw, "small"), "small", color.BLACK)
-      if #d.es > 1 then draw.text(x + w - 10, base, "+" .. (#d.es - 1), "small", color.BLACK, "right") end
+      draw.text(x + 10, base, dayShort(d), "small", color.BLACK)
+      if #d.es == 0 then
+        draw.text(tx + 16, base, T("frei", "free"), "small", color.GREEN)
+      else
+        local e = d.es[1]
+        dot(tx + 5, ry + rowH - 13, 5, e.col)
+        local lw = x + w - 12 - (tx + 16) - (#d.es > 1 and 26 or 0)
+        draw.text(tx + 16, base, fit(startOrAllDay(e) .. " " .. e.ev, lw, "small"), "small", color.BLACK)
+        if #d.es > 1 then draw.text(x + w - 10, base, "+" .. (#d.es - 1), "small", color.BLACK, "right") end
+      end
     end
     if i < count - 1 then draw.line(x + 8, ry + rowH, x + w - 9, ry + rowH, color.BLACK) end
+    if tallF then ry = ry + rowH end
   end
+  return cardH
 end
 
 local function fortnightBento(m, top)
@@ -791,9 +989,8 @@ local function fortnightBento(m, top)
   if draw.height > draw.width then
     -- Hochformat: zwei Wochenkarten uebereinander in voller Breite
     local fullW = draw.width - 2 * margin
-    local h = (draw.height - 14 - (top + 8) - 12) // 2
-    fortnightCard(m, margin, fullW, top, 1, math.min(7, n), h)
-    if second > 0 then fortnightCard(m, margin, fullW, top + h + 12, 8, second, h) end
+    local h = fortnightCard(m, margin, fullW, top, 1, math.min(7, n))
+    if second > 0 then fortnightCard(m, margin, fullW, top + h + 12, 8, second) end
     return
   end
   fortnightCard(m, margin, cardW, top, 1, math.min(7, n))
@@ -801,7 +998,49 @@ local function fortnightBento(m, top)
 end
 
 -- Slate: zwei flache Wochenspalten "WOCHE 1"/"WOCHE 2"
+local function fortnightSlateTall(m, top)
+  local margin = 26
+  local colW = draw.width - 2 * margin
+  local y = top + 10
+  for c = 0, 1 do
+    local si = c * 7 + 1
+    local count = math.min(7, #m.days - si + 1)
+    if count > 0 then
+      draw.text(margin, y + 10, c == 0 and T("WOCHE 1", "WEEK 1") or T("WOCHE 2", "WEEK 2"), "small", color.BLACK)
+      draw.rect(margin, y + 16, colW, 3, color.BLACK, true)
+      local ry = y + 24
+      for i = 0, count - 1 do
+        local d = m.days[si + i]
+        local tx = margin + 94
+        local tw = margin + colW - (tx + 17)
+        draw.text(margin, ry + 20, dayShort(d), "normal", color.BLACK)
+        local rowH = 36
+        if #d.es == 0 then
+          draw.text(tx + 17, ry + 20, T("frei", "free"), "small", color.GREEN)
+        else
+          local e = d.es[1]
+          local ls = wrapAll(e.ev, tw, "small")
+          square(tx, ry + 10, 11, e.col)
+          for li, l in ipairs(ls) do draw.text(tx + 17, ry + 20 + (li - 1) * 20, l, "small", color.BLACK) end
+          local sub = timeRange(e)
+          if #d.es > 1 then sub = string.format(T("%s · +%d weitere", "%s · +%d more"), sub, #d.es - 1) end
+          local sy = ry + 20 + #ls * 20
+          for _, l in ipairs(wrapAll(sub, tw, "small")) do
+            draw.text(tx + 17, sy, l, "small", color.BLACK)
+            sy = sy + 20
+          end
+          rowH = sy - ry + 2
+        end
+        draw.line(margin, ry + rowH, margin + colW - 1, ry + rowH, color.BLACK)
+        ry = ry + rowH
+      end
+      y = ry + 10
+    end
+  end
+end
+
 local function fortnightSlate(m, top)
+  if draw.height > draw.width then return fortnightSlateTall(m, top) end
   local margin = 26
   local tallS = draw.height > draw.width
   local colW = tallS and (draw.width - 2 * margin) or ((draw.width - 2 * margin - 40) // 2)

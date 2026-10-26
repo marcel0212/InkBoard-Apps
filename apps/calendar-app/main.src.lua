@@ -426,6 +426,37 @@ local function dayPage(ctx, evs, st, en, t, topY)
       local cardH
       if cp then cardH = extra == 0 and 40 or (extra == 1 and 50 or 64)
       else cardH = extra == 0 and 50 or (extra == 1 and 62 or 80) end
+      local tall = H > W
+      local tf = cp and "normal" or "medium"
+      local lf = cp and "small" or "normal"
+      local step = cp and 14 or 18
+      local tstep = cp and 22 or 28
+      local titleLines, detailLines = {}, {}
+      if cfg.dayName ~= false then
+        titleLines = tall and wrapLines(e.title, textMaxW, tf, 5) or { fit(e.title, textMaxW, tf) }
+      end
+      if detail then
+        local inclD, inclL = cfg.dayDur ~= false, cfg.dayLoc ~= false and hasLoc
+        local s
+        if inclD and inclL then
+          s = string.format(en and "Duration: %s · Location: %s" or "Dauer: %s · Ort: %s", durText(e, en), e.loc)
+        elseif inclD then
+          s = string.format(en and "Duration: %s" or "Dauer: %s", durText(e, en))
+        else
+          s = string.format(en and "Location: %s" or "Ort: %s", e.loc)
+        end
+        for _, l in ipairs(tall and wrapLines(s, textMaxW, lf, 5) or { fit(s, textMaxW, lf) }) do detailLines[#detailLines + 1] = l end
+      end
+      if notesRow then
+        for _, l in ipairs(tall and wrapLines(e.notes, textMaxW, lf, 8) or { fit(e.notes, textMaxW, lf) }) do detailLines[#detailLines + 1] = l end
+      end
+      local nT = math.max(#titleLines, 1)
+      local lineY0 = (cp and 38 or 49) + (nT - 1) * tstep
+      if tall then
+        local last = (cp and 22 or 30) + (nT - 1) * tstep
+        if #detailLines > 0 then last = lineY0 + (#detailLines - 1) * step end
+        cardH = math.max(cardH, last + (cp and 10 or 14))
+      end
       if y >= H then break end -- wie die eingebaute App: die letzte Karte wird am unteren Rand angeschnitten (Anzeigebereich schneidet ab)
       if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14) else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
       local chipY = y + (cp and 6 or 10)
@@ -439,28 +470,11 @@ local function dayPage(ctx, evs, st, en, t, topY)
       else
         draw.text(chipX + chipW // 2, cb, string.format("%02d:%02d", e.hh, e.mi), cf, ink(e.c), "center")
       end
-      if cfg.dayName ~= false then
-        local tf = cp and "normal" or "medium"
-        draw.text(titleX, y + (cp and 22 or 30), fit(e.title, textMaxW, tf), tf, color.BLACK, "left")
+      for i, l in ipairs(titleLines) do
+        draw.text(titleX, y + (cp and 22 or 30) + (i - 1) * tstep, l, tf, color.BLACK, "left")
       end
-      local lineY = y + (cp and 38 or 49)
-      local lf = cp and "small" or "normal"
-      local step = cp and 14 or 18
-      if detail then
-        local inclD, inclL = cfg.dayDur ~= false, cfg.dayLoc ~= false and hasLoc
-        local s
-        if inclD and inclL then
-          s = string.format(en and "Duration: %s · Location: %s" or "Dauer: %s · Ort: %s", durText(e, en), e.loc)
-        elseif inclD then
-          s = string.format(en and "Duration: %s" or "Dauer: %s", durText(e, en))
-        else
-          s = string.format(en and "Location: %s" or "Ort: %s", e.loc)
-        end
-        draw.text(titleX, lineY, fit(s, textMaxW, lf), lf, color.BLACK, "left")
-        lineY = lineY + step
-      end
-      if notesRow then
-        draw.text(titleX, lineY, fit(e.notes, textMaxW, lf), lf, color.BLACK, "left")
+      for i, l in ipairs(detailLines) do
+        draw.text(titleX, y + lineY0 + (i - 1) * step, l, lf, color.BLACK, "left")
       end
       y = y + cardH + gap
       shown = shown + 1
@@ -582,12 +596,18 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
           end
         end
         if cfg.wkLoc == true and e.loc ~= "" and bh >= 16 + used * 14 then
-          draw.text(bx2 + 7, ly, fit(e.loc, bw - 14, "small"), "small", fc, "left")
-          ly = ly + 14
-          used = used + 1
+          for _, ln in ipairs(wrapLines(e.loc, bw - 14, "small", math.max(1, (bh - 16 - used * 14) // 14 + 1))) do
+            draw.text(bx2 + 7, ly, ln, "small", fc, "left")
+            ly = ly + 14
+            used = used + 1
+          end
         end
         if cfg.wkNotes == true and e.notes ~= "" and bh >= 16 + used * 14 then
-          draw.text(bx2 + 7, ly, fit(e.notes, bw - 14, "small"), "small", fc, "left")
+          for _, ln in ipairs(wrapLines(e.notes, bw - 14, "small", math.max(1, (bh - 16 - used * 14) // 14 + 1))) do
+            draw.text(bx2 + 7, ly, ln, "small", fc, "left")
+            ly = ly + 14
+            used = used + 1
+          end
         end
       end
     end

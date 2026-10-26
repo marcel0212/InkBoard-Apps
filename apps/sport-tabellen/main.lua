@@ -1196,7 +1196,58 @@ local function windowHint(m,cx,y,start,shown)
 if start == 0 and shown >= #m.rows then return end
 draw.text(cx,y,string.format(T("Plätze %d-%d von %d","Places %d-%d of %d"),start + 1,start + shown,#m.rows),"small",color.BLACK,"center")
 end
+local function tableTall(ctx,k,m,font)
+local small = font == "small"
+local lh = small and 18 or 22
+local cx = draw.width // 2
+local y = draw.top + 6
+local bottom = draw.height - 14
+local c = tableCols(m,font)
+tableHeader(ctx,k,m,c,y + 12)
+y = y + 20
+local crestW,crestH = 34,20
+local nameX = 56 + crestW + 8
+local avail = c.nameRight - nameX
+local function rowInfo(r)
+local lines = wrapLines(r.name,avail,font,12)
+if #lines == 0 then lines = { "" } end
+return lines,math.max(lh + 8,#lines * lh + 8)
+end
+local maxRows = (bottom - y - 24) // (lh + 8)
+if maxRows < 1 then maxRows = 1 end
+local start = windowStart(m,maxRows)
+local shown = 0
+local used = 0
+while start + shown < #m.rows do
+local _,h = rowInfo(m.rows[start + shown + 1])
+if used + h > bottom - y - 24 and shown > 0 then break end
+used = used + h
+shown = shown + 1
+end
+for i,r in ipairs(m.rows) do
+if r.name == m.ownName and i > start + shown then
+start = math.min(i - shown,#m.rows - shown)
+if start < 0 then start = 0 end
+end
+end
+local yy = y
+for i = 1,shown do
+local r = m.rows[start + i]
+local lines,h = rowInfo(r)
+local base = yy + lh + 2
+if r.name == m.ownName then draw.rect(14,yy,draw.width - 28,h,color.BLACK,false,6) end
+draw.text(46,base,r.pos .. ".",font,color.BLACK,"right")
+crest(52,yy + 5,crestW,crestH,r.tla,7)
+for li,l in ipairs(lines) do
+draw.text(nameX,base + (li - 1) * lh,l,font,color.BLACK,"left")
+end
+tableNumbers(r,c,base,font)
+yy = yy + h
+end
+windowHint(m,cx,yy + 14,start,shown)
+end
 local function tableBento(ctx,k,m)
+if draw.height > draw.width then return tableTall(ctx,k,m,"normal") end
 local cx = draw.width // 2
 local y = draw.top + 6
 local bottom = draw.height - 14
@@ -1223,6 +1274,7 @@ end
 windowHint(m,cx,yy + 12,start,shown)
 end
 local function tableSlate(ctx,k,m)
+if draw.height > draw.width then return tableTall(ctx,k,m,"normal") end
 local cx = draw.width // 2
 local y = draw.top + 8
 local bottom = draw.height - 12
@@ -1251,6 +1303,7 @@ end
 windowHint(m,cx,y + shown * rowH + 12,start,shown)
 end
 local function tableNano(ctx,k,m)
+if draw.height > draw.width then return tableTall(ctx,k,m,"small") end
 local cx = draw.width // 2
 local y = draw.top + 4
 local bottom = draw.height - 10

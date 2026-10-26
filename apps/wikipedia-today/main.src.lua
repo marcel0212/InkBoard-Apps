@@ -303,6 +303,21 @@ local function drawCompact(ctx, list)
   local marginX, yearCol = 16, 44
   local listW = draw.width - 2 * marginX
   local top = draw.top + 4
+  if draw.height > draw.width then -- Hochformat: umbrechen, Zeilen wachsen mit
+    local y, bottom = top, draw.height - 10
+    for i = 1, #list do
+      local e = list[i]
+      local tl = wrapLines(e.text, listW - yearCol - 12, "small", 8)
+      local h = #tl * 17 + 12
+      if y + h > bottom and i > 1 then break end
+      local ys = yearStr(e.year)
+      if ys ~= "" then draw.text(marginX + yearCol, y + 20, ys, "small", color.BLACK, "right") end
+      for li, l in ipairs(tl) do draw.text(marginX + yearCol + 12, y + 20 + (li - 1) * 17, l, "small", color.BLACK, "left") end
+      y = y + h
+      draw.line(marginX, y - 1, marginX + listW, y - 1, color.BLACK)
+    end
+    return
+  end
   local shown, rowH = rowLayout(#list, top, draw.height - 10, 18, 26)
   for i = 1, shown do
     local e = list[i]

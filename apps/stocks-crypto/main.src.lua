@@ -427,11 +427,22 @@ local function drawFlat(ctx, items)
   local y, bottom = draw.top + 6, draw.height - 16
   local shown, rowH, truncated = rowLayout(#items, y, bottom, 50, 74, 16)
   local sparkX = 190
-  for i = 1, shown do
+  local tall = draw.height > draw.width
+  local rowY = y
+  if tall then shown, rowY = 0, y end -- Hochformat: Namen umbrechen, Zeilen wachsen mit
+  for i = 1, (tall and #items or shown) do
     local r = items[i]
-    local rowY = y + (i - 1) * rowH
-    draw.text(24, rowY + 22, fit(r.label, sparkX - 24 - 8, "normal"), "normal", color.BLACK, "left")
-    drawBadge(24, rowY + 38, r.pct, "small", en)
+    local nl = tall and wrapLines(r.label, sparkX - 24 - 8, "normal", 3) or { fit(r.label, sparkX - 24 - 8, "normal") }
+    local ex = (#nl - 1) * 22
+    if tall then
+      rowH = 50 + ex
+      if rowY + rowH > bottom and i > 1 then truncated = true; break end
+      shown = i
+    else
+      rowY = y + (i - 1) * rowH
+    end
+    for k, l in ipairs(nl) do draw.text(24, rowY + 22 + (k - 1) * 22, l, "normal", color.BLACK, "left") end
+    drawBadge(24, rowY + 38 + ex, r.pct, "small", en)
     local price = fmtPrice(r.price, en)
     local priceW = draw.measure(price, "large")
     local curW = r.cur ~= "" and (4 + draw.measure(r.cur, "small")) or 0
@@ -443,10 +454,11 @@ local function drawFlat(ctx, items)
     end
     draw.text(priceX, rowY + 26, price, "large", color.BLACK, "left")
     if r.cur ~= "" then draw.text(priceX + priceW + 4, rowY + 26, r.cur, "small", color.BLACK, "left") end
-    if i < shown then draw.line(24, rowY + rowH - 6, W - 24, rowY + rowH - 6, color.BLACK) end
+    if i < shown or tall then draw.line(24, rowY + rowH - 6, W - 24, rowY + rowH - 6, color.BLACK) end
+    if tall then rowY = rowY + rowH end
   end
   if truncated then
-    draw.text(W // 2, y + shown * rowH + 12,
+    draw.text(W // 2, (tall and rowY or y + shown * rowH) + 12,
       en and ("+" .. (#items - shown) .. " more (all shown in Nano style)") or ("+" .. (#items - shown) .. " weitere (alle im Nano-Stil)"),
       "small", color.BLACK, "center")
   end
@@ -469,10 +481,21 @@ local function drawCompact(ctx, items)
   end
   local badgeX = W - 24 - maxBadge
   local priceX = badgeX - 16 - maxPrice
+  local tallC = draw.height > draw.width
+  local acc = y
   for i, r in ipairs(items) do
     local rowY = y + (i - 1) * rowH
     local base = rowY + rowH // 2 + 4
-    draw.text(24, base, fit(r.label, priceX - 8 - 24, "small"), "small", color.BLACK, "left")
+    local nl = { fit(r.label, priceX - 8 - 24, "small") }
+    if tallC then -- Hochformat: Namen umbrechen, Zeilen wachsen mit
+      nl = wrapLines(r.label, priceX - 8 - 24, "small", 3)
+      rowH = math.max(30, #nl * 17 + 10)
+      if acc + rowH > draw.height - 12 and i > 1 then break end
+      rowY = acc
+      base = rowY + 20
+      acc = acc + rowH
+    end
+    for k, l in ipairs(nl) do draw.text(24, base + (k - 1) * 17, l, "small", color.BLACK, "left") end
     local price = fmtPrice(r.price, en)
     draw.text(priceX, base, price, "small", color.BLACK, "left")
     if r.cur ~= "" then draw.text(priceX + draw.measure(price, "small") + 4, base, r.cur, "small", color.BLACK, "left") end
