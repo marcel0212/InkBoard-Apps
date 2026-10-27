@@ -1965,87 +1965,6 @@
       "size": 28745
     },
     {
-      "id": "iphone-hinweise",
-      "name": {
-        "de": "Hinweise aufs iPhone",
-        "en": "iPhone notices"
-      },
-      "tagline": {
-        "de": "CO₂-, Feuchte-, Akku- und Offline-Warnungen aufs iPhone",
-        "en": "CO₂, humidity, battery and offline alerts to your iPhone"
-      },
-      "description": {
-        "de": "Bringt die Warnungen des InkBoards dorthin, wo du sie sofort siehst: als Mitteilung auf dem iPhone. Überwacht CO₂ und Luftfeuchte, den Akkustand dieses und aller Geräte im Netzwerk und meldet, wenn ein Gerät sich nicht mehr meldet. Der Versand läuft über die kostenlose iPhone-App ntfy (ntfy.sh oder eigener Server) oder per E-Mail. Die App läuft im Hintergrund, auch wenn sie nicht angezeigt wird. Sendet Meldungen an ntfy.sh bzw. den eingetragenen Server und optional per E-Mail.",
-        "en": "Brings the InkBoard's warnings to where you see them right away: as a notification on your iPhone. Watches CO₂ and humidity, the battery level of this and all devices in the network, and reports when a device stops responding. Sending uses the free iPhone app ntfy (ntfy.sh or your own server) or e-mail. The app runs in the background even when it is not shown. Sends messages to ntfy.sh or the server you enter and optionally by e-mail."
-      },
-      "category": "home",
-      "author": "InkBoard",
-      "version": "1.0.0",
-      "apiLevel": 26,
-      "pages": 1,
-      "pageNames": [
-        {
-          "de": "Überwachung",
-          "en": "Monitoring"
-        }
-      ],
-      "hasWidget": true,
-      "standard": false,
-      "features": {
-        "de": [
-          "Mitteilungen auf dem iPhone, auch unterwegs",
-          "CO₂, Luftfeuchte, Akku, Gerät offline",
-          "Eigene Grenzwerte und Sperrzeit gegen Wiederholungen",
-          "ntfy.sh, eigener Server oder E-Mail",
-          "Test-Knopf in den Einstellungen"
-        ],
-        "en": [
-          "Notifications on your iPhone, also on the go",
-          "CO₂, humidity, battery, device offline",
-          "Your own limits and a pause against repeats",
-          "ntfy.sh, own server or e-mail",
-          "Test button in the settings"
-        ]
-      },
-      "net": [
-        "ntfy.sh"
-      ],
-      "mail": true,
-      "icon": "apps/iphone-hinweise/icon.svg",
-      "previews": [
-        {
-          "kind": "display",
-          "file": "apps/iphone-hinweise/preview-display.svg",
-          "caption": {
-            "de": "Überwachung (Bento)",
-            "en": "Monitoring (Bento)"
-          }
-        },
-        {
-          "kind": "display",
-          "file": "apps/iphone-hinweise/preview-display-flat.svg",
-          "caption": {
-            "de": "Warnung (Slate)",
-            "en": "Warning (Slate)"
-          },
-          "style": "flat",
-          "page": 0
-        },
-        {
-          "kind": "widget",
-          "file": "apps/iphone-hinweise/preview-widget.svg",
-          "caption": {
-            "de": "Widget im Dashboard",
-            "en": "Widget on the dashboard"
-          }
-        }
-      ],
-      "package": "apps/iphone-hinweise/package.json",
-      "sha256": "fee51aa8d89513f3746993e7ed4bb0238451e01883397779cd53cade8e56cd3c",
-      "sig": "UH3s26u1faWxpZ+IcsQ+n8lutAaGWKPFPJanUNIfu9NfcLWixkaQDVZGHZcS3Sq7ZbpYgECGwg5MEheSimbgWYhj3zl7reZ6QEfOdKbHQ8W6+zc5NwlG6hLaEJJeQdtnygF4o7t5BxapOwWS9qBN83Ol9Tj/ASp6Pw8XdJBBjkvQ3slKmOCop/IeBkO6kGsTysf7Et4/ze03KNfqNoLAH8T0/NY2vu0B054y0bU1dFFW8DaBfDBlTKhoiPEjQK3MonDy+T3p+6mBJBXCdgp5FiWF88I9LjjjMixi9XRFJmW+wktPsiBHfcjzdEzsx17lROWVVy2dmX401OXiLMmoOg==",
-      "size": 18736
-    },
-    {
       "id": "luft-pollen",
       "name": {
         "de": "Luft & Pollen",
@@ -2061,7 +1980,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -2147,9 +2066,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "1a937f316d5b6fb21443f91db8aa8ec4ccc57fac890efa6abd45259faec28c0f",
-      "sig": "Q6zzTViB6V4MAXvqwOveyN+t9rRqvzHxykCanvGPOTIxCfyQpEytGqicbPiv7Ipi9hj5qFusrgEeBjFwj0f7TIbYb9+xwoUS2sAsn0X9XOqkzlADIjr006E8KM+by1evzjPN9JrfhtjyXc020one1/sQQ+6DX0qaLpBtOO7/Ku2k9U+yUywehIXVBMyQZk6R0WayyYfOLxbziXn6lYNpFxxeE/Ppc2Kb+42BnCIi2KZ+AQmhVpx2ybyAz3R1vg0QKEWZQUEykgqDm7jH1LZY/sL/qRW6iEHnBvecGZOt0DTtW2nX2ijYQxy3U2zjvQZxcozcOW+FdCrvCfP55n2Bhw==",
-      "size": 24120
+      "sha256": "941a4fa335a5fe106249b2e9275e338ba93900fe197fb057087774d808180e21",
+      "sig": "f8g9Dp63YoKzdFRVREfkeUxhKYzvIsTQrlLZAlAqUQN9VsnwlmHLdJFxUzIgomPmS1rFRdnN45I/UBls3PWH6MxQkQ4929OkYBlWDHVL+eYKmW9gwrMeUO/LsZb86aiuKl0a3kq3iBB2jJf0MaFcoaRXl4K7620e8hx6oNEFWI/GxnjDXRb02sHMni1U9qD5b1GUFkD5HdEo5Ej+2QJNTufJrsN74Y7gyPk/iTK/HkKCIL2e8JISX419bcbJiJfbKtk76QqVBjuxBGNJc/5OD0Egp2bwKHmJkUhy2Ovb0Dw6SZ6rWgoa60sAKQhCPRPsrLP6PvRbQpnXwbwzU9FAIA==",
+      "size": 24215
     },
     {
       "id": "news-feeds",
@@ -3129,7 +3048,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -3275,9 +3194,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "be2b324b598464cbf5abd88e67b8502f32c31d6e5422036a1ed232f458f15da5",
-      "sig": "HLX7C1ERgPtIsy5OKfpdrF/Be7E/oq7JwmzND1MVxCRCL23/HZsT+lGr4L4zorKIssEZkZd4bJ/hDsOSdhh+CyAwjJa8AAv8YfFdUyz/Sc0rzsLjDO5AActhlmd/sEbJkM/9TeZW8RrU5HcqwJ8vr60kngsJTrNdenBs8H4mHsG4vkfGt+yI7K/cmjpyR/nq7Wtla8ev+OJdxHSSsfCW7LDQHWZWypwXDDrx+OHSMaiTGy6BSla1zOtFWY27NNy4QmFaUsKns9ehm18uPSA7d9oUAewnOcGZYJmnhCI4Su6slBQ6/TBPo48FOdb3Vo4kaonr18JSWAOSITNOcqoWbA==",
-      "size": 64244
+      "sha256": "31277d8a630ef427706b1ab891cc3c35e9ce5e7fbf80ec7daf92b4950c017c05",
+      "sig": "s5cEld5RLf1xksGJv0ik1rAm4u+qaSz7CuWHV6ZQt47OYLJDmlwu5cpWjK8E+iEnPSLWf2aAIG7rH4yhdW0FCyoB3u31aCb2+uTwFbrcBCUOHGr4M85zshVrI16umH6BF3ZYI4BDfpzZn9EA54t24eHp4bO4O4fXMaVn+WcvgNBoPJ9JfoE5DuUMVYnINim1omSBnHsVFLegxeoXZZxSy+LNc91mp+LgcKgbyPOQgnxAxSnCiQbnZyAemI3a9dCJgxtztXBK1J+54hMW0D2b4lEoJqDcRl7lAKh29WIg0iA6UJUOdVKX6T82QByxWRcBAgcMLoxeVXpMEjphOc7llA==",
+      "size": 63305
     },
     {
       "id": "wikipedia-today",

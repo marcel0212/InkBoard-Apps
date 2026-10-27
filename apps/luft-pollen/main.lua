@@ -399,7 +399,7 @@ local function page_vent(ctx)
     draw.text(ox + 30, oy, T(ctx, "Luft: ", "Air: ") .. aqi_label(ctx, lv), "normal", color.BLACK, "left")
   end
   local list = pollen_list(ctx)
-  if list[1] then
+  if list[1] and list[1].lv > 0 then -- bei "keine" gar nichts zeigen (sonst steht dort z. B. "Erle: keine")
     oy = oy + 30
     local lv = list[1].lv
     draw.circle(ox + 12, oy - 7, 7, LEVEL_COLORS[lv + 1], true)

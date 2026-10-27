@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.2.3",
+  "version": "1.2.4",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -28,13 +28,6 @@
       "title": {
         "de": "Verlauf",
         "en": "History"
-      }
-    },
-    {
-      "id": "warnings",
-      "title": {
-        "de": "Warnungen",
-        "en": "Warnings"
       }
     }
   ],
@@ -121,62 +114,6 @@
         "en": "Also show CO2 (small trend)"
       },
       "section": "history"
-    },
-    {
-      "key": "co2Warn",
-      "type": "toggle",
-      "default": true,
-      "label": {
-        "de": "CO2-Warnung (Ampel, Banner, Pinnwand-Meldung)",
-        "en": "CO2 warning (traffic light, banner, Family Board alert)"
-      },
-      "section": "warnings"
-    },
-    {
-      "key": "co2WarnPpm",
-      "type": "number",
-      "min": 400,
-      "max": 3000,
-      "default": 1200,
-      "label": {
-        "de": "CO2-Warnschwelle (ppm)",
-        "en": "CO2 warning threshold (ppm)"
-      },
-      "section": "warnings"
-    },
-    {
-      "key": "humWarn",
-      "type": "toggle",
-      "default": true,
-      "label": {
-        "de": "Feuchte-Warnung (Ampel, Banner, Pinnwand-Meldung)",
-        "en": "Humidity warning (traffic light, banner, Family Board alert)"
-      },
-      "section": "warnings"
-    },
-    {
-      "key": "humLow",
-      "type": "number",
-      "min": 0,
-      "max": 99,
-      "default": 30,
-      "label": {
-        "de": "Feuchte niedrig ab (%)",
-        "en": "Humidity low below (%)"
-      },
-      "section": "warnings"
-    },
-    {
-      "key": "humHigh",
-      "type": "number",
-      "min": 1,
-      "max": 100,
-      "default": 60,
-      "label": {
-        "de": "Feuchte hoch ab (%)",
-        "en": "Humidity high above (%)"
-      },
-      "section": "warnings"
     },
     {
       "key": "range",
