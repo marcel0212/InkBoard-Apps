@@ -1,7 +1,7 @@
 {
   "id": "pinnwand-app",
   "name": {"de": "Pinnwand", "en": "Family Board"},
-  "version": "1.3.1",
+  "version": "1.3.3",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -89,7 +89,7 @@
       "type": "storagePath",
       "device": "pinnwandFtpPath",
       "default": "/inkboard/pinnwand",
-      "label": {"de": "Pinnwand: Ordner für die FTP-Zustellung", "en": "Family Board: folder for the FTP fallback delivery"},
+      "label": {"de": "Pinnwand-Nachrichten: Ordner für die FTP-Zustellung", "en": "Family Board messages: folder for the FTP fallback delivery"},
       "help": {
         "de": "Die Zustellung über den Speicher braucht FTP (HTTP kann die Nachricht nicht zurücklesen).",
         "en": "Delivery via the storage requires FTP (HTTP cannot read the message back)."
