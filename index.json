@@ -3408,7 +3408,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.5",
+      "version": "1.4.6",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -3458,9 +3458,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "48a86c2aba4ea6ce0a3e9f52e01bc17d01fdf83cd1c7c0b0bab9d3f81e96c6cf",
-      "sig": "tFZUl0lzO2W54j0sttaNbrOex/cr7l1FBuNP3yO95CIMjAUOVbTr9ldP5tom4ZLM6FwOBga+ZeCB7lcbKyfsVFE2QW9wVbVmKKlfn9AE5qjr09kBymoqQesfqihgL432AbiXzakPKHkfuzDBu+Lr2CitgpPMuDMI2JB0yTbHgjSM27tnw4ItCOtoKSuCpCsvvMH6MBcFourlDvB4CCV8wayByACx9ejH5odewBMhacB7KyX6Mo85wha2Mm977xQ9DveLXsCsjTURbRL4xdBjEntnygSttVMtJTfhsv+lmYmPNsH3z7EKSjncrEsoeAazj42gj39+K0sZs8eWLjBp5g==",
-      "size": 16170
+      "sha256": "346aa053801a123f9d9a7e96375e864d908958e6157cf846a7ec83c016aa013e",
+      "sig": "h3WhHn6F2ooJPTf4/880ClRrHSDSl5C95won9JNkkzz9/29oJQo/dHcRuV8wwjooizz7qRZi4uYXkysqGF1haImzreMNvMtqE7jqUst1Cz/JYyuqyt6VEEmsIlwyhPJ2ROpnWIFE2TI0Qv3fTcGcOwKrwRbJN9D5+YFmnlpCKvY0MA49UriYVHc57Ir9rM/J/SMVyBFqiDJLBO0Oz5uLdV74FThmCIiiu6cYqGT87YFL+wnBod88TtxKQXcUGfF4CDpk2PV9u1ZXeJQOIDvC2WR80dSyTMd01Hl6R4Gb1mTjbHQDe0ggxM8/+RP7iuuYnUuXY5IEakAd0wq7I1uQGw==",
+      "size": 16329
     }
   ]
 }

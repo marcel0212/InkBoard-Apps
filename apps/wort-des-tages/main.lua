@@ -325,12 +325,14 @@ function on_widget(ctx, box)
   local maxY = box.y + box.h - 4
   local top = box.y
   local textX = box.x + 12
-  if box.w >= 170 and (maxY - top) >= 34 then
+  -- Buch-Symbol links: auch im schmalen Hochformat-Widget (ab 110 px, kleiner ab 80 px), nicht nur ab 170 px
+  if box.w >= 80 and (maxY - top) >= 28 then
+    local isz = box.w >= 110 and 34 or 26
     local by = top + 2
-    if by + 34 > maxY then by = maxY - 34 end
-    draw.rect(textX, by, 34, 34, accent, true, 8)
-    bookIcon(textX, by, 34, color.WHITE)
-    textX = textX + 34 + 10
+    if by + isz > maxY then by = maxY - isz end
+    draw.rect(textX, by, isz, isz, accent, true, 8)
+    bookIcon(textX, by, isz, color.WHITE)
+    textX = textX + isz + 10
   end
   local textW = math.max(box.x + box.w - textX - 6, 20)
   -- Schriftgroesse aus den Widget-Einstellungen (wie dashFontTier(): "klein" = 7 pt, sonst 9 pt)
