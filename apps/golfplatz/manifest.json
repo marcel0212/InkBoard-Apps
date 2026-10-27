@@ -4,7 +4,11 @@
     "de": "Golfplatz",
     "en": "Golf Course"
   },
-  "version": "1.0.10",
+  "shortName": {
+    "de": "Golf",
+    "en": "Golf"
+  },
+  "version": "1.0.11",
   "apiLevel": 14,
   "pages": [
     {

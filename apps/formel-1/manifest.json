@@ -4,7 +4,11 @@
     "de": "Formel 1",
     "en": "Formula 1"
   },
-  "version": "1.0.5",
+  "shortName": {
+    "de": "F1",
+    "en": "F1"
+  },
+  "version": "1.0.6",
   "apiLevel": 11,
   "pages": [
     {

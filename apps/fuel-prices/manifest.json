@@ -4,7 +4,11 @@
     "de": "Tankpreise",
     "en": "Fuel prices"
   },
-  "version": "1.1.15",
+  "shortName": {
+    "de": "Tanken",
+    "en": "Fuel"
+  },
+  "version": "1.1.16",
   "apiLevel": 7,
   "pages": [
     {

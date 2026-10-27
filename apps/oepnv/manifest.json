@@ -4,7 +4,11 @@
     "de": "ÖPNV",
     "en": "Public transport"
   },
-  "version": "1.2.11",
+  "shortName": {
+    "de": "ÖPNV",
+    "en": "Transit"
+  },
+  "version": "1.2.12",
   "apiLevel": 16,
   "pages": [
     {

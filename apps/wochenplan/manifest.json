@@ -4,7 +4,11 @@
     "de": "Wochenplan",
     "en": "Weekly plan"
   },
-  "version": "1.2.0",
+  "shortName": {
+    "de": "Woche",
+    "en": "Week"
+  },
+  "version": "1.2.1",
   "apiLevel": 23,
   "pages": [
     {

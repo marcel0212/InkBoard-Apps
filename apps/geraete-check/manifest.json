@@ -4,7 +4,11 @@
     "de": "Geräte-Check",
     "en": "Device check"
   },
-  "version": "1.1.5",
+  "shortName": {
+    "de": "Check",
+    "en": "Check"
+  },
+  "version": "1.1.6",
   "apiLevel": 24,
   "pages": 1,
   "refreshMinutes": 15,

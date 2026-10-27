@@ -4,7 +4,11 @@
     "de": "Akku-Prognose",
     "en": "Battery forecast"
   },
-  "version": "1.3.2",
+  "shortName": {
+    "de": "Akku",
+    "en": "Battery"
+  },
+  "version": "1.3.3",
   "apiLevel": 25,
   "pages": [
     {

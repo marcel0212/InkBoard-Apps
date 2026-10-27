@@ -4,7 +4,11 @@
     "de": "Müllabfuhr",
     "en": "Waste collection"
   },
-  "version": "1.0.8",
+  "shortName": {
+    "de": "Müll",
+    "en": "Waste"
+  },
+  "version": "1.0.9",
   "apiLevel": 9,
   "pages": [
     {

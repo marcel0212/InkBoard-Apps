@@ -4,7 +4,11 @@
     "de": "Wort des Tages",
     "en": "Word of the day"
   },
-  "version": "1.4.4",
+  "shortName": {
+    "de": "WdT",
+    "en": "WotD"
+  },
+  "version": "1.4.5",
   "apiLevel": 1,
   "pages": [
     {

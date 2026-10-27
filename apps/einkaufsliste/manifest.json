@@ -1,7 +1,11 @@
 {
   "id": "einkaufsliste",
   "name": {"de": "Einkaufsliste", "en": "Shopping list"},
-  "version": "1.3.2",
+  "shortName": {
+    "de": "Einkauf",
+    "en": "Shopping"
+  },
+  "version": "1.3.3",
   "apiLevel": 23,
   "pages": [
     {"de": "Liste", "en": "List"}

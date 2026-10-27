@@ -4,7 +4,11 @@
     "de": "Golf Tour",
     "en": "Golf Tour"
   },
-  "version": "1.0.5",
+  "shortName": {
+    "de": "Tour",
+    "en": "Tour"
+  },
+  "version": "1.0.6",
   "apiLevel": 12,
   "pages": [
     {

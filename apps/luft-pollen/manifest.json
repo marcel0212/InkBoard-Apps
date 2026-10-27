@@ -4,7 +4,11 @@
     "de": "Luft & Pollen",
     "en": "Air & pollen"
   },
-  "version": "1.0.4",
+  "shortName": {
+    "de": "Luft",
+    "en": "Air"
+  },
+  "version": "1.0.5",
   "apiLevel": 22,
   "pages": [
     {

@@ -4,7 +4,11 @@
     "de": "Homeoffice",
     "en": "Home office"
   },
-  "version": "1.0.2",
+  "shortName": {
+    "de": "Office",
+    "en": "Office"
+  },
+  "version": "1.0.3",
   "apiLevel": 10,
   "pages": [
     {

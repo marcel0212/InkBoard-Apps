@@ -4,7 +4,11 @@
     "de": "Apple Home",
     "en": "Apple Home"
   },
-  "version": "1.4.14",
+  "shortName": {
+    "de": "Home",
+    "en": "Home"
+  },
+  "version": "1.4.15",
   "apiLevel": 23,
   "pages": [
     {

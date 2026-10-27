@@ -4,7 +4,11 @@
     "de": "Aktien & Krypto",
     "en": "Stocks & Crypto"
   },
-  "version": "1.0.11",
+  "shortName": {
+    "de": "A&K",
+    "en": "S&C"
+  },
+  "version": "1.0.12",
   "apiLevel": 7,
   "pages": [
     {
