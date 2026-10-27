@@ -972,8 +972,8 @@ if not nx.home then lt,lc,ls,ln,rt,rc,rs,rn = rt,rc,rs,rn,lt,lc,ls,ln end
 crestBig(ctx,cx - crestOff - crestW,crestY,crestW,crestH,lt,lc,ls,ln,18)
 crestBig(ctx,cx + crestOff,crestY,crestW,crestH,rt,rc,rs,rn,18)
 draw.text(cx,crestY + crestH // 2 + 10,"vs","large",color.BLACK,"center")
-draw.text(cx - crestOff - crestW // 2,crestY + crestH + 16,fit(ln,tall and 200 or 280,"small"),"small",color.BLACK,"center")
-draw.text(cx + crestOff + crestW // 2,crestY + crestH + 16,fit(rn,tall and 200 or 280,"small"),"small",color.BLACK,"center")
+draw.text(cx - crestOff - crestW // 2,crestY + crestH + (tall and 30 or 16),fit(ln,tall and 200 or 280,"small"),"small",color.BLACK,"center")
+draw.text(cx + crestOff + crestW // 2,crestY + crestH + (tall and 30 or 16),fit(rn,tall and 200 or 280,"small"),"small",color.BLACK,"center")
 draw.text(cx,y + heroH - 51,nx.home and T("Heim","Home") or T("Auswärts","Away"),"small",color.BLACK,"center")
 local venue = ""
 if nx.home and d.own.venue ~= "" then venue = d.own.venue
@@ -1005,7 +1005,7 @@ draw.text(heroX + 26,ty + tileH // 2 + 5,m.res,"small",rc == color.YELLOW and co
 badge(heroX + 50,ty + tileH // 2 - 11,42,22,m.tla,m.col,7)
 local sc = scoreText(m)
 draw.text(heroX + heroW - 16,ty + tileH // 2 + 9,sc,"large",color.BLACK,"right")
-draw.text(heroX + 104,ty + tileH // 2 + 6,fit(m.opp,heroW - 104 - draw.measure(sc,"large") - 36,"normal"),"normal",color.BLACK,"left")
+draw.text(heroX + 114,ty + tileH // 2 + 6,fit(m.opp,heroW - 114 - draw.measure(sc,"large") - 36,"normal"),"normal",color.BLACK,"left")
 goto continue
 end
 draw.rect(tx,tilesTop,tileW,tileH,rc,false,10)
@@ -1055,7 +1055,7 @@ draw.text(lx0 + 8,base - 1,m.res,"small",rc == color.YELLOW and color.BLACK or c
 badge(lx0 + 26,base - 16,36,20,m.tla,m.col,7)
 local sc = scoreText(m)
 local scoreX = lx1 - draw.measure(sc,"normal") - (tall and 4 or -2) - 22
-local nameX = lx0 + 26 + 36 + 8
+local nameX = lx0 + 26 + 36 + (tall and 18 or 8)
 local maxW = scoreX - nameX - 10
 draw.text(nameX,base,maxW > 0 and fit(m.opp,maxW,"normal") or m.opp,"normal",color.BLACK,"left")
 draw.text(scoreX,base,sc,"normal",color.BLACK,"left")
@@ -1070,7 +1070,7 @@ local base = rowY + rowH // 2 - 2
 badge(rx0,base - 16,36,20,m.tla,m.col,7)
 local ds = fmtDate(m.when)
 local dateX = rx1 - 2 - draw.measure(ds,"normal")
-local nameX = rx0 + 36 + 8
+local nameX = rx0 + 36 + (tall and 18 or 8)
 local maxW = dateX - nameX - 10
 draw.text(nameX,base,maxW > 0 and fit(m.opp,maxW,"normal") or m.opp,"normal",color.BLACK,"left")
 draw.text(dateX,base,ds,"normal",color.BLACK,"left")
@@ -1118,7 +1118,7 @@ inner,name,tla,col = fmtDate(m.when),m.opp,m.tla,m.col
 end
 draw.text(lx - 20,cy + 7,inner,"normal",color.BLACK,"right")
 if tla then badge(lx + 24,cy - 11,40,22,tla,col,7) end
-if name ~= "" then draw.text(lx + 74,cy + 7,fit(name,W - lx - 74 - 16,"normal"),"normal",color.BLACK,"left") end
+if name ~= "" then draw.text(lx + 84,cy + 7,fit(name,W - lx - 84 - 16,"normal"),"normal",color.BLACK,"left") end
 end
 return
 end

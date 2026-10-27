@@ -885,7 +885,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.3",
+      "version": "1.3.4",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -974,9 +974,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "1dc503a7fdaacb023ec114ea3b45cbc0372912c31755169da89ab1e105616185",
-      "sig": "uXwePNPQRGCG6L1M4xJL34lM+I7FxOlvLvYGubXIOe50oC/VOob/MOHLJoUweJOed+Ts813OaaEBWRFOdnywZlvwDELW8Uaos5FT132odwyMFIH8m94eCFGqnJ6j8WFXSGDgTD1wP/lOATOfUlP3aTppkAweJc1YgeD0WPB5i2iW2O+zdi4cY/jPDIyzuM0rAbsXbkjriH4GwlPeZJsXHYLU8vWbgOQqdokGh0HNvLdXeEUO7djQb3OxCL/krp8N/MnRReiw85rcAqFVdq/DHd0u4kwZwhoWUvo/R2H5mtWZjFTIdegh7Lgy7MbiuyhCSiYSAksJsGFdKsMDPG3jIw==",
-      "size": 68718
+      "sha256": "219b1b4942fb52a94fd836667169bc5288749b24888b72e63eb669bd931a0dbc",
+      "sig": "unBEBes81VR5pgicgboPp87GLxJCfbhwiyd5GJkkyylZ6e6aVY+jCCfoxIxBWVVdbJl5LlclbyWGMlGI6bm30XR/fHnmprcQ2rj2XJzdSjkf2M6sk8Bi5BDc2IHK2n8bXbaKZyQgf7a75zrGy8U0NBYUQxUAlH0D0mOA4w3UfPwHOqNVXDGaYqSiFlGy+ppCar7pAAV6UQU+IiXBP6Dvn8XXcpz7lwDA9SLrBjSc7qKpd1H7wFkuuE9tNtJZ/0/jWtudkL1kdS0eVD36YxM+59RG0GxCGhNTdzTxArntqZBENKQFfSRmYmUASD8LasZEdT3qEF+v7UNiRxiBs1m0CA==",
+      "size": 69179
     },
     {
       "id": "formel-1",
@@ -1242,7 +1242,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -1351,9 +1351,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "a1657a462f22b35bff0de5eca3038b675c6888a74395d2017a4780ce037dce5e",
-      "sig": "CnBfptweH/PDOP3iV1ATS993N+xYHDktASXzMv1w2B8Xp5ePnfJQee8b7LlBaRZv+q3ExqYWEtNOQmAktysnJ6EPkyRjHnzdrKRK55I9vYWhqVNZhhfre2D8gHaIgI898C+OKM8Y79HaNlWtjhqxWWVOisOoABd4kT2DEHVdRxLqMp9GHDNB5LxTFAdJayZUw0rkdVDCDjhv0xvVUCzK1hVY4y+bBNnlpspdvrZ7JdmVTAb9O0qGfLCFQ90toNIeogDD2xax01Jb4fBerqJpvwOBX/j5J6Ec3oxoYJxKhtgO6Uu7cQ0u5mQw1wvYtzJ4Ernr/HsQ0ewr+LcoEo2zTQ==",
-      "size": 72615
+      "sha256": "374c8794a8a260f92ee6b2b5bc07a395717eb67b347a30aecb68d0836d93c436",
+      "sig": "LJddE7n7tsYLCrK698r0gjD0/QqO2GjoJXQSwgIQ23bffQXupWy3GUALg+tUIwe8V/WqksB3CO4lJGtRoRxVh8lyLLptZbGmvLeJkOd6853ysXKRSYanYL0B3spyjG+18gj2RQpiCtKj9eka16YHvF15OZTZ70mtVBXYEerzIMIjqdKerOwB/EJWFBnYFA50CUGxTS1mxqLZnr0nRlmWqBvSTQ2OFjf6CXc3ufXZtz73xVaphmspWXSJejxRQ3/U62skS+OPMOOyLGIym0LVCKUcgzYDTVrJRnoG89Myh5f8VLa4xhYbRwV2kOtEqpCGtvPeeS6UtUy72W7YqcaLmw==",
+      "size": 72683
     },
     {
       "id": "gaeste-wlan",

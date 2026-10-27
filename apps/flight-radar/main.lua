@@ -14,7 +14,7 @@ local AIR_GAP = 1800
 local COV_FLUSH = 600
 local COV_PROBES = 4
 local PROBES = 16
-local SKY_VER = "r50"
+local SKY_VER = "r51"
 local function trim(s)
 return (s:gsub("^%s+",""):gsub("%s+$",""))
 end
@@ -888,6 +888,8 @@ local SLOTS_P = {
 { { 20,460,40,760,240,true } },
 { { 20,460,420,760,240,true },{ 20,460,40,380,240,true } },
 { { 20,460,520,760,240,true },{ 20,460,290,500,240,true },{ 20,460,40,270,240,true } },
+{ { 20,460,570,780,240,true },{ 20,400,395,560,210,true },{ 80,460,225,385,270,true },{ 20,400,40,215,210,true } },
+{ { 20,460,600,780,240,true },{ 20,400,440,590,210,true },{ 80,460,290,430,270,true },{ 20,400,160,280,210,true },{ 80,460,40,150,270,true } },
 }
 local SLOTS = {
 { { 20,780,20,414,400,true } },
@@ -931,13 +933,14 @@ local sig = skySig(ctx,ac)
 local _,cur = skyParse(ctx.data.get("sk"))
 if S.sig == sig and skyImagesThere(cur) then return end
 local cands,partial,generic = {},false,false
+local maxC = skyOri() == "P" and 5 or 3
 local function known(name)
 local r = nasKnown(name,now,PROBES - #cands - 1)
 if r == nil then partial = true; return false end
 return r
 end
 for i = 1,math.min(#ac.list,POOL) do
-if #cands >= 3 then break end
+if #cands >= maxC then break end
 local a = ac.list[i]
 local name = skyFile(a)
 if name and known(name) then cands[#cands + 1] = { a = a,name = name } end
@@ -945,7 +948,7 @@ end
 if #cands == 0 then
 local seen = {}
 for i = 1,math.min(#ac.list,POOL) do
-if #cands >= 3 then break end
+if #cands >= maxC then break end
 local a = ac.list[i]
 if a.grp ~= "" and a.lv and not seen[a.grp] then
 seen[a.grp] = true
@@ -1319,7 +1322,9 @@ local radius = radiusOf(ctx.cfg)
 local key = keyOf(loc,radius)
 local ac,fail = loadAc()
 if ac then applyFeature(ctx,ac) end
-if fail and fail.key == key then return "error",{ msg = fail.msg },radius end
+local nowT = time.now()
+local fresh = ac and ac.key == key and nowT ~= nil and ac.at ~= nil and nowT >= ac.at and nowT - ac.at < 1800
+if fail and fail.key == key and not fresh then return "error",{ msg = fail.msg },radius end
 if not ac or ac.key ~= key then return "loading",nil,radius end
 ac.radius = radius
 if #ac.list == 0 then return "empty",ac,radius end
