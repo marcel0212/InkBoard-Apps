@@ -282,7 +282,7 @@ function on_draw(ctx, page)
   local lines = draw.wrap(cl, cy, cw, def, "normal", color.BLACK)
   cy = cy + lines * 24
 
-  if ctx.cfg.showExample and example ~= "" and cy < areaBottom - 60 then
+  if (ctx.cfg.showExample or ctx.preview == true) and example ~= "" and cy < areaBottom - 60 then -- Vorschau zeigt den Beispielsatz immer
     cy = cy + 14
     draw.line(cl, cy, cl + cw, cy, color.BLACK)
     cy = cy + 24

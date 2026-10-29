@@ -8,7 +8,7 @@
     "de": "A&K",
     "en": "S&C"
   },
-  "version": "1.0.12",
+  "version": "1.0.13",
   "apiLevel": 7,
   "pages": [
     {
@@ -246,6 +246,19 @@
       "label": {
         "de": "Darstellung",
         "en": "Layout"
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Kursverlauf)",
+        "en": "Show extra info (price history)"
+      },
+      "help": {
+        "de": "Aus: keine Verlaufslinien unter den Kursen. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no history lines under the prices. The preview in Studio, Mac and iOS app still shows everything."
       }
     },
     {

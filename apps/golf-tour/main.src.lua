@@ -591,6 +591,11 @@ function on_draw(ctx, page)
   draw.clear(color.WHITE)
   local m = model(ctx)
   if emptyState(ctx, m) then return end
+  -- Zusatzinfos (Turnierstatus "Läuft/Beendet", Status je Spieler): Einstellung "details"; in der Vorschau (ctx.preview) immer
+  if ctx.cfg.details == false and ctx.preview ~= true then
+    m.lv = 0
+    for _, r in ipairs(m.rows) do r.status = "" end
+  end
   local style = ctx.cfg.style
   if style == "flat" then drawFlat(ctx, m)
   elseif style == "compact" then drawCompact(ctx, m)

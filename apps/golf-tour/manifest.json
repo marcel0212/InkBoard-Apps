@@ -8,7 +8,7 @@
     "de": "Tour",
     "en": "Tour"
   },
-  "version": "1.0.6",
+  "version": "1.0.7",
   "apiLevel": 12,
   "pages": [
     {
@@ -87,6 +87,19 @@
       "help": {
         "de": "Bento: drei Podium-Kacheln für die Top 3 und eine kurze Liste darunter. Slate: durchgehende Rangliste ab Platz 1 mit Farbstreifen für den Führenden. Nano: dieselbe Rangliste in kleinster Schrift für möglichst viele Plätze.",
         "en": "Bento: three podium tiles for the top 3 and a short list below. Slate: a continuous ranking from position 1 with a colour stripe for the leader. Nano: the same ranking in the smallest font for as many positions as possible."
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Turnierstatus, Spielerstatus)",
+        "en": "Show extra info (tournament and player status)"
+      },
+      "help": {
+        "de": "Aus: kein „Läuft/Beendet“ und kein Status je Spieler. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no \"In progress/Final\" and no status per player. The preview in Studio, Mac and iOS app still shows everything."
       }
     }
   ]

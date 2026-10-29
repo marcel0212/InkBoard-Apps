@@ -4,7 +4,7 @@
     "de": "Fußball",
     "en": "Football"
   },
-  "version": "1.0.18",
+  "version": "1.0.19",
   "apiLevel": 14,
   "pages": [
     {
@@ -209,6 +209,19 @@
         "en": "Load real club crests"
       },
       "section": "display"
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Heim/Auswärts, Spielort)",
+        "en": "Show extra info (home/away, venue)"
+      },
+      "help": {
+        "de": "Aus: im nächsten Spiel stehen kein „Heim/Auswärts“ und kein Spielort. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: the next match shows no home/away and no venue. The preview in Studio, Mac and iOS app still shows everything."
+      }
     },
     {
       "key": "wTablePos",

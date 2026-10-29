@@ -8,7 +8,7 @@
     "de": "Tanken",
     "en": "Fuel"
   },
-  "version": "1.1.16",
+  "version": "1.1.17",
   "apiLevel": 7,
   "pages": [
     {
@@ -193,6 +193,19 @@
       "label": {
         "de": "Darstellung",
         "en": "Layout"
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Adresse der Tankstelle)",
+        "en": "Show extra info (station address)"
+      },
+      "help": {
+        "de": "Aus: keine Adresszeile unter dem Namen der Tankstelle. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no address line under the station name. The preview in Studio, Mac and iOS app still shows everything."
       }
     },
     {

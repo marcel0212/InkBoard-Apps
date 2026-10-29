@@ -252,7 +252,7 @@ local function drawCards(n, en, topY)
 
   local pillH = 40
   local pillY = coverY + coverPx + 14
-  draw.rect(coverX, pillY, coverPx, pillH, color.BLACK, false, pillH // 2)
+  if n.album ~= "" then draw.rect(coverX, pillY, coverPx, pillH, color.BLACK, false, pillH // 2) end
   draw.text(coverX + coverPx // 2, pillY + pillH - 13, fit(n.album, coverPx - 28, "normal"), "normal", color.BLACK, "center")
 
   local tileGap = 10
@@ -432,7 +432,7 @@ local function drawCompact(n, en, topY)
   local remain = d > p and (d - p) or 0
   local pct = d > 0 and math.min(100, p * 100 // d) or 0
   local labels = {
-    en and "TITLE" or "TITEL", en and "ARTIST" or "INTERPRET", "ALBUM", "STATUS",
+    en and "TITLE" or "TITEL", en and "ARTIST" or "INTERPRET", n.album ~= "" and "ALBUM" or "", "STATUS",
     en and "POSITION" or "POSITION", en and "REMAINING" or "VERBLEIBEND", en and "PROGRESS" or "FORTSCHRITT",
   }
   local values = {
@@ -482,6 +482,13 @@ function on_draw(ctx, page)
   local y = draw.top + 14
   local n = spotify.now()
   if emptyState(n, en, y) then return end
+  -- Zusatzinfos (Albumname): Einstellung "details"; in der Vorschau (ctx.preview) immer
+  if ctx.cfg.details == false and ctx.preview ~= true then
+    local c = {}
+    for k2, v2 in pairs(n) do c[k2] = v2 end
+    c.album = ""
+    n = c
+  end
   local style = ctx.cfg.style
   if style == "compact" then
     drawCompact(n, en, y)

@@ -15,6 +15,7 @@
 
 local EN = false
 local function T(de, en) if EN then return en end return de end
+local SHOW = true -- Zusatzinfos (Heim/Auswärts, Spielort im nächsten Spiel): Einstellung "details"; in der Vorschau (ctx.preview) immer
 
 --#include text
 --#include dates
@@ -1014,11 +1015,11 @@ local function teamBento(ctx, lg, d, top)
     draw.text(cx, crestY + crestH // 2 + 10, "vs", "large", color.BLACK, "center")
     draw.text(cx - crestOff - crestW // 2, crestY + crestH + (tall and 30 or 16), fit(ln, tall and 200 or 280, "small"), "small", color.BLACK, "center")
     draw.text(cx + crestOff + crestW // 2, crestY + crestH + (tall and 30 or 16), fit(rn, tall and 200 or 280, "small"), "small", color.BLACK, "center")
-    draw.text(cx, y + heroH - 51, nx.home and T("Heim", "Home") or T("Auswärts", "Away"), "small", color.BLACK, "center")
+    if SHOW then draw.text(cx, y + heroH - 51, nx.home and T("Heim", "Home") or T("Auswärts", "Away"), "small", color.BLACK, "center") end
     local venue = ""
     if nx.home and d.own.venue ~= "" then venue = d.own.venue
     elseif not nx.home then venue = T("bei ", "at ") .. nx.opp end
-    if venue ~= "" then draw.text(cx, y + heroH - 31, venue, "small", color.BLACK, "center") end
+    if SHOW and venue ~= "" then draw.text(cx, y + heroH - 31, venue, "small", color.BLACK, "center") end
   else
     noticeCompact(cx, y + heroH // 2, "-", T("Kein anstehendes Spiel gefunden.", "No upcoming match found."))
   end
@@ -1444,6 +1445,7 @@ end
 
 function on_draw(ctx, page)
   EN = ctx.lang == "en"
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   D, OFF_NOW = nil, nil
   draw.clear(color.WHITE)
   local p = page or 1

@@ -1,3 +1,4 @@
+local SHOW = true -- Zusatzinfos (Uhrzeit der Nachricht): Einstellung "details"; in der Vorschau (ctx.preview) immer
 -- Pinnwand (Paket pinnwand-app, Skript-Variante der Anzeige der eingebauten App "pinnwand"): die zuletzt empfangene
 -- Familien-Nachricht als angeheftete Notiz. Skript-API Level 17 (inbox.latest()).
 --
@@ -99,6 +100,7 @@ end
 
 function on_draw(ctx, page)
   local en = (ctx.lang == "en")
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local y = draw.top + 14
   local m = inbox.latest(MAX_AGE) -- CHANGELOG 662: nach 3 Stunden gilt die Nachricht als abgelaufen (nil = leere Pinnwand)
@@ -139,7 +141,7 @@ function on_draw(ctx, page)
   draw.text(avatarCx, rowCy + 8, initial(sender), "large", color.ACCENT_INK, "center")
   draw.text(avatarCx + avatarR + 14, rowCy + 8, sender, "large", color.BLACK, "left")
   local ts = stamp(m, en)
-  if ts ~= "" then draw.text(right, rowCy + 8, ts, "normal", color.BLACK, "right") end
+  if SHOW and ts ~= "" then draw.text(right, rowCy + 8, ts, "normal", color.BLACK, "right") end
 
   local dividerY = rowCy + avatarR + 16
   draw.line(left, dividerY, left + width - 1, dividerY, color.BLACK)

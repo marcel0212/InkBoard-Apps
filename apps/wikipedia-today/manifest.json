@@ -8,7 +8,7 @@
     "de": "Heute",
     "en": "Today"
   },
-  "version": "1.0.11",
+  "version": "1.0.12",
   "apiLevel": 8,
   "pages": [
     {
@@ -57,6 +57,19 @@
       "label": {
         "de": "Darstellung",
         "en": "Layout"
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen („Auch an diesem Tag“)",
+        "en": "Show extra info (\"Also on this day\")"
+      },
+      "help": {
+        "de": "Aus: der Stil Karten zeigt nur das Haupt-Ereignis. Die Listen-Stile bleiben unverändert. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: the cards style only shows the main event. The list styles are unchanged. The preview in Studio, Mac and iOS app still shows everything."
       }
     }
   ]

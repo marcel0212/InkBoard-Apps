@@ -8,7 +8,7 @@
     "de": "News",
     "en": "News"
   },
-  "version": "1.0.11",
+  "version": "1.0.12",
   "apiLevel": 7,
   "pages": [
     {
@@ -455,6 +455,19 @@
       "label": {
         "de": "Darstellung",
         "en": "Layout"
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Alter der Meldung)",
+        "en": "Show extra info (age of the story)"
+      },
+      "help": {
+        "de": "Aus: keine Zeitangabe wie „vor 2 Std.“ neben den Schlagzeilen. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no time such as \"2 h ago\" next to the headlines. The preview in Studio, Mac and iOS app still shows everything."
       }
     },
     {

@@ -1,7 +1,10 @@
 {
   "id": "pinnwand-app",
-  "name": {"de": "Pinnwand", "en": "Family Board"},
-  "version": "1.3.3",
+  "name": {
+    "de": "Pinnwand",
+    "en": "Family Board"
+  },
+  "version": "1.3.4",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -9,16 +12,25 @@
   "sections": [
     {
       "id": "send",
-      "title": {"de": "Nachricht senden", "en": "Send a message"}
+      "title": {
+        "de": "Nachricht senden",
+        "en": "Send a message"
+      }
     },
     {
       "id": "nas",
-      "title": {"de": "Externer Speicher", "en": "External storage"},
+      "title": {
+        "de": "Externer Speicher",
+        "en": "External storage"
+      },
       "help": {
         "de": "Ein InkBoard im Tiefschlaf kann die Nachricht nicht per Funk empfangen. Deshalb legt das sendende Gerät sie zusätzlich als Datei in diesem Ordner auf dem externen Speicher ab (eingerichtet unter Einstellungen -> Speicher); schlafende Geräte holen sie beim nächsten Aufwachen von dort.",
         "en": "A sleeping InkBoard cannot receive the message by radio. So the sending device also puts it as a file into this folder on the external storage (set up under Settings -> Storage); sleeping devices fetch it from there when they wake up."
       },
-      "helpTitle": {"de": "Wozu der Ordner?", "en": "What is the folder for?"}
+      "helpTitle": {
+        "de": "Wozu der Ordner?",
+        "en": "What is the folder for?"
+      }
     }
   ],
   "settings": [
@@ -27,7 +39,10 @@
       "type": "text",
       "maxLen": 23,
       "default": "",
-      "label": {"de": "Absender", "en": "Sender"},
+      "label": {
+        "de": "Absender",
+        "en": "Sender"
+      },
       "section": "send"
     },
     {
@@ -35,7 +50,10 @@
       "type": "text",
       "maxLen": 159,
       "default": "",
-      "label": {"de": "Nachricht", "en": "Message"},
+      "label": {
+        "de": "Nachricht",
+        "en": "Message"
+      },
       "help": {
         "de": "Wird sofort an alle InkBoards im selben InkBoard Netzwerk gesendet (siehe Einstellungen -> Netzwerk). Ist nur dieses eine Gerät im Netzwerk, erscheint die Nachricht zwangsläufig nur hier.",
         "en": "Sent immediately to every InkBoard on the same InkBoard network (see Settings -> Network). If this is the only device on the network, the message can only ever show up here."
@@ -45,39 +63,87 @@
     {
       "key": "room",
       "type": "select",
-      "options": ["all", "wohnzimmer", "flur", "kueche", "bad", "schlafzimmer"],
+      "options": [
+        "all",
+        "wohnzimmer",
+        "flur",
+        "kueche",
+        "bad",
+        "schlafzimmer"
+      ],
       "optionLabels": {
-        "de": {"all": "Allen Geräten", "wohnzimmer": "Wohnzimmer", "flur": "Flur", "kueche": "Küche", "bad": "Bad", "schlafzimmer": "Schlafzimmer"},
-        "en": {"all": "All devices", "wohnzimmer": "Living room", "flur": "Hallway", "kueche": "Kitchen", "bad": "Bathroom", "schlafzimmer": "Bedroom"}
+        "de": {
+          "all": "Allen Geräten",
+          "wohnzimmer": "Wohnzimmer",
+          "flur": "Flur",
+          "kueche": "Küche",
+          "bad": "Bad",
+          "schlafzimmer": "Schlafzimmer"
+        },
+        "en": {
+          "all": "All devices",
+          "wohnzimmer": "Living room",
+          "flur": "Hallway",
+          "kueche": "Kitchen",
+          "bad": "Bathroom",
+          "schlafzimmer": "Bedroom"
+        }
       },
       "optionsFrom": "networkRooms",
       "default": "all",
-      "label": {"de": "Anzeigen auf", "en": "Show on"},
+      "label": {
+        "de": "Anzeigen auf",
+        "en": "Show on"
+      },
       "section": "send"
     },
     {
       "key": "status",
       "type": "info",
       "device": "pinnwandStatus",
-      "text": {"de": "Aktuell angepinnt von {1} um {2:time}.", "en": "Currently pinned by {1} at {2:time}."},
-      "empty": {"de": "Noch keine Nachricht angepinnt.", "en": "No message pinned yet."},
-      "label": {"de": "Aktuelle Nachricht", "en": "Current message"},
+      "text": {
+        "de": "Aktuell angepinnt von {1} um {2:time}.",
+        "en": "Currently pinned by {1} at {2:time}."
+      },
+      "empty": {
+        "de": "Noch keine Nachricht angepinnt.",
+        "en": "No message pinned yet."
+      },
+      "label": {
+        "de": "Aktuelle Nachricht",
+        "en": "Current message"
+      },
       "section": "send",
       "action": {
         "name": "send",
-        "label": {"de": "Nachricht anpinnen", "en": "Pin message"}
+        "label": {
+          "de": "Nachricht anpinnen",
+          "en": "Pin message"
+        }
       }
     },
     {
       "key": "storageProfile",
       "type": "select",
-      "options": ["main", "app"],
+      "options": [
+        "main",
+        "app"
+      ],
       "default": "main",
       "optionLabels": {
-        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
-        "en": {"main": "Main storage", "app": "App storage (separate)"}
+        "de": {
+          "main": "Hauptspeicher",
+          "app": "App-Speicher (getrennt)"
+        },
+        "en": {
+          "main": "Main storage",
+          "app": "App storage (separate)"
+        }
       },
-      "label": {"de": "Speicher", "en": "Storage"},
+      "label": {
+        "de": "Speicher",
+        "en": "Storage"
+      },
       "help": {
         "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
         "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
@@ -89,12 +155,28 @@
       "type": "storagePath",
       "device": "pinnwandFtpPath",
       "default": "/inkboard/pinnwand",
-      "label": {"de": "Pinnwand-Nachrichten: Ordner für die FTP-Zustellung", "en": "Family Board messages: folder for the FTP fallback delivery"},
+      "label": {
+        "de": "Pinnwand-Nachrichten: Ordner für die FTP-Zustellung",
+        "en": "Family Board messages: folder for the FTP fallback delivery"
+      },
       "help": {
         "de": "Die Zustellung über den Speicher braucht FTP (HTTP kann die Nachricht nicht zurücklesen).",
         "en": "Delivery via the storage requires FTP (HTTP cannot read the message back)."
       },
       "section": "nas"
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Uhrzeit der Nachricht)",
+        "en": "Show extra info (message time)"
+      },
+      "help": {
+        "de": "Aus: die Nachricht zeigt keine Uhrzeit. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: the message shows no time. The preview in Studio, Mac and iOS app still shows everything."
+      }
     }
   ]
 }

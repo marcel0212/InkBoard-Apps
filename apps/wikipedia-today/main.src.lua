@@ -336,6 +336,8 @@ function on_draw(ctx, page)
   local list = loadEvents(ctx)
   if emptyState(ctx, list) then return end
   local style = ctx.cfg.style
+  -- Zusatzinfos aus: die Karten-Seite zeigt nur das Haupt-Ereignis ohne "Auch an diesem Tag" (Listen-Stile bleiben, die Liste ist dort der Inhalt)
+  if ctx.cfg.details == false and ctx.preview ~= true and style ~= "flat" and style ~= "compact" then list = { list[1] } end
   if style == "flat" then drawFlat(ctx, list)
   elseif style == "compact" then drawCompact(ctx, list)
   else drawCards(ctx, list, en_(ctx)) end

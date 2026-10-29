@@ -782,7 +782,9 @@ local function raceLine(n)
 	return string.format(T("%s · %s Uhr", "%s · %s"), fmtDate(n.start), fmtTime(n.start))
 end
 
+local SHOW = true -- Zusatzinfos (Streckendaten: Länge, Runden, Kurven, Rundenrekord): Einstellung "details"; in der Vorschau (ctx.preview) immer
 local function statLine(ci, long)
+	if not SHOW then return "" end
 	if long then
 		return string.format(T("%s · %d Runden · %d Kurven", "%s · %d laps · %d corners"), fmtKm(ci.len), ci.laps, ci.corners)
 	end
@@ -815,7 +817,7 @@ local function nextBento(n, total)
 	local mid = rightX + rightW // 2
 	if ci then
 		draw.text(mid, trY + trH - 56, fit(statLine(ci, true), rightW - 24, "small"), "small", color.BLACK, "center")
-		local rec = ci.rec and string.format(T("Rundenrekord %s", "Lap record %s"), dsp(ci.rec)) or T("Noch kein Rundenrekord", "No lap record yet")
+		local rec = not SHOW and "" or ci.rec and string.format(T("Rundenrekord %s", "Lap record %s"), dsp(ci.rec)) or T("Noch kein Rundenrekord", "No lap record yet")
 		draw.text(mid, trY + trH - 30, fit(rec, rightW - 24, "small"), "small", color.BLACK, "center")
 	else
 		draw.text(mid, trY + trH - 44, fit(n.loc .. ", " .. n.country, rightW - 24, "small"), "small", color.BLACK, "center")
@@ -876,7 +878,7 @@ local function nextSlate(n, total)
 	y = y + centered(y + 74, info, "normal", 24)
 	if ci then
 		local s
-		if ci.rec then
+		if SHOW and ci.rec then
 			s = string.format(T("%s · %d Runden · %d Kurven · Rekord %s", "%s · %d laps · %d corners · Record %s"), fmtKm(ci.len), ci.laps, ci.corners, dsp(ci.rec))
 		else
 			s = statLine(ci, true)
@@ -931,7 +933,7 @@ local function nextNano(n, total)
 	local cl = tallN and wrapLines(n.circuit .. ", " .. n.country, rightX - rW - 16 - leftX, "small", 4) or { fit(n.circuit .. ", " .. n.country, rightX - rW - 16 - leftX, "small") }
 	for i, l in ipairs(cl) do draw.text(leftX, y + 48 + (i - 1) * 18, l, "small", color.BLACK, "left") end
 	y = y + (#cl - 1) * 18
-	if ci and ci.rec then
+	if SHOW and ci and ci.rec then
 		draw.text(leftX, y + 70, string.format(T("Rundenrekord %s", "Lap record %s"), dsp(ci.rec)), "small", color.BLACK, "left")
 	end
 	draw.line(leftX, y + 84, rightX, y + 84, color.BLACK)
@@ -1303,6 +1305,7 @@ end
 
 function on_draw(ctx, page)
 	EN = ctx.lang == "en"
+	SHOW = ctx.cfg.details ~= false or ctx.preview == true
 	resetData()
 	draw.clear(color.WHITE)
 	local p = page or 1

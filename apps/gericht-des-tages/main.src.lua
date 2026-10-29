@@ -237,6 +237,7 @@ local function qrSize(s, maxSize)
 end
 
 -- Seite 1: Uebersicht
+local SHOW = true -- Zusatzinfos (Quelle · Portionen · Zeit, "gelost am"): Einstellung "details"; in der Vorschau (ctx.preview) immer
 local function drawOverview(ctx, d)
   local en = en_(ctx)
   local W = draw.width
@@ -261,12 +262,12 @@ local function drawOverview(ctx, d)
   end
   local meta = {}
   for _, p in ipairs({ d.source, d.yield, d.time }) do if p ~= "" then meta[#meta + 1] = p end end
-  if #meta > 0 then
+  if SHOW and #meta > 0 then
     local ml = wrapLines(table.concat(meta, " · "), textW, "normal", 4)
     for i, l in ipairs(ml) do draw.text(x0, y + 8 + (i - 1) * 24, l, "normal", color.BLACK, "left") end
     y = y + 34 + (#ml - 1) * 24
   end
-  if d.day > 0 then
+  if SHOW and d.day > 0 then
     local txt = isToday(d.day) and (en and "Drawn today" or "Heute gelost") or ((en and "Drawn on " or "Gelost am ") .. dateText(d.day, en))
     draw.text(x0, y + 8, txt, "small", color.BLACK, "left")
   end
@@ -409,6 +410,7 @@ end
 
 function on_draw(ctx, page)
   draw.clear(color.WHITE)
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   local d = loadRecipe(ctx, true)
   if d == nil then emptyState(ctx); return end
   local en = en_(ctx)

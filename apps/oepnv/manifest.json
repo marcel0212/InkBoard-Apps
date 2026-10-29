@@ -8,7 +8,7 @@
     "de": "ÖPNV",
     "en": "Transit"
   },
-  "version": "1.2.12",
+  "version": "1.2.13",
   "apiLevel": 16,
   "pages": [
     {
@@ -864,6 +864,19 @@
       "group": {
         "de": "Route 6",
         "en": "Route 6"
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Ankunft, Fußweg, Gleis)",
+        "en": "Show extra info (arrival, walk, platform)"
+      },
+      "help": {
+        "de": "Aus: keine Zeile mit Ankunft, Fußweg und Umstieg, kein Gleis im Ziel. Störungen bleiben sichtbar. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no line with arrival, walk and transfer, no platform at the destination. Disruptions stay visible. The preview in Studio, Mac and iOS app still shows everything."
       }
     },
     {

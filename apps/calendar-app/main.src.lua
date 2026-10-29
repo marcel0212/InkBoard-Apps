@@ -390,8 +390,17 @@ end
 -- Tagesseite
 -- ---------------------------------------------------------------------------
 
+-- Zusatzinfos (Ort, Notizen, Dauer in Tages- und Wochenansicht): die Schalter der App gelten für das Display; in der Vorschau (ctx.preview) sind sie immer an
+local function pageCfg(ctx)
+  if ctx.preview ~= true then return ctx.cfg end
+  local c = {}
+  for k, v in pairs(ctx.cfg) do c[k] = v end
+  c.dayDur, c.dayLoc, c.dayNotes, c.wkLoc, c.wkNotes = true, true, true, true, true
+  return c
+end
+
 local function dayPage(ctx, evs, st, en, t, topY)
-  local cfg = ctx.cfg
+  local cfg = pageCfg(ctx)
   local cp = st == "compact"
   local bx, bs = cp and 20 or 26, cp and 52 or 64
   draw.rect(bx, topY, bs, bs, color.ACCENT, true, cp and 14 or 16)
@@ -492,7 +501,7 @@ end
 -- ---------------------------------------------------------------------------
 
 local function weekPage(ctx, evs, st, en, t, topY, now)
-  local cfg = ctx.cfg
+  local cfg = pageCfg(ctx)
   local cards, cp = st == "cards", st == "compact"
   local axisW = cp and 44 or 52
   local gridLeft = 12 + axisW

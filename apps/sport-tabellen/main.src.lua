@@ -18,6 +18,7 @@
 
 local EN = false
 local function T(de, en) if EN then return en end return de end
+local SHOW = true -- Zusatzinfos (Heim/Auswärts, Spielort im nächsten Spiel): Einstellung "details"; in der Vorschau (ctx.preview) immer
 
 local BASE = "https://sportal.de/"
 local MAX_BYTES = 65536
@@ -985,8 +986,8 @@ local function teamBento(ctx, k, m)
     bigCrest(ctx, k, cx - crestOff - crestW, crestY, crestW, crestH, nx.home and m.ownTla or nx.tla, own, nx.home and ownN or oppN)
     bigCrest(ctx, k, cx + crestOff, crestY, crestW, crestH, nx.home and nx.tla or m.ownTla, opp, nx.home and oppN or ownN)
     draw.text(cx, crestY + crestH // 2 + 10, "vs", "large", color.BLACK, "center")
-    draw.text(cx, y + heroH - 51, homeAway(nx), "small", color.BLACK, "center")
-    if not nx.home then draw.text(cx, y + heroH - 31, T("bei ", "at ") .. nx.opp, "small", color.BLACK, "center") end
+    if SHOW then draw.text(cx, y + heroH - 51, homeAway(nx), "small", color.BLACK, "center") end
+    if SHOW and not nx.home then draw.text(cx, y + heroH - 31, T("bei ", "at ") .. nx.opp, "small", color.BLACK, "center") end
   else
     compactNotice(cx, y + heroH // 2, "info", T("Kein anstehendes Spiel gefunden.", "No upcoming match found."))
   end
@@ -1374,6 +1375,7 @@ end
 
 function on_draw(ctx, page)
   EN = ctx.lang == "en"
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local k = pageKind(ctx.cfg)
   local m = model(ctx, k)

@@ -8,7 +8,7 @@
     "de": "F1",
     "en": "F1"
   },
-  "version": "1.0.6",
+  "version": "1.0.7",
   "apiLevel": 11,
   "pages": [
     {
@@ -65,6 +65,19 @@
       "help": {
         "de": "Bento zeigt Kacheln, Slate Zeilen, Nano eine kompakte Tabelle. Die Streckenlayouts und der Zeitplan gibt es in allen drei Darstellungen.",
         "en": "Bento shows tiles, Slate rows, Nano a compact table. Track layouts and the schedule are available in all three layouts."
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Streckendaten, Rundenrekord)",
+        "en": "Show extra info (track data, lap record)"
+      },
+      "help": {
+        "de": "Aus: unter der Strecke stehen keine Länge, Runden, Kurven und kein Rundenrekord. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no length, laps, corners or lap record below the track. The preview in Studio, Mac and iOS app still shows everything."
       }
     },
     {

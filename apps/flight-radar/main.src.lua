@@ -1238,6 +1238,8 @@ end
 -- ---------------------------------------------------------------------------
 
 local PX, PW, PH = 20, 430, 296 -- Fotokarte (FR_PHOTO_BOX_W/H)
+-- Zusatzinfos der Himmel-Seite (Zeile Airline · Typ): Einstellung "details"; in der Vorschau (ctx.preview, Firmware ab Build 808) immer sichtbar
+local EXTRAS = true
 
 local function infoRow(x, y, maxW, label, value)
   draw.text(x, y, label, "small", color.ACCENT_TEXT)
@@ -1382,7 +1384,8 @@ local function skyPage(ctx, st, ac, radius)
       local lab = a.dist < 10 and string.format("%s · %.1f km", nameOf(a), a.dist) or string.format("%s · %d km", nameOf(a), rnd(a.dist))
       local typ = a.desc ~= "" and a.desc or a.tc
       local line2 = ""
-      if a.air ~= "" and typ ~= "" then line2 = a.air .. " · " .. typ elseif a.air ~= "" then line2 = a.air elseif typ ~= "" then line2 = typ end
+      if not EXTRAS then line2 = ""
+      elseif a.air ~= "" and typ ~= "" then line2 = a.air .. " · " .. typ elseif a.air ~= "" then line2 = a.air elseif typ ~= "" then line2 = typ end
       local ly = math.min(e.ly, H - 6)
       if line2 ~= "" then
         draw.text(e.lx, math.max(8, ly - 7), lab, "small", fg, "center")
@@ -1429,6 +1432,7 @@ end
 function on_draw(ctx, page)
   EN = ctx.lang == "en"
   SHP = nil
+  EXTRAS = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local st, ac, radius = state(ctx)
   if page == 2 then

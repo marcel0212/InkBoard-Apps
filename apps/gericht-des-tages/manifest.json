@@ -8,7 +8,7 @@
     "de": "GdT",
     "en": "MotD"
   },
-  "version": "1.1.12",
+  "version": "1.1.13",
   "apiLevel": 10,
   "pages": [
     {
@@ -42,6 +42,19 @@
       "help": {
         "de": "Die Zutaten werden auf diese Zahl umgerechnet (Standard: 2 Portionen). Bedienung am Gerät: Drehen blättert durch Übersicht, Zutaten, Nährwerte und Zubereitung; Knopf zweimal hintereinander (innerhalb 3 Sekunden) lost ein neues Gericht.",
         "en": "Ingredient amounts are scaled to this number (default: 2 servings). On the device: turning browses overview, ingredients, nutrition and instructions; pressing the button twice within 3 seconds draws a new meal."
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Quelle, Portionen, Zeit)",
+        "en": "Show extra info (source, servings, time)"
+      },
+      "help": {
+        "de": "Aus: die Übersicht zeigt nur Titel, Ernährungsform und QR-Code. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: the overview only shows title, diet and QR code. The preview in Studio, Mac and iOS app still shows everything."
       }
     }
   ],

@@ -8,7 +8,7 @@
     "de": "Golf",
     "en": "Golf"
   },
-  "version": "1.0.11",
+  "version": "1.0.12",
   "apiLevel": 14,
   "pages": [
     {
@@ -82,6 +82,19 @@
       "help": {
         "de": "Bento: Heute mit großer Fokuskarte und FREI-Feld, Woche als Zeilenkarten, 14 Tage als zwei Wochenkarten. Slate: Heute als Zeitleiste, Woche als Liste, 14 Tage als Doppelspalte. Nano: Zwei-Spalten-Übersicht bzw. Volltabellen mit Bereichs-Kürzeln. Bereichsfarben überall gleich: Tee 1 blau, Greenkeeping grün, Kurse & Events rot, Information gelb.",
         "en": "Bento: today with a large focus card and FREE panel, week as row cards, 14 days as two week cards. Slate: today as a timeline, week as a list, 14 days as a double column. Nano: two-column overview or full tables with area codes. Area colours are identical everywhere: Tee 1 blue, greenkeeping green, courses & events red, information yellow."
+      }
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Notizen zur Belegung)",
+        "en": "Show extra info (booking notes)"
+      },
+      "help": {
+        "de": "Aus: die Belegungen zeigen keine Notizen. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: bookings show no notes. The preview in Studio, Mac and iOS app still shows everything."
       }
     }
   ]

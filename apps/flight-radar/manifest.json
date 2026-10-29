@@ -8,7 +8,7 @@
     "de": "Flights",
     "en": "Flights"
   },
-  "version": "1.3.5",
+  "version": "1.3.7",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
@@ -101,6 +101,20 @@
         "en": "Radius (km)"
       },
       "section": "area"
+    },
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Himmel-Seite: Airline und Typ zeigen",
+        "en": "Sky page: show airline and type"
+      },
+      "help": {
+        "de": "Aus: die Himmel-Seite auf dem Display zeigt unter dem Flugzeug nur Rufzeichen und Entfernung. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin Airline und Typ. Die Flug-Seite bleibt unverändert.",
+        "en": "Off: the sky page on the display only shows callsign and distance below the aircraft. The preview in Studio, Mac and iOS app still shows airline and type. The flight page is unchanged."
+      },
+      "section": "sky"
     },
     {
       "key": "sky",

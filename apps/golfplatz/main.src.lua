@@ -1112,6 +1112,10 @@ function on_draw(ctx, page)
   draw.clear(color.WHITE)
   local m = model(ctx)
   if m == nil then return end
+  -- Zusatzinfos (Notizen zu den Belegungen): Einstellung "details"; in der Vorschau (ctx.preview) immer
+  if ctx.cfg.details == false and ctx.preview ~= true then
+    for _, dd in ipairs(m.days) do for _, e in ipairs(dd.es) do e.note = "" end end
+  end
   local top = draw.top
   local style = ctx.cfg.style
   if page == 2 then

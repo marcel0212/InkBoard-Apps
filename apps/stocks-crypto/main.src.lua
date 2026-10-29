@@ -317,9 +317,10 @@ local function drawBadge(x, y, pct, font, en)
 end
 
 -- Verlaufslinie (zwei Pixel stark)
+local SHOW = true -- Zusatzinfos (Kursverlauf-Linien): Einstellung "details"; in der Vorschau (ctx.preview) immer
 local function sparkline(x, y, w, h, vals, col)
   local n = #vals
-  if n < 2 or w < 8 then return end
+  if not SHOW or n < 2 or w < 8 then return end
   local px, py
   for i = 1, n do
     local cx = x + (i - 1) * (w - 1) // (n - 1)
@@ -505,6 +506,7 @@ local function drawCompact(ctx, items)
 end
 
 function on_draw(ctx, page)
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local p = math.max(1, math.min(page or 1, 2))
   local items = pageItems(ctx, p)

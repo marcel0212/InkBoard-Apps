@@ -4,7 +4,7 @@
     "de": "Rezepte",
     "en": "Recipes"
   },
-  "version": "1.2.1",
+  "version": "1.2.2",
   "apiLevel": 20,
   "pages": [
     {
@@ -21,5 +21,20 @@
   "http": {
     "page": "assets/phone.html",
     "api": true
-  }
+  },
+  "settings": [
+    {
+      "key": "details",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Zusatzinfos zeigen (Quelle, Portionen, Zeit)",
+        "en": "Show extra info (source, servings, time)"
+      },
+      "help": {
+        "de": "Aus: unter dem Titel steht keine Zeile mit Quelle, Portionen und Zeit. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
+        "en": "Off: no line with source, servings and time under the title. The preview in Studio, Mac and iOS app still shows everything."
+      }
+    }
+  ]
 }

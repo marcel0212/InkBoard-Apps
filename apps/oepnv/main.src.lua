@@ -1024,7 +1024,9 @@ local function headway(times)
   return T("alle ", "every ") .. mn .. "-" .. mx .. T(" Minuten", " minutes")
 end
 
+local SHOW = true -- Zusatzinfos (Ankunft, Fußweg, Gleis): Einstellung "details"; in der Vorschau (ctx.preview) immer
 local function metaText(c, noArr)
+  if not SHOW then return "" end
   local parts = {}
   if c.arr > 0 and not noArr then parts[#parts + 1] = T("an ", "arr ") .. clock(c.arr) end
   if WALK > 0 then parts[#parts + 1] = T("Losgehen: ", "Leave: ") .. WALK .. T(" Min Fußweg", " min walk") end
@@ -1132,7 +1134,7 @@ local function timeline(x, y, c, maxW)
       if nxt.origin ~= "" then dn, dp = nxt.origin, "" end
     end
     if arrE > 0 then textCB(curX, y - 20, clock(arrE), "normal", x, x + maxW) end
-    if dn ~= "" then labels[#labels + 1] = { cx = curX, s = T("Ziel: ", "Dest: ") .. dn .. (dp ~= "" and (" Gl." .. dp) or ""), p = 1 } end
+    if dn ~= "" then labels[#labels + 1] = { cx = curX, s = T("Ziel: ", "Dest: ") .. dn .. (SHOW and dp ~= "" and (" Gl." .. dp) or ""), p = 1 } end
     curX = curX + dotR * 2 + 4
   end
   table.sort(labels, function(a, b) return a.p < b.p end)
@@ -1636,6 +1638,7 @@ end
 
 function on_draw(ctx, page)
   EN = ctx.lang == "en"
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   OFF, NOW, WALK = tzOff(), time.now() or 0, walkMin(ctx)
   draw.clear(color.WHITE)
   local prov = provOf(ctx)

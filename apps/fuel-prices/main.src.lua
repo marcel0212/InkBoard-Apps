@@ -552,6 +552,8 @@ function on_draw(ctx, page)
   draw.clear(color.WHITE)
   local st = loadStations(ctx)
   if emptyState(ctx, st) then return end
+  -- Zusatzinfos (Adresse der Tankstelle): Einstellung "details"; in der Vorschau (ctx.preview) immer
+  if ctx.cfg.details == false and ctx.preview ~= true then for _, s in ipairs(st) do s.addr = "" end end
   local style = ctx.cfg.style
   if style == "flat" then drawFlat(ctx, st, en_(ctx))
   elseif style == "compact" then drawCompact(ctx, st, en_(ctx))

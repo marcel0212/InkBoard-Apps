@@ -180,8 +180,9 @@ end
 -- Anzeige
 -- ---------------------------------------------------------------------------
 
+local SHOW = true -- Zusatzinfos (Alter der Meldung "vor 2 Std."): Einstellung "details"; in der Vorschau (ctx.preview) immer
 local function relTime(ctx, t)
-  if t == nil or t <= 0 then return "" end
+  if not SHOW or t == nil or t <= 0 then return "" end
   local diff = time.now() - t
   if diff < 0 then diff = 0 end
   local min = diff // 60
@@ -332,6 +333,7 @@ end
 
 function on_draw(ctx, page)
   draw.clear(color.WHITE)
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   local ci = math.max(1, math.min(page or 1, #CATS))
   local items = readCat(ctx, ci)
   if emptyState(ctx, ci, items) then return end

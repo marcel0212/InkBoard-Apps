@@ -518,8 +518,10 @@ local function drawEmpty(ctx)
   draw.text(cx, topY + 90, T(ctx, "Das Gerät braucht eine WLAN-Verbindung, dann erscheint hier ein QR-Code.", "The device needs a Wi-Fi connection; a QR code will appear here."), "normal", color.BLACK, "center")
 end
 
+local SHOW = true -- Zusatzinfos (Quelle · Portionen · Zeit): Einstellung "details"; in der Vorschau (ctx.preview) immer
 function on_draw(ctx, page)
   draw.clear(color.WHITE)
+  SHOW = ctx.cfg.details ~= false or ctx.preview == true
   local d = loadRecipe()
   if d == nil then
     drawEmpty(ctx)
@@ -545,7 +547,7 @@ function on_draw(ctx, page)
   for _, part in ipairs({ d.source, yieldShown, d.time }) do
     if part ~= "" then meta[#meta + 1] = part end
   end
-  if #meta > 0 then
+  if SHOW and #meta > 0 then
     draw.text(MX, tl.meta, fit(table.concat(meta, " · "), W - 2 * MX, "small"), "small", color.BLACK, "left")
   end
 
