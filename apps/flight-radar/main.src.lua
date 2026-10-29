@@ -999,15 +999,17 @@ local function skyStep(ctx, ac, now)
     local name = skyFile(a)
     if name and known(name) then cands[#cands + 1] = { a = a, name = name } end
   end
-  if #cands == 0 then
-    local seen = {}
+  -- Flugzeuge ohne Lackierungsbild bekommen das Gruppenbild ihres Typs (<gruppe>.png), damit alle Flugzeuge der Seite erscheinen
+  -- und nicht nur die mit Lackierung; Lackierungsbilder behalten den Vorrang.
+  do
+    local have = {}
+    for _, c in ipairs(cands) do have[c.a.hex] = true end
     for i = 1, math.min(#ac.list, POOL) do
       if #cands >= maxC then break end
       local a = ac.list[i]
-      if a.grp ~= "" and a.lv and not seen[a.grp] then
-        seen[a.grp] = true
+      if not have[a.hex] and a.grp ~= "" and a.lv then
         local name = a.grp .. ".png"
-        if known(name) then cands[#cands + 1] = { a = a, name = name }; generic = true end
+        if known(name) then cands[#cands + 1] = { a = a, name = name }; have[a.hex] = true; generic = true end
       end
     end
   end
@@ -1381,7 +1383,9 @@ local function skyPage(ctx, st, ac, radius)
       if x.hex == e.hex then a = x; break end
     end
     if a and draw.image("sky" .. e.idx, e.x, e.y) then
-      local lab = a.dist < 10 and string.format("%s · %.1f km", nameOf(a), a.dist) or string.format("%s · %d km", nameOf(a), rnd(a.dist))
+      local lab
+      if not EXTRAS then lab = a.cs ~= "" and a.cs or (a.tc ~= "" and a.tc or a.hex) -- ohne Details: nur Rufzeichen (keine Entfernung, keine Registrierung)
+      else lab = a.dist < 10 and string.format("%s · %.1f km", nameOf(a), a.dist) or string.format("%s · %d km", nameOf(a), rnd(a.dist)) end
       local typ = a.desc ~= "" and a.desc or a.tc
       local line2 = ""
       if not EXTRAS then line2 = ""
