@@ -171,7 +171,7 @@ local function putLines(x, y, ls, font, lh, align)
   for i, l in ipairs(ls) do draw.text(x, y + (i - 1) * lh, l, font, color.BLACK, align or "left") end
 end
 
--- CHANGELOG 932: Hochformat (480x800) - Cover oben mittig, darunter Karten untereinander
+-- Hochformat (480x800) - Cover oben mittig, darunter Karten untereinander
 local function drawCardsTall(n, en, topY)
   local accent, onAccent = color.ACCENT, color.ACCENT_INK
   local W = draw.width

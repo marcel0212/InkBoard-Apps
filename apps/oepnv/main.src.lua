@@ -1072,7 +1072,7 @@ end
 local function timeline(x, y, c, maxW)
   local dotR = 5
   -- Anders als die eingebaute App (die ohne Wegezeit Anfangs- und End-Fussweg ausblendet) erscheinen die Fusswege von der
-  -- Startadresse und zur Zieladresse immer (Nutzerbericht "es fehlt der finale Fussweg"); nur Fusswege ohne Dauer am Rand
+  -- Startadresse und zur Zieladresse immer; nur Fusswege ohne Dauer am Rand
   -- entfallen. Umstiegs-Fusswege stehen nur in der Meta-Zeile ("Umstieg: N Min Fussweg"). Fusswege bekommen schmale
   -- Abschnitte; passt die Kette nicht, werden alle Abschnitte gestaucht (bis 70 %), erst danach greift "+N". Haltestellen-
   -- Namen werden nach Wichtigkeit gesetzt (Ziel, Start, Einstiege) und weggelassen, wenn sie einen schon gesetzten ueberdecken.
@@ -1572,7 +1572,7 @@ local function routesCompact(top, list, prov)
   footer(shown, #list, "Routen", "routes", prov)
 end
 
--- Nur eine Route aktiv (Nutzerwunsch): die Seite zeigt alle Verbindungen, bei denen man in den naechsten 10 Minuten losgehen
+-- Nur eine Route aktiv: die Seite zeigt alle Verbindungen, bei denen man in den naechsten 10 Minuten losgehen
 -- muss - mindestens drei (aufgefuellt mit den folgenden), so viele, wie der Stil Platz hat.
 local function routeSingle(top, r, style, prov)
   local cs = {}
@@ -1670,7 +1670,7 @@ local function sampleDeps()
 end
 
 -- Widget "Abfahrten" (dwDrawTransitNext)
--- Nutzerwunsch: das Widget zeigt nur Abfahrten ab jetzt + 5 Minuten (frueher kommt man ohnehin nicht mehr hin)
+-- Das Widget zeigt nur Abfahrten ab jetzt + 5 Minuten (frueher kommt man ohnehin nicht mehr hin)
 local WIDGET_LEAD = 300
 local function widgetDeps(ctx, box, list)
   local withDest, withDelay = on(ctx.cfg.wDest), on(ctx.cfg.wDelay)

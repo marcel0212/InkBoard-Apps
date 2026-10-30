@@ -501,7 +501,7 @@ local function wikiThumb(name)
   return th
 end
 
--- Wappen wie in der eingebauten App (CHANGELOG 606), Reihenfolge der Quellen:
+-- Wappen wie in der eingebauten App, Reihenfolge der Quellen:
 --   1) Anbieter-Adresse zeigt auf Wikimedia (OpenLigaDB) -> PNG-Vorschaubild davon
 --   2) Wikipedia-Artikelbild ueber den VOLLEN Vereinsnamen ("Liverpool FC", nicht "Liverpool")
 --   3) PNG-Wappen des Anbieters (football-data.org: crests.football-data.org/<id>.png)
@@ -552,7 +552,7 @@ local function loadCrest(ctx, slot, url, full, short, w, h, today)
     ctx.data.set("ie", "")
   else
     log("Fussball: Wappen " .. slot .. " (" .. name .. "): " .. tostring(err))
-    ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose, CHANGELOG 602)
+    ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose,)
     ctx.data.set("imf", fk .. "|" .. slot .. tok .. "|")
   end
 end
@@ -580,7 +580,7 @@ local function loadCrests(ctx, now)
     loadCrest(ctx, "own", own.icon, own.full, own.name, 203, 135, today)
     if m then loadCrest(ctx, "opp", m.oppIcon, m.oppFull, m.opp, 203, 135, today) end
   end
-  -- CHANGELOG 607: das Widget zeigt ggf. ein anderes Spiel (anderer Wettbewerb) - dessen Gegner gleich mitladen, wenn Abrufe frei sind
+  -- Das Widget zeigt ggf. ein anderes Spiel (anderer Wettbewerb) - dessen Gegner gleich mitladen, wenn Abrufe frei sind
   local wm = d.wnext
   if wm and cname(wm.oppFull, wm.opp) ~= (m and cname(m.oppFull, m.opp) or "") then
     loadCrest(ctx, "wopp", wm.oppIcon, wm.oppFull, wm.opp, 60, 40, today)
@@ -792,7 +792,7 @@ function on_fetch(ctx)
   NET = 0
   D, OFF_NOW = nil, nil
   if ctx.opened then
-    -- App gerade geoeffnet, Daten noch frisch (CHANGELOG 603): nur die Wappen nachladen, bevor gezeichnet wird
+    -- App gerade geoeffnet, Daten noch frisch: nur die Wappen nachladen, bevor gezeichnet wird
     local now = time.now()
     if now and now > 1700000000 then loadCrests(ctx, now) end
     return true
@@ -813,7 +813,7 @@ function on_fetch(ctx)
     return false
   end
   file.write("e", "")
-  loadCrests(ctx, now) -- CHANGELOG 606: nach JEDEM Abruf (auch football-data.org), wie die eingebaute App
+  loadCrests(ctx, now) -- Nach JEDEM Abruf (auch football-data.org), wie die eingebaute App
   return true
 end
 
@@ -1459,7 +1459,7 @@ function on_draw(ctx, page)
     if style == "flat" then tableSlate(ctx, lg, d, top) elseif style == "compact" then tableNano(ctx, lg, d, top) else tableBento(ctx, lg, d, top) end
   else
     if style == "flat" then teamSlate(ctx, lg, d, top) elseif style == "compact" then teamNano(ctx, lg, d, top) else teamBento(ctx, lg, d, top) end
-    -- Diagnose (CHANGELOG 602): fehlt ein Wappen, steht der Grund klein am unteren Rand
+    -- Diagnose: fehlt ein Wappen, steht der Grund klein am unteren Rand
     local ie = ctx.data.get("ie")
     if type(ie) ~= "string" or ie == "" then ie = T("noch kein Wappenabruf", "no crest fetch yet") end
     if ctx.cfg.crests ~= false and style ~= "flat" and (ctx.data.get("im_own") == nil or ctx.data.get("im_opp") == nil) then
@@ -1503,7 +1503,7 @@ function on_widget(ctx, box)
   local own = d.own
   local lt, lc, rt, rc = own.tla, own.col, m.tla, m.col
   if not m.home then lt, lc, rt, rc = rt, rc, lt, lc end
-  -- CHANGELOG 607: Widget-Wappen wie in der eingebauten App - passend skaliert. Erst das kleine Widget-Bild, sonst das grosse der
+  -- Widget-Wappen wie in der eingebauten App - passend skaliert. Erst das kleine Widget-Bild, sonst das grosse der
   -- App-Ansicht (gleicher Verein), sonst die Kuerzel-Kachel.
   local function wbadge(x, tla, col, slot, name)
     if ctx.cfg.crests ~= false then

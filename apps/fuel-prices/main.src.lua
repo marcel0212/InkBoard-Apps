@@ -227,7 +227,7 @@ end
 
 local function loadStations(ctx)
   local out = {}
-  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor (CHANGELOG 559)
+  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor
     return {
       { name = "Aral Hauptstr.", brand = "Aral", dist = 0.8, open = true, e5 = 1.789, e10 = 1.729, diesel = 1.659, addr = "Hauptstr. 12" },
       { name = "Shell Ringstr.", brand = "Shell", dist = 1.4, open = true, e5 = 1.799, e10 = 1.739, diesel = 1.669, addr = "Ringstr. 3" },

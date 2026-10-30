@@ -543,7 +543,7 @@ local function exportJson()
 end
 
 -- ---------------------------------------------------------------------------
--- Abdeckungsauswertung (frCoverage*, CHANGELOG 409): CSV im Schema der Mac-App auf dem NAS
+-- Abdeckungsauswertung (frCoverage*, ): CSV im Schema der Mac-App auf dem NAS
 -- ---------------------------------------------------------------------------
 
 local CATS = { [0] = "Fehlendes Lackierungsbild", "Fehlendes Basisbild", "Airline ohne IATA-Zuordnung", "Unbekannter Flugzeugtyp" }

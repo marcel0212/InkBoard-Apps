@@ -337,7 +337,7 @@ local function trendColor(pct) return pct >= 0 and color.GREEN or color.RED end
 
 -- Datensaetze einer Seite in der Reihenfolge der Einstellungen
 local function pageItems(ctx, p)
-  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor (CHANGELOG 559)
+  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor
     local H = { "89abcdefghijkjihgfghijklm", "mlkjihgfeddefghijklmnopq", "5678abcdefghijklmnopqrstu" }
     if p == 2 then
       return {

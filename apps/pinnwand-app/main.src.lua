@@ -103,7 +103,7 @@ function on_draw(ctx, page)
   SHOW = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local y = draw.top + 14
-  local m = inbox.latest(MAX_AGE) -- CHANGELOG 662: nach 3 Stunden gilt die Nachricht als abgelaufen (nil = leere Pinnwand)
+  local m = inbox.latest(MAX_AGE) -- Nach 3 Stunden gilt die Nachricht als abgelaufen (nil = leere Pinnwand)
   if m == nil or m.text == nil or m.text == "" then
     emptyState(en, y)
     return

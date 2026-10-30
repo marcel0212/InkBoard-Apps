@@ -701,7 +701,7 @@ local function weekBentoTall(m, si, top)
       plan[#plan + 1] = { d = d, ents = ents, h = cardH }
       total = total + cardH
     end
-    break -- nie abkuerzen: Karten wachsen mit dem Text (CHANGELOG 944)
+    break -- nie abkuerzen: Karten wachsen mit dem Text
   end
   local y = areaTop
   for _, c in ipairs(plan) do

@@ -1,7 +1,7 @@
 -- Kalender (Skript-Variante der frueheren eingebauten Kalender-App): Tag / Woche / Monat, je drei Stile
 -- (Slate = flat, Bento = cards, Nano = compact), bis zu vier ICS-Quellen, Widget "Naechste Termine".
 -- Skript-API Level 20: ics.fetch (Stream-Parser mit Wiederholungen, EXDATE, TZID), time.date / time.mktime,
--- on_header (Kopfzeilen-Text) und pages[].ownDate. Siehe docs/SKRIPT_APPS.md und CHANGELOG 634 / 637.
+-- on_header (Kopfzeilen-Text) und pages[].ownDate. Siehe docs/SKRIPT_APPS.md und / 637.
 -- Ab 637: Zeitfenster, Tageskarten (letzte Karte angeschnitten), Zustandssymbole, Widget-Glyphen und "Quellen pruefen"
 -- wie die frueher eingebaute App; "lastEnd" in ctx.data fuer das bedingte Widget (Manifest widget.relevantWhen).
 --
@@ -29,7 +29,7 @@ local WDS_EN = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
 local WDF_DE = { "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag" }
 local WDF_EN = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }
 
-local W, H = (draw and draw.width) or 800, (draw and draw.height) or 480 -- CHANGELOG 932: folgt der Display-Ausrichtung (Hochformat 480x800)
+local W, H = (draw and draw.width) or 800, (draw and draw.height) or 480 -- Folgt der Display-Ausrichtung (Hochformat 480x800)
 local FILE_MAX = 23000
 local MAX_EVENTS = 160
 local FAR = 2147000000 -- "kein Ende" fuer Einzeltermine (wie die eingebaute App: nur die fruehesten 160 bleiben)
@@ -870,7 +870,7 @@ function on_widget(ctx, box)
     end
     return
   end
-  -- Liste mit Tagesbloecken. Zwei Durchlaeufe (CHANGELOG 853): erst messen, dann den uebrigen Platz gleichmaessig auf die Luecken
+  -- Liste mit Tagesbloecken. Zwei Durchlaeufe: erst messen, dann den uebrigen Platz gleichmaessig auf die Luecken
   -- zwischen den Tagen verteilen (grosses Widget wirkt sonst oben zusammengedraengt und unten leer).
   -- Titel auf bis zu zwei Zeilen umbrechen (Wortgrenzen), die letzte Zeile wird gekuerzt
   local function wrapLines(str, w, font, maxLines)

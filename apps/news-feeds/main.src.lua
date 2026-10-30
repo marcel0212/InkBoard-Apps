@@ -49,7 +49,7 @@ end
 
 local function readCat(ctx, ci)
   local items = {}
-  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor (CHANGELOG 559)
+  if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor
     local en = ctx.lang == "en"
     return {
       { t = 0, src = "Tagesschau", title = en and "Sample headline: the most important news of the day" or "Beispiel: Die wichtigsten Nachrichten des Tages" },

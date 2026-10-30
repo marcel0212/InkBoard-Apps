@@ -206,7 +206,7 @@ local function notice(cx, lines)
   end
 end
 
--- Leerzustand: dieselbe QR-Seite wie "Noch keine App installiert" (device.qrscreen, CHANGELOG 643) mit dem Link zur Handy-Seite /app/bilder
+-- Leerzustand: dieselbe QR-Seite wie "Noch keine App installiert" (device.qrscreen,) mit dem Link zur Handy-Seite /app/bilder
 -- (Upload mit "Direkt anzeigen", geht auch ohne externen Speicher; "Speichern" braucht ihn). Ohne IP (kein WLAN) ein eigener Hinweis.
 local function drawQrPage(cx)
   if device.qrscreen and device.qrscreen(T("Noch keine Bilder", "No pictures yet"), T("QR-Code scannen, um ein Bild aufs Display zu schicken:", "Scan the QR code to send a picture to the display:")) then

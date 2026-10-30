@@ -510,18 +510,18 @@ local function fetchKind(ctx, k, now)
     end
     local first = o.sp < 1 and 1 or o.sp
     local maxRound = k == 4 and 22 or 60
-    -- CHANGELOG 609: fehlen Ergebnisse, haben sie Vorrang vor den Wappen (die nehmen dann, was uebrig bleibt, sonst den naechsten Lauf)
+    -- Fehlen Ergebnisse, haben sie Vorrang vor den Wappen (die nehmen dann, was uebrig bleibt, sonst den naechsten Lauf)
     local budget = 6 - (nFinal < LAST_MAX and 0 or RESERVE) - calls()
     local want = {}
     -- Fehlen noch Ergebnisse, bekommen aeltere Spieltage den Vorrang (nur die naechsten zwei Spieltage vorwaerts)
-    -- CHANGELOG 608: fehlen Ergebnisse, nur der aktuelle und der naechste Spieltag vorwaerts, der Rest des Budgets geht rueckwaerts -
+    -- Fehlen Ergebnisse, nur der aktuelle und der naechste Spieltag vorwaerts, der Rest des Budgets geht rueckwaerts -
     -- ohne feste Grenze (frueher hoechstens 6 Spieltage zurueck: blieb es bei 2 Ergebnissen, z. B. DEL), bis 5 beendete Spiele da sind.
     local fwd = nFinal < LAST_MAX and 2 or 4
     for n = first, first + fwd - 1 do
       if n <= maxRound and not finalRound[n] and #want < budget then want[#want + 1] = n end
     end
     if nFinal < LAST_MAX and #want >= budget and budget >= 2 then table.remove(want) end -- mindestens ein Spieltag zurueck
-    -- CHANGELOG 609: rueckwaerts immer ab dem aktuellen Spieltag die Spieltage ohne gespeichertes Ergebnis (keine gespeicherte
+    -- Rueckwaerts immer ab dem aktuellen Spieltag die Spieltage ohne gespeichertes Ergebnis (keine gespeicherte
     -- Untergrenze mehr - die blieb nach Fehlversuchen auf Spieltag 1 stehen, und es kamen nie mehr als 2 Ergebnisse dazu)
     local backList = {}
     local n = first - 1
@@ -580,7 +580,7 @@ local function fetchKind(ctx, k, now)
   return true
 end
 
--- Welche Sportarten duerfen jetzt abrufen? Nutzerregel: nur die angezeigte App (die gezeigte Sportart) bzw. bei aktivem Dashboard
+-- Welche Sportarten duerfen jetzt abrufen? Regel: nur die angezeigte App (die gezeigte Sportart) bzw. bei aktivem Dashboard
 -- die Sportarten der platzierten Widgets; alle anderen bleiben stumm. nil = Firmware kennt ctx.view nicht (alle, wie frueher).
 local function wantedKinds(ctx)
   local cfg, w = ctx.cfg, {}
@@ -794,7 +794,7 @@ local function loadCrest(ctx, k, slot, name, today, iw, ih)
     ctx.data.set("ie", "")
   else
     log("Sport: Wappen " .. name .. ": " .. tostring(err))
-    ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose, CHANGELOG 602)
+    ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose,)
     ctx.data.set("cf", fk .. mark)
   end
   return true
@@ -808,7 +808,7 @@ local function loadCrests(ctx, now)
   local nx = m and m.found and m.nxt[1]
   if not nx then return end
   local today = ("00000" .. tostring(now // 86400)):sub(-5)
-  -- CHANGELOG 611: beide Wappen im selben Lauf, soweit Abrufe frei sind (vorher nur eines je Lauf - der Gegner kam erst
+  -- Beide Wappen im selben Lauf, soweit Abrufe frei sind (vorher nur eines je Lauf - der Gegner kam erst
   -- beim naechsten faelligen Abruf, bis zu 25 Minuten spaeter)
   loadCrest(ctx, k, "own", m.ownName, today)
   if NETN + 2 <= 6 then loadCrest(ctx, k, "opp", nx.opp, today) end
@@ -1398,7 +1398,7 @@ function on_draw(ctx, page)
     local ie = ctx.data.get("ie")
     if type(ie) ~= "string" or ie == "" then ie = T("noch kein Wappenabruf", "no crest fetch yet") end
     if ctx.cfg.crests ~= false and (ctx.data.get("im_own") == nil or ctx.data.get("im_opp") == nil) then
-      draw.text(draw.width - 10, draw.height - 6, fit("Wappen: " .. ie, draw.width - 24, "small"), "small", color.BLACK, "right") -- Diagnose (CHANGELOG 602)
+      draw.text(draw.width - 10, draw.height - 6, fit("Wappen: " .. ie, draw.width - 24, "small"), "small", color.BLACK, "right") -- Diagnose
     end
   end
 end
@@ -1438,7 +1438,7 @@ function on_widget(ctx, box)
   local crestY = box.y + 4
   local leftX, rightX = cx - crestW - vsGap // 2, cx + vsGap // 2
   local cfont = compact and 7 or 9
-  -- CHANGELOG 607: passend skaliert; erst das Widget-Bild, sonst das grosse Bild der App-Ansicht (gleiche Sportart und Team)
+  -- Passend skaliert; erst das Widget-Bild, sonst das grosse Bild der App-Ansicht (gleiche Sportart und Team)
   local function wcrest(x, tla, slot, name)
     if ctx.cfg.crests ~= false then
       local tok = crestToken(k, name)

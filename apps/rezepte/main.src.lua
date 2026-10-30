@@ -7,7 +7,7 @@
 -- Datenhaltung: das Rezept liegt in der App-Datei "recipe" (JSON, dasselbe Schema wie /recipe.json der eingebauten App); ctx.data haelt nur
 -- den kleinen Zustand: st (idle|pending|ok|error), err, pu (angeforderter Link), pt (Zeitpunkt der Anforderung), pg (Seite, ab 0),
 -- browse (Blaetter-Modus: 1), bt (Zeitpunkt der letzten Drehung, time.now()), rv (Zaehler: jede Aenderung am Rezept).
--- "browse" ist ein von der Firmware gelesener Schluessel (CHANGELOG 636): steht er nach on_input auf 1, zeichnet die Kopfzeile den gruenen
+-- "browse" ist ein von der Firmware gelesener Schluessel: steht er nach on_input auf 1, zeichnet die Kopfzeile den gruenen
 -- Blaetter-Balken (wie die eingebaute Rezepte-App); nach 45 s ohne Drehen gilt der Modus als bestaetigt (time-basiert, siehe browsing()).
 -- Seitenaufteilung und Zeichnen sind ein Port von recipeBuildPages()/drawRecipeContentPage() (teil15): feste Geometrie, wortweiser Umbruch
 -- wie wrapUtf8ToLines(), erst alle Zutaten-, dann Zubereitungs-, zuletzt Naehrwerte-Seiten.
@@ -507,7 +507,7 @@ end
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Zeichnen
 
--- Leerzustand: dieselbe QR-Seite wie "Noch keine App installiert" (device.qrscreen, CHANGELOG 643) mit dem Link zur Handy-Seite /app/rezepte.
+-- Leerzustand: dieselbe QR-Seite wie "Noch keine App installiert" (device.qrscreen,) mit dem Link zur Handy-Seite /app/rezepte.
 local function drawEmpty(ctx)
   if device.qrscreen and device.qrscreen(T(ctx, "Noch kein Rezept geladen", "No recipe loaded yet"), T(ctx, "QR-Code scannen, um ein Rezept zu laden:", "Scan the QR code to load a recipe:")) then
     return
