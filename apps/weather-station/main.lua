@@ -23,6 +23,12 @@ local W = (draw and draw.width) or 800 -- CHANGELOG 932: folgt der Display-Ausri
 local CARD_MARGIN = 14
 local CARD_RADIUS = 8
 
+-- Symbol-Design: "device" = Geräteeinstellung (Studio -> Wetter), sonst classic/soft/paper/glass (Paket-Einstellung der App bzw. des Widgets)
+local ICON_STYLE = nil
+local ICON_IDS = {classic = 0, soft = 1, paper = 2, glass = 3}
+local function setIconStyle(name) ICON_STYLE = ICON_IDS[name] end
+local function wxIcon(cond, cx, cy, size, night) return draw.weather_icon(cond, cx, cy, size, night, ICON_STYLE) end
+
 local function tr(en, de, ctx) if ctx.lang == "en" then return en end return de end
 
 -- Karte mit seitlicher Akzent-Leiste
@@ -167,7 +173,7 @@ local function hourlyBlock(w, y, sparkXL, sparkXR, sparkH, labelX, maxDy, iconSi
   local i = 0
   while i < n do
     local px = sparkXL + (i * (sw - 1)) // (n - 1)
-    draw.weather_icon(w.hourly[i + 1].cond, px, y + sparkH + iconDy, iconSize, w.hourly[i + 1].night)
+    wxIcon(w.hourly[i + 1].cond, px, y + sparkH + iconDy, iconSize, w.hourly[i + 1].night)
     draw.text(px, y + sparkH + hourDy, string.format("%dh", w.hourly[i + 1].hour), "normal", color.BLACK, "center")
     i = i + step
   end
@@ -184,7 +190,7 @@ local function dailyBlock(w, ctx, y, cardX, wdDy, iconSize, iconDy, tempDy)
     local d = w.daily[i]
     local cx = cardX + (i - 1) * (colW + gap) + colW // 2
     draw.text(cx, y + wdDy, short[((d.wday + 6) % 7) + 1], "normal", color.BLACK, "center")
-    draw.weather_icon(d.cond, cx, y + iconDy, iconSize)
+    wxIcon(d.cond, cx, y + iconDy, iconSize)
     draw.text(cx, y + tempDy, string.format("%.0f°/%.0f°", d.max, d.min), "normal", color.BLACK, "center")
   end
 end
@@ -226,7 +232,7 @@ local function drawBigStyle(w, ctx, flat)
     if flat then hline(CARD_MARGIN, top, cardW) else accentCard(CARD_MARGIN, top, cardW, h) end
   end
   section(factY - 10, factRowH + 20)
-  draw.weather_icon(w.cond, 110, factY + factRowH // 2, 92, w.night)
+  wxIcon(w.cond, 110, factY + factRowH // 2, 92, w.night)
   bigTemp(190, factY + 69, w.temp)
   draw.text(190, factY + 90, feelsText(w, ctx), "normal", color.BLACK)
   factGrid(w, ctx, 345, 20, 26, 34, factY + 6, 18)
@@ -255,7 +261,7 @@ drawPortrait = function(w, ctx, flat, compact)
   end
   local heroH = compact and 130 or 170
   section(y - 6, heroH)
-  draw.weather_icon(w.cond, 86, y + heroH // 2 - 8, compact and 70 or 96, w.night)
+  wxIcon(w.cond, 86, y + heroH // 2 - 8, compact and 70 or 96, w.night)
   if compact then
     draw.text(150, y + 62, string.format("%.0f °C", w.temp), "large", color.BLACK)
     draw.text(150, y + 88, feelsText(w, ctx), "normal", color.BLACK)
@@ -295,7 +301,7 @@ local function drawCompact(w, ctx)
   local factRowH = 108
   local cardW = W - 2 * CARD_MARGIN
   accentCard(CARD_MARGIN, factY - 8, cardW, factRowH + 14)
-  draw.weather_icon(w.cond, 96, factY + factRowH // 2, 60, w.night)
+  wxIcon(w.cond, 96, factY + factRowH // 2, 60, w.night)
   draw.text(160, factY + 50, string.format("%.0f °C", w.temp), "large", color.BLACK)
   draw.text(160, factY + 72, feelsText(w, ctx), "normal", color.BLACK)
   factGrid(w, ctx, 320, 16, 22, 26, factY + 4, 16)
@@ -361,7 +367,7 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
     if size < 26 then size = 26 end
     if size > b.w - 16 then size = b.w - 16 end
     local icy = top + 6 + size // 2
-    draw.weather_icon(w.cond, cx, icy, size, w.night)
+    wxIcon(w.cond, cx, icy, size, w.night)
     local ty = icy + size // 2 + 26
     if ty > maxY - 4 then ty = maxY - 4 end
     centered(cx, ty, temp, "large", color.BLACK, b.x + 4, b.x + b.w - 4)
@@ -379,7 +385,7 @@ local function widgetCurrent(w, ctx, b, top, maxY, compact, extra)
   if size < 30 then size = 30 end
   if b.w < 200 and size > 56 then size = 56 end
   local icy = top + areaH // 2
-  draw.weather_icon(w.cond, b.x + 16 + size // 2, icy, size, w.night)
+  wxIcon(w.cond, b.x + 16 + size // 2, icy, size, w.night)
   local tx = b.x + 34 + size
   local withLabel = areaH >= 56 and not compact
   local ty
@@ -422,7 +428,7 @@ local function widgetForecast(w, ctx, b, top, maxY, compact, withBarOpt)
     local d = w.daily[i]
     local cy = top + (i - 1) * rowH + rowH // 2
     draw.text(b.x + 12, cy + 5, short[((d.wday + 6) % 7) + 1], fnt(b, "small"), i == 1 and color.ACCENT or color.BLACK)
-    if not compact then draw.weather_icon(d.cond, b.x + 56, cy, 24) end
+    if not compact then wxIcon(d.cond, b.x + 56, cy, 24) end
     if withBar then
       local minX = b.x + 32 + iconCol
       draw.text(minX + 18, cy + 5, string.format("%.0f°", d.min), fnt(b, "small"), color.BLACK, "center")
@@ -515,7 +521,46 @@ local function widgetRain(w, ctx, b, top, maxY)
   return baseY + labelsH
 end
 
+-- Wetterwarnung (nur Widget "Wetter Außen", abschaltbar): Gewitter/Hagel/Sturm, Frost, Regenbeginn in der nächsten Stunde.
+-- Gibt Text, Hintergrundfarbe und Schriftfarbe zurück oder nichts.
+local function widgetWarning(w, ctx)
+  if ctx.cfg.warn == false then return nil end
+  local now = time.now()
+  if not now then return nil end
+  local nowH = time.date(now).hour
+  local function soon(h, span) return h ~= nil and ((h - nowH) % 24) <= span end
+  local function bad(c) return c == "thunder" or c == "hail" end
+  local storm = bad(w.cond)
+  local minT = w.temp
+  if w.hourly then
+    for i = 1, #w.hourly do
+      local e = w.hourly[i]
+      if soon(e.hour, 2) and bad(e.cond) then storm = true end
+      if soon(e.hour, 3) and e.temp ~= nil and (minT == nil or e.temp < minT) then minT = e.temp end
+    end
+  end
+  if storm then return tr("Storm warning: thunderstorm", "Unwetter: Gewitter", ctx), color.RED, color.WHITE end
+  if w.wind and w.wind >= 60 then
+    return string.format(tr("Storm warning: wind %d km/h", "Sturmwarnung: Wind %d km/h", ctx), math.floor(w.wind + 0.5)), color.RED, color.WHITE
+  end
+  if minT ~= nil and minT <= 0 then
+    return string.format(tr("Frost: %d °C", "Frost: %d °C", ctx), math.floor(minT + 0.5)), color.BLUE, color.WHITE
+  end
+  if w.rain then
+    for i = 1, #w.rain do
+      local r = w.rain[i]
+      if r.t > now and r.t < now + 3600 and r.mm > 0.1 then
+        local mins = (r.t - now) // 60
+        if mins <= 1 then return tr("Rain starting now", "Regen beginnt jetzt", ctx), color.YELLOW, color.BLACK end
+        return string.format(tr("Rain in ~%d min", "Regen in ca. %d Min", ctx), mins), color.YELLOW, color.BLACK
+      end
+    end
+  end
+  return nil
+end
+
 function outdoor.on_widget(ctx, b)
+  setIconStyle(ctx.cfg.wIconStyle)
   local w, why = weather.get()
   if not w then
     local msg = (why == "nolocation") and tr("Location not set", "Standort nicht eingerichtet", ctx) or tr("Loading ...", "Wird geladen ...", ctx)
@@ -530,6 +575,9 @@ function outdoor.on_widget(ctx, b)
   local compact = (ctx.cfg.style == "compact")
   local top = b.y
   local maxY = b.y + b.h - 4
+  local warnText, warnBg, warnInk
+  if b.h >= 100 and b.w >= 150 then warnText, warnBg, warnInk = widgetWarning(w, ctx) end
+  if warnText then maxY = maxY - 26 end
   local rainH = showRain and (compact and 40 or 56) or 0
   local belowMax = showRain and (maxY - rainH - 14) or maxY
   if belowMax < top + 20 then belowMax = maxY end
@@ -548,9 +596,15 @@ function outdoor.on_widget(ctx, b)
     hline(b.x + 12, y + 7, b.w - 24)
     widgetRain(w, ctx, b, y + 14, maxY)
   end
+  if warnText then
+    local wy = b.y + b.h - 24
+    draw.rect(b.x + 4, wy, b.w - 8, 20, warnBg, true, 6)
+    draw.text(b.x + b.w // 2, wy + 14, fit(warnText, "small", b.w - 24), "small", warnInk, "center")
+  end
 end
 
 function outdoor.on_draw(ctx, page)
+  setIconStyle(ctx.cfg.iconStyle)
   draw.clear(color.WHITE)
   local w, why = weather.get()
   if not w then

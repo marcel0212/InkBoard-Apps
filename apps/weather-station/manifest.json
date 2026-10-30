@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.2.4",
+  "version": "1.3.0",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -56,6 +56,38 @@
       "label": {
         "de": "Stil der Seiten",
         "en": "Page style"
+      }
+    },
+    {
+      "key": "iconStyle",
+      "type": "select",
+      "options": [
+        "device",
+        "classic",
+        "soft",
+        "paper",
+        "glass"
+      ],
+      "default": "device",
+      "optionLabels": {
+        "de": {
+          "device": "Geräte-Einstellung",
+          "classic": "Klassisch",
+          "soft": "Weich",
+          "paper": "Papierschnitt",
+          "glass": "Dunkelglas"
+        },
+        "en": {
+          "device": "Device setting",
+          "classic": "Classic",
+          "soft": "Soft",
+          "paper": "Paper cut",
+          "glass": "Dark glass"
+        }
+      },
+      "label": {
+        "de": "Wetter-Symbole der Seiten",
+        "en": "Weather icons of the pages"
       }
     },
     {
@@ -145,13 +177,25 @@
     {
       "key": "storageProfile",
       "type": "select",
-      "options": ["main", "app"],
+      "options": [
+        "main",
+        "app"
+      ],
       "default": "main",
       "optionLabels": {
-        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
-        "en": {"main": "Main storage", "app": "App storage (separate)"}
+        "de": {
+          "main": "Hauptspeicher",
+          "app": "App-Speicher (getrennt)"
+        },
+        "en": {
+          "main": "Main storage",
+          "app": "App storage (separate)"
+        }
       },
-      "label": {"de": "Speicher", "en": "Storage"},
+      "label": {
+        "de": "Speicher",
+        "en": "Storage"
+      },
       "help": {
         "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
         "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
@@ -159,19 +203,62 @@
       "section": "history"
     },
     {
-        "key": "historyDir",
-        "type": "storagePath",
-        "device": "historyFtpPath",
-        "default": "/inkboard",
-        "label": {
-            "de": "Verlauf: Ordner auf dem externen Speicher",
-            "en": "History: folder on the external storage"
+      "key": "historyDir",
+      "type": "storagePath",
+      "device": "historyFtpPath",
+      "default": "/inkboard",
+      "label": {
+        "de": "Verlauf: Ordner auf dem externen Speicher",
+        "en": "History: folder on the external storage"
+      },
+      "help": {
+        "de": "Hier legt die Wetter-App den Sensor-Verlauf ab (FTP, WebDAV oder Google Drive). Gilt geräteweit, wie in Einstellungen → Gerät → Wetter.",
+        "en": "Where the weather app stores the sensor history (FTP, WebDAV or Google Drive). Applies device-wide, like Settings → Device → Weather."
+      },
+      "section": "history"
+    },
+    {
+      "key": "wIconStyle",
+      "type": "select",
+      "options": [
+        "device",
+        "classic",
+        "soft",
+        "paper",
+        "glass"
+      ],
+      "default": "device",
+      "optionLabels": {
+        "de": {
+          "device": "Geräte-Einstellung",
+          "classic": "Klassisch",
+          "soft": "Weich",
+          "paper": "Papierschnitt",
+          "glass": "Dunkelglas"
         },
-        "help": {
-            "de": "Hier legt die Wetter-App den Sensor-Verlauf ab (FTP, WebDAV oder Google Drive). Gilt geräteweit, wie in Einstellungen → Gerät → Wetter.",
-            "en": "Where the weather app stores the sensor history (FTP, WebDAV or Google Drive). Applies device-wide, like Settings → Device → Weather."
-        },
-        "section": "history"
+        "en": {
+          "device": "Device setting",
+          "classic": "Classic",
+          "soft": "Soft",
+          "paper": "Paper cut",
+          "glass": "Dark glass"
+        }
+      },
+      "group": "widget",
+      "label": {
+        "de": "Wetter-Symbole",
+        "en": "Weather icons"
+      }
+    },
+    {
+      "key": "warn",
+      "type": "toggle",
+      "default": true,
+      "group": "widget",
+      "label": {
+        "de": "Wetterwarnung zeigen (Unwetter, Frost, Regen in der nächsten Stunde)",
+        "en": "Show weather warning (storm, frost, rain within the hour)"
+      }
     }
   ],
   "nativeWidgets": [
