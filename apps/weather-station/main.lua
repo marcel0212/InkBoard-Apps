@@ -894,8 +894,8 @@ local cx=b.x+b.w//2
 local temp=string.format("%.0f°C",w.temp)
 local feelsLine=string.format(tr("feels %.0f° · %d %%","gefühlt %.0f° · %d %%",ctx),w.feels or w.temp,w.humidity or 0)
 if b.w<190 then
-local cap=compact and 50 or 72
-local size=areaH - 46
+local cap=compact and 55 or 80
+local size=areaH - 40
 if size>cap then size=cap end
 if size<26 then size=26 end
 if size>b.w - 16 then size=b.w - 16 end
@@ -913,10 +913,10 @@ local bottom=icy+size//2
 return bottom>after and bottom or after
 end
 local size=areaH - 4
-local cap=compact and 60 or ((areaH>=130 and b.w>=280) and 132 or 88)
+local cap=compact and 66 or ((areaH>=130 and b.w>=280) and 145 or 97)
 if size>cap then size=cap end
 if size<30 then size=30 end
-if b.w<200 and size>56 then size=56 end
+if b.w<200 and size>62 then size=62 end
 local icy=top+areaH//2
 wxIcon(w.cond,b.x+16+size//2,icy,size,w.night)
 local tx=b.x+34+size
