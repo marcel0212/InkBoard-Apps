@@ -525,7 +525,7 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
   if kind == 0 then wxDrawClassic(cond, cx, cy, size) return true end
   local function P(p) return wxP(size, p) end
   local outl = (kind == 2 or kind == 4)
-  local dith = (kind == 1 or kind == 3) -- Tusche und Aquarell: Niederschlag, Nebel, Sterne gerastert
+  local dith = (kind == 1 or kind == 3) and size >= 56 -- Tusche und Aquarell: Niederschlag, Nebel, Sterne gerastert
   local sw = size >= 100 and 3 or (size >= 56 and 2 or 1)
   local gap = size >= 100 and 4 or (size >= 56 and 3 or 2)
   local t = outl and sw or 0
@@ -535,6 +535,7 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
   local yc = (kind >= 3) and Y or K -- Sonne/Mond/Blitz
   local function cloud(x, y, w, kindLevel, rg)
     local level = (kindLevel == 1) and 1 or 2
+    if kind == 3 then level = (kindLevel == 0) and 4 or ((kindLevel == 1) and 2 or 3) end
     local col = (kindLevel == 2) and K or Bl
     if kind == 1 then level = (kindLevel == 1) and 2 or 5 end
     wxCloudSt(x, y, w, kind, level, col, t, rg)
@@ -545,7 +546,7 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
       local x = cx + P(n == 3 and x3[i] or x2[i])
       local y = cy + y0 + ((i - 1) % 2 == 1 and P(7) or 0)
       if dith then wxStrokePat(x + len // 4, y, x - len // 4, y + len, sw + 1, 3, pc)
-      else wxStroke(x + len // 4, y, x - len // 4, y + len, sw, pc) end
+      else wxStroke(x + len // 4, y, x - len // 4, y + len, size < 56 and sw + 1 or sw, pc) end
     end
   end
 
@@ -562,7 +563,7 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
     local ys, xl, xr = {P(18), P(29), P(40)}, {P(-32), P(-24), P(-32)}, {P(32), P(28), P(32)}
     for i = 1, 3 do
       if dith then wxStrokePat(cx + xl[i], cy + ys[i], cx + xr[i], cy + ys[i], sw + 1, 3, pc)
-      else wxStroke(cx + xl[i], cy + ys[i], cx + xr[i], cy + ys[i], sw, pc) end
+      else wxStroke(cx + xl[i], cy + ys[i], cx + xr[i], cy + ys[i], size < 56 and sw + 1 or sw, pc) end
     end
   elseif cond == 4 then
     cloud(cx, cy + P(-14), size * 90 // 100, 0, 0)
