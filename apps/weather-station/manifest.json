@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.4.2",
+  "version": "1.4.3",
   "apiLevel": 20,
   "standard": true,
   "pages": [

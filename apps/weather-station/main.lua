@@ -595,6 +595,13 @@ local st=ICON_STYLE or DEVICE_STYLE
 if st and st>=0 and st<=4 and wxDrawStyled(cond,cx,cy,size,night,st) then return end
 return draw.weather_icon(cond,cx,cy,size,night,ICON_STYLE)
 end
+local function wxIconBox(cond,cx,top,bottom,maxSize,night)
+local h=bottom - top
+local size=math.min(maxSize,(h*100)//112)
+if size<8 then size=8 end
+local cy=top+(h - size*112//100)//2+size*55//100
+wxIcon(cond,cx,cy,size,night)
+end
 local function tr(en,de,ctx) if ctx.lang=="en" then return en end return de end
 local function accentCard(x,y,w,h)
 draw.rect(x,y,w,h,color.WHITE,true,CARD_RADIUS)
@@ -720,7 +727,7 @@ local step=n>12 and 4 or 2
 local i=0
 while i<n do
 local px=sparkXL+(i*(sw - 1))//(n - 1)
-wxIcon(w.hourly[i+1].cond,px,y+sparkH+iconDy,iconSize,w.hourly[i+1].night)
+wxIconBox(w.hourly[i+1].cond,px,y+sparkH - 2,y+sparkH+hourDy - 15,iconSize,w.hourly[i+1].night)
 draw.text(px,y+sparkH+hourDy,string.format("%dh",w.hourly[i+1].hour),"normal",color.BLACK,"center")
 i=i+step
 end
@@ -735,7 +742,7 @@ for i=1,count do
 local d=w.daily[i]
 local cx=cardX+(i - 1)*(colW+gap)+colW//2
 draw.text(cx,y+wdDy,short[((d.wday+6)%7)+1],"normal",color.BLACK,"center")
-wxIcon(d.cond,cx,y+iconDy,iconSize)
+wxIconBox(d.cond,cx,y+wdDy+4,y+tempDy - 15,iconSize)
 draw.text(cx,y+tempDy,string.format("%.0f°/%.0f°",d.max,d.min),"normal",color.BLACK,"center")
 end
 end

@@ -3048,7 +3048,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -3234,9 +3234,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "864923bce6b08a2a47cfc812da97d3708f139d5eba90b3346686a207e1d58992",
-      "sig": "naHA9ppuSuFyGVQ3ZLFoUPCQy+zM7RCNQB+Om1VlzGP5jl6xdwPxByuJioGnm5Ht6wXkb9/XlOdwqA27Gz1qqn06SqAdzqmtMD25Aav5l2gB+AmvlAnXUAYMdiLnR8ge/C8rREHykFCBT1MmQc+pNSOhJbV0uWpz60rVQgR4UfXSp7lfw8SQKraSH689vvOKNDe62XQGtuRxo3RIuFjrMda+6w24liM6nqhvbNSLUWgYzpD/8BCqaEjsRNav3H2aFN4ijVmeX43AL3yZOzD1UD8yLsjTMX5NX7WXpiAOMAgOF1yeKL/TYWT2miSEyf/Njltd1UAMVEEljqqlgVNb7g==",
-      "size": 71213
+      "sha256": "17ea07c214370b40fa2f241abc2eb14e83d15a4291d1bcc90acf502faca51a01",
+      "sig": "Ex/l4f08bYx5gAkBEMdn6GkZkM2JXrvlJXpm4f6nq7Fx2sVDWkvsRImSmdjpOumDkmBeU5F719V4WNp1/urbTUjYEbb4BbJ7yT4zbG+YQMGSdxOuZAwCHFilJSbBdgELpemEbFh+BDCQsjiyR8EoyXT3L7rtsmWdsJ6LD413UGIAKsOiUualeZmscwKkg59nMGRbxVJC3vnGqKovEJVDCNMeI0S/BjrDx9HX3IiLZSFGcfLCSGsIdaNUSaoeOvqO0lBSne97/cfyi69IcBD1+kxwZWapNB3d8fOEokHoeBgAYQdpsCpmJOrYNlFk1rEMr9+E9HHTXdDmUvUi2YVMiA==",
+      "size": 71489
     },
     {
       "id": "wikipedia-today",
