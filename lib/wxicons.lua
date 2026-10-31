@@ -1,8 +1,8 @@
 -- ===== Wetter-Symbole aller Stile (Klassisch, Tusche, Skizze, Aquarell, Buntstift): im Paket gezeichnet, laeuft auch auf aelterer Firmware =====
 -- Alle Masse in Prozent der Symbolgroesse; Raster = 2x2-Bayer (Stufen 0..4 = 0/25/50/75/100 %). Flaechen werden zeilenweise als Spans gezeichnet.
 
-local wxDrawStyled
 do
+local wxBudget = 0 -- Rechenbudget je Zeichendurchlauf (Summe der Symbolgroessen); ueber dem Budget zeichnet die Firmware, damit nie eine Zeitueberschreitung entsteht
 local wxFloor, wxCeil, wxSqrt, wxAbs = math.floor, math.ceil, math.sqrt, math.abs
 
 local function wxP(size, p)
@@ -520,6 +520,8 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
   local cond = WX_CONDS[condName]
   if not cond then return false end
   if size < 8 then size = 8 end
+  if wxBudget < size then return false end
+  wxBudget = wxBudget - size
   if kind == 0 then wxDrawClassic(cond, cx, cy, size) return true end
   local function P(p) return wxP(size, p) end
   local outl = (kind == 2 or kind == 4)
@@ -598,4 +600,5 @@ wxDrawStyled = function(condName, cx, cy, size, night, kind)
   end
   return true
 end
+wxSetBudget = function(n) wxBudget = n end
 end

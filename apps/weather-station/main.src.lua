@@ -26,23 +26,26 @@ local CARD_RADIUS = 8
 -- Symbol-Design: "device" = Geräteeinstellung (Studio -> Wetter), sonst classic/glyph/line/flat/linecolor (Paket-Einstellung der App bzw. des Widgets)
 local ICON_STYLE = nil
 local ICON_IDS = {classic = 0, ink = 1, sketch = 2, watercolor = 3, crayon = 4}
-local DEVICE_STYLE = nil -- Icon-Stil der Geraete-Einstellung (weather.get().icon_style, ab neuer Firmware)
+-- Die Firmware (ab v2.7.1, erkennbar an weather.get().icon_style) zeichnet alle Stile selbst, schnell und ohne Rechenzeit des Skripts.
+-- Nur auf aelterer Firmware zeichnet das Paket die Stile Tusche/Skizze/Aquarell/Buntstift selbst (Lua-Baustein wxicons), mit festem
+-- Rechenbudget je Zeichendurchlauf: was darueber hinausgeht, zeichnet die Firmware. So entsteht nie eine Zeitueberschreitung.
+local LUA_ICONS = false
+local wxSetBudget, wxDrawStyled
 local function setIconStyle(name)
   ICON_STYLE = ICON_IDS[name]
-  DEVICE_STYLE = nil
-  if ICON_STYLE == nil then
-    local w = weather.get()
-    if w then DEVICE_STYLE = w.icon_style end
+  LUA_ICONS = false
+  local w = weather.get()
+  if w and w.icon_style == nil and ICON_STYLE and ICON_STYLE >= 1 then
+    LUA_ICONS = true
+    wxSetBudget(260)
   end
 end
 -- ===== Wetter-Symbole der Stile Tusche / Skizze / Aquarell / Buntstift: im Paket gezeichnet (laeuft auch auf aelterer Firmware) =====
 -- Alle Masse in Prozent der Symbolgroesse; Raster = 2x2-Bayer (Stufen 0..4 = 0/25/50/75/100 %). Flaechen werden zeilenweise als Spans gezeichnet.
 --#include wxicons
 
--- Alle Stile zeichnet das Paket selbst; nur bei unbekanntem Zustand oder aelterer Firmware (kein icon_style) zeichnet die Firmware
 local function wxIcon(cond, cx, cy, size, night)
-  local st = ICON_STYLE or DEVICE_STYLE
-  if st and st >= 0 and st <= 4 and wxDrawStyled(cond, cx, cy, size, night, st) then return end
+  if LUA_ICONS and wxDrawStyled(cond, cx, cy, size, night, ICON_STYLE) then return end
   return draw.weather_icon(cond, cx, cy, size, night, ICON_STYLE)
 end
 

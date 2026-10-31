@@ -12,17 +12,19 @@ local CARD_MARGIN=14
 local CARD_RADIUS=8
 local ICON_STYLE=nil
 local ICON_IDS={classic=0,ink=1,sketch=2,watercolor=3,crayon=4}
-local DEVICE_STYLE=nil
+local LUA_ICONS=false
+local wxSetBudget,wxDrawStyled
 local function setIconStyle(name)
 ICON_STYLE=ICON_IDS[name]
-DEVICE_STYLE=nil
-if ICON_STYLE==nil then
+LUA_ICONS=false
 local w=weather.get()
-if w then DEVICE_STYLE=w.icon_style end
+if w and w.icon_style==nil and ICON_STYLE and ICON_STYLE>=1 then
+LUA_ICONS=true
+wxSetBudget(260)
 end
 end
-local wxDrawStyled
 do
+local wxBudget=0
 local wxFloor,wxCeil,wxSqrt,wxAbs=math.floor,math.ceil,math.sqrt,math.abs
 local function wxP(size,p)
 local v=size*p+(p>=0 and 50 or -50)
@@ -512,6 +514,8 @@ end
 local cond=WX_CONDS[condName]
 if not cond then return false end
 if size<8 then size=8 end
+if wxBudget<size then return false end
+wxBudget=wxBudget - size
 if kind==0 then wxDrawClassic(cond,cx,cy,size) return true end
 local function P(p) return wxP(size,p) end
 local outl=(kind==2 or kind==4)
@@ -589,10 +593,10 @@ cloud(cx+P(-4),cy+P(10),size*82//100,0,ring)
 end
 return true
 end
+wxSetBudget=function(n) wxBudget=n end
 end
 local function wxIcon(cond,cx,cy,size,night)
-local st=ICON_STYLE or DEVICE_STYLE
-if st and st>=0 and st<=4 and wxDrawStyled(cond,cx,cy,size,night,st) then return end
+if LUA_ICONS and wxDrawStyled(cond,cx,cy,size,night,ICON_STYLE) then return end
 return draw.weather_icon(cond,cx,cy,size,night,ICON_STYLE)
 end
 local function wxIconBox(cond,cx,top,bottom,maxSize,night)
