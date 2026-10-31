@@ -126,6 +126,56 @@
       }
     },
     {
+      "kind": "display",
+      "file": "preview-icons-classic.svg",
+      "caption": {
+        "de": "Wetter-Symbole im Stil Klassisch",
+        "en": "Weather icons, style Classic"
+      },
+      "style": "classic",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-icons-ink.svg",
+      "caption": {
+        "de": "Wetter-Symbole im Stil Tusche",
+        "en": "Weather icons, style Ink"
+      },
+      "style": "ink",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-icons-sketch.svg",
+      "caption": {
+        "de": "Wetter-Symbole im Stil Skizze",
+        "en": "Weather icons, style Sketch"
+      },
+      "style": "sketch",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-icons-watercolor.svg",
+      "caption": {
+        "de": "Wetter-Symbole im Stil Aquarell",
+        "en": "Weather icons, style Watercolor"
+      },
+      "style": "watercolor",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-icons-crayon.svg",
+      "caption": {
+        "de": "Wetter-Symbole im Stil Buntstift",
+        "en": "Weather icons, style Crayon"
+      },
+      "style": "crayon",
+      "page": 1
+    },
+    {
       "kind": "widget",
       "file": "preview-widget-indoor.svg",
       "caption": {

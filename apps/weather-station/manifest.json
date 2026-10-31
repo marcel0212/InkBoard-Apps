@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.3.0",
+  "version": "1.4.2",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -64,31 +64,35 @@
       "options": [
         "device",
         "classic",
-        "soft",
-        "paper",
-        "glass"
+        "ink",
+        "sketch",
+        "watercolor",
+        "crayon"
       ],
       "default": "device",
       "optionLabels": {
         "de": {
           "device": "Geräte-Einstellung",
           "classic": "Klassisch",
-          "soft": "Weich",
-          "paper": "Papierschnitt",
-          "glass": "Dunkelglas"
+          "ink": "Tusche",
+          "sketch": "Skizze",
+          "watercolor": "Aquarell",
+          "crayon": "Buntstift"
         },
         "en": {
           "device": "Device setting",
           "classic": "Classic",
-          "soft": "Soft",
-          "paper": "Paper cut",
-          "glass": "Dark glass"
+          "ink": "Ink",
+          "sketch": "Sketch",
+          "watercolor": "Watercolor",
+          "crayon": "Crayon"
         }
       },
       "label": {
         "de": "Wetter-Symbole der Seiten",
         "en": "Weather icons of the pages"
-      }
+      },
+      "previewPage": 1
     },
     {
       "key": "focus",
@@ -223,32 +227,36 @@
       "options": [
         "device",
         "classic",
-        "soft",
-        "paper",
-        "glass"
+        "ink",
+        "sketch",
+        "watercolor",
+        "crayon"
       ],
       "default": "device",
       "optionLabels": {
         "de": {
           "device": "Geräte-Einstellung",
           "classic": "Klassisch",
-          "soft": "Weich",
-          "paper": "Papierschnitt",
-          "glass": "Dunkelglas"
+          "ink": "Tusche",
+          "sketch": "Skizze",
+          "watercolor": "Aquarell",
+          "crayon": "Buntstift"
         },
         "en": {
           "device": "Device setting",
           "classic": "Classic",
-          "soft": "Soft",
-          "paper": "Paper cut",
-          "glass": "Dark glass"
+          "ink": "Ink",
+          "sketch": "Sketch",
+          "watercolor": "Watercolor",
+          "crayon": "Crayon"
         }
       },
       "group": "widget",
       "label": {
         "de": "Wetter-Symbole",
         "en": "Weather icons"
-      }
+      },
+      "previewPage": 1
     },
     {
       "key": "warn",

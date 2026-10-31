@@ -3048,7 +3048,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.4.2",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -3185,6 +3185,46 @@
           "page": 2
         },
         {
+          "kind": "display",
+          "file": "apps/weather-station/preview-icons-classic.svg",
+          "caption": {
+            "de": "Wetter-Symbole im Stil Klassisch",
+            "en": "Weather icons, style Classic"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-icons-ink.svg",
+          "caption": {
+            "de": "Wetter-Symbole im Stil Tusche",
+            "en": "Weather icons, style Ink"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-icons-sketch.svg",
+          "caption": {
+            "de": "Wetter-Symbole im Stil Skizze",
+            "en": "Weather icons, style Sketch"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-icons-watercolor.svg",
+          "caption": {
+            "de": "Wetter-Symbole im Stil Aquarell",
+            "en": "Weather icons, style Watercolor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-icons-crayon.svg",
+          "caption": {
+            "de": "Wetter-Symbole im Stil Buntstift",
+            "en": "Weather icons, style Crayon"
+          }
+        },
+        {
           "kind": "widget",
           "file": "apps/weather-station/preview-widget-indoor.svg",
           "caption": {
@@ -3194,9 +3234,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "eb531c80844fddb341a77dd016ead0e41473b368d4f5746b08a5232cd4ad01f8",
-      "sig": "VLEkZ/GEHtLeGj3ebfNy5jdPUXna12PEkUY9AvhflIrUpArY8yPe/j5ifaybxt1myYYTSir2ChVqIyJHQSLNIuDtBKT4GXQrBOYtopWVtQrbWemAXtUAu/iPM0hTJbs4m4ItN5gLW0W+z/JMLF5zXT0FUwSFGfzL2tWlWUMojrhUsawZT9vicCcZ2MNKJ4WyfxYjiicbfs9h/9sa+QXUlrFgj3WvyTBkl2FQs7y4KPBwHTxbx8i74EsD+gEZLNBqQr3mUnhwaZCj/fmQgeqxmzO82kXiGvHYsp3sE6wN44t5o1PpGwit53uujKKlS2Jvmu5RcGgJdJl9i8CIbKnH/A==",
-      "size": 66952
+      "sha256": "864923bce6b08a2a47cfc812da97d3708f139d5eba90b3346686a207e1d58992",
+      "sig": "naHA9ppuSuFyGVQ3ZLFoUPCQy+zM7RCNQB+Om1VlzGP5jl6xdwPxByuJioGnm5Ht6wXkb9/XlOdwqA27Gz1qqn06SqAdzqmtMD25Aav5l2gB+AmvlAnXUAYMdiLnR8ge/C8rREHykFCBT1MmQc+pNSOhJbV0uWpz60rVQgR4UfXSp7lfw8SQKraSH689vvOKNDe62XQGtuRxo3RIuFjrMda+6w24liM6nqhvbNSLUWgYzpD/8BCqaEjsRNav3H2aFN4ijVmeX43AL3yZOzD1UD8yLsjTMX5NX7WXpiAOMAgOF1yeKL/TYWT2miSEyf/Njltd1UAMVEEljqqlgVNb7g==",
+      "size": 71213
     },
     {
       "id": "wikipedia-today",
