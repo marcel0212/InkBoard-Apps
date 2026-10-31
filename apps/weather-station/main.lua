@@ -947,19 +947,21 @@ local rowH=compact and 20 or 36
 local n=(maxY - top)//rowH
 if n>#w.daily then n=#w.daily end
 if n<1 then n=1 end
+if not compact then rowH=math.min(48,(maxY - top)//n) end
+local iconSize=compact and 0 or math.max(24,math.min(40,rowH - 4))
 local weekMin,weekMax=w.daily[1].min,w.daily[1].max
 for i=2,n do
 if w.daily[i].min<weekMin then weekMin=w.daily[i].min end
 if w.daily[i].max>weekMax then weekMax=w.daily[i].max end
 end
 local range=(weekMax - weekMin)>0.5 and (weekMax - weekMin) or 1
-local iconCol=compact and 0 or 44
+local iconCol=compact and 0 or (iconSize+20)
 local short=(ctx.lang=="en") and SHORT_EN or SHORT_DE
 for i=1,n do
 local d=w.daily[i]
 local cy=top+(i - 1)*rowH+rowH//2
 draw.text(b.x+12,cy+5,short[((d.wday+6)%7)+1],fnt(b,"small"),i==1 and color.ACCENT or color.BLACK)
-if not compact then wxIcon(d.cond,b.x+56,cy,24) end
+if not compact then wxIcon(d.cond,b.x+40+iconSize//2,cy,iconSize) end
 if withBar then
 local minX=b.x+32+iconCol
 draw.text(minX+18,cy+5,string.format("%.0f°",d.min),fnt(b,"small"),color.BLACK,"center")
