@@ -2395,7 +2395,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -2444,9 +2444,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "43fae3d3b0f5f7f2d9cbcd3a8684379cbe059b7df5e0fd4d61882978a7f5001e",
-      "sig": "X55ASYl01nEJbRlDehKhNzn5R6bG209itzi68F6n04O6N041aEduC0mbA5Zcn8HQsKSwtQXCxPhiPZ9wXQVVAe8Usod4zDbCY2GWaac2H2cig6V4b1rXPLPC8Z35FkuZmgLD1ImWX9Btac7TX2sPpYj6DgvKdJsI6NsyutbiuNgi6lnA7cCDsOqh20ZIBrraF/kjHLd34RQ2PjJIZCHvPT99TH19uA7lSEHt6oZWJXRdp3LogyTzvymo91kDJ5U1VcLoFj2wluhgqSX3Qi9Gl1pmChhIUMPlfUbycQm9yl+YJH1GTrsywhRE/uAICcLzgp8y3SW6zgAM38rg5eVNxA==",
-      "size": 44128
+      "sha256": "1fbae67c4e7431dbd5d1dab4628e429eb20af49916c7347f97bdebb7120b94b8",
+      "sig": "pGg/7FUZ8RPFmcnjUVQH+x9M+qtwdU8wtX3g/NCvpwXj8fesLwbKCn85uQhm4OqlB10dGkoNiZntTEE7GJRJJMZSGnjs41gMpRxK8yTv+ajMuu1GLb8PiuVsqtS6ZY6BZTGtbQekb8d/TucueBJ3U5TTwIjv00XvGTUfqwe0ODWK7xbY1/c9tEUifTIAHy8ugR8ucVbD88Kj11Cp17NMyuRhVLAf3tfjSOeiMg4B9LSztJX9S3wPCtf/o5isxPrESBuI4wFitbmm0+sdgMYgZakkJIqXRP/Z5lZn6Vf+0+/PcsiSdT7nGqFz+w8yf1Xq210AfpCRfFKV0ZzZ19C0jQ==",
+      "size": 44365
     },
     {
       "id": "sport-tabellen",

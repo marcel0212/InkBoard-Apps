@@ -322,6 +322,14 @@ function on_http(ctx, req)
     if n.yield ~= "" and not n.yield:find("%D") then n.yield = n.yield .. (en and " servings" or " Portionen") end
     n.base = int(n.yield:match("%d+"))
     n.cur = n.base
+    if type(q.nutrition) == "table" then -- optional: Naehrwerte als Liste von { label, value }
+      for _, p in ipairs(q.nutrition) do
+        if type(p) == "table" and #n.nut < MAX_NUT then
+          local l, v = clean(p.label, 19), clean(p.value, 27)
+          if l ~= "" and v ~= "" then n.nut[#n.nut + 1] = { l, v } end
+        end
+      end
+    end
     n.ing = manualLines(q.ingredients, false, MAX_ING, ING_BYTES)
     n.steps = manualLines(q.steps, true, MAX_STEPS, STEP_BYTES)
     if #n.ing == 0 and #n.steps == 0 then
