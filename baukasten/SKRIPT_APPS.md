@@ -335,6 +335,10 @@ Mit `"permissions": {"mail": true}` im Manifest (und `apiLevel` 26) darf eine Ap
 
 `system.apps()` liefert **nur lesend** eine Liste aller installierten Skript-Apps, die eingeschaltet sind oder Widgets im aktiven Dashboard haben. Jeder Eintrag: `id` (Paket-ID), `name` (in der Gerätesprache), `refresh_min` (Aktualisierungsintervall der App in Minuten, gilt solange sie angezeigt wird), `enabled`, `current` (gerade sichtbar), `bg` (Manifest `backgroundFetch`), `cycle` (Manifest `cycleFetch`) und `widgets` (Anzahl ihrer Widgets im aktiven Dashboard). Damit prüft der Spar-Berater der Akku-Prognose jede App und das Dashboard. Beispiel: `for _, a in ipairs(system.apps()) do if a.enabled and a.refresh_min < 15 then ... end end`.
 
+### Live-Takt (`system.live(min)`, API-Stufe 32, Firmware ab v2.7.7)
+
+`system.live(min)` meldet der Firmware aus `on_fetch`, dass gerade etwas Zeitkritisches läuft (z. B. ein Live-Spiel): `min` (5 bis 60) ist der gewünschte Dashboard-Takt in Minuten, `system.live(0)` (oder ohne Argument) beendet die Meldung. Die Firmware wendet den Takt nur an, wenn (a) das Dashboard aktiv ist, (b) die App ein Widget im aktiven Dashboard hat und (c) der Akku nicht schwach ist (Stufe Warnung, unter 15 %, und darunter wird ignoriert). Dann gilt – falls kürzer als der normale Dashboard-Takt – dieser Takt für das Neuzeichnen, den Abruf der App und im Akkubetrieb auch den Weckabstand. Eine Meldung verfällt nach 3 Stunden von selbst, wenn die App sie nicht erneuert (Abruf fällt aus, Spiel ohne Abschlussmeldung). Die App ruft `system.live` bei jedem Dashboard-Abruf neu auf, mit dem Wert aus ihrer Einstellung (Schalter „Live-Aktualisierung“, Auswahl „Live-Takt“, Standard 10 Minuten); auf älterer Firmware gibt es `system.live` nicht – vorher mit `type(system.live) == "function"` prüfen. Beispiel: Pakete `fussball-liga` und `sport-tabellen`.
+
 ## 7. Icons
 
 `draw.icon(name, x, y, groesse, farbe)` zeichnet ein Vektor-Symbol in die Box `groesse × groesse` ab `x, y`, einfarbig, scharf in jeder Größe (ab 4 Pixeln; ab etwa 16 gut erkennbar). Namen:

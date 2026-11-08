@@ -4,7 +4,7 @@
     "de": "Fußball",
     "en": "Football"
   },
-  "version": "1.0.19",
+  "version": "1.0.20",
   "apiLevel": 14,
   "pages": [
     {
@@ -221,6 +221,55 @@
       "help": {
         "de": "Aus: im nächsten Spiel stehen kein „Heim/Auswärts“ und kein Spielort. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
         "en": "Off: the next match shows no home/away and no venue. The preview in Studio, Mac and iOS app still shows everything."
+      }
+    },
+    {
+      "key": "liveRefresh",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Live-Aktualisierung des Dashboards",
+        "en": "Live dashboard refresh"
+      },
+      "help": {
+        "de": "Läuft gerade ein Spiel und liegt das Widget auf dem Dashboard, wird das Dashboard in dem eingestellten Takt neu geladen und gezeichnet – auch wenn der normale Dashboard-Takt länger ist. Bei schwachem Akku (unter 15 %) und ohne Widget im Dashboard passiert das nicht. Jede Aktualisierung kostet Akku.",
+        "en": "While a match is live and the widget is on the dashboard, the dashboard is reloaded and redrawn at the chosen interval – even if the normal dashboard interval is longer. Not done when the battery is low (below 15 %) or without the widget on the dashboard. Every refresh costs battery."
+      }
+    },
+    {
+      "key": "liveRefreshMin",
+      "type": "select",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20",
+        "30"
+      ],
+      "default": "10",
+      "optionLabels": {
+        "de": {
+          "5": "alle 5 Minuten",
+          "10": "alle 10 Minuten",
+          "15": "alle 15 Minuten",
+          "20": "alle 20 Minuten",
+          "30": "alle 30 Minuten"
+        },
+        "en": {
+          "5": "every 5 minutes",
+          "10": "every 10 minutes",
+          "15": "every 15 minutes",
+          "20": "every 20 minutes",
+          "30": "every 30 minutes"
+        }
+      },
+      "label": {
+        "de": "Live-Takt",
+        "en": "Live interval"
+      },
+      "help": {
+        "de": "Abstand der Aktualisierungen während eines Spiels (Standard 10 Minuten). Nur wirksam, wenn die Live-Aktualisierung eingeschaltet ist.",
+        "en": "Interval between refreshes during a match (default 10 minutes). Only applies when live refresh is on."
       }
     },
     {

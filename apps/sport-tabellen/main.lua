@@ -205,6 +205,13 @@ if k==3 then return 8100 end
 if k==1 then return 9900 end
 return 12600
 end
+local function liveMinutes(ctx)
+if ctx.cfg.liveRefresh==false then return 0 end
+local m=tonumber(ctx.cfg.liveRefreshMin) or 10
+local s=type(system)=="table" and type(system.settings)=="function" and system.settings() or nil
+if type(s)=="table" and (s.stage or 0)>=1 then return 0 end
+return m
+end
 local function teamOf(cfg,k) return clean(cfg[TEAMKEY[k]] or "",40) end
 local function sigOf(cfg,k) return teamOf(cfg,k).."|"..leaguePath(cfg,k) end
 local ENT={
@@ -541,6 +548,7 @@ end
 local function isFinal(x,now,k)
 return x.scored and (not timeKnown(x.t) or now - x.t>=liveWindow(k))
 end
+local classify
 local function fetchKind(ctx,k,now)
 local cfg=ctx.cfg
 local team=teamOf(cfg,k)
@@ -631,6 +639,9 @@ end
 end
 local ok,werr=writeStore(k,m)
 if not ok then return false,"file: "..tostring(werr) end
+local _,nx=classify(m,now,k)
+local lv=nx[1]~=nil and nx[1].live==true
+ctx.data.set("v"..CODE[k],lv and (nx[1].t+liveWindow(k)) or 0)
 return true
 end
 local function wantedKinds(ctx)
@@ -660,6 +671,9 @@ return w
 end
 return nil
 end
+local function liveOf(ctx,k)
+return (tonumber(ctx.data.get("v"..CODE[k])) or 0)>(time.now() or 0)
+end
 local function fetchData(ctx)
 EN=ctx.lang=="en"
 local now=time.now()
@@ -672,7 +686,12 @@ for k=1,4 do
 if teamOf(cfg,k)~="" and (wanted==nil or wanted[k]) then
 local at=ctx.data.get("a"..CODE[k]) or 0
 if ctx.data.get("g"..CODE[k])~=sigOf(cfg,k) then at=0 end
-local due=now - at>=DUE_SEC
+local dueSec=DUE_SEC
+if ctx.view=="dashboard" and wanted~=nil and wanted[k] then
+local lm=liveMinutes(ctx)
+if lm>0 and lm*60 - 30<dueSec and liveOf(ctx,k) then dueSec=lm*60 - 30 end
+end
+local due=now - at>=dueSec
 if due and (pick==nil or (k==shown) or (pick~=shown and at<pickAt)) then pick,pickAt=k,at end
 end
 end
@@ -707,7 +726,7 @@ opts[#opts+1]={value=r.name,label=r.name}
 end
 return {ok=true,message=string.format(T("%d Teams geladen.","%d teams loaded."),#opts),options=opts}
 end
-local function classify(m,now,k)
+function classify(m,now,k)
 local last,nxt={},{}
 local win=liveWindow(k)
 for _,x in ipairs(m.matches) do
@@ -862,6 +881,15 @@ end
 elseif ctx.data.get("im_own")==nil or ctx.data.get("im_opp")==nil then RESERVE=2 end
 end
 local ok,fetched=fetchData(ctx)
+if dash then
+local lm,anyLive=liveMinutes(ctx),false
+if lm>0 then
+for k in pairs(wantedKinds(ctx) or {}) do
+if teamOf(cfg,k)~="" and liveOf(ctx,k) then anyLive=true end
+end
+end
+if type(system)=="table" and type(system.live)=="function" then system.live(anyLive and lm or 0) end
+end
 if ok and want and NETN+2<=6 then
 local now=time.now()
 if now~=nil then

@@ -112,6 +112,17 @@ end
 local OLDB="https://api.openligadb.de/"
 local FDB="https://api.football-data.org/v4/"
 local LIVE_SEC=130*60
+local LIVE_NOW=false
+local function liveTick(ctx,live)
+if type(system)~="table" or type(system.live)~="function" then return end
+local mins=0
+if live and ctx.cfg.liveRefresh~=false then
+mins=tonumber(ctx.cfg.liveRefreshMin) or 10
+local s=type(system.settings)=="function" and system.settings() or nil
+if type(s)=="table" and (s.stage or 0)>=1 then mins=0 end
+end
+system.live(mins)
+end
 local CL={"Champions League","Champions League"}
 local EU={"Europa-Plätze","Europe spots"}
 local UP={"Aufstieg","Promotion"}
@@ -455,6 +466,7 @@ end
 for _,m in ipairs(last) do out[#out+1]=mline("L",m) end
 for _,m in ipairs(nxt) do out[#out+1]=mline("N",m) end
 if wn then out[#out+1]=mline("W",wn) end
+LIVE_NOW=wn~=nil and wn.live==true and (wn.when or 0)<=now and now - (wn.when or 0)<LIVE_SEC
 return file.write("d",table.concat(out,"\n"))
 end
 local function previous(ctx,sig)
@@ -779,6 +791,7 @@ end
 function on_fetch(ctx)
 EN=ctx.lang=="en"
 NET=0
+LIVE_NOW=false
 D,OFF_NOW=nil,nil
 if ctx.opened then
 local now=time.now()
@@ -801,6 +814,7 @@ file.write("e",err or "net")
 return false
 end
 file.write("e","")
+if ctx.view=="dashboard" then liveTick(ctx,LIVE_NOW) end
 loadCrests(ctx,now)
 return true
 end
