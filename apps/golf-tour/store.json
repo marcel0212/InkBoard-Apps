@@ -27,6 +27,26 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Leaderboard",
+        "en": "Relief: Leaderboard"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Leaderboard",
+        "en": "Clear: Leaderboard"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Bento: Podium-Kacheln",
@@ -54,6 +74,22 @@
       },
       "style": "compact",
       "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

@@ -8,7 +8,7 @@
     "de": "Tanken",
     "en": "Fuel"
   },
-  "version": "1.1.17",
+  "version": "1.2.0",
   "apiLevel": 7,
   "pages": [
     {
@@ -173,21 +173,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Kacheln)",
           "flat": "Slate (Zeilen)",
-          "compact": "Nano (Tabelle)"
+          "compact": "Nano (Tabelle)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (tiles)",
           "flat": "Slate (rows)",
-          "compact": "Nano (table)"
+          "compact": "Nano (table)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

@@ -8,7 +8,7 @@
     "de": "WdT",
     "en": "WotD"
   },
-  "version": "1.4.7",
+  "version": "1.5.0",
   "apiLevel": 1,
   "pages": [
     {
@@ -38,6 +38,32 @@
       "label": {
         "de": "Beispielsatz anzeigen",
         "en": "Show example sentence"
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "classic"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)",
+          "classic": "Klassisch"
+        },
+        "en": {
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)",
+          "classic": "Classic"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
       }
     }
   ]

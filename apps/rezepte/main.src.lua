@@ -12,6 +12,7 @@
 -- Seitenaufteilung und Zeichnen sind ein Port von recipeBuildPages()/drawRecipeContentPage() (teil15): feste Geometrie, wortweiser Umbruch
 -- wie wrapUtf8ToLines(), erst alle Zutaten-, dann Zubereitungs-, zuletzt Naehrwerte-Seiten.
 
+--#include theme
 local MX = 26                 -- Seitenrand
 local CONTENT_BOTTOM = 442
 local FOOTER_BASE = 468
@@ -528,6 +529,7 @@ end
 
 local SHOW = true -- Zusatzinfos (Quelle · Portionen · Zeit): Einstellung "details"; in der Vorschau (ctx.preview) immer
 function on_draw(ctx, page)
+  setStyle(ctx.cfg.style)
   draw.clear(color.WHITE)
   SHOW = ctx.cfg.details ~= false or ctx.preview == true
   local d = loadRecipe()

@@ -25,6 +25,66 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Nächstes Rennen",
+        "en": "Relief: Next race"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-standings-relief.svg",
+      "caption": {
+        "de": "Relief: WM-Wertung",
+        "en": "Relief: Standings"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-last-relief.svg",
+      "caption": {
+        "de": "Relief: Letzte Session",
+        "en": "Relief: Last session"
+      },
+      "style": "relief",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Nächstes Rennen",
+        "en": "Clear: Next race"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-standings-klar.svg",
+      "caption": {
+        "de": "Klar: WM-Wertung",
+        "en": "Clear: Standings"
+      },
+      "style": "klar",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-last-klar.svg",
+      "caption": {
+        "de": "Klar: Letzte Session",
+        "en": "Clear: Last session"
+      },
+      "style": "klar",
+      "page": 2
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Bento: nächstes Rennen",
@@ -112,6 +172,22 @@
       },
       "style": "compact",
       "page": 2
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

@@ -6,6 +6,7 @@
 
 local FEED = "https://www.merriam-webster.com/wotd/feed/rss2"
 --#include translate
+--#include theme
 
 -- Farben: die Akzentfarbe ist die globale Einstellung des Geraets (color.ACCENT*), wie bei allen Apps.
 
@@ -153,6 +154,8 @@ end
 function on_draw(ctx, page)
   local en = (ctx.lang == "en")
   local accent = color.ACCENT
+  setStyle(ctx.cfg.style)
+  local fancy = theme.s == "relief" or theme.s == "klar"
 
   -- Den Kopf (App-Name, Status, Uhrzeit) zeichnet die Firmware; clear gilt nur darunter.
   draw.clear(color.WHITE)
@@ -176,7 +179,11 @@ function on_draw(ctx, page)
   local panelX, panelW = 40, 240
   local panelH = areaBottom - areaTop
   if tall then panelX, panelW, panelH = 20, draw.width - 40, 230 end
-  draw.rect(panelX, areaTop, panelW, panelH, accent, true, 18)
+  if theme.s == "relief" then -- Akzentflaeche mit hartem Schatten
+    panelH = panelH - 6
+    draw.rect(panelX + 6, areaTop + 6, panelW, panelH, color.BLACK, true, 18)
+  end
+  draw.rect(panelX, areaTop, panelW, panelH, accent, true, fancy and 22 or 18)
   local tx, tw = panelX + 24, panelW - 48
   bookIcon(tx, areaTop + 26, 40, color.WHITE)
   draw.wrap(tx, areaTop + 26 + 40 + 38, tw, word, "large", color.WHITE)
@@ -197,6 +204,12 @@ function on_draw(ctx, page)
   local cw = draw.width - 40 - cl
   local top2 = areaTop
   if tall then cl, cw, top2 = 28, draw.width - 56, areaTop + panelH + 20 end
+  if fancy then -- Bedeutung und Beispiel auf einer Karte
+    local kx = cl - 8
+    local kw = draw.width - 46 - kx
+    card(kx, top2, kw, areaBottom - top2 - 6, accent, theme.s == "relief" and 16 or 22)
+    cl, cw = kx + 26, kw - 46
+  end
   -- Dekoratives Anfuehrungszeichen ueber der Bedeutung (wie die eingebaute App)
   if not tall then draw.text(cl - 4, areaTop + 42, '"', "large", color.ACCENT_TEXT, "left") end
   local cy = top2 + (tall and 24 or 58)
@@ -221,13 +234,16 @@ end
 -- box.fh = volle Widget-Hoehe (daraus ergeben sich die Stufen). Rahmen/Titel/"Noch keine Daten" zeichnet die Firmware.
 local function fit(s, w, font)
   while #s > 1 and draw.measure(s, font) > w do
-    s = s:sub(1, #s - 1)
-    while #s > 1 and (s:byte(#s) & 0xC0) == 0x80 do s = s:sub(1, #s - 1) end
+    local n = #s -- ganzes Zeichen entfernen (UTF-8: Folgebytes und Startbyte)
+    while n > 1 and (s:byte(n) & 0xC0) == 0x80 do n = n - 1 end
+    s = s:sub(1, n - 1)
   end
   return s
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = (ctx.lang == "en")
   local wordEn = ctx.data.get("wordEn")
   if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor (CHANGELOG 559)

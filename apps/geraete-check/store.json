@@ -27,6 +27,26 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Geräte-Check",
+        "en": "Relief: Device check"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Geräte-Check",
+        "en": "Clear: Device check"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Slate: alles in Ordnung",

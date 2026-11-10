@@ -19,6 +19,7 @@ local ARM_SECONDS = 3
 
 --#include text
 --#include ui
+--#include theme
 
 local function en_(ctx) return ctx.lang == "en" end
 
@@ -282,7 +283,7 @@ local function drawOverview(ctx, d)
         qy = math.max(y + 70, draw.top + 300)
       end
       draw.text(tall and W // 2 or (W - x0 - qrBox // 2), qy - 14, en and "Open recipe online:" or "Rezept online öffnen:", "small", color.BLACK, "center")
-      draw.rect(qx - 8, qy - 4, size + 16, size + 16, color.BLACK, false, 10)
+      panel(qx - 8, qy - 4, size + 16, size + 16, 10)
       draw.qr(d.url, qx, qy + 4, qrBox)
     end
   end
@@ -409,6 +410,7 @@ local function drawNutrition(ctx, d)
 end
 
 function on_draw(ctx, page)
+  setStyle(ctx.cfg.style)
   draw.clear(color.WHITE)
   SHOW = ctx.cfg.details ~= false or ctx.preview == true
   local d = loadRecipe(ctx, true)
@@ -456,6 +458,8 @@ end
 
 -- Widget: Name des Gerichts (bis zu 2 Zeilen), darunter Ernaehrungs-Symbol, Art und Zeit.
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = en_(ctx)
   local d = loadRecipe(ctx, false)
   if ctx.sample then d = en and SAMPLE_EN or SAMPLE end

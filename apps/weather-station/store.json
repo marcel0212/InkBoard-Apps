@@ -28,6 +28,56 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-outdoor-relief.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Außen",
+        "en": "Relief: Outdoor"
+      }
+    },
+    {
+      "file": "preview-indoor-relief.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Innen",
+        "en": "Relief: Indoor"
+      }
+    },
+    {
+      "file": "preview-network-relief.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Netzwerk",
+        "en": "Relief: Network"
+      }
+    },
+    {
+      "file": "preview-outdoor-klar.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Außen",
+        "en": "Clear: Outdoor"
+      }
+    },
+    {
+      "file": "preview-indoor-klar.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Innen",
+        "en": "Clear: Indoor"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-outdoor.svg",
       "caption": {
@@ -56,14 +106,6 @@
       },
       "style": "compact",
       "page": 1
-    },
-    {
-      "kind": "widget",
-      "file": "preview-widget-outdoor.svg",
-      "caption": {
-        "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
-        "en": "Dashboard widget with forecast and rain countdown"
-      }
     },
     {
       "kind": "display",
@@ -174,6 +216,30 @@
       },
       "style": "crayon",
       "page": 1
+    },
+    {
+      "file": "preview-widget-outdoor-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget Außen: Relief",
+        "en": "Outdoor widget: Relief"
+      }
+    },
+    {
+      "file": "preview-widget-indoor-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget Innen: Klar",
+        "en": "Indoor widget: Clear"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-outdoor.svg",
+      "caption": {
+        "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
+        "en": "Dashboard widget with forecast and rain countdown"
+      }
     },
     {
       "kind": "widget",

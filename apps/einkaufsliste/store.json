@@ -27,6 +27,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-list-relief.svg",
+      "caption": {
+        "de": "Relief: Liste",
+        "en": "Relief: List"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-select-relief.svg",
+      "caption": {
+        "de": "Relief: Liste",
+        "en": "Relief: List"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-list-klar.svg",
+      "caption": {
+        "de": "Klar: Liste",
+        "en": "Clear: List"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-select-klar.svg",
+      "caption": {
+        "de": "Klar: Liste",
+        "en": "Clear: List"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-list.svg",
       "caption": {
         "de": "Liste (Bento)",
@@ -62,6 +102,22 @@
       },
       "page": 0,
       "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

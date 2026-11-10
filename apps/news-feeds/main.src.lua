@@ -14,6 +14,7 @@ local MAX_CALLS = 6
 --#include text
 --#include dates
 --#include ui
+--#include theme
 
 -- Feed-Auswahl: id -> Anzeigename + Adresse
 local PRESETS = {
@@ -293,6 +294,44 @@ local function drawCards(ctx, items)
   end
 end
 
+-- "Relief": Karten mit hartem Schlagschatten, Akzentbalken und erhabener Quellen-Pille
+local function shadowCard(x, y, w, h, r, sh)
+  draw.rect(x + sh, y + sh, w, h, color.BLACK, true, r)
+  draw.rect(x, y, w, h, color.WHITE, true, r)
+  draw.rect(x, y, w, h, color.BLACK, false, r)
+end
+
+local function drawDepth(ctx, items)
+  local W, margin, sh, gap = draw.width, 24, 7, 16
+  local top, bottom = draw.top + 10, draw.height - 12
+  local avail = bottom - top - sh
+  local shown = math.max(1, math.min(#items, 7, (avail + gap) // (90 + gap)))
+  local cardH = (avail - (shown - 1) * gap) // shown
+  if cardH > 112 then cardH = 112 end
+  local cardW = W - 2 * margin - sh
+  local y = top
+  for i = 1, shown do
+    local it = items[i]
+    shadowCard(margin, y, cardW, cardH, 14, sh)
+    draw.rect(margin + 14, y + 14, 6, cardH - 28, color.ACCENT, true, 3)
+    local ix = margin + 34
+    local pillW = draw.measure(it.src, "small") + 22
+    local pillY = y + 12
+    draw.rect(ix, pillY + 2, pillW, 22, color.BLACK, true, 11)
+    draw.rect(ix, pillY, pillW, 22, color.ACCENT, true, 11)
+    draw.rect(ix, pillY, pillW, 22, color.BLACK, false, 11)
+    draw.text(ix + pillW // 2, pillY + 15, it.src, "small", color.ACCENT_INK, "center")
+    local rel = relTime(ctx, it.t)
+    if rel ~= "" then draw.text(margin + cardW - 16, pillY + 15, rel, "small", color.BLACK, "right") end
+    local ty = pillY + 42
+    for _, l in ipairs(wrapLines(it.title, cardW - 68, "normal", 2)) do
+      draw.text(ix, ty, l, "normal", color.BLACK, "left")
+      ty = ty + 22
+    end
+    y = y + cardH + gap
+  end
+end
+
 -- "Nano": eine Zeile je Schlagzeile (bis 16)
 local function drawCompact(ctx, items)
   local W, margin = draw.width, 24
@@ -338,7 +377,9 @@ function on_draw(ctx, page)
   local items = readCat(ctx, ci)
   if emptyState(ctx, ci, items) then return end
   local style = ctx.cfg.style
-  if style == "cards" then drawCards(ctx, items)
+  setStyle(style)
+  if style == "relief" then drawDepth(ctx, items)
+  elseif style == "cards" or style == "klar" then drawCards(ctx, items)
   elseif style == "compact" then drawCompact(ctx, items)
   else drawFlat(ctx, items) end
 end
@@ -348,9 +389,54 @@ end
 -- ---------------------------------------------------------------------------
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  if ctx.cfg.style == "klar" then box = widgetFrame(box) end
   local ci = 1
   for i, c in ipairs(CATS) do if c == ctx.cfg.wCat then ci = i end end
   local items = readCat(ctx, ci)
+  if ctx.cfg.style == "relief" and #items > 0 then
+    -- Relief: eine Karte mit Schatten, darin mehrere Schlagzeilen (Quelle und Kompakt wie gewohnt)
+    local sh = 5
+    local cx, cy = box.x + 6, box.y + 6
+    local cw, ch = box.w - 12 - sh, box.h - 12 - sh
+    shadowCard(cx, cy, cw, ch, 12, sh)
+    draw.rect(cx + 10, cy + 10, 5, ch - 20, color.ACCENT, true, 2)
+    local font = ((box.font or 0) > 0) and "normal" or "small"
+    local compact = ctx.cfg.wCompact == true
+    local showSrc = ctx.cfg.wSource == true
+    local lh = font == "normal" and 22 or 17
+    local tx, tw = cx + 24, cw - 34
+    local y, maxY = cy + 8, cy + ch - 6
+    for i, it in ipairs(items) do
+      if compact then
+        if y + lh > maxY then break end
+        local x = tx
+        if showSrc then
+          local s = fit(it.src, 70, font)
+          draw.text(x, y + lh - 4, s, font, color.ACCENT_TEXT, "left")
+          x = x + draw.measure(s, font) + 8
+        end
+        draw.text(x, y + lh - 4, fit(it.title, tw - (x - tx), font), font, color.BLACK, "left")
+        y = y + lh
+      else
+        local lines = wrapLines(it.title, tw, font, 2)
+        local h = #lines * lh + (showSrc and 16 or 0) + 6
+        if y + h > maxY and i > 1 then break end
+        if i > 1 then draw.line(tx, y - 3, tx + tw, y - 3, color.BLACK) end
+        local ty = y
+        if showSrc then
+          draw.text(tx, ty + 12, fit(it.src, tw, "small"), "small", color.ACCENT_TEXT, "left")
+          ty = ty + 16
+        end
+        for _, l in ipairs(lines) do
+          draw.text(tx, ty + lh - 4, l, font, color.BLACK, "left")
+          ty = ty + lh
+        end
+        y = y + h
+      end
+    end
+    return
+  end
   local font = ((box.font or 0) > 0) and "normal" or "small"
   if (box.font or 0) < 0 then font = "small" end
   local compact = ctx.cfg.wCompact == true

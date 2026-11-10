@@ -29,6 +29,26 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Status",
+        "en": "Relief: Status"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Status",
+        "en": "Clear: Status"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Bento",
@@ -55,6 +75,22 @@
         "en": "Nano"
       },
       "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

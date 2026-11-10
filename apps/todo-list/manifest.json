@@ -4,7 +4,7 @@
     "de": "Aufgaben",
     "en": "Tasks"
   },
-  "version": "1.2.1",
+  "version": "1.3.0",
   "apiLevel": 10,
   "pages": [
     {
@@ -532,21 +532,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Detailkarten)",
           "flat": "Slate (eine Zeile)",
-          "compact": "Nano (kompakt)"
+          "compact": "Nano (kompakt)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (detail cards)",
           "flat": "Slate (one line)",
-          "compact": "Nano (compact)"
+          "compact": "Nano (compact)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

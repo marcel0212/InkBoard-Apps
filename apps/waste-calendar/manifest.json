@@ -8,7 +8,7 @@
     "de": "Müll",
     "en": "Waste"
   },
-  "version": "1.0.9",
+  "version": "1.1.0",
   "apiLevel": 9,
   "pages": [
     {
@@ -246,21 +246,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "flat",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Tonnen-Kacheln)",
           "flat": "Slate (Headline + Liste)",
-          "compact": "Nano (Monatskalender)"
+          "compact": "Nano (Monatskalender)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (bin tiles)",
           "flat": "Slate (headline + list)",
-          "compact": "Nano (month calendar)"
+          "compact": "Nano (month calendar)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

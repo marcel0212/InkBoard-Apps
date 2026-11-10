@@ -18,6 +18,7 @@ local EN = false
 local function T(de, en) if EN then return en end return de end
 
 -- Aus store/lib/text.lua nur trim/cut/clean/fit (num/decodeCut braucht das Paket nicht; main.lua bleibt unter 64 KB)
+--#include theme
 
 local function trim(s)
   return (s:gsub("^%s+", ""):gsub("%s+$", ""))
@@ -898,8 +899,17 @@ end
 -- ---------------------------------------------------------------------------
 
 local function thickRR(x, y, w, h, r, c)
+  if w >= 60 and h >= 40 then -- Kacheln: Relief mit hartem Schatten, Klar runder
+    if theme.s == "relief" then draw.rect(x + 5, y + 5, w, h, color.BLACK, true, r); draw.rect(x, y, w, h, color.WHITE, true, r)
+    elseif theme.s == "klar" then r = r + 8 end
+  end
   draw.rect(x, y, w, h, c, false, r)
   draw.rect(x + 1, y + 1, w - 2, h - 2, c, false, math.max(r - 1, 0))
+end
+-- gefuellte Akzentflaeche; Relief hebt sie mit einem kleinen Schatten an
+local function fillRR(x, y, w, h, c, r)
+  if theme.s == "relief" then draw.rect(x + 3, y + 3, w, h, color.BLACK, true, r) end
+  draw.rect(x, y, w, h, c, true, r)
 end
 local function thickLine(x0, y0, x1, y1, c)
   draw.line(x0, y0, x1, y1, c); draw.line(x0 + 1, y0, x1 + 1, y1, c); draw.line(x0, y0 + 1, x1, y1 + 1, c)
@@ -1199,7 +1209,7 @@ local function chips(x, y, conns, maxChips, cw, ch, gap, bigFirst, maxRight, sta
     if c == startIdx and bigFirst then
       local ft = firstTransit(k)
       local fc = k.delay > 0 and color.RED or (k.delay < 0 and color.GREEN or (ft and lineColor(ft.line, ft.mode) or color.BLUE))
-      draw.rect(cx, y, cw, ch, fc, true, ch >= 26 and 8 or 5)
+      fillRR(cx, y, cw, ch, fc, ch >= 26 and 8 or 5)
       textC(cx + cw // 2, base, t, ch >= 26 and "normal" or "small", inkOn(fc))
     else
       thickRR(cx, y, cw, ch, ch >= 26 and 8 or 5, stc)
@@ -1271,7 +1281,7 @@ local function depsCards(top, d, prov)
       local cx, cy = tx + 14 + (t - 1) * (cw + cg), ty + 100
       local clk = clock(leave(g.times[t]))
       if t == 1 then
-        draw.rect(cx, cy, cw, chh, color.ACCENT, true, 8)
+        fillRR(cx, cy, cw, chh, color.ACCENT, 8)
         textC(cx + cw // 2, cy + 23, clk, "normal", color.ACCENT_INK)
       else
         thickRR(cx, cy, cw, chh, 8, color.BLACK)
@@ -1438,7 +1448,7 @@ local function routesCards(top, list, urgent, prov)
     local f = hero.conns[1]
     if f.dis == 1 then disruptTag(ne + 10, hy + 62, true) end
     local m = minsTo(leave(f.when))
-    draw.rect(boxX, boxY, boxW, boxH, color.ACCENT, true, 12)
+    fillRR(boxX, boxY, boxW, boxH, color.ACCENT, 12)
     textC(boxX + boxW // 2, boxY + 56, tostring(m), "large", color.ACCENT_INK)
     local sub = T("Minuten", "minutes")
     if f.delay ~= 0 then sub = sub .. " \194\183 " .. dLong(f.delay) end
@@ -1600,7 +1610,7 @@ local function routeSingle(top, r, style, prov)
     if cards then
       thickRR(MX, y, re - MX, rowH - 10, 10, color.BLACK)
       local bx, tx = MX + 10, MX + 136
-      if k == 1 then draw.rect(bx, y + 10, 112, rowH - 30, color.ACCENT, true, 10) else thickRR(bx, y + 10, 112, rowH - 30, 10, color.BLACK) end
+      if k == 1 then fillRR(bx, y + 10, 112, rowH - 30, color.ACCENT, 10) else thickRR(bx, y + 10, 112, rowH - 30, 10, color.BLACK) end
       local ink = k == 1 and color.ACCENT_INK or color.BLACK
       textC(bx + 56, y + 54, tostring(m), "large", ink)
       textC(bx + 56, y + 74, T("Minuten", "minutes"), "small", ink)
@@ -1642,7 +1652,7 @@ function on_draw(ctx, page)
   OFF, NOW, WALK = tzOff(), time.now() or 0, walkMin(ctx)
   draw.clear(color.WHITE)
   local prov = provOf(ctx)
-  local style = s0(ctx.cfg.style)
+  local style = setStyle(s0(ctx.cfg.style))
   local top = draw.top + 4
   if n0(page) == 2 then
     local list, urgent = routesData(ctx, prov)
@@ -1752,6 +1762,8 @@ local function sampleRoutes()
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   EN = ctx.lang == "en"
   OFF, NOW, WALK = tzOff(), time.now() or 0, walkMin(ctx)
   local prov = provOf(ctx)

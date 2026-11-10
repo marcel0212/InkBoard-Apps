@@ -29,6 +29,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-week-relief.svg",
+      "caption": {
+        "de": "Relief: Woche",
+        "en": "Relief: Week"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-today-relief.svg",
+      "caption": {
+        "de": "Relief: Heute",
+        "en": "Relief: Today"
+      },
+      "page": 1,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-week-klar.svg",
+      "caption": {
+        "de": "Klar: Woche",
+        "en": "Clear: Week"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-today-klar.svg",
+      "caption": {
+        "de": "Klar: Heute",
+        "en": "Clear: Today"
+      },
+      "page": 1,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-week.svg",
       "caption": {
         "de": "Woche (Bento)",
@@ -64,6 +104,22 @@
         "en": "Today"
       },
       "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

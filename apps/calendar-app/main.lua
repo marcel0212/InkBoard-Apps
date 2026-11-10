@@ -81,12 +81,6 @@ local col,row=(i - 1)%cols,(i - 1)//cols
 return margin+col*(tileW+gap),top+row*(tileH+gap),tileW,tileH
 end,tileW,tileH
 end
-local function card(x,y,w,h,c,r)
-r=r or 10
-draw.rect(x,y,w,h,color.WHITE,true,r)
-draw.rect(x,y,w,h,color.BLACK,false,r)
-draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
-end
 local function columns(widths,rightEdge)
 local total=0
 for _,w in ipairs(widths) do total=total+w end
@@ -119,6 +113,78 @@ lines[i]=l
 end
 end
 return lines
+end
+local theme={s="cards"}
+local function setStyle(s)
+theme.s=s or "cards"
+if theme.s=="relief" or theme.s=="klar" then return "cards" end
+return s
+end
+local function card(x,y,w,h,c,r,nobar)
+if theme.s=="relief" then
+r=r or 12
+draw.rect(x+5,y+5,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+if not nobar then draw.rect(x+6,y+10,4,h - 20,c or color.ACCENT,true,2) end
+return
+elseif theme.s=="klar" then
+r=r or 20
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+return
+end
+r=r or 10
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
+end
+local function panel(x,y,w,h,r,c)
+c=c or color.BLACK
+local big=w>=60 and h>=30
+if theme.s=="relief" and big then
+local s=5
+draw.rect(x+w,y+s,s,h,color.BLACK,true)
+draw.rect(x+s,y+h,w,s,color.BLACK,true)
+end
+draw.rect(x,y,w,h,c,false,r)
+if theme.s=="klar" and big then draw.rect(x+1,y+1,w - 2,h - 2,c,false,r) end
+end
+local function widgetFrame(box)
+if theme.s~="relief" and theme.s~="klar" then return box end
+local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
+card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
+local pad=theme.s=="relief" and 14 or 8
+local inner={}
+for k,v in pairs(box) do inner[k]=v end
+inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
+return inner
+end
+local function pill(x,y,w,h,c,txt,font,tc)
+local r=h//2
+c=c or color.ACCENT
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,c,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+elseif theme.s=="klar" then
+draw.rect(x,y,w,h,c,true,r)
+else
+draw.rect(x,y,w,h,c,false,r)
+tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
+end
+if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+end
+local function pbar(x,y,w,h,frac,c)
+frac=math.max(0,math.min(1,frac or 0))
+c=c or color.ACCENT
+local r=h//2
+if theme.s=="relief" then draw.rect(x+3,y+3,w,h,color.BLACK,true,r) ; draw.rect(x,y,w,h,color.WHITE,true,r) end
+draw.rect(x,y,w,h,color.BLACK,false,r)
+local fw=math.floor((w - 4)*frac)
+if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
+elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
 end
 local function en_(ctx) return ctx.lang=="en" end
 local COLS={blue=color.BLUE,green=color.GREEN,yellow=color.YELLOW,red=color.RED}
@@ -510,7 +576,7 @@ if #detailLines>0 then last=lineY0+(#detailLines - 1)*step end
 cardH=math.max(cardH,last+(cp and 10 or 14))
 end
 if y>=H then break end
-if st=="cards" then card(cardX,y,cardW,cardH,e.c,14) else thick(cardX,y,cardW,cardH,cp and 10 or 14,color.BLACK) end
+if st=="cards" then card(cardX,y,cardW,cardH,e.c,14,true) else thick(cardX,y,cardW,cardH,cp and 10 or 14,color.BLACK) end
 local chipY=y+(cp and 6 or 10)
 draw.rect(chipX,chipY,chipW,chipH,e.c,true,cp and 8 or 10)
 local cf=cp and "small" or "normal"
@@ -534,7 +600,7 @@ end
 end
 if shown==0 then
 local h=cp and 40 or 50
-if st=="cards" then card(cardX,y,cardW,h,color.ACCENT,14) else thick(cardX,y,cardW,h,cp and 10 or 14,color.BLACK) end
+if st=="cards" then card(cardX,y,cardW,h,color.ACCENT,14,true) else thick(cardX,y,cardW,h,cp and 10 or 14,color.BLACK) end
 stateNoticeCompact(W//2,y+(cp and 22 or 27),"empty",en and "No events today." or "Heute keine Termine.")
 end
 end
@@ -561,7 +627,13 @@ local rowEdge={}
 for r=0,bands do rowEdge[r]=gridTop+gridHeight*r//bands end
 local pad=cp and 6 or 10
 local fx,fy,fw,fh=gridLeft - 6,headerY - pad,gridWidth+12,gridBottom - headerY+2*pad
-if cards then card(fx,fy,fw,fh,color.ACCENT,16) else thick(fx,fy,fw,fh,16,color.BLACK) end
+local fancy=theme.s=="relief" or theme.s=="klar"
+if fancy then
+if theme.s=="relief" then draw.rect(fx+5,fy+5,fw,fh,color.BLACK,true,16) end
+draw.rect(fx,fy,fw,fh,color.WHITE,true,16)
+thick(fx,fy,fw,fh,theme.s=="klar" and 20 or 16,color.BLACK)
+elseif cards then card(fx,fy,fw,fh,color.ACCENT,16) else thick(fx,fy,fw,fh,16,color.BLACK) end
+local ins=fancy and 5 or 3
 for c=1,6 do draw.line(colEdge[c],headerY,colEdge[c],gridBottom,color.BLACK) end
 draw.rect(gridLeft - 6,sepY,gridWidth+12,3,color.ACCENT,true)
 for r=0,bands do
@@ -596,7 +668,7 @@ end
 local adTop,adH=gridTop+2,gridBottom - gridTop - 4
 local adBuf,adLines=nil,nil
 if adFirst then
-thick(colX+3,adTop,colW - 6,adH,10,adFirst.c)
+thick(colX+ins,adTop,colW - 2*ins,adH,10,adFirst.c)
 adBuf=adCount>1 and string.format(en and "+%d all-day" or "+%d ganzt.",adCount) or adFirst.title
 local adMaxW=colW - 16
 if draw.measure(adBuf,"normal")>adMaxW then
@@ -618,7 +690,7 @@ local bb=gridTop+math.floor((eH - tsh)*pxh)
 local bh=bb - bt
 if bh<14 then bh=14 end
 if #abt<16 then abt[#abt+1]=bt; abb[#abb+1]=bb end
-local bx2,bw=colX+3,colW - 6
+local bx2,bw=colX+ins,colW - 2*ins
 draw.rect(bx2,bt,bw,bh,e.c,true,6)
 thick(bx2,bt,bw,bh,6,color.BLACK)
 local fc=ink(e.c)
@@ -729,7 +801,7 @@ local isCur=row==curRow
 if isCur then
 draw.rect(gridLeft,by,gridWidth,bandH,color.ACCENT,true,14)
 elseif cards then
-card(gridLeft,by,gridWidth,bandH,color.ACCENT,14)
+card(gridLeft,by,gridWidth,bandH,color.ACCENT,14,true)
 else
 thick(gridLeft,by,gridWidth,bandH,14,color.BLACK)
 end
@@ -764,6 +836,8 @@ end
 end
 local function styleOf(cfg,key)
 local s=cfg[key]
+if s=="relief" or s=="klar" then return setStyle(s) end
+setStyle(nil)
 if s=="cards" or s=="compact" then return s end
 return "flat"
 end
@@ -841,6 +915,8 @@ for _,e in ipairs(loadEvents(ctx,now,now,now+400*86400,24)) do
 if e.e>=now then list[#list+1]=e end
 end
 end
+setStyle(cfg.style or cfg.styleDay)
+box=widgetFrame(box)
 local x,top=box.x,box.y
 local maxY=box.y+box.h - 4
 local shift=box.font or 0

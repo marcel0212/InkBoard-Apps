@@ -16,6 +16,7 @@ local RESULT_MAX, DRV_MAX, TEAM_MAX = 10, 8, 6
 
 --#include text
 --#include ui
+--#include theme
 --#include dates
 
 -- Streckendaten (Schluessel = circuitId der Jolpica-API): Namen, Laenge in m, Runden, Kurven, Rundenrekord
@@ -812,7 +813,7 @@ local function nextBento(n, total)
 
 	local trY, trH = y, cardH
 	if tall then rightX, rightW, trY, trH = leftX, draw.width - 40, y + cardH + 14, 270 end
-	draw.rect(rightX, trY, rightW, trH, color.BLACK, false, 12)
+	panel(rightX, trY, rightW, trH, 12)
 	drawTrack(rightX + 16, trY + 12, rightW - 32, trH - 92, n.cid)
 	local mid = rightX + rightW // 2
 	if ci then
@@ -826,7 +827,7 @@ local function nextBento(n, total)
 	local schedY = (tall and trY + trH or y + cardH) + 14
 	local schedH = bottom - schedY
 	if schedH < 90 then return end
-	draw.rect(leftX, schedY, draw.width - 2 * leftX, schedH, color.BLACK, false, 12)
+	panel(leftX, schedY, draw.width - 2 * leftX, schedH, 12)
 	draw.text(leftX + 22, schedY + 26, T("ZEITPLAN", "SCHEDULE"), "small", color.BLACK, "left")
 	local sess = allSessions(n)
 	local cnt = #sess
@@ -1133,7 +1134,7 @@ local function lastBento(L)
 		listW = headW
 		mainH = math.min(mainH - 3 * 62 - 14 - 10, 8 * 44 + 24)
 	end
-	draw.rect(headX, y2, listW, mainH, color.BLACK, false, 12)
+	panel(headX, y2, listW, mainH, 12)
 	local rows = math.min(#L.rows, 8)
 	local rowH = (mainH - 24) // math.max(rows, 1)
 	local maxGapW = maxGapWidth(L.rows, rows, "normal")
@@ -1163,7 +1164,7 @@ local function lastBento(L)
 	local labels = { T("SCHN. RUNDE", "FASTEST LAP"), T("AUSFÄLLE", "RETIREMENTS"), T("POLE-POSITION", "POLE POSITION") }
 	for c = 1, 3 do
 		local cy = infoTop + (c - 1) * (infoH + 10)
-		draw.rect(infoX, cy, infoW, infoH, color.BLACK, false, 10)
+		panel(infoX, cy, infoW, infoH, 10)
 		draw.text(infoX + 16, cy + 24, labels[c], "small", color.BLACK, "left")
 		local v
 		if c == 1 then
@@ -1270,7 +1271,7 @@ local function sessionTable(ctx, kind)
 
 	local y2 = y + 62
 	local mainH = bottom - y2
-	draw.rect(headX, y2, headW, mainH, color.BLACK, false, 12)
+	panel(headX, y2, headW, mainH, 12)
 	local rows = math.min(#rowsAll, RESULT_MAX)
 	local rowH = (mainH - 20) // math.max(rows, 1)
 	local maxTimeW = 0
@@ -1310,7 +1311,7 @@ function on_draw(ctx, page)
 	draw.clear(color.WHITE)
 	local p = page or 1
 	if tonumber(ctx.cfg.page) then p = tonumber(ctx.cfg.page) + 1 end
-	local style = ctx.cfg.style
+	local style = setStyle(ctx.cfg.style)
 	if p == 2 then
 		drawStandings(ctx, style)
 	elseif p == 3 then
@@ -1337,6 +1338,8 @@ local function checkerFlag(x, y, s)
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
 	EN = ctx.lang == "en"
 	resetData()
 	local cal = getCal()

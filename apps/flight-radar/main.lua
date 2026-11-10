@@ -98,12 +98,6 @@ local col,row=(i - 1)%cols,(i - 1)//cols
 return margin+col*(tileW+gap),top+row*(tileH+gap),tileW,tileH
 end,tileW,tileH
 end
-local function card(x,y,w,h,c,r)
-r=r or 10
-draw.rect(x,y,w,h,color.WHITE,true,r)
-draw.rect(x,y,w,h,color.BLACK,false,r)
-draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
-end
 local function columns(widths,rightEdge)
 local total=0
 for _,w in ipairs(widths) do total=total+w end

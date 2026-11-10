@@ -6,6 +6,28 @@
 -- Außen: weather.get() (Stufe 3). Innen/Netzwerk: sensor.* (Stufe 4). Alle Paket-Einstellungen (Fokuswert, Zusatzwerte,
 -- Warnschwellen, Verlaufszeitraum, Stil) stehen im Manifest.
 
+-- Relief/Klar (ctx.cfg.style): Karten mit hartem Schatten bzw. doppeltem Rahmen (klein gehalten, main.lua liegt nahe 64 KB)
+local WXS = ""
+local function wxCard(x, y, w, h, r, acc)
+  if WXS == "relief" then draw.rect(x + 5, y + 5, w, h, color.BLACK, true, r) end
+  draw.rect(x, y, w, h, color.WHITE, true, r)
+  draw.rect(x, y, w, h, color.BLACK, false, r)
+  if WXS == "klar" then draw.rect(x + 1, y + 1, w - 2, h - 2, color.BLACK, false, r)
+  elseif acc then
+    if WXS == "relief" then draw.rect(x + 6, y + 10, 4, h - 20, acc, true, 2) else draw.rect(x + 6, y + 6, 5, h - 12, acc, true, 2) end
+  end
+end
+-- Widget in Relief/Klar: eine Karte um den Inhalt, Inhalt nach innen geschoben
+local function wxFrame(ctx, b)
+  WXS = ctx.cfg.style or ""
+  if WXS ~= "relief" and WXS ~= "klar" then return b end
+  wxCard(b.x + 4, b.y + 2, b.w - 14, b.h - 12, 14)
+  local n = {}
+  for k, v in pairs(b) do n[k] = v end
+  n.x, n.y, n.w, n.h = b.x + 12, b.y + 8, b.w - 26, b.h - 20
+  return n
+end
+
 local outdoor = {}
 local indoor = {}
 
@@ -61,11 +83,7 @@ end
 local function tr(en, de, ctx) if ctx.lang == "en" then return en end return de end
 
 -- Karte mit seitlicher Akzent-Leiste
-local function accentCard(x, y, w, h)
-  draw.rect(x, y, w, h, color.WHITE, true, CARD_RADIUS)
-  draw.rect(x, y, w, h, color.BLACK, false, CARD_RADIUS)
-  draw.rect(x + 6, y + 6, 5, h - 12, color.ACCENT, true, 2)
-end
+local function accentCard(x, y, w, h) wxCard(x, y, w, h, CARD_RADIUS, color.ACCENT) end
 
 local function hline(x, y, w)
   draw.rect(x, y, w, 1, color.BLACK, true)
@@ -682,11 +700,7 @@ end
 
 -- ---------------------------------------------------------------------------------------------- Bausteine
 
-local function accentCard(x, y, w, h, accent)
-  draw.rect(x, y, w, h, color.WHITE, true, CARD_RADIUS)
-  draw.rect(x, y, w, h, color.BLACK, false, CARD_RADIUS)
-  draw.rect(x + 6, y + 6, 5, h - 12, accent or color.ACCENT, true, 2)
-end
+local function accentCard(x, y, w, h, accent) wxCard(x, y, w, h, CARD_RADIUS, accent or color.ACCENT) end
 
 local function hline(x, y, w, col) draw.rect(x, y, w, 1, col or color.BLACK, true) end
 local function vline(x, y, h) draw.rect(x, y, 1, h, color.BLACK, true) end
@@ -960,7 +974,7 @@ end
 -- ---------------------------------------------------------------------------------------------- Seite Innen
 
 local function statCell(x, y, w, h, kind, idColor, label, value, mode, statusText, statusColor)
-  draw.rect(x, y, w, h, color.BLACK, false, CARD_RADIUS)
+  wxCard(x, y, w, h, CARD_RADIUS)
   local iconX, iconY = x + 10, y + 8
   ICONS[kind](iconX, iconY, idColor, 1)
   draw.text(iconX + 22, iconY + 13, label, "small", idColor)
@@ -1421,6 +1435,7 @@ end
 
 -- Seite 1 = Innen, 2 = Außen, 3 = Netzwerk (nativer Index = page - 1; ctx.cfg.page darf ihn für Tests überschreiben)
 function on_draw(ctx, page)
+  WXS = ctx.cfg.style or ""
   local p = ctx.cfg.page
   if p == nil then p = (page or 1) - 1 end
   if p == 1 then return outdoor.on_draw(ctx, page) end
@@ -1428,6 +1443,7 @@ function on_draw(ctx, page)
 end
 
 function on_widget(ctx, b)
+  b = wxFrame(ctx, b)
   if ctx.cfg.widget == "weather_outdoor" then return outdoor.on_widget(ctx, b) end
   return indoor.on_widget(ctx, b)
 end

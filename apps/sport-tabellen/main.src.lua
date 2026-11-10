@@ -29,6 +29,7 @@ local NAME_LEN = 25               -- Bytes (UTF-8-sicher gekuerzt), wie SPORT_NA
 
 --#include text
 --#include ui
+--#include theme
 --#include dates
 
 local CODE = { "eh", "hb", "bb", "af" }
@@ -1002,7 +1003,7 @@ local function teamBento(ctx, k, m)
   local tall = draw.height > draw.width
   local heroX, heroH = 20, tall and 300 or 256
   local heroW = W - 2 * heroX
-  draw.rect(heroX, y, heroW, heroH, color.BLACK, false, 12)
+  panel(heroX, y, heroW, heroH, 12)
   draw.text(heroX + 16, y + 22, sportLine(ctx, k), "small", color.BLACK, "left")
   local nx = m.nxt[1]
   if nx then
@@ -1416,7 +1417,7 @@ function on_draw(ctx, page)
   local k = pageKind(ctx.cfg)
   local m = model(ctx, k)
   if emptyState(ctx, k, m) then return end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if page == 2 then
     if style == "flat" then tableSlate(ctx, k, m)
     elseif style == "compact" then tableNano(ctx, k, m)
@@ -1447,6 +1448,8 @@ end
 -- ---------------------------------------------------------------------------
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   EN = ctx.lang == "en"
   local cfg = ctx.cfg
   local k, withHA, withPos = 1, cfg.wHomeAway == true, cfg.wTablePos == true

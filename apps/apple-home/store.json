@@ -35,6 +35,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "page": 0,
+      "caption": {
+        "de": "Relief: Seite 1",
+        "en": "Relief: Page 1"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-rooms-relief.svg",
+      "page": 1,
+      "caption": {
+        "de": "Relief: Seite 2",
+        "en": "Relief: Page 2"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "page": 0,
+      "caption": {
+        "de": "Klar: Seite 1",
+        "en": "Clear: Page 1"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-rooms-klar.svg",
+      "page": 1,
+      "caption": {
+        "de": "Klar: Seite 2",
+        "en": "Clear: Page 2"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "page": 0,
       "caption": {
@@ -79,6 +119,22 @@
       "caption": {
         "de": "Liste (Nano)",
         "en": "List (Nano)"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
       }
     },
     {

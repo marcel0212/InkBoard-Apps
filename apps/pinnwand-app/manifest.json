@@ -4,7 +4,7 @@
     "de": "Pinnwand",
     "en": "Family Board"
   },
-  "version": "1.3.4",
+  "version": "1.4.0",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -176,6 +176,32 @@
       "help": {
         "de": "Aus: die Nachricht zeigt keine Uhrzeit. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
         "en": "Off: the message shows no time. The preview in Studio, Mac and iOS app still shows everything."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "classic"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)",
+          "classic": "Klassisch"
+        },
+        "en": {
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)",
+          "classic": "Classic"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
       }
     }
   ]

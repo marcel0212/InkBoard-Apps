@@ -30,6 +30,26 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-display-relief.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Homeoffice",
+        "en": "Relief: Home office"
+      }
+    },
+    {
+      "file": "preview-display-klar.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Homeoffice",
+        "en": "Clear: Home office"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
@@ -58,6 +78,22 @@
       },
       "style": "compact",
       "page": 0
+    },
+    {
+      "file": "preview-widget-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "file": "preview-widget-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

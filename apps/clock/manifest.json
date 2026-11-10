@@ -4,7 +4,7 @@
     "de": "Uhr",
     "en": "Clock"
   },
-  "version": "1.0.6",
+  "version": "1.1.0",
   "apiLevel": 2,
   "standard": true,
   "pages": 1,
@@ -19,21 +19,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "bento",
         "slate",
         "nano"
       ],
-      "default": "bento",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "bento": "Bento",
           "slate": "Slate",
-          "nano": "Nano"
+          "nano": "Nano",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "bento": "Bento",
           "slate": "Slate",
-          "nano": "Nano"
+          "nano": "Nano",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

@@ -13,6 +13,7 @@ local BIG = 60 * 1024
 
 --#include text
 --#include ui
+--#include theme
 --#include dates
 
 local function en_(ctx) return ctx.lang == "en" end
@@ -424,7 +425,7 @@ local function drawCards(ctx, events, today)
     if tall then tx, ty = margin + ((i - 1) % 2) * (tileW + gap), areaTop + ((i - 1) // 2) * (tileH + gap) end
     local col = KIND[k][1]
     local isHot = (i == hot)
-    draw.rect(tx, ty, tileW, tileH, isHot and col or color.BLACK, false, 8)
+    panel(tx, ty, tileW, tileH, 8, isHot and col or color.BLACK)
     local iconY = ty + 34
     if isHot then
       draw.rect(tx, ty, tileW, 26, col, true, 8)
@@ -513,7 +514,7 @@ local function drawCompact(ctx, events, today)
     for c = 0, 6 do
       local day = gridStart + r * 7 + c
       local gx, gy = margin + c * cellW, gridY0 + r * cellH
-      if day == today then draw.rect(gx + 2, gy + 2, cellW - 4, cellH - 4, color.BLACK, false, 4) end
+      if day == today then panel(gx + 2, gy + 2, cellW - 4, cellH - 4, 4) end
       local _, _, d = cfd(day)
       draw.text(gx + cellW // 2, gy + 20, tostring(d), "normal", color.BLACK, "center")
       local e = byDay[day]
@@ -539,7 +540,7 @@ function on_draw(ctx, page)
   local today = todayDays()
   local events = loadEvents(ctx, today)
   if emptyState(ctx, events, today) then return end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if style == "cards" then drawCards(ctx, events, today)
   elseif style == "compact" then drawCompact(ctx, events, today)
   else drawFlat(ctx, events, today) end
@@ -550,6 +551,8 @@ end
 -- ---------------------------------------------------------------------------
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = en_(ctx)
   local today = todayDays()
   local events = loadEvents(ctx, today)

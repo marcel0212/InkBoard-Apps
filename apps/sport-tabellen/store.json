@@ -27,6 +27,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Team",
+        "en": "Relief: Team"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-relief.svg",
+      "caption": {
+        "de": "Relief: Liga-Tabelle",
+        "en": "Relief: League table"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Team",
+        "en": "Clear: Team"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-table-klar.svg",
+      "caption": {
+        "de": "Klar: Liga-Tabelle",
+        "en": "Clear: League table"
+      },
+      "style": "klar",
+      "page": 1
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Bento: Team-Seite (Handball)",
@@ -84,6 +124,22 @@
       },
       "style": "compact",
       "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

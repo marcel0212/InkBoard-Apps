@@ -11,6 +11,7 @@
 
 --#include text
 --#include ui
+--#include theme
 
 local function en_(ctx) return ctx.lang == "en" end
 
@@ -467,7 +468,7 @@ local function dayPage(ctx, evs, st, en, t, topY)
         cardH = math.max(cardH, last + (cp and 10 or 14))
       end
       if y >= H then break end -- wie die eingebaute App: die letzte Karte wird am unteren Rand angeschnitten (Anzeigebereich schneidet ab)
-      if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14) else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
+      if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14, true) else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
       local chipY = y + (cp and 6 or 10)
       draw.rect(chipX, chipY, chipW, chipH, e.c, true, cp and 8 or 10)
       local cf = cp and "small" or "normal"
@@ -491,7 +492,7 @@ local function dayPage(ctx, evs, st, en, t, topY)
   end
   if shown == 0 then
     local h = cp and 40 or 50
-    if st == "cards" then card(cardX, y, cardW, h, color.ACCENT, 14) else thick(cardX, y, cardW, h, cp and 10 or 14, color.BLACK) end
+    if st == "cards" then card(cardX, y, cardW, h, color.ACCENT, 14, true) else thick(cardX, y, cardW, h, cp and 10 or 14, color.BLACK) end
     stateNoticeCompact(W // 2, y + (cp and 22 or 27), "empty", en and "No events today." or "Heute keine Termine.")
   end
 end
@@ -523,7 +524,13 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
   for r = 0, bands do rowEdge[r] = gridTop + gridHeight * r // bands end
   local pad = cp and 6 or 10
   local fx, fy, fw, fh = gridLeft - 6, headerY - pad, gridWidth + 12, gridBottom - headerY + 2 * pad
-  if cards then card(fx, fy, fw, fh, color.ACCENT, 16) else thick(fx, fy, fw, fh, 16, color.BLACK) end
+  local fancy = theme.s == "relief" or theme.s == "klar"
+  if fancy then -- Rahmen ohne Akzentbalken, damit die Montags-Spalte frei bleibt; Relief mit hartem Schatten
+    if theme.s == "relief" then draw.rect(fx + 5, fy + 5, fw, fh, color.BLACK, true, 16) end
+    draw.rect(fx, fy, fw, fh, color.WHITE, true, 16)
+    thick(fx, fy, fw, fh, theme.s == "klar" and 20 or 16, color.BLACK)
+  elseif cards then card(fx, fy, fw, fh, color.ACCENT, 16) else thick(fx, fy, fw, fh, 16, color.BLACK) end
+  local ins = fancy and 5 or 3 -- Abstand der Terminkaesten zur Spaltenkante
   for c = 1, 6 do draw.line(colEdge[c], headerY, colEdge[c], gridBottom, color.BLACK) end
   draw.rect(gridLeft - 6, sepY, gridWidth + 12, 3, color.ACCENT, true)
   for r = 0, bands do
@@ -560,7 +567,7 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
     local adTop, adH = gridTop + 2, gridBottom - gridTop - 4
     local adBuf, adLines = nil, nil
     if adFirst then
-      thick(colX + 3, adTop, colW - 6, adH, 10, adFirst.c)
+      thick(colX + ins, adTop, colW - 2 * ins, adH, 10, adFirst.c)
       adBuf = adCount > 1 and string.format(en and "+%d all-day" or "+%d ganzt.", adCount) or adFirst.title
       local adMaxW = colW - 16
       if draw.measure(adBuf, "normal") > adMaxW then
@@ -583,7 +590,7 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
         local bh = bb - bt
         if bh < 14 then bh = 14 end
         if #abt < 16 then abt[#abt + 1] = bt; abb[#abb + 1] = bb end
-        local bx2, bw = colX + 3, colW - 6
+        local bx2, bw = colX + ins, colW - 2 * ins
         draw.rect(bx2, bt, bw, bh, e.c, true, 6)
         thick(bx2, bt, bw, bh, 6, color.BLACK)
         local fc = ink(e.c)
@@ -701,7 +708,7 @@ local function monthPage(ctx, evs, st, en, t, topY)
     if isCur then
       draw.rect(gridLeft, by, gridWidth, bandH, color.ACCENT, true, 14)
     elseif cards then
-      card(gridLeft, by, gridWidth, bandH, color.ACCENT, 14)
+      card(gridLeft, by, gridWidth, bandH, color.ACCENT, 14, true)
     else
       thick(gridLeft, by, gridWidth, bandH, 14, color.BLACK)
     end
@@ -741,6 +748,8 @@ end
 
 local function styleOf(cfg, key)
   local s = cfg[key]
+  if s == "relief" or s == "klar" then return setStyle(s) end -- Kartenlayout in Relief-/Klar-Optik
+  setStyle(nil)
   if s == "cards" or s == "compact" then return s end
   return "flat"
 end
@@ -831,6 +840,8 @@ function on_widget(ctx, box)
       if e.e >= now then list[#list + 1] = e end
     end
   end
+  setStyle(cfg.style or cfg.styleDay)
+  box = widgetFrame(box)
   local x, top = box.x, box.y
   local maxY = box.y + box.h - 4
   local shift = box.font or 0

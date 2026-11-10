@@ -29,6 +29,60 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Relief: Gericht des Tages",
+        "en": "Relief: Meal of the day"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-ingredients-relief.svg",
+      "caption": {
+        "de": "Relief: Gericht des Tages",
+        "en": "Relief: Meal of the day"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-steps-relief.svg",
+      "caption": {
+        "de": "Relief: Gericht des Tages",
+        "en": "Relief: Meal of the day"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Klar: Gericht des Tages",
+        "en": "Clear: Meal of the day"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-ingredients-klar.svg",
+      "caption": {
+        "de": "Klar: Gericht des Tages",
+        "en": "Clear: Meal of the day"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-steps-klar.svg",
+      "caption": {
+        "de": "Klar: Gericht des Tages",
+        "en": "Clear: Meal of the day"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "Übersicht mit QR-Code",
@@ -49,6 +103,22 @@
       "caption": {
         "de": "Zubereitung",
         "en": "Instructions"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
       }
     },
     {

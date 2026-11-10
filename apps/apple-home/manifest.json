@@ -8,7 +8,7 @@
     "de": "Home",
     "en": "Home"
   },
-  "version": "1.4.15",
+  "version": "1.5.0",
   "apiLevel": 23,
   "pages": [
     {
@@ -89,24 +89,30 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "apple",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "apple",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "apple": "Apple (Symbole)",
           "cards": "Bento (Kacheln)",
           "flat": "Slate (zwei Spalten)",
-          "compact": "Nano (Liste)"
+          "compact": "Nano (Liste)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "apple": "Apple (icons)",
           "cards": "Bento (tiles)",
           "flat": "Slate (two columns)",
-          "compact": "Nano (list)"
+          "compact": "Nano (list)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

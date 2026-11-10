@@ -4,7 +4,7 @@
     "de": "Sport",
     "en": "Sports"
   },
-  "version": "1.0.22",
+  "version": "1.1.0",
   "apiLevel": 14,
   "pages": [
     {
@@ -123,21 +123,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Kacheln)",
           "flat": "Slate (Spalten)",
-          "compact": "Nano (Zeitleiste)"
+          "compact": "Nano (Zeitleiste)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (tiles)",
           "flat": "Slate (columns)",
-          "compact": "Nano (timeline)"
+          "compact": "Nano (timeline)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

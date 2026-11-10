@@ -31,6 +31,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-wifi-relief.svg",
+      "caption": {
+        "de": "Relief: WLAN",
+        "en": "Relief: Wi-Fi"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-rules-relief.svg",
+      "caption": {
+        "de": "Relief: Hausregeln",
+        "en": "Relief: House rules"
+      },
+      "page": 1,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-wifi-klar.svg",
+      "caption": {
+        "de": "Klar: WLAN",
+        "en": "Clear: Wi-Fi"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-rules-klar.svg",
+      "caption": {
+        "de": "Klar: Hausregeln",
+        "en": "Clear: House rules"
+      },
+      "page": 1,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-wifi.svg",
       "caption": {
         "de": "WLAN (Bento)",
@@ -66,6 +106,22 @@
         "en": "House rules"
       },
       "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

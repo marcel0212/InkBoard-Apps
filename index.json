@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.3",
+      "version": "1.4.0",
       "apiLevel": 25,
       "pages": 3,
       "pageNames": [
@@ -107,6 +107,70 @@
       "net": [],
       "icon": "apps/akku-prognose/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-forecast-relief.svg",
+          "caption": {
+            "de": "Relief: Prognose",
+            "en": "Relief: Forecast"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-advisor-relief.svg",
+          "caption": {
+            "de": "Relief: Spar-Berater",
+            "en": "Relief: Saving advisor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-check-relief.svg",
+          "caption": {
+            "de": "Relief: Einstellungen",
+            "en": "Relief: Settings check"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-collecting-relief.svg",
+          "caption": {
+            "de": "Relief: Prognose",
+            "en": "Relief: Forecast"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-forecast-klar.svg",
+          "caption": {
+            "de": "Klar: Prognose",
+            "en": "Clear: Forecast"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-advisor-klar.svg",
+          "caption": {
+            "de": "Klar: Spar-Berater",
+            "en": "Clear: Saving advisor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-check-klar.svg",
+          "caption": {
+            "de": "Klar: Einstellungen",
+            "en": "Clear: Settings check"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-collecting-klar.svg",
+          "caption": {
+            "de": "Klar: Prognose",
+            "en": "Clear: Forecast"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast.svg",
@@ -161,6 +225,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/akku-prognose/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/akku-prognose/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/akku-prognose/preview-widget.svg",
           "caption": {
             "de": "Dashboard-Widget",
@@ -169,9 +249,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "adbcea5ef7ee0d117a8ebae7897e1a34e9e04de99fe52e97b2d2dd1a0a80f9c6",
-      "sig": "m0uhs9ponBLFDoveKWP2qKMORWnyBpX21dk0YgTWBa50lIuNJMLalzGWPfCyNY4jNXAshVbR12hjkCwlKo+DPf/1+hZLUoINC1BuC32S+CrpRkdI0u/M8SGTqxFmqV3kePwbBEKDxXuXT7tV49DXkRQEqan6Hqe7uAg7UCelmfIFOo09DgxliK8nugAPJu9LD6Big4ANmQMdRYUBip2vIXHrMEzrlaSBuSdmsYz+7poAnxhezIheqyQaLfNpQrsMVb4P2dGTzvNz0+wQw35IeTdE6PnYuxBRwkUFRA2CDwrzsVz0zARQ6B7A3taxqbOb36NwaLC9s6XbLbEeNzJAag==",
-      "size": 36960
+      "sha256": "991afdd6d0682a18ba3666e30fbc2b1bb12b0da1d61fee510e5a02de23aeb486",
+      "sig": "p/7t2rHzWVXP8OfXkrFEeX4E3WEsv+Qb+/NwILgcYNZhfgqafYsSjj693PdKDmPiHnToSijM3G0HJkaz1T8ecQfrI7DNUO+qatDhrykCWibPVv+SboBCduVz0DIs59QVDmhMWvI8tRi19mdyMfMjNQZ3GC7dExESveRpcS9sqtzefTVg9S4Tio7l4bA7m1+yceq/vXaAsfeGESOEteiQpbHc8Cle5mgFrnM9f9mgzr4fmQ2rYhomakEI1H2RhS5oyiDFnXgqc6RAHfgH4nBqUkZ1f9TNaDC/kMggMaRkpaBdgH9D5YUEqwKBBGcjsGNeYOCDYDUojy6d7sQJuoQfRw==",
+      "size": 32906
     },
     {
       "id": "apple-home",
@@ -189,7 +269,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.15",
+      "version": "1.5.0",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -247,6 +327,38 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/apple-home/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Seite 1",
+            "en": "Relief: Page 1"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-rooms-relief.svg",
+          "caption": {
+            "de": "Relief: Seite 2",
+            "en": "Relief: Page 2"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Seite 1",
+            "en": "Clear: Page 1"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-display-rooms-klar.svg",
+          "caption": {
+            "de": "Klar: Seite 2",
+            "en": "Clear: Page 2"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/apple-home/preview-display.svg",
           "caption": {
             "de": "Favoriten (erste Seite)",
@@ -293,6 +405,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/apple-home/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/apple-home/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/apple-home/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -301,9 +429,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "eed58fa99016acbc4d6213671c97dee2c1559d426797aa990ecb93627130075a",
-      "sig": "rh+eWiL7UC+k+E2YfBPwE9kNhQki/yeYThbZMTijah21QY4WpgiqGtP1lIoPphXt/6r03saillf/GEiXZ+jARLrA16RtQT4pGNsDauFxjSZE1OHWFmXg/3LST2TkwpBLWUayfu+D7PcJQSUiITUrlM5tRO/m+dv1O0zx7hF4WsGuitWn5Fe/eNEVakwKlFwOmN7rR07B4E5E5x/osABdKFGsZl+Y0OHf3C1m6Y76ozVvxdb+sUjC2TFojEt244uFkddupvgn6PRCGXxBHys+EkXG7wV0dxBXprMElISzIBk2Qps08c3v/UpkNiL5DbblvnmEhnHy956KGx25OCerIA==",
-      "size": 38616
+      "sha256": "7f8bb3d5b2cc3475799a68f9a44d8232b92277a106930f54b09a53242d9e4019",
+      "sig": "SVusxDQBWPStxP5UWCvLZtupiKdFFSQDiifprtdskTK2QHsh8snGNkttTxf9qCM+s3xDd3RUmrF4J10eK16oq/+92/Jygg62OAIHi+RlZUm1d9n30P7OSTGzfygrQLF5NwbZV8stnGJeRL90snMRpaJrmf1Rz6zfse8HHKCWYnvqJfGy7SfFi4HwLokn23YXWGV0Vq2I7KU4ne+dGzQV8CKWiZsiS1KfAOgOdcgd2+axL2fGXnArJhbUwj2PlIMO69QDPKgjrtGan9XO/vQKu2QcyzMLVAG9HBtPBYh0yu2/TtWOUKZeA5dOasHMgsoc/TYQTbv1xKHAJV3nMWQHpQ==",
+      "size": 31555
     },
     {
       "id": "bilder",
@@ -397,7 +525,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.2.3",
+      "version": "1.3.0",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -433,6 +561,54 @@
       "net": [],
       "icon": "apps/calendar-app/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-day-relief.svg",
+          "caption": {
+            "de": "Relief: Tag",
+            "en": "Relief: Day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-week-relief.svg",
+          "caption": {
+            "de": "Relief: Woche",
+            "en": "Relief: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-month-relief.svg",
+          "caption": {
+            "de": "Relief: Monat",
+            "en": "Relief: Month"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-day-klar.svg",
+          "caption": {
+            "de": "Klar: Tag",
+            "en": "Clear: Day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-week-klar.svg",
+          "caption": {
+            "de": "Klar: Woche",
+            "en": "Clear: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/calendar-app/preview-month-klar.svg",
+          "caption": {
+            "de": "Klar: Monat",
+            "en": "Clear: Month"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-day.svg",
@@ -525,6 +701,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/calendar-app/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/calendar-app/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/calendar-app/preview-widget.svg",
           "caption": {
             "de": "Widget: nächste Termine",
@@ -541,9 +733,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "d31bc38b2a0e94120503bf3877fa0da12827d43c06bb1e8808c8f76aeafab8da",
-      "sig": "NvrSzJPtM/zAC9cxezlya0Xb9PAAQRmZFZ3eRRm5nGgcXX+5fTOgw8JrfEx0gumYOdQDO8c6JNpcOpKpXRT4nwisPYmpuz7os6ck6O+clUis1m9XGGXxfSj4AbFS69ZiMQHfJC2Uj8+/DRvPBje5M8GCl+ffYv4iMwJ5RwkCy/ekVFNNr2xmqOCssidADtCX7jSvEJ7v+KLVyrhX76N1NfMTFzFz9vWSNNpxgBznSvlBBdhh9jucLYgR8OCh7GXjt5bHnojcdCSEjYZji+b3pNi4MMt2D8dGEVvhz93b3mmCivaeuRbR9A6vYBWK2NLj2uWRB9+X9R0fYgmcMlwVNA==",
-      "size": 40835
+      "sha256": "54d93583432050351b0f22d075e2459480b7dd3415581d799aeb801baefb2135",
+      "sig": "cI9mVw8mHlt0M8l5BX9fiyN7ALecbp6ka0yzHMw/pw6e80aNz1kc7NRp48m0DzkQmIjGXZ6kpUatklkLTxiOSUOnUlFAJZ5wumarCkZB+Gfw1aj1X4bRQgevF2R/1FwuTDf9t2Tbad9xy0b+XyCaYq8FtKZWxEslUWYr6zQta/ybNeWesxDyUu2gEbYSs4L1pK/spXIVbyrnlUmNd8PhFoIfJR/Z6g9SUoDJeCRYVTaJ9K+Jiy/sf+rfVJGnoE4L47756vLAq4r/pLqcGXeakwI4VDxRxbmBQ8cW7ThHZ6K9IjkvpIVR8FLTKyh4bTrF4WvwFOAIkKPczoPUJSVoGQ==",
+      "size": 43923
     },
     {
       "id": "clock",
@@ -561,7 +753,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
@@ -583,6 +775,22 @@
       "net": [],
       "icon": "apps/clock/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/clock/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Uhr",
+            "en": "Relief: Clock"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/clock/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Uhr",
+            "en": "Clear: Clock"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/clock/preview-display.svg",
@@ -615,6 +823,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/clock/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/clock/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/clock/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -623,9 +847,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "3ef08ae602abe1ebc86d7fec0c6090bfe885cef9da6d01e9227e935c11951575",
-      "sig": "uXG6t1O/lIPQ70/e+LLvNC+nORuAVUn8xWGiKLicblJC8Ih0jwzkiyMuTVW+wB+DblFAwE2bJ1pC2m3OmKdmYaYgiVyt3fpZzav/wqx4ieSyWhCPfXWX/GP90BTQmp/JcqAL/VkDr08IBcEuwjZARAPQQS+6sEJmOHaObuRSAQm6Tr5bYRDOZ8RCk81gpygBiWIqc7o6qy4uAAWZEc4SOchiZYD3ujM5CpL7EoUeF6VP6t4LoAnstfGZkoUp18MBwFYEK7mknSw1SATM9bcrhn3Af06FnKQvGReos4vCIaoXVkBsEZzqvfKCOWBKQycNSIaCCn5QkNtWVGSDhNTNwA==",
-      "size": 14334
+      "sha256": "f928ac6b09c538b6c5dcf3864798b9dd7cf9e0d8584e1fae96a0639a66af9c4d",
+      "sig": "SfQ4fvOC6w0YfgjEzNC9m1W8OUdOB4e5IduDZpNELatpDAWEz1dubzDNMqrxfNpXCqeGR5VkbH8YXBmyX/+9sxYC1wZFAexEZaXSIe9jKm7lFE51F2RRExbNMMPKitgRmHKHFmJt+4gjMDNqu1zKBvQ1r54BSOQDuamVtTyx6ATZ7flASZSdX7dpzRVfXfut0jLJ72Jk6cSyk8CZHDbQNKVMLp/R8R7cb+hbDjh1kZzkGMWtMxBWdmdgfFNyO/6UjjzOZo3YLSLP4RmF0QJ5/9TdNztaqk3sB/tq3DYLJpHUQcvd6Ml2cN/H0yuYqLWhwS/7KnwW2AbAdur2VgUQFg==",
+      "size": 12969
     },
     {
       "id": "countdown",
@@ -643,7 +867,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "apiLevel": 1,
       "pages": 1,
       "hasWidget": true,
@@ -667,10 +891,42 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/countdown/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief",
+            "en": "Relief"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/countdown/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar",
+            "en": "Clear"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/countdown/preview-display.svg",
           "caption": {
             "de": "App-Seite auf dem Display",
             "en": "App page on the display"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/countdown/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/countdown/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
           }
         },
         {
@@ -683,9 +939,9 @@
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "1ae2e762553868188678b891b7cfea087d266a89f88258f066b3f9c0b06eeccc",
-      "sig": "gFv7G2KJgQ0IDmf1wLsLWwKrfOymsyFUOEp9j7z34U1tQlD7ckjQDmEATKcpfjlPl5Jr3lBzy08v5CyA3/rX5ceuVI2HlRmlWV+69r0wTnThZeV/eZ3TNHFEjHhRVsfuSYOX3coCLCr5G4R05Oh7GchXzviNAe/UjH3ofvinX6r1swFvOFcJT/5bOfKO0oYQFHgrbfZwfBZ548S0v8xEvLZukis9m1HAwAVgKs1okj/4FLbuyw81K7UoNi8tmheek0OprBiicxcaQ9MLrgVTwdmzkoEtBuG8CvM04L/BhaaIjjgUqG2nvy8Qr0uUhUpv7LnxffjLlHvYIrgpQ5tkmA==",
-      "size": 3909
+      "sha256": "431c6474d671b4153462e5a85e84ee52417c04689229dd503bb6b4501f31a1ce",
+      "sig": "tJi6V2ozimka16Dzuy4ktYlkbkYLMcVeGZSCSkz0XfG5CrtK3VTaYzrwzgXTIgiSnxOgDEqn6iUIa1HOPv5NUl1Xs7LcVy+b8sEOsTbTCL2+mEe9Fykw1nBPZ6o69NOV2E6zGdtRlFG7VC2Rqzynslv0ZeKZUPrP0982EtRgUJTBqobzjp25BGohN+h5/lDTvPs/MLOiubfL/yUi9OzkPOnfADdmuMOoDevdQx+AOe/liYP7g3LskMAv/TcPBj8SU0ZOgdOa9GUR444PdLFJEBdVTMm3T19RFXeB6Y+FgU/wLYpbcmxYS34Ecb9TpjIu2wMmPh1TY/fEWZ7LyemX2Q==",
+      "size": 7425
     },
     {
       "id": "datenquelle",
@@ -703,7 +959,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.4",
+      "version": "1.1.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -735,6 +991,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/datenquelle/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Daten",
+            "en": "Relief: Data"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/datenquelle/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Daten",
+            "en": "Clear: Data"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/datenquelle/preview-display.svg",
           "caption": {
             "de": "Kacheln (Bento)",
@@ -763,6 +1035,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/datenquelle/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/datenquelle/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/datenquelle/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -771,9 +1059,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "41b1cd35ee57ab97c9e5836e5f33638998dc5129f76b00f774fa865b1d6794b0",
-      "sig": "QBl8GihBwh4KvDmf1Dbs9f0kBbdb6SKTpM2lYJwW/awnIlQIloKtHbJGV4K+CiCXlvuMUYj0wYqaIx6U4T2h7HuMaKyehsSsPGS8y2tsUTWd1tVZkzcmAGbGLRsk2+OofKmk7M3LxB+LQCGxTIn0qHUxEQjsQb7CLfNOGbsUeiXMOR27fFYNfY9B9FQJHW8qBSSmedaKMzI0yuurEc7maD9nJa5DrkK/TYn/vqu6PLUoH5C4+is8e2GjczrW1aTXBvj7bu7NxxbREpneMR0fDVJKqprClwcmOH1FYOT18h10KbFlDNN7XP6az4jPoXX3XXY9l/g1gzc+dtA5+t20/w==",
-      "size": 25437
+      "sha256": "ac92e82ea7c46c9f3cbee01d5f1baa82c282bb1c1d25aa10d332c7d02cc3ca90",
+      "sig": "GD9HpBgISMCFJXNhTROqTaithpUs7ux3M4mkFKFcjenOvG8BApDhcmGz73tLQw5lyN4/9Vh1yPsSgXa5MzWaKFiprSQzvPfdwLQrcDZCFBUZqQIYZtIF7NZAMXJONhSC8LYBNyeGy2uDtM/zQHetMEzaG8z9VCOzx2A6RjJypiwtQ4vlSfDB2hzcjSvle8lN4x7Lq6Hroo0MMsBPWvKs6hx4M18UTtwEBME/QKuyAQTqiVwW7peJCbHiJ64ztJtM2QiCja0iGtEmaBqgTzWhsFFYO+kmw6T0/gUQpcoo8+TxfPs7RQekfHvnIpv/d9A3DLurn/SyyiX3GqAxlraj7A==",
+      "size": 24294
     },
     {
       "id": "einkaufsliste",
@@ -791,7 +1079,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.3",
+      "version": "1.4.0",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -819,6 +1107,38 @@
       "net": [],
       "icon": "apps/einkaufsliste/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-list-relief.svg",
+          "caption": {
+            "de": "Relief: Liste",
+            "en": "Relief: List"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-select-relief.svg",
+          "caption": {
+            "de": "Relief: Liste",
+            "en": "Relief: List"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-list-klar.svg",
+          "caption": {
+            "de": "Klar: Liste",
+            "en": "Clear: List"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/einkaufsliste/preview-select-klar.svg",
+          "caption": {
+            "de": "Klar: Liste",
+            "en": "Clear: List"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/einkaufsliste/preview-list.svg",
@@ -857,6 +1177,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/einkaufsliste/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/einkaufsliste/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/einkaufsliste/preview-widget.svg",
           "caption": {
             "de": "Dashboard-Widget",
@@ -865,9 +1201,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "797f4cee66596cf2cb5325fc85b1b0ae772b2cedf7d31442ce0935b1095da67c",
-      "sig": "fl39jV5giLJXUmR5QfB8imeNlhGOFwxIS68Eo8WfXqT82PY0oxAdsBVWP3dtHFin4bACWoPRT/fy7OtSp0r5Qepag+9nMVdCPlEm81H41JbX0r1hXQOK2y7uZF1xSPB80Dp0S2OZQ981ObX8s5JBZH5PP1X7UUBXiI/MzrxCUdZayQyj3yKbMSQBT0YTqfBMbm5QW6Dr+/SMRZR5KzylVl8fKiIB0kz5WyNPCzlbgdLRuZN6I+Elj/uvEs2rriRwzfqixtfYMxML8KLke7wywP9VdtRLZqRH1SIOM81H6fSCq9YcgOFLT/zaVJm2YUj7RAGtQZHkkl9j5MmmoH7GTw==",
-      "size": 36361
+      "sha256": "42266a8954811bf670afc6131bde0caae7f87cb13b2af546c3e9b4b287c1a22a",
+      "sig": "lxTbjml9b13V1pmp8CZbaZukf+infqA3VsGL47OrqsLuxdKxi+q5m1AkEfDl5+CCZ9BqOX9jfp2fLhr5skg031UaNHFgyOaWgE5Nnro50JSgiba6Y96BNnd9GPwu1GMjeG1fZMQ3dWByl0MO83929bXaKvc9GkPyEU3CxrGxEDhWNGvIIiLcm3R3KMzmW+R+hHH9smoW3cj/qvLlN7GUFatnTZXftC0di9ws1aMq886UAcw6i1FNkNuIvEX2KzcpYRVT3Jqg18g4CuWrowwiFy4ZuuUxWjyGw/6e+gL3m8XS7leE9faGKikt7JLMZAWvYAzdyG0X7YL3v7L8MJWoxw==",
+      "size": 33522
     },
     {
       "id": "flight-radar",
@@ -974,9 +1310,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "480cc77df966f6e0120bbfe0aea11f5876127cac2fa671e0ce84cf486a96e1dc",
-      "sig": "s08wJf27UPleOBrZ5sEVg7hJmbOZylQfaCFb34KE7UvopN3Y1Z8Xv6Z8SNQqWFAM4FXXO8jFPj0pY1mUIS8C9m4zjxsRjTKJdhr5Q5jHvXvWMiL0qEtvIyxwC2c+Ki9BtowUpZinB+rl6CdjxEtxlebkWNw9BoO75PSJrB5elFsKPPp2EQr6DkuECCzbG+Vwhth2flwmfSgB2FpcqGXa3vM3+6dVUW9AVa0SNgfq4sQy9Yt5T/AfQp84cbtl2+2fITjkma2IYMtIydKhsT//K5lzkCtsP8/VH09yXANSaMuOVJ8qfAGKgNws1e8/zPN33EZBJWuj8xxz96E29sI7Ig==",
-      "size": 66263
+      "sha256": "414bb116dd3c77cc20460bd9e17d239d4be6aa4c348e3c61e911aa0815f0b5fa",
+      "sig": "nDDchWbxkLquK2W1WRoJaldBw11d/uAoOBDb0efn24nFg4n6XBoVKfKEMMFpjFVgsfsgZOfxNwPP0+CjAHBIH17uUG3Hd6PUnHAbHMoG7ZMIafC2vw6nfWPAbnW9aoOTUl0r3TO7tTB86sL/vC8xU9c87ptJKMQjLg0ApZcOgwMksZG+eIxaxXwLccgRy6RjFnDqvc52TNtaoN2UFTkI+ZDpaDpGDu6y5J6TQucK9gaTkmcrY9UmbygiS/dKW1s32pGaz891hTMan8j0jRiw5CELT6hi9u0jnxFnFEvyz3v/l2o6ktNeSZdim/NtKcQNMFLnQYUfa/2FOXd6Ub7kAA==",
+      "size": 66080
     },
     {
       "id": "formel-1",
@@ -994,7 +1330,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.7",
+      "version": "1.1.0",
       "apiLevel": 11,
       "pages": 3,
       "pageNames": [
@@ -1031,6 +1367,54 @@
       ],
       "icon": "apps/formel-1/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Nächstes Rennen",
+            "en": "Relief: Next race"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-standings-relief.svg",
+          "caption": {
+            "de": "Relief: WM-Wertung",
+            "en": "Relief: Standings"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-last-relief.svg",
+          "caption": {
+            "de": "Relief: Letzte Session",
+            "en": "Relief: Last session"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Nächstes Rennen",
+            "en": "Clear: Next race"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-standings-klar.svg",
+          "caption": {
+            "de": "Klar: WM-Wertung",
+            "en": "Clear: Standings"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/formel-1/preview-last-klar.svg",
+          "caption": {
+            "de": "Klar: Letzte Session",
+            "en": "Clear: Last session"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-display.svg",
@@ -1123,6 +1507,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/formel-1/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/formel-1/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/formel-1/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -1131,9 +1531,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "b59c72a2ea4322a5ac5903afa6d1a8d35c1b9e7b5b1678723345d914da578bed",
-      "sig": "PvWw1c3YHx74B6nfN6Bnh+Sh6kjTPtN62srArFG9QuJpgnjW58wuddwrUPVdzkKfdpQ1SDk75CHzyFqzCxi3RmX90Vrpie1JCuFbbuempgOTHlGK4ZmuYM92JRgnH9x8bDeh3ilrIiMVoQt4GLSh97Ia3xflfX9GXy+ATcmmJl3yKWBCG8H+2RytkO1d2ah/tZocJ+lyLBQu+Jk37FwWmFvF8HqgqiGTK0Ag5AuodP6YlQymOsVKgz46k92QUk7GTLkOaVJZV4Jtu4yeTwD1LNMbp/w3XoCjGBpCy+b92rGLdr7BE1kOeQqU2lTXuoL3rlTwIrQ7FQSES0wGyQAhEQ==",
-      "size": 64958
+      "sha256": "3e9f291151e8069340b58b99e999110b175c4670558d855a60ae9150d759f5b4",
+      "sig": "mrfpO1Px873FepNPPqbT7+S80QIFSAMWINiRRCCLP20fOSVyFSVKRd++mqlDmMT0c/9+nYk5QpuzcVTF4TI/a/8RkE5H5yv5SW92j2pzqb3nL1bLRwKsIb59irWtd0wLKad0RutkHJdQtg37GecjvbnZCOUxiHY2xhj2x2Npwjtf9/IYTIvl4C/1oy/VUExg0BmrS8ua/xa+eSfS/VU0E5wL2ImOEPvqksY6D/BfijlcLPfdbJesSYr8YtPJqtYYDseorv/LdigJVPCrWfASrA7ckkY1Q7M1B85RhqiGWH6zMlTWdk3HrtTnNc6HDe7Ib1qCMZLczeS9U24/Cimppw==",
+      "size": 67312
     },
     {
       "id": "fuel-prices",
@@ -1151,7 +1551,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.17",
+      "version": "1.2.0",
       "apiLevel": 7,
       "pages": 1,
       "pageNames": [
@@ -1184,6 +1584,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/fuel-prices/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Tankpreise",
+            "en": "Relief: Fuel prices"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/fuel-prices/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Tankpreise",
+            "en": "Clear: Fuel prices"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/fuel-prices/preview-display.svg",
           "caption": {
             "de": "Bento: Kacheln",
@@ -1214,6 +1630,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/fuel-prices/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fuel-prices/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/fuel-prices/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -1222,9 +1654,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "7c270d03247016a50920025c9881d2b45b9e6f6a663691f3c39eff7bd5d50113",
-      "sig": "Pmt/IG2qjVSjJarrXs6UBZFXcWWAxl70PqlSkd6Xmq7ZSOn+L7HZTD4mJ3Cn80aI/jyl0BNjmB+KSgdRSASHKW/AHA9IVi2FsY3wP4KOZ7CnXkQaqMJJJNh1yQitSkPYiWweBo8oqwERGjbVdts4+WZpcaOkFiudHQUNM3Xsnq+JwIfEwfnMqcdduSGwIq3F6amgxjg/eDdAvPWfkKQsU0HwkPN+YYyInZiB1Mt6G1rKgz7O08gybnRrhY4XBUz2YjNC/GSrXp1lgzVfOkKHmcpQ12LSxEeohVaR4wgrg3bUZ/mODRfmFK9FGi/RA5c28gJvlw8rolJl+qYFE0eqDQ==",
-      "size": 28443
+      "sha256": "a48a4571e284db9a494fde0892e169f1bfcaefdd551a9c41b7c2058cc965e9c2",
+      "sig": "EvAGaESmbqHfcMZwlYkGGH+m9+OAljNlg+vmBD5GlwNF7HMvYl9/UhHwihvKXdIH6KFtniLUjuwbMUnYKqpPdsWycPYxsAO244hutO/UW+EXdUe/T6wyUg/kbYle1fSlvz/8j36zx5FH6quqabNaS4frCc+h1QH+bazil72FRGvd9rRUDbEOHaatPlg8Aj/5/kko0cZKtyaZTiglQpciEYHBBnTOmRLw8csBi7jUNP7WYF0yQXbNL80QiF4gcVwwxpk2bdmerbKMZ+SAIDFUQmwGVBcmEUbUvZxAVLC9heNaOD/t0GGYYr4MqEhURP89mRKitJFZTkeB9nSUXO5Ssg==",
+      "size": 30906
     },
     {
       "id": "fussball-liga",
@@ -1242,7 +1674,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.20",
+      "version": "1.1.0",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -1281,6 +1713,38 @@
       ],
       "icon": "apps/fussball-liga/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-team-relief.svg",
+          "caption": {
+            "de": "Relief: Team",
+            "en": "Relief: Team"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-table-relief.svg",
+          "caption": {
+            "de": "Relief: Liga-Tabelle",
+            "en": "Relief: League table"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-team-klar.svg",
+          "caption": {
+            "de": "Klar: Team",
+            "en": "Clear: Team"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/fussball-liga/preview-table-klar.svg",
+          "caption": {
+            "de": "Klar: Liga-Tabelle",
+            "en": "Clear: League table"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/fussball-liga/preview-team.svg",
@@ -1343,6 +1807,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/fussball-liga/preview-widget.svg",
           "caption": {
             "de": "Widget „Nächstes Spiel“",
@@ -1351,9 +1831,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "fb4035dfaa1886105b4ef96d4276f276b80ed3827618074f0a4bff0341a19b6e",
-      "sig": "E0vsuMK2dmwEAA370n6aWcd7XDfSgH5LNAxNNFklx7wQq/Bq95OekriWRrTuyjiWYqkX2OnuhvLUFFJM1o48iE77OznEJI7p4zznSS3glmVVnggJOnUDqpflLFqwlZmSfvHaSCVgZn7F1qe/GE1mwIeIPNDC4QY6ky4xK6Lmc0NY8a7iUldK0EuI9zAe7Zk7QsTlwzlznINlZxf0CFYiSP88NcRvQ1OWMkmllJ9mh0Rc9vXD7nnydhJ4sihaig91YD90GaHL692JH003vh8aHzNuq1Yt4MJLDYDhKK8/e0Ya9LQAGOhKkdgU/e/KdPXiAG3wtiWEmb22ighT+yzsMg==",
-      "size": 71401
+      "sha256": "317c5771a2a347f1e2c298cdf42643337bf7d0a2334ddd6b44b7823eea2f6cb9",
+      "sig": "FXNwLkKjVlZS5bJMKEjvwzjVYoc62qG498YnsUGh8VjUGTdnPKlCAXnBTAEYPQzESnUE2XYB3vyWdIQPGqfdP+VOydp4tgdi86PId21naaDb9T7PGZSC+A4N6doM2V5HZbgR3L4T+jk2Hc5oZ1Pz/UpLH2HyLnhko9LvqrLPMQeagQlA+f/O4UBA8ArjkMSEgrsdvurUDnMxEOWQtWpUrYkzOOFFrfihhUvRgDyxUogzjib4I7c1M/WQ2WNK7bV4Qt9nIBUUi07HW/Yo1Nc2JNda5pSi3WDCeyNCviK1usF8UZWWc+z9myVAkXDZoRN0uwepYtpoKaOUX0e3WZcs8A==",
+      "size": 75904
     },
     {
       "id": "gaeste-wlan",
@@ -1371,7 +1851,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "apiLevel": 29,
       "pages": 2,
       "pageNames": [
@@ -1410,6 +1890,38 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/gaeste-wlan/preview-wifi-relief.svg",
+          "caption": {
+            "de": "Relief: WLAN",
+            "en": "Relief: Wi-Fi"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-rules-relief.svg",
+          "caption": {
+            "de": "Relief: Hausregeln",
+            "en": "Relief: House rules"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-wifi-klar.svg",
+          "caption": {
+            "de": "Klar: WLAN",
+            "en": "Clear: Wi-Fi"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-rules-klar.svg",
+          "caption": {
+            "de": "Klar: Hausregeln",
+            "en": "Clear: House rules"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi.svg",
           "caption": {
             "de": "WLAN (Bento)",
@@ -1446,6 +1958,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/gaeste-wlan/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gaeste-wlan/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/gaeste-wlan/preview-widget.svg",
           "caption": {
             "de": "Dashboard-Widget",
@@ -1454,9 +1982,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "b783ddf56bbd130e6dbf3ba1cedb28aeda83cf8223aa1530c66490260109599e",
-      "sig": "iRZCcddpA+kn/t9E6fJebeCRA0BAncPy+szZzrv8SiNEH4udnGn6vJKBODlSi+s7+7GdSS461uUaQ6j905AyrmT+ugKLrwDLxSsSgATD8yCjuOsj07/zkWjw30sppj2BEK/DHMiSUN7VTt+yH5XHJoM88/we+S0BRYCfQlmvCOMH93DXAlegnUkCnIu7YAnyrO8tHEbIZ7BzzqP21OJpcK4nYpFyoWk16NtvsAUTca7qadDGo/Scztl6a4GipNtVHn4eMZ26BKh34XEZzEEREc/E6QcVAgiplPJGhaTfw2TV72mnEX+kdO1k53ReIhDIHtRQzAjj8cWtH2LzpF3HHA==",
-      "size": 34699
+      "sha256": "cfbbdfc69304968425ab9f60d811b22fe201911c28d1987592de0cf8e76ebc9c",
+      "sig": "u146B/O2GU0/KiPwHmP0O4BDVqApEWFLhNf6APWbm6WQzhRxQ8Tvci/HGAfkfSDbcjTfh5Sf51PC9yaOl7slrImw1s2Y9Mpf7IG+VWFxaNLa8Y4GSGe1w0yCsyUpG7PWPVp7rjeHAe5uQb0MsYyPr5D/oECTKj4kJffitmgHMb43WDv6eVKQ5GW9Om9ZTYulGa6e98PGiWV3Zw8IbM+YVAPiGxajatxrKFqlOoo7Gzw4vhvNW8pTCFzgd8kzcBCBka6XWEvWsKzYuocWOMYFnDM49qWj10moLR4HEXu+yxeHVOtBZQ2fLNUkgfjS2zV6EYxBomDs/ANRTzHFi+FD+Q==",
+      "size": 32374
     },
     {
       "id": "geraete-check",
@@ -1474,7 +2002,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.6",
+      "version": "1.2.0",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -1496,6 +2024,22 @@
       "net": [],
       "icon": "apps/geraete-check/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/geraete-check/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Geräte-Check",
+            "en": "Relief: Device check"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/geraete-check/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Geräte-Check",
+            "en": "Clear: Device check"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/geraete-check/preview-display.svg",
@@ -1534,9 +2078,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "099c89711820c91e7f0b5ed37e0f2ff14aae1c23e44cf0aaffab19d74dee85fa",
-      "sig": "vRiLICECFdbjNsClcCGdRho1VTwh+dGhbn9GRowNZyT1RwpFG6oZ2RYMc0idb/Fm+pbYRNBSXGhYMpLH30eqABZ+AqJxE6+G7Zj33sIPov6EV8oPtMrpUL0Otow1yVuAePqduL/aTovg4ZFaUQ0y0OUD95bhLJuWZdv/3vxn7ovc+kPO20iG2+CZGaqaEW7lqgT6zgNZWaZPq2Go0mg7fDbROpg5Ufpz3q4SbeW30+JYpnwHO9eOglpi0bwmHTyaNNCa2+ZBO3/I9pcAbpEv025EnGJ2V6vgAk3Te7gKVtVEu15PB3g3eqZ5UTwEOXAwdA+98YB6KlLLX/cMLiAIUw==",
-      "size": 14087
+      "sha256": "584a4ac54a15ebc3e3143443af9c5a6c10e22003844e834937f58a2f2e5d45e9",
+      "sig": "r1h22LuoqQ9lvFU/rkulP0B/x+n5hoYtKqAsbBTjuFEn7Z6hUewagpFMtUTG4nwNvVy0H4713kcvV/933JJi33DMdoE4y6yBF2FzukjV+JXhFizq9oDbzGTQfi0ewoEeN4VilnM/5hnOQfjbyJue4iUDGVX2oOzq4p7MqCJ7WgaOyetRlYj/qIsdGPLnvt34NTODlLSCjZEIG0yfGlZRcIFM98bR4LP5xyfgs+WB9c5gGyq6AMf+wMr3mUMOku/KfPg2Mh7Iw0OJgQvVFeZQf7QAsm902KAkNryJMRuYMSqN7K8PqT/t4TY02JsLsMG5G3LEsqqZurpCHFvIXZ1GNQ==",
+      "size": 13906
     },
     {
       "id": "gericht-des-tages",
@@ -1554,7 +2098,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.1.13",
+      "version": "1.2.0",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1588,6 +2132,54 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/gericht-des-tages/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Gericht des Tages",
+            "en": "Relief: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-ingredients-relief.svg",
+          "caption": {
+            "de": "Relief: Gericht des Tages",
+            "en": "Relief: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-steps-relief.svg",
+          "caption": {
+            "de": "Relief: Gericht des Tages",
+            "en": "Relief: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Gericht des Tages",
+            "en": "Clear: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-ingredients-klar.svg",
+          "caption": {
+            "de": "Klar: Gericht des Tages",
+            "en": "Clear: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-steps-klar.svg",
+          "caption": {
+            "de": "Klar: Gericht des Tages",
+            "en": "Clear: Meal of the day"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/gericht-des-tages/preview-display.svg",
           "caption": {
             "de": "Übersicht mit QR-Code",
@@ -1612,6 +2204,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/gericht-des-tages/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gericht-des-tages/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/gericht-des-tages/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -1620,9 +2228,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "18b0b54a4998eec578ac9409a0ad5ef049ffeb95a586c24886fd3295ac3a9651",
-      "sig": "M4B0u7k6tWvU4HtkCMj9f6YecbQGKt7k5eqApIUAN6lFh407tMmSAM8Ie5gjv2SDp5l+aUFntoHcdtZLs5DPLCgPlYtJTv+lH/ES7ZoViJz6VkBkEOau3SNxZVrpKeIt1qjC3a6MgL9p2qHFjEmbJgqqu2ICXOL7GRG/2g46ExxD4xDkV1GWXqYaTuYj7fAPoqs97iuGGesEp25dV1rsca1JmrnvxhnK6JZnj5sPYNynnHQC8tX+VT7qGWwTReNa8QivB8R3jsGsaMMLEjPywL0vsKmLzAAxxLgyFAZn1mR8KbCMQHcIIm0XdNisKTxpdOHRTlQ1Bh4N9pNwYofbow==",
-      "size": 21320
+      "sha256": "cfb3b9307a4fb6105938c84f471010643a091cf21a4b23da04178df69d12b1ad",
+      "sig": "O4EquM5cyEyJFUQlkr2JQ/0z/N2HJHTcKL0p0WaYALN5r2+RjDMGfpGvbKtc1LXy2dPtIRMTXQ8fOMlO/3Lr1XgoB2I/zvW08nF1BDyBnMTl5DQVUD0VTGLK3SsFuD4/rc65F0nvMOcW9hu+DHc3/L8nMlCuKrucwB1xSHu3c/u0o8GEhYnwrcz2oY4++sUMdto0uSC+xWco+L+9EbHqVZaw9KGD1n9YUclfjbBhc+MOIyPceyQsUPQSk0VCDFtlUHr1E3WBkmmz/PwGp6n4mcn0kSQp9itwmYeqEvGwnie9U0mojvtGvmjoDyEBJ9tng3KSzxeDGSxKmbtOWb5rSw==",
+      "size": 23964
     },
     {
       "id": "golf-tour",
@@ -1640,7 +2248,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.7",
+      "version": "1.1.0",
       "apiLevel": 12,
       "pages": 1,
       "pageNames": [
@@ -1670,6 +2278,22 @@
       ],
       "icon": "apps/golf-tour/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/golf-tour/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Leaderboard",
+            "en": "Relief: Leaderboard"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golf-tour/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Leaderboard",
+            "en": "Clear: Leaderboard"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/golf-tour/preview-display.svg",
@@ -1702,6 +2326,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/golf-tour/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golf-tour/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/golf-tour/preview-widget.svg",
           "caption": {
             "de": "Widget „Top 3“ im Dashboard",
@@ -1710,9 +2350,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "0f84bc2962c38c9d8ffcfbc9dc510b7c64e845f61dc31a91a1694f7a89ed9d81",
-      "sig": "hSavtJ50Ieph76qUiQRL4AnDI2fcUrAsWBPWAbYM9oCUPdB0EuAriblFW2RJ5CCLyiO0+lVpLapkmEYJsv5GzCaJ/5X4qO8Q1HF/cWSzOBzjXXxhHrS4bRyrglhrVJQ6a+c70l0rAwVMhaEiCyTXdUJFyz2rtal0k3mYHyFMgGFav9//DhNYQfyD33VEOlTl/1EagLyWErBCZESpBSsuF2Lkz7vIBivNOQzU1dkEXOBHJk1xPromjKj0oUwUsxTVZs3rPavPYIRC7Cc6V/FrmUXE0WwF4xiNlFJyS+O9q/AW9sdMyezstTjKzRyzgcCiYH4gePbRO1tVeO17OlxQIQ==",
-      "size": 26740
+      "sha256": "ce72231e3fbda7f0f38a9b01f43ec85defc2840e0d169d56ce090187dd1046ec",
+      "sig": "YEf9vcOyZqYS416QbfddEsMzrbmgPjZTpz1sIwhvIHX63svvoZ/cL08TWdu0Tuk9u0ixJiUhIo5lYvpzYfV4JdB5r72MOJ1WVuJaH/ec6h2fHZtZqpCC759qoZAxamlRRerzH0EfamCnHAt0k8wCFgx/WWuFo+qou0j2Nqmr43FflOIyQjcxP1a07O1GgoCW/MrGdPji0FIPdgAs3OpM8/lXIAVQ9FXIc3OMPuELRAiVMzTFTNVqTp+2BMxvTTzvjBYHwRK8HQnVIQIXRjFQ2wcc2kP0lBZBeh8vIimEKAzuJOA8UbolD5a98v5dexgL6oR7ZAXJayCQFXL7RES9qA==",
+      "size": 29184
     },
     {
       "id": "golfplatz",
@@ -1730,7 +2370,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.12",
+      "version": "1.1.0",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -1768,6 +2408,54 @@
       ],
       "icon": "apps/golfplatz/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-today-relief.svg",
+          "caption": {
+            "de": "Relief: Heute",
+            "en": "Relief: Today"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-week-relief.svg",
+          "caption": {
+            "de": "Relief: Woche",
+            "en": "Relief: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-14d-relief.svg",
+          "caption": {
+            "de": "Relief: 14 Tage",
+            "en": "Relief: 14 days"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-today-klar.svg",
+          "caption": {
+            "de": "Klar: Heute",
+            "en": "Clear: Today"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-week-klar.svg",
+          "caption": {
+            "de": "Klar: Woche",
+            "en": "Clear: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/golfplatz/preview-14d-klar.svg",
+          "caption": {
+            "de": "Klar: 14 Tage",
+            "en": "Clear: 14 days"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-today.svg",
@@ -1860,6 +2548,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/golfplatz/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golfplatz/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/golfplatz/preview-widget.svg",
           "caption": {
             "de": "Widget „Platzbelegung heute“",
@@ -1868,9 +2572,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "dfcaef52d9ccf8cdde94f3870adfec1bbd2ea486d1281a5fbdb2d533a391b24e",
-      "sig": "FaBMYINsNmOnuyBNQtzrtice9cquAuRFPZ1psTYm78vgnzr8xx4JhCfxGVEZZZD85LufaVRNtd0xVk9W8BOFNXxFBndmzr442KIDtt1rsRL0PICDSbTJ7LEXyzEaM87Ky5HOekseX3iq2DVCW+nxgwvF8xkSyTTVRmbm6SXXaAKfgnpzJN4EisaRoxG1+CoJq94ReoirrKhIx7fvEqSOVI3q+WJeNpZyogyBeO9+PaQGnGQ0jmCmdYUOAotJ1gPxvG1RD2M8oMOfZ3Nq2NEyqHt36ZnVdjXuZAliKotvxfDtLQUTPWIzY/O4XHjCI2kvtNi1PiYQQJz52Njfhqzazg==",
-      "size": 45375
+      "sha256": "4622d458c693c3c37a14c0234c18f7eb378f68ac205b5b807322e8420ef4236d",
+      "sig": "ssxmfWMj6vUdmmTKIQLc9s2qVhCnAP4eWRaiOdxHbkGKrhIpC+SwEt0IHqSduE116Qs2tSyXh42vQPloi5GQrxigwvb7CxR+/vYnqAaI2soG7JXOZhfIavT/LxiQX7G22tS0IoNiHnS7TNOBixv0gFVdWWrOWUEE3aD1q0FtVUpaKGnRG77/2Tulgwh/LYOpSTmRJ/emhrcMf5mMOW1gwbes4Yiz3Rk4VoXDmdgHeEoJuu6PA8mQ6vqbJNZ4aW2wiVG6p9nWy8gXJG+jyN5LfJ/GEMVwGD12xh+Kqh9eRPkgZTNgu1Ly8OCjXWCXZNUsTwZqDNNPBYgCQGv4KY8YtA==",
+      "size": 47730
     },
     {
       "id": "homeoffice",
@@ -1888,7 +2592,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.0.3",
+      "version": "1.1.0",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -1922,6 +2626,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/homeoffice/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Homeoffice",
+            "en": "Relief: Home office"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/homeoffice/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Homeoffice",
+            "en": "Clear: Home office"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/homeoffice/preview-display.svg",
           "caption": {
             "de": "Bento",
@@ -1952,6 +2672,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/homeoffice/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/homeoffice/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/homeoffice/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -1960,9 +2696,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "144b46573297be8c6d698ca877821d5db15c30e14b9a41898d7ac077691b4681",
-      "sig": "DsSAd+rTfsgtKMzFA4yvgwEcP3unYlW36R6x/r2ida+L3ClxQf4HLeIW0UsluivOCDOPsu2ijQGrJ+LOX7HB9rsJ9e47hbbaCxapqOM1297kOGgC0osF8v6iTZNE+KkcUSmh9mgq6Yhl9GhA310jTBcJxb+XIk21bV1EdrnzWlUxr15Er5XhwWklJ6C2eQT7kT7AL166F1RZcCAtHNn3jvICXREUv/t0xgIRcQ8t4G6JRJG5CpfR5BmOsHgZqZUtKQP0u5M9cRvd6DBWorGo6L9Q9keObLF7pjEgMGCaf5hXeK/EKmXEh/yCXcq63znuF0T2xcryEfIN1/8vPkG2vg==",
-      "size": 28787
+      "sha256": "e0746935e60f30e45fa6038e9b6972defc181943cfd433d35dcbe7ea9ce67e55",
+      "sig": "TQDAVqZdOqkHQXpFKP8S9mFbN7SesYvM3TMOWCXtbbhcOE3MqP/qVuUOrxbPXgnLoHAUoPuBGYYoD5TrukQxn+4laz2d/Y1zWo5stfbhxijLSjpnOmxQD5yWsIBI/WCP+K8UDTAew67Xzr+1zYKMH8h8uRFyb/hkbnvjzjnJsNubhGBcXHhf/ObX0StHZAHK8Tci2364DFVSEPWiB8+WtcC21V4ldc36Snj9Cv7Q8viYlphwzhDKH0xKbe45jJdu8iiM5n6ZCyYerWCQsfsPt+nCAVLbFGdVzZiB3P5t5JtcPE3+7VZWJA8GmQqspHAu8zFLl+NZCYlwqw3OE+L6Bg==",
+      "size": 26313
     },
     {
       "id": "luft-pollen",
@@ -1980,7 +2716,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.5",
+      "version": "1.1.0",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -2022,6 +2758,38 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/luft-pollen/preview-air-relief.svg",
+          "caption": {
+            "de": "Relief: Luft",
+            "en": "Relief: Air"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-pollen-relief.svg",
+          "caption": {
+            "de": "Relief: Pollen",
+            "en": "Relief: Pollen"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-air-klar.svg",
+          "caption": {
+            "de": "Klar: Luft",
+            "en": "Clear: Air"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-pollen-klar.svg",
+          "caption": {
+            "de": "Klar: Pollen",
+            "en": "Clear: Pollen"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/luft-pollen/preview-air.svg",
           "caption": {
             "de": "Luft (Bento)",
@@ -2058,6 +2826,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/luft-pollen/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/luft-pollen/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/luft-pollen/preview-widget.svg",
           "caption": {
             "de": "Dashboard-Widget",
@@ -2066,9 +2850,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "ba1460ba7e562a6cf06ff150fe56d032593bc5b7d363310d862ee9442e9b7d0a",
-      "sig": "gY3voQlV2sxq7t4ApbDNq1qTpujnEnP2eUw+BJf5F0dMNUa91x8zgLNanecy/Tc7BFT8OnEk/IZA1BS0eAEyJGgmO4LYiTWi03BaBsuvpiN931d23QiT1wXaxKZZuHtW4HcNCG06ji26l2v8s7FVWpS0iKaCXIz7iktZ3kVN8udqX7+U3Y/B555BCi3tqX+/qP6o2zQPyDOzQmbhf5xviZ5P4pj/Z3jdl/F9q5E7151NIcT26u9bOVriSy1+epnoAJxnSiwL5tYEhsxtq1Zobx/Lz87qimLK8adbyWQEQfGMiWZXT8oE3I0B3h5ntocnkjpyy0pJp99L9ngs9HTyMA==",
-      "size": 24252
+      "sha256": "17ff4ddec2769068a207e56646b92730c3be14d6f5f973144fee1f629f2cb1c3",
+      "sig": "AvZRXBqjMtRxT0eXxul8iH0AcsLja3sn11Ngkcoo/HY//YFtL2TiyAjP15tTaJbcU8EBGYALDbkZ5FLttczUi7F/S/XEk7f8vYRedf5vfwJYxDGyQzf5zM1gIcey2HyuprbDuRKyGUZW1Q2rhruHRmFzvl0idDcxcgiKLKda6YeUsV6Pyf6jSpKKTkIhnzLnXpD23/RDWjkBrbYXUGVC4ym1zNgzy7P6frHxvsi410+cVGc3fJImIvWdOcfB5twN8hixjMhR+u61G82N9OPplwYNTEAITzAWlpuKg/uq43u2XoegJei9AWpzKOnU4i0BW13QUfDCUoCeTmO7iIyVIg==",
+      "size": 22751
     },
     {
       "id": "news-feeds",
@@ -2081,12 +2865,12 @@
         "en": "Headlines from your RSS feeds"
       },
       "description": {
-        "de": "Zeigt aktuelle Schlagzeilen in vier Themen: Allgemein, Wirtschaft, Sport und Technik. Du wählst bekannte Nachrichtenseiten oder trägst eine eigene Adresse ein. Alles stellst du im Store ein. Mit drei Stilen und Widget.",
-        "en": "Shows current headlines in four topics: general, business, sport and tech. Pick well-known news sites or enter your own address. You set everything in the Store. Three styles and a widget."
+        "de": "Zeigt aktuelle Schlagzeilen in vier Themen: Allgemein, Wirtschaft, Sport und Technik. Du wählst bekannte Nachrichtenseiten oder trägst eine eigene Adresse ein. Alles stellst du im Store ein. Mit vier Stilen und Widget.",
+        "en": "Shows current headlines in four topics: general, business, sport and tech. Pick well-known news sites or enter your own address. You set everything in the Store. Four styles and a widget."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.12",
+      "version": "1.1.0",
       "apiLevel": 7,
       "pages": 4,
       "pageNames": [
@@ -2113,12 +2897,12 @@
         "de": [
           "Vier Kategorien mit je bis zu drei Feeds",
           "Eigene RSS-/Atom-Adresse möglich",
-          "Drei Darstellungen und Dashboard-Widget"
+          "Vier Darstellungen und Dashboard-Widget"
         ],
         "en": [
           "Four categories with up to three feeds each",
           "Your own RSS/Atom address possible",
-          "Three layouts and a dashboard widget"
+          "Four layouts and a dashboard widget"
         ]
       },
       "net": [
@@ -2133,6 +2917,22 @@
         {
           "kind": "display",
           "file": "apps/news-feeds/preview-display.svg",
+          "caption": {
+            "de": "Relief: Tiefe",
+            "en": "Relief: depth"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Apple-Stil",
+            "en": "Clear: Apple style"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-display-cards.svg",
           "caption": {
             "de": "Bento: Karten",
             "en": "Bento: cards"
@@ -2167,12 +2967,20 @@
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
           }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/news-feeds/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "544b6feeb69be160bc26650504ef9070c84ddd22f83aa9a51e42d8780e760940",
-      "sig": "uUIw50we9I76+YbeiKac2HxknLm5R69LdAPAnjX9syCEUy2ypS4D3q4ZlkSTcg6HfEQz2n+MBsvWi7MS6YkZZbcWkCQp8bl94w5bMdlrtZYpZVf6/yK25lOmDyx9e5T9t+0Nw0KCLJTxNZONlLpcL3gpTyN0X9QabQTqTdLc96KN46LGWUWZIDfWfz6okBWiGVj6rNSZG70JCvC1+1sbPvNDu1Id/rFvqnzubHDiIwZdpfC7aeOBAXhmaage6wWE4FYwgQDFQw/z3E7xJl6nIxdDJlgkMtFASKVOOCY5AnUI7sVb4J9kyvAex0lvnHvK093kwwrjZNiLmVoBow9fyg==",
-      "size": 24737
+      "sha256": "05c10be58f5ddc59d86d88855c41aba12acbc80862c364682d1f5e4710126499",
+      "sig": "ITvU6oJPO9O1fe3/MucdICjjYHQwBqxIksFiZAHyKkBEs/n4SPd1TwNpwc3uWExguY1bqB/Zxl6acdb8syL00BvepvMb5BmPYpwp3Wo+oonspjVjzILB6K0cG6yEMd245Z9zdvpBEe3j5vGadP3S3PxMjbTCUksHKfyNhLaLOpL9TVlUxQj2fPhRpSM5u5XZKbgrhlIKjrGJbDbqJP+HgzDCZCBwcEqctyyXP1rHT1g2jTbmp5iVYXL9wNKbuWMhti2tBuPvkdxyZl0patIm8u8MULvbULRU34D4I4e+C1SmHZIzzGyd9e3/Eo48/2moaMaDzPeHzw3By4ovsRN63A==",
+      "size": 29796
     },
     {
       "id": "oepnv",
@@ -2190,7 +2998,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.13",
+      "version": "1.3.0",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -2226,6 +3034,38 @@
       ],
       "icon": "apps/oepnv/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Abfahrten",
+            "en": "Relief: Departures"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-routes-relief.svg",
+          "caption": {
+            "de": "Relief: Routen",
+            "en": "Relief: Routes"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Abfahrten",
+            "en": "Clear: Departures"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/oepnv/preview-routes-klar.svg",
+          "caption": {
+            "de": "Klar: Routen",
+            "en": "Clear: Routes"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/oepnv/preview-display.svg",
@@ -2288,6 +3128,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/oepnv/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/oepnv/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget Routen: Klar",
+            "en": "Routes widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/oepnv/preview-widget.svg",
           "caption": {
             "de": "Widget „Abfahrten“",
@@ -2304,9 +3160,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "9153b54e5589484896559a41fecc487ad257f2da64824585783702f10e7ea58b",
-      "sig": "OmOt4bM1n9NnoTwUFovXMwIlxOTFYAQmZj+LsvJgPkMF2iKiiKVvxcHRRV64xYqkyGPugTcCDuCb4vkVOLDBB4z6p+XDo31Dt1s59jHni8sBuihnFlin/P1kTU9ei3/zHFGlVr9LjwqNDW0aZ8a0LvGNaHemqHH7TGnkbneg9+Z5m6GvgRoMMGzqk096qooOAi4XUJdMeUsG1oKUcjkH9z4fEJpIglstED6PCJ0qwNZ3bOJAixj3k2ElhsfEqbemOSU7uaRK2a+xIB05H4ymbzx/Blo4DQpUOW22mVAn2tiB0JgCBm+OHH1sqHKt57AWW/j9yy7piuN+Z2oigj+oJA==",
-      "size": 79049
+      "sha256": "4da791075e49a6eb193ba9dd8e1d64b8c0cfb29dc6c72909441a940c6c318f8c",
+      "sig": "Yj+ZmjT+pX7nrgZphMAHaj/kwLd9HaRV13r8Cc7KCHrgvU7IkQhAbsnk5cNf1oL96A773YVsl0V67iQL8bnLu9CuutxpOQgC58nX9x3fyhVAU2Y3K/8F3fvjcjzqhst0XfQqxPp5DLvpfMYfXTNthqdEgAmiZQ0MODmdE1kPUcmTN1w6hKoa8JYN40EGqnz58600+2r2DWo5jPQ6neL+veBKFqgraEiRW+UGEJJfmrEkQUr+owX7IFYovl9E7fzFzO12COVcM9hMgcMu7XxWR1aXQsFkqjPZS9E5Udf+/ii5PUEqYNu3XAK3tLLQu33mc5TyeOQkJmlUdeq4Msuw0g==",
+      "size": 81989
     },
     {
       "id": "pinnwand-app",
@@ -2324,7 +3180,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.3.4",
+      "version": "1.4.0",
       "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
@@ -2351,6 +3207,54 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/pinnwand-app/preview-note-relief.svg",
+          "caption": {
+            "de": "Relief: Pinnwand",
+            "en": "Relief: Family Board"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-long-relief.svg",
+          "caption": {
+            "de": "Relief: Pinnwand",
+            "en": "Relief: Family Board"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-empty-relief.svg",
+          "caption": {
+            "de": "Relief: Pinnwand",
+            "en": "Relief: Family Board"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-note-klar.svg",
+          "caption": {
+            "de": "Klar: Pinnwand",
+            "en": "Clear: Family Board"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-long-klar.svg",
+          "caption": {
+            "de": "Klar: Pinnwand",
+            "en": "Clear: Family Board"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-empty-klar.svg",
+          "caption": {
+            "de": "Klar: Pinnwand",
+            "en": "Clear: Family Board"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/pinnwand-app/preview-note.svg",
           "caption": {
             "de": "Nachricht von heute",
@@ -2375,9 +3279,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "cc7a2e8775a64a83d8af13a1b5604a3d42d00ca79cde048351924105fd1c222f",
-      "sig": "G9rypWsbEN+VGWEfY/5O4phDTyr1XvxnBmzVCfKJ4HBdmt3lzFx13uNUegTjQh0eUdpJi5+PxW4C2e/madWDyv2zf5MxzKHFoh5XxC3Y16I6+K2zqjBUetNtGEImRDJ9Sl5QBAFl2a4BgxIJa2SsdoEIepvpEaKUPhOEJ8LQD+XR3OXdN/QF+CrQQ2ZlbXlVTobtR2SkbnpR28l8Xz7Oo6RsMxR/sGvMdaF/gsaG7e45/S/83Uy+csAWS7k0UNKWgJDRwwfe3CIil9jmoW4ueQTRgNPNzPb4UhAiehjkdI5+ocGPuemIjDw/y0epnEw8howeVE2jX04VIFzJbv+Gaw==",
-      "size": 8999
+      "sha256": "a3f011a8e168f7f2e68af7c95db7ca14d75f58b42e0d40d1b74d51dc33b66086",
+      "sig": "u0vAGkKQNqAo2MIYFqsvyLOXJh9GtaPfkVKVILXazFDFFz0Gypvn7ktP5aAu7vEPlCsXo7g6cB/46+ZnqVm9uGeokxSdPPYznzrbf0UzcSp6SHZcRSG6r6r+DQ6tc7NbfVZtmBsWPnFoxt5T5rWM+RVRQB2ITK0bKvqOmAymqXkbSsqRiIm8JcvUIML5MKA67ug4PPFTC9u9wxuTCldJbHFF7eZqsSOX0t6yqz0hlSTkX7X7k+iP+v5sF8WQZwSfT7dGXvRwzGVlaqqgTxRVQzQZUJUVt80yIQmRCAQHh736LuAw3LA4hVTakqKIAO6DEvX6sEKVhAjy5mPotvxtSw==",
+      "size": 11780
     },
     {
       "id": "rezepte",
@@ -2395,7 +3299,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.2.3",
+      "version": "1.3.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -2428,6 +3332,38 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/rezepte/preview-ingredients-relief.svg",
+          "caption": {
+            "de": "Relief: Rezepte",
+            "en": "Relief: Recipes"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-steps-relief.svg",
+          "caption": {
+            "de": "Relief: Rezepte",
+            "en": "Relief: Recipes"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-ingredients-klar.svg",
+          "caption": {
+            "de": "Klar: Rezepte",
+            "en": "Clear: Recipes"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-steps-klar.svg",
+          "caption": {
+            "de": "Klar: Rezepte",
+            "en": "Clear: Recipes"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/rezepte/preview-ingredients.svg",
           "caption": {
             "de": "Zutaten",
@@ -2444,9 +3380,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "1fbae67c4e7431dbd5d1dab4628e429eb20af49916c7347f97bdebb7120b94b8",
-      "sig": "pGg/7FUZ8RPFmcnjUVQH+x9M+qtwdU8wtX3g/NCvpwXj8fesLwbKCn85uQhm4OqlB10dGkoNiZntTEE7GJRJJMZSGnjs41gMpRxK8yTv+ajMuu1GLb8PiuVsqtS6ZY6BZTGtbQekb8d/TucueBJ3U5TTwIjv00XvGTUfqwe0ODWK7xbY1/c9tEUifTIAHy8ugR8ucVbD88Kj11Cp17NMyuRhVLAf3tfjSOeiMg4B9LSztJX9S3wPCtf/o5isxPrESBuI4wFitbmm0+sdgMYgZakkJIqXRP/Z5lZn6Vf+0+/PcsiSdT7nGqFz+w8yf1Xq210AfpCRfFKV0ZzZ19C0jQ==",
-      "size": 44365
+      "sha256": "9922e5ef10b94ebbc71bca19624ba185390b5e0985ab89c1d7559649691c62d1",
+      "sig": "iO+cBrc4NoyZ8OAydc5xNfJAI89B+oaUUBeFmYV0q8naLEmz9/BvsbpKayeZFPeHu5Q+h2jU+ftKbg3KIrrSjdEEUxUnHCcdy3SInqJKKAboXQMr2mxbPwsPZBzyXb1j0A+NcmpzCkGnmNEz7zE84Nene2nPl7tuXPOD994+lZBfgg68E1mvw7xDBp0n4b7WW/zATr42Wt2IYMpd33E8qsLVoajvWyPB9leSXvp5gj53PTgz9UOFnWrELmVX4wG5ZArMBxPDDttjvgvzCqnSIDjxWDwlpAFlkDZNG9tlraHSVAibe1pbnMKPtvsKJezCu/9i+l9+MwUvix+rWjiw5A==",
+      "size": 47168
     },
     {
       "id": "sport-tabellen",
@@ -2464,7 +3400,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.22",
+      "version": "1.1.0",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2502,6 +3438,38 @@
       ],
       "icon": "apps/sport-tabellen/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Team",
+            "en": "Relief: Team"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-table-relief.svg",
+          "caption": {
+            "de": "Relief: Liga-Tabelle",
+            "en": "Relief: League table"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Team",
+            "en": "Clear: Team"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/sport-tabellen/preview-table-klar.svg",
+          "caption": {
+            "de": "Klar: Liga-Tabelle",
+            "en": "Clear: League table"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display.svg",
@@ -2564,6 +3532,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/sport-tabellen/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -2572,9 +3556,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "f5141700a46d0af3e51e71c3201b0974fef1aea9c9381ef31002e38b2fa2f296",
-      "sig": "Sd8SLL3t7L5irPjeP4M3cfoP3BueFbyYfeAo7prG3wxBb6mI8GoH9kPS/zGveUBH8S39g+fpBGpgO++9pTOY4D2Xrr0rbo62L3TDFywDEYijpfk265/R9iWvczZ/9tcOgpx6eSm5AJcdtEH+XJ4wkVGBLXYUlHwKhkfsrtpxFCiGNQoW1WamyJ4ODldKeQG1HK52QsR+jr2nkvABEUDQZ8DPjnKVi55BdiNiNQNGwePOrpnX/wTv8TOYO59aNHe+RqKfnqryPe2AVWCCWB0FPuxxVC8W9UfdY47/o5dLNnaXhI/9T0f2hI/5IGhNf5cYn49h7mozGxaaXkumedXGyg==",
-      "size": 59662
+      "sha256": "cfdef12461001a7eab0fef6307d64ea0ca4f6a19fb7aa489eaef6a51b186cc61",
+      "sig": "nkuZy4HjsmIji4J9VgcaE3iERgbWBLQGG5CzDOkufz6Rib8l5jvS2DVIOYoh1Ldr2qh8QOoVc15Kx3p23nMTts7yiEXCqR4fd1KypHMIGlhysmviEWXYahYA1aWk7A8qhtrb3tP5s/haEYglCzsqcsvLD2f5n9x2OAT0ClaH+d2DNvXGwe19oxMNTQUZ1hmGvUNGt9WhjkJW63OkfMiTnJYWvYJpK836k8OedQKYQ+G6qOTCwt/nIL9RSshFN3U/Y3BUwdlG4122YqqgBCWXU3CnE1DELYkygk2ID5pW1cbv+uyGV+x1LdKQZjGF3NPNuVlNnQC0go4+Slo3YGRV1Q==",
+      "size": 62103
     },
     {
       "id": "spotify",
@@ -2685,7 +3669,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.13",
+      "version": "1.1.0",
       "apiLevel": 7,
       "pages": 2,
       "pageNames": [
@@ -2719,6 +3703,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/stocks-crypto/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Aktien",
+            "en": "Relief: Stocks"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Aktien",
+            "en": "Clear: Stocks"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/stocks-crypto/preview-display.svg",
           "caption": {
             "de": "Bento: Kacheln",
@@ -2749,6 +3749,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/stocks-crypto/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/stocks-crypto/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/stocks-crypto/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -2757,9 +3773,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "f7b5e11ba8827cf654080c5c7e6e5cd1dadc66d6f686ce71a285e215b40db2d9",
-      "sig": "KGDhPwK2BUCv9q+U4V5RdWTAj6ubbbbCemNE6+ZSPWc4Ree7J9ctncWuGpps4TiOKUsTZcVbe9EO1v9CRFxIqiWPgn3nYeMJ/Qf8cXyqxLVDJl8H4ac4kAxyY8m2mqKqeXvp7j6mOcaoxV8mERWbnPGJiErnbzsKhkwC4s/FmC0pb+W4/BAWAe0wJ+m3ZCnarmXdX9PQ2IZFNYlH3yd3R+VFThMgYotkPJw+wFnRoTETSFSMVHNeBtjAvmnksuryqVFXnwKiXeHshJAjWXiGi1/t2iU8NYjpIdMxMCMPk3CmArR9pFfmVLQXBYa+ePnBOtRHSdNLfAes6KDl9vTj3A==",
-      "size": 26182
+      "sha256": "e785a259be6842ce4dfceab6ae479d57897e1d1dd64794e4e841bfea59a54f28",
+      "sig": "QxRFKZlrVRlqOoIVj0xSGGwO2evY2lmbSbPF2VcW3Q+TEfk7P2JFnQ6lJxSq8eZunC+kzlIYySQM+7oRaC2eQ0NJEL5W950fmZz9fO5PRnRX2OTE5cSxtYE8/sV5CcMyXIz75VOq4VDBz8yV7Lt5FYGSqWnWILr6ipQzQ0QamwDZ9lZfC9Z2LWLetcBry5OVZ79ZyfzAb84oQK5f2Qr2+Rc7G8s8px8M1/pBcd5z1ouQJM3a1jZ+FjkGv42EwwEHztkyqBJRjn9dCbkQ8m8MQ/kJWhJxKqYXSlyrgWB2z3BT8AveQoGGBj70ByGeyF5JBhWr475sxq3LFos8UTe4Gg==",
+      "size": 28645
     },
     {
       "id": "todo-list",
@@ -2777,7 +3793,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -2811,6 +3827,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/todo-list/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Aufgaben",
+            "en": "Relief: Tasks"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/todo-list/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Aufgaben",
+            "en": "Clear: Tasks"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/todo-list/preview-display.svg",
           "caption": {
             "de": "Bento: Detailkarten",
@@ -2841,6 +3873,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/todo-list/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/todo-list/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/todo-list/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -2849,9 +3897,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "5d477714a2ba38b2eca153edfb0decf1511733cac5a8711857d532c66c1080da",
-      "sig": "rq2bzPzPtRZNClSGQnBKaOA8QZHjHvBN8KRNc8CVn+29UbSCH1+aY0h/kaOgITroUYYDbU5X3taqqMRS4xXWQ9PR3QvAfrw6WBIdF21uzplwkSA0WfmvwtF71bjlGq6iV+T8V57/0cAcXNKRsK/mbIQRkNeLcJLgBXyoKUtFa7c3CC4iaCZOcec85xq90j+tKJybTegXGNA08N34FJ23CCFeBxrfleaq3NFG2YUh4cuWpqz+41WV4HIKewO0XbCgh5v/i4M5IqLMmQvCPpywrjhdkpPJwTMFa6lxLKzDCidVKO6PTI2mnDvt8fZGaWcaYIJEGjIjZniU8wp9MqDNvA==",
-      "size": 54858
+      "sha256": "d45642a49f917ea8ce2338964ca964e21febdf1dadc170e1b47b1fbe800afb4b",
+      "sig": "hpsbqhj2X5zhB0858x9qfQX85zh/KYGF+P2cNzgI3CYgK0PJ4Ig8a3aiRAiOlaWfkIS1Tm56AmZbgY/OBNhCe3Mx43NGhE4yA/7T2XHpJ+ejqsugbEOFk/8UE1LcuBhgS/Yrd4WzldBl1FGra24M/AHgkrKr5x/0opAWAG79soVFI4rpYEd4gQ1u+97XY2K8yqEzK8HlGg83OGk9lLs9wE5Ficd4Smt0fSBHP6ZNBlI2LZiJICHiCKLgG8AAgpUa8+OAsdjsoozdNIO7zVye7SKSOv4EhTNl1IYTtjH24/9OvUqlzqpM1GAqGHqJoh9HYo4OXivzXN0ZEbpbic9ZaQ==",
+      "size": 45582
     },
     {
       "id": "tuerschild",
@@ -2869,7 +3917,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -2901,6 +3949,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/tuerschild/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Status",
+            "en": "Relief: Status"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/tuerschild/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Status",
+            "en": "Clear: Status"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/tuerschild/preview-display.svg",
           "caption": {
             "de": "Bento",
@@ -2929,6 +3993,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/tuerschild/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/tuerschild/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/tuerschild/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -2937,9 +4017,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "f21331e7a31b45c451b90184a9400ddea794860ee2285bfab04d52809473a2cc",
-      "sig": "BzyRkz876hWuKvThkMXNCO5VVPm6/txpgc3qw+YfE/Fx7BVgntb3UH/p7q43/2LAaMjJ7EJJkDx5q/SeRenCAzEVX6xpYR0QcawfGpshcdL0WBFpTFtXzLmdS/RVJRMq5Ok/F835Kq1f7Oo/r7X25c58pAaPG8+T2rgsxU/VqTw7a+dbg3xBd2BNtZBkTwuD0uCJqE1V1pMLN9BMYinuGmTl1suQlW31Bnq2f/RtMgAFVf23zpq24LqkgUf7XyfuphDHc+eptQss/HzwdlGxVLQPSfoXZqa1/qvo+szUAxtxDd1i5qHUc0ymqKJ/JUlOfOQDEzToBVVxO16OQ4jG3w==",
-      "size": 21119
+      "sha256": "4bebc2838eb41748c310dc02ad9453831b0109f1b4fa107580a2be55f470cfdb",
+      "sig": "enCblbc4YT4fwM/8BUoVOesLhpcOW0owZ9dSSXMGd4wtfRIX7qn+8fO+S8qIDJ6nOSq05uVAk6pkuUeYQHKix4MmpSX4e0UWtYN7qrBIUICtYstiIAiH5e0R1JuuVrlQa8rrn1KbzIZoPKSpsKUyiFYljWRPIu8amBvfV1SKYbstYKCfS+1y3IL8F9K6G5HnCh4bG6Yb6TQLzRnEpFXYujYRf8gUCxjTXRq2vvFW5oh7aovI+RhuE6W+ZsiVR9Xkr8r2U530sZIl7zFKWcEpT5X30YcNENVftWbACYc1JCqLfOYCD8o43bHNKDyFh2BuSbQQRNbGpb6fPgn70kikdg==",
+      "size": 20926
     },
     {
       "id": "waste-calendar",
@@ -2957,7 +4037,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.0.9",
+      "version": "1.1.0",
       "apiLevel": 9,
       "pages": 1,
       "pageNames": [
@@ -2990,6 +4070,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/waste-calendar/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Müllabfuhr",
+            "en": "Relief: Waste collection"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/waste-calendar/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Müllabfuhr",
+            "en": "Clear: Waste collection"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/waste-calendar/preview-display.svg",
           "caption": {
             "de": "Bento: Tonnen-Kacheln",
@@ -3020,6 +4116,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/waste-calendar/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/waste-calendar/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/waste-calendar/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -3028,9 +4140,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "1544866378cf21517db8dab3844c38f338aab6926bd631cfe1386f95d8e8d77a",
-      "sig": "Ay+QSwsicr3KXF4tdc90MaSK3i2ptMgS7/EHIxtJtwVXQgrdavzIdV2XaUP99sKcVewq0LA8j79zPTQ4WNn1I9LG29h1NuDgJD634cXL71KRSS71ljJAUmfMDjl7fDjqYABdn8IALfcwfevzZ0MykWhr441ZkxlG6bYOLiz2kWS4BCE3MIf+VsHcGJr0HYRKGi5E6mUN/ipyeCcgoaozL+OFqcza4YWwiCKwQhn9dpj5qnGEFuB7OyWqX0VZyi+rmDdO87PhXmdS27U16qPtD5PrPnonoa8PYPtUBp0Lbaf2eQN9KeFHtt1I6nS4ZbtnxWAUYfGbciDN4TuUBFiGTA==",
-      "size": 28791
+      "sha256": "ebd27aab93b292de8b40969ab01d247b46ddd5f494eec634b831f50d2701e450",
+      "sig": "B4yEnmdJbQYC54yN0eiBFTSyrbjdCGjiTP6oq6pbSdVoW+EUd3dr+ecbem832eB8+ogrTaZEmGl3hpMB+QI42xcIJcEH1M+afAC3Q6nLVJ3UnQ5VckQRE4wp9KLjmrK9w+piDZ3JxjCzydsCYcPlGXmVd2DPpnRJjp0EMw1p++hhfbS7Ade00Jj+P6qg0dD1lN0g936ktSMouvaJt2G/jvpv0s7uzhb8CAF0237GZGcDoN93AEpfnnNg0CaKaNfF30OTE+zDqO+3ImmfWolJqP4BggJD3i/VH3u5Pgl+1vq5WRjcFGFfR4LCy74Jlbkdu+g98lp6DhLFup0oD/kfXg==",
+      "size": 31224
     },
     {
       "id": "weather-station",
@@ -3048,7 +4160,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.7",
+      "version": "1.5.0",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -3089,6 +4201,46 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/weather-station/preview-outdoor-relief.svg",
+          "caption": {
+            "de": "Relief: Außen",
+            "en": "Relief: Outdoor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-indoor-relief.svg",
+          "caption": {
+            "de": "Relief: Innen",
+            "en": "Relief: Indoor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-network-relief.svg",
+          "caption": {
+            "de": "Relief: Netzwerk",
+            "en": "Relief: Network"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-outdoor-klar.svg",
+          "caption": {
+            "de": "Klar: Außen",
+            "en": "Clear: Outdoor"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-indoor-klar.svg",
+          "caption": {
+            "de": "Klar: Innen",
+            "en": "Clear: Indoor"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/weather-station/preview-outdoor.svg",
           "caption": {
             "de": "Außen-Seite im Stil Bento",
@@ -3116,14 +4268,6 @@
           },
           "style": "compact",
           "page": 1
-        },
-        {
-          "kind": "widget",
-          "file": "apps/weather-station/preview-widget-outdoor.svg",
-          "caption": {
-            "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
-            "en": "Dashboard widget with forecast and rain countdown"
-          }
         },
         {
           "kind": "display",
@@ -3227,6 +4371,30 @@
         },
         {
           "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor-relief.svg",
+          "caption": {
+            "de": "Widget Außen: Relief",
+            "en": "Outdoor widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-indoor-klar.svg",
+          "caption": {
+            "de": "Widget Innen: Klar",
+            "en": "Indoor widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor.svg",
+          "caption": {
+            "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
+            "en": "Dashboard widget with forecast and rain countdown"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/weather-station/preview-widget-indoor.svg",
           "caption": {
             "de": "Dashboard-Widget mit Verlaufskurven",
@@ -3235,9 +4403,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "89abb971668b0642f1cf77eacc22a3569060cf113727eb02c4e8f5c31dcc09c3",
-      "sig": "rcAl4jew47Gh0RtNSTzdcxKvKjRTAFzIark+CB9BiabaGNfB+KLPiS21CPb/iSXV96Jrd8d/StL4+NepNRyyS94PRuZViwpMKcx+hS8dI7vQSH8SbRyauaSh2vllt79iHfugZfl7a0r1ZN31yZOoAgKmkdvCuGOK4UUsVuSBzw/0lsXVuzjZi2Y9lIG0BDRPpAQF2h6BAohKzJWaqKm9kIhwFFTGHLmfs6iva6GqEdlnl0R/hcRYAX1Xlub57OMO4yGzm5Js+ODwJv1Jgc/fgURU4/p7xHlVPM5YlB3KXhMXz1JphTaapiVwT5RmHA8lKQlYs4NB7bp6tcsenO9m6A==",
-      "size": 71903
+      "sha256": "3193fc360844078b6118d87d7135631ef10dc3e3a40d793a66dad046a2ebf346",
+      "sig": "GtQg/pwryDiaRxQWPccH1x1BjDDyhAqZ/mqUzmK9B1JHeNkh5c/j/5GGsM7W6Drt6gpXiAzTTvTaDOrlJtQsTQ02hoM6hrbq4Gpihdc9EZMtqYflzP6CYZICtutRVXWY0zsq2sdgdIoAjNhFozA5SCsDdbeb3lfEVq1iBRX3M0UhwVZilCL603fBC2CRa9NWRxf5dMbGB3KOvqnjnRWDdgEbJWL+xQb+3S6xk/Dm6IXjBoXdBV5dMerz004JYwCNHTrSy/idMxSDe/pfHSqzN2OVvgj4Je8m/eTMCJKvgOy4CqcSCCT9zKaW7g5ZqTr+wvtFlfj5yOO6f40w5tk5+Q==",
+      "size": 72509
     },
     {
       "id": "wikipedia-today",
@@ -3255,7 +4423,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.0.12",
+      "version": "1.1.0",
       "apiLevel": 8,
       "pages": 1,
       "pageNames": [
@@ -3291,6 +4459,22 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/wikipedia-today/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief: Was geschah heute",
+            "en": "Relief: On this day"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wikipedia-today/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar: Was geschah heute",
+            "en": "Clear: On this day"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/wikipedia-today/preview-display.svg",
           "caption": {
             "de": "Bento: Hauptereignis + Kacheln",
@@ -3321,6 +4505,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/wikipedia-today/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wikipedia-today/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/wikipedia-today/preview-widget.svg",
           "caption": {
             "de": "Widget im Dashboard",
@@ -3329,9 +4529,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "3de29c452e1c472a91be67b01e88df34036e31d301c6f2d18c861fdabf99b065",
-      "sig": "apXQG4ACXSe+QpZ5URLV8wwmaTmI8P8WyhQ2fJT0MMIYuJ7QGoaIldL6Uah8Ap1ZCpWTb4lC3JJfu1cmXdyBvXiAa42ds4IlVxfdbWHr2wn+2RY+9Wz+/YrsoZZCJr6BcO+jNiCMwWZj1QXr9Dc5ikwDCae69R3KTEeAImisJEf4BxGfeNOJNh1yNGXp+Ls0igDW6k0Wr6UytzuAjVYsV/G+D6edC7C8+mXxJCmkPIQrN4Z7P9J3E+bjr9AWayyxrXgmdzqJddGUeVTTsADWlanj8koScgxpSgeXQgrUFLIALkAwe1S0woMkuJ4rQESCJiWB7gRTikqC0QPmTxbNug==",
-      "size": 27694
+      "sha256": "f3334e3983051e72040879850ac5f9715c01ae7281253d677e1819de321ba81f",
+      "sig": "QVD/VfOfan29YlaXIWSVA1vx5GyYU8kTQ2fDSZnWlINX9LZJwd9FrL2qVdDFJrZ/P9MwXECuAT4HopsmmO+D2RyGPHZ55NaL9KPQaNppcV34K8SNcO/SU2Dl9wTIrDP5146u0TxXDIRj+9blVvoYTmmWWVoZ+6am1xY2Li2nS/5m+TbCOeuaq8Ppu2DBEzasqqOmtUzqL/iEITY+p0BiNfZeY0gKUQqj43lyLqQrLMw5N0DK15HZBVunyAltmPhb3SErVEEBIIpGRviAofEwkuGOlHgcG0TVqbYJI6gJIxRCgbXsqffmnvWXYy/1H530THtAheHCBPl0OqpTAhOy9A==",
+      "size": 31551
     },
     {
       "id": "wochenplan",
@@ -3349,7 +4549,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "apiLevel": 23,
       "pages": 2,
       "pageNames": [
@@ -3383,6 +4583,38 @@
       "net": [],
       "icon": "apps/wochenplan/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-week-relief.svg",
+          "caption": {
+            "de": "Relief: Woche",
+            "en": "Relief: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-today-relief.svg",
+          "caption": {
+            "de": "Relief: Heute",
+            "en": "Relief: Today"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-week-klar.svg",
+          "caption": {
+            "de": "Klar: Woche",
+            "en": "Clear: Week"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-today-klar.svg",
+          "caption": {
+            "de": "Klar: Heute",
+            "en": "Clear: Today"
+          }
+        },
         {
           "kind": "display",
           "file": "apps/wochenplan/preview-week.svg",
@@ -3421,6 +4653,22 @@
         },
         {
           "kind": "widget",
+          "file": "apps/wochenplan/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wochenplan/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/wochenplan/preview-widget.svg",
           "caption": {
             "de": "Dashboard-Widget",
@@ -3429,9 +4677,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "826caf1edacae8ca9c0de2b41b1ac66f4d66c2d7e78eba7c3fa65eaad51e2396",
-      "sig": "wBKBKkplFFpkRrHsEeLG34zrNii678XCCLbPX+oHZsmKhgaPUEOA2zNFCUO2FLywK8zcfGEgnbsWCcGp9cGbYjNQaUrc5rhGo/IpCOTOBHoH687QT+XICpi9yZMQ94NpVkxv9NfPSJTZmKHjXIdRL8Fr8LXG3fN06L5e+61BM0EZ1NvrJrU+I/XvdfiuOr3aTxtTeJ1brD+PXiEIYs1VDfGmmgLns42bVRrzZ39GizHrhJXiXIs3CNv787RhOAnxrGHz4v6LFYf3CSMnCi1AUFYbqRjpcQS2gomNatrBGCW4M3oWHiMtmQ9GyF3Iui2Yg0O64gfkDMx4C0stq7VukQ==",
-      "size": 31309
+      "sha256": "e7a3e18892acb3eaeb2a3015122b02ae968c75f46f41656660ec290f3bd799cc",
+      "sig": "M/thao8WvUdWA4xwYT9hD8W5DaV7Nlgwi2a4frtupwiAu8+iznhhhPEyBPqDOqkYP58GrWcEYor9NCaTPb8glOoHNlUAVrXtkARcCTvs5ugzoRLrfGF/HK2UhsAmFJNc//VKrwamY2Sh1fmd8BXCIAnHGi56cex1M+O83EJogQgUUgFpvX55YG8deHRzxoqQ4gbZncriAqqMhoLP8yLTm17owWiU2qWxrFyOACqJQxKmONbHWkhDV8RMP2swUuhN36jhUXWqNYohCGIGgOnSc/3cXchD2M0VKSqZfdxb/3YQoiknnKxAz7gg/w7iGpml1voYmX8XY6XmoqDSzFqlHQ==",
+      "size": 30031
     },
     {
       "id": "wort-des-tages",
@@ -3449,7 +4697,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.7",
+      "version": "1.5.0",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -3483,10 +4731,42 @@
       "previews": [
         {
           "kind": "display",
+          "file": "apps/wort-des-tages/preview-display-relief.svg",
+          "caption": {
+            "de": "Relief",
+            "en": "Relief"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/wort-des-tages/preview-display-klar.svg",
+          "caption": {
+            "de": "Klar",
+            "en": "Clear"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/wort-des-tages/preview-display.svg",
           "caption": {
             "de": "App-Seite auf dem Display",
             "en": "App page on the display"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wort-des-tages/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Relief",
+            "en": "Widget: Relief"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wort-des-tages/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Klar",
+            "en": "Widget: Clear"
           }
         },
         {
@@ -3499,9 +4779,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "386a96bb8c8e72b8594db31d021979952f16cfd5b5885b699daed8e437e8013e",
-      "sig": "sF71gkKN73mP0JO8USAzcM2VVkj54vxnIOMInztNA0LaTFjr9ZFJ3w4yltZNt5jfTFA0eaMyHHPWWH8picLsLoXOYm1YFPpC02J+Lp39iSKiex5bjvc2OyiwhjIxVcW+16W4OGrlp4TfVHPhBaLCFZvemhAhDAYoGV/ssMe+kYY1S/zKQEqoGqcGb6sjHjH1biUDeb9Ab1Tzb5wdi/nhceQZQABtI2/GgGcUjgj7AEsBIJuBjsR948ANPOhRqRAqvsfdePIBUl1EmNREYzePSDDUpl4Izfdd4lO2tU9Z1nMVrcFRahWZJj5eG74qvYjXYE/JbNDjFu9qbvWI5YEfzg==",
-      "size": 16395
+      "sha256": "60d8025c611af7fb0171a005b1111978d54292a28a7fd79083d2e3d46117be5a",
+      "sig": "h1jjiBUdBPJJCrWV7BzRwtwVw5w7VBksZZvKJuoGJMf7enShMuQPIA+UXFh08xH4+q39VlLPu4x644DS0AUwgYoKCb9iU0gnSvzOq++ad7266kYtoYO0qbml5ZzdvSEAHFHTzHib3b6wiLGR7SKWYX7efYBYei1K7ljkTxWqxoB3k0GK9X2k0/Iet2BRHdoL1OEF3BxOWWHDiBQ5qawR3puf2QDfQTDJu2+jRQSffk+Hia+P6MssWhwxELNwY52y2RWsdSHbFZpo/34kdFH/1hjMYk8UJbVRpe8F39ILdwCBEVwaweSQV47Y76xOkkb5yRw9OZupiQ27Om/UVmo/Lg==",
+      "size": 21402
     }
   ]
 }

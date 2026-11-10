@@ -26,6 +26,46 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-display-relief.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Abfahrten",
+        "en": "Relief: Departures"
+      }
+    },
+    {
+      "file": "preview-routes-relief.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Routen",
+        "en": "Relief: Routes"
+      }
+    },
+    {
+      "file": "preview-display-klar.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Abfahrten",
+        "en": "Clear: Departures"
+      }
+    },
+    {
+      "file": "preview-routes-klar.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Routen",
+        "en": "Clear: Routes"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
@@ -84,6 +124,22 @@
       },
       "style": "compact",
       "page": 1
+    },
+    {
+      "file": "preview-widget-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "file": "preview-widget-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget Routen: Klar",
+        "en": "Routes widget: Clear"
+      }
     },
     {
       "kind": "widget",

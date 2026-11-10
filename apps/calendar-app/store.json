@@ -26,6 +26,66 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-day-relief.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Tag",
+        "en": "Relief: Day"
+      }
+    },
+    {
+      "file": "preview-week-relief.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Woche",
+        "en": "Relief: Week"
+      }
+    },
+    {
+      "file": "preview-month-relief.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Monat",
+        "en": "Relief: Month"
+      }
+    },
+    {
+      "file": "preview-day-klar.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Tag",
+        "en": "Clear: Day"
+      }
+    },
+    {
+      "file": "preview-week-klar.svg",
+      "kind": "display",
+      "page": 1,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Woche",
+        "en": "Clear: Week"
+      }
+    },
+    {
+      "file": "preview-month-klar.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Monat",
+        "en": "Clear: Month"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-day.svg",
       "caption": {
@@ -114,6 +174,22 @@
       },
       "style": "compact",
       "page": 2
+    },
+    {
+      "file": "preview-widget-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "file": "preview-widget-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

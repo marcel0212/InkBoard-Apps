@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.4.7",
+  "version": "1.5.0",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -36,21 +36,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento",
           "flat": "Slate",
-          "compact": "Nano"
+          "compact": "Nano",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento",
           "flat": "Slate",
-          "compact": "Nano"
+          "compact": "Nano",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

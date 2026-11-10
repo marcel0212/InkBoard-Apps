@@ -16,6 +16,7 @@ local MAX_TRANSLATE = 4
 
 --#include text
 --#include ui
+--#include theme
 --#include translate
 
 local function en_(ctx) return ctx.lang == "en" end
@@ -223,7 +224,7 @@ local function drawCards(ctx, list, en)
   local heroH = 216
   local heroBottom = heroTop + heroH
   local heroW = W - 2 * marginX
-  draw.rect(marginX, heroTop, heroW, heroH, color.BLACK, false, 16)
+  panel(marginX, heroTop, heroW, heroH, 16)
   local hero = list[1]
   local cy = heroTop + 54
   local ys = yearStr(hero.year)
@@ -259,7 +260,7 @@ local function drawCards(ctx, list, en)
       local e = list[1 + i]
       local tx = marginX + (tall and 0 or (i - 1) * (tileW + gap))
       local tilesTop, tilesH = tall and (tilesTop + (i - 1) * (tileHh + gap)) or tilesTop, tileHh
-      draw.rect(tx, tilesTop, tileW, tilesH, color.BLACK, false, 12)
+      panel(tx, tilesTop, tileW, tilesH, 12)
       local padX, yearCol = 16, 60
       local cyT = tilesTop + tilesH // 2
       local y2 = yearStr(e.year)
@@ -335,7 +336,7 @@ function on_draw(ctx, page)
   draw.clear(color.WHITE)
   local list = loadEvents(ctx)
   if emptyState(ctx, list) then return end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   -- Zusatzinfos aus: die Karten-Seite zeigt nur das Haupt-Ereignis ohne "Auch an diesem Tag" (Listen-Stile bleiben, die Liste ist dort der Inhalt)
   if ctx.cfg.details == false and ctx.preview ~= true and style ~= "flat" and style ~= "compact" then list = { list[1] } end
   if style == "flat" then drawFlat(ctx, list)
@@ -345,6 +346,8 @@ end
 
 -- Widget "Ticker": Beschriftung oben links, grosse zentrierte Jahreszahl, darunter der Satz (ab 130 px Hoehe).
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = en_(ctx)
   local list = loadEvents(ctx)
   if ctx.sample then list = en and SAMPLE_EN or SAMPLE_DE end

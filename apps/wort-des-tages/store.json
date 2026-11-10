@@ -26,11 +26,45 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-display-relief.svg",
+      "kind": "display",
+      "style": "relief",
+      "caption": {
+        "de": "Relief",
+        "en": "Relief"
+      }
+    },
+    {
+      "file": "preview-display-klar.svg",
+      "kind": "display",
+      "style": "klar",
+      "caption": {
+        "de": "Klar",
+        "en": "Clear"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
         "de": "App-Seite auf dem Display",
         "en": "App page on the display"
+      }
+    },
+    {
+      "file": "preview-widget-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "file": "preview-widget-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
       }
     },
     {

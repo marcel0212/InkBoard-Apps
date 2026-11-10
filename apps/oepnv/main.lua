@@ -1,5 +1,77 @@
 local EN=false
 local function T(de,en) if EN then return en end return de end
+local theme={s="cards"}
+local function setStyle(s)
+theme.s=s or "cards"
+if theme.s=="relief" or theme.s=="klar" then return "cards" end
+return s
+end
+local function card(x,y,w,h,c,r,nobar)
+if theme.s=="relief" then
+r=r or 12
+draw.rect(x+5,y+5,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+if not nobar then draw.rect(x+6,y+10,4,h - 20,c or color.ACCENT,true,2) end
+return
+elseif theme.s=="klar" then
+r=r or 20
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+return
+end
+r=r or 10
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
+end
+local function panel(x,y,w,h,r,c)
+c=c or color.BLACK
+local big=w>=60 and h>=30
+if theme.s=="relief" and big then
+local s=5
+draw.rect(x+w,y+s,s,h,color.BLACK,true)
+draw.rect(x+s,y+h,w,s,color.BLACK,true)
+end
+draw.rect(x,y,w,h,c,false,r)
+if theme.s=="klar" and big then draw.rect(x+1,y+1,w - 2,h - 2,c,false,r) end
+end
+local function widgetFrame(box)
+if theme.s~="relief" and theme.s~="klar" then return box end
+local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
+card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
+local pad=theme.s=="relief" and 14 or 8
+local inner={}
+for k,v in pairs(box) do inner[k]=v end
+inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
+return inner
+end
+local function pill(x,y,w,h,c,txt,font,tc)
+local r=h//2
+c=c or color.ACCENT
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,c,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+elseif theme.s=="klar" then
+draw.rect(x,y,w,h,c,true,r)
+else
+draw.rect(x,y,w,h,c,false,r)
+tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
+end
+if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+end
+local function pbar(x,y,w,h,frac,c)
+frac=math.max(0,math.min(1,frac or 0))
+c=c or color.ACCENT
+local r=h//2
+if theme.s=="relief" then draw.rect(x+3,y+3,w,h,color.BLACK,true,r) ; draw.rect(x,y,w,h,color.WHITE,true,r) end
+draw.rect(x,y,w,h,color.BLACK,false,r)
+local fw=math.floor((w - 4)*frac)
+if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
+elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
+end
 local function trim(s)
 return (s:gsub("^%s+",""):gsub("%s+$",""))
 end
@@ -762,8 +834,16 @@ if #opts==0 then return {ok=false,message=T("Nichts gefunden.","Nothing found.")
 return {ok=true,message=T(#opts.." Treffer - bitte wählen.",#opts.." matches - please choose."),options=opts}
 end
 local function thickRR(x,y,w,h,r,c)
+if w>=60 and h>=40 then
+if theme.s=="relief" then draw.rect(x+5,y+5,w,h,color.BLACK,true,r); draw.rect(x,y,w,h,color.WHITE,true,r)
+elseif theme.s=="klar" then r=r+8 end
+end
 draw.rect(x,y,w,h,c,false,r)
 draw.rect(x+1,y+1,w - 2,h - 2,c,false,math.max(r - 1,0))
+end
+local function fillRR(x,y,w,h,c,r)
+if theme.s=="relief" then draw.rect(x+3,y+3,w,h,color.BLACK,true,r) end
+draw.rect(x,y,w,h,c,true,r)
 end
 local function thickLine(x0,y0,x1,y1,c)
 draw.line(x0,y0,x1,y1,c); draw.line(x0+1,y0,x1+1,y1,c); draw.line(x0,y0+1,x1,y1+1,c)
@@ -1035,7 +1115,7 @@ local base=y+ch - (ch>=26 and 9 or 6)
 if c==startIdx and bigFirst then
 local ft=firstTransit(k)
 local fc=k.delay>0 and color.RED or (k.delay<0 and color.GREEN or (ft and lineColor(ft.line,ft.mode) or color.BLUE))
-draw.rect(cx,y,cw,ch,fc,true,ch>=26 and 8 or 5)
+fillRR(cx,y,cw,ch,fc,ch>=26 and 8 or 5)
 textC(cx+cw//2,base,t,ch>=26 and "normal" or "small",inkOn(fc))
 else
 thickRR(cx,y,cw,ch,ch>=26 and 8 or 5,stc)
@@ -1100,7 +1180,7 @@ for t=1,#g.times do
 local cx,cy=tx+14+(t - 1)*(cw+cg),ty+100
 local clk=clock(leave(g.times[t]))
 if t==1 then
-draw.rect(cx,cy,cw,chh,color.ACCENT,true,8)
+fillRR(cx,cy,cw,chh,color.ACCENT,8)
 textC(cx+cw//2,cy+23,clk,"normal",color.ACCENT_INK)
 else
 thickRR(cx,cy,cw,chh,8,color.BLACK)
@@ -1253,7 +1333,7 @@ if #hero.conns>0 then
 local f=hero.conns[1]
 if f.dis==1 then disruptTag(ne+10,hy+62,true) end
 local m=minsTo(leave(f.when))
-draw.rect(boxX,boxY,boxW,boxH,color.ACCENT,true,12)
+fillRR(boxX,boxY,boxW,boxH,color.ACCENT,12)
 textC(boxX+boxW//2,boxY+56,tostring(m),"large",color.ACCENT_INK)
 local sub=T("Minuten","minutes")
 if f.delay~=0 then sub=sub.." \194\183 "..dLong(f.delay) end
@@ -1409,7 +1489,7 @@ if c.dest~="" then meta=T("Ziel: ","Dest: ")..c.dest..(meta~="" and (" \194\183 
 if cards then
 thickRR(MX,y,re - MX,rowH - 10,10,color.BLACK)
 local bx,tx=MX+10,MX+136
-if k==1 then draw.rect(bx,y+10,112,rowH - 30,color.ACCENT,true,10) else thickRR(bx,y+10,112,rowH - 30,10,color.BLACK) end
+if k==1 then fillRR(bx,y+10,112,rowH - 30,color.ACCENT,10) else thickRR(bx,y+10,112,rowH - 30,10,color.BLACK) end
 local ink=k==1 and color.ACCENT_INK or color.BLACK
 textC(bx+56,y+54,tostring(m),"large",ink)
 textC(bx+56,y+74,T("Minuten","minutes"),"small",ink)
@@ -1446,7 +1526,7 @@ SHOW=ctx.cfg.details~=false or ctx.preview==true
 OFF,NOW,WALK=tzOff(),time.now() or 0,walkMin(ctx)
 draw.clear(color.WHITE)
 local prov=provOf(ctx)
-local style=s0(ctx.cfg.style)
+local style=setStyle(s0(ctx.cfg.style))
 local top=draw.top+4
 if n0(page)==2 then
 local list,urgent=routesData(ctx,prov)
@@ -1547,6 +1627,8 @@ return {{idx=1,name=T("Zur Arbeit","To work"),icon="work",toLabel="Hauptbahnhof"
 {idx=2,name=T("Zum Sport","To the gym"),icon="star",toLabel="Farmsen",conns={mk("275",OTHER,n+11*60,"Farmsen",0)}}}
 end
 function on_widget(ctx,box)
+setStyle(ctx.cfg.style)
+box=widgetFrame(box)
 EN=ctx.lang=="en"
 OFF,NOW,WALK=tzOff(),time.now() or 0,walkMin(ctx)
 local prov=provOf(ctx)

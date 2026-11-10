@@ -8,7 +8,7 @@
     "de": "Heute",
     "en": "Today"
   },
-  "version": "1.0.12",
+  "version": "1.1.0",
   "apiLevel": 8,
   "pages": [
     {
@@ -37,21 +37,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Hero + Kacheln)",
           "flat": "Slate (Zeitleiste)",
-          "compact": "Nano (Kompaktliste)"
+          "compact": "Nano (Kompaktliste)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (hero + tiles)",
           "flat": "Slate (timeline)",
-          "compact": "Nano (compact list)"
+          "compact": "Nano (compact list)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

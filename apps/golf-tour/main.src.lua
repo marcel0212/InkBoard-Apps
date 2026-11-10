@@ -22,6 +22,7 @@ local MAX_COMPETITORS = 200          -- so viele Spieler hoechstens auswerten; d
 
 --#include text
 --#include ui
+--#include theme
 --#include dates
 
 -- ---------------------------------------------------------------------------
@@ -422,7 +423,7 @@ local function tallGolf(ctx, m, style)
       local row = m.rows[i]
       local tx = marginX + (i - 1) * (tileW + gap)
       local mid = tx + tileW // 2
-      draw.rect(tx, listTop, tileW, podiumH, i == 1 and color.ACCENT or color.BLACK, false, 12)
+      panel(tx, listTop, tileW, podiumH, 12, i == 1 and color.ACCENT or color.BLACK)
       posBadge(mid, listTop + 30, 20, row.pos, i == 1)
       for li, l in ipairs(nls[i]) do draw.text(mid, listTop + 70 + (li - 1) * 16, l, "small", color.BLACK, "center") end
       draw.text(mid, listTop + 112 + ex, row.score, "large", color.BLACK, "center")
@@ -477,7 +478,7 @@ local function drawCards(ctx, m)
     local row = m.rows[i]
     local tx = marginX + (i - 1) * (tileW + gap)
     local mid = tx + tileW // 2
-    draw.rect(tx, podiumTop, tileW, podiumH, i == 1 and color.ACCENT or color.BLACK, false, 12)
+    panel(tx, podiumTop, tileW, podiumH, 12, i == 1 and color.ACCENT or color.BLACK)
     posBadge(mid, podiumTop + 30, 20, row.pos, i == 1)
     draw.text(mid, podiumTop + 70, fit(row.player, tileW - 20, "small"), "small", color.BLACK, "center")
     draw.text(mid, podiumTop + 112, row.score, "large", color.BLACK, "center")
@@ -596,7 +597,7 @@ function on_draw(ctx, page)
     m.lv = 0
     for _, r in ipairs(m.rows) do r.status = "" end
   end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if style == "flat" then drawFlat(ctx, m)
   elseif style == "compact" then drawCompact(ctx, m)
   else drawCards(ctx, m) end
@@ -607,6 +608,8 @@ end
 -- ---------------------------------------------------------------------------
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = ctx.lang == "en"
   local m = model(ctx)
   if m == nil or #m.rows == 0 then

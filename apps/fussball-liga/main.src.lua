@@ -19,6 +19,8 @@ local SHOW = true -- Zusatzinfos (Heim/Auswärts, Spielort im nächsten Spiel): 
 
 --#include text
 --#include dates
+--#include ui
+--#include theme
 
 local OLDB = "https://api.openligadb.de/"
 local FDB = "https://api.football-data.org/v4/"
@@ -1015,7 +1017,7 @@ local function teamBento(ctx, lg, d, top)
   local heroW = draw.width - 2 * heroX
   local tall = draw.height > draw.width
   local heroH = tall and 310 or 256
-  draw.rect(heroX, y, heroW, heroH, color.BLACK, false, 12)
+  panel(heroX, y, heroW, heroH, 12)
   local oname, otla, ocol = ownOf(d)
   local nx = d.nxt[1]
   if nx then
@@ -1059,7 +1061,7 @@ local function teamBento(ctx, lg, d, top)
     local rc = resColor(m.res)
     if tall then
       local ty = tilesTop + i * (tileH + 8)
-      draw.rect(heroX, ty, heroW, tileH, rc, false, 10)
+      panel(heroX, ty, heroW, tileH, 10, rc)
       draw.circle(heroX + 26, ty + tileH // 2, 11, rc, true)
       draw.text(heroX + 26, ty + tileH // 2 + 5, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
       badge(heroX + 50, ty + tileH // 2 - 11, 42, 22, m.tla, m.col, 7)
@@ -1068,7 +1070,7 @@ local function teamBento(ctx, lg, d, top)
       draw.text(heroX + 114, ty + tileH // 2 + 6, fit(m.opp, heroW - 114 - draw.measure(sc, "large") - 36, "normal"), "normal", color.BLACK, "left")
       goto continue
     end
-    draw.rect(tx, tilesTop, tileW, tileH, rc, false, 10)
+    panel(tx, tilesTop, tileW, tileH, 10, rc)
     draw.circle(tx + 18, tilesTop + 19, 9, rc, true)
     draw.text(tx + 18, tilesTop + 24, m.res, "small", rc == color.YELLOW and color.BLACK or color.WHITE, "center")
     draw.text(tx + 32, tilesTop + 24, fit(m.opp, tileW - 40, "small"), "small", color.BLACK, "left")
@@ -1471,7 +1473,7 @@ function on_draw(ctx, page)
   local code, lg = cfgOf(ctx)
   if emptyState(ctx, lg) then return end
   local d = readData(ctx)
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   local top = draw.top
   if p == 2 then
     if style == "flat" then tableSlate(ctx, lg, d, top) elseif style == "compact" then tableNano(ctx, lg, d, top) else tableBento(ctx, lg, d, top) end
@@ -1495,6 +1497,8 @@ local function sampleData()
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   EN = ctx.lang == "en"
   D, OFF_NOW = nil, nil
   local d = readData(ctx)

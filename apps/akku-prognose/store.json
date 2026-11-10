@@ -29,6 +29,86 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-forecast-relief.svg",
+      "caption": {
+        "de": "Relief: Prognose",
+        "en": "Relief: Forecast"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-advisor-relief.svg",
+      "caption": {
+        "de": "Relief: Spar-Berater",
+        "en": "Relief: Saving advisor"
+      },
+      "page": 1,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-check-relief.svg",
+      "caption": {
+        "de": "Relief: Einstellungen",
+        "en": "Relief: Settings check"
+      },
+      "page": 2,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-collecting-relief.svg",
+      "caption": {
+        "de": "Relief: Prognose",
+        "en": "Relief: Forecast"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-forecast-klar.svg",
+      "caption": {
+        "de": "Klar: Prognose",
+        "en": "Clear: Forecast"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-advisor-klar.svg",
+      "caption": {
+        "de": "Klar: Spar-Berater",
+        "en": "Clear: Saving advisor"
+      },
+      "page": 1,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-check-klar.svg",
+      "caption": {
+        "de": "Klar: Einstellungen",
+        "en": "Clear: Settings check"
+      },
+      "page": 2,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-collecting-klar.svg",
+      "caption": {
+        "de": "Klar: Prognose",
+        "en": "Clear: Forecast"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-forecast.svg",
       "caption": {
         "de": "Prognose (Bento)",
@@ -82,6 +162,22 @@
         "en": "Still collecting data"
       },
       "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

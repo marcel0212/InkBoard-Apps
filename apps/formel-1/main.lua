@@ -86,12 +86,6 @@ local col,row=(i - 1)%cols,(i - 1)//cols
 return margin+col*(tileW+gap),top+row*(tileH+gap),tileW,tileH
 end,tileW,tileH
 end
-local function card(x,y,w,h,c,r)
-r=r or 10
-draw.rect(x,y,w,h,color.WHITE,true,r)
-draw.rect(x,y,w,h,color.BLACK,false,r)
-draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
-end
 local function columns(widths,rightEdge)
 local total=0
 for _,w in ipairs(widths) do total=total+w end
@@ -124,6 +118,78 @@ lines[i]=l
 end
 end
 return lines
+end
+local theme={s="cards"}
+local function setStyle(s)
+theme.s=s or "cards"
+if theme.s=="relief" or theme.s=="klar" then return "cards" end
+return s
+end
+local function card(x,y,w,h,c,r,nobar)
+if theme.s=="relief" then
+r=r or 12
+draw.rect(x+5,y+5,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+if not nobar then draw.rect(x+6,y+10,4,h - 20,c or color.ACCENT,true,2) end
+return
+elseif theme.s=="klar" then
+r=r or 20
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+return
+end
+r=r or 10
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2)
+end
+local function panel(x,y,w,h,r,c)
+c=c or color.BLACK
+local big=w>=60 and h>=30
+if theme.s=="relief" and big then
+local s=5
+draw.rect(x+w,y+s,s,h,color.BLACK,true)
+draw.rect(x+s,y+h,w,s,color.BLACK,true)
+end
+draw.rect(x,y,w,h,c,false,r)
+if theme.s=="klar" and big then draw.rect(x+1,y+1,w - 2,h - 2,c,false,r) end
+end
+local function widgetFrame(box)
+if theme.s~="relief" and theme.s~="klar" then return box end
+local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
+card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
+local pad=theme.s=="relief" and 14 or 8
+local inner={}
+for k,v in pairs(box) do inner[k]=v end
+inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
+return inner
+end
+local function pill(x,y,w,h,c,txt,font,tc)
+local r=h//2
+c=c or color.ACCENT
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,c,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+elseif theme.s=="klar" then
+draw.rect(x,y,w,h,c,true,r)
+else
+draw.rect(x,y,w,h,c,false,r)
+tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
+end
+if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+end
+local function pbar(x,y,w,h,frac,c)
+frac=math.max(0,math.min(1,frac or 0))
+c=c or color.ACCENT
+local r=h//2
+if theme.s=="relief" then draw.rect(x+3,y+3,w,h,color.BLACK,true,r) ; draw.rect(x,y,w,h,color.WHITE,true,r) end
+draw.rect(x,y,w,h,color.BLACK,false,r)
+local fw=math.floor((w - 4)*frac)
+if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
+elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
 end
 local function dfc(y,m,d)
 if m<=2 then y=y - 1 end
@@ -902,7 +968,7 @@ draw.text(cx,y+168,raceLine(n),"normal",color.BLACK,"left")
 pill(cx,y+186,countdown(n.start,true),true)
 local trY,trH=y,cardH
 if tall then rightX,rightW,trY,trH=leftX,draw.width - 40,y+cardH+14,270 end
-draw.rect(rightX,trY,rightW,trH,color.BLACK,false,12)
+panel(rightX,trY,rightW,trH,12)
 drawTrack(rightX+16,trY+12,rightW - 32,trH - 92,n.cid)
 local mid=rightX+rightW//2
 if ci then
@@ -915,7 +981,7 @@ end
 local schedY=(tall and trY+trH or y+cardH)+14
 local schedH=bottom - schedY
 if schedH<90 then return end
-draw.rect(leftX,schedY,draw.width - 2*leftX,schedH,color.BLACK,false,12)
+panel(leftX,schedY,draw.width - 2*leftX,schedH,12)
 draw.text(leftX+22,schedY+26,T("ZEITPLAN","SCHEDULE"),"small",color.BLACK,"left")
 local sess=allSessions(n)
 local cnt=#sess
@@ -1203,7 +1269,7 @@ if tall then
 listW=headW
 mainH=math.min(mainH - 3*62 - 14 - 10,8*44+24)
 end
-draw.rect(headX,y2,listW,mainH,color.BLACK,false,12)
+panel(headX,y2,listW,mainH,12)
 local rows=math.min(#L.rows,8)
 local rowH=(mainH - 24)//math.max(rows,1)
 local maxGapW=maxGapWidth(L.rows,rows,"normal")
@@ -1232,7 +1298,7 @@ if tall then infoX,infoW,infoH,infoTop=headX,headW,62,y2+mainH+14 end
 local labels={T("SCHN. RUNDE","FASTEST LAP"),T("AUSFÄLLE","RETIREMENTS"),T("POLE-POSITION","POLE POSITION")}
 for c=1,3 do
 local cy=infoTop+(c - 1)*(infoH+10)
-draw.rect(infoX,cy,infoW,infoH,color.BLACK,false,10)
+panel(infoX,cy,infoW,infoH,10)
 draw.text(infoX+16,cy+24,labels[c],"small",color.BLACK,"left")
 local v
 if c==1 then
@@ -1334,7 +1400,7 @@ draw.text(headX,y+16,fit(head,headW,"small"),"small",color.BLACK,"left")
 draw.text(headX,y+46,lab(LAST_LABEL,kind),"large",color.BLACK,"left")
 local y2=y+62
 local mainH=bottom - y2
-draw.rect(headX,y2,headW,mainH,color.BLACK,false,12)
+panel(headX,y2,headW,mainH,12)
 local rows=math.min(#rowsAll,RESULT_MAX)
 local rowH=(mainH - 20)//math.max(rows,1)
 local maxTimeW=0
@@ -1372,7 +1438,7 @@ resetData()
 draw.clear(color.WHITE)
 local p=page or 1
 if tonumber(ctx.cfg.page) then p=tonumber(ctx.cfg.page)+1 end
-local style=ctx.cfg.style
+local style=setStyle(ctx.cfg.style)
 if p==2 then
 drawStandings(ctx,style)
 elseif p==3 then
@@ -1397,6 +1463,8 @@ draw.rect(x+2,y,4*q,3*q,color.BLACK,false)
 draw.rect(x,y,2,s+q,color.BLACK,true)
 end
 function on_widget(ctx,box)
+setStyle(ctx.cfg.style)
+box=widgetFrame(box)
 EN=ctx.lang=="en"
 resetData()
 local cal=getCal()

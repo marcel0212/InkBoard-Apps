@@ -1,3 +1,4 @@
+--#include theme
 local SHOW = true -- Zusatzinfos (Uhrzeit der Nachricht): Einstellung "details"; in der Vorschau (ctx.preview) immer
 -- Pinnwand (Paket pinnwand-app, Skript-Variante der Anzeige der eingebauten App "pinnwand"): die zuletzt empfangene
 -- Familien-Nachricht als angeheftete Notiz. Skript-API Level 17 (inbox.latest()).
@@ -99,6 +100,7 @@ local function emptyState(en, y)
 end
 
 function on_draw(ctx, page)
+  setStyle(ctx.cfg.style)
   local en = (ctx.lang == "en")
   SHOW = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
@@ -117,7 +119,7 @@ function on_draw(ctx, page)
   local cardH = cardBottom - cardY
   -- Zettel (drawAccentCard): weiss, schwarzer Rand, Akzentleiste links
   draw.rect(cardX, cardY, cardW, cardH, color.WHITE, true, 18)
-  draw.rect(cardX, cardY, cardW, cardH, color.BLACK, false, 18)
+  panel(cardX, cardY, cardW, cardH, 18)
   draw.rect(cardX + 6, cardY + 6, 5, cardH - 12, color.ACCENT, true, 2)
 
   -- Stecknadel: Kopf zur Haelfte auf der Zettel-Oberkante

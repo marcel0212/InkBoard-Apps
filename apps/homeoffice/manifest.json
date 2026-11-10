@@ -8,7 +8,7 @@
     "de": "Office",
     "en": "Office"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "apiLevel": 10,
   "pages": [
     {
@@ -65,21 +65,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "bento",
         "slate",
         "nano"
       ],
-      "default": "bento",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "bento": "Bento",
           "slate": "Slate",
-          "nano": "Nano"
+          "nano": "Nano",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "bento": "Bento",
           "slate": "Slate",
-          "nano": "Nano"
+          "nano": "Nano",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

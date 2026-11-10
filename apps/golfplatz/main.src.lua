@@ -36,6 +36,7 @@ local EVENT_LEN, NOTE_LEN = 63, 47
 
 --#include text
 --#include ui
+--#include theme
 --#include dates
 
 -- ---------------------------------------------------------------------------
@@ -481,8 +482,8 @@ local function todayBento(m, di, top)
   if tallB then
     cardH = math.max(168, 100 + #heroLines * 22 + (noteLines and (#noteLines * 20 + 10) or 0) + 12)
   end
-  draw.rect(margin, y, contentW, cardH, hc, false, 16)
-  draw.rect(margin + 1, y + 1, contentW - 2, cardH - 2, hc, false, 15)
+  panel(margin, y, contentW, cardH, 16, hc)
+  panel(margin + 1, y + 1, contentW - 2, cardH - 2, 15, hc)
   local lab = colLabel(hero.col)
   local chipW = draw.measure(lab, "small") + 18
   draw.rect(margin + 16, y + 12, chipW, 20, hc, true, 10)
@@ -511,7 +512,7 @@ local function todayBento(m, di, top)
     boxW = contentW
     rowH = math.max(60, (draw.height - 16 - rowY - 14) // 2)
   end
-  draw.rect(margin, rowY, boxW, rowH, color.BLACK, false, 12)
+  panel(margin, rowY, boxW, rowH, 12)
   if #d.es > 1 then
     local e2 = d.es[hi == 1 and 2 or 1]
     dot(margin + 20, rowY + 22, 6, e2.col)
@@ -706,7 +707,7 @@ local function weekBentoTall(m, si, top)
   local y = areaTop
   for _, c in ipairs(plan) do
     local d, cardH = c.d, c.h
-    draw.rect(margin, y, contentW, cardH, color.BLACK, false, 10)
+    panel(margin, y, contentW, cardH, 10)
     draw.rect(margin, y, 96, cardH, color.BLACK, true, 10)
     draw.rect(margin + 86, y, 10, cardH, color.BLACK, true)
     draw.text(margin + 10, y + 24, wdOf(d), "normal", color.WHITE)
@@ -740,7 +741,7 @@ local function weekBento(m, si, top)
   for i = 0, days - 1 do
     local d = m.days[si + i]
     local y = areaTop + i * (cardH + 6)
-    draw.rect(margin, y, contentW, cardH, color.BLACK, false, 10)
+    panel(margin, y, contentW, cardH, 10)
     draw.rect(margin, y, 96, cardH, color.BLACK, true, 10)
     draw.rect(margin + 86, y, 10, cardH, color.BLACK, true)
     draw.text(margin + 10, y + cardH // 2 - 2, wdOf(d), "normal", color.WHITE)
@@ -936,7 +937,7 @@ local function fortnightCard(m, x, w, top, si, count, ovH)
     end
     cardH = 30 + sum + 6
   end
-  draw.rect(x, cardTop, w, cardH, color.BLACK, false, 12)
+  panel(x, cardTop, w, cardH, 12)
   draw.rect(x, cardTop, w, 24, color.BLACK, true, 12)
   draw.rect(x, cardTop + 12, w, 12, color.BLACK, true)
   local head = "-"
@@ -1117,7 +1118,7 @@ function on_draw(ctx, page)
     for _, dd in ipairs(m.days) do for _, e in ipairs(dd.es) do e.note = "" end end
   end
   local top = draw.top
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if page == 2 then
     local si = todayIndex(m)
     if style == "flat" then weekSlate(m, si, top)
@@ -1151,6 +1152,8 @@ local function sampleModel()
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   EN = ctx.lang == "en"
   local m = loadPlan()
   if m and m.club ~= clubOf(ctx.cfg) then m = nil end

@@ -4,7 +4,7 @@
     "de": "Fußball",
     "en": "Football"
   },
-  "version": "1.0.20",
+  "version": "1.1.0",
   "apiLevel": 14,
   "pages": [
     {
@@ -174,21 +174,27 @@
       "key": "style",
       "type": "select",
       "options": [
+        "relief",
+        "klar",
         "cards",
         "flat",
         "compact"
       ],
-      "default": "cards",
+      "default": "relief",
       "optionLabels": {
         "de": {
           "cards": "Bento (Kacheln)",
           "flat": "Slate (Listen)",
-          "compact": "Nano (kompakt)"
+          "compact": "Nano (kompakt)",
+          "relief": "Relief (Tiefe)",
+          "klar": "Klar (Apple)"
         },
         "en": {
           "cards": "Bento (tiles)",
           "flat": "Slate (lists)",
-          "compact": "Nano (compact)"
+          "compact": "Nano (compact)",
+          "relief": "Relief (depth)",
+          "klar": "Clear (Apple)"
         }
       },
       "label": {

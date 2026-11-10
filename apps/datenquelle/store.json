@@ -29,6 +29,26 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-display-relief.svg",
+      "page": 0,
+      "caption": {
+        "de": "Relief: Daten",
+        "en": "Relief: Data"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "page": 0,
+      "caption": {
+        "de": "Klar: Daten",
+        "en": "Clear: Data"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-display.svg",
       "page": 0,
       "caption": {
@@ -54,6 +74,22 @@
       "caption": {
         "de": "Liste (Nano)",
         "en": "List (Nano)"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
       }
     },
     {

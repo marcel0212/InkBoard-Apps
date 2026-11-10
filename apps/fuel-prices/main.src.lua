@@ -11,6 +11,7 @@ local MAX_STATIONS = 10
 
 --#include text
 --#include ui
+--#include theme
 
 local function en_(ctx) return ctx.lang == "en" end
 
@@ -554,7 +555,7 @@ function on_draw(ctx, page)
   if emptyState(ctx, st) then return end
   -- Zusatzinfos (Adresse der Tankstelle): Einstellung "details"; in der Vorschau (ctx.preview) immer
   if ctx.cfg.details == false and ctx.preview ~= true then for _, s in ipairs(st) do s.addr = "" end end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if style == "flat" then drawFlat(ctx, st, en_(ctx))
   elseif style == "compact" then drawCompact(ctx, st, en_(ctx))
   else drawCards(ctx, st, en_(ctx)) end
@@ -571,6 +572,8 @@ local function pump(x, y, w, h, c)
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local st = loadStations(ctx)
   local compact = ctx.cfg.wCompact == true
   local font = (box.font or 0) < 0 and "small" or "normal"

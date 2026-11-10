@@ -27,6 +27,66 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-today-relief.svg",
+      "caption": {
+        "de": "Relief: Heute",
+        "en": "Relief: Today"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-week-relief.svg",
+      "caption": {
+        "de": "Relief: Woche",
+        "en": "Relief: Week"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-14d-relief.svg",
+      "caption": {
+        "de": "Relief: 14 Tage",
+        "en": "Relief: 14 days"
+      },
+      "style": "relief",
+      "page": 2
+    },
+    {
+      "kind": "display",
+      "file": "preview-today-klar.svg",
+      "caption": {
+        "de": "Klar: Heute",
+        "en": "Clear: Today"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-week-klar.svg",
+      "caption": {
+        "de": "Klar: Woche",
+        "en": "Clear: Week"
+      },
+      "style": "klar",
+      "page": 1
+    },
+    {
+      "kind": "display",
+      "file": "preview-14d-klar.svg",
+      "caption": {
+        "de": "Klar: 14 Tage",
+        "en": "Clear: 14 days"
+      },
+      "style": "klar",
+      "page": 2
+    },
+    {
+      "kind": "display",
       "file": "preview-today.svg",
       "caption": {
         "de": "Bento: Heute, Fokuskarte mit FREI-Feld",
@@ -114,6 +174,22 @@
       },
       "style": "compact",
       "page": 2
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

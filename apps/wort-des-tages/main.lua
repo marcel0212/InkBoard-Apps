@@ -83,6 +83,95 @@ local function translateText(s, from, to)
   return nil, "fail"
 end
 -- <<< store/lib/translate.lua
+-- >>> store/lib/theme.lua (erzeugt, dort aendern)
+-- Stil-Bausteine fuer Relief/Klar (store/lib/theme.lua): setStyle(), card(), panel(), widgetFrame()
+
+-- Stil-Weiche: setStyle(ctx.cfg.style) vor dem Zeichnen; "relief" und "klar" nutzen das Kartenlayout, aber mit eigener Optik.
+local theme = { s = "cards" }
+local function setStyle(s)
+  theme.s = s or "cards"
+  if theme.s == "relief" or theme.s == "klar" then return "cards" end
+  return s
+end
+
+-- Karte: Standard = Akzentbalken links. Relief = harter Schatten + eingerueckter Balken, Klar = helle Kachel ohne Balken.
+-- nobar = true: Relief ohne Balken (wenn links schon eine farbige Pille/Marke sitzt).
+local function card(x, y, w, h, c, r, nobar)
+  if theme.s == "relief" then
+    r = r or 12
+    draw.rect(x + 5, y + 5, w, h, color.BLACK, true, r)
+    draw.rect(x, y, w, h, color.WHITE, true, r)
+    draw.rect(x, y, w, h, color.BLACK, false, r)
+    if not nobar then draw.rect(x + 6, y + 10, 4, h - 20, c or color.ACCENT, true, 2) end
+    return
+  elseif theme.s == "klar" then
+    r = r or 20
+    draw.rect(x, y, w, h, color.WHITE, true, r)
+    draw.rect(x, y, w, h, color.BLACK, false, r)
+    draw.rect(x + 1, y + 1, w - 2, h - 2, color.BLACK, false, r)
+    return
+  end
+  r = r or 10
+  draw.rect(x, y, w, h, color.WHITE, true, r)
+  draw.rect(x, y, w, h, color.BLACK, false, r)
+  draw.rect(x + 6, y + 6, 5, h - 12, c or color.ACCENT, true, 2)
+end
+
+-- Umrandete Flaeche (auch nach dem Inhalt aufrufbar): Relief = Schatten nur an Unter- und Rechtskante, Klar = doppelter Rahmen.
+-- Kleine Flaechen (Haekchen, Punkte) bekommen weder Schatten noch Doppelrahmen.
+local function panel(x, y, w, h, r, c)
+  c = c or color.BLACK
+  local big = w >= 60 and h >= 30
+  if theme.s == "relief" and big then
+    local s = 5
+    draw.rect(x + w, y + s, s, h, color.BLACK, true)
+    draw.rect(x + s, y + h, w, s, color.BLACK, true)
+  end
+  draw.rect(x, y, w, h, c, false, r)
+  if theme.s == "klar" and big then draw.rect(x + 1, y + 1, w - 2, h - 2, c, false, r) end
+end
+
+-- Widget im Stil Relief/Klar: eine Karte um den ganzen Inhalt; gibt die Box fuer den Inhalt zurueck (sonst unveraendert).
+local function widgetFrame(box)
+  if theme.s ~= "relief" and theme.s ~= "klar" then return box end
+  local x, y, w, h = box.x + 4, box.y + 2, box.w - 14, box.h - 12
+  card(x, y, w, h, color.ACCENT, theme.s == "relief" and 12 or 18)
+  local pad = theme.s == "relief" and 14 or 8
+  local inner = {}
+  for k, v in pairs(box) do inner[k] = v end
+  inner.x, inner.y, inner.w, inner.h = box.x + pad, box.y + 8, box.w - pad - 16, box.h - 20
+  return inner
+end
+
+-- Erhabene Pille (Relief: harter Schatten, Klar: flach gefuellt, sonst nur Rahmen); Text optional, zentriert.
+local function pill(x, y, w, h, c, txt, font, tc)
+  local r = h // 2
+  c = c or color.ACCENT
+  if theme.s == "relief" then
+    draw.rect(x + 3, y + 3, w, h, color.BLACK, true, r)
+    draw.rect(x, y, w, h, c, true, r)
+    draw.rect(x, y, w, h, color.BLACK, false, r)
+  elseif theme.s == "klar" then
+    draw.rect(x, y, w, h, c, true, r)
+  else
+    draw.rect(x, y, w, h, c, false, r)
+    tc = tc or (c == color.ACCENT and color.ACCENT_TEXT or c)
+  end
+  if txt then draw.text(x + w // 2, y + h // 2 + 8, txt, font or "small", tc or (c == color.ACCENT and color.ACCENT_INK or color.WHITE), "center") end
+end
+
+-- Fortschrittsbalken; Relief mit Schatten unter der Rinne, Klar als schmale runde Rinne.
+local function pbar(x, y, w, h, frac, c)
+  frac = math.max(0, math.min(1, frac or 0))
+  c = c or color.ACCENT
+  local r = h // 2
+  if theme.s == "relief" then draw.rect(x + 3, y + 3, w, h, color.BLACK, true, r) ; draw.rect(x, y, w, h, color.WHITE, true, r) end
+  draw.rect(x, y, w, h, color.BLACK, false, r)
+  local fw = math.floor((w - 4) * frac)
+  if fw > h - 4 then draw.rect(x + 2, y + 2, fw, h - 4, c, true, (h - 4) // 2)
+  elseif fw > 2 then draw.rect(x + 2, y + 2, fw, h - 4, c, true) end
+end
+-- <<< store/lib/theme.lua
 
 -- Farben: die Akzentfarbe ist die globale Einstellung des Geraets (color.ACCENT*), wie bei allen Apps.
 
@@ -230,6 +319,8 @@ end
 function on_draw(ctx, page)
   local en = (ctx.lang == "en")
   local accent = color.ACCENT
+  setStyle(ctx.cfg.style)
+  local fancy = theme.s == "relief" or theme.s == "klar"
 
   -- Den Kopf (App-Name, Status, Uhrzeit) zeichnet die Firmware; clear gilt nur darunter.
   draw.clear(color.WHITE)
@@ -253,7 +344,11 @@ function on_draw(ctx, page)
   local panelX, panelW = 40, 240
   local panelH = areaBottom - areaTop
   if tall then panelX, panelW, panelH = 20, draw.width - 40, 230 end
-  draw.rect(panelX, areaTop, panelW, panelH, accent, true, 18)
+  if theme.s == "relief" then -- Akzentflaeche mit hartem Schatten
+    panelH = panelH - 6
+    draw.rect(panelX + 6, areaTop + 6, panelW, panelH, color.BLACK, true, 18)
+  end
+  draw.rect(panelX, areaTop, panelW, panelH, accent, true, fancy and 22 or 18)
   local tx, tw = panelX + 24, panelW - 48
   bookIcon(tx, areaTop + 26, 40, color.WHITE)
   draw.wrap(tx, areaTop + 26 + 40 + 38, tw, word, "large", color.WHITE)
@@ -274,6 +369,12 @@ function on_draw(ctx, page)
   local cw = draw.width - 40 - cl
   local top2 = areaTop
   if tall then cl, cw, top2 = 28, draw.width - 56, areaTop + panelH + 20 end
+  if fancy then -- Bedeutung und Beispiel auf einer Karte
+    local kx = cl - 8
+    local kw = draw.width - 46 - kx
+    card(kx, top2, kw, areaBottom - top2 - 6, accent, theme.s == "relief" and 16 or 22)
+    cl, cw = kx + 26, kw - 46
+  end
   -- Dekoratives Anfuehrungszeichen ueber der Bedeutung (wie die eingebaute App)
   if not tall then draw.text(cl - 4, areaTop + 42, '"', "large", color.ACCENT_TEXT, "left") end
   local cy = top2 + (tall and 24 or 58)
@@ -298,13 +399,16 @@ end
 -- box.fh = volle Widget-Hoehe (daraus ergeben sich die Stufen). Rahmen/Titel/"Noch keine Daten" zeichnet die Firmware.
 local function fit(s, w, font)
   while #s > 1 and draw.measure(s, font) > w do
-    s = s:sub(1, #s - 1)
-    while #s > 1 and (s:byte(#s) & 0xC0) == 0x80 do s = s:sub(1, #s - 1) end
+    local n = #s -- ganzes Zeichen entfernen (UTF-8: Folgebytes und Startbyte)
+    while n > 1 and (s:byte(n) & 0xC0) == 0x80 do n = n - 1 end
+    s = s:sub(1, n - 1)
   end
   return s
 end
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = (ctx.lang == "en")
   local wordEn = ctx.data.get("wordEn")
   if ctx.sample then -- Beispieldaten fuer die Widget-Vorschau im Dashboard-Editor (CHANGELOG 559)

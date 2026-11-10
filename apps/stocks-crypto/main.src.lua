@@ -15,6 +15,7 @@ local CHARS = "0123456789abcdefghijklmnopqrstuvwxyz"
 
 --#include text
 --#include ui
+--#include theme
 
 -- Bekannte Symbole mit schoenem Namen (wie der feste Katalog der eingebauten App)
 local CATALOG = {
@@ -511,7 +512,7 @@ function on_draw(ctx, page)
   local p = math.max(1, math.min(page or 1, 2))
   local items = pageItems(ctx, p)
   if emptyState(ctx, p, items) then return end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if style == "flat" then drawFlat(ctx, items)
   elseif style == "compact" then drawCompact(ctx, items)
   else drawCards(ctx, items) end
@@ -522,6 +523,8 @@ end
 -- ---------------------------------------------------------------------------
 
 function on_widget(ctx, box)
+  setStyle(ctx.cfg.style)
+  box = widgetFrame(box)
   local en = ctx.lang == "en"
   local items = pageItems(ctx, ctx.cfg.wKind == "crypto" and 2 or 1)
   local font = ((box.font or 0) > 0) and "normal" or "small"

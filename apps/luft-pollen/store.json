@@ -29,6 +29,46 @@
   "previews": [
     {
       "kind": "display",
+      "file": "preview-air-relief.svg",
+      "caption": {
+        "de": "Relief: Luft",
+        "en": "Relief: Air"
+      },
+      "page": 0,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-pollen-relief.svg",
+      "caption": {
+        "de": "Relief: Pollen",
+        "en": "Relief: Pollen"
+      },
+      "page": 1,
+      "style": "relief"
+    },
+    {
+      "kind": "display",
+      "file": "preview-air-klar.svg",
+      "caption": {
+        "de": "Klar: Luft",
+        "en": "Clear: Air"
+      },
+      "page": 0,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
+      "file": "preview-pollen-klar.svg",
+      "caption": {
+        "de": "Klar: Pollen",
+        "en": "Clear: Pollen"
+      },
+      "page": 1,
+      "style": "klar"
+    },
+    {
+      "kind": "display",
       "file": "preview-air.svg",
       "caption": {
         "de": "Luft (Bento)",
@@ -64,6 +104,22 @@
       },
       "page": 0,
       "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Relief",
+        "en": "Widget: Relief"
+      }
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Klar",
+        "en": "Widget: Clear"
+      }
     },
     {
       "kind": "widget",

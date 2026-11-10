@@ -33,14 +33,6 @@ local function gridLayout(n, cols, top, bottom, margin, gap, maxTileH)
   end, tileW, tileH
 end
 
--- Karte mit Akzentbalken links (wie drawAccentCard() der eingebauten Apps); c = Farbe des Balkens.
-local function card(x, y, w, h, c, r)
-  r = r or 10
-  draw.rect(x, y, w, h, color.WHITE, true, r)
-  draw.rect(x, y, w, h, color.BLACK, false, r)
-  draw.rect(x + 6, y + 6, 5, h - 12, c or color.ACCENT, true, 2)
-end
-
 -- Rechtsbuendige Spalten fuer Tabellen (Nano): gibt die linke Kante jeder Spalte zurueck.
 -- widths = Liste der Spaltenbreiten (inkl. Abstand), rightEdge = rechte Kante der letzten Spalte.
 local function columns(widths, rightEdge)
