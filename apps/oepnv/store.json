@@ -131,7 +131,8 @@
       "caption": {
         "de": "Widget: Relief",
         "en": "Widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "file": "preview-widget-klar.svg",
@@ -139,7 +140,8 @@
       "caption": {
         "de": "Widget Routen: Klar",
         "en": "Routes widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -147,7 +149,8 @@
       "caption": {
         "de": "Widget „Abfahrten“",
         "en": "“Departures” widget"
-      }
+      },
+      "style": "cards"
     },
     {
       "kind": "widget",
@@ -155,7 +158,8 @@
       "caption": {
         "de": "Widget „Routen“",
         "en": "“Routes” widget"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

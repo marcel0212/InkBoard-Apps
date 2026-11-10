@@ -245,13 +245,15 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "991afdd6d0682a18ba3666e30fbc2b1bb12b0da1d61fee510e5a02de23aeb486",
-      "sig": "p/7t2rHzWVXP8OfXkrFEeX4E3WEsv+Qb+/NwILgcYNZhfgqafYsSjj693PdKDmPiHnToSijM3G0HJkaz1T8ecQfrI7DNUO+qatDhrykCWibPVv+SboBCduVz0DIs59QVDmhMWvI8tRi19mdyMfMjNQZ3GC7dExESveRpcS9sqtzefTVg9S4Tio7l4bA7m1+yceq/vXaAsfeGESOEteiQpbHc8Cle5mgFrnM9f9mgzr4fmQ2rYhomakEI1H2RhS5oyiDFnXgqc6RAHfgH4nBqUkZ1f9TNaDC/kMggMaRkpaBdgH9D5YUEqwKBBGcjsGNeYOCDYDUojy6d7sQJuoQfRw==",
-      "size": 32906
+      "sha256": "0dcd8e084ce4168da30026886549deaedc5684ace66ec599770f9efef6490b52",
+      "sig": "J+9yKowTAwDv8Lyqp0RJsoxV+ssNi6si3TT/LSRZkyJHx+6D3ettkRn7KfKWS0301cYW+ReGqQIWtLGBC2wD8Rb+k0zG/99eU7sWg/o+1qrFKDmPU7kOJxRrbV6QsQ5ll0NCLNrfAgn6EKwZ4QUlaijihnk+/hfYvrXEJImcz+lSKSbiKW5sp3pvgpwr8A+Jmtc1HSNDC1E1LnX9fTnfbJOeL7DNE2/7313hdbC5+mB9CeTOEUgYEAZUfC/jFJIXyGWo/Xu3tbLP0V6LSBCgAeI/sazIHe/Lj4NA1STbo8m9ExH7zIz0i4yji3tVPXmMVd6m+qGuP9KKVqTP9FNApA==",
+      "size": 33065
     },
     {
       "id": "apple-home",
@@ -425,13 +427,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "7f8bb3d5b2cc3475799a68f9a44d8232b92277a106930f54b09a53242d9e4019",
-      "sig": "SVusxDQBWPStxP5UWCvLZtupiKdFFSQDiifprtdskTK2QHsh8snGNkttTxf9qCM+s3xDd3RUmrF4J10eK16oq/+92/Jygg62OAIHi+RlZUm1d9n30P7OSTGzfygrQLF5NwbZV8stnGJeRL90snMRpaJrmf1Rz6zfse8HHKCWYnvqJfGy7SfFi4HwLokn23YXWGV0Vq2I7KU4ne+dGzQV8CKWiZsiS1KfAOgOdcgd2+axL2fGXnArJhbUwj2PlIMO69QDPKgjrtGan9XO/vQKu2QcyzMLVAG9HBtPBYh0yu2/TtWOUKZeA5dOasHMgsoc/TYQTbv1xKHAJV3nMWQHpQ==",
-      "size": 31555
+      "sha256": "debae5dfa55512fba5fcc4842cd2b2086f486fa0f6597ebef1a919b5969f0951",
+      "sig": "JJT/K8+fQxDER3g2df/qHZOG6L88wXBwRuTqd7HzjGMg3SCggxniQKofNrhdoZp2fprL4xfMazh9KlZXWca8tl6clOIZ56QCm4L5DQCXtTygQC57UupzpfXs/Lr85DWGtTUyAS+oELF5p0CS82bnynXkm8nmuJJ6cABOunU6mSzns/kW03/4c6qvmqZ56MBkIOyx+NohOCIQOhVnCrQO8oVEXPz20Dh2FF7qYe9zxXCOVUZtJvkbtQMMr3yxuNd3PQIVVAYKaUVCI1pTLOc/UL00slGh3QXhp9UA8jOjbDcETIYSfT/evxGGnG6QymZpVr4GbqWoz/mYaaqXVINbrQ==",
+      "size": 31714
     },
     {
       "id": "bilder",
@@ -505,9 +509,9 @@
         }
       ],
       "package": "apps/bilder/package.json",
-      "sha256": "58f7387089bd94565ee07da192b1b5b734fc8e67b0aa82e45e9a5daf52b1c129",
-      "sig": "sWgEqHkibELikWnt9eOZ9YtB7BvJXtGbxX/TO85gZBqHZpt8u/m1W6K6UPteG1acMnUfzcNChl+eeZZiatIVBDb9hweOeTpxbccIyGZC9FxV74Jfo9jQbHVuuzK4alCEnrbRG5q94hzvrln5buyc6OOShFNNUNYZ6Jl4rxVJweN0p65jj8YzItQ6pAGwLOALryy2sf18bGX7z3A08Qb7F7bscQCY5zIbkRlFHy75p1yIKbWqWD2OYIZVGfaQM5ZF2/y5fAp2pyyF7T4a4YC6VYoxpWjARmjurtc24XBbG1mgqiXLSl+zJl1TDU/vNS53ov7UcL6Ah1yOfsNZ/ATzhw==",
-      "size": 23116
+      "sha256": "82eac578396753df72d9a5bb691966eeb1f6dfeb7b01a946cdde6ef14335b2fe",
+      "sig": "Bcegzz1pPXeAw5uywNTh4TUDnUtca1EMhhUtTsbLvZF1D7yDZyRvZ4NwcT1k1K/CBw4cGx9u2M1898vJ28Y8zAlBW7qXp8iB5kwtS79KVK5yTnv3zQLvMsIZgC5oJzwDkdQjKnIpUNIJ51yMtcMYnSA0r1+tKwvaC6BksU0Pr1+k1XFuTSqOBE49TVOrIq4JQpa+JJ71UXN3bODXHyQh2g36ZczO1zdVZFU2p/0QU4Qs4/reb+ovnusCshyJpbA0j9BXA6FhDlrrt977emlMqhgJ9PlGBIPPVb4LILOtSwxyTjNaQGOgmzrNW8iZVvYcK0KGEvaBhsyquRoGmN7OhQ==",
+      "size": 23158
     },
     {
       "id": "calendar-app",
@@ -721,7 +725,9 @@
           "caption": {
             "de": "Widget: nächste Termine",
             "en": "Widget: next events"
-          }
+          },
+          "style": "cards",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -729,13 +735,15 @@
           "caption": {
             "de": "Widget: kompakte Liste",
             "en": "Widget: compact list"
-          }
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "54d93583432050351b0f22d075e2459480b7dd3415581d799aeb801baefb2135",
-      "sig": "cI9mVw8mHlt0M8l5BX9fiyN7ALecbp6ka0yzHMw/pw6e80aNz1kc7NRp48m0DzkQmIjGXZ6kpUatklkLTxiOSUOnUlFAJZ5wumarCkZB+Gfw1aj1X4bRQgevF2R/1FwuTDf9t2Tbad9xy0b+XyCaYq8FtKZWxEslUWYr6zQta/ybNeWesxDyUu2gEbYSs4L1pK/spXIVbyrnlUmNd8PhFoIfJR/Z6g9SUoDJeCRYVTaJ9K+Jiy/sf+rfVJGnoE4L47756vLAq4r/pLqcGXeakwI4VDxRxbmBQ8cW7ThHZ6K9IjkvpIVR8FLTKyh4bTrF4WvwFOAIkKPczoPUJSVoGQ==",
-      "size": 43923
+      "sha256": "f7e9a11a2cf5588cb5732458cb690fa4820f1567d98a7161e0f3cdb185027d81",
+      "sig": "JguYdKG7Z23nyEgaJHj7BpLaqJZC7qYM+Q4rGaK2bsHSyNxZOQOdRvq17coyX0j+SnfQ89fCdfGUdfLdxarUHIGPIOAm9EMeyIr/m7KAvu7frck6JtYxx0DJiOgXfujB2QCbIOcQlNzSWOUFWHJ8NoElBRdof5oE5MHkb7Rcl51j36tYILciqT1lYt9nYcGM4v/JwTMEMotshVLZkrZcDyDj37EmKh585eNa7956WZ+FtvZ24KbOGi60IzmjtfUsn4yB3Y4As3EnqoMghpDCTO9tNYW0axoZO3eYJLehQhu5LU6qm5Q96EU4WZDbF0C940rCrZcF4oIvU5UfT4xHrg==",
+      "size": 44198
     },
     {
       "id": "clock",
@@ -843,13 +851,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "f928ac6b09c538b6c5dcf3864798b9dd7cf9e0d8584e1fae96a0639a66af9c4d",
-      "sig": "SfQ4fvOC6w0YfgjEzNC9m1W8OUdOB4e5IduDZpNELatpDAWEz1dubzDNMqrxfNpXCqeGR5VkbH8YXBmyX/+9sxYC1wZFAexEZaXSIe9jKm7lFE51F2RRExbNMMPKitgRmHKHFmJt+4gjMDNqu1zKBvQ1r54BSOQDuamVtTyx6ATZ7flASZSdX7dpzRVfXfut0jLJ72Jk6cSyk8CZHDbQNKVMLp/R8R7cb+hbDjh1kZzkGMWtMxBWdmdgfFNyO/6UjjzOZo3YLSLP4RmF0QJ5/9TdNztaqk3sB/tq3DYLJpHUQcvd6Ml2cN/H0yuYqLWhwS/7KnwW2AbAdur2VgUQFg==",
-      "size": 12969
+      "sha256": "59ab8730f49d6ec2e86b63b3a35ff088948ce13b4fc6b9a2ed792639c6381e1e",
+      "sig": "Ys2qJyLAUhlw401liBvwxVm4GURMSHPLUflg8IG7QFe54Z9p6owO3ZuTSmGxzUAHWJhp0aMEmUurMkHx9EhwBSLOkeN2o31sQYBpuZ1vh1e6ve5SJMw0N57C69ihS8tuNt1LT+MSkY9/0u7Z68vjkKl+lJaVhWCo0XSDl1P0DM2kotDhB17EBIF51fyjf0Sp8nA6nn9q8W2x0kmPOJqh8f4oQ0Y0IWfqIAZ9pXLyvNVuZlFsdlHOP8cwBsEViOb5kwsQtfOwY1rG0Aa8tpURlfO5iNmkYLSzMCfC+U8vUvsRlhfGPBlVeNi7zrXwNWh8tWR6ty6ZiiSDndrtKjiYTg==",
+      "size": 13128
     },
     {
       "id": "countdown",
@@ -935,13 +945,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "431c6474d671b4153462e5a85e84ee52417c04689229dd503bb6b4501f31a1ce",
-      "sig": "tJi6V2ozimka16Dzuy4ktYlkbkYLMcVeGZSCSkz0XfG5CrtK3VTaYzrwzgXTIgiSnxOgDEqn6iUIa1HOPv5NUl1Xs7LcVy+b8sEOsTbTCL2+mEe9Fykw1nBPZ6o69NOV2E6zGdtRlFG7VC2Rqzynslv0ZeKZUPrP0982EtRgUJTBqobzjp25BGohN+h5/lDTvPs/MLOiubfL/yUi9OzkPOnfADdmuMOoDevdQx+AOe/liYP7g3LskMAv/TcPBj8SU0ZOgdOa9GUR444PdLFJEBdVTMm3T19RFXeB6Y+FgU/wLYpbcmxYS34Ecb9TpjIu2wMmPh1TY/fEWZ7LyemX2Q==",
-      "size": 7425
+      "sha256": "c8354139faece9959add3da3387697f6507ade111435229f6cf22a066a618ef8",
+      "sig": "ChK47tHklbtOF6tDTwjZzMTVUUzUsfg2kUfoq2WdWi8SkL1VjwC4cBSQUTtiRHLAEwb5AL2CfOcs/Xtar4p98gVxdAdPhWo41WTdBqligLQKQ+L1QPzM6INGqUZ6xKpJJFLh7E6FHiD3W+KTXFq8oU0ZAdWfgjtNaJUahwk6M1vdvbGEQwUJkPBRx0q0efEFqgjWudw1LkFY4UGIouN9p6qn66hfFarXGdXeP/gXJqGyMsGNDPRE9NY7MDkqmNxLg2bi38u26lyb6ACccv/5Y2diu+0JyVmVHHR+LrQ6UnPi+rrOenrs2K5gHqh9ZOt6TEv6mnCwuuPf9NtTbc2JKw==",
+      "size": 7584
     },
     {
       "id": "datenquelle",
@@ -1055,13 +1067,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "ac92e82ea7c46c9f3cbee01d5f1baa82c282bb1c1d25aa10d332c7d02cc3ca90",
-      "sig": "GD9HpBgISMCFJXNhTROqTaithpUs7ux3M4mkFKFcjenOvG8BApDhcmGz73tLQw5lyN4/9Vh1yPsSgXa5MzWaKFiprSQzvPfdwLQrcDZCFBUZqQIYZtIF7NZAMXJONhSC8LYBNyeGy2uDtM/zQHetMEzaG8z9VCOzx2A6RjJypiwtQ4vlSfDB2hzcjSvle8lN4x7Lq6Hroo0MMsBPWvKs6hx4M18UTtwEBME/QKuyAQTqiVwW7peJCbHiJ64ztJtM2QiCja0iGtEmaBqgTzWhsFFYO+kmw6T0/gUQpcoo8+TxfPs7RQekfHvnIpv/d9A3DLurn/SyyiX3GqAxlraj7A==",
-      "size": 24294
+      "sha256": "41ff6420e1801cd7f4a9577af069aa7bf4f0552f0861060fd40503fefb0a3285",
+      "sig": "M1fL8sH+q8F9qgRUVUFMI5Ef/L6fFNJw4KDP31b+9DQHT3KUXyGUUsv0WpZUGgzr5YJ9L8/VmRmmTkwOaoXoDdq8DGd/Jaj9zYhw2j/v9EHFDI9VFTwqE5MdPVwD5AzAx2256zNUc5HijSzwP1LSCEUKOrLNVp8WJ+Uz8ZfS1Z1kuMI+ldoq/5hel13iuyiLTpmM51gNSsBH56Qrjkl8/vf4jlvsf7gnnBlg4L55zS8qDFw/qvBd1CWEaI5A92+AobFRIGo0eqS55e9r8WFcsz1upZv43IIy+hHo3rKYAnfZ0vjlacsYLMWBF1VpWWUNeghFPCbBgUbl+SaJH1L85Q==",
+      "size": 24453
     },
     {
       "id": "einkaufsliste",
@@ -1197,13 +1211,15 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "42266a8954811bf670afc6131bde0caae7f87cb13b2af546c3e9b4b287c1a22a",
-      "sig": "lxTbjml9b13V1pmp8CZbaZukf+infqA3VsGL47OrqsLuxdKxi+q5m1AkEfDl5+CCZ9BqOX9jfp2fLhr5skg031UaNHFgyOaWgE5Nnro50JSgiba6Y96BNnd9GPwu1GMjeG1fZMQ3dWByl0MO83929bXaKvc9GkPyEU3CxrGxEDhWNGvIIiLcm3R3KMzmW+R+hHH9smoW3cj/qvLlN7GUFatnTZXftC0di9ws1aMq886UAcw6i1FNkNuIvEX2KzcpYRVT3Jqg18g4CuWrowwiFy4ZuuUxWjyGw/6e+gL3m8XS7leE9faGKikt7JLMZAWvYAzdyG0X7YL3v7L8MJWoxw==",
-      "size": 33522
+      "sha256": "88f25fa4362b8fcab1f93f898c21c6c271d94c296d2d268b9a8093811b89d8b3",
+      "sig": "aTrkOxiTezw8GinUUOudOCZ0BBxiJfsTLtuJWLw5f+flvjGIlWpeZcItvHRTNJz274A5t+Lowe7dSoLQJt1cQG4ZfkiKsxmjijKwRiJUZM/C57ipEq04wbn1ivvtNS3iyWH1h/q2NqUioRjmk1x9lP4OS9sw2iZLkaKJc4aK67iJk2Lo3RIUkBMI/FlEavXigxFc2U9vpnCOqY6SkY0mehakkQqgrTuQTMz5YlvMFUMcihqzGOqmWdv8LLzRq6Vbim8zr8moDP0TOqGTe777NzsDw8jOY22z3XxQ7MWGtn6szL2zEf+Stz5CdWRIrr+PwcjbtHaEu8PRe1abGkEzng==",
+      "size": 33681
     },
     {
       "id": "flight-radar",
@@ -1298,7 +1314,9 @@
           "caption": {
             "de": "Widget „Nächster Flug“ mit Airline und Kennzeichen",
             "en": "“Next flight” widget with airline and registration"
-          }
+          },
+          "style": "cards",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1306,7 +1324,9 @@
           "caption": {
             "de": "Widget „Nächster Flug“, flache Bauform",
             "en": "“Next flight” widget, low variant"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/flight-radar/package.json",
@@ -1527,13 +1547,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "3e9f291151e8069340b58b99e999110b175c4670558d855a60ae9150d759f5b4",
-      "sig": "mrfpO1Px873FepNPPqbT7+S80QIFSAMWINiRRCCLP20fOSVyFSVKRd++mqlDmMT0c/9+nYk5QpuzcVTF4TI/a/8RkE5H5yv5SW92j2pzqb3nL1bLRwKsIb59irWtd0wLKad0RutkHJdQtg37GecjvbnZCOUxiHY2xhj2x2Npwjtf9/IYTIvl4C/1oy/VUExg0BmrS8ua/xa+eSfS/VU0E5wL2ImOEPvqksY6D/BfijlcLPfdbJesSYr8YtPJqtYYDseorv/LdigJVPCrWfASrA7ckkY1Q7M1B85RhqiGWH6zMlTWdk3HrtTnNc6HDe7Ib1qCMZLczeS9U24/Cimppw==",
-      "size": 67312
+      "sha256": "34a8f0ae6a33da18cf6a5884e61bd6f91b390382c8bc565a73d9d2785e1ad41a",
+      "sig": "EOwXn5bl6cumwSI2QU8SCCxxmYD1YADTZE8jv3/A8JCvQQCRQyV2NPDXOb6v8k9eU1kqNTy3wwoQcg2/WPuNChfbpoxVGja5y160LopiIJt2Bj/9FqH8ALYy+kV9OwQkc4F9luRJ+8YIxCWsBWuR4g6k+QtNQKT57aa1GopiGZG9dSNNfsmnKHdT3wB3obW1yewXTF69S4CU4eOaSVvm0rokekXtGzRcLVAGZwyglxcbTU5+EcMz2LGSjTjDjlqykGQWz2gStufs4Ifm1uLvltJm3JKb8ytnzVLiRHLWI4zQ/O6L1EoOPBsyonwJaRztv497qIkKyiUVZ49ClomcNQ==",
+      "size": 67471
     },
     {
       "id": "fuel-prices",
@@ -1650,13 +1672,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "a48a4571e284db9a494fde0892e169f1bfcaefdd551a9c41b7c2058cc965e9c2",
-      "sig": "EvAGaESmbqHfcMZwlYkGGH+m9+OAljNlg+vmBD5GlwNF7HMvYl9/UhHwihvKXdIH6KFtniLUjuwbMUnYKqpPdsWycPYxsAO244hutO/UW+EXdUe/T6wyUg/kbYle1fSlvz/8j36zx5FH6quqabNaS4frCc+h1QH+bazil72FRGvd9rRUDbEOHaatPlg8Aj/5/kko0cZKtyaZTiglQpciEYHBBnTOmRLw8csBi7jUNP7WYF0yQXbNL80QiF4gcVwwxpk2bdmerbKMZ+SAIDFUQmwGVBcmEUbUvZxAVLC9heNaOD/t0GGYYr4MqEhURP89mRKitJFZTkeB9nSUXO5Ssg==",
-      "size": 30906
+      "sha256": "5ccb61b51efc22e7e5762e07c7ea74e898755580c56f4da26b71fce1ca357dd3",
+      "sig": "pI/UmxkrU9qjMWUb7QtYi0GresG8455olBS8engw1ayv2MQM+4PmoskKYQwVhqk6daiHDXNICbXOlpRMZnlE8QCcFTG5pRRQi8c7jGVqY0eejDmEPYYaPhCfsYW0WY1AVG/l3CwOzhCpugYvABzzrue+ZDKJUXv3+gQoJHK6DEbzhjlxCeYIIkVMW0S885K1i98pHIZB/A6gC9WU0fps9zDX8U/09o0ser0Dovx55Zjp6L0Trqwtn5+GMlnFcJQcJgGe4EvLjgVikj4dNMgENM2C5XQmQ4hPNJwtYPsFRE92kbNcncJ+c55eAqpxm5DsOJHtUDBZtxeQP+daSK8Jdw==",
+      "size": 31065
     },
     {
       "id": "fussball-liga",
@@ -1827,13 +1851,15 @@
           "caption": {
             "de": "Widget „Nächstes Spiel“",
             "en": "“Next match” widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "317c5771a2a347f1e2c298cdf42643337bf7d0a2334ddd6b44b7823eea2f6cb9",
-      "sig": "FXNwLkKjVlZS5bJMKEjvwzjVYoc62qG498YnsUGh8VjUGTdnPKlCAXnBTAEYPQzESnUE2XYB3vyWdIQPGqfdP+VOydp4tgdi86PId21naaDb9T7PGZSC+A4N6doM2V5HZbgR3L4T+jk2Hc5oZ1Pz/UpLH2HyLnhko9LvqrLPMQeagQlA+f/O4UBA8ArjkMSEgrsdvurUDnMxEOWQtWpUrYkzOOFFrfihhUvRgDyxUogzjib4I7c1M/WQ2WNK7bV4Qt9nIBUUi07HW/Yo1Nc2JNda5pSi3WDCeyNCviK1usF8UZWWc+z9myVAkXDZoRN0uwepYtpoKaOUX0e3WZcs8A==",
-      "size": 75904
+      "sha256": "541b97afb6acca658e8c198e8893b1e4d0910b3f35adee93a02952dc84d0deae",
+      "sig": "Bx48vdsml5+ZjRyWGg00eGQ4tqfmlpWftnLeK2WGe6yLGH9Hs+gLFHPyPAgqUwLcg8cUCHDUJv7TKBO7//lioVA2dRpk3ZJgj7pDyt1e6ITfBcssJBpBeMsBu/rXNq6DPMUycl2D2d+0EEzWXKBVn1MLwL1tSUbExrbxOGpI+ijPF7hYIN27os+NaX0IWQW7S4I843j1qOtHQfEubwQUh5/pHmEUw7q+mlo8ET6igGiUSu0/IYtoV0F6LlSZJu5csA1G/PAqaY5qRWmkw3F+6VCb7IdjC7IbPtgbftDYBRRLfLcDbqTG2PPk+oyOxT/VPVpf6b1UCQ2p/jzjuwH2NA==",
+      "size": 76063
     },
     {
       "id": "gaeste-wlan",
@@ -1978,13 +2004,15 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "cfbbdfc69304968425ab9f60d811b22fe201911c28d1987592de0cf8e76ebc9c",
-      "sig": "u146B/O2GU0/KiPwHmP0O4BDVqApEWFLhNf6APWbm6WQzhRxQ8Tvci/HGAfkfSDbcjTfh5Sf51PC9yaOl7slrImw1s2Y9Mpf7IG+VWFxaNLa8Y4GSGe1w0yCsyUpG7PWPVp7rjeHAe5uQb0MsYyPr5D/oECTKj4kJffitmgHMb43WDv6eVKQ5GW9Om9ZTYulGa6e98PGiWV3Zw8IbM+YVAPiGxajatxrKFqlOoo7Gzw4vhvNW8pTCFzgd8kzcBCBka6XWEvWsKzYuocWOMYFnDM49qWj10moLR4HEXu+yxeHVOtBZQ2fLNUkgfjS2zV6EYxBomDs/ANRTzHFi+FD+Q==",
-      "size": 32374
+      "sha256": "24ccdf3efe80be3c1700aa0559865fb8cd60238230b8d778822f3969b0c04802",
+      "sig": "dpqofDGlq2xezaRAcLPUJ+WJaygsQUtLhJf4b0M0mquzs6hOourWHrg+3zOx8OskyJllbuj13eXAGqzHbgMq6hIZ+C8huhrmJV0vYU97A2UNUpsLp2+hQ5vwsVAGnraEJCp8M8y6zxXgR/QkGWRDxvgNKcbW4d/tZZ9wf7CvYIxuGB+6zUyzphVe+/jK6IC3jToDCQ9hfqsGt7Gp1VyDaKhoPeyKzddYI5sjFblhbX0Sqk0/W4N7DBsdECcBK2PMrSxVM0YSQ5mWw/aqUYWU18TPB6soYuq/kj4ZglrcyopLx1mKn050tPqwh9D4CaiVV6138dh4j5mcO5F9T+Xwrg==",
+      "size": 32533
     },
     {
       "id": "geraete-check",
@@ -2074,13 +2102,15 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "584a4ac54a15ebc3e3143443af9c5a6c10e22003844e834937f58a2f2e5d45e9",
-      "sig": "r1h22LuoqQ9lvFU/rkulP0B/x+n5hoYtKqAsbBTjuFEn7Z6hUewagpFMtUTG4nwNvVy0H4713kcvV/933JJi33DMdoE4y6yBF2FzukjV+JXhFizq9oDbzGTQfi0ewoEeN4VilnM/5hnOQfjbyJue4iUDGVX2oOzq4p7MqCJ7WgaOyetRlYj/qIsdGPLnvt34NTODlLSCjZEIG0yfGlZRcIFM98bR4LP5xyfgs+WB9c5gGyq6AMf+wMr3mUMOku/KfPg2Mh7Iw0OJgQvVFeZQf7QAsm902KAkNryJMRuYMSqN7K8PqT/t4TY02JsLsMG5G3LEsqqZurpCHFvIXZ1GNQ==",
-      "size": 13906
+      "sha256": "2ceb3c4136c830e8c25ea21804df28cf65de729b146a8e5eed6b0c2b3c9de50c",
+      "sig": "AAciNucqAXn+mkplUCUzauPwReAHgfvVAHaYul1Kbs3sNXJpnHgBdkAgcYgtsWurn0hB4JCv6ifH+qfn1bNzFsMafF64we7cOjhkOKBQ/prvBeTqYmFharSFEo9p+cPkjhh1E3xPMS5Bxc2jdZ3mMeTKhb88FQiyiQrQfLxPIvC3z92Ra0Q+tRa2pBno2MH1IRbg/iXn567eGZxzmtjPDei3U2g/NUWy9fNdsCXzSzf9ZpkG/Jq3JTCGWn5AVCfiVBkCpuZ0A5KLzEC9bqxi5wsmaQVtghl0sYqxAJM6ATU0oTghaRsy1cXu2dyiFvJ+Pyosju4O1GyJrc0sENJu7A==",
+      "size": 14065
     },
     {
       "id": "gericht-des-tages",
@@ -2224,13 +2254,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "cfb3b9307a4fb6105938c84f471010643a091cf21a4b23da04178df69d12b1ad",
-      "sig": "O4EquM5cyEyJFUQlkr2JQ/0z/N2HJHTcKL0p0WaYALN5r2+RjDMGfpGvbKtc1LXy2dPtIRMTXQ8fOMlO/3Lr1XgoB2I/zvW08nF1BDyBnMTl5DQVUD0VTGLK3SsFuD4/rc65F0nvMOcW9hu+DHc3/L8nMlCuKrucwB1xSHu3c/u0o8GEhYnwrcz2oY4++sUMdto0uSC+xWco+L+9EbHqVZaw9KGD1n9YUclfjbBhc+MOIyPceyQsUPQSk0VCDFtlUHr1E3WBkmmz/PwGp6n4mcn0kSQp9itwmYeqEvGwnie9U0mojvtGvmjoDyEBJ9tng3KSzxeDGSxKmbtOWb5rSw==",
-      "size": 23964
+      "sha256": "ceae4a48b2b962f6a99e26770e678ad209ab042b528c5432617283dcc90129cb",
+      "sig": "e1rtebiu0Jq5mD4X9om5djxo+f/qDn6cw6Z+dJtq/9SYNRTd25x+yEh05X/c5vrXqqYbTKDzKRqQFFk7tbskGmPa2p7puggwNZ1A3gyWXsWQ6AYxJCiyEcTcxLGs+KWNpShHHb1cfeznEvHs75qEzmYVAUMd9VMRVTcVdQBB9kH9GRjoOZ2GBI/AkzkD6GLTuTX/YPmyI7und0OiWoKU+Z38pUCE/qw7ETSLHORMG6Zjuc3wu5jBY0powH/TVEROluz6vwgdV+bKFQUXBlu3dUX96jS1aXkzREbIWjqitlsUx+xxCG3OPZim7zmNuT7+6QAxHVUJ+e6Kbf0cBJjjng==",
+      "size": 24123
     },
     {
       "id": "golf-tour",
@@ -2346,13 +2378,15 @@
           "caption": {
             "de": "Widget „Top 3“ im Dashboard",
             "en": "\"Top 3\" widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "ce72231e3fbda7f0f38a9b01f43ec85defc2840e0d169d56ce090187dd1046ec",
-      "sig": "YEf9vcOyZqYS416QbfddEsMzrbmgPjZTpz1sIwhvIHX63svvoZ/cL08TWdu0Tuk9u0ixJiUhIo5lYvpzYfV4JdB5r72MOJ1WVuJaH/ec6h2fHZtZqpCC759qoZAxamlRRerzH0EfamCnHAt0k8wCFgx/WWuFo+qou0j2Nqmr43FflOIyQjcxP1a07O1GgoCW/MrGdPji0FIPdgAs3OpM8/lXIAVQ9FXIc3OMPuELRAiVMzTFTNVqTp+2BMxvTTzvjBYHwRK8HQnVIQIXRjFQ2wcc2kP0lBZBeh8vIimEKAzuJOA8UbolD5a98v5dexgL6oR7ZAXJayCQFXL7RES9qA==",
-      "size": 29184
+      "sha256": "eb0e00d3289d6d326c6bebd889033a87caf4a7d37bbbcc241ff2de1f2b9447d2",
+      "sig": "koRV3cb67NjL23Ep9jF42MUpyrWpbRMpp6kPeZ8K50We8HjVL4Abdtzf4EptC5NiArGvbRCzvCuNo4AARGuJmxPr7TBGXVyV37I1oHkyh5GgCHBZoL2otgiLrvJAydbH9H6D0CAYplwP/NKnfiS1G9ADKej17jKhh8zTGeH0IXPbQPr0gEGL8Bb3GzgXlYF1ZiuLoHDtoXTCHKBHXqgsAPeVwcFU1E6Cz/w8xjCjzPn4jk2V4QzzQzNTVvzGEQdf2PLzegVjtMjdBV4Szw1pJBNYXUcUubhJ/ir5R6wJwuJWH1Y12ZRMr2tAbzoTsuF3cvaWpcpVHeefux3OBrR0Zw==",
+      "size": 29343
     },
     {
       "id": "golfplatz",
@@ -2568,13 +2602,15 @@
           "caption": {
             "de": "Widget „Platzbelegung heute“",
             "en": "“Occupancy today” widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "4622d458c693c3c37a14c0234c18f7eb378f68ac205b5b807322e8420ef4236d",
-      "sig": "ssxmfWMj6vUdmmTKIQLc9s2qVhCnAP4eWRaiOdxHbkGKrhIpC+SwEt0IHqSduE116Qs2tSyXh42vQPloi5GQrxigwvb7CxR+/vYnqAaI2soG7JXOZhfIavT/LxiQX7G22tS0IoNiHnS7TNOBixv0gFVdWWrOWUEE3aD1q0FtVUpaKGnRG77/2Tulgwh/LYOpSTmRJ/emhrcMf5mMOW1gwbes4Yiz3Rk4VoXDmdgHeEoJuu6PA8mQ6vqbJNZ4aW2wiVG6p9nWy8gXJG+jyN5LfJ/GEMVwGD12xh+Kqh9eRPkgZTNgu1Ly8OCjXWCXZNUsTwZqDNNPBYgCQGv4KY8YtA==",
-      "size": 47730
+      "sha256": "f49f4cf3e98f7c95a928da443493fc2eb4a06976b2e6b5573717da71d9b45653",
+      "sig": "BNUf/h3461epSIVAtWud5DJuEkoSt6Wc2dbuTUrh1OJ8jSCn8Ln4M614CFVzHL6iZ2cbjpzb076U5G/ss1YjX1QY6UoOUo0qQHt85C4WxmqylRb0lrfkktWYvbEfalrourHej8CaB3er7KSOVa5NITnAiI69oW8+tmAhnvaXUrm8mxu09y602JEx56gAFatacFuKtRSfddKKXgyii+EsQSvYVazSh8WYgBeu3zZ0BCn6FnQhP4U+8rDF6Q+NObpgNpCyLyjTAEO0+6DXrHzLBAbF4PcTbOiP0T6+4623s9v+hZCAMM+l0U824etNu4T9c2GR11MgbuiHfVtBiNbMtA==",
+      "size": 47951
     },
     {
       "id": "homeoffice",
@@ -2692,13 +2728,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "e0746935e60f30e45fa6038e9b6972defc181943cfd433d35dcbe7ea9ce67e55",
-      "sig": "TQDAVqZdOqkHQXpFKP8S9mFbN7SesYvM3TMOWCXtbbhcOE3MqP/qVuUOrxbPXgnLoHAUoPuBGYYoD5TrukQxn+4laz2d/Y1zWo5stfbhxijLSjpnOmxQD5yWsIBI/WCP+K8UDTAew67Xzr+1zYKMH8h8uRFyb/hkbnvjzjnJsNubhGBcXHhf/ObX0StHZAHK8Tci2364DFVSEPWiB8+WtcC21V4ldc36Snj9Cv7Q8viYlphwzhDKH0xKbe45jJdu8iiM5n6ZCyYerWCQsfsPt+nCAVLbFGdVzZiB3P5t5JtcPE3+7VZWJA8GmQqspHAu8zFLl+NZCYlwqw3OE+L6Bg==",
-      "size": 26313
+      "sha256": "8e7092b0727a73229c9ef2fc0bc25a2639967b5766eef442987d5b8df796c9b3",
+      "sig": "mkcu/iQOwGLoe/LoT2I83Qp3wKRo34kL+n1oLBl3LQe+bUGHiCqupuc3aMCfxLqBFMJXu7cBad2HDz4R6JCMo/UP1tlD1kL/SvtsK0rFtpxlFCOYGqZ268YI6u9SqFLuMokQ7VvRdPw/vMIsaDA4lM4mDmIGo/XufZmn/LL7GnnnWvoiZlVhAdwb3WkxS9DnamAW6gPMZnZcI3HaQRZ1q71hetQ7W4kNHv9//hUj4JlApU4YRCsU73+RWhhdAARmawRyQvF7OdckKzt7OYyxLKHSuBVBmMD5awwJBK+CWV3CplijEhy/xK2Py64KKeLwvTZjI5RDtrA1qYOFFZanEA==",
+      "size": 26472
     },
     {
       "id": "luft-pollen",
@@ -2846,13 +2884,31 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-vent-relief.svg",
+          "caption": {
+            "de": "Relief: Lüften",
+            "en": "Relief: Ventilate"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-vent-klar.svg",
+          "caption": {
+            "de": "Klar: Lüften",
+            "en": "Klar: Ventilate"
           }
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "17ff4ddec2769068a207e56646b92730c3be14d6f5f973144fee1f629f2cb1c3",
-      "sig": "AvZRXBqjMtRxT0eXxul8iH0AcsLja3sn11Ngkcoo/HY//YFtL2TiyAjP15tTaJbcU8EBGYALDbkZ5FLttczUi7F/S/XEk7f8vYRedf5vfwJYxDGyQzf5zM1gIcey2HyuprbDuRKyGUZW1Q2rhruHRmFzvl0idDcxcgiKLKda6YeUsV6Pyf6jSpKKTkIhnzLnXpD23/RDWjkBrbYXUGVC4ym1zNgzy7P6frHxvsi410+cVGc3fJImIvWdOcfB5twN8hixjMhR+u61G82N9OPplwYNTEAITzAWlpuKg/uq43u2XoegJei9AWpzKOnU4i0BW13QUfDCUoCeTmO7iIyVIg==",
-      "size": 22751
+      "sha256": "8935e7bddb388c3ca55467402b737da36f4966fb67c1996aecb6dcd58c551e2c",
+      "sig": "PEtW6juY8/ELsmPobi2+UTLSeegmwcombndvTEzP6sjkS3+dllDr94RWjAEr4D4ogUST6IstS6kXRGPAsY7vDGDjNKdWjqbUMLucBUeiVddf1mNtyrQcRF1kE9l320MH3sK3tO5YnsZDSRvRE4goi/7NDmwSGR1FrdecyMEIv7cZZ79D9I3DiSy1wlPraTRNqzQDIh9He5Qu2bLuVvYIuhGRWcanK66IcS2I0Z7cZdbbRdAsACtACY8PRSq4IVEAbdLHmKgJcTfLQywtRr6SMHnCscUeTlZuriSnOugaFw962uGSsqZIhH1Ctg04VePSac8alyoaeo37Jw/0QTHKag==",
+      "size": 22910
     },
     {
       "id": "news-feeds",
@@ -2978,9 +3034,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "05c10be58f5ddc59d86d88855c41aba12acbc80862c364682d1f5e4710126499",
-      "sig": "ITvU6oJPO9O1fe3/MucdICjjYHQwBqxIksFiZAHyKkBEs/n4SPd1TwNpwc3uWExguY1bqB/Zxl6acdb8syL00BvepvMb5BmPYpwp3Wo+oonspjVjzILB6K0cG6yEMd245Z9zdvpBEe3j5vGadP3S3PxMjbTCUksHKfyNhLaLOpL9TVlUxQj2fPhRpSM5u5XZKbgrhlIKjrGJbDbqJP+HgzDCZCBwcEqctyyXP1rHT1g2jTbmp5iVYXL9wNKbuWMhti2tBuPvkdxyZl0patIm8u8MULvbULRU34D4I4e+C1SmHZIzzGyd9e3/Eo48/2moaMaDzPeHzw3By4ovsRN63A==",
-      "size": 29796
+      "sha256": "976d33f4e2d6e2fe7343d39d46c088a1015a5ce73b81a411e95a4167058893af",
+      "sig": "kQtYKobXSfersO2lm2tNwt55lpzMwrEyHx87ZSsAH8qWjpa8QA1onObpQEhy/a1fxFb6zGnzNKd6mLlAtdMMBvj4dwG/kOz4kt3dgDLnm4XOHlpMCC9Ie1RTWvlfbfZ1Ty8YAo763Z4TrVu7NURO+y5x8tZxnFghwbJuM80ozC0qF0GMvQ1//6wrynrGKHucdNk1GfviWwMh31fC8uUDUavVdiPN7x4mUlpAtvbFBxRFeQ5Bv/GsoUYN2GQx/XBIVqIbjxFKWzHO0BtOfNFjqigvYuFXgRXzDc3dyvr5aQpOKSKOKOsf2yWeGSixcrqGrvMcJ+/p85ybyUJB3HR49A==",
+      "size": 29955
     },
     {
       "id": "oepnv",
@@ -3148,7 +3204,9 @@
           "caption": {
             "de": "Widget „Abfahrten“",
             "en": "“Departures” widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3156,13 +3214,15 @@
           "caption": {
             "de": "Widget „Routen“",
             "en": "“Routes” widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "4da791075e49a6eb193ba9dd8e1d64b8c0cfb29dc6c72909441a940c6c318f8c",
-      "sig": "Yj+ZmjT+pX7nrgZphMAHaj/kwLd9HaRV13r8Cc7KCHrgvU7IkQhAbsnk5cNf1oL96A773YVsl0V67iQL8bnLu9CuutxpOQgC58nX9x3fyhVAU2Y3K/8F3fvjcjzqhst0XfQqxPp5DLvpfMYfXTNthqdEgAmiZQ0MODmdE1kPUcmTN1w6hKoa8JYN40EGqnz58600+2r2DWo5jPQ6neL+veBKFqgraEiRW+UGEJJfmrEkQUr+owX7IFYovl9E7fzFzO12COVcM9hMgcMu7XxWR1aXQsFkqjPZS9E5Udf+/ii5PUEqYNu3XAK3tLLQu33mc5TyeOQkJmlUdeq4Msuw0g==",
-      "size": 81989
+      "sha256": "130a661e207781f20dc578093ea7364e89d5ee9eb8b4c521a49196067aa37e21",
+      "sig": "hJHwvUbSlrTNbY75xSOQKX36HzdN/h8Rs5T7qMz4T4fgvELIzggMA/MxoA3xToH9UqGQylodzMlwfP3yMPL4usKg+Q4nssk3cf5V1DN+M6S5BbQUU62+5Xkcg3h+R+ueYVPPfeVXioWHOtMD79+Z7MdgiJ99DHqWm3oKjRUb7Ub8Nggf6dkXqLvca/+bF67f3JJQqhNgVtEGdwLOS78Cg//SwP3R2xxtw/FeR8hxxXdq6EhP7Qq70pWcNciIJha+W9CdypRGWEcPducnJzlv7DnyME8T1BLlg2AvGoj1qqEDBnBiCXDcyNRqSiSIACgY0X37o3gA/stxQMKmLtCxTw==",
+      "size": 82148
     },
     {
       "id": "pinnwand-app",
@@ -3279,9 +3339,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "a3f011a8e168f7f2e68af7c95db7ca14d75f58b42e0d40d1b74d51dc33b66086",
-      "sig": "u0vAGkKQNqAo2MIYFqsvyLOXJh9GtaPfkVKVILXazFDFFz0Gypvn7ktP5aAu7vEPlCsXo7g6cB/46+ZnqVm9uGeokxSdPPYznzrbf0UzcSp6SHZcRSG6r6r+DQ6tc7NbfVZtmBsWPnFoxt5T5rWM+RVRQB2ITK0bKvqOmAymqXkbSsqRiIm8JcvUIML5MKA67ug4PPFTC9u9wxuTCldJbHFF7eZqsSOX0t6yqz0hlSTkX7X7k+iP+v5sF8WQZwSfT7dGXvRwzGVlaqqgTxRVQzQZUJUVt80yIQmRCAQHh736LuAw3LA4hVTakqKIAO6DEvX6sEKVhAjy5mPotvxtSw==",
-      "size": 11780
+      "sha256": "49a0ac8f201483154616b25a51fe685a9395c23207ea7f21d3a5bbd7b10f3b43",
+      "sig": "q3aDEzu65Oi0GyXBHUpcR1FAprFW51d8ASIQCf8M1jo4BLqVfM3myqqxq3WiycTILBX6WzK6WfK2lk1cEKV4ZBNkWNSaVNTOGNifxeBwJqWyoxy7TbGok9gYrwsWfOVRu0/yowV4x5inONFvxuJrBqxIiM0/cxhQLvE9NO0THoJXQz9lSCAs/KpXhTPdrLJn2tKb/F0TVnXRQE5o48Vy9mLurIRIxoRxXyF3UGHwiy+ZyvcUL3nlJRrKmAXf7BuE/0CB5hah7HdXBuBo9oof0FQzGviGa39q+ASMvH+76HRb6cqWBxcV6w2SPIa0xqfWmJygwxGWwc4IPLyryfUVpw==",
+      "size": 11939
     },
     {
       "id": "rezepte",
@@ -3380,9 +3440,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "9922e5ef10b94ebbc71bca19624ba185390b5e0985ab89c1d7559649691c62d1",
-      "sig": "iO+cBrc4NoyZ8OAydc5xNfJAI89B+oaUUBeFmYV0q8naLEmz9/BvsbpKayeZFPeHu5Q+h2jU+ftKbg3KIrrSjdEEUxUnHCcdy3SInqJKKAboXQMr2mxbPwsPZBzyXb1j0A+NcmpzCkGnmNEz7zE84Nene2nPl7tuXPOD994+lZBfgg68E1mvw7xDBp0n4b7WW/zATr42Wt2IYMpd33E8qsLVoajvWyPB9leSXvp5gj53PTgz9UOFnWrELmVX4wG5ZArMBxPDDttjvgvzCqnSIDjxWDwlpAFlkDZNG9tlraHSVAibe1pbnMKPtvsKJezCu/9i+l9+MwUvix+rWjiw5A==",
-      "size": 47168
+      "sha256": "62b60dfd6d622b35a1babbbab99a80884ba930cd4b317da106bf224d40fa4e92",
+      "sig": "H5nDJOA6gp84Q2KwW3moQ2ATswz5OUwOsfsonz7HBgfk4n7aITJ46UsN4kDXsnTrzR5BQ6TK4Y3NauMRLcAaPW8fiVSHovVIUNln5JF80LVDzPaRbssMgZOShiwzNH/aW5xRDwshSaxhNU8n8vxxB817+D5uhltnRwhfMeh9MelXzVY7YnjkbjtT2d20wly1NuWSZTV699sIC38Tlf7t815QHO+bIHOW3qraKkyb8gzNXLnc1A807w9M6bvWOo1HZnNM7OLT37lkK1tObAPasRnEsNxGvhCgzrvjjipfaqmA4P19ZYymDH20TMTEG3Sf2dX6Qi2gpUdrNQnEy1r56g==",
+      "size": 47327
     },
     {
       "id": "sport-tabellen",
@@ -3552,13 +3612,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "cfdef12461001a7eab0fef6307d64ea0ca4f6a19fb7aa489eaef6a51b186cc61",
-      "sig": "nkuZy4HjsmIji4J9VgcaE3iERgbWBLQGG5CzDOkufz6Rib8l5jvS2DVIOYoh1Ldr2qh8QOoVc15Kx3p23nMTts7yiEXCqR4fd1KypHMIGlhysmviEWXYahYA1aWk7A8qhtrb3tP5s/haEYglCzsqcsvLD2f5n9x2OAT0ClaH+d2DNvXGwe19oxMNTQUZ1hmGvUNGt9WhjkJW63OkfMiTnJYWvYJpK836k8OedQKYQ+G6qOTCwt/nIL9RSshFN3U/Y3BUwdlG4122YqqgBCWXU3CnE1DELYkygk2ID5pW1cbv+uyGV+x1LdKQZjGF3NPNuVlNnQC0go4+Slo3YGRV1Q==",
-      "size": 62103
+      "sha256": "cfe9f34bb0a027f4b3cd82174c62f3b62e27b45d853f57d3d8fd6dcf8b9557d3",
+      "sig": "MVpbMQ+n33Aghxxj+lHg8JZgXO5qhozHtBv+hy5MFQfUVjeWVBFZ8ptN+QSvhExl4vy4TeRjDt0lohLeGxfnY/2lNGcA2wIxRx/kO1G6cQpwQnN+iIRdcWgCItwVefpBojLH+GnHrq2NhfuxXLpIAKJ+k4ZumHcWvhh8yHTAnxinOj7XQtWWj5cGeUoPFsiWzBUqKySS92nqIHAql45qcEq/+zv+l+qak6JMZ3TcZGnXCqnMkrrHL7jZ316c4HRqxKalFCxCLAFTInQCNFF3TaIenfImPW4qRhjTwu+FyLRC5yia/m3eU5O5jIjHlMjveiX7GMxOlTH8D9lsb0gSIQ==",
+      "size": 62262
     },
     {
       "id": "spotify",
@@ -3645,7 +3707,9 @@
           "caption": {
             "de": "Widget „Gerade läuft“",
             "en": "\"Now playing\" widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/spotify/package.json",
@@ -3769,13 +3833,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "e785a259be6842ce4dfceab6ae479d57897e1d1dd64794e4e841bfea59a54f28",
-      "sig": "QxRFKZlrVRlqOoIVj0xSGGwO2evY2lmbSbPF2VcW3Q+TEfk7P2JFnQ6lJxSq8eZunC+kzlIYySQM+7oRaC2eQ0NJEL5W950fmZz9fO5PRnRX2OTE5cSxtYE8/sV5CcMyXIz75VOq4VDBz8yV7Lt5FYGSqWnWILr6ipQzQ0QamwDZ9lZfC9Z2LWLetcBry5OVZ79ZyfzAb84oQK5f2Qr2+Rc7G8s8px8M1/pBcd5z1ouQJM3a1jZ+FjkGv42EwwEHztkyqBJRjn9dCbkQ8m8MQ/kJWhJxKqYXSlyrgWB2z3BT8AveQoGGBj70ByGeyF5JBhWr475sxq3LFos8UTe4Gg==",
-      "size": 28645
+      "sha256": "12d1dbb8725989eb841ed148fb3bb4df70a75131a56cdb45098fb44eced46d91",
+      "sig": "aADiaq1zqRfiW5Q/U3RXOfDgOsgFn+j5EgRkGQTuEt/5lRGkCTS+mBpVpdUrznzGMLP5iFCpMLAOuHzDbp2VNkex95vfo9S8BVthXzBEWrnSDYiLcuzshSQtgicu4Dg1g3tfENh43sqBQTPlBiXBdfjis3k2Z+ly0sSg6FMIid4c7J/ZfX0l0+OTg4MK+qc1C0nU1q4Z+k3ZeCBJ469V+eDtUnQRsd6RSCW/Bm+zOBD6PguWSOJEQ6KKiRmev9fSnqMW1qK4PzduaDEaa5zcetaPpofR55eKoZcgaGf1Ll1MlGg1rG8J+vGz9i73vz3jqz9wpcP/EwWv+QhPnUEeQA==",
+      "size": 28804
     },
     {
       "id": "todo-list",
@@ -3893,13 +3959,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "d45642a49f917ea8ce2338964ca964e21febdf1dadc170e1b47b1fbe800afb4b",
-      "sig": "hpsbqhj2X5zhB0858x9qfQX85zh/KYGF+P2cNzgI3CYgK0PJ4Ig8a3aiRAiOlaWfkIS1Tm56AmZbgY/OBNhCe3Mx43NGhE4yA/7T2XHpJ+ejqsugbEOFk/8UE1LcuBhgS/Yrd4WzldBl1FGra24M/AHgkrKr5x/0opAWAG79soVFI4rpYEd4gQ1u+97XY2K8yqEzK8HlGg83OGk9lLs9wE5Ficd4Smt0fSBHP6ZNBlI2LZiJICHiCKLgG8AAgpUa8+OAsdjsoozdNIO7zVye7SKSOv4EhTNl1IYTtjH24/9OvUqlzqpM1GAqGHqJoh9HYo4OXivzXN0ZEbpbic9ZaQ==",
-      "size": 45582
+      "sha256": "526360172bc6056fe8f2ba49e38638480c6ce5c88906fc5eedd8cc0596ab86b3",
+      "sig": "PnRHZ+0m65gseAPwGM5GxX42yyGuikfZ2drVvTtvr9TTnOSOp8CQbo0xl1Qg5RatgHNJydyMl4hcK8qjBp5Nzcw1E0JyCyTY1g+tNhVAehlZjpeqXZQMk2J7vSAPn60udmpUxjHXMnsrLhFtyeL1KjGSHStPTVBEcTCmY8w777mtRyJmYfmMXd/r8F6WPMFD1oVscyHWiD2aYaKO0r3P8Pu4CAj+rn1e9K+yQwJRr7LmMIBo3DUc6PdJ5Me6LTVbiC3U3vafSj8hHARDmwwkODp2c8sFP1zbI54nDZ2v6ovyzoh26gh0PYYgM+UmzPLLAP75dPgmwKttjULpfSvehQ==",
+      "size": 45741
     },
     {
       "id": "tuerschild",
@@ -4013,13 +4081,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "4bebc2838eb41748c310dc02ad9453831b0109f1b4fa107580a2be55f470cfdb",
-      "sig": "enCblbc4YT4fwM/8BUoVOesLhpcOW0owZ9dSSXMGd4wtfRIX7qn+8fO+S8qIDJ6nOSq05uVAk6pkuUeYQHKix4MmpSX4e0UWtYN7qrBIUICtYstiIAiH5e0R1JuuVrlQa8rrn1KbzIZoPKSpsKUyiFYljWRPIu8amBvfV1SKYbstYKCfS+1y3IL8F9K6G5HnCh4bG6Yb6TQLzRnEpFXYujYRf8gUCxjTXRq2vvFW5oh7aovI+RhuE6W+ZsiVR9Xkr8r2U530sZIl7zFKWcEpT5X30YcNENVftWbACYc1JCqLfOYCD8o43bHNKDyFh2BuSbQQRNbGpb6fPgn70kikdg==",
-      "size": 20926
+      "sha256": "209bbb1e8895b5fd2bca9203c198985e285e0e3a093f7065cf81395c984d4d8b",
+      "sig": "NJmiu3y+kIjmP2g9DkT+2yjUzgvYzDBfD0M60oOBNhsDRC5R29Cr3kcTltjmveXvOH6h8I64ULfwIfUnidO7zfaO2LOlv6mn1pugV2CurEqMLr1B1l/GKhpSa/RIBpX5pxVb8w2mmcREF8s4zQ6AaXBqWNrjOIbf+YYxFal/aO+g2o3rww3uc8AI32jScDTbMoBzfK6j9XzHSwOEfvYPQZSQSD1IF4BOjXAsyIpP+y5s3zbY6Qww2mm0fjxwzMLCwD1rS87FmC+TZPjfBXhdPcvuXcs1YPmzbfeUm89X13kSr4fPOpPN6JiB9cH+r6x0272UANuqVacfBMuUmm1gLg==",
+      "size": 21085
     },
     {
       "id": "waste-calendar",
@@ -4136,13 +4206,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "ebd27aab93b292de8b40969ab01d247b46ddd5f494eec634b831f50d2701e450",
-      "sig": "B4yEnmdJbQYC54yN0eiBFTSyrbjdCGjiTP6oq6pbSdVoW+EUd3dr+ecbem832eB8+ogrTaZEmGl3hpMB+QI42xcIJcEH1M+afAC3Q6nLVJ3UnQ5VckQRE4wp9KLjmrK9w+piDZ3JxjCzydsCYcPlGXmVd2DPpnRJjp0EMw1p++hhfbS7Ade00Jj+P6qg0dD1lN0g936ktSMouvaJt2G/jvpv0s7uzhb8CAF0237GZGcDoN93AEpfnnNg0CaKaNfF30OTE+zDqO+3ImmfWolJqP4BggJD3i/VH3u5Pgl+1vq5WRjcFGFfR4LCy74Jlbkdu+g98lp6DhLFup0oD/kfXg==",
-      "size": 31224
+      "sha256": "d0588a59cd966c7f12da749668a5f6c5c80839116bcf63374855b85749905b30",
+      "sig": "SCclPB3sbv7zl7N+FBjq1sgcz0dxLEtUY3MjrFE12GL0454P6K/vBG35AEPij2h1CU7HQgJ81NVG0YwjcGWzUqAvfVA7W1Y3Y0n8wYxZx3kfghmN1PlaFQCIijXlfJExVQb4eQbZwmjXV/uz0YNq+xN7U1DgJvbWnC5Z5/xsxHWZ8bmt8y2yM/hkOJ/KoGnQFYu7I30dTatNzBUnm2pNqEeE+5Fvsls+53YAz9BcOBjCkWbu9Q85N8syEUb52z1S0Cu5o+HhBzFlLjrHFEYd0nkadeShABNNN4xD7qhMQ0zTIPQRpYtZQ97NwNgDn/knTBXA+KNWEEM2vQFTNMPe4Q==",
+      "size": 31383
     },
     {
       "id": "weather-station",
@@ -4391,7 +4463,9 @@
           "caption": {
             "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
             "en": "Dashboard widget with forecast and rain countdown"
-          }
+          },
+          "style": "cards",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4399,6 +4473,32 @@
           "caption": {
             "de": "Dashboard-Widget mit Verlaufskurven",
             "en": "Dashboard widget with trend curves"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weather-station/preview-network-klar.svg",
+          "caption": {
+            "de": "Klar: Netzwerk",
+            "en": "Klar: Network"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor-klar.svg",
+          "caption": {
+            "de": "Widget Außen: Klar",
+            "en": "Outdoor widget: Klar"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-indoor-relief.svg",
+          "caption": {
+            "de": "Widget Innen: Relief",
+            "en": "Indoor widget: Relief"
           }
         }
       ],
@@ -4525,13 +4625,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "f3334e3983051e72040879850ac5f9715c01ae7281253d677e1819de321ba81f",
-      "sig": "QVD/VfOfan29YlaXIWSVA1vx5GyYU8kTQ2fDSZnWlINX9LZJwd9FrL2qVdDFJrZ/P9MwXECuAT4HopsmmO+D2RyGPHZ55NaL9KPQaNppcV34K8SNcO/SU2Dl9wTIrDP5146u0TxXDIRj+9blVvoYTmmWWVoZ+6am1xY2Li2nS/5m+TbCOeuaq8Ppu2DBEzasqqOmtUzqL/iEITY+p0BiNfZeY0gKUQqj43lyLqQrLMw5N0DK15HZBVunyAltmPhb3SErVEEBIIpGRviAofEwkuGOlHgcG0TVqbYJI6gJIxRCgbXsqffmnvWXYy/1H530THtAheHCBPl0OqpTAhOy9A==",
-      "size": 31551
+      "sha256": "4f276d660ca21a4e0561ee03868d3dfd5c6d813cffdbd8a518a5d87d039d8507",
+      "sig": "AJo47rixJz4LvgiVEF5tzbZQSieGNAL2YzKyLIJ4CMGqYmd/aSlsJ5+ey5U2cjgxyzhqzwGAqqfrBQAD2XCFnvKdF7PiFN/RT2CQ8w0MTjPF7ynsLoeNQ7J12eOv44rPgQpfy8o62wNEEerEoJ8rIr1xvSuMH0776dUISMayqxyOdOxp5wjP3HdWj/NBRuLxFFNoQulgUp6St9ZtHgjuLhtdzNIvQ4TTssj6azXlKNt6kocQrd7KLkA86eU+2BIEI8SJ1C8/qwAGwFkrEL7qkB9aQj2ZVqJGtW9CEfyyUiB9YKXwh2os3ms6sCef2Gc2ENvh2guCSmYufa8Lg/XGjA==",
+      "size": 31771
     },
     {
       "id": "wochenplan",
@@ -4673,13 +4775,15 @@
           "caption": {
             "de": "Dashboard-Widget",
             "en": "Dashboard widget"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "e7a3e18892acb3eaeb2a3015122b02ae968c75f46f41656660ec290f3bd799cc",
-      "sig": "M/thao8WvUdWA4xwYT9hD8W5DaV7Nlgwi2a4frtupwiAu8+iznhhhPEyBPqDOqkYP58GrWcEYor9NCaTPb8glOoHNlUAVrXtkARcCTvs5ugzoRLrfGF/HK2UhsAmFJNc//VKrwamY2Sh1fmd8BXCIAnHGi56cex1M+O83EJogQgUUgFpvX55YG8deHRzxoqQ4gbZncriAqqMhoLP8yLTm17owWiU2qWxrFyOACqJQxKmONbHWkhDV8RMP2swUuhN36jhUXWqNYohCGIGgOnSc/3cXchD2M0VKSqZfdxb/3YQoiknnKxAz7gg/w7iGpml1voYmX8XY6XmoqDSzFqlHQ==",
-      "size": 30031
+      "sha256": "09a049cf98f9d307496f55c71918154c6a215451c6c3b49d4cde9c95ac70b2b1",
+      "sig": "RKYCNjMZqaJ/WU+KaOa63Hn97LiEMDV0g6CfMEM9K43VlUMBHgm970BFRgHGUDlFtJdDBS4nxkoj5het7qj6nEwq7tB1KVx/Mg7d/X6i1HjA4T0/ezb1pAYanzQob2vytiUr9VQthF73okSqR+kbIxusIarQ46ap4UKtNLuEunXVTG5MOkrnp5nLxUXlM8y1qmrIuaevC7PpKcQoM/48fqAvZsNaWyrzHy4Yh+vsaPrsQUsRT7/Vvn3AQIRGOyAOwsl/6tSx50W0XoDZK9xY5r5ne2fULAfnilnW2H+r2ltK/WyIQ3NjlWJUamUEOa11zLWXmDGZ9Qa57tW8SUzVfQ==",
+      "size": 30190
     },
     {
       "id": "wort-des-tages",
@@ -4775,13 +4879,15 @@
           "caption": {
             "de": "Widget im Dashboard",
             "en": "Widget on the dashboard"
-          }
+          },
+          "style": "cards",
+          "page": 0
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "60d8025c611af7fb0171a005b1111978d54292a28a7fd79083d2e3d46117be5a",
-      "sig": "h1jjiBUdBPJJCrWV7BzRwtwVw5w7VBksZZvKJuoGJMf7enShMuQPIA+UXFh08xH4+q39VlLPu4x644DS0AUwgYoKCb9iU0gnSvzOq++ad7266kYtoYO0qbml5ZzdvSEAHFHTzHib3b6wiLGR7SKWYX7efYBYei1K7ljkTxWqxoB3k0GK9X2k0/Iet2BRHdoL1OEF3BxOWWHDiBQ5qawR3puf2QDfQTDJu2+jRQSffk+Hia+P6MssWhwxELNwY52y2RWsdSHbFZpo/34kdFH/1hjMYk8UJbVRpe8F39ILdwCBEVwaweSQV47Y76xOkkb5yRw9OZupiQ27Om/UVmo/Lg==",
-      "size": 21402
+      "sha256": "69dac4f212c0f45b41ec2818b175b300806e1e5cfd73400b47f0b5422a044b65",
+      "sig": "BIGfIsFetlsU/zFCCzGWCAfyjTx2GiJrTFuji4RJRZpglGPrZAeDuVXDUOk3poFUJw6F5Vs7b0W64f1jRNk2UnwrcQQvzud/t39l13hY7b8uqnZz+nYB2HGTz/8kBY+RfQl5a2VvZyShaIyhQAxs2ufZLEMLmHFpPh16EHRpbPUbUWsDb97j1m++r61NxRFtpTl0eg5nsXBlZbuvJAdd9dy6OKh/gF10emtGW1/XECghti0l6MsiGe2M5akz+30jPE7YRvNHfEVrTjCeNwcakM73XNDyFjE2iWd3HZ6lfkV8GHVLxXsJLHz+WpTVYOC72zIM2WCja0VBSywXozDJOw==",
+      "size": 21622
     }
   ]
 }

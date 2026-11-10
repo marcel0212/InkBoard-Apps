@@ -179,7 +179,8 @@
       "caption": {
         "de": "Widget: Relief",
         "en": "Widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "kind": "widget",
@@ -187,7 +188,8 @@
       "caption": {
         "de": "Widget: Klar",
         "en": "Widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -195,7 +197,8 @@
       "caption": {
         "de": "Widget im Dashboard",
         "en": "Widget on the dashboard"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

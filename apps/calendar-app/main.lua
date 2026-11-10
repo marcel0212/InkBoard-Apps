@@ -161,7 +161,11 @@ for k,v in pairs(box) do inner[k]=v end
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 return inner
 end
+local function pillW(txt,font,h,minw)
+return math.max(minw or 0,draw.measure(txt,font or "small")+h)
+end
 local function pill(x,y,w,h,c,txt,font,tc)
+if txt then w=pillW(txt,font,h,w) end
 local r=h//2
 c=c or color.ACCENT
 if theme.s=="relief" then
@@ -175,6 +179,7 @@ draw.rect(x,y,w,h,c,false,r)
 tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
 end
 if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+return w
 end
 local function pbar(x,y,w,h,frac,c)
 frac=math.max(0,math.min(1,frac or 0))
@@ -527,7 +532,8 @@ local cardX=cp and 20 or 26
 local cardW=W - 2*cardX
 local gap=cp and 7 or 12
 local chipX=cardX+(cp and 8 or 10)
-local chipW=cp and 54 or 66
+local cf=cp and "small" or "normal"
+local chipW=math.max(cp and 54 or 66,math.max(draw.measure(en and "All day" or "Ganztag",cf),draw.measure("00:00",cf))+(cp and 20 or 24))
 local chipH=cp and 24 or 30
 local titleX=chipX+chipW+(cp and 12 or 16)
 local textMaxW=cardX+cardW - (cp and 8 or 10) - titleX
@@ -579,7 +585,6 @@ if y>=H then break end
 if st=="cards" then card(cardX,y,cardW,cardH,e.c,14,true) else thick(cardX,y,cardW,cardH,cp and 10 or 14,color.BLACK) end
 local chipY=y+(cp and 6 or 10)
 draw.rect(chipX,chipY,chipW,chipH,e.c,true,cp and 8 or 10)
-local cf=cp and "small" or "normal"
 local cb=chipY+chipH - (cp and 8 or 11)
 if isB then
 cake(chipX+chipW//2,chipY+chipH//2,ink(e.c))

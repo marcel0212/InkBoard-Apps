@@ -166,7 +166,11 @@ for k,v in pairs(box) do inner[k]=v end
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 return inner
 end
+local function pillW(txt,font,h,minw)
+return math.max(minw or 0,draw.measure(txt,font or "small")+h)
+end
 local function pill(x,y,w,h,c,txt,font,tc)
+if txt then w=pillW(txt,font,h,w) end
 local r=h//2
 c=c or color.ACCENT
 if theme.s=="relief" then
@@ -180,6 +184,7 @@ draw.rect(x,y,w,h,c,false,r)
 tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
 end
 if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+return w
 end
 local function pbar(x,y,w,h,frac,c)
 frac=math.max(0,math.min(1,frac or 0))

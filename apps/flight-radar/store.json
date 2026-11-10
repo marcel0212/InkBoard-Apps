@@ -69,7 +69,8 @@
       "caption": {
         "de": "Widget „Nächster Flug“ mit Airline und Kennzeichen",
         "en": "“Next flight” widget with airline and registration"
-      }
+      },
+      "style": "cards"
     },
     {
       "kind": "widget",
@@ -77,7 +78,8 @@
       "caption": {
         "de": "Widget „Nächster Flug“, flache Bauform",
         "en": "“Next flight” widget, low variant"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

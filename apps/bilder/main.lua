@@ -140,7 +140,7 @@ end
 return false
 end
 local function pill(text,cx)
-local bw,bh=200,28
+local bw,bh=math.max(200,draw.measure(text,"small")+28),28
 local bx=cx - bw//2
 local by=draw.height - bh - 10
 draw.rect(bx,by,bw,bh,color.WHITE,true,9)

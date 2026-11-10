@@ -223,7 +223,8 @@
       "caption": {
         "de": "Widget Außen: Relief",
         "en": "Outdoor widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "file": "preview-widget-indoor-klar.svg",
@@ -231,7 +232,8 @@
       "caption": {
         "de": "Widget Innen: Klar",
         "en": "Indoor widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -239,7 +241,8 @@
       "caption": {
         "de": "Dashboard-Widget mit Vorhersage und Regen-Countdown",
         "en": "Dashboard widget with forecast and rain countdown"
-      }
+      },
+      "style": "cards"
     },
     {
       "kind": "widget",
@@ -247,6 +250,35 @@
       "caption": {
         "de": "Dashboard-Widget mit Verlaufskurven",
         "en": "Dashboard widget with trend curves"
+      },
+      "style": "cards"
+    },
+    {
+      "file": "preview-network-klar.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Netzwerk",
+        "en": "Klar: Network"
+      }
+    },
+    {
+      "file": "preview-widget-outdoor-klar.svg",
+      "kind": "widget",
+      "style": "klar",
+      "caption": {
+        "de": "Widget Außen: Klar",
+        "en": "Outdoor widget: Klar"
+      }
+    },
+    {
+      "file": "preview-widget-indoor-relief.svg",
+      "kind": "widget",
+      "style": "relief",
+      "caption": {
+        "de": "Widget Innen: Relief",
+        "en": "Indoor widget: Relief"
       }
     }
   ]

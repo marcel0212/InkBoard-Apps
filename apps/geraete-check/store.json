@@ -80,7 +80,8 @@
       "caption": {
         "de": "Dashboard-Widget",
         "en": "Dashboard widget"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

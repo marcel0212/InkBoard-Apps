@@ -72,7 +72,8 @@
       "caption": {
         "de": "Widget „Gerade läuft“",
         "en": "\"Now playing\" widget"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

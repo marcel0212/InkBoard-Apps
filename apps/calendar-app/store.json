@@ -181,7 +181,8 @@
       "caption": {
         "de": "Widget: Relief",
         "en": "Widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "file": "preview-widget-klar.svg",
@@ -189,7 +190,8 @@
       "caption": {
         "de": "Widget: Klar",
         "en": "Widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -197,7 +199,8 @@
       "caption": {
         "de": "Widget: nächste Termine",
         "en": "Widget: next events"
-      }
+      },
+      "style": "cards"
     },
     {
       "kind": "widget",
@@ -205,7 +208,8 @@
       "caption": {
         "de": "Widget: kompakte Liste",
         "en": "Widget: compact list"
-      }
+      },
+      "style": "compact"
     }
   ]
 }

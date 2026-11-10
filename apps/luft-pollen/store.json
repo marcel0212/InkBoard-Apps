@@ -111,7 +111,8 @@
       "caption": {
         "de": "Widget: Relief",
         "en": "Widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "kind": "widget",
@@ -119,7 +120,8 @@
       "caption": {
         "de": "Widget: Klar",
         "en": "Widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -127,6 +129,27 @@
       "caption": {
         "de": "Dashboard-Widget",
         "en": "Dashboard widget"
+      },
+      "style": "cards"
+    },
+    {
+      "file": "preview-vent-relief.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "relief",
+      "caption": {
+        "de": "Relief: Lüften",
+        "en": "Relief: Ventilate"
+      }
+    },
+    {
+      "file": "preview-vent-klar.svg",
+      "kind": "display",
+      "page": 2,
+      "style": "klar",
+      "caption": {
+        "de": "Klar: Lüften",
+        "en": "Klar: Ventilate"
       }
     }
   ]

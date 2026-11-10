@@ -81,7 +81,8 @@
       "caption": {
         "de": "Widget: Relief",
         "en": "Widget: Relief"
-      }
+      },
+      "style": "relief"
     },
     {
       "kind": "widget",
@@ -89,7 +90,8 @@
       "caption": {
         "de": "Widget: Klar",
         "en": "Widget: Clear"
-      }
+      },
+      "style": "klar"
     },
     {
       "kind": "widget",
@@ -97,7 +99,8 @@
       "caption": {
         "de": "Widget „Top 3“ im Dashboard",
         "en": "\"Top 3\" widget on the dashboard"
-      }
+      },
+      "style": "cards"
     }
   ]
 }

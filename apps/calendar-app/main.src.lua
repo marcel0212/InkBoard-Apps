@@ -419,7 +419,9 @@ local function dayPage(ctx, evs, st, en, t, topY)
   local cardW = W - 2 * cardX
   local gap = cp and 7 or 12
   local chipX = cardX + (cp and 8 or 10)
-  local chipW = cp and 54 or 66
+  local cf = cp and "small" or "normal"
+  -- Pillenbreite folgt dem laengsten Text ("Ganztag" / "All day" / "00:00"), damit nichts am Rand klebt
+  local chipW = math.max(cp and 54 or 66, math.max(draw.measure(en and "All day" or "Ganztag", cf), draw.measure("00:00", cf)) + (cp and 20 or 24))
   local chipH = cp and 24 or 30
   local titleX = chipX + chipW + (cp and 12 or 16)
   local textMaxW = cardX + cardW - (cp and 8 or 10) - titleX
@@ -471,7 +473,6 @@ local function dayPage(ctx, evs, st, en, t, topY)
       if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14, true) else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
       local chipY = y + (cp and 6 or 10)
       draw.rect(chipX, chipY, chipW, chipH, e.c, true, cp and 8 or 10)
-      local cf = cp and "small" or "normal"
       local cb = chipY + chipH - (cp and 8 or 11)
       if isB then
         cake(chipX + chipW // 2, chipY + chipH // 2, ink(e.c))
