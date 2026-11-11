@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Detailkarten",
-        "en": "Bento: detail cards"
+        "de": "Tile: Detailkarten",
+        "en": "Tile: detail cards"
       },
       "style": "cards",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: eine Zeile je Aufgabe",
-        "en": "Slate: one line per task"
+        "de": "Ledger: eine Zeile je Aufgabe",
+        "en": "Ledger: one line per task"
       },
       "style": "flat",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: kompakt",
-        "en": "Nano: compact"
+        "de": "Nibble: kompakt",
+        "en": "Nibble: compact"
       },
       "style": "compact",
       "page": 0

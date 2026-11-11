@@ -97,8 +97,8 @@
       "page": 0,
       "style": "cards",
       "caption": {
-        "de": "Kacheln (Bento)",
-        "en": "Tiles (Bento)"
+        "de": "Kacheln (Tile)",
+        "en": "Tiles (Tile)"
       }
     },
     {
@@ -107,8 +107,8 @@
       "page": 0,
       "style": "flat",
       "caption": {
-        "de": "Zwei Spalten (Slate)",
-        "en": "Two columns (Slate)"
+        "de": "Zwei Spalten (Ledger)",
+        "en": "Two columns (Ledger)"
       }
     },
     {
@@ -117,8 +117,8 @@
       "page": 0,
       "style": "compact",
       "caption": {
-        "de": "Liste (Nano)",
-        "en": "List (Nano)"
+        "de": "Liste (Nibble)",
+        "en": "List (Nibble)"
       }
     },
     {

@@ -2,9 +2,9 @@ local WXS=""
 local function wxCard(x,y,w,h,r,acc)
 if WXS=="relief" then draw.rect(x+5,y+5,w,h,color.BLACK,true,r) end
 draw.rect(x,y,w,h,color.WHITE,true,r)
+if WXS=="klar" then for i=0,2 do draw.rect(x+i,y+i,w - 2*i,h - 2*i,color.ACCENT,false,r+6) end return end
 draw.rect(x,y,w,h,color.BLACK,false,r)
-if WXS=="klar" then draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
-elseif acc then
+if acc then
 if WXS=="relief" then draw.rect(x+6,y+10,4,h - 20,acc,true,2) else draw.rect(x+6,y+6,5,h - 12,acc,true,2) end
 end
 end

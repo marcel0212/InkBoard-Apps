@@ -47,8 +47,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Kacheln",
-        "en": "Bento: tiles"
+        "de": "Tile: Kacheln",
+        "en": "Tile: tiles"
       },
       "style": "cards",
       "page": 0
@@ -57,8 +57,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Zeilen",
-        "en": "Slate: rows"
+        "de": "Ledger: Zeilen",
+        "en": "Ledger: rows"
       },
       "style": "flat",
       "page": 0
@@ -67,8 +67,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: kompakt",
-        "en": "Nano: compact"
+        "de": "Nibble: kompakt",
+        "en": "Nibble: compact"
       },
       "style": "compact",
       "page": 0

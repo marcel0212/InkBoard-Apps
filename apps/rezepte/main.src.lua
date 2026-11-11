@@ -569,6 +569,7 @@ function on_draw(ctx, page)
       if i <= pg + 1 then secNo = secNo + 1 end
     end
   end
+  if theme.s == "relief" or theme.s == "klar" then card(MX - 10, tl.sec - 24, W - 2 * MX + 20, FOOTER_BASE - 24 - (tl.sec - 24), nil, 16, true) end -- Inhalt als Karte
   draw.rect(MX, tl.sec - 12, 6, 15, color.ACCENT, true)
   local name
   if p.s == "i" then name = T(ctx, "ZUTATEN", "INGREDIENTS")

@@ -13,13 +13,13 @@
     "de": [
       "Wichtigste Ereignisse zum heutigen Datum",
       "Folgt der Display-Sprache",
-      "Drei Stile: Bento, Slate, Nano",
+      "Drei Stile: Tile, Ledger, Nibble",
       "Ausweichquelle, wenn Wikimedia ablehnt"
     ],
     "en": [
       "Key events for today's date",
       "Follows the display language",
-      "Three styles: Bento, Slate, Nano",
+      "Three styles: Tile, Ledger, Nibble",
       "Fallback source if Wikimedia declines"
     ]
   },
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Hauptereignis + Kacheln",
-        "en": "Bento: main event + tiles"
+        "de": "Tile: Hauptereignis + Kacheln",
+        "en": "Tile: main event + tiles"
       },
       "style": "cards",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Zeitleiste",
-        "en": "Slate: timeline"
+        "de": "Ledger: Zeitleiste",
+        "en": "Ledger: timeline"
       },
       "style": "flat",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: Kompaktliste",
-        "en": "Nano: compact list"
+        "de": "Nibble: Kompaktliste",
+        "en": "Nibble: compact list"
       },
       "style": "compact",
       "page": 0

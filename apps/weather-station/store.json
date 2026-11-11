@@ -12,14 +12,14 @@
   "features": {
     "de": [
       "Drei Seiten: Innen, Außen, Netzwerk",
-      "Drei Stile: Bento, Slate, Nano",
+      "Drei Stile: Tile, Ledger, Nibble",
       "CO2- und Feuchte-Ampel mit Warnhinweisen",
       "Stundenverlauf, Mehrtagesvorschau, Regen-Countdown",
       "Dashboard-Widgets Wetter Innen und Wetter Außen"
     ],
     "en": [
       "Three pages: indoor, outdoor, network",
-      "Three styles: Bento, Slate, Nano",
+      "Three styles: Tile, Ledger, Nibble",
       "CO2 and humidity traffic light with warnings",
       "Hourly trend, multi-day forecast, rain countdown",
       "Dashboard widgets Weather Indoor and Weather Outdoor"
@@ -81,8 +81,8 @@
       "kind": "display",
       "file": "preview-outdoor.svg",
       "caption": {
-        "de": "Außen-Seite im Stil Bento",
-        "en": "Outdoor page, style Bento"
+        "de": "Außen-Seite im Stil Tile",
+        "en": "Outdoor page, style Tile"
       },
       "style": "cards",
       "page": 1
@@ -91,8 +91,8 @@
       "kind": "display",
       "file": "preview-outdoor-flat.svg",
       "caption": {
-        "de": "Außen-Seite im Stil Slate",
-        "en": "Outdoor page, style Slate"
+        "de": "Außen-Seite im Stil Ledger",
+        "en": "Outdoor page, style Ledger"
       },
       "style": "flat",
       "page": 1
@@ -101,8 +101,8 @@
       "kind": "display",
       "file": "preview-outdoor-compact.svg",
       "caption": {
-        "de": "Außen-Seite im Stil Nano",
-        "en": "Outdoor page, style Nano"
+        "de": "Außen-Seite im Stil Nibble",
+        "en": "Outdoor page, style Nibble"
       },
       "style": "compact",
       "page": 1
@@ -113,8 +113,8 @@
       "style": "cards",
       "page": 0,
       "caption": {
-        "de": "Innen-Seite im Stil Bento",
-        "en": "Indoor page, style Bento"
+        "de": "Innen-Seite im Stil Tile",
+        "en": "Indoor page, style Tile"
       }
     },
     {
@@ -123,8 +123,8 @@
       "style": "flat",
       "page": 0,
       "caption": {
-        "de": "Innen-Seite im Stil Slate",
-        "en": "Indoor page, style Slate"
+        "de": "Innen-Seite im Stil Ledger",
+        "en": "Indoor page, style Ledger"
       }
     },
     {
@@ -133,8 +133,8 @@
       "style": "compact",
       "page": 0,
       "caption": {
-        "de": "Innen-Seite im Stil Nano",
-        "en": "Indoor page, style Nano"
+        "de": "Innen-Seite im Stil Nibble",
+        "en": "Indoor page, style Nibble"
       }
     },
     {
@@ -143,8 +143,8 @@
       "style": "cards",
       "page": 2,
       "caption": {
-        "de": "Netzwerk-Seite im Stil Bento",
-        "en": "Network page, style Bento"
+        "de": "Netzwerk-Seite im Stil Tile",
+        "en": "Network page, style Tile"
       }
     },
     {
@@ -153,8 +153,8 @@
       "style": "flat",
       "page": 2,
       "caption": {
-        "de": "Netzwerk-Seite im Stil Slate",
-        "en": "Network page, style Slate"
+        "de": "Netzwerk-Seite im Stil Ledger",
+        "en": "Network page, style Ledger"
       }
     },
     {
@@ -163,8 +163,8 @@
       "style": "compact",
       "page": 2,
       "caption": {
-        "de": "Netzwerk-Seite im Stil Nano",
-        "en": "Network page, style Nano"
+        "de": "Netzwerk-Seite im Stil Nibble",
+        "en": "Network page, style Nibble"
       }
     },
     {

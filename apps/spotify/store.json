@@ -12,14 +12,14 @@
   "features": {
     "de": [
       "Cover, Titel, Interpret, Album und Fortschritt",
-      "Drei Stile: Bento, Slate, Nano",
+      "Drei Stile: Tile, Ledger, Nibble",
       "Dashboard-Widget „Gerade läuft“",
       "Einmalige Anmeldung, Token bleiben in der Firmware",
       "Verbindung geprüft per Zertifikat (TLS)"
     ],
     "en": [
       "Cover, title, artist, album and progress",
-      "Three styles: Bento, Slate, Nano",
+      "Three styles: Tile, Ledger, Nibble",
       "\"Now playing\" dashboard widget",
       "One-time sign-in, tokens stay in the firmware",
       "Connection verified by certificate (TLS)"
@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Cover, Titel und Fortschritt",
-        "en": "Bento: cover, title and progress"
+        "de": "Tile: Cover, Titel und Fortschritt",
+        "en": "Tile: cover, title and progress"
       },
       "page": 0,
       "style": "cards"
@@ -41,8 +41,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: zweispaltig",
-        "en": "Slate: two columns"
+        "de": "Ledger: zweispaltig",
+        "en": "Ledger: two columns"
       },
       "page": 0,
       "style": "flat"
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: Datenblatt (Pause)",
-        "en": "Nano: data sheet (paused)"
+        "de": "Nibble: Datenblatt (Pause)",
+        "en": "Nibble: data sheet (paused)"
       },
       "page": 0,
       "style": "compact"

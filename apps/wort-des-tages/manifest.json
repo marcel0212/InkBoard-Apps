@@ -8,7 +8,7 @@
     "de": "WdT",
     "en": "WotD"
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "apiLevel": 1,
   "pages": [
     {
@@ -51,13 +51,13 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)",
           "classic": "Klassisch"
         },
         "en": {
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)",
           "classic": "Classic"
         }
       },

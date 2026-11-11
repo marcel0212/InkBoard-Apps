@@ -8,7 +8,7 @@
     "de": "Heute",
     "en": "Today"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 8,
   "pages": [
     {
@@ -46,18 +46,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Hero + Kacheln)",
-          "flat": "Slate (Zeitleiste)",
-          "compact": "Nano (Kompaktliste)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Hero + Kacheln)",
+          "flat": "Ledger (Zeitleiste)",
+          "compact": "Nibble (Kompaktliste)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (hero + tiles)",
-          "flat": "Slate (timeline)",
-          "compact": "Nano (compact list)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (hero + tiles)",
+          "flat": "Ledger (timeline)",
+          "compact": "Nibble (compact list)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

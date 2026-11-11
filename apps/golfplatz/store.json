@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-today.svg",
       "caption": {
-        "de": "Bento: Heute, Fokuskarte mit FREI-Feld",
-        "en": "Bento: today, focus card with FREE panel"
+        "de": "Tile: Heute, Fokuskarte mit FREI-Feld",
+        "en": "Tile: today, focus card with FREE panel"
       },
       "style": "cards",
       "page": 0
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-today-flat.svg",
       "caption": {
-        "de": "Slate: Heute, Zeitleiste",
-        "en": "Slate: today, timeline"
+        "de": "Ledger: Heute, Zeitleiste",
+        "en": "Ledger: today, timeline"
       },
       "style": "flat",
       "page": 0
@@ -109,8 +109,8 @@
       "kind": "display",
       "file": "preview-today-compact.svg",
       "caption": {
-        "de": "Nano: Heute, Platz und Betrieb in zwei Spalten",
-        "en": "Nano: today, course and operations in two columns"
+        "de": "Nibble: Heute, Platz und Betrieb in zwei Spalten",
+        "en": "Nibble: today, course and operations in two columns"
       },
       "style": "compact",
       "page": 0
@@ -119,8 +119,8 @@
       "kind": "display",
       "file": "preview-week.svg",
       "caption": {
-        "de": "Bento: Woche, Zeilenkarten",
-        "en": "Bento: week, row cards"
+        "de": "Tile: Woche, Zeilenkarten",
+        "en": "Tile: week, row cards"
       },
       "style": "cards",
       "page": 1
@@ -129,8 +129,8 @@
       "kind": "display",
       "file": "preview-week-flat.svg",
       "caption": {
-        "de": "Slate: Woche, flache Wochenliste",
-        "en": "Slate: week, flat week list"
+        "de": "Ledger: Woche, flache Wochenliste",
+        "en": "Ledger: week, flat week list"
       },
       "style": "flat",
       "page": 1
@@ -139,8 +139,8 @@
       "kind": "display",
       "file": "preview-week-compact.svg",
       "caption": {
-        "de": "Nano: Woche, Volltabelle",
-        "en": "Nano: week, full table"
+        "de": "Nibble: Woche, Volltabelle",
+        "en": "Nibble: week, full table"
       },
       "style": "compact",
       "page": 1
@@ -149,8 +149,8 @@
       "kind": "display",
       "file": "preview-14d.svg",
       "caption": {
-        "de": "Bento: 14 Tage, zwei Wochenkarten",
-        "en": "Bento: 14 days, two week cards"
+        "de": "Tile: 14 Tage, zwei Wochenkarten",
+        "en": "Tile: 14 days, two week cards"
       },
       "style": "cards",
       "page": 2
@@ -159,8 +159,8 @@
       "kind": "display",
       "file": "preview-14d-flat.svg",
       "caption": {
-        "de": "Slate: 14 Tage, zwei Wochenspalten",
-        "en": "Slate: 14 days, two week columns"
+        "de": "Ledger: 14 Tage, zwei Wochenspalten",
+        "en": "Ledger: 14 days, two week columns"
       },
       "style": "flat",
       "page": 2
@@ -169,8 +169,8 @@
       "kind": "display",
       "file": "preview-14d-compact.svg",
       "caption": {
-        "de": "Nano: 14 Tage, Volltabelle mit Hinweisen",
-        "en": "Nano: 14 days, full table with notes"
+        "de": "Nibble: 14 Tage, Volltabelle mit Hinweisen",
+        "en": "Nibble: 14 days, full table with notes"
       },
       "style": "compact",
       "page": 2

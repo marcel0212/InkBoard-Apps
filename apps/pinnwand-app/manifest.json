@@ -4,7 +4,7 @@
     "de": "Pinnwand",
     "en": "Family Board"
   },
-  "version": "1.4.0",
+  "version": "1.4.1",
   "apiLevel": 23,
   "needsStorage": true,
   "pages": 1,
@@ -189,13 +189,13 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)",
           "classic": "Klassisch"
         },
         "en": {
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)",
           "classic": "Classic"
         }
       },

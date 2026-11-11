@@ -71,8 +71,8 @@
       "kind": "display",
       "file": "preview-week.svg",
       "caption": {
-        "de": "Woche (Bento)",
-        "en": "Week (Bento)"
+        "de": "Woche (Tile)",
+        "en": "Week (Tile)"
       },
       "page": 0
     },
@@ -80,8 +80,8 @@
       "kind": "display",
       "file": "preview-week-slate.svg",
       "caption": {
-        "de": "Woche (Slate)",
-        "en": "Week (Slate)"
+        "de": "Woche (Ledger)",
+        "en": "Week (Ledger)"
       },
       "page": 0,
       "style": "flat"
@@ -90,8 +90,8 @@
       "kind": "display",
       "file": "preview-week-nano.svg",
       "caption": {
-        "de": "Heute und morgen (Nano)",
-        "en": "Today and tomorrow (Nano)"
+        "de": "Heute und morgen (Nibble)",
+        "en": "Today and tomorrow (Nibble)"
       },
       "page": 0,
       "style": "compact"

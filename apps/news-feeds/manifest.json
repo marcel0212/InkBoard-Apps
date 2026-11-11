@@ -8,7 +8,7 @@
     "de": "News",
     "en": "News"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 7,
   "pages": [
     {
@@ -444,18 +444,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "flat": "Slate (Zeilen)",
-          "cards": "Bento (Karten)",
-          "compact": "Nano (kompakt)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "flat": "Ledger (Zeilen)",
+          "cards": "Tile (Karten)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "flat": "Slate (rows)",
-          "cards": "Bento (cards)",
-          "compact": "Nano (compact)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "flat": "Ledger (rows)",
+          "cards": "Tile (cards)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

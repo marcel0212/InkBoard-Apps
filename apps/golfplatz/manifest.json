@@ -8,7 +8,7 @@
     "de": "Golf",
     "en": "Golf"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 14,
   "pages": [
     {
@@ -67,18 +67,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Karten)",
-          "flat": "Slate (Haarlinien)",
-          "compact": "Nano (Tabellen)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Karten)",
+          "flat": "Ledger (Haarlinien)",
+          "compact": "Nibble (Tabellen)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (cards)",
-          "flat": "Slate (hairlines)",
-          "compact": "Nano (tables)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (cards)",
+          "flat": "Ledger (hairlines)",
+          "compact": "Nibble (tables)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -86,8 +86,8 @@
         "en": "Layout"
       },
       "help": {
-        "de": "Bento: Heute mit großer Fokuskarte und FREI-Feld, Woche als Zeilenkarten, 14 Tage als zwei Wochenkarten. Slate: Heute als Zeitleiste, Woche als Liste, 14 Tage als Doppelspalte. Nano: Zwei-Spalten-Übersicht bzw. Volltabellen mit Bereichs-Kürzeln. Bereichsfarben überall gleich: Tee 1 blau, Greenkeeping grün, Kurse & Events rot, Information gelb.",
-        "en": "Bento: today with a large focus card and FREE panel, week as row cards, 14 days as two week cards. Slate: today as a timeline, week as a list, 14 days as a double column. Nano: two-column overview or full tables with area codes. Area colours are identical everywhere: Tee 1 blue, greenkeeping green, courses & events red, information yellow."
+        "de": "Tile: Heute mit großer Fokuskarte und FREI-Feld, Woche als Zeilenkarten, 14 Tage als zwei Wochenkarten. Ledger: Heute als Zeitleiste, Woche als Liste, 14 Tage als Doppelspalte. Nibble: Zwei-Spalten-Übersicht bzw. Volltabellen mit Bereichs-Kürzeln. Bereichsfarben überall gleich: Tee 1 blau, Greenkeeping grün, Kurse & Events rot, Information gelb.",
+        "en": "Tile: today with a large focus card and FREE panel, week as row cards, 14 days as two week cards. Ledger: today as a timeline, week as a list, 14 days as a double column. Nibble: two-column overview or full tables with area codes. Area colours are identical everywhere: Tee 1 blue, greenkeeping green, courses & events red, information yellow."
       }
     },
     {

@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Team-Seite (Handball)",
-        "en": "Bento: team page (handball)"
+        "de": "Tile: Team-Seite (Handball)",
+        "en": "Tile: team page (handball)"
       },
       "style": "cards",
       "page": 0
@@ -79,8 +79,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Team-Seite (Eishockey)",
-        "en": "Slate: team page (ice hockey)"
+        "de": "Ledger: Team-Seite (Eishockey)",
+        "en": "Ledger: team page (ice hockey)"
       },
       "style": "flat",
       "page": 0
@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: Team-Seite (Basketball)",
-        "en": "Nano: team page (basketball)"
+        "de": "Nibble: Team-Seite (Basketball)",
+        "en": "Nibble: team page (basketball)"
       },
       "style": "compact",
       "page": 0
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-table.svg",
       "caption": {
-        "de": "Bento: Liga-Tabelle (Handball)",
-        "en": "Bento: league table (handball)"
+        "de": "Tile: Liga-Tabelle (Handball)",
+        "en": "Tile: league table (handball)"
       },
       "style": "cards",
       "page": 1
@@ -109,8 +109,8 @@
       "kind": "display",
       "file": "preview-table-flat.svg",
       "caption": {
-        "de": "Slate: Liga-Tabelle (Eishockey)",
-        "en": "Slate: league table (ice hockey)"
+        "de": "Ledger: Liga-Tabelle (Eishockey)",
+        "en": "Ledger: league table (ice hockey)"
       },
       "style": "flat",
       "page": 1
@@ -119,8 +119,8 @@
       "kind": "display",
       "file": "preview-table-compact.svg",
       "caption": {
-        "de": "Nano: Division-Tabelle (NFL)",
-        "en": "Nano: division table (NFL)"
+        "de": "Nibble: Division-Tabelle (NFL)",
+        "en": "Nibble: division table (NFL)"
       },
       "style": "compact",
       "page": 1

@@ -111,8 +111,8 @@
       "kind": "display",
       "file": "preview-forecast.svg",
       "caption": {
-        "de": "Prognose (Bento)",
-        "en": "Forecast (Bento)"
+        "de": "Prognose (Tile)",
+        "en": "Forecast (Tile)"
       },
       "page": 0
     },
@@ -120,8 +120,8 @@
       "kind": "display",
       "file": "preview-forecast-slate.svg",
       "caption": {
-        "de": "Prognose (Slate)",
-        "en": "Forecast (Slate)"
+        "de": "Prognose (Ledger)",
+        "en": "Forecast (Ledger)"
       },
       "page": 0,
       "style": "flat"
@@ -130,8 +130,8 @@
       "kind": "display",
       "file": "preview-forecast-nano.svg",
       "caption": {
-        "de": "Prognose (Nano)",
-        "en": "Forecast (Nano)"
+        "de": "Prognose (Nibble)",
+        "en": "Forecast (Nibble)"
       },
       "page": 0,
       "style": "compact"

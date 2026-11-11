@@ -6,8 +6,8 @@
     "en": "Shows outside the room: free, in a meeting or do not disturb"
   },
   "description": {
-    "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Bento-Karte, Vollfläche in Ampelfarben, schlicht.",
-    "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Bento card, full-colour traffic light, plain."
+    "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Tile-Karte, Vollfläche in Ampelfarben, schlicht.",
+    "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Tile card, full-colour traffic light, plain."
   },
   "features": {
     "de": [
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento",
-        "en": "Bento"
+        "de": "Tile",
+        "en": "Tile"
       },
       "page": 0
     },
@@ -61,8 +61,8 @@
       "file": "preview-display-flat.svg",
       "style": "flat",
       "caption": {
-        "de": "Slate in Ampelfarbe",
-        "en": "Slate in traffic-light colour"
+        "de": "Ledger in Ampelfarbe",
+        "en": "Ledger in traffic-light colour"
       },
       "page": 0
     },
@@ -71,8 +71,8 @@
       "file": "preview-display-compact.svg",
       "style": "compact",
       "caption": {
-        "de": "Nano",
-        "en": "Nano"
+        "de": "Nibble",
+        "en": "Nibble"
       },
       "page": 0
     },

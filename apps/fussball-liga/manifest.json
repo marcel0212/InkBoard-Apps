@@ -4,7 +4,7 @@
     "de": "Fußball",
     "en": "Football"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 14,
   "pages": [
     {
@@ -67,8 +67,8 @@
         "en": "Display"
       },
       "help": {
-        "de": "Lädt die Wappen von Wikipedia (zuerst die Adresse des Datenanbieters, sonst der Artikel mit dem Vereinsnamen) (Bento: große Spielpaarung, Nano: Kopfzeile). Fehlt ein Wappen, erscheint das Kürzel-Wappen in der Vereinsfarbe.",
-        "en": "Loads the crests from Wikipedia (first the data provider's address, otherwise the article named like the club) (Bento: big pairing, Nano: header). If a crest is missing, the abbreviation badge in the club colour is shown."
+        "de": "Lädt die Wappen von Wikipedia (zuerst die Adresse des Datenanbieters, sonst der Artikel mit dem Vereinsnamen) (Tile: große Spielpaarung, Nibble: Kopfzeile). Fehlt ein Wappen, erscheint das Kürzel-Wappen in der Vereinsfarbe.",
+        "en": "Loads the crests from Wikipedia (first the data provider's address, otherwise the article named like the club) (Tile: big pairing, Nibble: header). If a crest is missing, the abbreviation badge in the club colour is shown."
       }
     }
   ],
@@ -183,18 +183,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (Listen)",
-          "compact": "Nano (kompakt)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Listen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (lists)",
-          "compact": "Nano (compact)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (lists)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -202,8 +202,8 @@
         "en": "Layout"
       },
       "help": {
-        "de": "Bento: Hero-Karte fürs nächste Spiel und Zonen-Kacheln in der Tabelle. Slate: schlichte Listen und Zonen-Tabelle. Nano: Mini-Zeitleiste und Kompakttabelle.",
-        "en": "Bento: hero card for the next match and zone tiles in the table. Slate: plain lists and a zone table. Nano: mini timeline and compact table."
+        "de": "Tile: Hero-Karte fürs nächste Spiel und Zonen-Kacheln in der Tabelle. Ledger: schlichte Listen und Zonen-Tabelle. Nibble: Mini-Zeitleiste und Kompakttabelle.",
+        "en": "Tile: hero card for the next match and zone tiles in the table. Ledger: plain lists and a zone table. Nibble: mini timeline and compact table."
       }
     },
     {

@@ -73,8 +73,8 @@
       "kind": "display",
       "file": "preview-wifi.svg",
       "caption": {
-        "de": "WLAN (Bento)",
-        "en": "Wi-Fi (Bento)"
+        "de": "WLAN (Tile)",
+        "en": "Wi-Fi (Tile)"
       },
       "page": 0
     },
@@ -82,8 +82,8 @@
       "kind": "display",
       "file": "preview-wifi-slate.svg",
       "caption": {
-        "de": "WLAN (Slate)",
-        "en": "Wi-Fi (Slate)"
+        "de": "WLAN (Ledger)",
+        "en": "Wi-Fi (Ledger)"
       },
       "page": 0,
       "style": "flat"
@@ -92,8 +92,8 @@
       "kind": "display",
       "file": "preview-wifi-nano.svg",
       "caption": {
-        "de": "Großer QR-Code (Nano)",
-        "en": "Large QR code (Nano)"
+        "de": "Großer QR-Code (Nibble)",
+        "en": "Large QR code (Nibble)"
       },
       "page": 0,
       "style": "compact"

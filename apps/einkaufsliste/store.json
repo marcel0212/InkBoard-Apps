@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-list.svg",
       "caption": {
-        "de": "Liste (Bento)",
-        "en": "List (Bento)"
+        "de": "Liste (Tile)",
+        "en": "List (Tile)"
       },
       "page": 0
     },
@@ -78,8 +78,8 @@
       "kind": "display",
       "file": "preview-slate.svg",
       "caption": {
-        "de": "Liste (Slate)",
-        "en": "List (Slate)"
+        "de": "Liste (Ledger)",
+        "en": "List (Ledger)"
       },
       "page": 0,
       "style": "flat"
@@ -97,8 +97,8 @@
       "kind": "display",
       "file": "preview-nano.svg",
       "caption": {
-        "de": "Nano",
-        "en": "Nano"
+        "de": "Nibble",
+        "en": "Nibble"
       },
       "page": 0,
       "style": "compact"

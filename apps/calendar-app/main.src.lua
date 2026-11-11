@@ -470,7 +470,9 @@ local function dayPage(ctx, evs, st, en, t, topY)
         cardH = math.max(cardH, last + (cp and 10 or 14))
       end
       if y >= H then break end -- wie die eingebaute App: die letzte Karte wird am unteren Rand angeschnitten (Anzeigebereich schneidet ab)
-      if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14, true) else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
+      if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14, true)
+      elseif st == "flat" then draw.line(cardX, y + cardH + gap // 2, cardX + cardW, y + cardH + gap // 2, color.BLACK) -- Slate: Liste ohne Kaesten
+      else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
       local chipY = y + (cp and 6 or 10)
       draw.rect(chipX, chipY, chipW, chipH, e.c, true, cp and 8 or 10)
       local cb = chipY + chipH - (cp and 8 or 11)
@@ -530,7 +532,7 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
     if theme.s == "relief" then draw.rect(fx + 5, fy + 5, fw, fh, color.BLACK, true, 16) end
     draw.rect(fx, fy, fw, fh, color.WHITE, true, 16)
     thick(fx, fy, fw, fh, theme.s == "klar" and 20 or 16, color.BLACK)
-  elseif cards then card(fx, fy, fw, fh, color.ACCENT, 16) else thick(fx, fy, fw, fh, 16, color.BLACK) end
+  elseif cards then card(fx, fy, fw, fh, color.ACCENT, 16) elseif cp then thick(fx, fy, fw, fh, 16, color.BLACK) end -- Slate ohne Rahmen
   local ins = fancy and 5 or 3 -- Abstand der Terminkaesten zur Spaltenkante
   for c = 1, 6 do draw.line(colEdge[c], headerY, colEdge[c], gridBottom, color.BLACK) end
   draw.rect(gridLeft - 6, sepY, gridWidth + 12, 3, color.ACCENT, true)
@@ -592,9 +594,18 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
         if bh < 14 then bh = 14 end
         if #abt < 16 then abt[#abt + 1] = bt; abb[#abb + 1] = bb end
         local bx2, bw = colX + ins, colW - 2 * ins
-        draw.rect(bx2, bt, bw, bh, e.c, true, 6)
-        thick(bx2, bt, bw, bh, 6, color.BLACK)
         local fc = ink(e.c)
+        if st == "flat" then -- Slate: weisser Termin mit Farbstreifen
+          draw.rect(bx2, bt, bw, bh, color.WHITE, true, 4)
+          draw.rect(bx2, bt, bw, bh, color.BLACK, false, 4)
+          draw.rect(bx2, bt, 5, bh, e.c, true, 2)
+          fc = color.BLACK
+        elseif theme.s == "klar" then draw.rect(bx2, bt, bw, bh, e.c, true, 10) -- Klar: farbige Kachel ohne Rand
+        else
+          if theme.s == "relief" then draw.rect(bx2 + 3, bt + 3, bw, bh, color.BLACK, true, 6) end
+          draw.rect(bx2, bt, bw, bh, e.c, true, 6)
+          thick(bx2, bt, bw, bh, 6, color.BLACK)
+        end
         local ly, used = bt + 16, 0
         if cfg.wkName ~= false and bh >= 16 + used * 14 then
           local maxW = bw - 14
@@ -710,6 +721,8 @@ local function monthPage(ctx, evs, st, en, t, topY)
       draw.rect(gridLeft, by, gridWidth, bandH, color.ACCENT, true, 14)
     elseif cards then
       card(gridLeft, by, gridWidth, bandH, color.ACCENT, 14, true)
+    elseif st == "flat" then
+      draw.line(gridLeft, by + bandH + bandGap // 2, gridLeft + gridWidth, by + bandH + bandGap // 2, color.BLACK) -- Slate: nur Linien
     else
       thick(gridLeft, by, gridWidth, bandH, 14, color.BLACK)
     end

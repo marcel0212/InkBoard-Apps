@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-team.svg",
       "caption": {
-        "de": "Bento: nächstes Spiel und letzte Ergebnisse",
-        "en": "Bento: next match and latest results"
+        "de": "Tile: nächstes Spiel und letzte Ergebnisse",
+        "en": "Tile: next match and latest results"
       },
       "style": "cards",
       "page": 0
@@ -79,8 +79,8 @@
       "kind": "display",
       "file": "preview-team-flat.svg",
       "caption": {
-        "de": "Slate: Ergebnisse und Termine",
-        "en": "Slate: results and fixtures"
+        "de": "Ledger: Ergebnisse und Termine",
+        "en": "Ledger: results and fixtures"
       },
       "style": "flat",
       "page": 0
@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-team-compact.svg",
       "caption": {
-        "de": "Nano: Zeitleiste",
-        "en": "Nano: timeline"
+        "de": "Nibble: Zeitleiste",
+        "en": "Nibble: timeline"
       },
       "style": "compact",
       "page": 0
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-table.svg",
       "caption": {
-        "de": "Bento: Liga-Tabelle mit Zonen",
-        "en": "Bento: league table with zones"
+        "de": "Tile: Liga-Tabelle mit Zonen",
+        "en": "Tile: league table with zones"
       },
       "style": "cards",
       "page": 1
@@ -109,8 +109,8 @@
       "kind": "display",
       "file": "preview-table-flat.svg",
       "caption": {
-        "de": "Slate: komplette Tabelle",
-        "en": "Slate: full table"
+        "de": "Ledger: komplette Tabelle",
+        "en": "Ledger: full table"
       },
       "style": "flat",
       "page": 1
@@ -119,8 +119,8 @@
       "kind": "display",
       "file": "preview-table-compact.svg",
       "caption": {
-        "de": "Nano: kompakte Tabelle",
-        "en": "Nano: compact table"
+        "de": "Nibble: kompakte Tabelle",
+        "en": "Nibble: compact table"
       },
       "style": "compact",
       "page": 1

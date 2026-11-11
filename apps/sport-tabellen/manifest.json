@@ -4,7 +4,7 @@
     "de": "Sport",
     "en": "Sports"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 14,
   "pages": [
     {
@@ -39,8 +39,8 @@
         "en": "General"
       },
       "help": {
-        "de": "Die gewählte Sportart erscheint auf den Vollseiten. Alle Sportarten, für die unten ein Team eingetragen ist, werden im Hintergrund geladen und lassen sich über eigene Dashboard-Widgets anzeigen. Datenquelle sportal.de, ein Schlüssel ist nicht nötig.\nEchte Wappen: lädt in der Bento-Darstellung die Wappen des eigenen Teams und des nächsten Gegners von Wikipedia (sportal.de liefert keine). Findet sich kein passendes Bild, erscheint die farbige Kürzel-Kachel.",
-        "en": "The chosen sport appears on the full pages. Every sport with a team entered below is loaded in the background and can be shown by its own dashboard widget. Data source sportal.de, no key needed.\nReal crests: in the Bento layout, loads the crests of your team and the next opponent from Wikipedia (sportal.de provides none). If no matching image is found, the coloured abbreviation tile is shown."
+        "de": "Die gewählte Sportart erscheint auf den Vollseiten. Alle Sportarten, für die unten ein Team eingetragen ist, werden im Hintergrund geladen und lassen sich über eigene Dashboard-Widgets anzeigen. Datenquelle sportal.de, ein Schlüssel ist nicht nötig.\nEchte Wappen: lädt in der Tile-Darstellung die Wappen des eigenen Teams und des nächsten Gegners von Wikipedia (sportal.de liefert keine). Findet sich kein passendes Bild, erscheint die farbige Kürzel-Kachel.",
+        "en": "The chosen sport appears on the full pages. Every sport with a team entered below is loaded in the background and can be shown by its own dashboard widget. Data source sportal.de, no key needed.\nReal crests: in the Tile layout, loads the crests of your team and the next opponent from Wikipedia (sportal.de provides none). If no matching image is found, the coloured abbreviation tile is shown."
       }
     },
     {
@@ -132,18 +132,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (Spalten)",
-          "compact": "Nano (Zeitleiste)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Spalten)",
+          "compact": "Nibble (Zeitleiste)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (columns)",
-          "compact": "Nano (timeline)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (columns)",
+          "compact": "Nibble (timeline)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -151,8 +151,8 @@
         "en": "Layout"
       },
       "help": {
-        "de": "Bento: großes nächstes Spiel mit Wappen und fünf Ergebniskacheln. Slate: letzte und nächste Spiele in zwei Spalten. Nano: Zeitleiste mit den Spielen. Die Tabelle gibt es in allen drei Darstellungen.",
-        "en": "Bento: large next match with crests and five result tiles. Slate: last and next matches in two columns. Nano: timeline of the matches. The table is available in all three layouts."
+        "de": "Tile: großes nächstes Spiel mit Wappen und fünf Ergebniskacheln. Ledger: letzte und nächste Spiele in zwei Spalten. Nibble: Zeitleiste mit den Spielen. Die Tabelle gibt es in allen drei Darstellungen.",
+        "en": "Tile: large next match with crests and five result tiles. Ledger: last and next matches in two columns. Nibble: timeline of the matches. The table is available in all three layouts."
       }
     },
     {

@@ -8,7 +8,7 @@
     "de": "ÖPNV",
     "en": "Transit"
   },
-  "version": "1.3.0",
+  "version": "1.3.1",
   "apiLevel": 16,
   "pages": [
     {
@@ -189,18 +189,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (Listen)",
-          "compact": "Nano (kompakt)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Listen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (lists)",
-          "compact": "Nano (compact)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (lists)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -208,8 +208,8 @@
         "en": "Layout"
       },
       "help": {
-        "de": "Bento: Kacheln je Linie und Hero-Karte für die dringendste Route mit Zeitstrahl. Slate: Countdown-Liste und Routen-Blöcke. Nano: dichte Liste (zehn Abfahrten) und Zeitskala bis zum Losgehen.",
-        "en": "Bento: tiles per line and a hero card with timeline for the most urgent route. Slate: countdown list and route blocks. Nano: dense list (ten departures) and a time-to-leave scale."
+        "de": "Tile: Kacheln je Linie und Hero-Karte für die dringendste Route mit Zeitstrahl. Ledger: Countdown-Liste und Routen-Blöcke. Nibble: dichte Liste (zehn Abfahrten) und Zeitskala bis zum Losgehen.",
+        "en": "Tile: tiles per line and a hero card with timeline for the most urgent route. Ledger: countdown list and route blocks. Nibble: dense list (ten departures) and a time-to-leave scale."
       }
     },
     {

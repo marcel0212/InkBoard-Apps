@@ -8,7 +8,7 @@
     "de": "F1",
     "en": "F1"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 11,
   "pages": [
     {
@@ -50,18 +50,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (Zeilen)",
-          "compact": "Nano (Tabelle)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (Tabelle)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (rows)",
-          "compact": "Nano (table)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (table)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -69,8 +69,8 @@
         "en": "Layout"
       },
       "help": {
-        "de": "Bento zeigt Kacheln, Slate Zeilen, Nano eine kompakte Tabelle. Die Streckenlayouts und der Zeitplan gibt es in allen drei Darstellungen.",
-        "en": "Bento shows tiles, Slate rows, Nano a compact table. Track layouts and the schedule are available in all three layouts."
+        "de": "Tile zeigt Kacheln, Ledger Zeilen, Nibble eine kompakte Tabelle. Die Streckenlayouts und der Zeitplan gibt es in allen drei Darstellungen.",
+        "en": "Tile shows tiles, Ledger rows, Nibble a compact table. Track layouts and the schedule are available in all three layouts."
       }
     },
     {

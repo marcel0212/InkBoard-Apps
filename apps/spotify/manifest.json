@@ -54,14 +54,14 @@
       "default": "cards",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (zweispaltig)",
-          "compact": "Nano (Datenblatt)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (zweispaltig)",
+          "compact": "Nibble (Datenblatt)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (two columns)",
-          "compact": "Nano (data sheet)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (two columns)",
+          "compact": "Nibble (data sheet)"
         }
       },
       "label": {
@@ -69,8 +69,8 @@
         "en": "App page style"
       },
       "help": {
-        "de": "Bento: großes Cover mit Steuer-Kacheln links, Titel, Status und Fortschritt in Karten rechts. Slate: schlichte zweispaltige Ansicht mit Cover, Titel und Fortschrittslinie. Nano: kompaktes Datenblatt mit sieben Zeilen und kleinem Cover.",
-        "en": "Bento: large cover with control tiles on the left, title, status and progress in cards on the right. Slate: plain two-column view with cover, title and a progress line. Nano: compact data sheet with seven rows and a small cover."
+        "de": "Tile: großes Cover mit Steuer-Kacheln links, Titel, Status und Fortschritt in Karten rechts. Ledger: schlichte zweispaltige Ansicht mit Cover, Titel und Fortschrittslinie. Nibble: kompaktes Datenblatt mit sieben Zeilen und kleinem Cover.",
+        "en": "Tile: large cover with control tiles on the left, title, status and progress in cards on the right. Ledger: plain two-column view with cover, title and a progress line. Nibble: compact data sheet with seven rows and a small cover."
       },
       "section": "look"
     },

@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Kacheln je Linie",
-        "en": "Bento: tiles per line"
+        "de": "Tile: Kacheln je Linie",
+        "en": "Tile: tiles per line"
       },
       "style": "cards",
       "page": 0
@@ -79,8 +79,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Countdown-Liste",
-        "en": "Slate: countdown list"
+        "de": "Ledger: Countdown-Liste",
+        "en": "Ledger: countdown list"
       },
       "style": "flat",
       "page": 0
@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: zehn Abfahrten",
-        "en": "Nano: ten departures"
+        "de": "Nibble: zehn Abfahrten",
+        "en": "Nibble: ten departures"
       },
       "style": "compact",
       "page": 0
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-routes.svg",
       "caption": {
-        "de": "Bento: Route mit Zeitstrahl",
-        "en": "Bento: route with timeline"
+        "de": "Tile: Route mit Zeitstrahl",
+        "en": "Tile: route with timeline"
       },
       "style": "cards",
       "page": 1
@@ -109,8 +109,8 @@
       "kind": "display",
       "file": "preview-routes-flat.svg",
       "caption": {
-        "de": "Slate: Routen-Blöcke",
-        "en": "Slate: route blocks"
+        "de": "Ledger: Routen-Blöcke",
+        "en": "Ledger: route blocks"
       },
       "style": "flat",
       "page": 1
@@ -119,8 +119,8 @@
       "kind": "display",
       "file": "preview-routes-compact.svg",
       "caption": {
-        "de": "Nano: Zeit bis Losgehen",
-        "en": "Nano: time until departure"
+        "de": "Nibble: Zeit bis Losgehen",
+        "en": "Nibble: time until departure"
       },
       "style": "compact",
       "page": 1

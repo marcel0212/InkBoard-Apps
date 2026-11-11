@@ -71,8 +71,8 @@
       "kind": "display",
       "file": "preview-air.svg",
       "caption": {
-        "de": "Luft (Bento)",
-        "en": "Air (Bento)"
+        "de": "Luft (Tile)",
+        "en": "Air (Tile)"
       },
       "page": 0
     },
@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-vent.svg",
       "caption": {
-        "de": "Lüften? (Slate)",
-        "en": "Ventilate? (Slate)"
+        "de": "Lüften? (Ledger)",
+        "en": "Ventilate? (Ledger)"
       },
       "page": 2,
       "style": "flat"
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-air-nano.svg",
       "caption": {
-        "de": "Luft (Nano)",
-        "en": "Air (Nano)"
+        "de": "Luft (Nibble)",
+        "en": "Air (Nibble)"
       },
       "page": 0,
       "style": "compact"

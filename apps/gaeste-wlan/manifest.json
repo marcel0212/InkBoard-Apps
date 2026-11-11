@@ -8,7 +8,7 @@
     "de": "WLAN",
     "en": "Wi-Fi"
   },
-  "version": "1.4.0",
+  "version": "1.4.1",
   "apiLevel": 29,
   "permissions": {
     "wifiPass": true
@@ -96,18 +96,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

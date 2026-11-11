@@ -8,7 +8,7 @@
     "de": "Tanken",
     "en": "Fuel"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "apiLevel": 7,
   "pages": [
     {
@@ -182,18 +182,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (Zeilen)",
-          "compact": "Nano (Tabelle)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (Tabelle)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento (tiles)",
-          "flat": "Slate (rows)",
-          "compact": "Nano (table)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (table)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

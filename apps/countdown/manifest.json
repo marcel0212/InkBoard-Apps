@@ -4,7 +4,7 @@
     "de": "Countdown",
     "en": "Countdown"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 1,
   "pages": 1,
   "refreshMinutes": 60,
@@ -84,13 +84,13 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)",
           "classic": "Klassisch"
         },
         "en": {
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)",
           "classic": "Classic"
         }
       },

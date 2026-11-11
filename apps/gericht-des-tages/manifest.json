@@ -8,7 +8,7 @@
     "de": "GdT",
     "en": "MotD"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "apiLevel": 10,
   "pages": [
     {
@@ -68,13 +68,13 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)",
           "classic": "Klassisch"
         },
         "en": {
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)",
           "classic": "Classic"
         }
       },

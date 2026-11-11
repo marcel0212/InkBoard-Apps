@@ -18,7 +18,7 @@ local EN = false
 local function T(de, en) if EN then return en end return de end
 
 -- Aus store/lib/text.lua nur trim/cut/clean/fit (num/decodeCut braucht das Paket nicht; main.lua bleibt unter 64 KB)
---#include theme
+--#include theme -pill -pbar -panel
 
 local function trim(s)
   return (s:gsub("^%s+", ""):gsub("%s+$", ""))
@@ -901,7 +901,7 @@ end
 local function thickRR(x, y, w, h, r, c)
   if w >= 60 and h >= 40 then -- Kacheln: Relief mit hartem Schatten, Klar runder
     if theme.s == "relief" then draw.rect(x + 5, y + 5, w, h, color.BLACK, true, r); draw.rect(x, y, w, h, color.WHITE, true, r)
-    elseif theme.s == "klar" then r = r + 8 end
+    elseif theme.s == "klar" then draw.rect(x, y, w, h, c == color.BLACK and color.ACCENT or c, true, r + 8); return end
   end
   draw.rect(x, y, w, h, c, false, r)
   draw.rect(x + 1, y + 1, w - 2, h - 2, c, false, math.max(r - 1, 0))

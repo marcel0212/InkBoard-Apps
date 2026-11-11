@@ -87,8 +87,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: nächstes Rennen",
-        "en": "Bento: next race"
+        "de": "Tile: nächstes Rennen",
+        "en": "Tile: next race"
       },
       "style": "cards",
       "page": 0
@@ -97,8 +97,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: nächstes Rennen",
-        "en": "Slate: next race"
+        "de": "Ledger: nächstes Rennen",
+        "en": "Ledger: next race"
       },
       "style": "flat",
       "page": 0
@@ -107,8 +107,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: nächstes Rennen",
-        "en": "Nano: next race"
+        "de": "Nibble: nächstes Rennen",
+        "en": "Nibble: next race"
       },
       "style": "compact",
       "page": 0
@@ -117,8 +117,8 @@
       "kind": "display",
       "file": "preview-standings.svg",
       "caption": {
-        "de": "Bento: WM-Wertung",
-        "en": "Bento: standings"
+        "de": "Tile: WM-Wertung",
+        "en": "Tile: standings"
       },
       "style": "cards",
       "page": 1
@@ -127,8 +127,8 @@
       "kind": "display",
       "file": "preview-standings-flat.svg",
       "caption": {
-        "de": "Slate: WM-Wertung",
-        "en": "Slate: standings"
+        "de": "Ledger: WM-Wertung",
+        "en": "Ledger: standings"
       },
       "style": "flat",
       "page": 1
@@ -137,8 +137,8 @@
       "kind": "display",
       "file": "preview-standings-compact.svg",
       "caption": {
-        "de": "Nano: WM-Wertung",
-        "en": "Nano: standings"
+        "de": "Nibble: WM-Wertung",
+        "en": "Nibble: standings"
       },
       "style": "compact",
       "page": 1
@@ -147,8 +147,8 @@
       "kind": "display",
       "file": "preview-last.svg",
       "caption": {
-        "de": "Bento: Rennergebnis",
-        "en": "Bento: race result"
+        "de": "Tile: Rennergebnis",
+        "en": "Tile: race result"
       },
       "style": "cards",
       "page": 2
@@ -157,8 +157,8 @@
       "kind": "display",
       "file": "preview-last-flat.svg",
       "caption": {
-        "de": "Slate: Rennergebnis",
-        "en": "Slate: race result"
+        "de": "Ledger: Rennergebnis",
+        "en": "Ledger: race result"
       },
       "style": "flat",
       "page": 2
@@ -167,8 +167,8 @@
       "kind": "display",
       "file": "preview-last-compact.svg",
       "caption": {
-        "de": "Nano: Rennergebnis",
-        "en": "Nano: race result"
+        "de": "Nibble: Rennergebnis",
+        "en": "Nibble: race result"
       },
       "style": "compact",
       "page": 2

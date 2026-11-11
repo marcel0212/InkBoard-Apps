@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Tonnen-Kacheln",
-        "en": "Bento: bin tiles"
+        "de": "Tile: Tonnen-Kacheln",
+        "en": "Tile: bin tiles"
       },
       "style": "cards",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Headline und Liste",
-        "en": "Slate: headline and list"
+        "de": "Ledger: Headline und Liste",
+        "en": "Ledger: headline and list"
       },
       "style": "flat",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: Monatskalender",
-        "en": "Nano: month calendar"
+        "de": "Nibble: Monatskalender",
+        "en": "Nibble: month calendar"
       },
       "style": "compact",
       "page": 0

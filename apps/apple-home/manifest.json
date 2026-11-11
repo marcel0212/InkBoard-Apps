@@ -8,7 +8,7 @@
     "de": "Home",
     "en": "Home"
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "apiLevel": 23,
   "pages": [
     {
@@ -100,19 +100,19 @@
       "optionLabels": {
         "de": {
           "apple": "Apple (Symbole)",
-          "cards": "Bento (Kacheln)",
-          "flat": "Slate (zwei Spalten)",
-          "compact": "Nano (Liste)",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (zwei Spalten)",
+          "compact": "Nibble (Liste)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
           "apple": "Apple (icons)",
-          "cards": "Bento (tiles)",
-          "flat": "Slate (two columns)",
-          "compact": "Nano (list)",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (two columns)",
+          "compact": "Nibble (list)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

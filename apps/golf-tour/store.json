@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento: Podium-Kacheln",
-        "en": "Bento: podium tiles"
+        "de": "Tile: Podium-Kacheln",
+        "en": "Tile: podium tiles"
       },
       "style": "cards",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Rangliste",
-        "en": "Slate: ranking"
+        "de": "Ledger: Rangliste",
+        "en": "Ledger: ranking"
       },
       "style": "flat",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: kompakt",
-        "en": "Nano: compact"
+        "de": "Nibble: kompakt",
+        "en": "Nibble: compact"
       },
       "style": "compact",
       "page": 0

@@ -949,7 +949,8 @@ local function drawCards(ctx, items, today)
   for n = 1, #items do
     if rowY + rowH > contentBottom + 4 then break end
     local it = items[n]
-    draw.line(marginX, rowY, W - marginX, rowY, color.BLACK)
+    if theme.s == "relief" or theme.s == "klar" then card(marginX - 6, rowY + 2, W - 2 * marginX + 12, rowH - 10, nil, 16, true) -- jede Aufgabe als Karte
+    else draw.line(marginX, rowY, W - marginX, rowY, color.BLACK) end
     local cy = rowY + 26
     statusMark(it, marginX + 10, cy, 7)
     if not it.done and it.prio >= 2 then

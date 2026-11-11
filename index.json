@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "apiLevel": 25,
       "pages": 3,
       "pageNames": [
@@ -175,16 +175,16 @@
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast.svg",
           "caption": {
-            "de": "Prognose (Bento)",
-            "en": "Forecast (Bento)"
+            "de": "Prognose (Tile)",
+            "en": "Forecast (Tile)"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast-slate.svg",
           "caption": {
-            "de": "Prognose (Slate)",
-            "en": "Forecast (Slate)"
+            "de": "Prognose (Ledger)",
+            "en": "Forecast (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -193,8 +193,8 @@
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast-nano.svg",
           "caption": {
-            "de": "Prognose (Nano)",
-            "en": "Forecast (Nano)"
+            "de": "Prognose (Nibble)",
+            "en": "Forecast (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -251,9 +251,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "0dcd8e084ce4168da30026886549deaedc5684ace66ec599770f9efef6490b52",
-      "sig": "J+9yKowTAwDv8Lyqp0RJsoxV+ssNi6si3TT/LSRZkyJHx+6D3ettkRn7KfKWS0301cYW+ReGqQIWtLGBC2wD8Rb+k0zG/99eU7sWg/o+1qrFKDmPU7kOJxRrbV6QsQ5ll0NCLNrfAgn6EKwZ4QUlaijihnk+/hfYvrXEJImcz+lSKSbiKW5sp3pvgpwr8A+Jmtc1HSNDC1E1LnX9fTnfbJOeL7DNE2/7313hdbC5+mB9CeTOEUgYEAZUfC/jFJIXyGWo/Xu3tbLP0V6LSBCgAeI/sazIHe/Lj4NA1STbo8m9ExH7zIz0i4yji3tVPXmMVd6m+qGuP9KKVqTP9FNApA==",
-      "size": 33065
+      "sha256": "553986aab15a9ebbf3dccf8a5cfc4d3f6d760893aef33043264e152a64c7b5e5",
+      "sig": "GfCmOMEoN5F1HjOW9zeByjmwiB9Xq9lh/gAc9nza0bUv+vfFvJx8plUaNJ/ZsADZec79Pdd7QjOQ4DJOD3Oxc2pOcxXIKQRtr2Efj07e7aGBwRePjtxpmJ50JobYUCuUy6YMA9uKPvJLA0fVM0ZJsaw3XONnTj4hDQjmdN82C8zoWgF9KxFfZQwzShFr4ZH3hKMhrRskHmKijCPXc2IJ5M6sOqLIZlf3FPtEtnAeKDj3Xfl5LCnXUTVwMiHc1m50UswKVzurKqDlzLS1KdjQEWCUEDDlaeE18k9GorGj6nQyrxuMjhXiFXRay78wNMrSVcAq+DjpyPquCvj0jpCd6g==",
+      "size": 35789
     },
     {
       "id": "apple-home",
@@ -271,7 +271,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -379,8 +379,8 @@
           "kind": "display",
           "file": "apps/apple-home/preview-display-bento.svg",
           "caption": {
-            "de": "Kacheln (Bento)",
-            "en": "Tiles (Bento)"
+            "de": "Kacheln (Tile)",
+            "en": "Tiles (Tile)"
           },
           "style": "cards",
           "page": 0
@@ -389,8 +389,8 @@
           "kind": "display",
           "file": "apps/apple-home/preview-display-flat.svg",
           "caption": {
-            "de": "Zwei Spalten (Slate)",
-            "en": "Two columns (Slate)"
+            "de": "Zwei Spalten (Ledger)",
+            "en": "Two columns (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -399,8 +399,8 @@
           "kind": "display",
           "file": "apps/apple-home/preview-display-compact.svg",
           "caption": {
-            "de": "Liste (Nano)",
-            "en": "List (Nano)"
+            "de": "Liste (Nibble)",
+            "en": "List (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -433,9 +433,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "debae5dfa55512fba5fcc4842cd2b2086f486fa0f6597ebef1a919b5969f0951",
-      "sig": "JJT/K8+fQxDER3g2df/qHZOG6L88wXBwRuTqd7HzjGMg3SCggxniQKofNrhdoZp2fprL4xfMazh9KlZXWca8tl6clOIZ56QCm4L5DQCXtTygQC57UupzpfXs/Lr85DWGtTUyAS+oELF5p0CS82bnynXkm8nmuJJ6cABOunU6mSzns/kW03/4c6qvmqZ56MBkIOyx+NohOCIQOhVnCrQO8oVEXPz20Dh2FF7qYe9zxXCOVUZtJvkbtQMMr3yxuNd3PQIVVAYKaUVCI1pTLOc/UL00slGh3QXhp9UA8jOjbDcETIYSfT/evxGGnG6QymZpVr4GbqWoz/mYaaqXVINbrQ==",
-      "size": 31714
+      "sha256": "5d2ef4c2b20f8ceede8e748ae6f9c44ff0350a2af3bef29b107176c93808cfbe",
+      "sig": "qnjym/Ul1yfJFx9C2QHgl8IfBB4Gt29nBXr4PRWwnRWIy7NguQO6IbexAKn/5aWVvWzPCTR2Ol8tPnbbtTyOMaxBwpRiCHC16z+EvJ7MYZ90H4CXXYsy0DbPWYWqnxkpJgCSIdyatc8zbqxuWDDOuQ4lcjhuoTRjy8gSrSXaui0L2NVyTEQ2xSWamRFw52eG3uPSxWLR8T0ovmS8pjq4sZQqIlKcYqpLTnqWgBJiRP6rbBFh3tfK8kkcp1wiAB96G25uUQbOXzOp3gKmeZt/ww6hVUN1HQuwxfxSC6f+ZSDmhoocXSBAUKZwiQ4l/+bO5bxLfqHjnTNqFhzKjqfVkA==",
+      "size": 34438
     },
     {
       "id": "bilder",
@@ -529,7 +529,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -617,8 +617,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-day.svg",
           "caption": {
-            "de": "Tag: Slate",
-            "en": "Day: Slate"
+            "de": "Tag: Ledger",
+            "en": "Day: Ledger"
           },
           "style": "flat",
           "page": 0
@@ -627,8 +627,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-day-cards.svg",
           "caption": {
-            "de": "Tag: Bento",
-            "en": "Day: Bento"
+            "de": "Tag: Tile",
+            "en": "Day: Tile"
           },
           "style": "cards",
           "page": 0
@@ -637,8 +637,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-day-compact.svg",
           "caption": {
-            "de": "Tag: Nano",
-            "en": "Day: Nano"
+            "de": "Tag: Nibble",
+            "en": "Day: Nibble"
           },
           "style": "compact",
           "page": 0
@@ -647,8 +647,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-week.svg",
           "caption": {
-            "de": "Woche: Slate",
-            "en": "Week: Slate"
+            "de": "Woche: Ledger",
+            "en": "Week: Ledger"
           },
           "style": "flat",
           "page": 1
@@ -657,8 +657,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-week-cards.svg",
           "caption": {
-            "de": "Woche: Bento",
-            "en": "Week: Bento"
+            "de": "Woche: Tile",
+            "en": "Week: Tile"
           },
           "style": "cards",
           "page": 1
@@ -667,8 +667,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-week-compact.svg",
           "caption": {
-            "de": "Woche: Nano",
-            "en": "Week: Nano"
+            "de": "Woche: Nibble",
+            "en": "Week: Nibble"
           },
           "style": "compact",
           "page": 1
@@ -677,8 +677,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-month.svg",
           "caption": {
-            "de": "Monat: Slate",
-            "en": "Month: Slate"
+            "de": "Monat: Ledger",
+            "en": "Month: Ledger"
           },
           "style": "flat",
           "page": 2
@@ -687,8 +687,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-month-cards.svg",
           "caption": {
-            "de": "Monat: Bento",
-            "en": "Month: Bento"
+            "de": "Monat: Tile",
+            "en": "Month: Tile"
           },
           "style": "cards",
           "page": 2
@@ -697,8 +697,8 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-month-compact.svg",
           "caption": {
-            "de": "Monat: Nano",
-            "en": "Month: Nano"
+            "de": "Monat: Nibble",
+            "en": "Month: Nibble"
           },
           "style": "compact",
           "page": 2
@@ -741,9 +741,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "f7e9a11a2cf5588cb5732458cb690fa4820f1567d98a7161e0f3cdb185027d81",
-      "sig": "JguYdKG7Z23nyEgaJHj7BpLaqJZC7qYM+Q4rGaK2bsHSyNxZOQOdRvq17coyX0j+SnfQ89fCdfGUdfLdxarUHIGPIOAm9EMeyIr/m7KAvu7frck6JtYxx0DJiOgXfujB2QCbIOcQlNzSWOUFWHJ8NoElBRdof5oE5MHkb7Rcl51j36tYILciqT1lYt9nYcGM4v/JwTMEMotshVLZkrZcDyDj37EmKh585eNa7956WZ+FtvZ24KbOGi60IzmjtfUsn4yB3Y4As3EnqoMghpDCTO9tNYW0axoZO3eYJLehQhu5LU6qm5Q96EU4WZDbF0C940rCrZcF4oIvU5UfT4xHrg==",
-      "size": 44198
+      "sha256": "d2fc53f032b303586b6917fbe4436018325e17232802fca9c6bccc0208866a3c",
+      "sig": "FV8xoKLSJj3KkmuF8uWCyOhrOBnBMMiDh9PA7PstlzrovK36TCmzt7vGoEHIuYrhP5CiUXXOiJj92t8QTimIxwHx4xdhuIig3zXnlge/KC7yVSxRUAERprbTm4g5hze3go+wJLgEzg89VILdB2XH+FLZTi6nn93yqiYxI9XjYGee1WUf54TsqsK+OqtlEWjSIumw01DG+bZolgA7sATR8UTUG5HZMY8RoWG0TR4+sp5Q5dggXyugWALM2a1QMGE4WznJOHVCXSGrd8fm6fAswALe9rrz+CY2/arPdrMDJP5rdW5izy4886wv7dtVislJyZI2Q8vW87uHoxKS7tvQ5w==",
+      "size": 47470
     },
     {
       "id": "clock",
@@ -761,20 +761,20 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
       "standard": true,
       "features": {
         "de": [
-          "Drei Stile: Bento, Slate, Nano",
+          "Drei Stile: Tile, Ledger, Nibble",
           "12- oder 24-Stunden-Anzeige",
           "Datum und Kalenderwoche",
           "Passendes Dashboard-Widget"
         ],
         "en": [
-          "Three styles: Bento, Slate, Nano",
+          "Three styles: Tile, Ledger, Nibble",
           "12 or 24 hour display",
           "Date and calendar week",
           "Matching dashboard widget"
@@ -803,8 +803,8 @@
           "kind": "display",
           "file": "apps/clock/preview-display.svg",
           "caption": {
-            "de": "Bento",
-            "en": "Bento"
+            "de": "Tile",
+            "en": "Tile"
           },
           "style": "cards",
           "page": 0
@@ -813,8 +813,8 @@
           "kind": "display",
           "file": "apps/clock/preview-display-flat.svg",
           "caption": {
-            "de": "Slate",
-            "en": "Slate"
+            "de": "Ledger",
+            "en": "Ledger"
           },
           "style": "flat",
           "page": 0
@@ -823,8 +823,8 @@
           "kind": "display",
           "file": "apps/clock/preview-display-compact.svg",
           "caption": {
-            "de": "Nano",
-            "en": "Nano"
+            "de": "Nibble",
+            "en": "Nibble"
           },
           "style": "compact",
           "page": 0
@@ -857,9 +857,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "59ab8730f49d6ec2e86b63b3a35ff088948ce13b4fc6b9a2ed792639c6381e1e",
-      "sig": "Ys2qJyLAUhlw401liBvwxVm4GURMSHPLUflg8IG7QFe54Z9p6owO3ZuTSmGxzUAHWJhp0aMEmUurMkHx9EhwBSLOkeN2o31sQYBpuZ1vh1e6ve5SJMw0N57C69ihS8tuNt1LT+MSkY9/0u7Z68vjkKl+lJaVhWCo0XSDl1P0DM2kotDhB17EBIF51fyjf0Sp8nA6nn9q8W2x0kmPOJqh8f4oQ0Y0IWfqIAZ9pXLyvNVuZlFsdlHOP8cwBsEViOb5kwsQtfOwY1rG0Aa8tpURlfO5iNmkYLSzMCfC+U8vUvsRlhfGPBlVeNi7zrXwNWh8tWR6ty6ZiiSDndrtKjiYTg==",
-      "size": 13128
+      "sha256": "ed7690b68d39b4d989572ff7c9c6ecdf9bd035a852b3f9cd74e30c5c3571dd0c",
+      "sig": "Nuz8z0zMHsGYNwzw3fA1PvR9WlCu5rQwnybRL0vQ9rjp9JDB9+tiq7q2DTftjkKsCOug4t2xJWCSrZQhfYEmki3hqoXmC7jg5BZn09p4W0rtwndKiTR0XjYXa2KiPReUehcN+OVk8wOTNH0QGn/c60YU/7N5lmkbFpgjLWHHXGhUbSeW1l64Yhjzli2YAV7YvatJPLahobxuZZ3dm+4f4sMH3v2ZsqaLW67xSrOVvDz1iLOlohb+ffWSysCZEN2dOPa0RQPly5tCv8wydrsY4PqBSICwQUxgfMrsI9rGmceXqD7apC8ta0aF+dysu89H+7toULaiDM8o4e3KJyXa4g==",
+      "size": 15852
     },
     {
       "id": "countdown",
@@ -877,7 +877,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 1,
       "pages": 1,
       "hasWidget": true,
@@ -951,9 +951,9 @@
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "c8354139faece9959add3da3387697f6507ade111435229f6cf22a066a618ef8",
-      "sig": "ChK47tHklbtOF6tDTwjZzMTVUUzUsfg2kUfoq2WdWi8SkL1VjwC4cBSQUTtiRHLAEwb5AL2CfOcs/Xtar4p98gVxdAdPhWo41WTdBqligLQKQ+L1QPzM6INGqUZ6xKpJJFLh7E6FHiD3W+KTXFq8oU0ZAdWfgjtNaJUahwk6M1vdvbGEQwUJkPBRx0q0efEFqgjWudw1LkFY4UGIouN9p6qn66hfFarXGdXeP/gXJqGyMsGNDPRE9NY7MDkqmNxLg2bi38u26lyb6ACccv/5Y2diu+0JyVmVHHR+LrQ6UnPi+rrOenrs2K5gHqh9ZOt6TEv6mnCwuuPf9NtTbc2JKw==",
-      "size": 7584
+      "sha256": "4753eb60b39b6ff7aad29db3225ccd612a7f4a0943b46e622aff778f1939dfcd",
+      "sig": "RtYzqjLAY87qEuTwt3ijdneRNa/MnHq/W/QMY6trMquvjECDDxz+Mc7R+F66BB7MWL5HebIGQ7X+I1tI6I7AQJXP7VSz9vTCIkbFsAR7dRU+nMZsLhBLATFHYjhLEb1ILgEruVFgvPca5w32fPhO48ITUIpfZ2AZZmxi++KRLUvYObGr79Gtk0RTSOJBPeY8OE48xvs4ygixEPo001P59/AkwuCQU+lyrxjNKMZcSz037lTTK+TUk86Ri4nafliRqJj76xrKKxhr4sa0HL5U44HQdsYhLB69oPqk0Fu/Mdg/M4qclZzC9rPUaKYTRSm6WbY6jFLzd6VVzxKgl3XJkQ==",
+      "size": 10304
     },
     {
       "id": "datenquelle",
@@ -971,7 +971,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -1021,16 +1021,16 @@
           "kind": "display",
           "file": "apps/datenquelle/preview-display.svg",
           "caption": {
-            "de": "Kacheln (Bento)",
-            "en": "Tiles (Bento)"
+            "de": "Kacheln (Tile)",
+            "en": "Tiles (Tile)"
           }
         },
         {
           "kind": "display",
           "file": "apps/datenquelle/preview-display-flat.svg",
           "caption": {
-            "de": "Großer Wert (Slate)",
-            "en": "Big value (Slate)"
+            "de": "Großer Wert (Ledger)",
+            "en": "Big value (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -1039,8 +1039,8 @@
           "kind": "display",
           "file": "apps/datenquelle/preview-display-compact.svg",
           "caption": {
-            "de": "Liste (Nano)",
-            "en": "List (Nano)"
+            "de": "Liste (Nibble)",
+            "en": "List (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -1073,9 +1073,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "41ff6420e1801cd7f4a9577af069aa7bf4f0552f0861060fd40503fefb0a3285",
-      "sig": "M1fL8sH+q8F9qgRUVUFMI5Ef/L6fFNJw4KDP31b+9DQHT3KUXyGUUsv0WpZUGgzr5YJ9L8/VmRmmTkwOaoXoDdq8DGd/Jaj9zYhw2j/v9EHFDI9VFTwqE5MdPVwD5AzAx2256zNUc5HijSzwP1LSCEUKOrLNVp8WJ+Uz8ZfS1Z1kuMI+ldoq/5hel13iuyiLTpmM51gNSsBH56Qrjkl8/vf4jlvsf7gnnBlg4L55zS8qDFw/qvBd1CWEaI5A92+AobFRIGo0eqS55e9r8WFcsz1upZv43IIy+hHo3rKYAnfZ0vjlacsYLMWBF1VpWWUNeghFPCbBgUbl+SaJH1L85Q==",
-      "size": 24453
+      "sha256": "4aa3dd9aa84701b2514af26e0110c6ec12cf05aad4dd98d1487207138c21bdc6",
+      "sig": "mtnOQBj0CWRMZl+rnybF4QzlhD5MNkN8wzYCQY139B5jhVXagN4tI5ABR9QPjJs0DqNAia15Jm9sz1GG3Agc1F4nKNAxxP8eQWvv1y9DKZKh7mf0J4lPNxzQ5/SLGnJ6bDSbr2B5S6R0bEq7C0f+BCRiM3X5TTK04SB94fu3GgYD0Lp1/JDdnzo+lYbqdhkt66A2k0z4kr9fcKi8V/T8aBLF+oQT8CMsj/HjKnXYgupnfpTU7MNFNY3+lydd1ZM+jMzDVw/Z2SeZl2/G5ENIp8mLdZyCKv9ekOjykZ9VjCww4sPcBIylur5+YUR7UTTYpQQk1athrs9Yokp2ED60AA==",
+      "size": 27177
     },
     {
       "id": "einkaufsliste",
@@ -1093,7 +1093,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -1157,16 +1157,16 @@
           "kind": "display",
           "file": "apps/einkaufsliste/preview-list.svg",
           "caption": {
-            "de": "Liste (Bento)",
-            "en": "List (Bento)"
+            "de": "Liste (Tile)",
+            "en": "List (Tile)"
           }
         },
         {
           "kind": "display",
           "file": "apps/einkaufsliste/preview-slate.svg",
           "caption": {
-            "de": "Liste (Slate)",
-            "en": "List (Slate)"
+            "de": "Liste (Ledger)",
+            "en": "List (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -1183,8 +1183,8 @@
           "kind": "display",
           "file": "apps/einkaufsliste/preview-nano.svg",
           "caption": {
-            "de": "Nano",
-            "en": "Nano"
+            "de": "Nibble",
+            "en": "Nibble"
           },
           "style": "compact",
           "page": 0
@@ -1217,9 +1217,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "88f25fa4362b8fcab1f93f898c21c6c271d94c296d2d268b9a8093811b89d8b3",
-      "sig": "aTrkOxiTezw8GinUUOudOCZ0BBxiJfsTLtuJWLw5f+flvjGIlWpeZcItvHRTNJz274A5t+Lowe7dSoLQJt1cQG4ZfkiKsxmjijKwRiJUZM/C57ipEq04wbn1ivvtNS3iyWH1h/q2NqUioRjmk1x9lP4OS9sw2iZLkaKJc4aK67iJk2Lo3RIUkBMI/FlEavXigxFc2U9vpnCOqY6SkY0mehakkQqgrTuQTMz5YlvMFUMcihqzGOqmWdv8LLzRq6Vbim8zr8moDP0TOqGTe777NzsDw8jOY22z3XxQ7MWGtn6szL2zEf+Stz5CdWRIrr+PwcjbtHaEu8PRe1abGkEzng==",
-      "size": 33681
+      "sha256": "d09f0635650456fe192d5f69277b6dd88cbdee35b628b1a2174a22d5be0fdabf",
+      "sig": "XXxoAEl2fNpm4bWfX8baiRYY5iaBN9EUSQjHHDuuUWxYQDpDrD6845AuxpAvGPpqepxzNuMn3QfWf0F/xMYFwJsksCb15p8XsM4vUTe2I8n38KKrS5OiJYwcN8tBQfWrpL+JU5p7w7cojquqJwPHWP4GJbtYGXMEbZYmqqumjV+bBfgD9hgWJluACz2t2dlcZ42Bw1rz8yk5jE8h/tGzZEccfwJi+yo36CEBUAjLRxm8tokq/qDZWqSBciTxq3CNO/oVeiZbV1+03uvbLyg+UZoSMHlYsOnANZ5yUrezjmWPB3YcpyuDZWJC2Vp+azDysi9mbyn39rmDRMdoQFQSMg==",
+      "size": 36405
     },
     {
       "id": "flight-radar",
@@ -1350,7 +1350,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 11,
       "pages": 3,
       "pageNames": [
@@ -1439,8 +1439,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-display.svg",
           "caption": {
-            "de": "Bento: nächstes Rennen",
-            "en": "Bento: next race"
+            "de": "Tile: nächstes Rennen",
+            "en": "Tile: next race"
           },
           "style": "cards",
           "page": 0
@@ -1449,8 +1449,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: nächstes Rennen",
-            "en": "Slate: next race"
+            "de": "Ledger: nächstes Rennen",
+            "en": "Ledger: next race"
           },
           "style": "flat",
           "page": 0
@@ -1459,8 +1459,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: nächstes Rennen",
-            "en": "Nano: next race"
+            "de": "Nibble: nächstes Rennen",
+            "en": "Nibble: next race"
           },
           "style": "compact",
           "page": 0
@@ -1469,8 +1469,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-standings.svg",
           "caption": {
-            "de": "Bento: WM-Wertung",
-            "en": "Bento: standings"
+            "de": "Tile: WM-Wertung",
+            "en": "Tile: standings"
           },
           "style": "cards",
           "page": 1
@@ -1479,8 +1479,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-standings-flat.svg",
           "caption": {
-            "de": "Slate: WM-Wertung",
-            "en": "Slate: standings"
+            "de": "Ledger: WM-Wertung",
+            "en": "Ledger: standings"
           },
           "style": "flat",
           "page": 1
@@ -1489,8 +1489,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-standings-compact.svg",
           "caption": {
-            "de": "Nano: WM-Wertung",
-            "en": "Nano: standings"
+            "de": "Nibble: WM-Wertung",
+            "en": "Nibble: standings"
           },
           "style": "compact",
           "page": 1
@@ -1499,8 +1499,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-last.svg",
           "caption": {
-            "de": "Bento: Rennergebnis",
-            "en": "Bento: race result"
+            "de": "Tile: Rennergebnis",
+            "en": "Tile: race result"
           },
           "style": "cards",
           "page": 2
@@ -1509,8 +1509,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-last-flat.svg",
           "caption": {
-            "de": "Slate: Rennergebnis",
-            "en": "Slate: race result"
+            "de": "Ledger: Rennergebnis",
+            "en": "Ledger: race result"
           },
           "style": "flat",
           "page": 2
@@ -1519,8 +1519,8 @@
           "kind": "display",
           "file": "apps/formel-1/preview-last-compact.svg",
           "caption": {
-            "de": "Nano: Rennergebnis",
-            "en": "Nano: race result"
+            "de": "Nibble: Rennergebnis",
+            "en": "Nibble: race result"
           },
           "style": "compact",
           "page": 2
@@ -1553,9 +1553,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "34a8f0ae6a33da18cf6a5884e61bd6f91b390382c8bc565a73d9d2785e1ad41a",
-      "sig": "EOwXn5bl6cumwSI2QU8SCCxxmYD1YADTZE8jv3/A8JCvQQCRQyV2NPDXOb6v8k9eU1kqNTy3wwoQcg2/WPuNChfbpoxVGja5y160LopiIJt2Bj/9FqH8ALYy+kV9OwQkc4F9luRJ+8YIxCWsBWuR4g6k+QtNQKT57aa1GopiGZG9dSNNfsmnKHdT3wB3obW1yewXTF69S4CU4eOaSVvm0rokekXtGzRcLVAGZwyglxcbTU5+EcMz2LGSjTjDjlqykGQWz2gStufs4Ifm1uLvltJm3JKb8ytnzVLiRHLWI4zQ/O6L1EoOPBsyonwJaRztv497qIkKyiUVZ49ClomcNQ==",
-      "size": 67471
+      "sha256": "b623d5b56dececdcb88682b689cb6276c22d0c9c2fcff00b05a1f124a6849b35",
+      "sig": "MQmohUOlkXSqhF6JoBQY6W1UIQHpHMm9hPzWDyzO3WofE2Tiz6HvbFfFL07saIwLUYQ9AuBvD9RjkR/lfrS7V1USntmCzMR9PKx24jtSDXHwpNuwND1OF7B0O874JFpUPK1ftgvR+WTi4atkkQi/6ycGsfl78MwWNlX+WEzElrAgRMNU+pBMHegomjDo5FvX4nuSkc+SDTtyVX7XlTopVzUiA6ct+RVHBzo5rqmtKUsy3QXU/SbFLvXzy7oOaBSCpMi2c7MEJ4NLclO8L+lDaW2OYj/fTk7bvocRQxhNIPqQTNBo4lBaSzJ/p3LhkmVWH2Q+9gNJ1Gf4SrNpRVEBpg==",
+      "size": 70199
     },
     {
       "id": "fuel-prices",
@@ -1573,7 +1573,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 7,
       "pages": 1,
       "pageNames": [
@@ -1624,8 +1624,8 @@
           "kind": "display",
           "file": "apps/fuel-prices/preview-display.svg",
           "caption": {
-            "de": "Bento: Kacheln",
-            "en": "Bento: tiles"
+            "de": "Tile: Kacheln",
+            "en": "Tile: tiles"
           },
           "style": "cards",
           "page": 0
@@ -1634,8 +1634,8 @@
           "kind": "display",
           "file": "apps/fuel-prices/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Zeilen",
-            "en": "Slate: rows"
+            "de": "Ledger: Zeilen",
+            "en": "Ledger: rows"
           },
           "style": "flat",
           "page": 0
@@ -1644,8 +1644,8 @@
           "kind": "display",
           "file": "apps/fuel-prices/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: Tabelle",
-            "en": "Nano: table"
+            "de": "Nibble: Tabelle",
+            "en": "Nibble: table"
           },
           "style": "compact",
           "page": 0
@@ -1678,9 +1678,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "5ccb61b51efc22e7e5762e07c7ea74e898755580c56f4da26b71fce1ca357dd3",
-      "sig": "pI/UmxkrU9qjMWUb7QtYi0GresG8455olBS8engw1ayv2MQM+4PmoskKYQwVhqk6daiHDXNICbXOlpRMZnlE8QCcFTG5pRRQi8c7jGVqY0eejDmEPYYaPhCfsYW0WY1AVG/l3CwOzhCpugYvABzzrue+ZDKJUXv3+gQoJHK6DEbzhjlxCeYIIkVMW0S885K1i98pHIZB/A6gC9WU0fps9zDX8U/09o0ser0Dovx55Zjp6L0Trqwtn5+GMlnFcJQcJgGe4EvLjgVikj4dNMgENM2C5XQmQ4hPNJwtYPsFRE92kbNcncJ+c55eAqpxm5DsOJHtUDBZtxeQP+daSK8Jdw==",
-      "size": 31065
+      "sha256": "7e082a1e53cd1cdd20dc1918b1fcea00712b7dad048314bd2b2ffcb6ab730199",
+      "sig": "t+LYRkozxe0VHJmCex6FzdhfTp/uSO5uDsdzxJjVwVOT+mHOK2Qu/z3ltiuzN+kJF2h7ZU452wfLn8prJgnA4VOpXdtOFi9nJvISmOx040tB0rqqiIP5gXA2zXlF7w+sQeKXy2o6Xq+t7pMZ8EKzbLVPLO9QUL0twfm/6Wj/hvV8hwtaQvODKVUGM1YKeYjAl6JhvT/R1mUY5/NiWrUg13PKZsKRIDNdEd3Vo82cTX637SdUp55NXc/4be9JqWzt7LJCrSxGW06VdBvF9C1xAMl1ANRpGraoRJKYAK5v1BIT6heK2V2tU0WubfMNMjeRS5cG7GXaiM/sMvvzTwkskg==",
+      "size": 33789
     },
     {
       "id": "fussball-liga",
@@ -1698,7 +1698,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -1773,8 +1773,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-team.svg",
           "caption": {
-            "de": "Bento: nächstes Spiel und letzte Ergebnisse",
-            "en": "Bento: next match and latest results"
+            "de": "Tile: nächstes Spiel und letzte Ergebnisse",
+            "en": "Tile: next match and latest results"
           },
           "style": "cards",
           "page": 0
@@ -1783,8 +1783,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-team-flat.svg",
           "caption": {
-            "de": "Slate: Ergebnisse und Termine",
-            "en": "Slate: results and fixtures"
+            "de": "Ledger: Ergebnisse und Termine",
+            "en": "Ledger: results and fixtures"
           },
           "style": "flat",
           "page": 0
@@ -1793,8 +1793,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-team-compact.svg",
           "caption": {
-            "de": "Nano: Zeitleiste",
-            "en": "Nano: timeline"
+            "de": "Nibble: Zeitleiste",
+            "en": "Nibble: timeline"
           },
           "style": "compact",
           "page": 0
@@ -1803,8 +1803,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-table.svg",
           "caption": {
-            "de": "Bento: Liga-Tabelle mit Zonen",
-            "en": "Bento: league table with zones"
+            "de": "Tile: Liga-Tabelle mit Zonen",
+            "en": "Tile: league table with zones"
           },
           "style": "cards",
           "page": 1
@@ -1813,8 +1813,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-table-flat.svg",
           "caption": {
-            "de": "Slate: komplette Tabelle",
-            "en": "Slate: full table"
+            "de": "Ledger: komplette Tabelle",
+            "en": "Ledger: full table"
           },
           "style": "flat",
           "page": 1
@@ -1823,8 +1823,8 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-table-compact.svg",
           "caption": {
-            "de": "Nano: kompakte Tabelle",
-            "en": "Nano: compact table"
+            "de": "Nibble: kompakte Tabelle",
+            "en": "Nibble: compact table"
           },
           "style": "compact",
           "page": 1
@@ -1857,9 +1857,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "541b97afb6acca658e8c198e8893b1e4d0910b3f35adee93a02952dc84d0deae",
-      "sig": "Bx48vdsml5+ZjRyWGg00eGQ4tqfmlpWftnLeK2WGe6yLGH9Hs+gLFHPyPAgqUwLcg8cUCHDUJv7TKBO7//lioVA2dRpk3ZJgj7pDyt1e6ITfBcssJBpBeMsBu/rXNq6DPMUycl2D2d+0EEzWXKBVn1MLwL1tSUbExrbxOGpI+ijPF7hYIN27os+NaX0IWQW7S4I843j1qOtHQfEubwQUh5/pHmEUw7q+mlo8ET6igGiUSu0/IYtoV0F6LlSZJu5csA1G/PAqaY5qRWmkw3F+6VCb7IdjC7IbPtgbftDYBRRLfLcDbqTG2PPk+oyOxT/VPVpf6b1UCQ2p/jzjuwH2NA==",
-      "size": 76063
+      "sha256": "4e2bc38533b37c24aa3b0c72e7b61adc8552e1cc7082a33257e4e4ae1cbfd7d8",
+      "sig": "hsmeuKMeoL/JRmCTqiLnYspL212ndkR5B12CEQRBU2XnX7/yGPkbwpN5A5KgCC6Zn3Xklo9lV7lcaui4FXJjFmmoT176cDBVRCGbaU5YVmhu+Mpc8s1P+C6PAy6R+YRcU71EluFgnC258HOxAtw9MCnIk+vbzgke0Qeb0zEqdYiyqxUS1f6bzMFtlk52Q7sz0F78GYj0fcxDnfHbO9jyH/MzLc5wdbFYWWINupbEdOjb3PJ4Zq513f0YGIPJHM24qoc/n1QnBKDs8cyoxhxkkjv5xFIHAumBXHWJvZMUS4nKHRFl5rZuB2F6ZNT6H7ZHsAPedINs0tjL1hx4X407Ug==",
+      "size": 78793
     },
     {
       "id": "gaeste-wlan",
@@ -1877,7 +1877,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "apiLevel": 29,
       "pages": 2,
       "pageNames": [
@@ -1950,16 +1950,16 @@
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi.svg",
           "caption": {
-            "de": "WLAN (Bento)",
-            "en": "Wi-Fi (Bento)"
+            "de": "WLAN (Tile)",
+            "en": "Wi-Fi (Tile)"
           }
         },
         {
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi-slate.svg",
           "caption": {
-            "de": "WLAN (Slate)",
-            "en": "Wi-Fi (Slate)"
+            "de": "WLAN (Ledger)",
+            "en": "Wi-Fi (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -1968,8 +1968,8 @@
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi-nano.svg",
           "caption": {
-            "de": "Großer QR-Code (Nano)",
-            "en": "Large QR code (Nano)"
+            "de": "Großer QR-Code (Nibble)",
+            "en": "Large QR code (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -2010,9 +2010,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "24ccdf3efe80be3c1700aa0559865fb8cd60238230b8d778822f3969b0c04802",
-      "sig": "dpqofDGlq2xezaRAcLPUJ+WJaygsQUtLhJf4b0M0mquzs6hOourWHrg+3zOx8OskyJllbuj13eXAGqzHbgMq6hIZ+C8huhrmJV0vYU97A2UNUpsLp2+hQ5vwsVAGnraEJCp8M8y6zxXgR/QkGWRDxvgNKcbW4d/tZZ9wf7CvYIxuGB+6zUyzphVe+/jK6IC3jToDCQ9hfqsGt7Gp1VyDaKhoPeyKzddYI5sjFblhbX0Sqk0/W4N7DBsdECcBK2PMrSxVM0YSQ5mWw/aqUYWU18TPB6soYuq/kj4ZglrcyopLx1mKn050tPqwh9D4CaiVV6138dh4j5mcO5F9T+Xwrg==",
-      "size": 32533
+      "sha256": "91b3c664f9fdfe589f0c001ad265f1109c648931c4016f9a915c45aaa90c25bc",
+      "sig": "qBy3MDaz1eA3k4O0caC7vFLcRfcuMeFwxv1T4Fw2dS2TODuXm17yg7XX0pUuTjpjgIi7IvMoe4yFLyjQs6/1N4rV1xwrsSODqMRg6ZdhkOQ22aB2eRCRqUEUBSe8DmO58bXmfnEOrVpfy4iVOTxXuElLwrbZ0q9GI39xHedgg7U8OMXMVWc7T3Rt8hCcERGBbyhV2xRrXPtDq+4WrTzE3yp1gcHfkFlJO9v8cC1ajC2KfbywNga1w2Z1VgMWQL9LwyojgVn2GPNuqHH36nwTSuiibA39K28b9l0IA/xLC2I7hjuTXcSyHU0993Busno0hzUG3s9SlABHr40HxKoPmg==",
+      "size": 35257
     },
     {
       "id": "geraete-check",
@@ -2030,7 +2030,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -2039,13 +2039,13 @@
         "de": [
           "Ampeln für Uhr, WLAN, Akku, Speicher, Arbeitsspeicher",
           "Zusammenfassung: alles gut / Hinweise / Probleme",
-          "Drei Stile (Bento, Slate, Nano) und Dashboard-Widget",
+          "Drei Stile (Tile, Ledger, Nibble) und Dashboard-Widget",
           "Zeigt den Grund, wenn der Speicher-Upload scheitert"
         ],
         "en": [
           "Traffic lights for clock, Wi-Fi, battery, storage, memory",
           "Summary: all good / notices / problems",
-          "Three styles (Bento, Slate, Nano) and dashboard widget",
+          "Three styles (Tile, Ledger, Nibble) and dashboard widget",
           "Shows the reason when the storage upload fails"
         ]
       },
@@ -2072,8 +2072,8 @@
           "kind": "display",
           "file": "apps/geraete-check/preview-display.svg",
           "caption": {
-            "de": "Slate: alles in Ordnung",
-            "en": "Slate: all good"
+            "de": "Ledger: alles in Ordnung",
+            "en": "Ledger: all good"
           },
           "style": "flat",
           "page": 0
@@ -2082,16 +2082,16 @@
           "kind": "display",
           "file": "apps/geraete-check/preview-problems.svg",
           "caption": {
-            "de": "Bento: Probleme",
-            "en": "Bento: problems"
+            "de": "Tile: Probleme",
+            "en": "Tile: problems"
           }
         },
         {
           "kind": "display",
           "file": "apps/geraete-check/preview-nano.svg",
           "caption": {
-            "de": "Nano",
-            "en": "Nano"
+            "de": "Nibble",
+            "en": "Nibble"
           },
           "style": "compact",
           "page": 0
@@ -2108,9 +2108,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "2ceb3c4136c830e8c25ea21804df28cf65de729b146a8e5eed6b0c2b3c9de50c",
-      "sig": "AAciNucqAXn+mkplUCUzauPwReAHgfvVAHaYul1Kbs3sNXJpnHgBdkAgcYgtsWurn0hB4JCv6ifH+qfn1bNzFsMafF64we7cOjhkOKBQ/prvBeTqYmFharSFEo9p+cPkjhh1E3xPMS5Bxc2jdZ3mMeTKhb88FQiyiQrQfLxPIvC3z92Ra0Q+tRa2pBno2MH1IRbg/iXn567eGZxzmtjPDei3U2g/NUWy9fNdsCXzSzf9ZpkG/Jq3JTCGWn5AVCfiVBkCpuZ0A5KLzEC9bqxi5wsmaQVtghl0sYqxAJM6ATU0oTghaRsy1cXu2dyiFvJ+Pyosju4O1GyJrc0sENJu7A==",
-      "size": 14065
+      "sha256": "5c29b847d3e8e3cedbbb268cac8c47b996292e8e03a0c5a671d35fc94c4f8a2f",
+      "sig": "HtMQYgiZlSgxjkX3l8y4iQIHcFx4+XCQwtftrTS7Egf19Ilc0Tv71sWg7xI3mE6TMsaoNJVPkfqkRVhTfIFAfedmwLpqrgyETZjZp24CBx1/+WtSDGobxCLLfTPgs7R9dEgsSoXfQDeK9mYOnfJ1WtB2Wc6NOQIDWacQ/8zCbr4YlBoGwlqkhKQIvJPfEt3dEdWcOW2DFnVR9yNFss+TkKgkh5KVWD/4VLwi/48hvrwQ1AKEmJ9i25xNNtSJgmVvg71UeBdmVovPTnY72MF0JnuWEzQt8EZ3J9rqxtRK/DGH7ghjFN5bQ4Zffdak7gLcGsdK27yAWMTmjlc9iABoAw==",
+      "size": 16789
     },
     {
       "id": "gericht-des-tages",
@@ -2128,7 +2128,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -2260,9 +2260,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "ceae4a48b2b962f6a99e26770e678ad209ab042b528c5432617283dcc90129cb",
-      "sig": "e1rtebiu0Jq5mD4X9om5djxo+f/qDn6cw6Z+dJtq/9SYNRTd25x+yEh05X/c5vrXqqYbTKDzKRqQFFk7tbskGmPa2p7puggwNZ1A3gyWXsWQ6AYxJCiyEcTcxLGs+KWNpShHHb1cfeznEvHs75qEzmYVAUMd9VMRVTcVdQBB9kH9GRjoOZ2GBI/AkzkD6GLTuTX/YPmyI7und0OiWoKU+Z38pUCE/qw7ETSLHORMG6Zjuc3wu5jBY0powH/TVEROluz6vwgdV+bKFQUXBlu3dUX96jS1aXkzREbIWjqitlsUx+xxCG3OPZim7zmNuT7+6QAxHVUJ+e6Kbf0cBJjjng==",
-      "size": 24123
+      "sha256": "6b806e61f5dc94d01064e2fcc8c62139b61e7bc1d8fcfd2b4457bd14bbff27f7",
+      "sig": "XkUSKF3I6vrdYpzZPFAyJJ4j3xYjEHN7kDobXUQ3pAtEkquY7ctvto+2prjAMiDlCH5DzH4PzLV7qIMKWq68czAKlniMuPu4OZVDYExhvA+DtBtwx4YhAlc8P9LaQpXuw3kSQjT7uwoCqwVvN5j8dszCTp9E4LCztcaQowAdt+6t5BDElyR2OScEzxh6J20Tpw4s5Ai0KvW5X+9lo+Wgq0NQVS91NQOJlhgjP8TGr21TxnrQ67sz9ihabRHbolq9EDg5vyJw5Eelhb7BCM4LBFNtDR8KzU1CdH1BfOLBny9wpFu41z45f5MQCaex0FyUI48P4QT0Wk5XEBB7CRuv/A==",
+      "size": 26843
     },
     {
       "id": "golf-tour",
@@ -2280,7 +2280,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 12,
       "pages": 1,
       "pageNames": [
@@ -2330,8 +2330,8 @@
           "kind": "display",
           "file": "apps/golf-tour/preview-display.svg",
           "caption": {
-            "de": "Bento: Podium-Kacheln",
-            "en": "Bento: podium tiles"
+            "de": "Tile: Podium-Kacheln",
+            "en": "Tile: podium tiles"
           },
           "style": "cards",
           "page": 0
@@ -2340,8 +2340,8 @@
           "kind": "display",
           "file": "apps/golf-tour/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Rangliste",
-            "en": "Slate: ranking"
+            "de": "Ledger: Rangliste",
+            "en": "Ledger: ranking"
           },
           "style": "flat",
           "page": 0
@@ -2350,8 +2350,8 @@
           "kind": "display",
           "file": "apps/golf-tour/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: kompakt",
-            "en": "Nano: compact"
+            "de": "Nibble: kompakt",
+            "en": "Nibble: compact"
           },
           "style": "compact",
           "page": 0
@@ -2384,9 +2384,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "eb0e00d3289d6d326c6bebd889033a87caf4a7d37bbbcc241ff2de1f2b9447d2",
-      "sig": "koRV3cb67NjL23Ep9jF42MUpyrWpbRMpp6kPeZ8K50We8HjVL4Abdtzf4EptC5NiArGvbRCzvCuNo4AARGuJmxPr7TBGXVyV37I1oHkyh5GgCHBZoL2otgiLrvJAydbH9H6D0CAYplwP/NKnfiS1G9ADKej17jKhh8zTGeH0IXPbQPr0gEGL8Bb3GzgXlYF1ZiuLoHDtoXTCHKBHXqgsAPeVwcFU1E6Cz/w8xjCjzPn4jk2V4QzzQzNTVvzGEQdf2PLzegVjtMjdBV4Szw1pJBNYXUcUubhJ/ir5R6wJwuJWH1Y12ZRMr2tAbzoTsuF3cvaWpcpVHeefux3OBrR0Zw==",
-      "size": 29343
+      "sha256": "e2d12b3adc7fb52f1621f8de33766eea014f9fe5848e2e48c9996176e67e907f",
+      "sig": "l+JE7UiJvXnKRVs48KAjWNhyZnH+2T6OEbxXxBVOYE1hl1lzri8ThnCpNFBMLYiTP/6CyOl0F/LCux9U0O0T6BIIzDa9ChLK1LzUG6So95eAASmbdAfkomzatmfK5unpzHBxMm4Dc6ixkNeQt3plpN75LrsW9RLAAqpob1hDsPUz/aOizUGMvji0u2FfT34ars+mR/0WVZErzxkJQ1yvGqUK2VQCdKAatUnJw4cf8GUwL/jkM7VyawASpuqgzO3ikEmMf9dK31D2bH7fQsTWKml0xcdUcJXgJc1ow6Km47wWo+BmXfctG84y9B48X3chI2KnbqDopxdCdru7bzM2Bw==",
+      "size": 32071
     },
     {
       "id": "golfplatz",
@@ -2404,7 +2404,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -2494,8 +2494,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-today.svg",
           "caption": {
-            "de": "Bento: Heute, Fokuskarte mit FREI-Feld",
-            "en": "Bento: today, focus card with FREE panel"
+            "de": "Tile: Heute, Fokuskarte mit FREI-Feld",
+            "en": "Tile: today, focus card with FREE panel"
           },
           "style": "cards",
           "page": 0
@@ -2504,8 +2504,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-today-flat.svg",
           "caption": {
-            "de": "Slate: Heute, Zeitleiste",
-            "en": "Slate: today, timeline"
+            "de": "Ledger: Heute, Zeitleiste",
+            "en": "Ledger: today, timeline"
           },
           "style": "flat",
           "page": 0
@@ -2514,8 +2514,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-today-compact.svg",
           "caption": {
-            "de": "Nano: Heute, Platz und Betrieb in zwei Spalten",
-            "en": "Nano: today, course and operations in two columns"
+            "de": "Nibble: Heute, Platz und Betrieb in zwei Spalten",
+            "en": "Nibble: today, course and operations in two columns"
           },
           "style": "compact",
           "page": 0
@@ -2524,8 +2524,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-week.svg",
           "caption": {
-            "de": "Bento: Woche, Zeilenkarten",
-            "en": "Bento: week, row cards"
+            "de": "Tile: Woche, Zeilenkarten",
+            "en": "Tile: week, row cards"
           },
           "style": "cards",
           "page": 1
@@ -2534,8 +2534,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-week-flat.svg",
           "caption": {
-            "de": "Slate: Woche, flache Wochenliste",
-            "en": "Slate: week, flat week list"
+            "de": "Ledger: Woche, flache Wochenliste",
+            "en": "Ledger: week, flat week list"
           },
           "style": "flat",
           "page": 1
@@ -2544,8 +2544,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-week-compact.svg",
           "caption": {
-            "de": "Nano: Woche, Volltabelle",
-            "en": "Nano: week, full table"
+            "de": "Nibble: Woche, Volltabelle",
+            "en": "Nibble: week, full table"
           },
           "style": "compact",
           "page": 1
@@ -2554,8 +2554,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-14d.svg",
           "caption": {
-            "de": "Bento: 14 Tage, zwei Wochenkarten",
-            "en": "Bento: 14 days, two week cards"
+            "de": "Tile: 14 Tage, zwei Wochenkarten",
+            "en": "Tile: 14 days, two week cards"
           },
           "style": "cards",
           "page": 2
@@ -2564,8 +2564,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-14d-flat.svg",
           "caption": {
-            "de": "Slate: 14 Tage, zwei Wochenspalten",
-            "en": "Slate: 14 days, two week columns"
+            "de": "Ledger: 14 Tage, zwei Wochenspalten",
+            "en": "Ledger: 14 days, two week columns"
           },
           "style": "flat",
           "page": 2
@@ -2574,8 +2574,8 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-14d-compact.svg",
           "caption": {
-            "de": "Nano: 14 Tage, Volltabelle mit Hinweisen",
-            "en": "Nano: 14 days, full table with notes"
+            "de": "Nibble: 14 Tage, Volltabelle mit Hinweisen",
+            "en": "Nibble: 14 days, full table with notes"
           },
           "style": "compact",
           "page": 2
@@ -2608,9 +2608,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "f49f4cf3e98f7c95a928da443493fc2eb4a06976b2e6b5573717da71d9b45653",
-      "sig": "BNUf/h3461epSIVAtWud5DJuEkoSt6Wc2dbuTUrh1OJ8jSCn8Ln4M614CFVzHL6iZ2cbjpzb076U5G/ss1YjX1QY6UoOUo0qQHt85C4WxmqylRb0lrfkktWYvbEfalrourHej8CaB3er7KSOVa5NITnAiI69oW8+tmAhnvaXUrm8mxu09y602JEx56gAFatacFuKtRSfddKKXgyii+EsQSvYVazSh8WYgBeu3zZ0BCn6FnQhP4U+8rDF6Q+NObpgNpCyLyjTAEO0+6DXrHzLBAbF4PcTbOiP0T6+4623s9v+hZCAMM+l0U824etNu4T9c2GR11MgbuiHfVtBiNbMtA==",
-      "size": 47951
+      "sha256": "8683d1d2fe4bca771f10dd254c248247d709d702f636e7ab887b0d0758ebb22f",
+      "sig": "peWp8mjavMf3UoUOaUrMOGMfi/fmT3P00Y3n+iCTlpynZohA0CzkLZ+XLyXx6f9KKuxiLInNYWzmBqM+IBT3GRtBhFfXvwiOfi9UU28PDJyoCb/Ek6RYRpe8P9qAFPopneXiinkB3eXnEuyUY0IRUBR3wQkrXvxr4pka5ica9MzDr1JJg2aZZCbDd9vz80fAeZ0NOnrhyyPyDV6L2hZdvDqY7TsGO3uxhiyl1KIeMxvgpVDz3r/u8OS458xqMPCOEKDPpdbVPR8qqAKblii/Ss+KrmmOHbZqb4u5NWhbtY4gikzJoSoIJM2ZM17r4JIsE4XMGaCui8Ds/1la9bcCbQ==",
+      "size": 50679
     },
     {
       "id": "homeoffice",
@@ -2628,7 +2628,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -2680,8 +2680,8 @@
           "kind": "display",
           "file": "apps/homeoffice/preview-display.svg",
           "caption": {
-            "de": "Bento",
-            "en": "Bento"
+            "de": "Tile",
+            "en": "Tile"
           },
           "style": "cards",
           "page": 0
@@ -2690,8 +2690,8 @@
           "kind": "display",
           "file": "apps/homeoffice/preview-display-flat.svg",
           "caption": {
-            "de": "Slate",
-            "en": "Slate"
+            "de": "Ledger",
+            "en": "Ledger"
           },
           "style": "flat",
           "page": 0
@@ -2700,8 +2700,8 @@
           "kind": "display",
           "file": "apps/homeoffice/preview-display-compact.svg",
           "caption": {
-            "de": "Nano",
-            "en": "Nano"
+            "de": "Nibble",
+            "en": "Nibble"
           },
           "style": "compact",
           "page": 0
@@ -2734,9 +2734,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "8e7092b0727a73229c9ef2fc0bc25a2639967b5766eef442987d5b8df796c9b3",
-      "sig": "mkcu/iQOwGLoe/LoT2I83Qp3wKRo34kL+n1oLBl3LQe+bUGHiCqupuc3aMCfxLqBFMJXu7cBad2HDz4R6JCMo/UP1tlD1kL/SvtsK0rFtpxlFCOYGqZ268YI6u9SqFLuMokQ7VvRdPw/vMIsaDA4lM4mDmIGo/XufZmn/LL7GnnnWvoiZlVhAdwb3WkxS9DnamAW6gPMZnZcI3HaQRZ1q71hetQ7W4kNHv9//hUj4JlApU4YRCsU73+RWhhdAARmawRyQvF7OdckKzt7OYyxLKHSuBVBmMD5awwJBK+CWV3CplijEhy/xK2Py64KKeLwvTZjI5RDtrA1qYOFFZanEA==",
-      "size": 26472
+      "sha256": "57e6569db5c7dcb67300f84fa0908dfa06cde94c2f59d6e729e226bbc183b806",
+      "sig": "HhnxmRQsvTqRsJ2de7gqMPldcQz7yIRwYbU4GOhV7DtAGe+t3PR6MDGyNBE0ygLCnmIiQHKjdl/qe5c8BU/U0q+G7ACwqsXgFSFzfXX0CkpqM5c62ChGHw+YZ8bW/HRq6hvTCp6D7wTJthLZb3Ss3VyR4Xnvu0xnq3AYILUH78EoeEWLlMqQxdCJ/+ULmI9RLw0O+6Vs/k6s0mQZMtssbTb5U+SJoTl0V/U3qDghnI7TjtdSllpyRyFlbVjS3PBZMgj0ry26au2I1Q8XJ+sMvnS97Y/kYcf//tqPUbGARCiTQYcRLyO0gavncOKJ+HM47IVnPP07+c/F6Vppan6BRA==",
+      "size": 29196
     },
     {
       "id": "luft-pollen",
@@ -2754,7 +2754,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -2830,8 +2830,8 @@
           "kind": "display",
           "file": "apps/luft-pollen/preview-air.svg",
           "caption": {
-            "de": "Luft (Bento)",
-            "en": "Air (Bento)"
+            "de": "Luft (Tile)",
+            "en": "Air (Tile)"
           }
         },
         {
@@ -2846,8 +2846,8 @@
           "kind": "display",
           "file": "apps/luft-pollen/preview-vent.svg",
           "caption": {
-            "de": "Lüften? (Slate)",
-            "en": "Ventilate? (Slate)"
+            "de": "Lüften? (Ledger)",
+            "en": "Ventilate? (Ledger)"
           },
           "style": "flat",
           "page": 2
@@ -2856,8 +2856,8 @@
           "kind": "display",
           "file": "apps/luft-pollen/preview-air-nano.svg",
           "caption": {
-            "de": "Luft (Nano)",
-            "en": "Air (Nano)"
+            "de": "Luft (Nibble)",
+            "en": "Air (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -2906,9 +2906,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "8935e7bddb388c3ca55467402b737da36f4966fb67c1996aecb6dcd58c551e2c",
-      "sig": "PEtW6juY8/ELsmPobi2+UTLSeegmwcombndvTEzP6sjkS3+dllDr94RWjAEr4D4ogUST6IstS6kXRGPAsY7vDGDjNKdWjqbUMLucBUeiVddf1mNtyrQcRF1kE9l320MH3sK3tO5YnsZDSRvRE4goi/7NDmwSGR1FrdecyMEIv7cZZ79D9I3DiSy1wlPraTRNqzQDIh9He5Qu2bLuVvYIuhGRWcanK66IcS2I0Z7cZdbbRdAsACtACY8PRSq4IVEAbdLHmKgJcTfLQywtRr6SMHnCscUeTlZuriSnOugaFw962uGSsqZIhH1Ctg04VePSac8alyoaeo37Jw/0QTHKag==",
-      "size": 22910
+      "sha256": "ae56a092724337362cc62da7f637be31f7ac7fe4d91f2c148a2a516dfa294ec6",
+      "sig": "Ko+YRvXjiwA9jkysvepCHE+BlT+hsGqu0w37JbPVC0AlcraYr7Bv6GwqD6nYfRq/PYkIdIvWr38qDuBaKfB+SSaJjzu7iaDGgqUEuS2Lr4oVMajhT/VGIJH1ZhAnQs2Sa4SkWKr+YoB7n2zqzQx8unhZ2g6gpxDb+rsmCAT8ICAyUx5n1vfsKWuQHWgOaQWv2j02JA+Owb1hUNSwoY2O4ODlGFnXq7ChqNgnSKUZDAecISPURYYtHKdHa5x2lSbZZCdI0oXlAlYjE7f63yiuVlbJwZpS0F2T0deU+JaAqmiumzidnlyrxpUVuxBT8f279TyVR44DRMObfIFpbHFPPA==",
+      "size": 25634
     },
     {
       "id": "news-feeds",
@@ -2926,7 +2926,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 7,
       "pages": 4,
       "pageNames": [
@@ -2990,8 +2990,8 @@
           "kind": "display",
           "file": "apps/news-feeds/preview-display-cards.svg",
           "caption": {
-            "de": "Bento: Karten",
-            "en": "Bento: cards"
+            "de": "Tile: Karten",
+            "en": "Tile: cards"
           },
           "style": "cards",
           "page": 0
@@ -3000,8 +3000,8 @@
           "kind": "display",
           "file": "apps/news-feeds/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Zeilen",
-            "en": "Slate: rows"
+            "de": "Ledger: Zeilen",
+            "en": "Ledger: rows"
           },
           "style": "flat",
           "page": 0
@@ -3010,8 +3010,8 @@
           "kind": "display",
           "file": "apps/news-feeds/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: kompakt",
-            "en": "Nano: compact"
+            "de": "Nibble: kompakt",
+            "en": "Nibble: compact"
           },
           "style": "compact",
           "page": 0
@@ -3034,9 +3034,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "976d33f4e2d6e2fe7343d39d46c088a1015a5ce73b81a411e95a4167058893af",
-      "sig": "kQtYKobXSfersO2lm2tNwt55lpzMwrEyHx87ZSsAH8qWjpa8QA1onObpQEhy/a1fxFb6zGnzNKd6mLlAtdMMBvj4dwG/kOz4kt3dgDLnm4XOHlpMCC9Ie1RTWvlfbfZ1Ty8YAo763Z4TrVu7NURO+y5x8tZxnFghwbJuM80ozC0qF0GMvQ1//6wrynrGKHucdNk1GfviWwMh31fC8uUDUavVdiPN7x4mUlpAtvbFBxRFeQ5Bv/GsoUYN2GQx/XBIVqIbjxFKWzHO0BtOfNFjqigvYuFXgRXzDc3dyvr5aQpOKSKOKOsf2yWeGSixcrqGrvMcJ+/p85ybyUJB3HR49A==",
-      "size": 29955
+      "sha256": "75797cb642cc43dcc9be5bca9865796774d659517f54b7a1eb5b1223d05a63e8",
+      "sig": "B6XnKNF1/4rJmL6tDUefREkBL8z1H0mNpk6+EjVEVhjABA2Ag+MDDNgj0JWTqPTfrZ1m0bPJqYpEPND098QFloSbbb0OarQWUHdpjOdqR2JcRXNwHsrg1t3fYOUM6hGq7uLzxnKHMP8vFZksghPbuBTeuUjZKsWnHg4JCoeCfAGa/JfUKzxHZtzQRwLNHQmelVBwesa1YbvZlwblvWX/KQSrsc7bzRFvQJYXPGXOIs5cAq/a8y6zGhgxOy5HNShtFGErJq2/HBDWQB1Ot8SSy22Ro425XukIG4zWfF+uKtmQnoFrGLtfSj/26iIb8T6S++yI2nhj/wFA58BtOI1MmA==",
+      "size": 32679
     },
     {
       "id": "oepnv",
@@ -3054,7 +3054,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -3126,8 +3126,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-display.svg",
           "caption": {
-            "de": "Bento: Kacheln je Linie",
-            "en": "Bento: tiles per line"
+            "de": "Tile: Kacheln je Linie",
+            "en": "Tile: tiles per line"
           },
           "style": "cards",
           "page": 0
@@ -3136,8 +3136,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Countdown-Liste",
-            "en": "Slate: countdown list"
+            "de": "Ledger: Countdown-Liste",
+            "en": "Ledger: countdown list"
           },
           "style": "flat",
           "page": 0
@@ -3146,8 +3146,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: zehn Abfahrten",
-            "en": "Nano: ten departures"
+            "de": "Nibble: zehn Abfahrten",
+            "en": "Nibble: ten departures"
           },
           "style": "compact",
           "page": 0
@@ -3156,8 +3156,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-routes.svg",
           "caption": {
-            "de": "Bento: Route mit Zeitstrahl",
-            "en": "Bento: route with timeline"
+            "de": "Tile: Route mit Zeitstrahl",
+            "en": "Tile: route with timeline"
           },
           "style": "cards",
           "page": 1
@@ -3166,8 +3166,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-routes-flat.svg",
           "caption": {
-            "de": "Slate: Routen-Blöcke",
-            "en": "Slate: route blocks"
+            "de": "Ledger: Routen-Blöcke",
+            "en": "Ledger: route blocks"
           },
           "style": "flat",
           "page": 1
@@ -3176,8 +3176,8 @@
           "kind": "display",
           "file": "apps/oepnv/preview-routes-compact.svg",
           "caption": {
-            "de": "Nano: Zeit bis Losgehen",
-            "en": "Nano: time until departure"
+            "de": "Nibble: Zeit bis Losgehen",
+            "en": "Nibble: time until departure"
           },
           "style": "compact",
           "page": 1
@@ -3220,9 +3220,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "130a661e207781f20dc578093ea7364e89d5ee9eb8b4c521a49196067aa37e21",
-      "sig": "hJHwvUbSlrTNbY75xSOQKX36HzdN/h8Rs5T7qMz4T4fgvELIzggMA/MxoA3xToH9UqGQylodzMlwfP3yMPL4usKg+Q4nssk3cf5V1DN+M6S5BbQUU62+5Xkcg3h+R+ueYVPPfeVXioWHOtMD79+Z7MdgiJ99DHqWm3oKjRUb7Ub8Nggf6dkXqLvca/+bF67f3JJQqhNgVtEGdwLOS78Cg//SwP3R2xxtw/FeR8hxxXdq6EhP7Qq70pWcNciIJha+W9CdypRGWEcPducnJzlv7DnyME8T1BLlg2AvGoj1qqEDBnBiCXDcyNRqSiSIACgY0X37o3gA/stxQMKmLtCxTw==",
-      "size": 82148
+      "sha256": "2c5cd8d048d2f4ec0626c58c812d6c9b180741b4049332b5308d0957773d0dfe",
+      "sig": "Y9k7PDmCPUvW3I/YfR0Kk/hC1kBgzd658LiK7Ejo9oz3Sicc9D1cIt5BdrZJIC7Xp/pMjfHnaPfcs4EyYZe2oWV7bmBYaeQDfdwQC+yQAO3851K6SmpcIZTMSQWN/8BHkqros/4IjkNnK5db3k+7BmZX+aXzV5nDl22Tt04P1z5zqhmUb332Z3IZbD/zqGE9kTksX0s8xhPZ6lsClu8VKrSlsNBEz9OtE+WafJM/TYXyxfJTd60AHvsD+QoK98FoPv9hAt5ijXSgOkMhy3tdEvgeaVYiCp4mUwqcEc60mGb0W5nNQh1KjMhAIx7g098Ex0ebBHJgGjT6SvYrM3V5Gg==",
+      "size": 82730
     },
     {
       "id": "pinnwand-app",
@@ -3240,7 +3240,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
@@ -3339,9 +3339,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "49a0ac8f201483154616b25a51fe685a9395c23207ea7f21d3a5bbd7b10f3b43",
-      "sig": "q3aDEzu65Oi0GyXBHUpcR1FAprFW51d8ASIQCf8M1jo4BLqVfM3myqqxq3WiycTILBX6WzK6WfK2lk1cEKV4ZBNkWNSaVNTOGNifxeBwJqWyoxy7TbGok9gYrwsWfOVRu0/yowV4x5inONFvxuJrBqxIiM0/cxhQLvE9NO0THoJXQz9lSCAs/KpXhTPdrLJn2tKb/F0TVnXRQE5o48Vy9mLurIRIxoRxXyF3UGHwiy+ZyvcUL3nlJRrKmAXf7BuE/0CB5hah7HdXBuBo9oof0FQzGviGa39q+ASMvH+76HRb6cqWBxcV6w2SPIa0xqfWmJygwxGWwc4IPLyryfUVpw==",
-      "size": 11939
+      "sha256": "737d812a032b14fd934bec90490f7084fce50b9638ad44df4dce6061a9891f87",
+      "sig": "i+/pa8D+5e6XJEhcAXAObBC3VA+Yxd9++om+oxq3bx+Z3JEooHtGBDVuFFjOFGKiy6Q3ZFTh5brxftRlSaIfkhpuKhM9cJElEjByGoAE8JHyjujSEve8tzwyUO5lzBnzeLK3yppkfWThzw5MmqkDWakigobNjyCnfGxEaCI1uhntPLsdnGVuuqSXAansC+Zh/Z9+rNKggYWEoT9RBs6sEzIuU4N3+RWzmVHSzyEMpcmM1gFQ7eSBCVwuogy156ze8/+eafuZ4Zloh4+VpWmdtZ8aBgrgxEZ+N95cyOor8F2ao8SvZZ4yFp/FCxOE8wXO9pLWLppGVxcuve/QKyfZwQ==",
+      "size": 14659
     },
     {
       "id": "rezepte",
@@ -3359,7 +3359,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -3440,9 +3440,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "62b60dfd6d622b35a1babbbab99a80884ba930cd4b317da106bf224d40fa4e92",
-      "sig": "H5nDJOA6gp84Q2KwW3moQ2ATswz5OUwOsfsonz7HBgfk4n7aITJ46UsN4kDXsnTrzR5BQ6TK4Y3NauMRLcAaPW8fiVSHovVIUNln5JF80LVDzPaRbssMgZOShiwzNH/aW5xRDwshSaxhNU8n8vxxB817+D5uhltnRwhfMeh9MelXzVY7YnjkbjtT2d20wly1NuWSZTV699sIC38Tlf7t815QHO+bIHOW3qraKkyb8gzNXLnc1A807w9M6bvWOo1HZnNM7OLT37lkK1tObAPasRnEsNxGvhCgzrvjjipfaqmA4P19ZYymDH20TMTEG3Sf2dX6Qi2gpUdrNQnEy1r56g==",
-      "size": 47327
+      "sha256": "27267a222295a7ee09314c318cf1e768053cad4e6020e26f7a012019cb6c505c",
+      "sig": "akhtKE0FFrdnRH0uN5ltzp4IxHgRhEWUvJ7v1BZObgXqPKt4qwZ66XHOjxtX1A3XS6RpRJnLB4PgvhPQvbsa5EXv3Jrz2LqJk/UkhPnUL+eTG9Ua45W0S3qgvQtHYDHpxPz276GYyosD1b7oChM7dngqqcw/3TPxS18QT72Pbq5iaa7RMrvruh72HEdpDXjkuNzZKOHMIhcA3kdCYQrSi+w5JIL3VPw2dtSh7xCnJUoZbIiXC/65R/kqh5Hctxyb79jALMb38X8mujSrEsfNzWW4bMAJn8O/lUX5ZE09iX58hQ5eO944yRqtJc8RNxNOEpWxf8cAfeQia4Nkrzdd/A==",
+      "size": 50184
     },
     {
       "id": "sport-tabellen",
@@ -3460,7 +3460,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -3534,8 +3534,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display.svg",
           "caption": {
-            "de": "Bento: Team-Seite (Handball)",
-            "en": "Bento: team page (handball)"
+            "de": "Tile: Team-Seite (Handball)",
+            "en": "Tile: team page (handball)"
           },
           "style": "cards",
           "page": 0
@@ -3544,8 +3544,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Team-Seite (Eishockey)",
-            "en": "Slate: team page (ice hockey)"
+            "de": "Ledger: Team-Seite (Eishockey)",
+            "en": "Ledger: team page (ice hockey)"
           },
           "style": "flat",
           "page": 0
@@ -3554,8 +3554,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: Team-Seite (Basketball)",
-            "en": "Nano: team page (basketball)"
+            "de": "Nibble: Team-Seite (Basketball)",
+            "en": "Nibble: team page (basketball)"
           },
           "style": "compact",
           "page": 0
@@ -3564,8 +3564,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-table.svg",
           "caption": {
-            "de": "Bento: Liga-Tabelle (Handball)",
-            "en": "Bento: league table (handball)"
+            "de": "Tile: Liga-Tabelle (Handball)",
+            "en": "Tile: league table (handball)"
           },
           "style": "cards",
           "page": 1
@@ -3574,8 +3574,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-table-flat.svg",
           "caption": {
-            "de": "Slate: Liga-Tabelle (Eishockey)",
-            "en": "Slate: league table (ice hockey)"
+            "de": "Ledger: Liga-Tabelle (Eishockey)",
+            "en": "Ledger: league table (ice hockey)"
           },
           "style": "flat",
           "page": 1
@@ -3584,8 +3584,8 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-table-compact.svg",
           "caption": {
-            "de": "Nano: Division-Tabelle (NFL)",
-            "en": "Nano: division table (NFL)"
+            "de": "Nibble: Division-Tabelle (NFL)",
+            "en": "Nibble: division table (NFL)"
           },
           "style": "compact",
           "page": 1
@@ -3618,9 +3618,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "cfe9f34bb0a027f4b3cd82174c62f3b62e27b45d853f57d3d8fd6dcf8b9557d3",
-      "sig": "MVpbMQ+n33Aghxxj+lHg8JZgXO5qhozHtBv+hy5MFQfUVjeWVBFZ8ptN+QSvhExl4vy4TeRjDt0lohLeGxfnY/2lNGcA2wIxRx/kO1G6cQpwQnN+iIRdcWgCItwVefpBojLH+GnHrq2NhfuxXLpIAKJ+k4ZumHcWvhh8yHTAnxinOj7XQtWWj5cGeUoPFsiWzBUqKySS92nqIHAql45qcEq/+zv+l+qak6JMZ3TcZGnXCqnMkrrHL7jZ316c4HRqxKalFCxCLAFTInQCNFF3TaIenfImPW4qRhjTwu+FyLRC5yia/m3eU5O5jIjHlMjveiX7GMxOlTH8D9lsb0gSIQ==",
-      "size": 62262
+      "sha256": "c5ab1d2e3fa9a5ed11aa9ea768355cfb30fb499be80f7e15ec9b5a69e6f27ed0",
+      "sig": "lGdQTO1/1SfuwE6SH7pfVovs1O8Tcnxe0n6YjdVHK6bhvUlaNpAGGpCW/lIqGdIlEFtHhw0kcS1Pjw4/wzdFj6OJiJ/U6CBJVxmLmYyh0qRbmg0I+TGaenNcJCFkTxZQUwLdenJ5Ibonb8qc9ehElMo8wTTH5dMHUuTGd89q6MCABa6QnYIxC8JI4b/fQiDxPi2EXTimBWCwEcFDzQSJQ5JUwDnANzypeHdvrJArtJAP8PjVzdrI1WhT1bWcRRagrCPSxXI5dc5Dr6IBqI+1bGZAVmKLUfZUlPFMSobmop8VnXEacStfpkwrxu2Uejtr/Tdfr8bnwZ2A0Rk8MGKROA==",
+      "size": 64988
     },
     {
       "id": "spotify",
@@ -3646,14 +3646,14 @@
       "features": {
         "de": [
           "Cover, Titel, Interpret, Album und Fortschritt",
-          "Drei Stile: Bento, Slate, Nano",
+          "Drei Stile: Tile, Ledger, Nibble",
           "Dashboard-Widget „Gerade läuft“",
           "Einmalige Anmeldung, Token bleiben in der Firmware",
           "Verbindung geprüft per Zertifikat (TLS)"
         ],
         "en": [
           "Cover, title, artist, album and progress",
-          "Three styles: Bento, Slate, Nano",
+          "Three styles: Tile, Ledger, Nibble",
           "\"Now playing\" dashboard widget",
           "One-time sign-in, tokens stay in the firmware",
           "Connection verified by certificate (TLS)"
@@ -3667,8 +3667,8 @@
           "kind": "display",
           "file": "apps/spotify/preview-display.svg",
           "caption": {
-            "de": "Bento: Cover, Titel und Fortschritt",
-            "en": "Bento: cover, title and progress"
+            "de": "Tile: Cover, Titel und Fortschritt",
+            "en": "Tile: cover, title and progress"
           },
           "style": "cards",
           "page": 0
@@ -3677,8 +3677,8 @@
           "kind": "display",
           "file": "apps/spotify/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: zweispaltig",
-            "en": "Slate: two columns"
+            "de": "Ledger: zweispaltig",
+            "en": "Ledger: two columns"
           },
           "style": "flat",
           "page": 0
@@ -3687,8 +3687,8 @@
           "kind": "display",
           "file": "apps/spotify/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: Datenblatt (Pause)",
-            "en": "Nano: data sheet (paused)"
+            "de": "Nibble: Datenblatt (Pause)",
+            "en": "Nibble: data sheet (paused)"
           },
           "style": "compact",
           "page": 0
@@ -3713,9 +3713,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "60ad0b312ba29522b854dd64394fe2b00f830171f99a084fdcd654a9fc3291f0",
-      "sig": "YMTJbD3LJUclcXkrkPX1skolWxg5jBZo8zEO+2vSo7WoABVcxnlP6iiNwdYTw0b/SEZidbWk5AKyEX+i8RNERRx2OKHUPL3EUBKWUGLXfiL3xyAfyNt1gtQyMwbfL3MmspGxA2wAMnslRK/lRTpuU3L0obm+ceiz93hxk3YMLzeMGYqFrzAbCLWQ2BNlBlwhsAMDsXbs9kf0jYfkZIpzkDQbcgvbM7Dog0KPp3TRnZ4+wd/tlBNDt+PMN05qYHzzaBL4gjTGlDKyqk1jCVJ7/xRzuYVnYcEeWrFmKiVYQ5boKoZvU0ETQuIcn+RONIHAr04/3kxJCdSq3QBIHdhYXg==",
-      "size": 20915
+      "sha256": "687c50bc43a85f98a271ecbf6f97cb5838e069b5c763e397bc19a4d991f3f903",
+      "sig": "V0xiygtHAWvcgDjJoeBkSaqEkOhuDTQhS0bhKKhlUFRZfMgs18EH04TgJ240CHGrdK+EnE+9pXeluo5TqiLD5PFaUGeTGfCQ1USCioiWKRPVta1yWw1PbbxQjiC78d+mskMHAHJd18NOl+ADaRGTBTxS1eyUEXqkU6+boicF4RMzTMLqZIjKb+H5hGQI6QqGycTpJ26/Wjrnt8iJoCIjjuzQtf129gtp4e3zXirw9OXUVvv+JHmkoe8oTzt6xcPRztLaNY+9rtHPtA/KkCOraD/LIwAzOmId07AY8betlzrCUvwklXlX6vj8nlAEPJiBShFGkC4b7AXAQ1eu6lR5ag==",
+      "size": 20923
     },
     {
       "id": "stocks-crypto",
@@ -3733,7 +3733,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 7,
       "pages": 2,
       "pageNames": [
@@ -3785,8 +3785,8 @@
           "kind": "display",
           "file": "apps/stocks-crypto/preview-display.svg",
           "caption": {
-            "de": "Bento: Kacheln",
-            "en": "Bento: tiles"
+            "de": "Tile: Kacheln",
+            "en": "Tile: tiles"
           },
           "style": "cards",
           "page": 0
@@ -3795,8 +3795,8 @@
           "kind": "display",
           "file": "apps/stocks-crypto/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Zeilen",
-            "en": "Slate: rows"
+            "de": "Ledger: Zeilen",
+            "en": "Ledger: rows"
           },
           "style": "flat",
           "page": 0
@@ -3805,8 +3805,8 @@
           "kind": "display",
           "file": "apps/stocks-crypto/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: kompakt",
-            "en": "Nano: compact"
+            "de": "Nibble: kompakt",
+            "en": "Nibble: compact"
           },
           "style": "compact",
           "page": 0
@@ -3839,9 +3839,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "12d1dbb8725989eb841ed148fb3bb4df70a75131a56cdb45098fb44eced46d91",
-      "sig": "aADiaq1zqRfiW5Q/U3RXOfDgOsgFn+j5EgRkGQTuEt/5lRGkCTS+mBpVpdUrznzGMLP5iFCpMLAOuHzDbp2VNkex95vfo9S8BVthXzBEWrnSDYiLcuzshSQtgicu4Dg1g3tfENh43sqBQTPlBiXBdfjis3k2Z+ly0sSg6FMIid4c7J/ZfX0l0+OTg4MK+qc1C0nU1q4Z+k3ZeCBJ469V+eDtUnQRsd6RSCW/Bm+zOBD6PguWSOJEQ6KKiRmev9fSnqMW1qK4PzduaDEaa5zcetaPpofR55eKoZcgaGf1Ll1MlGg1rG8J+vGz9i73vz3jqz9wpcP/EwWv+QhPnUEeQA==",
-      "size": 28804
+      "sha256": "032d130f78b84dda13ce0999cc315a485d1f14e0622c35040ad44846f94bf704",
+      "sig": "eX7z4vResbH8Jm1D7g4jMTv9lR7TTOZN22rG9FAaZwZDFCdo99f5q635KQXl/DkOcHoJ4Depbx8EwCgUohClNXEqQk452TucFapUOC5L3Mo9Sx/K+pZ9OScuuC95rZ5IO7aaEzAmFAvuHbsZ+gXmE0RJMkbua6THh+srZOzx5jkoimd6qigTi6rkpCuE3/LIZBSDFt5y7t+xsiJ07ZaTsyMxP3zinUIzxGeDk5Q7DJIt1Jp36RaA26P6GNY/l/giyO8X3nI/qCAHe88p/oLNVN3NEHma1fyGCznoeQ54D1fkSOT0UBuGZxfOC2LctQyY0MNSVzMnH7NolxsZH/WSxw==",
+      "size": 31528
     },
     {
       "id": "todo-list",
@@ -3859,7 +3859,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -3911,8 +3911,8 @@
           "kind": "display",
           "file": "apps/todo-list/preview-display.svg",
           "caption": {
-            "de": "Bento: Detailkarten",
-            "en": "Bento: detail cards"
+            "de": "Tile: Detailkarten",
+            "en": "Tile: detail cards"
           },
           "style": "cards",
           "page": 0
@@ -3921,8 +3921,8 @@
           "kind": "display",
           "file": "apps/todo-list/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: eine Zeile je Aufgabe",
-            "en": "Slate: one line per task"
+            "de": "Ledger: eine Zeile je Aufgabe",
+            "en": "Ledger: one line per task"
           },
           "style": "flat",
           "page": 0
@@ -3931,8 +3931,8 @@
           "kind": "display",
           "file": "apps/todo-list/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: kompakt",
-            "en": "Nano: compact"
+            "de": "Nibble: kompakt",
+            "en": "Nibble: compact"
           },
           "style": "compact",
           "page": 0
@@ -3965,9 +3965,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "526360172bc6056fe8f2ba49e38638480c6ce5c88906fc5eedd8cc0596ab86b3",
-      "sig": "PnRHZ+0m65gseAPwGM5GxX42yyGuikfZ2drVvTtvr9TTnOSOp8CQbo0xl1Qg5RatgHNJydyMl4hcK8qjBp5Nzcw1E0JyCyTY1g+tNhVAehlZjpeqXZQMk2J7vSAPn60udmpUxjHXMnsrLhFtyeL1KjGSHStPTVBEcTCmY8w777mtRyJmYfmMXd/r8F6WPMFD1oVscyHWiD2aYaKO0r3P8Pu4CAj+rn1e9K+yQwJRr7LmMIBo3DUc6PdJ5Me6LTVbiC3U3vafSj8hHARDmwwkODp2c8sFP1zbI54nDZ2v6ovyzoh26gh0PYYgM+UmzPLLAP75dPgmwKttjULpfSvehQ==",
-      "size": 45741
+      "sha256": "62af6248df43af601e24384f23c148baf96f6a9e01225a92a4d0b2cc2e67f450",
+      "sig": "O6itz+82jmRSJvkHZvnKEtZYFYF6C94k/vw6LqBczHt4SJWjwHPqOn8n0NzJubkp6HddqdLvkpQGaXrryu5NsMhNRBeteiigpoIHDX68o1/so9AnrhBo0sdJVZQkpX5aJ/tyI9C6auwWc42W82tx8qzBiqrI2pDsmkGCzqCNfwEjoOFKbDoOFlHCumwY/823zWqbomop/LXt9541azMVZdXMmlPpo1q/r8AEls4SyQD2YgMoXxTEPAlhlmdlQNs5I2jnFqwBxtcoETlL8CaJZLeK+MGWRMF5MZgwevBXAh3djfNDsLsYFW3OtnC9HMcPM3BhFaUeRS6MuT6xU3UKSQ==",
+      "size": 48588
     },
     {
       "id": "tuerschild",
@@ -3980,12 +3980,12 @@
         "en": "Shows outside the room: free, in a meeting or do not disturb"
       },
       "description": {
-        "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Bento-Karte, Vollfläche in Ampelfarben, schlicht.",
-        "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Bento card, full-colour traffic light, plain."
+        "de": "Ein Display an der Bürotür oder im Flur zeigt auf einen Blick, ob du erreichbar bist. Die Mac-App liest deinen Kalender und setzt den Status automatisch (laufender Termin mit Endzeit, danach der nächste), per Handy-Seite oder Kurzbefehl stellst du ihn von Hand. Ein Status mit Endzeit läuft von selbst ab. Drei Stile: Tile-Karte, Vollfläche in Ampelfarben, schlicht.",
+        "en": "A display at the office door or in the hallway shows at a glance whether you are available. The Mac app reads your calendar and sets the status automatically (current event with end time, then the next one); with the phone page or a shortcut you set it by hand. A status with an end time expires on its own. Three styles: Tile card, full-colour traffic light, plain."
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -4035,16 +4035,16 @@
           "kind": "display",
           "file": "apps/tuerschild/preview-display.svg",
           "caption": {
-            "de": "Bento",
-            "en": "Bento"
+            "de": "Tile",
+            "en": "Tile"
           }
         },
         {
           "kind": "display",
           "file": "apps/tuerschild/preview-display-flat.svg",
           "caption": {
-            "de": "Slate in Ampelfarbe",
-            "en": "Slate in traffic-light colour"
+            "de": "Ledger in Ampelfarbe",
+            "en": "Ledger in traffic-light colour"
           },
           "style": "flat",
           "page": 0
@@ -4053,8 +4053,8 @@
           "kind": "display",
           "file": "apps/tuerschild/preview-display-compact.svg",
           "caption": {
-            "de": "Nano",
-            "en": "Nano"
+            "de": "Nibble",
+            "en": "Nibble"
           },
           "style": "compact",
           "page": 0
@@ -4087,9 +4087,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "209bbb1e8895b5fd2bca9203c198985e285e0e3a093f7065cf81395c984d4d8b",
-      "sig": "NJmiu3y+kIjmP2g9DkT+2yjUzgvYzDBfD0M60oOBNhsDRC5R29Cr3kcTltjmveXvOH6h8I64ULfwIfUnidO7zfaO2LOlv6mn1pugV2CurEqMLr1B1l/GKhpSa/RIBpX5pxVb8w2mmcREF8s4zQ6AaXBqWNrjOIbf+YYxFal/aO+g2o3rww3uc8AI32jScDTbMoBzfK6j9XzHSwOEfvYPQZSQSD1IF4BOjXAsyIpP+y5s3zbY6Qww2mm0fjxwzMLCwD1rS87FmC+TZPjfBXhdPcvuXcs1YPmzbfeUm89X13kSr4fPOpPN6JiB9cH+r6x0272UANuqVacfBMuUmm1gLg==",
-      "size": 21085
+      "sha256": "2cb0d820eb50c2b1e145e64232981a34e8782e603f58f9a50144aa3eb7e13906",
+      "sig": "MUXmk/mbzgZQBx0Uzz64oQwqpLvUpimKhlW+bW+U9SVpSrdK+vmyi8k3r4ND8C/qCvxWuRnND+b+DmvAIklFvyV2e4zlMHAl5MH3VgVgwtyZ7lQIkrHXu583jx1NjgUNNx0q13aoOsmxFiy+68l5zLORRtuflQn5FGLqsP0eqYwgLY4GeEAY/56P3G4yGtBpEXKTVfIx6F1CxI5Iptb4+7yfL+lXSvNI1mG6/7AOjSUQubKm/0qafD51AlTrutohVVPmvh5IbQfi1kFwxWeyEc4H7zjbHlyLlas8fj5J2NTwk0V0WhpnP029+oG44aD0195cvZKSMITR3A8nlJLnUA==",
+      "size": 23809
     },
     {
       "id": "waste-calendar",
@@ -4107,7 +4107,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 9,
       "pages": 1,
       "pageNames": [
@@ -4158,8 +4158,8 @@
           "kind": "display",
           "file": "apps/waste-calendar/preview-display.svg",
           "caption": {
-            "de": "Bento: Tonnen-Kacheln",
-            "en": "Bento: bin tiles"
+            "de": "Tile: Tonnen-Kacheln",
+            "en": "Tile: bin tiles"
           },
           "style": "cards",
           "page": 0
@@ -4168,8 +4168,8 @@
           "kind": "display",
           "file": "apps/waste-calendar/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Headline und Liste",
-            "en": "Slate: headline and list"
+            "de": "Ledger: Headline und Liste",
+            "en": "Ledger: headline and list"
           },
           "style": "flat",
           "page": 0
@@ -4178,8 +4178,8 @@
           "kind": "display",
           "file": "apps/waste-calendar/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: Monatskalender",
-            "en": "Nano: month calendar"
+            "de": "Nibble: Monatskalender",
+            "en": "Nibble: month calendar"
           },
           "style": "compact",
           "page": 0
@@ -4212,9 +4212,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "d0588a59cd966c7f12da749668a5f6c5c80839116bcf63374855b85749905b30",
-      "sig": "SCclPB3sbv7zl7N+FBjq1sgcz0dxLEtUY3MjrFE12GL0454P6K/vBG35AEPij2h1CU7HQgJ81NVG0YwjcGWzUqAvfVA7W1Y3Y0n8wYxZx3kfghmN1PlaFQCIijXlfJExVQb4eQbZwmjXV/uz0YNq+xN7U1DgJvbWnC5Z5/xsxHWZ8bmt8y2yM/hkOJ/KoGnQFYu7I30dTatNzBUnm2pNqEeE+5Fvsls+53YAz9BcOBjCkWbu9Q85N8syEUb52z1S0Cu5o+HhBzFlLjrHFEYd0nkadeShABNNN4xD7qhMQ0zTIPQRpYtZQ97NwNgDn/knTBXA+KNWEEM2vQFTNMPe4Q==",
-      "size": 31383
+      "sha256": "59d3117c23941d8d22b290267ebd5622b71c7a76c0449a59903e2cc0efd50a8a",
+      "sig": "V0QxHbaSf1zGp1XripZykrX6ivZIKXRSGmprnMGELTTsBlrI7BzeSCf5CqLcoAzSEymLWQYtsIad1UYOQYqMmekR0hWYMtctAM+SjXvUb4gmAnRCpLIV8mqpzY58yL5RyBVegmNZSQmFMvpjG19JgWR/d6fDIFJHJwtNNQIMUAOAWkROC++7OXMcq/xl0T+pHOpG0XJbiAUKYVwjYqiFORlxCIb+ho1cS9ffeZiXTTno6JP0u9YPrO2twPBKMkAOy4iatJvwXk6zhpMN6XW8LlXZ1cAhTCCGl/s8sajG0jbwOTnDUah4jPPqFXPJAMIG4zp6BL/oJmNEySqaWVBwPg==",
+      "size": 34107
     },
     {
       "id": "weather-station",
@@ -4232,7 +4232,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -4255,14 +4255,14 @@
       "features": {
         "de": [
           "Drei Seiten: Innen, Außen, Netzwerk",
-          "Drei Stile: Bento, Slate, Nano",
+          "Drei Stile: Tile, Ledger, Nibble",
           "CO2- und Feuchte-Ampel mit Warnhinweisen",
           "Stundenverlauf, Mehrtagesvorschau, Regen-Countdown",
           "Dashboard-Widgets Wetter Innen und Wetter Außen"
         ],
         "en": [
           "Three pages: indoor, outdoor, network",
-          "Three styles: Bento, Slate, Nano",
+          "Three styles: Tile, Ledger, Nibble",
           "CO2 and humidity traffic light with warnings",
           "Hourly trend, multi-day forecast, rain countdown",
           "Dashboard widgets Weather Indoor and Weather Outdoor"
@@ -4315,8 +4315,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-outdoor.svg",
           "caption": {
-            "de": "Außen-Seite im Stil Bento",
-            "en": "Outdoor page, style Bento"
+            "de": "Außen-Seite im Stil Tile",
+            "en": "Outdoor page, style Tile"
           },
           "style": "cards",
           "page": 1
@@ -4325,8 +4325,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-outdoor-flat.svg",
           "caption": {
-            "de": "Außen-Seite im Stil Slate",
-            "en": "Outdoor page, style Slate"
+            "de": "Außen-Seite im Stil Ledger",
+            "en": "Outdoor page, style Ledger"
           },
           "style": "flat",
           "page": 1
@@ -4335,8 +4335,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-outdoor-compact.svg",
           "caption": {
-            "de": "Außen-Seite im Stil Nano",
-            "en": "Outdoor page, style Nano"
+            "de": "Außen-Seite im Stil Nibble",
+            "en": "Outdoor page, style Nibble"
           },
           "style": "compact",
           "page": 1
@@ -4345,8 +4345,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-indoor.svg",
           "caption": {
-            "de": "Innen-Seite im Stil Bento",
-            "en": "Indoor page, style Bento"
+            "de": "Innen-Seite im Stil Tile",
+            "en": "Indoor page, style Tile"
           },
           "style": "cards",
           "page": 0
@@ -4355,8 +4355,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-indoor-flat.svg",
           "caption": {
-            "de": "Innen-Seite im Stil Slate",
-            "en": "Indoor page, style Slate"
+            "de": "Innen-Seite im Stil Ledger",
+            "en": "Indoor page, style Ledger"
           },
           "style": "flat",
           "page": 0
@@ -4365,8 +4365,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-indoor-compact.svg",
           "caption": {
-            "de": "Innen-Seite im Stil Nano",
-            "en": "Indoor page, style Nano"
+            "de": "Innen-Seite im Stil Nibble",
+            "en": "Indoor page, style Nibble"
           },
           "style": "compact",
           "page": 0
@@ -4375,8 +4375,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-network.svg",
           "caption": {
-            "de": "Netzwerk-Seite im Stil Bento",
-            "en": "Network page, style Bento"
+            "de": "Netzwerk-Seite im Stil Tile",
+            "en": "Network page, style Tile"
           },
           "style": "cards",
           "page": 2
@@ -4385,8 +4385,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-network-flat.svg",
           "caption": {
-            "de": "Netzwerk-Seite im Stil Slate",
-            "en": "Network page, style Slate"
+            "de": "Netzwerk-Seite im Stil Ledger",
+            "en": "Network page, style Ledger"
           },
           "style": "flat",
           "page": 2
@@ -4395,8 +4395,8 @@
           "kind": "display",
           "file": "apps/weather-station/preview-network-compact.svg",
           "caption": {
-            "de": "Netzwerk-Seite im Stil Nano",
-            "en": "Network page, style Nano"
+            "de": "Netzwerk-Seite im Stil Nibble",
+            "en": "Network page, style Nibble"
           },
           "style": "compact",
           "page": 2
@@ -4503,9 +4503,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "3193fc360844078b6118d87d7135631ef10dc3e3a40d793a66dad046a2ebf346",
-      "sig": "GtQg/pwryDiaRxQWPccH1x1BjDDyhAqZ/mqUzmK9B1JHeNkh5c/j/5GGsM7W6Drt6gpXiAzTTvTaDOrlJtQsTQ02hoM6hrbq4Gpihdc9EZMtqYflzP6CYZICtutRVXWY0zsq2sdgdIoAjNhFozA5SCsDdbeb3lfEVq1iBRX3M0UhwVZilCL603fBC2CRa9NWRxf5dMbGB3KOvqnjnRWDdgEbJWL+xQb+3S6xk/Dm6IXjBoXdBV5dMerz004JYwCNHTrSy/idMxSDe/pfHSqzN2OVvgj4Je8m/eTMCJKvgOy4CqcSCCT9zKaW7g5ZqTr+wvtFlfj5yOO6f40w5tk5+Q==",
-      "size": 72509
+      "sha256": "e9136f89c38856d2d1bd88e098f1bdb0767c5c28e13435063f408c6bbf9f0312",
+      "sig": "PYfsT0W4SR8Gy9iuFZhc2DSSt98IjdlUTTQFYFc/N8A8xADdj4ybNtvLYswcmEKzzir3rbUvPPq6GQogutCI94+4fMb0o/YEsZ2/aZwxOZWkMDjyzZT4QA8fJbDXv6rTiH7b4FHsRLIUqWhKN5dy+RmyoUrmYW6TNG12SmVRnT2+yfHAegEns2b6VaCtLoFnxa0Zt1WGvy3kwwxEhgqkj6juDmA7qAc53Td73zMqyiV2FhwUP5tawPhgknqoN1/gz3fGCxo3d9j3v0iLv/E8fwnjyFfMnKGKmZCXSXoVEHvrnBn37qRghRF9lxTkY8KoM8WeVX7tb8yzC5OhcIzGiQ==",
+      "size": 72539
     },
     {
       "id": "wikipedia-today",
@@ -4523,7 +4523,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "apiLevel": 8,
       "pages": 1,
       "pageNames": [
@@ -4538,13 +4538,13 @@
         "de": [
           "Wichtigste Ereignisse zum heutigen Datum",
           "Folgt der Display-Sprache",
-          "Drei Stile: Bento, Slate, Nano",
+          "Drei Stile: Tile, Ledger, Nibble",
           "Ausweichquelle, wenn Wikimedia ablehnt"
         ],
         "en": [
           "Key events for today's date",
           "Follows the display language",
-          "Three styles: Bento, Slate, Nano",
+          "Three styles: Tile, Ledger, Nibble",
           "Fallback source if Wikimedia declines"
         ]
       },
@@ -4577,8 +4577,8 @@
           "kind": "display",
           "file": "apps/wikipedia-today/preview-display.svg",
           "caption": {
-            "de": "Bento: Hauptereignis + Kacheln",
-            "en": "Bento: main event + tiles"
+            "de": "Tile: Hauptereignis + Kacheln",
+            "en": "Tile: main event + tiles"
           },
           "style": "cards",
           "page": 0
@@ -4587,8 +4587,8 @@
           "kind": "display",
           "file": "apps/wikipedia-today/preview-display-flat.svg",
           "caption": {
-            "de": "Slate: Zeitleiste",
-            "en": "Slate: timeline"
+            "de": "Ledger: Zeitleiste",
+            "en": "Ledger: timeline"
           },
           "style": "flat",
           "page": 0
@@ -4597,8 +4597,8 @@
           "kind": "display",
           "file": "apps/wikipedia-today/preview-display-compact.svg",
           "caption": {
-            "de": "Nano: Kompaktliste",
-            "en": "Nano: compact list"
+            "de": "Nibble: Kompaktliste",
+            "en": "Nibble: compact list"
           },
           "style": "compact",
           "page": 0
@@ -4631,9 +4631,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "4f276d660ca21a4e0561ee03868d3dfd5c6d813cffdbd8a518a5d87d039d8507",
-      "sig": "AJo47rixJz4LvgiVEF5tzbZQSieGNAL2YzKyLIJ4CMGqYmd/aSlsJ5+ey5U2cjgxyzhqzwGAqqfrBQAD2XCFnvKdF7PiFN/RT2CQ8w0MTjPF7ynsLoeNQ7J12eOv44rPgQpfy8o62wNEEerEoJ8rIr1xvSuMH0776dUISMayqxyOdOxp5wjP3HdWj/NBRuLxFFNoQulgUp6St9ZtHgjuLhtdzNIvQ4TTssj6azXlKNt6kocQrd7KLkA86eU+2BIEI8SJ1C8/qwAGwFkrEL7qkB9aQj2ZVqJGtW9CEfyyUiB9YKXwh2os3ms6sCef2Gc2ENvh2guCSmYufa8Lg/XGjA==",
-      "size": 31771
+      "sha256": "96f1938fdcb62b64a7406bfa79cfc88830fc2094b7aae7b7abe47efee4e81797",
+      "sig": "DMEd40MZRuLjVaigWw3FPBYr9/0gPiTdC8g99k7TOdZmrEr25bQENXrLj3iJKmks8JDqfp6K3oYKi3eA0LXoTi2e3VaGDdbTtPQphjKGzn7XTIo/IqAJMdYQ0HjKlVtXN9KFaxi37dfMWocBM7xArQZoDCYqNkCCGkLFnM5SJxrxWiXo6MNxzINXdWcPkV60yF8mOqdY67lrQF/NYssbmJ17LfDwSmnCfd59A8Ey5s3tmVAWopql85s9MkYyE8HazjkX03bMU4aPEE4XL4YMnCckMW9AJCxvfXXYbTDFeGiaKX3ZaFaDkd/KxM/tdcrCecbjHYXRbKBk+7fqFjkVww==",
+      "size": 35933
     },
     {
       "id": "wochenplan",
@@ -4651,7 +4651,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "apiLevel": 23,
       "pages": 2,
       "pageNames": [
@@ -4721,16 +4721,16 @@
           "kind": "display",
           "file": "apps/wochenplan/preview-week.svg",
           "caption": {
-            "de": "Woche (Bento)",
-            "en": "Week (Bento)"
+            "de": "Woche (Tile)",
+            "en": "Week (Tile)"
           }
         },
         {
           "kind": "display",
           "file": "apps/wochenplan/preview-week-slate.svg",
           "caption": {
-            "de": "Woche (Slate)",
-            "en": "Week (Slate)"
+            "de": "Woche (Ledger)",
+            "en": "Week (Ledger)"
           },
           "style": "flat",
           "page": 0
@@ -4739,8 +4739,8 @@
           "kind": "display",
           "file": "apps/wochenplan/preview-week-nano.svg",
           "caption": {
-            "de": "Heute und morgen (Nano)",
-            "en": "Today and tomorrow (Nano)"
+            "de": "Heute und morgen (Nibble)",
+            "en": "Today and tomorrow (Nibble)"
           },
           "style": "compact",
           "page": 0
@@ -4781,9 +4781,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "09a049cf98f9d307496f55c71918154c6a215451c6c3b49d4cde9c95ac70b2b1",
-      "sig": "RKYCNjMZqaJ/WU+KaOa63Hn97LiEMDV0g6CfMEM9K43VlUMBHgm970BFRgHGUDlFtJdDBS4nxkoj5het7qj6nEwq7tB1KVx/Mg7d/X6i1HjA4T0/ezb1pAYanzQob2vytiUr9VQthF73okSqR+kbIxusIarQ46ap4UKtNLuEunXVTG5MOkrnp5nLxUXlM8y1qmrIuaevC7PpKcQoM/48fqAvZsNaWyrzHy4Yh+vsaPrsQUsRT7/Vvn3AQIRGOyAOwsl/6tSx50W0XoDZK9xY5r5ne2fULAfnilnW2H+r2ltK/WyIQ3NjlWJUamUEOa11zLWXmDGZ9Qa57tW8SUzVfQ==",
-      "size": 30190
+      "sha256": "f534609ad0f68dcdeac62e3c043bcca3421814c1e3bd7d27b46e0dbdc616e38b",
+      "sig": "otB1U3yDS2m3LlLkWIHQKjS1nA0ws1SUfp856WiCilv9oqifeL5jUsW1sUplvIClcdUnDiP4E0t8WDoGR12CmdkHtEQZttWktyWT96Ys9iOZ6OZ2VW2lHea8hrCOSXK2ZBFhpbm/x3FpCmJkQ8NcfujI8jpbYYjI8ZysglYvPpnX2ylFhpZDiYxMEK2gp0roOS50pueKbAaBmo654smecWpD/P/4Kk7QEUgbgTCn6UitaQNtWcMRCAjLp++VGIvQUCqRKEOlAIeHX2sQhDnBjhOmWv5vS64qlxUDNad1jn9LDK9ENqAn5mx+N9zmpxKYIC7C2n4BG9MSQIpTmYsVbA==",
+      "size": 32914
     },
     {
       "id": "wort-des-tages",
@@ -4801,7 +4801,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -4885,9 +4885,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "69dac4f212c0f45b41ec2818b175b300806e1e5cfd73400b47f0b5422a044b65",
-      "sig": "BIGfIsFetlsU/zFCCzGWCAfyjTx2GiJrTFuji4RJRZpglGPrZAeDuVXDUOk3poFUJw6F5Vs7b0W64f1jRNk2UnwrcQQvzud/t39l13hY7b8uqnZz+nYB2HGTz/8kBY+RfQl5a2VvZyShaIyhQAxs2ufZLEMLmHFpPh16EHRpbPUbUWsDb97j1m++r61NxRFtpTl0eg5nsXBlZbuvJAdd9dy6OKh/gF10emtGW1/XECghti0l6MsiGe2M5akz+30jPE7YRvNHfEVrTjCeNwcakM73XNDyFjE2iWd3HZ6lfkV8GHVLxXsJLHz+WpTVYOC72zIM2WCja0VBSywXozDJOw==",
-      "size": 21622
+      "sha256": "77c7b73a8b17f4192486eac5dbe83d2f0e8c1755df12b370a40a4f66000ece3c",
+      "sig": "Bpwr7o/Hc4C4J+ysgCjHs4pMQxV9PM3ksqcASHm8/MLUytfgaUY6BTHO/wGN9CQqJib2iaFb/5cfHxyQhFfY6Cl/M1HmuoQXEGIJwRWQsQNdVhR4wchV/SVQYpUhSoKfY9+iC5BETgY7Aa2WyZkmmPGeSo4L6wG5qVQj4UYuxnrBDoMtMXyFkejc1XDS26INk+Bm7wJ1WApDEtrCx2S8ExYv8YI+hylRJU7KfgjYXt3FJoA6vk7H2LYzkndrN9RtfYY2BXmrpEnhYP4LrSJAKTHB0ezP+nIQPykDj6TY3wmJeGPbIGb0zJvKbrnrL7JHkzW+kSCqYQzkn85s+MRhZA==",
+      "size": 25780
     }
   ]
 }

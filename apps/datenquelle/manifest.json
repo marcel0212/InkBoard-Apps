@@ -8,7 +8,7 @@
     "de": "Daten",
     "en": "Data"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "apiLevel": 20,
   "pages": [
     {
@@ -93,18 +93,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate (Kopfband)",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger (Kopfband)",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate (header band)",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger (header band)",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

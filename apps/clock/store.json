@@ -11,13 +11,13 @@
   },
   "features": {
     "de": [
-      "Drei Stile: Bento, Slate, Nano",
+      "Drei Stile: Tile, Ledger, Nibble",
       "12- oder 24-Stunden-Anzeige",
       "Datum und Kalenderwoche",
       "Passendes Dashboard-Widget"
     ],
     "en": [
-      "Three styles: Bento, Slate, Nano",
+      "Three styles: Tile, Ledger, Nibble",
       "12 or 24 hour display",
       "Date and calendar week",
       "Matching dashboard widget"
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Bento",
-        "en": "Bento"
+        "de": "Tile",
+        "en": "Tile"
       },
       "style": "cards",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate",
-        "en": "Slate"
+        "de": "Ledger",
+        "en": "Ledger"
       },
       "style": "flat",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano",
-        "en": "Nano"
+        "de": "Nibble",
+        "en": "Nibble"
       },
       "style": "compact",
       "page": 0

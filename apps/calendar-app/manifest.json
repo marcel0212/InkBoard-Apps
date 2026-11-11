@@ -4,7 +4,7 @@
     "de": "Kalender",
     "en": "Calendar"
   },
-  "version": "1.3.0",
+  "version": "1.3.1",
   "apiLevel": 20,
   "pages": [
     {
@@ -515,18 +515,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -549,18 +549,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -583,18 +583,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {

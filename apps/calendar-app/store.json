@@ -89,8 +89,8 @@
       "kind": "display",
       "file": "preview-day.svg",
       "caption": {
-        "de": "Tag: Slate",
-        "en": "Day: Slate"
+        "de": "Tag: Ledger",
+        "en": "Day: Ledger"
       },
       "style": "flat",
       "page": 0
@@ -99,8 +99,8 @@
       "kind": "display",
       "file": "preview-day-cards.svg",
       "caption": {
-        "de": "Tag: Bento",
-        "en": "Day: Bento"
+        "de": "Tag: Tile",
+        "en": "Day: Tile"
       },
       "style": "cards",
       "page": 0
@@ -109,8 +109,8 @@
       "kind": "display",
       "file": "preview-day-compact.svg",
       "caption": {
-        "de": "Tag: Nano",
-        "en": "Day: Nano"
+        "de": "Tag: Nibble",
+        "en": "Day: Nibble"
       },
       "style": "compact",
       "page": 0
@@ -119,8 +119,8 @@
       "kind": "display",
       "file": "preview-week.svg",
       "caption": {
-        "de": "Woche: Slate",
-        "en": "Week: Slate"
+        "de": "Woche: Ledger",
+        "en": "Week: Ledger"
       },
       "style": "flat",
       "page": 1
@@ -129,8 +129,8 @@
       "kind": "display",
       "file": "preview-week-cards.svg",
       "caption": {
-        "de": "Woche: Bento",
-        "en": "Week: Bento"
+        "de": "Woche: Tile",
+        "en": "Week: Tile"
       },
       "style": "cards",
       "page": 1
@@ -139,8 +139,8 @@
       "kind": "display",
       "file": "preview-week-compact.svg",
       "caption": {
-        "de": "Woche: Nano",
-        "en": "Week: Nano"
+        "de": "Woche: Nibble",
+        "en": "Week: Nibble"
       },
       "style": "compact",
       "page": 1
@@ -149,8 +149,8 @@
       "kind": "display",
       "file": "preview-month.svg",
       "caption": {
-        "de": "Monat: Slate",
-        "en": "Month: Slate"
+        "de": "Monat: Ledger",
+        "en": "Month: Ledger"
       },
       "style": "flat",
       "page": 2
@@ -159,8 +159,8 @@
       "kind": "display",
       "file": "preview-month-cards.svg",
       "caption": {
-        "de": "Monat: Bento",
-        "en": "Month: Bento"
+        "de": "Monat: Tile",
+        "en": "Month: Tile"
       },
       "style": "cards",
       "page": 2
@@ -169,8 +169,8 @@
       "kind": "display",
       "file": "preview-month-compact.svg",
       "caption": {
-        "de": "Monat: Nano",
-        "en": "Month: Nano"
+        "de": "Monat: Nibble",
+        "en": "Month: Nibble"
       },
       "style": "compact",
       "page": 2

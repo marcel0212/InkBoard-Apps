@@ -4,7 +4,7 @@
     "de": "Wetter",
     "en": "Weather"
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "apiLevel": 20,
   "standard": true,
   "pages": [
@@ -45,18 +45,18 @@
       "default": "relief",
       "optionLabels": {
         "de": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (Tiefe)",
-          "klar": "Klar (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
         },
         "en": {
-          "cards": "Bento",
-          "flat": "Slate",
-          "compact": "Nano",
-          "relief": "Relief (depth)",
-          "klar": "Clear (Apple)"
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
         }
       },
       "label": {
@@ -122,8 +122,8 @@
         }
       },
       "label": {
-        "de": "Fokuswert (großer Verlaufsgraph, nur Stil Bento)",
-        "en": "Focus value (large trend chart, Bento style only)"
+        "de": "Fokuswert (großer Verlaufsgraph, nur Stil Tile)",
+        "en": "Focus value (large trend chart, Tile style only)"
       },
       "section": "history"
     },

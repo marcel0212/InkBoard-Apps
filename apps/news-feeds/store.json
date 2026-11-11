@@ -47,8 +47,8 @@
       "kind": "display",
       "file": "preview-display-cards.svg",
       "caption": {
-        "de": "Bento: Karten",
-        "en": "Bento: cards"
+        "de": "Tile: Karten",
+        "en": "Tile: cards"
       },
       "style": "cards",
       "page": 0
@@ -57,8 +57,8 @@
       "kind": "display",
       "file": "preview-display-flat.svg",
       "caption": {
-        "de": "Slate: Zeilen",
-        "en": "Slate: rows"
+        "de": "Ledger: Zeilen",
+        "en": "Ledger: rows"
       },
       "style": "flat",
       "page": 0
@@ -67,8 +67,8 @@
       "kind": "display",
       "file": "preview-display-compact.svg",
       "caption": {
-        "de": "Nano: kompakt",
-        "en": "Nano: compact"
+        "de": "Nibble: kompakt",
+        "en": "Nibble: compact"
       },
       "style": "compact",
       "page": 0
