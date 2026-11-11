@@ -2926,7 +2926,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 7,
       "pages": 4,
       "pageNames": [
@@ -3034,9 +3034,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "75797cb642cc43dcc9be5bca9865796774d659517f54b7a1eb5b1223d05a63e8",
-      "sig": "B6XnKNF1/4rJmL6tDUefREkBL8z1H0mNpk6+EjVEVhjABA2Ag+MDDNgj0JWTqPTfrZ1m0bPJqYpEPND098QFloSbbb0OarQWUHdpjOdqR2JcRXNwHsrg1t3fYOUM6hGq7uLzxnKHMP8vFZksghPbuBTeuUjZKsWnHg4JCoeCfAGa/JfUKzxHZtzQRwLNHQmelVBwesa1YbvZlwblvWX/KQSrsc7bzRFvQJYXPGXOIs5cAq/a8y6zGhgxOy5HNShtFGErJq2/HBDWQB1Ot8SSy22Ro425XukIG4zWfF+uKtmQnoFrGLtfSj/26iIb8T6S++yI2nhj/wFA58BtOI1MmA==",
-      "size": 32679
+      "sha256": "4f424167e9533032ef85cbb5729bbc35655deed326b58d91644ab95040f4e156",
+      "sig": "jly854purwUr+Jg9IknTGnZ+eVp9P5L72SWA2VOHr3ACxobwL5BXlzYnBTEIGawZYxm4X/0Z0TuJG1O9khOYWQkMTAySYK6WTd/lQQrjFbWETPXr29udOCCIrNcygkmG9lwBER8LMCYaLAZyDwWjAjzkBVSmyN/stuPWRakN2QzBWOr9R1BBfiwmniB3GsFp8nqWBkEuqtyIEq5EMJbQ8kyBby2xEyHRk2gI6Ip0TGJTpJP9O4BcfKe/ezcwKxfzCg1oskxMOLW3xCutWE9Z35wYkjaWRh1QX1M3MKvzjexdw8nmy/UcVuVfUmtBgQyh5N7o5TQiOOQFSei8QdvV0Q==",
+      "size": 32951
     },
     {
       "id": "oepnv",

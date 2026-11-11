@@ -407,6 +407,13 @@ function on_widget(ctx, box)
     local lh = font == "normal" and 22 or 17
     local tx, tw = cx + 24, cw - 34
     local y, maxY = cy + 8, cy + ch - 6
+    -- Schmales Widget: lieber mehrere einzeilige Schlagzeilen als eine zweizeilige (und kleinere Schrift, wenn sonst keine zwei passen)
+    local extra = showSrc and 16 or 0
+    local maxLines = 2
+    if not compact then
+      if maxY - y < 2 * (2 * lh + 6 + extra) then maxLines = 1 end
+      if maxLines == 1 and font == "normal" and maxY - y < 2 * (lh + 6 + extra) then font, lh = "small", 17 end
+    end
     for i, it in ipairs(items) do
       if compact then
         if y + lh > maxY then break end
@@ -419,7 +426,7 @@ function on_widget(ctx, box)
         draw.text(x, y + lh - 4, fit(it.title, tw - (x - tx), font), font, color.BLACK, "left")
         y = y + lh
       else
-        local lines = wrapLines(it.title, tw, font, 2)
+        local lines = maxLines == 1 and { fit(it.title, tw, font) } or wrapLines(it.title, tw, font, maxLines)
         local h = #lines * lh + (showSrc and 16 or 0) + 6
         if y + h > maxY and i > 1 then break end
         if i > 1 then draw.line(tx, y - 3, tx + tw, y - 3, color.BLACK) end
