@@ -131,6 +131,7 @@ local f,i=t[5],t[6]
 if c==f or (f==color.ACCENT and c==color.ACCENT_TEXT) then return i end
 if c==color.BLACK and not fill and not light(f) and f~=color.ACCENT_INK then return i end
 if c==color.ACCENT_INK and f~=color.ACCENT then return light(f) and color.BLACK or color.WHITE end
+if not fill and not light(f) and not light(c) and c~=color.ACCENT_INK then return i end
 return c
 end
 end
@@ -156,7 +157,7 @@ return raw.rect(x,y,w,h,c,fill,r)
 end
 end
 local function setStyle(s)
-theme.s=s or "cards"
+theme.s=({bento="cards",slate="flat",nano="compact"})[s] or s or "cards"
 tiles,pts={},{}
 if theme.s=="klar" then klarHook() end
 if theme.s=="relief" or theme.s=="klar" then return "cards" end
@@ -214,15 +215,30 @@ return
 end
 draw.rect(x,y,w,h,c,false,r)
 end
-local function widgetFrame(box,all)
+local function widgetFrame(box)
 local st=theme.s
-if st~="relief" and st~="klar" and not (all and st=="cards") then return box end
-local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
-local r=st=="relief" and 12 or (st=="klar" and 18 or 10)
-card(x,y,w,h,color.ACCENT,r)
-local pad=st=="relief" and 14 or (st=="klar" and 8 or 20)
 local inner={}
 for k,v in pairs(box) do inner[k]=v end
+if st=="flat" then
+draw.line(box.x+6,box.y+1,box.x+box.w - 6,box.y+1,color.BLACK)
+draw.line(box.x+6,box.y+box.h - 2,box.x+box.w - 6,box.y+box.h - 2,color.BLACK)
+inner.y,inner.h=box.y+2,box.h - 4
+return inner
+elseif st=="compact" then
+draw.rect(box.x+3,box.y+4,2,box.h - 8,color.ACCENT,true)
+inner.font=math.max(-1,(box.font or 0) - 1)
+return inner
+elseif st~="relief" and st~="klar" and st~="cards" then
+return box
+end
+if st=="cards" then
+card(box.x+1,box.y,box.w - 2,box.h - 1,color.ACCENT,10)
+inner.x,inner.y,inner.w,inner.h=box.x+10,box.y+2,box.w - 14,box.h - 4
+return inner
+end
+local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
+card(x,y,w,h,color.ACCENT,st=="relief" and 12 or 18)
+local pad=st=="relief" and 14 or 8
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 return inner
 end

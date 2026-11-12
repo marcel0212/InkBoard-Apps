@@ -27,7 +27,7 @@ store/apps/<id>/
   icon.svg        Store    App-Symbol im Store
 ```
 
-Grenzen: ganzes Paket höchstens 96 KB, je Datei höchstens 64 KB, bis zu 32 Apps gleichzeitig installiert (so viele Plätze gibt es).
+Grenzen: ganzes Paket höchstens 120 KB, je Datei höchstens 80 KB (bis Firmware-Build 833: 96 KB und 64 KB), bis zu 32 Apps gleichzeitig installiert (so viele Plätze gibt es).
 
 ## 3. manifest.json
 

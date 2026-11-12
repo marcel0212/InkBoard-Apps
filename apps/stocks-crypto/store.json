@@ -99,6 +99,74 @@
         "en": "Widget on the dashboard"
       },
       "style": "cards"
+    },
+    {
+      "file": "preview-p2-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Krypto: Bump",
+        "en": "Crypto: Bump"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Krypto: Gamut",
+        "en": "Crypto: Gamut"
+      },
+      "style": "klar",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Krypto: Tile",
+        "en": "Crypto: Tile"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Krypto: Ledger",
+        "en": "Crypto: Ledger"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Krypto: Nibble",
+        "en": "Crypto: Nibble"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "file": "preview-widget-flat.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

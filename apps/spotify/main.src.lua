@@ -531,7 +531,6 @@ function on_widget(ctx, box)
     end
     return
   end
-  if theme.s == "flat" then draw.line(box.x + 6, box.y + 2, box.x + box.w - 6, box.y + 2, color.BLACK) end
   local cy = box.y + 22
   draw.circle(box.x + 28, cy, 16, color.ACCENT, true)
   draw.icon("music", box.x + 28 - 9, cy - 9, 18, color.ACCENT_INK)

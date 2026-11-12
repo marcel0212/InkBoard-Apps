@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "apiLevel": 25,
       "pages": 3,
       "pageNames": [
@@ -248,12 +248,72 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-p2-flat.svg",
+          "caption": {
+            "de": "Spar-Berater: Ledger",
+            "en": "Saving advisor: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-p2-compact.svg",
+          "caption": {
+            "de": "Spar-Berater: Nibble",
+            "en": "Saving advisor: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-p3-flat.svg",
+          "caption": {
+            "de": "Einstellungen: Ledger",
+            "en": "Settings check: Ledger"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/akku-prognose/preview-p3-compact.svg",
+          "caption": {
+            "de": "Einstellungen: Nibble",
+            "en": "Settings check: Nibble"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/akku-prognose/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/akku-prognose/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "91190fa918538f96569db1daa6fe0a8c0b9844de56319e7dc817974ff977bd1b",
-      "sig": "O1+ugFFZnLvBhEThhhM+27YubjLGYfNlV8ZwK2TFfyNKWpWIqc73YnykntmLyvUBzigTnhobD+yJs2ZxDppTz0FS5aNdNQl5EvezLowGdoHM/3MTKQScxu6mWBJ3U9kwI9K1oMSiP13upjUQfB8uFaIkCibEkRel9hTuKDfgO3ztQbainw0CVG1FFV6uit7QHi49Z3eaZ0kD0y2DS9F3yMvpRKUq/dhoDTkUGpmb+wPvoZAWoBEMgE2WXrUH0//qXZnKsb3+8VPDMKiwuFcGmJXFxJf0Vg6aKig3A/n7Jr1/E/ouhDz1YLvhBg7xu2qTFVMJxACwZJ9g6RjcT0aCSw==",
-      "size": 35884
+      "sha256": "c9812e79153c37edb5304c372da83a2225e9b00a5fad50f8a8ae04d447a94755",
+      "sig": "a9CYshWQTyDGhe1uCQg9GapQ87EtnORjZVOGNchH5M9bTysHDdYgHHdh/apnDN7xYjcdzXbBjlJ0Lv15raZDE5VVJ0Ag3Hp+jBxZ5/WOqekOjg8nCxAjTr9cv4k3wo/BG4vH/1GikvgOH2yacOZVyBWBbaC1D3Yb8P7XTNCXvFQrrr4TzlIPNJbyK2nUsDCHwZ/WUio9g7C9QZDFNMjD41fj11QeKPfvB7Or8CNubKxnZ3vuxdFewX7WdnjxH+t7XO00K4OpkMri0k0uf2984te4m0aBwO6maEqxB87JV0goalHvwApuyLa0umMNaPUCV/06Cuk5WFe2bTOHCFD/xw==",
+      "size": 36489
     },
     {
       "id": "apple-home",
@@ -271,7 +331,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "apiLevel": 23,
       "pages": 6,
       "pageNames": [
@@ -430,12 +490,292 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p1-apple.svg",
+          "caption": {
+            "de": "Seite 1: Apple",
+            "en": "Page 1: Apple"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p2-apple.svg",
+          "caption": {
+            "de": "Seite 2: Apple",
+            "en": "Page 2: Apple"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p2-flat.svg",
+          "caption": {
+            "de": "Seite 2: Ledger",
+            "en": "Page 2: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p2-compact.svg",
+          "caption": {
+            "de": "Seite 2: Nibble",
+            "en": "Page 2: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/apple-home/preview-widget-apple.svg",
+          "caption": {
+            "de": "Widget: Apple",
+            "en": "Widget: Apple"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/apple-home/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/apple-home/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-relief.svg",
+          "caption": {
+            "de": "Seite 3: Bump",
+            "en": "Page 3: Bump"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-klar.svg",
+          "caption": {
+            "de": "Seite 3: Gamut",
+            "en": "Page 3: Gamut"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-apple.svg",
+          "caption": {
+            "de": "Seite 3: Apple",
+            "en": "Page 3: Apple"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-cards.svg",
+          "caption": {
+            "de": "Seite 3: Tile",
+            "en": "Page 3: Tile"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-flat.svg",
+          "caption": {
+            "de": "Seite 3: Ledger",
+            "en": "Page 3: Ledger"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p3-compact.svg",
+          "caption": {
+            "de": "Seite 3: Nibble",
+            "en": "Page 3: Nibble"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-relief.svg",
+          "caption": {
+            "de": "Seite 4: Bump (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 4: Bump (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-klar.svg",
+          "caption": {
+            "de": "Seite 4: Gamut (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 4: Gamut (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-apple.svg",
+          "caption": {
+            "de": "Seite 4: Apple (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 4: Apple (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-cards.svg",
+          "caption": {
+            "de": "Seite 4: Tile (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 4: Tile (empty until more devices exist)"
+          },
+          "style": "cards",
+          "page": 3
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-flat.svg",
+          "caption": {
+            "de": "Seite 4: Ledger",
+            "en": "Page 4: Ledger"
+          },
+          "style": "flat",
+          "page": 3
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p4-compact.svg",
+          "caption": {
+            "de": "Seite 4: Nibble",
+            "en": "Page 4: Nibble"
+          },
+          "style": "compact",
+          "page": 3
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-relief.svg",
+          "caption": {
+            "de": "Seite 5: Bump (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 5: Bump (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-klar.svg",
+          "caption": {
+            "de": "Seite 5: Gamut (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 5: Gamut (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-apple.svg",
+          "caption": {
+            "de": "Seite 5: Apple (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 5: Apple (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-cards.svg",
+          "caption": {
+            "de": "Seite 5: Tile (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 5: Tile (empty until more devices exist)"
+          },
+          "style": "cards",
+          "page": 4
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-flat.svg",
+          "caption": {
+            "de": "Seite 5: Ledger",
+            "en": "Page 5: Ledger"
+          },
+          "style": "flat",
+          "page": 4
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p5-compact.svg",
+          "caption": {
+            "de": "Seite 5: Nibble",
+            "en": "Page 5: Nibble"
+          },
+          "style": "compact",
+          "page": 4
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-relief.svg",
+          "caption": {
+            "de": "Seite 6: Bump (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Bump (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-klar.svg",
+          "caption": {
+            "de": "Seite 6: Gamut (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Gamut (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-apple.svg",
+          "caption": {
+            "de": "Seite 6: Apple (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Apple (empty until more devices exist)"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-cards.svg",
+          "caption": {
+            "de": "Seite 6: Tile (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Tile (empty until more devices exist)"
+          },
+          "style": "cards",
+          "page": 5
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-flat.svg",
+          "caption": {
+            "de": "Seite 6: Ledger (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Ledger (empty until more devices exist)"
+          },
+          "style": "flat",
+          "page": 5
+        },
+        {
+          "kind": "display",
+          "file": "apps/apple-home/preview-p6-compact.svg",
+          "caption": {
+            "de": "Seite 6: Nibble (leer, erst mit mehr Geräten gefüllt)",
+            "en": "Page 6: Nibble (empty until more devices exist)"
+          },
+          "style": "compact",
+          "page": 5
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "ce89c02c28a1bd69e43847882f82dff2179bb0e5d02571ebd9709528021a2424",
-      "sig": "dfqDc72r/hZUpRyNRtmDTx4HhuivBE0SI/wafks5DGHJ4Q1M6NduawpEmR2SPNwhdfPT6leZ3hg3bedJcd7+8WW0XODmy28aeiFCZvU8QvxP6EGXmDzHMMdQsv1xrGBoe3NbEULh8a40dKzJ3YlSlKZnlBaV/HJT6wrV4HuM5CMcFlq6VkJt7vSASRD2MtC54xeywMfU9svIM0IrAmGkBcCPSwPPAUYyG1DY6O/c1lH4U2Wy+TYDiM1DhWoK+HNZqqgPrGgA6Npx7bz4NQpZSsNe3+alu6QhWWZsntKns/0g7ZFR632+v6aQsK9/CCac7VkM13es0tUFCD4laLmL5w==",
-      "size": 34533
+      "sha256": "7fcdb3a045dc46337fdcf77507c53ef256039adafecc8575a1327cd0f70ac406",
+      "sig": "tNbTQw1sDzvjBXQ9CGoE6VcjwSxF20caCdA0lwSgaIkHKI19VStqKRzpLUB+4TaNjF94wumgbHDjMwgsYvOTWaudqSDY/qJtBYP4l58zqg4j+0aymYd+0AbRKe5efJ8kbIX7qIhmq1u8H3wMEpGG484NdHCl9pBD3LXCgoSBWZszDeVbJXy6ZCIZBXcNzlnD/E5+wu04hxC4vQkDIlIrpfia3FvBJ15XIeze7mjPu9aqfTjgZXobvYPXCtqYMjdJhvoQyPKbWcLcbUsH4SavMe93yIScoVldpueXKNRIUomdFOd/pnc8OfY8SnEQ2Afsxu/iNK+Kk30MGVqZdEN9Qg==",
+      "size": 35138
     },
     {
       "id": "bilder",
@@ -529,7 +869,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.3.2",
+      "version": "1.3.4",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -751,9 +1091,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "5e23188572dff2e5e8d07cc3b78e1129538b0576bb58a8e774cc08edbdc5b400",
-      "sig": "RNSac4klbgVx0YXkDaAYhSzaLLBiM+sOwx4Udwk5MOnVijZaXOkOYcOZZWlZnnQz30gRFdalkIAKWpNzuQqVaVdVqa94ZUIeKDdrJX23rzmt3yN43sm07YTmi+q1Nmnlk0JhbIxucH//JtOsVOwEgertMOeFenFX6ywlR3HqMTr/BpVNOJJiQ4h84b8RPfZIjhsEw7634ngTn39fIm3LuqlDSlVeul3aUIABq+wBSsUQSa9YTkHwIC0yaSWK0yu6yv16BiaHDD/UgKYBD21n70zbgdlizPfz1sDlF1o1xZAnSXGdjBO50JS56JenXAkH8zInAvBGC/lRNuGwu8RJQg==",
-      "size": 48209
+      "sha256": "d0db4bc6a8e13202b8396a7ad8ed603eab696b0798cda49cc0851b6e1e2847ce",
+      "sig": "sYSCBMvvzlc3O9eM78Op4NGPTQAJIYYagL/c8tVNsrddDthS8k+bW9EZAEMurRc7KFoBkPqecVLTRxsNVnJrihNpVbiZmXmwdXj7dMlsryMv634LnRm60gtjTxtj0GlpT6kuHljpd02fHqSaEXYmDX3c80j0Q8aYwGimsEvDdqPoUb4uFpiiWZ98t9VQB3/r15YpAcQohYPBxbClsg/BrfWXAs6lNKPZexMS/QNi+mPiW/x5TeBXVii1FPIL/EhyMzz8JKuNW1olkqNX+EM9+OQSnBeiyOkEhFAsSCkD4niLKO98zSHrxHYe0Y2htodM0qLFTYfNvUme+SFBKOZg7w==",
+      "size": 48823
     },
     {
       "id": "clock",
@@ -771,7 +1111,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
@@ -864,12 +1204,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/clock/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/clock/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "e559b588b67d28429f43faea488e8f57de443702ff3dcbbeea2179227137da9b",
-      "sig": "PeFmmOyorFcTpznUhxxglBaJDh68D0RcED33w6B/g+gna1O6MnH8jOLMbl9uaQRQI8TcFG048k37QnK24Js3YZIPH8cqn/5WvL0DJyvrdD0EXLYurlHlsf6pcMgrWTFqhI+McEvdRUki5Yizv2xw8JPp9DPWmL1QdCSBV1m2G9LH1mSazlTlcaXVtQdF+4DMdGBUFMg3dWcEZxOVLeB6x2tC7Brp0z4bDxulXJQ6tPZOT6ut2kzvLJwS485StBEr6CXHr7pJkC7QI+P30rbUHdmZd0j89lslSX1niqYTOMdgYYTzbb5e50m+xMGhlXzgOsBnCgZMmfw1i73zBrlEMA==",
-      "size": 15947
+      "sha256": "05c28f640e2d4592f1edf66e85f03281fc0e1254ef47f9a6788101b3d20c6f32",
+      "sig": "RIH6nF+Rjd/xW6oJSVqjQE0nqvFfumrIC0gKBBBJ5XvPuumMLtsmYasovLc2/TNJ4cpkHyzranUEDikCxIFsvCGthsqt3WlyRxyIiGSaC1P0SJaxs3SLriUJu92lsld61egbCbFxRSwMfj3lWVUShJY9+uErVDcD0NsLS0pLS1XY4GyEybo5iSQYUCjndTCE+x4WQQ8bzZIaMKJrpYcjzWBAr3R4m8ULiVirFAazX+lx64xz/1CFMwqRqHrScNviYn0aT1aY59VEYxQ5cRDxo7z+eATBfGsOPt+/EN1JAC3pnOjsN1QiXgnxR8V2bxmAx0PLLLygdwWmobor/NVu+A==",
+      "size": 16552
     },
     {
       "id": "countdown",
@@ -887,7 +1247,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 1,
       "pages": 1,
       "hasWidget": true,
@@ -958,12 +1318,28 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/countdown/preview-p1-classic.svg",
+          "caption": {
+            "de": "Klassisch",
+            "en": "Classic"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/countdown/preview-widget-classic.svg",
+          "caption": {
+            "de": "Widget: Klassisch",
+            "en": "Widget: Classic"
+          }
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "5ec674ce30ac2949a855afcb2cfdd4617a551b7a70e7e7e1c5627c328c245829",
-      "sig": "cB+XZ0mUFnPYsKMJmjys4BF2ravF3jO4jJhG2BbdXPT7GQVwBYG2q76mPoV6c9e2aKS+BwBap1F6TSPMLEPGIltZKd93g61A7LsKAOE95Y/mttp0gXDWuyOBfyVnBCDU+rJ/E4uVYZphioJ3FqYT6cBF6h7IaXY3s7hh6PO8va2MpaW+K7yl2U9tR09As8xoVhtUb9ROL0usEKO3wYDetDGvuo0TqcuwUIx+bW04a+on+nefd7qjZMAYeYChIVAzVMrISEeYLdyBwY3zg/62GmJ3iSoR10GGOUamM9E4yzG10Z3qaHCq+DPumfVqbZvuJkHRPjw/VJ2rJCdTX6eeMg==",
-      "size": 10399
+      "sha256": "72588f9a60278fdcf381b1ea2a6ebafe4b863896f2236098592e9abdea35d6cc",
+      "sig": "b6OIMwjCEdgExIGLhBM4IZcicYxcd1rx5BRWo/7/KHw2c9O69fK3422rA6yJFEKk7OXXNaNRaRU2hlJs2d1v53EKAw4KSY5/BJeTMAqn5HWe4Z+coCnNvYU5G5uhfUh3knl3aeJ/FSOYT3Aif4hlbcPsPyc6PhYJUlL//Z1rmU40SU0MIi9w8/AKvaq7AgNK7/3sOufDCIgItYjZ4F8ljiZn56m6H+SJsH2+Q/yA+slOvQythUEw6bPLRUBuYhVzyjd5PG2j1eVPQTO2bPmF68gtcNzjCGU3q4SMVeOdCMWDgDmfjENmJPCgxIfIx95CFNt3MN9uM0yQVUD1gLAWjQ==",
+      "size": 11004
     },
     {
       "id": "datenquelle",
@@ -981,7 +1357,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -1080,12 +1456,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/datenquelle/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/datenquelle/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "ad330d376da4ac5f5fdb72e2a2d0fea6f36f668f73472f3862440614ea5bf9eb",
-      "sig": "XbAR4jQeBeYpkwof5UoJwGYgQwwLmSA6rbt2mSOBNTU6kR+XH/HiD+gUUVcD1GVC5htBgNzMnyZpIRV9eqyZzsc5M8KzzcwYZG0iwS0SMJTP0ZHduo9sHfSTj0ymh4P8Ywa87A3VyXcZuWu1srLDDG2PH1Q3oNDXZA0h2g4dVgHTKBSCu7bqpvEoMOv4EjijPjpZDI9IQ1E4uC9OLh/NN88iElgWytfocFVPgJeEd0xAiitGndwpYOtaXkN3N5Mu6xe8A7TXUQD1+Zxxljf8rf7UYRVUl6MQuPZ53jm2kknLy5dlV6f1YfhhnqZ4o1kIpU0y1cqEuCbKg/blrUI4mA==",
-      "size": 27272
+      "sha256": "b91d293d041b39f53a8a423ebfc53e9a96f898074d70dbec0d6b53a82780c239",
+      "sig": "hRMNAnryHox90TTdZ0Db1kGMXgIM7SfmAdgSzEMOOMd/9RT5t+BUTNaa7ove1O35htkM4bpZq74GRUqf0EpbGeBFDCvhpS8UG1bhAMRmOqZD4NJMPc4t/mnzZ2qHdZweRbpMW+uWZYxFXopaXYh2K7P5PDxA3l4BnZDXnOireO6H1Ebl7oWHC6Lq4EyBJvRu3e5kkztlHySnllV4PJAjSPFZF0HzzFiSMnjCjTE7Ig9zhx7AAM4xz5eH97pI31LtA6b1CorAEeoTfZxUo/XANdB9aV4CQb7EM/FnrbqH/a8Lw94OXXGdd9lQkFRPSJN7iXpwQ5+TpWN8FPa9HX05kA==",
+      "size": 27877
     },
     {
       "id": "einkaufsliste",
@@ -1103,7 +1499,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "apiLevel": 23,
       "pages": 1,
       "pageNames": [
@@ -1224,12 +1620,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/einkaufsliste/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/einkaufsliste/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "ad89392bede8947482473bf4fba2edc7424eda6dbd87489526cde3a6cac1123d",
-      "sig": "oK/PQllGB6VH9v3xsJYFrLJWrfz0Dromg1k8Aj/XwoLcTAS0Zct3o+aHMOkP0nF6zAE8yHkMVjvkUtMMfPxJGw4plFcI9U5pNf0Tp2evZu4aF8IKOZwyXSzMt48ZNGSRmDEKi4NQE/eXMLcIfympTKli0ZSym/5Hsk3bdwHGF5MvF65NBgTNuFdghvc3pfhDn/2qEU141RTgbxmEIdUoDmqORDSf1+1F3aUSJJkBTJV5Y6EK162CLqwyIq3jQ2w4v8qtlkEYTHke+Uque9UGtsBKGYbzOFR/eaXEQ/ZyP98KED5zub6LV4erHLAdAntt7IYHNAujy8CeSlNRW4bucw==",
-      "size": 36500
+      "sha256": "0227f07193d81c789382f5d40b8051d53909e0ebbb1ef4f112b1f40266e78b48",
+      "sig": "HCWB7I1S4wyQh7uYuL4c5xaL7zBPIfdhJthUh8mF3+x9htGRxNszhgr7L3H+gtMLMKDQZpk28JbmRyNWpNX28chbpXLDjENAYWQ3FPaFzqlvJQgpt8tPrTTJCK5cwMCv8P3OEsYKSGs+BSUPOr2Q4s9wc/691hN4ROovL3X1705V4yt3GPAQ9TUd18+jTNKmiHOgTKqk9Au5lB4JcoNZWlT9Af6cIeVQ+1OmwggjZtNSX7rjSmHllTzmaDDt1/GIhrX36a7e8LP1tZAaLMXaOgmfMVOYy5o6Z+9WNUoU/N2zanZTEweNjCIXY45VMy5dXuIPLWi+QYRppbc7Ddkciw==",
+      "size": 37105
     },
     {
       "id": "flight-radar",
@@ -1360,7 +1776,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 11,
       "pages": 3,
       "pageNames": [
@@ -1560,12 +1976,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/formel-1/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/formel-1/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "6c731417bf905a3d0dce9b164a663d97b5b559489379ba8a4f8dc594368e4f0a",
-      "sig": "n9HICJkFon6CA4MPKXACL5yKRYwY56I7P3Xi3tQZXPx9aVAaJGXRJpm/p/EI+ZY8jnOyT5WpF1EB/O4F7GeGvN1nRvf+g//SgNGg/vQVljLl2XvOt86iUhPyVN43i8bCOwcY2G1ZAM1BuQd7ThfaH6AaBMd7lbtaMmGe6l3rVNDd0Q2x/q25VWMzasEKEYELLAL3jWDFqxEzZM6YoHICNi5cq0LNeXeeOou/FpW/arHGKyeBPgLURe0FdDcutZGPs4fve07gEP6NKtWYwgSiBBuCNqwwDG9EVW51g3DNgWfWouNWw8hWrKHMZ2xgKhsmn55JmmUZnDkooWxBAaxQng==",
-      "size": 70294
+      "sha256": "4bf07d8fe675814a32dbbe824689b0e311c932f90a0d2c0444659b10c11b4216",
+      "sig": "mqtTuazbVQicavL3dUb/I3VF2lIP5iu5yTKfzqrk7QQxcZLbo/MYo57tBaUQ3zbnyr9HJsmYHo5dOYNcVXz5+UL3WgG0Rtchzv9ofgGBoiyqBNReL/+4sDCQe+5vcRWPzLYGPG4pCasza+fAK+/tdVbAPD3shj8Jo5lJD5ot3/TuzjoDN7Bi/ocEBnyJ1K3bsBD6lSNpwa8jrov2iPGJqg4yRvu4HSBjK2tF1Fmej7nnR2bYiSibwO7TV4F52dYQWOqyi1TN8BEQmCNvZyI65bVdJ1qW2XbYXudLg2Mvwb/dGVKNzT53APq3t3iMZ0kF9amcDO80isyt1mRSIj6CJQ==",
+      "size": 70899
     },
     {
       "id": "fuel-prices",
@@ -1583,7 +2019,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 7,
       "pages": 1,
       "pageNames": [
@@ -1685,12 +2121,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fuel-prices/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fuel-prices/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "bd69143ec622cd0e300f46b07f22659d5cdeb8257ec8b3a94724c37772e4ea2f",
-      "sig": "bpfMIhMKAc0cCT661sRnRJSIuTeLT2tfi4iIgNeWAOId8pgSfLqoBBLpNE0gDNKbrpGv2Ycd6I2YaR8jE34PVu3BvTBlx6nWv+WNrkL/0UMQDnIXrrpJrxb9OpMHor5qU33TtV/j+VbfJUXzTxJwC2JOUes8myQmcdLptsAgAjNoskrb217FctDPP8vXuq+eT+MS9Zlj0t9qizuf+KD7V/rahhE99++M4HCSkhTBpw3VqXQAaE2dMjP+2InHxxNNmJ8g7pXuIP1xdQ9E0WupL0pnUmqn3sj7wJ7l5W+B9C+xMtbEr4OjUvo1um/LcqphKXfGDMKsVOPK3auEQVDwkw==",
-      "size": 33884
+      "sha256": "b2e890e3a367107346e6efd257c29842e767cac549bdcdb93e1e28e3b1e6618c",
+      "sig": "g5/Tw2kY3YzfNSfH65Q9pNarKMTfpWWk/EnPXyhfC4QjncknfmjVYpmoYHjYpkxovlFa7+pYJ+mXpkoWp1nREWXyplpLEuFI5KoJnU2hFln9d+6MtV6VMZLa570wjD20QXgJGTD3wTVZT8thhE41ravi2AkSY4LKeeebUggCfNvhbSyclTCwlWvdroU+u33mvte+gQmKM6K/cJEtCqwgdI11Kgs0jTZk6r9cTvJVB7UZltjs0lnOlgaC9kR/4w+sglBleDK3fXnDfgFeKRcZhTgSe7D7lDPI4aRtpmhTCCPDUiC7SUJ3OXA05+y4YG/cIUi4g37oPuzaZKJL90i4DA==",
+      "size": 34489
     },
     {
       "id": "fussball-liga",
@@ -1708,7 +2164,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -1864,12 +2320,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "c98e197fea5f2b6973cd85ab6fca07cf39553f6588f1b7aba3d4f4fa7735643c",
-      "sig": "KiHMDgf6O6rFABqInVniTnWjZj+8sw2vRYvUxwk2BFgoyY1v3iJaeF1D624y3sOt9gq1vErb8bJaE/bBtk5R1rAeJn21A6IJ9u+rrwamkmuWyr8mKtAdHckArwGLm6ndnIMXZ4Og/FwYnCaI+jomsiE/pGhUaCe/m9hWaXcaDdaSoOXSb+IKiCsRSB29ItxNt/612qVbD2DVa5R+oRjc0uV1Qdqve3nFhojd5Dczd0zivfT7MuT8W/+5jtvOjdvkg5K4KnSHJzXtXwtC8DfQY0SXq+rqvrMcKMUUE2gHvC57Uicu8vUb6lFY8enGHWYlvdfnT1u2+S1Lcvjkz28EMA==",
-      "size": 78888
+      "sha256": "83d971c2dc46008f3eee9b252dc4612606ccadad0dabf480594f717f8ae2d999",
+      "sig": "S6MacE6PPC4VksS+i7tvmJxOyxJ8FD2/yqnJH6RUKA73Vh+YMd+HPzSrxELzAFxrTF7qq8g4UOz63SX6Vu1j9Blx6jH7I5ryF9yXZUFT/VwfL39oJMNOHAv4wOoVsJpWVkTiJ8Ao1aoiOy7PEYFtqlyPf+r1CYGJNvV/ZDNscdfU1DWvhVRH4IlH9x0Z58YkXwMcebcNO5j8kh70ac9Y9JHs0qxlJcnGynlOsgQkUqCT6Lj6xK7X7D+/C130aTYkVjkoUtNCqUvsdPf1p8rTHWhWiA58K3L81jlGOdVHpnz+agx4jKYoLIoC6ldyr8W44ykBoLy5BuxfRwNeyw0E1g==",
+      "size": 79493
     },
     {
       "id": "gaeste-wlan",
@@ -1887,7 +2363,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "apiLevel": 29,
       "pages": 2,
       "pageNames": [
@@ -2017,12 +2493,52 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-p2-flat.svg",
+          "caption": {
+            "de": "Hausregeln: Ledger",
+            "en": "House rules: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/gaeste-wlan/preview-p2-compact.svg",
+          "caption": {
+            "de": "Hausregeln: Nibble",
+            "en": "House rules: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gaeste-wlan/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gaeste-wlan/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "bf800d72d682eb39f680f322408fb52b88a6525550eda7fb955e623f1df6d9be",
-      "sig": "AosRS7f2nNIPxvQaAnmhsDIw3SwsO2MGE+o2lFLByl1lxiiZU0VZbkhfFTsGWzTgB5vWD4j3RkeONfTSat7j1ixu81SZg4PLrVNq9kKbhmj6Ea+iK7eOa3xc+KMpngUXcXgcwMbFG1GiHDP47pIaqUtpzYYVPHuK3vKEoNnUPuDhVIBvw+wCDqG2Uaap8JmQzV5wka4NaIOwRXLqs1+p9WqMYKMCSXGex8OcNl22ao6AlSyCO61+FVearCh5BJMUKlgX0NSfCk5OaJWsPBoUABbzDCl1ocWkPtifoo4Fut+9QJ80rKafczrd9ZF0f18Pa3eL8aRJu7e1ZQn8yulZOQ==",
-      "size": 35352
+      "sha256": "71c540e41d2970ab7b18a1f6e84db9fd30e2de17134dda408cc2e62565a706b8",
+      "sig": "SZ7IzZXxte+IZBzMKdCWbrnQM44X1K2TAsA/O3yugxTAvBc0s14nmYj3x32eZojhXM9Cdb0ngDcxCE1NDT7T/KyE2NCTUHWONkrfyM/0INNqw0cJFVzADVHTT3h17IPDOnxpg7I4O5UAXIbS3PQotgre2EEY7td/yAN9oPzpH3V80wMahAB3vVXlsOuSPkFH7jX2WDdYB9p4AOhlIMtEzSww1ov2Gw9YDj7gxOWlzsWrY7cWK9oJFYRIexFmrF1Irp0sTCEfbS0Y0o1RC8KwT3+cP5bOfmvHASOTbwzlmFThvFoT9RtsjsryGfx0gLhtYCI37sP+NRp0eXhlg5c93w==",
+      "size": 35957
     },
     {
       "id": "geraete-check",
@@ -2040,7 +2556,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
@@ -2115,12 +2631,48 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/geraete-check/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/geraete-check/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/geraete-check/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/geraete-check/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "b3ff6c42d89104d329fe60932f1bc5121877fe349a02be1d9249a8a074601454",
-      "sig": "W/T3q1P98hGow43yn/z6Dgs1jOw65UGbgu1CKfNcKatxG304KhDFlOiL49ryQMgPFm1UcYE0X1oui30mlMsszePMNZGe54DFopRte9ffBMROKVgOzq6AV94gQ9bZKnjXODuETa1uhBiQVHSYzhV3jYHT8emm17eI0+L5dq0mmiiEe2vFLsG42u4tTO628Lq08KNph/Ag6LS8dX+qQXKUQZYtcKdwZpF1k/obQRJcyW9KT3a5XOXAmH3RPO/MaI0dMVYJNmewCgFyoZYx0kINPtqa5bjRMYLHlBC6yrxR2e8RBrILcWEdDmaJwYkkk7Y8gDwkut3ai1kRQVw5ZsEI5w==",
-      "size": 16884
+      "sha256": "6bee2674cb239aa90d40128b7f707317b7c73e29c70881aafc381e9ad442fcec",
+      "sig": "Byfkj92weFzBZSQ2Meze3O0ibj9hPElyjbjToR6AsWZC6TCKCDiValKaFW/bhSUidvfQjwDgJd00033uk3qEuDj3Kr37L7+Vw54B1/AjYAOEnZ+HjAd6snjiqTo3R9gNvAnjP1zGuYV83mvb1jJUkhVsrLjZvJ5cPQhvkFoHg87ldZA4mXFRTGpS5ma1Zu6yRznOzYwE4rhhDth8ds55QQ2+RIB7fjdLks0FYcwZ3qFHxK75DnNflSQNgq4W2poG7VXVhL3xL2qHtPwRGoa7tPAaDBZgKguouavGYRWTjjnJ3cbJW1c/AdHHb5ThKrU8CWcn0lqBVjkxhO1YoC75TA==",
+      "size": 17489
     },
     {
       "id": "gericht-des-tages",
@@ -2138,7 +2690,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -2267,12 +2819,28 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/gericht-des-tages/preview-p1-classic.svg",
+          "caption": {
+            "de": "Gericht des Tages: Klassisch",
+            "en": "Meal of the day: Classic"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/gericht-des-tages/preview-widget-classic.svg",
+          "caption": {
+            "de": "Widget: Klassisch",
+            "en": "Widget: Classic"
+          }
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "289023bf3e3fcc5824f220617138d13bceb35d4bf621b19be4baf08f137d8f91",
-      "sig": "Ie31PyGO9E0ubgvNseGIXRkZosK4piILOhOZVCn8EqOPOL+tTIWi0d71N1yAEE//iAff0Zw0/MP8jpouKaQ5994qdQG3K6bmX0NGl1xPzxmAOBF8cIdU9AkYsUoY1wkVKMCtj0Wv6KMxYOSuKwzmmiu/cSUseWTts3765IYDVDPmonAuR26JHvjNcOOof6NupH7XR6Xdp1oV0vGWQaCkaGobH9H/VECSBLtVebFjWV1c253NjHW2a5CaUwm7UkANJJZEycT6u+Y/qxJss2EyPU1dHk/gpOjSX1//eTm+z7HUK49aw1FoAx45Xr6zrIj8Am8d/o60316XEN02mZwjAg==",
-      "size": 26938
+      "sha256": "a5feb6b55c0cdb5bb8c928faf05053d6483f636af699b80cbb089593d5f70e1f",
+      "sig": "JtY4Zr7AX37bQY2fPMuAwGRbejBtuwjMtAqOgOAn109JLXvUEtGY829rrctHhjJhJkWpxNnZlZGZ3gJtvGK0pn+STbCM2oD72DR1Ua9Aq4jRNM5BgBOXCT7aFnZDbAPS5AxAXMfcAjwlZVqBoaOB6Vjw6YzKJMXMLpg5iE/tReXGM5hyKDXN+MPfVOrVMrRzyisms3xpvePXYadRNrzNlQEoJIl5/xUCLPfDhF/Ypx9HB0EU5BvQ8MeIrqcXdZziRVkebocsfz/h36t0DvVbees+uNcbb7VGvQny297Hftvbmh2K0Nz4lUwHxS9XST9WSrKq4aGoFKbph1V6Kytk/w==",
+      "size": 27543
     },
     {
       "id": "golf-tour",
@@ -2290,7 +2858,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 12,
       "pages": 1,
       "pageNames": [
@@ -2391,12 +2959,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golf-tour/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golf-tour/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "5f6d79dddf630f87e896c64825d94d424c2787a111b885376c8b2746feb02d4e",
-      "sig": "tiwcYAPPnRMduDWYBrenV9C9UzxImX+ol5w4YaNXKjg1P3IJJvUMRCweqPPzSfj/zoE+qJR0tjlUkRrJ8YeRH2R2kgzuItHsYm+QC+50gZ92oinUDlm/GtG4a1En6NaVxSTm/BlfuFeKaWefvwTtPne9y6imCESPzLlGvnw/PXC9KljigPJhQ+t71fBUP+YWKMOsbbB8Bn3Xyr1d7py3PLhhuDgUoE31AiD/m8hPwgi6xqlccFd+PDhPlzCDtSbEGi2haYEBk66Mt33j85whaWQMMbIZjDpgEZa8t9yPDIJuo/r89msBadGFB0tYK/alohDg1xapfz0nUh5G6ddjkg==",
-      "size": 32166
+      "sha256": "63473e708d2b300f761e4900276e37be26eb6f0d1a445f803f782d372cb01519",
+      "sig": "M8DZXM1uQah21uLwqCxiptuBkS+0mbmZ1rEqDIobz1yNzdo7SRC2LJwp8SEtdwPeXFty+FPHUlLOlXL5YJwB1nf6qKhsk3LXf6jeUC0y8fBUYKh4rWC8QqEEn3iKc5s6xuU0kQgHW/4YVV/S+VdgA3VJ1DOocV2MKxc9Zkanx1gq1WxGx249JGOk8Z8N/Ps4Day5evgidsiHUAcZhAjGnkbfWMlyOHhvYwhKK89Oj4G7jznNLt4/ff5TJtG/AuiMkqollHADuoGkUChUOkbDtB3uN0BpzJ3xn5VF25HmwCCsITvxI+bwCJNNZE3+uR9/Xyh4uxCr07x7i4AOIoIUVA==",
+      "size": 32771
     },
     {
       "id": "golfplatz",
@@ -2414,7 +3002,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -2615,12 +3203,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golfplatz/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/golfplatz/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "5ae6c02ced10aa5725cc76508121aaf2fee4981a760559f12e58cb64d294c3a7",
-      "sig": "KAWKYpsGByl00s9YVkTFbgB0nqLu7l6pU/xydtd46eXBlH4lxAd0jhM5xJrAxF0dJZZ60EdwMqNPa/JLqlPDcugCDTcypmSE5B8HzUDTAtebNGyGm+1nBxd+6XAUlaG6JQRefPwrBGgyxuIsk99QLaCIXYlBmsyvlhpFAhdPVvhIPTvGkj47AJSkepqZERSz/hZBssopDP8A0gzGvrDVwak5dqCzaIW5wHNCFic8iP5dAQNw+mD03DR7C2sIYBWeuZN6VCvY0ynTqxrAMIu0buYSkC9UdnrPbsUbIQBV8LdKj+WEIIlrsW6uDkeNnoIoZf/AzqSMuSmlBBpWeDwvzQ==",
-      "size": 50774
+      "sha256": "11c5084281f1a558deec5bfce66bfb160984bf900b1b4979d0fe9586c6206216",
+      "sig": "YFTWueScZGJe/hnnGGro1EEPnuPC5MkmEU5n13Sxj9dC2Ut8WFj6wtEyqogrTpznxfxVPrSd7IdoyNNUr6bZl4iz789+NAf4I0XCX0NOUZAgRf4gLvBMsCIZ2v43NXBU+tOiA1Lrb+K7A3KT43+/TeD1fRQad4cxYylV43Xj2xYzSqnnJxy/VMV3fifZ7oTgwYlbnflJOzieauLjrS3bsToNRE8ozmrogKl5qQ73MMbnZU3WBYjMpHcy6UF4d+XOWiHYZfONboDuwwY5E8wj8xNpQfKYPyFgNiBkXvFSyqVkMudH8WpTYfxru9b8lIH9BxZZE3vSgcjnr5SbPr0rWg==",
+      "size": 51379
     },
     {
       "id": "homeoffice",
@@ -2638,7 +3246,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -2741,12 +3349,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/homeoffice/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/homeoffice/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "668f4296fe470e41c608d2a6d1f3a170ef84abb7990c32fb7082694e1ad41b22",
-      "sig": "vDTzpR51wv796zwjKlzPtr6COflbJ2KfRHAusUl8BcPvy0crIhqLD2Xcmwsg9a73ROx0XCSldC3c0t/CjrOaRh2cWb/tHqVnebM5VGKmW9DUomknUIZVhY7RUF4Wu4VUi1NtpiuOBlgtou/REUOqluDKnt665Csshn0FuY9nXOWJj6UWjeyOJvsWr6Ob5XbahTh1vimdfvN4wAOpSRfi0NmNsL1pPcc08XjSuizmL1dIsyzTvrJiqGrez4N664btDI6ZCmK1fFuHK0qR4wJssCtANYblyRiM5TnTT9u3zTXQfA6O3ZCamDF8SjO9WkQW4mD/MJU2eSAhxEDtBiqqOA==",
-      "size": 29291
+      "sha256": "d048b9ba0940b09a3c3688c5997f415dc52aa6ce77c25650b3317e59231a32ad",
+      "sig": "AAOlkTfWkOs3x3L/rbhmvb9usPv9St1zM4Y3q7jvit4wfws4vp2HvG7ObKuCmFpY5Ubw3b8xdnLu4+h03uh3F+FrPwK8Kip3DA03CIKAJubycu+VuJuVuSkNYHT3dSSazDdeFjdoPpKimiliJtUKdvUoZjJAaFOWU++OB2N0GhI6lJrdx/UxIFA8eWXVQ80i+MxPxQWpSdeeY41+DhknxHzUB+RWuqhNTybvnjjJbB1CaKCDsZajkKxqYfCLE6tSlnIFiGphiqk+rHJ8UhEJfBburqJ+u4YvvkKJQm+fn902ALqe+6ikEaj6HPKOCh55/1g6eXNwbK2LhAJ1fzprTQ==",
+      "size": 29894
     },
     {
       "id": "luft-pollen",
@@ -2764,7 +3392,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 22,
       "pages": 3,
       "pageNames": [
@@ -2913,12 +3541,82 @@
             "de": "Gamut: Lüften",
             "en": "Gamut: Ventilate"
           }
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-p1-flat.svg",
+          "caption": {
+            "de": "Luft: Ledger",
+            "en": "Air: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-p2-flat.svg",
+          "caption": {
+            "de": "Pollen: Ledger",
+            "en": "Pollen: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-p2-compact.svg",
+          "caption": {
+            "de": "Pollen: Nibble",
+            "en": "Pollen: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-p3-cards.svg",
+          "caption": {
+            "de": "Lüften: Tile",
+            "en": "Ventilate: Tile"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/luft-pollen/preview-p3-compact.svg",
+          "caption": {
+            "de": "Lüften: Nibble",
+            "en": "Ventilate: Nibble"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "widget",
+          "file": "apps/luft-pollen/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/luft-pollen/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "b32644fb7c4529c11db8224d3de0a6380e25f42dd4527bade7aff44ed01a8cd9",
-      "sig": "t/PPgmdT5kGp98xt1dGJffH2yueuLq2wh/DHlUo5vkwVDkSOsDFSs1szuMyvdLby1QaVP977gFdOSoNfWNbx32KROuhgw5CW5Q+R3tOdKfXRJBaC9GTHXDv2MZVDInQhFzeWmo1EFdgQFLKSckJYFVK7qit5nBMzm1l0ThHaFQLkT/Xc3Ri+rE8kE83xKxyq56KvlLrn7RJ7mCG3M7MAkN9cQ/PrentCRyvKxHseep3RDlaWqaVOtqayfLfQUa0yN505MrtNabTAF4jhe7CBFGQnw8W+f9EADFnBgdUNo60QgWi3eEa9aJjTzUF/NK4r0u1ux+aMk0nAfTwjBNuT+Q==",
-      "size": 25729
+      "sha256": "10a7e7a4d4fdd9ebf2e1b387b95fc6140d4492318aab83bf9532e4962411a2d2",
+      "sig": "WYhaYOc4fGuJBiEXQ/weRnZuCzsZxAcE3rXKGqjKmbYRmBF7e/YGWxGaxuaGuM9mtBlDGuBq/Yjl6TB6srPT0J0bYY/aftT6Bbv40ArtUc/DNwnMnrIls9UrSX7c90wsXudDYgkjKjTYs8N1pmQ1ix4jO42SwAMu8zFji7lww5NJRs/6su09Bpej37HxStBK/fNihydwrocQKyTtXfqmt5C+YJ4K5H+Crqv28WT+UkSvh20oMkXXBcwsIU0dxUnfiG/gXHIXeonfPgaAODQ74i43G/i1psPtTaprwmKh1MRUTRuyeRdXL+itbKE9xttWT//WO4lCE92BNS3YRtu//g==",
+      "size": 26334
     },
     {
       "id": "news-feeds",
@@ -2936,7 +3634,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 7,
       "pages": 4,
       "pageNames": [
@@ -3071,12 +3769,150 @@
           },
           "style": "compact",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p2-relief.svg",
+          "caption": {
+            "de": "Wirtschaft: Bump",
+            "en": "Business: Bump"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p2-klar.svg",
+          "caption": {
+            "de": "Wirtschaft: Gamut",
+            "en": "Business: Gamut"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p2-flat.svg",
+          "caption": {
+            "de": "Wirtschaft: Ledger",
+            "en": "Business: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p2-cards.svg",
+          "caption": {
+            "de": "Wirtschaft: Tile",
+            "en": "Business: Tile"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p2-compact.svg",
+          "caption": {
+            "de": "Wirtschaft: Nibble",
+            "en": "Business: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p3-relief.svg",
+          "caption": {
+            "de": "Sport: Bump",
+            "en": "Sports: Bump"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p3-klar.svg",
+          "caption": {
+            "de": "Sport: Gamut",
+            "en": "Sports: Gamut"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p3-flat.svg",
+          "caption": {
+            "de": "Sport: Ledger",
+            "en": "Sports: Ledger"
+          },
+          "style": "flat",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p3-cards.svg",
+          "caption": {
+            "de": "Sport: Tile",
+            "en": "Sports: Tile"
+          },
+          "style": "cards",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p3-compact.svg",
+          "caption": {
+            "de": "Sport: Nibble",
+            "en": "Sports: Nibble"
+          },
+          "style": "compact",
+          "page": 2
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p4-relief.svg",
+          "caption": {
+            "de": "Technik: Bump",
+            "en": "Tech: Bump"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p4-klar.svg",
+          "caption": {
+            "de": "Technik: Gamut",
+            "en": "Tech: Gamut"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p4-flat.svg",
+          "caption": {
+            "de": "Technik: Ledger",
+            "en": "Tech: Ledger"
+          },
+          "style": "flat",
+          "page": 3
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p4-cards.svg",
+          "caption": {
+            "de": "Technik: Tile",
+            "en": "Tech: Tile"
+          },
+          "style": "cards",
+          "page": 3
+        },
+        {
+          "kind": "display",
+          "file": "apps/news-feeds/preview-p4-compact.svg",
+          "caption": {
+            "de": "Technik: Nibble",
+            "en": "Tech: Nibble"
+          },
+          "style": "compact",
+          "page": 3
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "e9b0030e3b8d9de4ec11caf2bd538068858e127d650f01d87e2b41f4719a33a4",
-      "sig": "NxECpFXVBggJC8zeE6NmU/H1MKEFvzElu3FsT+nmXm3PXWE72OgnCY42vWkhEdMmibNQaJpuhnYFUX+PhBHphlnYtQZo5BcJd7+2l19BTZYe2bau3Fnmrua1KI5LA06qZqZTQwIjrRbHyJY3MeJb61a5OXtN0D0KB7sXHrUBFnjWBww5dyfV8p+aC1j6DGYgO/N6zXzZfj6Ri2Wyu/eUsuhLdZ3H1RWAuQlSBwYiHlkaOLRwjXVsLPXu6T4NtgkCVmrJRO8ExX9Un4tiotvx5JC9AwonAUDfTsiUnFehqw0Nush4WSP7pH14uY5roCr+/FhqIkiyW1bieoC2x/c9Pg==",
-      "size": 33591
+      "sha256": "b8ee5f93efc29e209425988cb743ec15940c55bbdc2158c24eb738ec49b45c97",
+      "sig": "rq6ovLbahL6kDmgs4Zh4gg+0T3a7ShA6BPquP9cNOBIiuY43rIKeeINseBe4lYYfyNT8p/UkIQDsbJsE9+62eDpEfFTp4CtNEuZcK18tjqp7an1fFVDiHlkBmr7CwNr797umiah4IbNEaslM+jxFnTzFVmmpN/z+I7LPQHK05UoQpL/zd7MKepQVg++sCftFSzr3igU2fqHOivSmkw0iTg1rGFuq8XLK95tvMv+CcEJ6N6OboD0gMYf/yNhdyapLT7t7g52neKnX482qAuZ191h8Ul32meCRqvYeVdAHnjTrnxrZFHuTVBWf8VchllAkftttLEi3L96rfcIGtPr7/Q==",
+      "size": 34196
     },
     {
       "id": "oepnv",
@@ -3094,7 +3930,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -3257,12 +4093,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/oepnv/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/oepnv/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "a8a220f334b7b5540c1650e8c613ec68be58f60e61d2e48e6746537086826b3a",
-      "sig": "evWqHkArsvlyCH1ysOCyXWwx/dKYf0JKcZQAw91h49yRLxanmjTGkfeUVZjKY2RkqPkt01z7kRNN84KFxAl+W2bwHshW16jMqo4CTStLSK+v+bM6PLU+x3ZaY4gDPuqqtgLRwpvPVTf4rLvT8Dqr0VhrClBUh21T/DtwAQpgC3Uzk3yx9fXcBbBwOmxb+4Bji302fTAAJ/toslE2VTnslXJq3whv7HrxcW83N6cvfJO5ssqH4FH+rQJJWStGwjUksLwIF+nzoukepK3BBFTypdoHmPgTUye5/fi+DQqUDiQUGH0VtXzhjM/zYj/jKLQCQ+6MCdSlWRMp9eiLuFdzWQ==",
-      "size": 82825
+      "sha256": "f634c1a8da6c30402ffcf4c8aac0c97bdfef69b42ea34159813322711d9d6ff4",
+      "sig": "WpVofDzX11oG242tCbnlVflePumVO6zQcdoF1eChYy9QtqeBTbpE5Ha1mPnEp2MJVSQLks6Ha7wdrJnRpRemTADCs868PDrXm9Cb9HA0xk2/ak8XNIcMLfrDeUJ7wGvi2/RJB6p0fiCM1YmN8BkH9DX34D+Nd93dgHh34esI2qKD3h8/j4xamVgF8PfFoWl1rzESIefbq32NI5EXjvJJWF89IJIMOBmhix0oDtNwpUhYRl3O/SrSOsztmUFoFSk/x1Bm0jIurgISs9sBMme1XxxwR2VQ8h5Z5WGegwlxJYmvn+j0o3YJmU8AkcOjCGu2cy4GkeSDkHqlcRwVLHrnPg==",
+      "size": 83430
     },
     {
       "id": "pinnwand-app",
@@ -3280,7 +4136,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "apiLevel": 23,
       "pages": 1,
       "hasWidget": false,
@@ -3376,12 +4232,20 @@
             "de": "Noch keine Nachricht",
             "en": "No message yet"
           }
+        },
+        {
+          "kind": "display",
+          "file": "apps/pinnwand-app/preview-p1-classic.svg",
+          "caption": {
+            "de": "Klassisch",
+            "en": "Classic"
+          }
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "5d9d990d27195b1f753de318eb04cb51cf997c53dd2e6ecc1c862442f5c2ac8c",
-      "sig": "b1O44Qhesz7b92EmH+U5IflJbjkNtx0IrwN6pLj0OBwg0uN8EjyvEVt+C/Yc674jIWgCrL4pr5b6jUbsn1Ekmnd9ALujii5i2SQtfOCRc0xJEnDxXNtG6NKYcAnwHNzqfMDlnFFsB/cZHcR6JDGGibwyfnQdFAfo5R7a2jTcsRMSOUlf5SJJMdkmXxWOQIKYGmGE2IskBlHiT+aVfzgg17gnKxzNuobSFB9f1grvGl1yVUhho02Axa1kHAZlKBIMFYxuyghSws/lPBVNtIDVjUpRCsBZYhaV6Jib+lsvPdGME7oA/rQJyNFXtL5SRdgQIQcXYt3qKaMe48fk0aJPcQ==",
-      "size": 14754
+      "sha256": "d37de01f75c7adc67e975e8435f553b648d212f8727effb51e0643a8653ce2d8",
+      "sig": "jXGV9bbaFtBDRkStY3OpjTEJ8nBbwpoUjzJ8LHVbtb9l+e068AjtRq59DTz0SBPZGirPYHfiFzSl021sh4PH9o7/5yQx+b/vXlkutf9usWqpUngmFZv/rKmx01jKbB8o7XMAZgDSoYLGoUCByS6zPDLj7umSXH/540Qn3ztDKb1JRYPYadI+bw8gRqzMRRTvu9hbv4OfejlpJiOVDisRQZgLgYxLyr/WWBsghgpmoOeR1agJDkIGHbIhOAlcz6bgH6/g7sEJDryfTXmLpU6FEuYCTUOZT+GzY2gP0NjNhIGyu5dfrxfN4sF5FjZ9LbZcfKcAS3/A0A/71WQvDWOsyA==",
+      "size": 15359
     },
     {
       "id": "rezepte",
@@ -3399,7 +4263,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -3477,12 +4341,20 @@
             "de": "Zubereitung",
             "en": "Instructions"
           }
+        },
+        {
+          "kind": "display",
+          "file": "apps/rezepte/preview-p1-classic.svg",
+          "caption": {
+            "de": "Rezepte: Klassisch",
+            "en": "Recipes: Classic"
+          }
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "65df36f6c3f47aa118414fa2ba1b10cb845b6f5c444253efbeadaee36ec45e3f",
-      "sig": "Fjm3r6K430biuFdHxSRunWvfCHSJeO9IIibQg1w9B0smApaMJtZReRxxe1q5I/t4S39R49pV/zAF4y95y/GrioY1EpWZaKIZ8qNhRqJVzIdbRM1ZqjC7IW6H1cHJqZdeCfP3arKaqJ5c6Q40HXMKjEvYeRa/qRpaASVdASTZ2C41uImwrAHIEohpCXNi378/9uy8bs/rY5vRQX1BF7LeyQVV0eFggv/iPmJICpftzsOSTD117RNCqgJTZUCv+Bug8YPgoqDYriW9OWYahH7p144hNoF+vk9TARaLkDkk7MkXAiHdoeKbOvy95KGMBJu73zTsfnTl9CFV48I5t/7s7A==",
-      "size": 50279
+      "sha256": "2731f86f563487ccad97ec0349b5dce0efeea884d7874a5dc43066712c227351",
+      "sig": "P8vewnhl4ma0fzDea3jUjCXbF4FW95J5YRzharddcYzBFg9ZopEf3B4Ho04h6PtnX/8tdh8d6ilCdlHAMmhAkLmoWitCBaG5/j2PxlOqiNslb1H4cFdZywxQIOmRtDJ30crfx3BCMnaSp73tKl/udIeq4FVSKbP968u5JoK56HsL/dzbQnD85myDjHiJwn0yHsJKVaULCQgFbuHoUWUJHzoRB7/yGQWRzCvFRyb0LtKw9ISXcqTiVOkQ58Q8cTj3uWzgs7izmYsSF/Ga6nfvYEDf+ptG9Xw1E10hFuZ5lAT35eEqcC4euRyJf5128Bcnkx+TmSG/YAVtN0UFa3FTxA==",
+      "size": 50884
     },
     {
       "id": "sport-tabellen",
@@ -3500,7 +4372,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -3655,12 +4527,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "b4a34693c8233cbfd39c19b8f25fc9ce18ebf9d1ed1c36e0f4d52d8937e53fcb",
-      "sig": "vzxaksuTIAOQlwYTp80Z2zlSd5Yu/Z6YSFhnfLzqtMg2Gk11vpZ1GYIPQKSFrZCWIxrNnT1CS+dlqXPxnT07FEH4VxwBvS8GFz14423D+kR47rX84mulXt3mSUm/Z6qKYoA4VXUWgrf9WtRNueQKIT0oLmDvDE5d5oWs3XD34cS2OH+BVbq7p25i2f6NowJkgAVy6nAvbwO/IicqWSnPvbgjTCwHGlepKNwAtDXGT3SGzhz5g+B1bikNeDNXOsLegMd8Jg3eidSA5jD+IWyPSnH7sFYmzclzEELmN474P0HAAYB2VAcThdsIZ8N3QUiCLQtYuhmtOh/TLTg3W7YGEw==",
-      "size": 65083
+      "sha256": "fdcbddb12db2e1eff34d8a0b118250dcb05f460970d099a6aa5f531ac8306538",
+      "sig": "VuaIsYng1EUw3m1Rab8bZf73rs/I3zHlxM2YhJBcqZedfrlK1KcvxLhyRsAoYUzCeCHbfL8hXR0ZBhZLUWyjTCK2QnJQ0M+g5WTdHirtf1NKs0cfeptLRkDvpPZ+QChdjrL6YGDgcH6IjAoMjlXxiZIBaMGr72FgCBvs9p9lvhMs37gKEa8PJuX/mkH4VSt5OJm0XpKK1NGRZbZjlAuF2o1Rg2jc+kUe7XkidBMdJSwci0X98J3/093PZ55PRAtcGc0Xs6C4GRSqtZxsAEPHkSTjLR/E0WlZ/CiD6HFpAOXE+33zwu4eIxxzaj+2AIRzugeTUfIPsyyqsGdGri1GtA==",
+      "size": 65688
     },
     {
       "id": "spotify",
@@ -3678,7 +4570,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -3789,9 +4681,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "47f4610d486fe5e85b764e79c55a046c549fbf816751fd769bf42ca2862d9e8b",
-      "sig": "o99EDjYiEb53lFOPqvPRXM2uGVLP1JfKF+a/9cPZ5iQ0+NaoAci1SFOQIQZszviy9ygkCM586Ko8B9W5VVxnKERkFXOhusdG+PNcNuVvg732g7F3arpxdAco/DzpsHTi/ImaSTivh1+2DK681oZgFSupLvcQOh21UNqhzCZEj6HDQdzLl3JH2qOCPahZCRrOdt7zXsRisqQSW002le5JgGXLHEeEc7+rnJYcoMlwRH6uqedBWKANpVsSTlUkhwYBYR8LiNsBge36p9dV80kUi4iE+M+l+53bh5fYh8D1UO4+qiaNiQ5SN3tglu9keOgP68MFgySTmbtzyeDydaNQBQ==",
-      "size": 24798
+      "sha256": "3834b9c126586106a06ab1670aa90d157ed40e2e9668462e37359ecd206e41d2",
+      "sig": "YcuEeumZZ658ykqi5GpBANZXZGtYncHLZ4E4R/v11wTv26hoPPicX51FIXGVqnunjaJLjhqE0pKMMqw7NWh9cBmoT5yrtMQVninqiGewgk9m8TSGf5zqvjW1oqkpuy9mucTIPFCELCVdNqcB9AMla0lqefDQRY5+iDrqnAjqAGPWeCPYCLAhxdoyIQYrytZTUxDGrDaJHaG0iYWOjBixNXVxPW+11RywwvUr4SLnpqWm/tEQ8ukapyes2ZlFAGSqgxwSBtcsfPc8uo1WmnL5HT1niFtr1SLZDMZsEBeZmjbO7keqAqrz9uSUKnhqLRCQR2n7TiiJkEiYlrM9EKuTJQ==",
+      "size": 25309
     },
     {
       "id": "stocks-crypto",
@@ -3809,7 +4701,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 7,
       "pages": 2,
       "pageNames": [
@@ -3912,12 +4804,78 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-p2-relief.svg",
+          "caption": {
+            "de": "Krypto: Bump",
+            "en": "Crypto: Bump"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-p2-klar.svg",
+          "caption": {
+            "de": "Krypto: Gamut",
+            "en": "Crypto: Gamut"
+          }
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-p2-cards.svg",
+          "caption": {
+            "de": "Krypto: Tile",
+            "en": "Crypto: Tile"
+          },
+          "style": "cards",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-p2-flat.svg",
+          "caption": {
+            "de": "Krypto: Ledger",
+            "en": "Crypto: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/stocks-crypto/preview-p2-compact.svg",
+          "caption": {
+            "de": "Krypto: Nibble",
+            "en": "Crypto: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/stocks-crypto/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/stocks-crypto/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "c23a153cd49d6da4672e7a84109f15a45b77d27b96422779e401c76c30354976",
-      "sig": "MXAWRY4L6ius6EBn6/ZliW0V9wAQ3h9SLRBLoWZyvJbTTKWlW0YILIXJVpbUo139ha0CjAwL3vhIa4Ma6QzIDCPPZuq2sEsPUvV0TAwtQVK0OoTTh4iup1/GIcWZty/Imfw8mriKddc+9vNOy+ruuLsnJEfBNJsleQXHVA+y0fqXZnOr4WqJWGtUebWIrlunUXamAGA0eWElKFtnHnGQCHrFX5uZCwA/Jd2p2Q/8ozho8vQKtJ2bdAz8/IHaq4r1J5dvAYh4YfNfubQUURU7EvENzylpECgfvz0oqil+nAr71ci6jdCs2OkYq3KWdVu/9yRGBTnKPAOBxAS3JjMnug==",
-      "size": 31623
+      "sha256": "1c8656b42147b62c34e6796300333a3b6f6c48fea7cf7137794c660d1c1b5a71",
+      "sig": "DghmbzsS/A7/jUnmn/RwPmZnCFHYB2nWDwQXZ7bZY/0OMIV8q1VgQNxUEeQeDl10wFpW6cmUxPjxeRmfa2Y7qozfmAQ5AhVOt9i/wcHWM9uv5318+AQIDDYzeOkMQ8UBxbRFWoZL3ljRgGI8YgFpWLpBIYe5giWn/CUiePi0fSg/jCl1tJWSQTkkgAkuaHjX1JgOOs2gVYPQGOLgMpFAyKaLUEpbeMXpoeqFfS9o+k6UtkiX7YClf3d8Ti5fpVgQWKQGDhnntDmZYHVg0M6Wv/bPuPY57os/4DEDO50O9GixiDcq24L0UYKMtja9kGHLRr3GhiBPGUrvKWrOrMA+Ng==",
+      "size": 32228
     },
     {
       "id": "todo-list",
@@ -3935,7 +4893,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -4038,12 +4996,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/todo-list/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/todo-list/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "cb24ff58e9d60ed0b6cde5492ba0cd2cd21da0b4fc4a865f32fab29b375d837b",
-      "sig": "JYrPkBawCd/A6NtRgteL1XcS4/lh85wQLrEhq/y4jgdLG68uPO7rrZowGLwMVGPnYMfTz/P1DjX4KlxIloy/8pWlOeOH25CLg2ZF8vnilP/O9wsBy7C9diSxecbS4MDlMtQKpLZu3QznaatDbw3PtHAS7X27sTf954UDmavhP2wnFOEAdyZZp2JGFevk6TfFUQNttoJqx2w8YltrEXl0ALbxh7IwYFRzo/Xgd6L1QD+hNlReNnL+M9yXCAiV+q2U3W5AJE9A8k2QBpAlOV+iS3BuJr7LxSFPDmId2SEPI6JGn5Yij03Br7fv73PSmOPrhxJZiz1AUPdctGNJ+NXcSQ==",
-      "size": 48683
+      "sha256": "008db2f02c84f6420186ed095a515b60be6287aab0154e1ada3577d2a80054e2",
+      "sig": "bEszYhevGYseTF0b4s9c1/O6AHC66AFgI906p4U0CbMdTZy7MjCGc3O1uTP+Y0JA+cFJckoh5DmvS/N8LXaO5m3+CS+EnGcPlAs8MXJvK+PvtmSM/rT/narqOoitlbAhCYnEtADi9lweXpqg95F09a5QyIMs/qRGxOdGvr6sizhlstrAUiN0uw6b9yGHwVAiZ6f2VUqvCS+RS+e4qY4CTwQfJapa/q76UXuF8UUMGYb5tVt1GNMlNIDK5ih7Dbo9R8hZciTgxu9APLNa5GAiErcIRBjnz0ATXMmKDSpw8epn7aOYkKcmstvSiy0cbZmSpSwFdx8+1nKOq100RMQ7Lg==",
+      "size": 49288
     },
     {
       "id": "tuerschild",
@@ -4061,7 +5039,7 @@
       },
       "category": "organize",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 20,
       "pages": 1,
       "pageNames": [
@@ -4160,12 +5138,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/tuerschild/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/tuerschild/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "0d498a84128e1c7c8c90106ca1333ae872c13383ac0adc42d1ca4d0f1a174542",
-      "sig": "hA1dhnOkSEPQ9me56V0vaJjyoEgdOrufStkv6+pmTFNu40wsIhVnv/c+Z/p1GlajdQJfzLha7pGoh8s1AXLptPgWVC3SEj0ukAFI+wZpS/UTGanepY5t+4fubykn6lh1sQVI6EkB5AfbC5abYf+2mLnCeGe4W4w/yg2CT9XyAoghN15Hmv/rhu72tnle8RR0WTO50eiJ9MvL/l15yup+Ib3zaCKK+lLwfKzwHbNFK9VFADmVAktFaQlf4mlxlgr9eNwxxWSewilUk+R3znRm4ilk2J+5SSu83Ze4V7aZcjtDo6ZEgGNcuygrkELzcTziU1cE6XIqtvAGzuU6hloupw==",
-      "size": 23904
+      "sha256": "c38aea0b36548de699e3801b45ded3bc516c7c2221915aed3dac1ed33f00d396",
+      "sig": "hMqD2S7v2vsS3oPiroc6KuRWCp8kWVD/yAIAEKkvehTIzfVEFHBNNvbA0KRkquptilXe1ZOpSPsewxKuYTYZgci48c/y5oyMZUc9CmBUwetmiRVTWJUyWuCUTIFLdVjRKLTWOP6C5CDJbw8kE+WXwccLPQ3de6+3rNhv/MbWUOceLIqQOEu03P9Hk1y1WFTgrn58ApLpMEfCPKX0mhOBeMyTz2IQASkbPeiGIF8fLvqvs4v0/iNaZEu+7fS2FieAwVd1MOJz1SlIUYbHm2Z0VZx2RQYcDzNmQflri8W5ZimzCZIRJ3E8wQOLrf4ud0sLC5iYxDhCSVgD5mgq7KMINQ==",
+      "size": 24509
     },
     {
       "id": "waste-calendar",
@@ -4183,7 +5181,7 @@
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 9,
       "pages": 1,
       "pageNames": [
@@ -4285,12 +5283,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/waste-calendar/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/waste-calendar/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "514d6c933151035194bbbc92c62874dbe2e720d7156d1d68c946dd2e85a9ac09",
-      "sig": "IHmMk50wwOKHz4zPM71S4WSQqexL3HfxDHA+nL3cRT0hpQcIkQMgVUM7Q2KGAL4nV1xWh4oSMYVWs6zGus3yI91l7obFI6/s5sadHzeILQlVcvklDivrwcbwspX7lK3/crGRSjErXGAbplWz4RWbYue+1X0ML2CK3FgKIzaLsYgGfHOjp0aIA2Ljx8m83+KU/ifDdsl08G2t5j8KnUDtD5A3aWgWh5dsYflsLJXB2L8G8RnPTBRfESUNtfw2I6x/EgjicJ4Scdt6Zne2hBOkuD6LhHeIpfE37hfhn1/FxhcqCkiTdxFHbj5mV6EJfdhPrUA+NpiMs2ajNOsuewQBSw==",
-      "size": 34202
+      "sha256": "0acae67a4b5513b424b9e4338b120302e372fec5bc3a7d3095f6f78ba4fe0110",
+      "sig": "Sqe+QgkWfAYEwmOjsZRMRnxyaWfBom3FIWCpAHOenD7X2L9yKhixgqOTXJcdU2b8n9z9BzCowExRF4xQe/ReEzMlbEOmQY95fpBEbfGy60DfPqmZA+E4D2cBXmyj8IVocdbgF5TRgdnc7v7xjNo6Q9Pw+fi/CUdFOhNnzJLwkDba0qZL5pyI6m9B1B1jBVMWkjCQxYzKACaUwAewaY4jrfadzXoW54aB5CPVd7qRAtP5ft0VyQiwKFZG+tFc3DieYbXQiUTjNd++iQEfj70GwQjlLJHTYm4Yk6hO9MMzb276SsPk0KbUYTNUgvDyVJ12nQZqVEa5/ccdGpTkMcNTzQ==",
+      "size": 34807
     },
     {
       "id": "weather-station",
@@ -4599,7 +5617,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "apiLevel": 8,
       "pages": 1,
       "pageNames": [
@@ -4704,12 +5722,32 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wikipedia-today/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wikipedia-today/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "ac099a9e2cf2735fdfeb4f26ad61e804395cd9d370196e9b92feaed7ea23a37f",
-      "sig": "AAxfWar/U2hxpQPRCkiFq9F0JpFG7wF2RVL/N4AnoNWKLbE5xj0OOccRloG3at0qznlN+qVtBHf1ZA2eKYrZtAD0zQPwR6ONDj28G4LhZ27joVPcsf4M3aaoAgZo4po02osyvNwgsXOT4RkUO0/ZkTO2MNteEt6IGGz+ARxWcRJSEIshbugJsHak9cT4BlkfOP7qQSLCo3jJ568m/R7MpaFRWtQPYyEFuYoXk0BhR+Sp/VFI5y/5fHUx9PLjzMogD6w/HGUv6+kooVbkz/F5w0WPZXq6aAQ2RTTbp5PgzeLZjYNrznl1wtooMcNFp9/1Y2V2DD1MQbRKRiBKFMU28g==",
-      "size": 36069
+      "sha256": "129344f8bcf62a1c57902d2729c9cb9b861df20e6a530773106f680de6e397f0",
+      "sig": "jam+QACryoOBhY3+TKGCSYn0RAN5OFQskmuhUw4eugTyJeVKLMNOeq1TodVNFM2cG7OO7n2+CVQ8eeZCwb45lEqt191zXpP9smPRIM4eshDdz24eTUlMmZGtmobMHr/Bg2sDQV2idaw92epduvHeoZfoQweS3cmI7vkLU+c3PWURxiz42zRSCx/7T+PE2T2cE7bU3DYaC1lE3kLgULpuCH2bcBS5SNKP5gNpL61elsiW7H7Bn/Ix19JsxncJbYVfF/3QYDfS4F7zm8cI7AwGX/OxcQn6vOg1AtTihh7v1EwtSwtHbxEGUdUCtv77Op+SY/m2a0tv9iKfAukRzFg84g==",
+      "size": 37034
     },
     {
       "id": "wochenplan",
@@ -4727,7 +5765,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 23,
       "pages": 2,
       "pageNames": [
@@ -4854,12 +5892,52 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-p2-flat.svg",
+          "caption": {
+            "de": "Heute: Ledger",
+            "en": "Today: Ledger"
+          },
+          "style": "flat",
+          "page": 1
+        },
+        {
+          "kind": "display",
+          "file": "apps/wochenplan/preview-p2-compact.svg",
+          "caption": {
+            "de": "Heute: Nibble",
+            "en": "Today: Nibble"
+          },
+          "style": "compact",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wochenplan/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wochenplan/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "1d004b3f6afd60f836c7d771478cfeb39727e225a7692cff64f3272c328ed48e",
-      "sig": "MGG/jXj4HAcoI4U5i48zktsz9d4uKCOtkxu8YEIuDzsjc/gPhkosJ49nn/32tBl8Fb7App6gBldib9DY3wajHvWIcE9TI9yjrJc7tu7zcTkeqUzCYF4klxEXNynQbRFug/7/x3z+d60uP0mnfg8B51NMVmo/a4r7tMmxsuWb+AJo7ZYPx6ELvg6Pp8/aNThEXbuhPf60S1VqD0b3aesV7A1VglgIqPkz2pR692FnmhA1xl5JJDxocVWNm8grsLlyVH0xHTcuyN3lCiAuoqHxj1eVC1SmOJwWZVgDR4Za1CpIEIQ8tM5Y7zX+/r6bHcKX8wsDg+1KWLqZ5u6sbD8jUg==",
-      "size": 33009
+      "sha256": "bd68c9573d139646da87641ba25ef8c0bdae2b0f8ef2016f6e41f0fe3eacdecb",
+      "sig": "K71HCgFYM8HTUuARMl7G0GYFmC5F4xuKu+EBQowftq56v8akot36/rvG4szVuHlYloRqMLhpfoylnPTw05+TDffJH73atumRWL5nXt8kyU/hHkG33iJgp5cc7mz0mtbfaVnTSMrqn2zvbWt2ORZyJSdXLKenzRVYugZpSe0PNy8D7EYZW9ebD5M3iVw4Jmx3fVld6FfX5JxTX9DPc9NnWAX53sqZPkaV2S+CYchou7Cjct4kU2Ze2bvJFPP3OB1KficK/KnRQvE6FD8vv3ybBAQ5ZryCbp1WbfxKKGg98i5LpcktcuPh+UVTlq85reoUQC5yFSKKYpV4cm13nzJwxA==",
+      "size": 33614
     },
     {
       "id": "wort-des-tages",
@@ -4877,7 +5955,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "apiLevel": 1,
       "pages": 1,
       "pageNames": [
@@ -4958,12 +6036,28 @@
           },
           "style": "cards",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/wort-des-tages/preview-p1-classic.svg",
+          "caption": {
+            "de": "Wort des Tages: Klassisch",
+            "en": "Word of the day: Classic"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/wort-des-tages/preview-widget-classic.svg",
+          "caption": {
+            "de": "Widget: Klassisch",
+            "en": "Widget: Classic"
+          }
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "a332fdf9c1d0f317d686a0bef7599d6220ae700f9a9999d44387fca6566b5e05",
-      "sig": "mTBm/gUa60Fh5PdTb+lb79vJjD75qVu8PVWNa6Y5ClRTcP9FVO1yk7D9aloLuyIe9eT2LFaSItDbZlr26coaV4zL4qrxUlDBOH0efFu2fHxnqR4YKIuxVN4JstE0/tWpOWfn2dfJt5xBKOzBkLHqXZJtKybPi44kFawQtdlPUlkuwFkxtDd+yIPqm5LVld6BjbH47VIgvhCFkKGNv3yrUYvUV0CwyyoGqVQtgG5wAv8gj2nzdazojsBnWV4MucgCxBmDEfT2wMK19x87ehrxBG84bRWMw6twddxWgtj0ULY3XGYauZVHJC0EY4sCNuAizb5/9gGJGAurRHWpkZHDzg==",
-      "size": 25916
+      "sha256": "9763d7a8c68624397522c95195d23e3b08d1f7cfe3e1a66730dc2e7ee21663d9",
+      "sig": "gXCKq01GU84bF6aq5IeO7WBdA2AQargbyUm3IbwG4FF/5fFCHim6XPTcnuKAA+bJmmZB7YOA3bd8EeHs4AkcAVY7A5sVaQ9hnB+jM2iA21YkX0ahchxvCWVu4vXDlTNhhPB/8tBRCjFimJTSUQEUxdVeSkTNs9zWiPgRonSOHvsHNaeqGFuPw20BvOMymg6vAp7r4qbuy7YeJRPMvIPwxVRctQ74ThbNXxXB1bUy1bkm/3glfvgHWyTPAtLJoY9FKeZRgxL0ZDoLL18NoVul8i2jVQAUbyV3ibTWohODIOQwNXkkLd9pDhP7m5JmlX2mFNCj6iI0abuqXjIUiYqUaw==",
+      "size": 26881
     }
   ]
 }

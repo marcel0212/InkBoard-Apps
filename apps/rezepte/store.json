@@ -78,6 +78,16 @@
         "de": "Zubereitung",
         "en": "Instructions"
       }
+    },
+    {
+      "file": "preview-p1-classic.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Rezepte: Klassisch",
+        "en": "Recipes: Classic"
+      },
+      "style": "classic",
+      "page": 0
     }
   ]
 }

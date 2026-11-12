@@ -77,6 +77,25 @@
         "en": "Widget on the dashboard"
       },
       "style": "cards"
+    },
+    {
+      "file": "preview-p1-classic.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Klassisch",
+        "en": "Classic"
+      },
+      "style": "classic",
+      "page": 0
+    },
+    {
+      "file": "preview-widget-classic.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Klassisch",
+        "en": "Widget: Classic"
+      },
+      "style": "classic"
     }
   ]
 }

@@ -129,6 +129,24 @@
         "en": "Dashboard widget"
       },
       "style": "cards"
+    },
+    {
+      "file": "preview-widget-flat.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

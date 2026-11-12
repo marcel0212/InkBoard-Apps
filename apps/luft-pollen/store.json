@@ -151,6 +151,74 @@
         "de": "Gamut: Lüften",
         "en": "Gamut: Ventilate"
       }
+    },
+    {
+      "file": "preview-p1-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Luft: Ledger",
+        "en": "Air: Ledger"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "file": "preview-p2-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Pollen: Ledger",
+        "en": "Pollen: Ledger"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Pollen: Nibble",
+        "en": "Pollen: Nibble"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "file": "preview-p3-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Lüften: Tile",
+        "en": "Ventilate: Tile"
+      },
+      "style": "cards",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Lüften: Nibble",
+        "en": "Ventilate: Nibble"
+      },
+      "style": "compact",
+      "page": 2
+    },
+    {
+      "file": "preview-widget-flat.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

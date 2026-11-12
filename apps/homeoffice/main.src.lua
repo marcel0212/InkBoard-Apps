@@ -537,10 +537,8 @@ function on_widget(ctx, box)
   end
   setStyle(ctx.cfg.style)
   local style = box.style
-  if fancy() then
-    box = widgetFrame(box)
-    style = "flat"
-  end
+  box = widgetFrame(box)
+  if fancy() then style = "flat" end
   local rowH = 44
   if #models > 0 then rowH = math.min(58, math.max(44, box.h // #models)) end
   if box.fh >= 96 and #models > 1 and box.h >= 44 * #models then

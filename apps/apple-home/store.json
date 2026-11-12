@@ -147,6 +147,313 @@
         "en": "Widget on the dashboard"
       },
       "style": "cards"
+    },
+    {
+      "file": "preview-p1-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 1: Apple",
+        "en": "Page 1: Apple"
+      },
+      "style": "apple",
+      "page": 0
+    },
+    {
+      "file": "preview-p2-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 2: Apple",
+        "en": "Page 2: Apple"
+      },
+      "style": "apple",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 2: Ledger",
+        "en": "Page 2: Ledger"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 2: Nibble",
+        "en": "Page 2: Nibble"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "file": "preview-widget-apple.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Apple",
+        "en": "Widget: Apple"
+      },
+      "style": "apple"
+    },
+    {
+      "file": "preview-widget-flat.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
+    },
+    {
+      "file": "preview-p3-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Bump",
+        "en": "Page 3: Bump"
+      },
+      "style": "relief",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Gamut",
+        "en": "Page 3: Gamut"
+      },
+      "style": "klar",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Apple",
+        "en": "Page 3: Apple"
+      },
+      "style": "apple",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Tile",
+        "en": "Page 3: Tile"
+      },
+      "style": "cards",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Ledger",
+        "en": "Page 3: Ledger"
+      },
+      "style": "flat",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 3: Nibble",
+        "en": "Page 3: Nibble"
+      },
+      "style": "compact",
+      "page": 2
+    },
+    {
+      "file": "preview-p4-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Bump (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 4: Bump (empty until more devices exist)"
+      },
+      "style": "relief",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Gamut (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 4: Gamut (empty until more devices exist)"
+      },
+      "style": "klar",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Apple (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 4: Apple (empty until more devices exist)"
+      },
+      "style": "apple",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Tile (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 4: Tile (empty until more devices exist)"
+      },
+      "style": "cards",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Ledger",
+        "en": "Page 4: Ledger"
+      },
+      "style": "flat",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 4: Nibble",
+        "en": "Page 4: Nibble"
+      },
+      "style": "compact",
+      "page": 3
+    },
+    {
+      "file": "preview-p5-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Bump (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 5: Bump (empty until more devices exist)"
+      },
+      "style": "relief",
+      "page": 4
+    },
+    {
+      "file": "preview-p5-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Gamut (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 5: Gamut (empty until more devices exist)"
+      },
+      "style": "klar",
+      "page": 4
+    },
+    {
+      "file": "preview-p5-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Apple (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 5: Apple (empty until more devices exist)"
+      },
+      "style": "apple",
+      "page": 4
+    },
+    {
+      "file": "preview-p5-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Tile (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 5: Tile (empty until more devices exist)"
+      },
+      "style": "cards",
+      "page": 4
+    },
+    {
+      "file": "preview-p5-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Ledger",
+        "en": "Page 5: Ledger"
+      },
+      "style": "flat",
+      "page": 4
+    },
+    {
+      "file": "preview-p5-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 5: Nibble",
+        "en": "Page 5: Nibble"
+      },
+      "style": "compact",
+      "page": 4
+    },
+    {
+      "file": "preview-p6-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Bump (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Bump (empty until more devices exist)"
+      },
+      "style": "relief",
+      "page": 5
+    },
+    {
+      "file": "preview-p6-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Gamut (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Gamut (empty until more devices exist)"
+      },
+      "style": "klar",
+      "page": 5
+    },
+    {
+      "file": "preview-p6-apple.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Apple (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Apple (empty until more devices exist)"
+      },
+      "style": "apple",
+      "page": 5
+    },
+    {
+      "file": "preview-p6-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Tile (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Tile (empty until more devices exist)"
+      },
+      "style": "cards",
+      "page": 5
+    },
+    {
+      "file": "preview-p6-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Ledger (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Ledger (empty until more devices exist)"
+      },
+      "style": "flat",
+      "page": 5
+    },
+    {
+      "file": "preview-p6-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Seite 6: Nibble (leer, erst mit mehr Geräten gefüllt)",
+        "en": "Page 6: Nibble (empty until more devices exist)"
+      },
+      "style": "compact",
+      "page": 5
     }
   ]
 }

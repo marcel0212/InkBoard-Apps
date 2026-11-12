@@ -113,6 +113,16 @@
         "en": "No message yet"
       },
       "page": 0
+    },
+    {
+      "file": "preview-p1-classic.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Klassisch",
+        "en": "Classic"
+      },
+      "style": "classic",
+      "page": 0
     }
   ]
 }

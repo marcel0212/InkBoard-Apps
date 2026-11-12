@@ -82,6 +82,42 @@
         "en": "Dashboard widget"
       },
       "style": "cards"
+    },
+    {
+      "file": "preview-widget-relief.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "file": "preview-widget-klar.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "file": "preview-widget-flat.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

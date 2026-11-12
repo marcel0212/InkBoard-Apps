@@ -117,6 +117,156 @@
         "en": "Widget: Nibble"
       },
       "style": "compact"
+    },
+    {
+      "file": "preview-p2-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Wirtschaft: Bump",
+        "en": "Business: Bump"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Wirtschaft: Gamut",
+        "en": "Business: Gamut"
+      },
+      "style": "klar",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Wirtschaft: Ledger",
+        "en": "Business: Ledger"
+      },
+      "style": "flat",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Wirtschaft: Tile",
+        "en": "Business: Tile"
+      },
+      "style": "cards",
+      "page": 1
+    },
+    {
+      "file": "preview-p2-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Wirtschaft: Nibble",
+        "en": "Business: Nibble"
+      },
+      "style": "compact",
+      "page": 1
+    },
+    {
+      "file": "preview-p3-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Sport: Bump",
+        "en": "Sports: Bump"
+      },
+      "style": "relief",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Sport: Gamut",
+        "en": "Sports: Gamut"
+      },
+      "style": "klar",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Sport: Ledger",
+        "en": "Sports: Ledger"
+      },
+      "style": "flat",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Sport: Tile",
+        "en": "Sports: Tile"
+      },
+      "style": "cards",
+      "page": 2
+    },
+    {
+      "file": "preview-p3-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Sport: Nibble",
+        "en": "Sports: Nibble"
+      },
+      "style": "compact",
+      "page": 2
+    },
+    {
+      "file": "preview-p4-relief.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Technik: Bump",
+        "en": "Tech: Bump"
+      },
+      "style": "relief",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-klar.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Technik: Gamut",
+        "en": "Tech: Gamut"
+      },
+      "style": "klar",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-flat.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Technik: Ledger",
+        "en": "Tech: Ledger"
+      },
+      "style": "flat",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-cards.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Technik: Tile",
+        "en": "Tech: Tile"
+      },
+      "style": "cards",
+      "page": 3
+    },
+    {
+      "file": "preview-p4-compact.svg",
+      "kind": "display",
+      "caption": {
+        "de": "Technik: Nibble",
+        "en": "Tech: Nibble"
+      },
+      "style": "compact",
+      "page": 3
     }
   ]
 }
