@@ -661,7 +661,8 @@ local extra=showSrc and 16 or 0
 local maxLines=2
 if not compact then
 if maxY - y<2*(2*lh+6+extra) then maxLines=1 end
-if maxLines==1 and font=="normal" and maxY - y<2*(lh+6+extra) then font,lh="small",17 end
+if maxLines==1 and font=="normal" and maxY - y<2*(lh+1+extra) then font,lh="small",17 end
+if maxLines==1 then y,maxY=cy+4,cy+ch - 2 end
 end
 for i,it in ipairs(items) do
 if compact then
@@ -676,9 +677,9 @@ draw.text(x,y+lh - 4,fit(it.title,tw - (x - tx),font),font,color.BLACK,"left")
 y=y+lh
 else
 local lines=maxLines==1 and {fit(it.title,tw,font)} or wrapLines(it.title,tw,font,maxLines)
-local h=#lines*lh+(showSrc and 16 or 0)+6
+local h=#lines*lh+(showSrc and 16 or 0)+(maxLines==1 and 1 or 6)
 if y+h>maxY and i>1 then break end
-if i>1 then draw.line(tx,y - 3,tx+tw,y - 3,color.BLACK) end
+if i>1 and (maxLines>1 or maxY - cy>4*(lh+4)) then draw.line(tx,y - 3,tx+tw,y - 3,color.BLACK) end
 local ty=y
 if showSrc then
 draw.text(tx,ty+12,fit(it.src,tw,"small"),"small",color.ACCENT_TEXT,"left")
