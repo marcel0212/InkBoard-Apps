@@ -20,11 +20,22 @@ end
 -- Widget in Relief/Klar: eine Karte um den Inhalt, Inhalt nach innen geschoben
 local function wxFrame(ctx, b)
   WXS = ctx.cfg.style or ""
-  if WXS ~= "relief" and WXS ~= "klar" then return b end
-  wxCard(b.x + 4, b.y + 2, b.w - 14, b.h - 12, 14)
   local n = {}
   for k, v in pairs(b) do n[k] = v end
-  n.x, n.y, n.w, n.h = b.x + 12, b.y + 8, b.w - 26, b.h - 20
+  if WXS == "cards" or WXS == "bento" then
+    wxCard(b.x + 1, b.y, b.w - 2, b.h - 1, 10, color.ACCENT)
+    n.x, n.y, n.w, n.h = b.x + 10, b.y + 2, b.w - 12, b.h - 4
+  elseif WXS == "flat" or WXS == "slate" then
+    draw.line(b.x + 6, b.y + 1, b.x + b.w - 6, b.y + 1, color.BLACK)
+    draw.line(b.x + 6, b.y + b.h - 2, b.x + b.w - 6, b.y + b.h - 2, color.BLACK)
+    n.y, n.h = b.y + 2, b.h - 4
+  elseif WXS == "compact" or WXS == "nano" then
+    draw.rect(b.x + 3, b.y + 4, 2, b.h - 8, color.ACCENT, true)
+    n.x, n.w = b.x + 8, b.w - 10
+  elseif WXS == "relief" or WXS == "klar" then
+    wxCard(b.x + 4, b.y + 2, b.w - 14, b.h - 12, 14)
+    n.x, n.y, n.w, n.h = b.x + 12, b.y + 8, b.w - 26, b.h - 20
+  end
   return n
 end
 
