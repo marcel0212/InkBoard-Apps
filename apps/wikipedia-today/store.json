@@ -29,8 +29,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Was geschah heute",
-        "en": "Relief: On this day"
+        "de": "Bump: Was geschah heute",
+        "en": "Bump: On this day"
       },
       "style": "relief",
       "page": 0
@@ -39,8 +39,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Was geschah heute",
-        "en": "Clear: On this day"
+        "de": "Gamut: Was geschah heute",
+        "en": "Gamut: On this day"
       },
       "style": "klar",
       "page": 0
@@ -79,8 +79,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -88,8 +88,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

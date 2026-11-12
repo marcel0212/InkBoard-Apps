@@ -27,8 +27,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Nächstes Rennen",
-        "en": "Relief: Next race"
+        "de": "Bump: Nächstes Rennen",
+        "en": "Bump: Next race"
       },
       "style": "relief",
       "page": 0
@@ -37,8 +37,8 @@
       "kind": "display",
       "file": "preview-standings-relief.svg",
       "caption": {
-        "de": "Relief: WM-Wertung",
-        "en": "Relief: Standings"
+        "de": "Bump: WM-Wertung",
+        "en": "Bump: Standings"
       },
       "style": "relief",
       "page": 1
@@ -47,8 +47,8 @@
       "kind": "display",
       "file": "preview-last-relief.svg",
       "caption": {
-        "de": "Relief: Letzte Session",
-        "en": "Relief: Last session"
+        "de": "Bump: Letzte Session",
+        "en": "Bump: Last session"
       },
       "style": "relief",
       "page": 2
@@ -57,8 +57,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Nächstes Rennen",
-        "en": "Clear: Next race"
+        "de": "Gamut: Nächstes Rennen",
+        "en": "Gamut: Next race"
       },
       "style": "klar",
       "page": 0
@@ -67,8 +67,8 @@
       "kind": "display",
       "file": "preview-standings-klar.svg",
       "caption": {
-        "de": "Klar: WM-Wertung",
-        "en": "Clear: Standings"
+        "de": "Gamut: WM-Wertung",
+        "en": "Gamut: Standings"
       },
       "style": "klar",
       "page": 1
@@ -77,8 +77,8 @@
       "kind": "display",
       "file": "preview-last-klar.svg",
       "caption": {
-        "de": "Klar: Letzte Session",
-        "en": "Clear: Last session"
+        "de": "Gamut: Letzte Session",
+        "en": "Gamut: Last session"
       },
       "style": "klar",
       "page": 2
@@ -177,8 +177,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -186,8 +186,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

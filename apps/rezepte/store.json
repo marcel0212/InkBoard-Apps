@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-ingredients-relief.svg",
       "caption": {
-        "de": "Relief: Rezepte",
-        "en": "Relief: Recipes"
+        "de": "Bump: Rezepte",
+        "en": "Bump: Recipes"
       },
       "style": "relief"
     },
@@ -40,8 +40,8 @@
       "kind": "display",
       "file": "preview-steps-relief.svg",
       "caption": {
-        "de": "Relief: Rezepte",
-        "en": "Relief: Recipes"
+        "de": "Bump: Rezepte",
+        "en": "Bump: Recipes"
       },
       "style": "relief"
     },
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-ingredients-klar.svg",
       "caption": {
-        "de": "Klar: Rezepte",
-        "en": "Clear: Recipes"
+        "de": "Gamut: Rezepte",
+        "en": "Gamut: Recipes"
       },
       "style": "klar"
     },
@@ -58,8 +58,8 @@
       "kind": "display",
       "file": "preview-steps-klar.svg",
       "caption": {
-        "de": "Klar: Rezepte",
-        "en": "Clear: Recipes"
+        "de": "Gamut: Rezepte",
+        "en": "Gamut: Recipes"
       },
       "style": "klar"
     },

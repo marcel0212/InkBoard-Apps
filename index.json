@@ -111,64 +111,64 @@
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast-relief.svg",
           "caption": {
-            "de": "Relief: Prognose",
-            "en": "Relief: Forecast"
+            "de": "Bump: Prognose",
+            "en": "Bump: Forecast"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-advisor-relief.svg",
           "caption": {
-            "de": "Relief: Spar-Berater",
-            "en": "Relief: Saving advisor"
+            "de": "Bump: Spar-Berater",
+            "en": "Bump: Saving advisor"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-check-relief.svg",
           "caption": {
-            "de": "Relief: Einstellungen",
-            "en": "Relief: Settings check"
+            "de": "Bump: Einstellungen",
+            "en": "Bump: Settings check"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-collecting-relief.svg",
           "caption": {
-            "de": "Relief: Prognose",
-            "en": "Relief: Forecast"
+            "de": "Bump: Prognose",
+            "en": "Bump: Forecast"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-forecast-klar.svg",
           "caption": {
-            "de": "Klar: Prognose",
-            "en": "Clear: Forecast"
+            "de": "Gamut: Prognose",
+            "en": "Gamut: Forecast"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-advisor-klar.svg",
           "caption": {
-            "de": "Klar: Spar-Berater",
-            "en": "Clear: Saving advisor"
+            "de": "Gamut: Spar-Berater",
+            "en": "Gamut: Saving advisor"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-check-klar.svg",
           "caption": {
-            "de": "Klar: Einstellungen",
-            "en": "Clear: Settings check"
+            "de": "Gamut: Einstellungen",
+            "en": "Gamut: Settings check"
           }
         },
         {
           "kind": "display",
           "file": "apps/akku-prognose/preview-collecting-klar.svg",
           "caption": {
-            "de": "Klar: Prognose",
-            "en": "Clear: Forecast"
+            "de": "Gamut: Prognose",
+            "en": "Gamut: Forecast"
           }
         },
         {
@@ -227,16 +227,16 @@
           "kind": "widget",
           "file": "apps/akku-prognose/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/akku-prognose/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -251,9 +251,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "553986aab15a9ebbf3dccf8a5cfc4d3f6d760893aef33043264e152a64c7b5e5",
-      "sig": "GfCmOMEoN5F1HjOW9zeByjmwiB9Xq9lh/gAc9nza0bUv+vfFvJx8plUaNJ/ZsADZec79Pdd7QjOQ4DJOD3Oxc2pOcxXIKQRtr2Efj07e7aGBwRePjtxpmJ50JobYUCuUy6YMA9uKPvJLA0fVM0ZJsaw3XONnTj4hDQjmdN82C8zoWgF9KxFfZQwzShFr4ZH3hKMhrRskHmKijCPXc2IJ5M6sOqLIZlf3FPtEtnAeKDj3Xfl5LCnXUTVwMiHc1m50UswKVzurKqDlzLS1KdjQEWCUEDDlaeE18k9GorGj6nQyrxuMjhXiFXRay78wNMrSVcAq+DjpyPquCvj0jpCd6g==",
-      "size": 35789
+      "sha256": "91190fa918538f96569db1daa6fe0a8c0b9844de56319e7dc817974ff977bd1b",
+      "sig": "O1+ugFFZnLvBhEThhhM+27YubjLGYfNlV8ZwK2TFfyNKWpWIqc73YnykntmLyvUBzigTnhobD+yJs2ZxDppTz0FS5aNdNQl5EvezLowGdoHM/3MTKQScxu6mWBJ3U9kwI9K1oMSiP13upjUQfB8uFaIkCibEkRel9hTuKDfgO3ztQbainw0CVG1FFV6uit7QHi49Z3eaZ0kD0y2DS9F3yMvpRKUq/dhoDTkUGpmb+wPvoZAWoBEMgE2WXrUH0//qXZnKsb3+8VPDMKiwuFcGmJXFxJf0Vg6aKig3A/n7Jr1/E/ouhDz1YLvhBg7xu2qTFVMJxACwZJ9g6RjcT0aCSw==",
+      "size": 35884
     },
     {
       "id": "apple-home",
@@ -331,32 +331,32 @@
           "kind": "display",
           "file": "apps/apple-home/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Seite 1",
-            "en": "Relief: Page 1"
+            "de": "Bump: Seite 1",
+            "en": "Bump: Page 1"
           }
         },
         {
           "kind": "display",
           "file": "apps/apple-home/preview-display-rooms-relief.svg",
           "caption": {
-            "de": "Relief: Seite 2",
-            "en": "Relief: Page 2"
+            "de": "Bump: Seite 2",
+            "en": "Bump: Page 2"
           }
         },
         {
           "kind": "display",
           "file": "apps/apple-home/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Seite 1",
-            "en": "Clear: Page 1"
+            "de": "Gamut: Seite 1",
+            "en": "Gamut: Page 1"
           }
         },
         {
           "kind": "display",
           "file": "apps/apple-home/preview-display-rooms-klar.svg",
           "caption": {
-            "de": "Klar: Seite 2",
-            "en": "Clear: Page 2"
+            "de": "Gamut: Seite 2",
+            "en": "Gamut: Page 2"
           }
         },
         {
@@ -409,16 +409,16 @@
           "kind": "widget",
           "file": "apps/apple-home/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/apple-home/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -433,9 +433,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "5d2ef4c2b20f8ceede8e748ae6f9c44ff0350a2af3bef29b107176c93808cfbe",
-      "sig": "qnjym/Ul1yfJFx9C2QHgl8IfBB4Gt29nBXr4PRWwnRWIy7NguQO6IbexAKn/5aWVvWzPCTR2Ol8tPnbbtTyOMaxBwpRiCHC16z+EvJ7MYZ90H4CXXYsy0DbPWYWqnxkpJgCSIdyatc8zbqxuWDDOuQ4lcjhuoTRjy8gSrSXaui0L2NVyTEQ2xSWamRFw52eG3uPSxWLR8T0ovmS8pjq4sZQqIlKcYqpLTnqWgBJiRP6rbBFh3tfK8kkcp1wiAB96G25uUQbOXzOp3gKmeZt/ww6hVUN1HQuwxfxSC6f+ZSDmhoocXSBAUKZwiQ4l/+bO5bxLfqHjnTNqFhzKjqfVkA==",
-      "size": 34438
+      "sha256": "ce89c02c28a1bd69e43847882f82dff2179bb0e5d02571ebd9709528021a2424",
+      "sig": "dfqDc72r/hZUpRyNRtmDTx4HhuivBE0SI/wafks5DGHJ4Q1M6NduawpEmR2SPNwhdfPT6leZ3hg3bedJcd7+8WW0XODmy28aeiFCZvU8QvxP6EGXmDzHMMdQsv1xrGBoe3NbEULh8a40dKzJ3YlSlKZnlBaV/HJT6wrV4HuM5CMcFlq6VkJt7vSASRD2MtC54xeywMfU9svIM0IrAmGkBcCPSwPPAUYyG1DY6O/c1lH4U2Wy+TYDiM1DhWoK+HNZqqgPrGgA6Npx7bz4NQpZSsNe3+alu6QhWWZsntKns/0g7ZFR632+v6aQsK9/CCac7VkM13es0tUFCD4laLmL5w==",
+      "size": 34533
     },
     {
       "id": "bilder",
@@ -529,7 +529,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -569,48 +569,48 @@
           "kind": "display",
           "file": "apps/calendar-app/preview-day-relief.svg",
           "caption": {
-            "de": "Relief: Tag",
-            "en": "Relief: Day"
+            "de": "Bump: Tag",
+            "en": "Bump: Day"
           }
         },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-week-relief.svg",
           "caption": {
-            "de": "Relief: Woche",
-            "en": "Relief: Week"
+            "de": "Bump: Woche",
+            "en": "Bump: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-month-relief.svg",
           "caption": {
-            "de": "Relief: Monat",
-            "en": "Relief: Month"
+            "de": "Bump: Monat",
+            "en": "Bump: Month"
           }
         },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-day-klar.svg",
           "caption": {
-            "de": "Klar: Tag",
-            "en": "Clear: Day"
+            "de": "Gamut: Tag",
+            "en": "Gamut: Day"
           }
         },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-week-klar.svg",
           "caption": {
-            "de": "Klar: Woche",
-            "en": "Clear: Week"
+            "de": "Gamut: Woche",
+            "en": "Gamut: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/calendar-app/preview-month-klar.svg",
           "caption": {
-            "de": "Klar: Monat",
-            "en": "Clear: Month"
+            "de": "Gamut: Monat",
+            "en": "Gamut: Month"
           }
         },
         {
@@ -707,43 +707,53 @@
           "kind": "widget",
           "file": "apps/calendar-app/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/calendar-app/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
           "kind": "widget",
           "file": "apps/calendar-app/preview-widget.svg",
           "caption": {
-            "de": "Widget: nächste Termine",
-            "en": "Widget: next events"
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
           },
           "style": "cards",
           "page": 0
         },
         {
           "kind": "widget",
+          "file": "apps/calendar-app/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
           "file": "apps/calendar-app/preview-widget-compact.svg",
           "caption": {
-            "de": "Widget: kompakte Liste",
-            "en": "Widget: compact list"
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
           },
           "style": "compact",
           "page": 0
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "d2fc53f032b303586b6917fbe4436018325e17232802fca9c6bccc0208866a3c",
-      "sig": "FV8xoKLSJj3KkmuF8uWCyOhrOBnBMMiDh9PA7PstlzrovK36TCmzt7vGoEHIuYrhP5CiUXXOiJj92t8QTimIxwHx4xdhuIig3zXnlge/KC7yVSxRUAERprbTm4g5hze3go+wJLgEzg89VILdB2XH+FLZTi6nn93yqiYxI9XjYGee1WUf54TsqsK+OqtlEWjSIumw01DG+bZolgA7sATR8UTUG5HZMY8RoWG0TR4+sp5Q5dggXyugWALM2a1QMGE4WznJOHVCXSGrd8fm6fAswALe9rrz+CY2/arPdrMDJP5rdW5izy4886wv7dtVislJyZI2Q8vW87uHoxKS7tvQ5w==",
-      "size": 47470
+      "sha256": "5e23188572dff2e5e8d07cc3b78e1129538b0576bb58a8e774cc08edbdc5b400",
+      "sig": "RNSac4klbgVx0YXkDaAYhSzaLLBiM+sOwx4Udwk5MOnVijZaXOkOYcOZZWlZnnQz30gRFdalkIAKWpNzuQqVaVdVqa94ZUIeKDdrJX23rzmt3yN43sm07YTmi+q1Nmnlk0JhbIxucH//JtOsVOwEgertMOeFenFX6ywlR3HqMTr/BpVNOJJiQ4h84b8RPfZIjhsEw7634ngTn39fIm3LuqlDSlVeul3aUIABq+wBSsUQSa9YTkHwIC0yaSWK0yu6yv16BiaHDD/UgKYBD21n70zbgdlizPfz1sDlF1o1xZAnSXGdjBO50JS56JenXAkH8zInAvBGC/lRNuGwu8RJQg==",
+      "size": 48209
     },
     {
       "id": "clock",
@@ -787,16 +797,16 @@
           "kind": "display",
           "file": "apps/clock/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Uhr",
-            "en": "Relief: Clock"
+            "de": "Bump: Uhr",
+            "en": "Bump: Clock"
           }
         },
         {
           "kind": "display",
           "file": "apps/clock/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Uhr",
-            "en": "Clear: Clock"
+            "de": "Gamut: Uhr",
+            "en": "Gamut: Clock"
           }
         },
         {
@@ -833,16 +843,16 @@
           "kind": "widget",
           "file": "apps/clock/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/clock/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -857,9 +867,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "ed7690b68d39b4d989572ff7c9c6ecdf9bd035a852b3f9cd74e30c5c3571dd0c",
-      "sig": "Nuz8z0zMHsGYNwzw3fA1PvR9WlCu5rQwnybRL0vQ9rjp9JDB9+tiq7q2DTftjkKsCOug4t2xJWCSrZQhfYEmki3hqoXmC7jg5BZn09p4W0rtwndKiTR0XjYXa2KiPReUehcN+OVk8wOTNH0QGn/c60YU/7N5lmkbFpgjLWHHXGhUbSeW1l64Yhjzli2YAV7YvatJPLahobxuZZ3dm+4f4sMH3v2ZsqaLW67xSrOVvDz1iLOlohb+ffWSysCZEN2dOPa0RQPly5tCv8wydrsY4PqBSICwQUxgfMrsI9rGmceXqD7apC8ta0aF+dysu89H+7toULaiDM8o4e3KJyXa4g==",
-      "size": 15852
+      "sha256": "e559b588b67d28429f43faea488e8f57de443702ff3dcbbeea2179227137da9b",
+      "sig": "PeFmmOyorFcTpznUhxxglBaJDh68D0RcED33w6B/g+gna1O6MnH8jOLMbl9uaQRQI8TcFG048k37QnK24Js3YZIPH8cqn/5WvL0DJyvrdD0EXLYurlHlsf6pcMgrWTFqhI+McEvdRUki5Yizv2xw8JPp9DPWmL1QdCSBV1m2G9LH1mSazlTlcaXVtQdF+4DMdGBUFMg3dWcEZxOVLeB6x2tC7Brp0z4bDxulXJQ6tPZOT6ut2kzvLJwS485StBEr6CXHr7pJkC7QI+P30rbUHdmZd0j89lslSX1niqYTOMdgYYTzbb5e50m+xMGhlXzgOsBnCgZMmfw1i73zBrlEMA==",
+      "size": 15947
     },
     {
       "id": "countdown",
@@ -903,16 +913,16 @@
           "kind": "display",
           "file": "apps/countdown/preview-display-relief.svg",
           "caption": {
-            "de": "Relief",
-            "en": "Relief"
+            "de": "Bump",
+            "en": "Bump"
           }
         },
         {
           "kind": "display",
           "file": "apps/countdown/preview-display-klar.svg",
           "caption": {
-            "de": "Klar",
-            "en": "Clear"
+            "de": "Gamut",
+            "en": "Gamut"
           }
         },
         {
@@ -927,16 +937,16 @@
           "kind": "widget",
           "file": "apps/countdown/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/countdown/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -951,9 +961,9 @@
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "4753eb60b39b6ff7aad29db3225ccd612a7f4a0943b46e622aff778f1939dfcd",
-      "sig": "RtYzqjLAY87qEuTwt3ijdneRNa/MnHq/W/QMY6trMquvjECDDxz+Mc7R+F66BB7MWL5HebIGQ7X+I1tI6I7AQJXP7VSz9vTCIkbFsAR7dRU+nMZsLhBLATFHYjhLEb1ILgEruVFgvPca5w32fPhO48ITUIpfZ2AZZmxi++KRLUvYObGr79Gtk0RTSOJBPeY8OE48xvs4ygixEPo001P59/AkwuCQU+lyrxjNKMZcSz037lTTK+TUk86Ri4nafliRqJj76xrKKxhr4sa0HL5U44HQdsYhLB69oPqk0Fu/Mdg/M4qclZzC9rPUaKYTRSm6WbY6jFLzd6VVzxKgl3XJkQ==",
-      "size": 10304
+      "sha256": "5ec674ce30ac2949a855afcb2cfdd4617a551b7a70e7e7e1c5627c328c245829",
+      "sig": "cB+XZ0mUFnPYsKMJmjys4BF2ravF3jO4jJhG2BbdXPT7GQVwBYG2q76mPoV6c9e2aKS+BwBap1F6TSPMLEPGIltZKd93g61A7LsKAOE95Y/mttp0gXDWuyOBfyVnBCDU+rJ/E4uVYZphioJ3FqYT6cBF6h7IaXY3s7hh6PO8va2MpaW+K7yl2U9tR09As8xoVhtUb9ROL0usEKO3wYDetDGvuo0TqcuwUIx+bW04a+on+nefd7qjZMAYeYChIVAzVMrISEeYLdyBwY3zg/62GmJ3iSoR10GGOUamM9E4yzG10Z3qaHCq+DPumfVqbZvuJkHRPjw/VJ2rJCdTX6eeMg==",
+      "size": 10399
     },
     {
       "id": "datenquelle",
@@ -1005,16 +1015,16 @@
           "kind": "display",
           "file": "apps/datenquelle/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Daten",
-            "en": "Relief: Data"
+            "de": "Bump: Daten",
+            "en": "Bump: Data"
           }
         },
         {
           "kind": "display",
           "file": "apps/datenquelle/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Daten",
-            "en": "Clear: Data"
+            "de": "Gamut: Daten",
+            "en": "Gamut: Data"
           }
         },
         {
@@ -1049,16 +1059,16 @@
           "kind": "widget",
           "file": "apps/datenquelle/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/datenquelle/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -1073,9 +1083,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "4aa3dd9aa84701b2514af26e0110c6ec12cf05aad4dd98d1487207138c21bdc6",
-      "sig": "mtnOQBj0CWRMZl+rnybF4QzlhD5MNkN8wzYCQY139B5jhVXagN4tI5ABR9QPjJs0DqNAia15Jm9sz1GG3Agc1F4nKNAxxP8eQWvv1y9DKZKh7mf0J4lPNxzQ5/SLGnJ6bDSbr2B5S6R0bEq7C0f+BCRiM3X5TTK04SB94fu3GgYD0Lp1/JDdnzo+lYbqdhkt66A2k0z4kr9fcKi8V/T8aBLF+oQT8CMsj/HjKnXYgupnfpTU7MNFNY3+lydd1ZM+jMzDVw/Z2SeZl2/G5ENIp8mLdZyCKv9ekOjykZ9VjCww4sPcBIylur5+YUR7UTTYpQQk1athrs9Yokp2ED60AA==",
-      "size": 27177
+      "sha256": "ad330d376da4ac5f5fdb72e2a2d0fea6f36f668f73472f3862440614ea5bf9eb",
+      "sig": "XbAR4jQeBeYpkwof5UoJwGYgQwwLmSA6rbt2mSOBNTU6kR+XH/HiD+gUUVcD1GVC5htBgNzMnyZpIRV9eqyZzsc5M8KzzcwYZG0iwS0SMJTP0ZHduo9sHfSTj0ymh4P8Ywa87A3VyXcZuWu1srLDDG2PH1Q3oNDXZA0h2g4dVgHTKBSCu7bqpvEoMOv4EjijPjpZDI9IQ1E4uC9OLh/NN88iElgWytfocFVPgJeEd0xAiitGndwpYOtaXkN3N5Mu6xe8A7TXUQD1+Zxxljf8rf7UYRVUl6MQuPZ53jm2kknLy5dlV6f1YfhhnqZ4o1kIpU0y1cqEuCbKg/blrUI4mA==",
+      "size": 27272
     },
     {
       "id": "einkaufsliste",
@@ -1125,32 +1135,32 @@
           "kind": "display",
           "file": "apps/einkaufsliste/preview-list-relief.svg",
           "caption": {
-            "de": "Relief: Liste",
-            "en": "Relief: List"
+            "de": "Bump: Liste",
+            "en": "Bump: List"
           }
         },
         {
           "kind": "display",
           "file": "apps/einkaufsliste/preview-select-relief.svg",
           "caption": {
-            "de": "Relief: Liste",
-            "en": "Relief: List"
+            "de": "Bump: Liste",
+            "en": "Bump: List"
           }
         },
         {
           "kind": "display",
           "file": "apps/einkaufsliste/preview-list-klar.svg",
           "caption": {
-            "de": "Klar: Liste",
-            "en": "Clear: List"
+            "de": "Gamut: Liste",
+            "en": "Gamut: List"
           }
         },
         {
           "kind": "display",
           "file": "apps/einkaufsliste/preview-select-klar.svg",
           "caption": {
-            "de": "Klar: Liste",
-            "en": "Clear: List"
+            "de": "Gamut: Liste",
+            "en": "Gamut: List"
           }
         },
         {
@@ -1193,16 +1203,16 @@
           "kind": "widget",
           "file": "apps/einkaufsliste/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/einkaufsliste/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -1217,9 +1227,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "d09f0635650456fe192d5f69277b6dd88cbdee35b628b1a2174a22d5be0fdabf",
-      "sig": "XXxoAEl2fNpm4bWfX8baiRYY5iaBN9EUSQjHHDuuUWxYQDpDrD6845AuxpAvGPpqepxzNuMn3QfWf0F/xMYFwJsksCb15p8XsM4vUTe2I8n38KKrS5OiJYwcN8tBQfWrpL+JU5p7w7cojquqJwPHWP4GJbtYGXMEbZYmqqumjV+bBfgD9hgWJluACz2t2dlcZ42Bw1rz8yk5jE8h/tGzZEccfwJi+yo36CEBUAjLRxm8tokq/qDZWqSBciTxq3CNO/oVeiZbV1+03uvbLyg+UZoSMHlYsOnANZ5yUrezjmWPB3YcpyuDZWJC2Vp+azDysi9mbyn39rmDRMdoQFQSMg==",
-      "size": 36405
+      "sha256": "ad89392bede8947482473bf4fba2edc7424eda6dbd87489526cde3a6cac1123d",
+      "sig": "oK/PQllGB6VH9v3xsJYFrLJWrfz0Dromg1k8Aj/XwoLcTAS0Zct3o+aHMOkP0nF6zAE8yHkMVjvkUtMMfPxJGw4plFcI9U5pNf0Tp2evZu4aF8IKOZwyXSzMt48ZNGSRmDEKi4NQE/eXMLcIfympTKli0ZSym/5Hsk3bdwHGF5MvF65NBgTNuFdghvc3pfhDn/2qEU141RTgbxmEIdUoDmqORDSf1+1F3aUSJJkBTJV5Y6EK162CLqwyIq3jQ2w4v8qtlkEYTHke+Uque9UGtsBKGYbzOFR/eaXEQ/ZyP98KED5zub6LV4erHLAdAntt7IYHNAujy8CeSlNRW4bucw==",
+      "size": 36500
     },
     {
       "id": "flight-radar",
@@ -1391,48 +1401,48 @@
           "kind": "display",
           "file": "apps/formel-1/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Nächstes Rennen",
-            "en": "Relief: Next race"
+            "de": "Bump: Nächstes Rennen",
+            "en": "Bump: Next race"
           }
         },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-standings-relief.svg",
           "caption": {
-            "de": "Relief: WM-Wertung",
-            "en": "Relief: Standings"
+            "de": "Bump: WM-Wertung",
+            "en": "Bump: Standings"
           }
         },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-last-relief.svg",
           "caption": {
-            "de": "Relief: Letzte Session",
-            "en": "Relief: Last session"
+            "de": "Bump: Letzte Session",
+            "en": "Bump: Last session"
           }
         },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Nächstes Rennen",
-            "en": "Clear: Next race"
+            "de": "Gamut: Nächstes Rennen",
+            "en": "Gamut: Next race"
           }
         },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-standings-klar.svg",
           "caption": {
-            "de": "Klar: WM-Wertung",
-            "en": "Clear: Standings"
+            "de": "Gamut: WM-Wertung",
+            "en": "Gamut: Standings"
           }
         },
         {
           "kind": "display",
           "file": "apps/formel-1/preview-last-klar.svg",
           "caption": {
-            "de": "Klar: Letzte Session",
-            "en": "Clear: Last session"
+            "de": "Gamut: Letzte Session",
+            "en": "Gamut: Last session"
           }
         },
         {
@@ -1529,16 +1539,16 @@
           "kind": "widget",
           "file": "apps/formel-1/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/formel-1/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -1553,9 +1563,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "b623d5b56dececdcb88682b689cb6276c22d0c9c2fcff00b05a1f124a6849b35",
-      "sig": "MQmohUOlkXSqhF6JoBQY6W1UIQHpHMm9hPzWDyzO3WofE2Tiz6HvbFfFL07saIwLUYQ9AuBvD9RjkR/lfrS7V1USntmCzMR9PKx24jtSDXHwpNuwND1OF7B0O874JFpUPK1ftgvR+WTi4atkkQi/6ycGsfl78MwWNlX+WEzElrAgRMNU+pBMHegomjDo5FvX4nuSkc+SDTtyVX7XlTopVzUiA6ct+RVHBzo5rqmtKUsy3QXU/SbFLvXzy7oOaBSCpMi2c7MEJ4NLclO8L+lDaW2OYj/fTk7bvocRQxhNIPqQTNBo4lBaSzJ/p3LhkmVWH2Q+9gNJ1Gf4SrNpRVEBpg==",
-      "size": 70199
+      "sha256": "6c731417bf905a3d0dce9b164a663d97b5b559489379ba8a4f8dc594368e4f0a",
+      "sig": "n9HICJkFon6CA4MPKXACL5yKRYwY56I7P3Xi3tQZXPx9aVAaJGXRJpm/p/EI+ZY8jnOyT5WpF1EB/O4F7GeGvN1nRvf+g//SgNGg/vQVljLl2XvOt86iUhPyVN43i8bCOwcY2G1ZAM1BuQd7ThfaH6AaBMd7lbtaMmGe6l3rVNDd0Q2x/q25VWMzasEKEYELLAL3jWDFqxEzZM6YoHICNi5cq0LNeXeeOou/FpW/arHGKyeBPgLURe0FdDcutZGPs4fve07gEP6NKtWYwgSiBBuCNqwwDG9EVW51g3DNgWfWouNWw8hWrKHMZ2xgKhsmn55JmmUZnDkooWxBAaxQng==",
+      "size": 70294
     },
     {
       "id": "fuel-prices",
@@ -1608,16 +1618,16 @@
           "kind": "display",
           "file": "apps/fuel-prices/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Tankpreise",
-            "en": "Relief: Fuel prices"
+            "de": "Bump: Tankpreise",
+            "en": "Bump: Fuel prices"
           }
         },
         {
           "kind": "display",
           "file": "apps/fuel-prices/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Tankpreise",
-            "en": "Clear: Fuel prices"
+            "de": "Gamut: Tankpreise",
+            "en": "Gamut: Fuel prices"
           }
         },
         {
@@ -1654,16 +1664,16 @@
           "kind": "widget",
           "file": "apps/fuel-prices/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/fuel-prices/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -1678,9 +1688,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "7e082a1e53cd1cdd20dc1918b1fcea00712b7dad048314bd2b2ffcb6ab730199",
-      "sig": "t+LYRkozxe0VHJmCex6FzdhfTp/uSO5uDsdzxJjVwVOT+mHOK2Qu/z3ltiuzN+kJF2h7ZU452wfLn8prJgnA4VOpXdtOFi9nJvISmOx040tB0rqqiIP5gXA2zXlF7w+sQeKXy2o6Xq+t7pMZ8EKzbLVPLO9QUL0twfm/6Wj/hvV8hwtaQvODKVUGM1YKeYjAl6JhvT/R1mUY5/NiWrUg13PKZsKRIDNdEd3Vo82cTX637SdUp55NXc/4be9JqWzt7LJCrSxGW06VdBvF9C1xAMl1ANRpGraoRJKYAK5v1BIT6heK2V2tU0WubfMNMjeRS5cG7GXaiM/sMvvzTwkskg==",
-      "size": 33789
+      "sha256": "bd69143ec622cd0e300f46b07f22659d5cdeb8257ec8b3a94724c37772e4ea2f",
+      "sig": "bpfMIhMKAc0cCT661sRnRJSIuTeLT2tfi4iIgNeWAOId8pgSfLqoBBLpNE0gDNKbrpGv2Ycd6I2YaR8jE34PVu3BvTBlx6nWv+WNrkL/0UMQDnIXrrpJrxb9OpMHor5qU33TtV/j+VbfJUXzTxJwC2JOUes8myQmcdLptsAgAjNoskrb217FctDPP8vXuq+eT+MS9Zlj0t9qizuf+KD7V/rahhE99++M4HCSkhTBpw3VqXQAaE2dMjP+2InHxxNNmJ8g7pXuIP1xdQ9E0WupL0pnUmqn3sj7wJ7l5W+B9C+xMtbEr4OjUvo1um/LcqphKXfGDMKsVOPK3auEQVDwkw==",
+      "size": 33884
     },
     {
       "id": "fussball-liga",
@@ -1741,32 +1751,32 @@
           "kind": "display",
           "file": "apps/fussball-liga/preview-team-relief.svg",
           "caption": {
-            "de": "Relief: Team",
-            "en": "Relief: Team"
+            "de": "Bump: Team",
+            "en": "Bump: Team"
           }
         },
         {
           "kind": "display",
           "file": "apps/fussball-liga/preview-table-relief.svg",
           "caption": {
-            "de": "Relief: Liga-Tabelle",
-            "en": "Relief: League table"
+            "de": "Bump: Liga-Tabelle",
+            "en": "Bump: League table"
           }
         },
         {
           "kind": "display",
           "file": "apps/fussball-liga/preview-team-klar.svg",
           "caption": {
-            "de": "Klar: Team",
-            "en": "Clear: Team"
+            "de": "Gamut: Team",
+            "en": "Gamut: Team"
           }
         },
         {
           "kind": "display",
           "file": "apps/fussball-liga/preview-table-klar.svg",
           "caption": {
-            "de": "Klar: Liga-Tabelle",
-            "en": "Clear: League table"
+            "de": "Gamut: Liga-Tabelle",
+            "en": "Gamut: League table"
           }
         },
         {
@@ -1833,16 +1843,16 @@
           "kind": "widget",
           "file": "apps/fussball-liga/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/fussball-liga/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -1857,9 +1867,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "4e2bc38533b37c24aa3b0c72e7b61adc8552e1cc7082a33257e4e4ae1cbfd7d8",
-      "sig": "hsmeuKMeoL/JRmCTqiLnYspL212ndkR5B12CEQRBU2XnX7/yGPkbwpN5A5KgCC6Zn3Xklo9lV7lcaui4FXJjFmmoT176cDBVRCGbaU5YVmhu+Mpc8s1P+C6PAy6R+YRcU71EluFgnC258HOxAtw9MCnIk+vbzgke0Qeb0zEqdYiyqxUS1f6bzMFtlk52Q7sz0F78GYj0fcxDnfHbO9jyH/MzLc5wdbFYWWINupbEdOjb3PJ4Zq513f0YGIPJHM24qoc/n1QnBKDs8cyoxhxkkjv5xFIHAumBXHWJvZMUS4nKHRFl5rZuB2F6ZNT6H7ZHsAPedINs0tjL1hx4X407Ug==",
-      "size": 78793
+      "sha256": "c98e197fea5f2b6973cd85ab6fca07cf39553f6588f1b7aba3d4f4fa7735643c",
+      "sig": "KiHMDgf6O6rFABqInVniTnWjZj+8sw2vRYvUxwk2BFgoyY1v3iJaeF1D624y3sOt9gq1vErb8bJaE/bBtk5R1rAeJn21A6IJ9u+rrwamkmuWyr8mKtAdHckArwGLm6ndnIMXZ4Og/FwYnCaI+jomsiE/pGhUaCe/m9hWaXcaDdaSoOXSb+IKiCsRSB29ItxNt/612qVbD2DVa5R+oRjc0uV1Qdqve3nFhojd5Dczd0zivfT7MuT8W/+5jtvOjdvkg5K4KnSHJzXtXwtC8DfQY0SXq+rqvrMcKMUUE2gHvC57Uicu8vUb6lFY8enGHWYlvdfnT1u2+S1Lcvjkz28EMA==",
+      "size": 78888
     },
     {
       "id": "gaeste-wlan",
@@ -1918,32 +1928,32 @@
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi-relief.svg",
           "caption": {
-            "de": "Relief: WLAN",
-            "en": "Relief: Wi-Fi"
+            "de": "Bump: WLAN",
+            "en": "Bump: Wi-Fi"
           }
         },
         {
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-rules-relief.svg",
           "caption": {
-            "de": "Relief: Hausregeln",
-            "en": "Relief: House rules"
+            "de": "Bump: Hausregeln",
+            "en": "Bump: House rules"
           }
         },
         {
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-wifi-klar.svg",
           "caption": {
-            "de": "Klar: WLAN",
-            "en": "Clear: Wi-Fi"
+            "de": "Gamut: WLAN",
+            "en": "Gamut: Wi-Fi"
           }
         },
         {
           "kind": "display",
           "file": "apps/gaeste-wlan/preview-rules-klar.svg",
           "caption": {
-            "de": "Klar: Hausregeln",
-            "en": "Clear: House rules"
+            "de": "Gamut: Hausregeln",
+            "en": "Gamut: House rules"
           }
         },
         {
@@ -1986,16 +1996,16 @@
           "kind": "widget",
           "file": "apps/gaeste-wlan/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/gaeste-wlan/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2010,9 +2020,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "91b3c664f9fdfe589f0c001ad265f1109c648931c4016f9a915c45aaa90c25bc",
-      "sig": "qBy3MDaz1eA3k4O0caC7vFLcRfcuMeFwxv1T4Fw2dS2TODuXm17yg7XX0pUuTjpjgIi7IvMoe4yFLyjQs6/1N4rV1xwrsSODqMRg6ZdhkOQ22aB2eRCRqUEUBSe8DmO58bXmfnEOrVpfy4iVOTxXuElLwrbZ0q9GI39xHedgg7U8OMXMVWc7T3Rt8hCcERGBbyhV2xRrXPtDq+4WrTzE3yp1gcHfkFlJO9v8cC1ajC2KfbywNga1w2Z1VgMWQL9LwyojgVn2GPNuqHH36nwTSuiibA39K28b9l0IA/xLC2I7hjuTXcSyHU0993Busno0hzUG3s9SlABHr40HxKoPmg==",
-      "size": 35257
+      "sha256": "bf800d72d682eb39f680f322408fb52b88a6525550eda7fb955e623f1df6d9be",
+      "sig": "AosRS7f2nNIPxvQaAnmhsDIw3SwsO2MGE+o2lFLByl1lxiiZU0VZbkhfFTsGWzTgB5vWD4j3RkeONfTSat7j1ixu81SZg4PLrVNq9kKbhmj6Ea+iK7eOa3xc+KMpngUXcXgcwMbFG1GiHDP47pIaqUtpzYYVPHuK3vKEoNnUPuDhVIBvw+wCDqG2Uaap8JmQzV5wka4NaIOwRXLqs1+p9WqMYKMCSXGex8OcNl22ao6AlSyCO61+FVearCh5BJMUKlgX0NSfCk5OaJWsPBoUABbzDCl1ocWkPtifoo4Fut+9QJ80rKafczrd9ZF0f18Pa3eL8aRJu7e1ZQn8yulZOQ==",
+      "size": 35352
     },
     {
       "id": "geraete-check",
@@ -2056,16 +2066,16 @@
           "kind": "display",
           "file": "apps/geraete-check/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Geräte-Check",
-            "en": "Relief: Device check"
+            "de": "Bump: Geräte-Check",
+            "en": "Bump: Device check"
           }
         },
         {
           "kind": "display",
           "file": "apps/geraete-check/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Geräte-Check",
-            "en": "Clear: Device check"
+            "de": "Gamut: Geräte-Check",
+            "en": "Gamut: Device check"
           }
         },
         {
@@ -2108,9 +2118,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "5c29b847d3e8e3cedbbb268cac8c47b996292e8e03a0c5a671d35fc94c4f8a2f",
-      "sig": "HtMQYgiZlSgxjkX3l8y4iQIHcFx4+XCQwtftrTS7Egf19Ilc0Tv71sWg7xI3mE6TMsaoNJVPkfqkRVhTfIFAfedmwLpqrgyETZjZp24CBx1/+WtSDGobxCLLfTPgs7R9dEgsSoXfQDeK9mYOnfJ1WtB2Wc6NOQIDWacQ/8zCbr4YlBoGwlqkhKQIvJPfEt3dEdWcOW2DFnVR9yNFss+TkKgkh5KVWD/4VLwi/48hvrwQ1AKEmJ9i25xNNtSJgmVvg71UeBdmVovPTnY72MF0JnuWEzQt8EZ3J9rqxtRK/DGH7ghjFN5bQ4Zffdak7gLcGsdK27yAWMTmjlc9iABoAw==",
-      "size": 16789
+      "sha256": "b3ff6c42d89104d329fe60932f1bc5121877fe349a02be1d9249a8a074601454",
+      "sig": "W/T3q1P98hGow43yn/z6Dgs1jOw65UGbgu1CKfNcKatxG304KhDFlOiL49ryQMgPFm1UcYE0X1oui30mlMsszePMNZGe54DFopRte9ffBMROKVgOzq6AV94gQ9bZKnjXODuETa1uhBiQVHSYzhV3jYHT8emm17eI0+L5dq0mmiiEe2vFLsG42u4tTO628Lq08KNph/Ag6LS8dX+qQXKUQZYtcKdwZpF1k/obQRJcyW9KT3a5XOXAmH3RPO/MaI0dMVYJNmewCgFyoZYx0kINPtqa5bjRMYLHlBC6yrxR2e8RBrILcWEdDmaJwYkkk7Y8gDwkut3ai1kRQVw5ZsEI5w==",
+      "size": 16884
     },
     {
       "id": "gericht-des-tages",
@@ -2164,48 +2174,48 @@
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Gericht des Tages",
-            "en": "Relief: Meal of the day"
+            "de": "Bump: Gericht des Tages",
+            "en": "Bump: Meal of the day"
           }
         },
         {
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-ingredients-relief.svg",
           "caption": {
-            "de": "Relief: Gericht des Tages",
-            "en": "Relief: Meal of the day"
+            "de": "Bump: Gericht des Tages",
+            "en": "Bump: Meal of the day"
           }
         },
         {
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-steps-relief.svg",
           "caption": {
-            "de": "Relief: Gericht des Tages",
-            "en": "Relief: Meal of the day"
+            "de": "Bump: Gericht des Tages",
+            "en": "Bump: Meal of the day"
           }
         },
         {
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Gericht des Tages",
-            "en": "Clear: Meal of the day"
+            "de": "Gamut: Gericht des Tages",
+            "en": "Gamut: Meal of the day"
           }
         },
         {
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-ingredients-klar.svg",
           "caption": {
-            "de": "Klar: Gericht des Tages",
-            "en": "Clear: Meal of the day"
+            "de": "Gamut: Gericht des Tages",
+            "en": "Gamut: Meal of the day"
           }
         },
         {
           "kind": "display",
           "file": "apps/gericht-des-tages/preview-steps-klar.svg",
           "caption": {
-            "de": "Klar: Gericht des Tages",
-            "en": "Clear: Meal of the day"
+            "de": "Gamut: Gericht des Tages",
+            "en": "Gamut: Meal of the day"
           }
         },
         {
@@ -2236,16 +2246,16 @@
           "kind": "widget",
           "file": "apps/gericht-des-tages/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/gericht-des-tages/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2260,9 +2270,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "6b806e61f5dc94d01064e2fcc8c62139b61e7bc1d8fcfd2b4457bd14bbff27f7",
-      "sig": "XkUSKF3I6vrdYpzZPFAyJJ4j3xYjEHN7kDobXUQ3pAtEkquY7ctvto+2prjAMiDlCH5DzH4PzLV7qIMKWq68czAKlniMuPu4OZVDYExhvA+DtBtwx4YhAlc8P9LaQpXuw3kSQjT7uwoCqwVvN5j8dszCTp9E4LCztcaQowAdt+6t5BDElyR2OScEzxh6J20Tpw4s5Ai0KvW5X+9lo+Wgq0NQVS91NQOJlhgjP8TGr21TxnrQ67sz9ihabRHbolq9EDg5vyJw5Eelhb7BCM4LBFNtDR8KzU1CdH1BfOLBny9wpFu41z45f5MQCaex0FyUI48P4QT0Wk5XEBB7CRuv/A==",
-      "size": 26843
+      "sha256": "289023bf3e3fcc5824f220617138d13bceb35d4bf621b19be4baf08f137d8f91",
+      "sig": "Ie31PyGO9E0ubgvNseGIXRkZosK4piILOhOZVCn8EqOPOL+tTIWi0d71N1yAEE//iAff0Zw0/MP8jpouKaQ5994qdQG3K6bmX0NGl1xPzxmAOBF8cIdU9AkYsUoY1wkVKMCtj0Wv6KMxYOSuKwzmmiu/cSUseWTts3765IYDVDPmonAuR26JHvjNcOOof6NupH7XR6Xdp1oV0vGWQaCkaGobH9H/VECSBLtVebFjWV1c253NjHW2a5CaUwm7UkANJJZEycT6u+Y/qxJss2EyPU1dHk/gpOjSX1//eTm+z7HUK49aw1FoAx45Xr6zrIj8Am8d/o60316XEN02mZwjAg==",
+      "size": 26938
     },
     {
       "id": "golf-tour",
@@ -2314,16 +2324,16 @@
           "kind": "display",
           "file": "apps/golf-tour/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Leaderboard",
-            "en": "Relief: Leaderboard"
+            "de": "Bump: Leaderboard",
+            "en": "Bump: Leaderboard"
           }
         },
         {
           "kind": "display",
           "file": "apps/golf-tour/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Leaderboard",
-            "en": "Clear: Leaderboard"
+            "de": "Gamut: Leaderboard",
+            "en": "Gamut: Leaderboard"
           }
         },
         {
@@ -2360,16 +2370,16 @@
           "kind": "widget",
           "file": "apps/golf-tour/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/golf-tour/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2384,9 +2394,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "e2d12b3adc7fb52f1621f8de33766eea014f9fe5848e2e48c9996176e67e907f",
-      "sig": "l+JE7UiJvXnKRVs48KAjWNhyZnH+2T6OEbxXxBVOYE1hl1lzri8ThnCpNFBMLYiTP/6CyOl0F/LCux9U0O0T6BIIzDa9ChLK1LzUG6So95eAASmbdAfkomzatmfK5unpzHBxMm4Dc6ixkNeQt3plpN75LrsW9RLAAqpob1hDsPUz/aOizUGMvji0u2FfT34ars+mR/0WVZErzxkJQ1yvGqUK2VQCdKAatUnJw4cf8GUwL/jkM7VyawASpuqgzO3ikEmMf9dK31D2bH7fQsTWKml0xcdUcJXgJc1ow6Km47wWo+BmXfctG84y9B48X3chI2KnbqDopxdCdru7bzM2Bw==",
-      "size": 32071
+      "sha256": "5f6d79dddf630f87e896c64825d94d424c2787a111b885376c8b2746feb02d4e",
+      "sig": "tiwcYAPPnRMduDWYBrenV9C9UzxImX+ol5w4YaNXKjg1P3IJJvUMRCweqPPzSfj/zoE+qJR0tjlUkRrJ8YeRH2R2kgzuItHsYm+QC+50gZ92oinUDlm/GtG4a1En6NaVxSTm/BlfuFeKaWefvwTtPne9y6imCESPzLlGvnw/PXC9KljigPJhQ+t71fBUP+YWKMOsbbB8Bn3Xyr1d7py3PLhhuDgUoE31AiD/m8hPwgi6xqlccFd+PDhPlzCDtSbEGi2haYEBk66Mt33j85whaWQMMbIZjDpgEZa8t9yPDIJuo/r89msBadGFB0tYK/alohDg1xapfz0nUh5G6ddjkg==",
+      "size": 32166
     },
     {
       "id": "golfplatz",
@@ -2446,48 +2456,48 @@
           "kind": "display",
           "file": "apps/golfplatz/preview-today-relief.svg",
           "caption": {
-            "de": "Relief: Heute",
-            "en": "Relief: Today"
+            "de": "Bump: Heute",
+            "en": "Bump: Today"
           }
         },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-week-relief.svg",
           "caption": {
-            "de": "Relief: Woche",
-            "en": "Relief: Week"
+            "de": "Bump: Woche",
+            "en": "Bump: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-14d-relief.svg",
           "caption": {
-            "de": "Relief: 14 Tage",
-            "en": "Relief: 14 days"
+            "de": "Bump: 14 Tage",
+            "en": "Bump: 14 days"
           }
         },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-today-klar.svg",
           "caption": {
-            "de": "Klar: Heute",
-            "en": "Clear: Today"
+            "de": "Gamut: Heute",
+            "en": "Gamut: Today"
           }
         },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-week-klar.svg",
           "caption": {
-            "de": "Klar: Woche",
-            "en": "Clear: Week"
+            "de": "Gamut: Woche",
+            "en": "Gamut: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/golfplatz/preview-14d-klar.svg",
           "caption": {
-            "de": "Klar: 14 Tage",
-            "en": "Clear: 14 days"
+            "de": "Gamut: 14 Tage",
+            "en": "Gamut: 14 days"
           }
         },
         {
@@ -2584,16 +2594,16 @@
           "kind": "widget",
           "file": "apps/golfplatz/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/golfplatz/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2608,9 +2618,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "8683d1d2fe4bca771f10dd254c248247d709d702f636e7ab887b0d0758ebb22f",
-      "sig": "peWp8mjavMf3UoUOaUrMOGMfi/fmT3P00Y3n+iCTlpynZohA0CzkLZ+XLyXx6f9KKuxiLInNYWzmBqM+IBT3GRtBhFfXvwiOfi9UU28PDJyoCb/Ek6RYRpe8P9qAFPopneXiinkB3eXnEuyUY0IRUBR3wQkrXvxr4pka5ica9MzDr1JJg2aZZCbDd9vz80fAeZ0NOnrhyyPyDV6L2hZdvDqY7TsGO3uxhiyl1KIeMxvgpVDz3r/u8OS458xqMPCOEKDPpdbVPR8qqAKblii/Ss+KrmmOHbZqb4u5NWhbtY4gikzJoSoIJM2ZM17r4JIsE4XMGaCui8Ds/1la9bcCbQ==",
-      "size": 50679
+      "sha256": "5ae6c02ced10aa5725cc76508121aaf2fee4981a760559f12e58cb64d294c3a7",
+      "sig": "KAWKYpsGByl00s9YVkTFbgB0nqLu7l6pU/xydtd46eXBlH4lxAd0jhM5xJrAxF0dJZZ60EdwMqNPa/JLqlPDcugCDTcypmSE5B8HzUDTAtebNGyGm+1nBxd+6XAUlaG6JQRefPwrBGgyxuIsk99QLaCIXYlBmsyvlhpFAhdPVvhIPTvGkj47AJSkepqZERSz/hZBssopDP8A0gzGvrDVwak5dqCzaIW5wHNCFic8iP5dAQNw+mD03DR7C2sIYBWeuZN6VCvY0ynTqxrAMIu0buYSkC9UdnrPbsUbIQBV8LdKj+WEIIlrsW6uDkeNnoIoZf/AzqSMuSmlBBpWeDwvzQ==",
+      "size": 50774
     },
     {
       "id": "homeoffice",
@@ -2664,16 +2674,16 @@
           "kind": "display",
           "file": "apps/homeoffice/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Homeoffice",
-            "en": "Relief: Home office"
+            "de": "Bump: Homeoffice",
+            "en": "Bump: Home office"
           }
         },
         {
           "kind": "display",
           "file": "apps/homeoffice/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Homeoffice",
-            "en": "Clear: Home office"
+            "de": "Gamut: Homeoffice",
+            "en": "Gamut: Home office"
           }
         },
         {
@@ -2710,16 +2720,16 @@
           "kind": "widget",
           "file": "apps/homeoffice/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/homeoffice/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2734,9 +2744,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "57e6569db5c7dcb67300f84fa0908dfa06cde94c2f59d6e729e226bbc183b806",
-      "sig": "HhnxmRQsvTqRsJ2de7gqMPldcQz7yIRwYbU4GOhV7DtAGe+t3PR6MDGyNBE0ygLCnmIiQHKjdl/qe5c8BU/U0q+G7ACwqsXgFSFzfXX0CkpqM5c62ChGHw+YZ8bW/HRq6hvTCp6D7wTJthLZb3Ss3VyR4Xnvu0xnq3AYILUH78EoeEWLlMqQxdCJ/+ULmI9RLw0O+6Vs/k6s0mQZMtssbTb5U+SJoTl0V/U3qDghnI7TjtdSllpyRyFlbVjS3PBZMgj0ry26au2I1Q8XJ+sMvnS97Y/kYcf//tqPUbGARCiTQYcRLyO0gavncOKJ+HM47IVnPP07+c/F6Vppan6BRA==",
-      "size": 29196
+      "sha256": "668f4296fe470e41c608d2a6d1f3a170ef84abb7990c32fb7082694e1ad41b22",
+      "sig": "vDTzpR51wv796zwjKlzPtr6COflbJ2KfRHAusUl8BcPvy0crIhqLD2Xcmwsg9a73ROx0XCSldC3c0t/CjrOaRh2cWb/tHqVnebM5VGKmW9DUomknUIZVhY7RUF4Wu4VUi1NtpiuOBlgtou/REUOqluDKnt665Csshn0FuY9nXOWJj6UWjeyOJvsWr6Ob5XbahTh1vimdfvN4wAOpSRfi0NmNsL1pPcc08XjSuizmL1dIsyzTvrJiqGrez4N664btDI6ZCmK1fFuHK0qR4wJssCtANYblyRiM5TnTT9u3zTXQfA6O3ZCamDF8SjO9WkQW4mD/MJU2eSAhxEDtBiqqOA==",
+      "size": 29291
     },
     {
       "id": "luft-pollen",
@@ -2798,32 +2808,32 @@
           "kind": "display",
           "file": "apps/luft-pollen/preview-air-relief.svg",
           "caption": {
-            "de": "Relief: Luft",
-            "en": "Relief: Air"
+            "de": "Bump: Luft",
+            "en": "Bump: Air"
           }
         },
         {
           "kind": "display",
           "file": "apps/luft-pollen/preview-pollen-relief.svg",
           "caption": {
-            "de": "Relief: Pollen",
-            "en": "Relief: Pollen"
+            "de": "Bump: Pollen",
+            "en": "Bump: Pollen"
           }
         },
         {
           "kind": "display",
           "file": "apps/luft-pollen/preview-air-klar.svg",
           "caption": {
-            "de": "Klar: Luft",
-            "en": "Clear: Air"
+            "de": "Gamut: Luft",
+            "en": "Gamut: Air"
           }
         },
         {
           "kind": "display",
           "file": "apps/luft-pollen/preview-pollen-klar.svg",
           "caption": {
-            "de": "Klar: Pollen",
-            "en": "Clear: Pollen"
+            "de": "Gamut: Pollen",
+            "en": "Gamut: Pollen"
           }
         },
         {
@@ -2866,16 +2876,16 @@
           "kind": "widget",
           "file": "apps/luft-pollen/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/luft-pollen/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -2892,23 +2902,23 @@
           "kind": "display",
           "file": "apps/luft-pollen/preview-vent-relief.svg",
           "caption": {
-            "de": "Relief: Lüften",
-            "en": "Relief: Ventilate"
+            "de": "Bump: Lüften",
+            "en": "Bump: Ventilate"
           }
         },
         {
           "kind": "display",
           "file": "apps/luft-pollen/preview-vent-klar.svg",
           "caption": {
-            "de": "Klar: Lüften",
-            "en": "Klar: Ventilate"
+            "de": "Gamut: Lüften",
+            "en": "Gamut: Ventilate"
           }
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "ae56a092724337362cc62da7f637be31f7ac7fe4d91f2c148a2a516dfa294ec6",
-      "sig": "Ko+YRvXjiwA9jkysvepCHE+BlT+hsGqu0w37JbPVC0AlcraYr7Bv6GwqD6nYfRq/PYkIdIvWr38qDuBaKfB+SSaJjzu7iaDGgqUEuS2Lr4oVMajhT/VGIJH1ZhAnQs2Sa4SkWKr+YoB7n2zqzQx8unhZ2g6gpxDb+rsmCAT8ICAyUx5n1vfsKWuQHWgOaQWv2j02JA+Owb1hUNSwoY2O4ODlGFnXq7ChqNgnSKUZDAecISPURYYtHKdHa5x2lSbZZCdI0oXlAlYjE7f63yiuVlbJwZpS0F2T0deU+JaAqmiumzidnlyrxpUVuxBT8f279TyVR44DRMObfIFpbHFPPA==",
-      "size": 25634
+      "sha256": "b32644fb7c4529c11db8224d3de0a6380e25f42dd4527bade7aff44ed01a8cd9",
+      "sig": "t/PPgmdT5kGp98xt1dGJffH2yueuLq2wh/DHlUo5vkwVDkSOsDFSs1szuMyvdLby1QaVP977gFdOSoNfWNbx32KROuhgw5CW5Q+R3tOdKfXRJBaC9GTHXDv2MZVDInQhFzeWmo1EFdgQFLKSckJYFVK7qit5nBMzm1l0ThHaFQLkT/Xc3Ri+rE8kE83xKxyq56KvlLrn7RJ7mCG3M7MAkN9cQ/PrentCRyvKxHseep3RDlaWqaVOtqayfLfQUa0yN505MrtNabTAF4jhe7CBFGQnw8W+f9EADFnBgdUNo60QgWi3eEa9aJjTzUF/NK4r0u1ux+aMk0nAfTwjBNuT+Q==",
+      "size": 25729
     },
     {
       "id": "news-feeds",
@@ -2926,7 +2936,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "apiLevel": 7,
       "pages": 4,
       "pageNames": [
@@ -2974,16 +2984,16 @@
           "kind": "display",
           "file": "apps/news-feeds/preview-display.svg",
           "caption": {
-            "de": "Relief: Tiefe",
-            "en": "Relief: depth"
+            "de": "Bump: Tiefe",
+            "en": "Bump: depth"
           }
         },
         {
           "kind": "display",
           "file": "apps/news-feeds/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Apple-Stil",
-            "en": "Clear: Apple style"
+            "de": "Gamut: Apple-Stil",
+            "en": "Gamut: Apple style"
           }
         },
         {
@@ -3020,23 +3030,53 @@
           "kind": "widget",
           "file": "apps/news-feeds/preview-widget.svg",
           "caption": {
-            "de": "Widget im Dashboard",
-            "en": "Widget on the dashboard"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/news-feeds/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/news-feeds/preview-widget-cards.svg",
+          "caption": {
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/news-feeds/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/news-feeds/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "b5f0a9e05b30b26cc7fd28b43541ffebd019cf418d9a97c3d7cfb2cac89b2ea7",
-      "sig": "dC3C5E6lwrbehn+1HR5ikraQwoafKEn/cK2HRZumgw8zuLJFunPT1pRkjbbrvyQdtUTrVNag/h/6eYDjHdUflHUDWWgg7mKdfRTfDxQoavl0HVW20WzXgTdlPvZigm2O8z7cwK23OaUeuHWnpSs1f2APq54axNcT54LdE0uAJZRIzrfBANDN244Dlh2oujtkMNRL0nXKfyPpBhi33KbRhpkk/CW8+crSd1EQ0fKKepcsZYcIqd3eV+pdctCMWBhwJ2CuJYoT4BOshjNwzzYE3kKXwVsUNqkCFLOZHoaPGf6NHKmx6sT3J5aYygNo0xJmfQjc5qIHxYPmZRd3h3+hpg==",
-      "size": 33060
+      "sha256": "e81352ceeb82417f52a945a1c69f98526c7c3f573b71a20065862cb00ac3db8b",
+      "sig": "H96ueiXrfUHUrDpTwX4O1SB/Efr+4xBF9SFjoK3aPJ8E4bh0MNudsOkYgEFTueepY1S629L7wSDDyX3KSUM8ng7KrUUvh4ufO3sfwiP3+JJPNYlqBQpWkiVXRPRA5OUS94WGfr0Mew23EwbknmS0viuAwQcd3MyYhuiNHZxNBtF1idYFmTuhFZhrchKVF/ALwIYVFIxr4wcald4Oc92grfiKSOc/o05+kPMjwBmZs++D26ojGkAMuYtOrh+Qzz+Da25KJx5ShQ5ng9hWwqTB/HfrMcm8wLdoDUO/1a7Ghl7cOQ53MnrH9Lj0PyPCNXrtXDUBcYiNfcrPdulnK9+CBA==",
+      "size": 33467
     },
     {
       "id": "oepnv",
@@ -3094,32 +3134,32 @@
           "kind": "display",
           "file": "apps/oepnv/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Abfahrten",
-            "en": "Relief: Departures"
+            "de": "Bump: Abfahrten",
+            "en": "Bump: Departures"
           }
         },
         {
           "kind": "display",
           "file": "apps/oepnv/preview-routes-relief.svg",
           "caption": {
-            "de": "Relief: Routen",
-            "en": "Relief: Routes"
+            "de": "Bump: Routen",
+            "en": "Bump: Routes"
           }
         },
         {
           "kind": "display",
           "file": "apps/oepnv/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Abfahrten",
-            "en": "Clear: Departures"
+            "de": "Gamut: Abfahrten",
+            "en": "Gamut: Departures"
           }
         },
         {
           "kind": "display",
           "file": "apps/oepnv/preview-routes-klar.svg",
           "caption": {
-            "de": "Klar: Routen",
-            "en": "Clear: Routes"
+            "de": "Gamut: Routen",
+            "en": "Gamut: Routes"
           }
         },
         {
@@ -3186,16 +3226,16 @@
           "kind": "widget",
           "file": "apps/oepnv/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/oepnv/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget Routen: Klar",
-            "en": "Routes widget: Clear"
+            "de": "Widget Routen: Gamut",
+            "en": "Routes widget: Gamut"
           }
         },
         {
@@ -3220,9 +3260,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "2c5cd8d048d2f4ec0626c58c812d6c9b180741b4049332b5308d0957773d0dfe",
-      "sig": "Y9k7PDmCPUvW3I/YfR0Kk/hC1kBgzd658LiK7Ejo9oz3Sicc9D1cIt5BdrZJIC7Xp/pMjfHnaPfcs4EyYZe2oWV7bmBYaeQDfdwQC+yQAO3851K6SmpcIZTMSQWN/8BHkqros/4IjkNnK5db3k+7BmZX+aXzV5nDl22Tt04P1z5zqhmUb332Z3IZbD/zqGE9kTksX0s8xhPZ6lsClu8VKrSlsNBEz9OtE+WafJM/TYXyxfJTd60AHvsD+QoK98FoPv9hAt5ijXSgOkMhy3tdEvgeaVYiCp4mUwqcEc60mGb0W5nNQh1KjMhAIx7g098Ex0ebBHJgGjT6SvYrM3V5Gg==",
-      "size": 82730
+      "sha256": "a8a220f334b7b5540c1650e8c613ec68be58f60e61d2e48e6746537086826b3a",
+      "sig": "evWqHkArsvlyCH1ysOCyXWwx/dKYf0JKcZQAw91h49yRLxanmjTGkfeUVZjKY2RkqPkt01z7kRNN84KFxAl+W2bwHshW16jMqo4CTStLSK+v+bM6PLU+x3ZaY4gDPuqqtgLRwpvPVTf4rLvT8Dqr0VhrClBUh21T/DtwAQpgC3Uzk3yx9fXcBbBwOmxb+4Bji302fTAAJ/toslE2VTnslXJq3whv7HrxcW83N6cvfJO5ssqH4FH+rQJJWStGwjUksLwIF+nzoukepK3BBFTypdoHmPgTUye5/fi+DQqUDiQUGH0VtXzhjM/zYj/jKLQCQ+6MCdSlWRMp9eiLuFdzWQ==",
+      "size": 82825
     },
     {
       "id": "pinnwand-app",
@@ -3269,48 +3309,48 @@
           "kind": "display",
           "file": "apps/pinnwand-app/preview-note-relief.svg",
           "caption": {
-            "de": "Relief: Pinnwand",
-            "en": "Relief: Family Board"
+            "de": "Bump: Pinnwand",
+            "en": "Bump: Family Board"
           }
         },
         {
           "kind": "display",
           "file": "apps/pinnwand-app/preview-long-relief.svg",
           "caption": {
-            "de": "Relief: Pinnwand",
-            "en": "Relief: Family Board"
+            "de": "Bump: Pinnwand",
+            "en": "Bump: Family Board"
           }
         },
         {
           "kind": "display",
           "file": "apps/pinnwand-app/preview-empty-relief.svg",
           "caption": {
-            "de": "Relief: Pinnwand",
-            "en": "Relief: Family Board"
+            "de": "Bump: Pinnwand",
+            "en": "Bump: Family Board"
           }
         },
         {
           "kind": "display",
           "file": "apps/pinnwand-app/preview-note-klar.svg",
           "caption": {
-            "de": "Klar: Pinnwand",
-            "en": "Clear: Family Board"
+            "de": "Gamut: Pinnwand",
+            "en": "Gamut: Family Board"
           }
         },
         {
           "kind": "display",
           "file": "apps/pinnwand-app/preview-long-klar.svg",
           "caption": {
-            "de": "Klar: Pinnwand",
-            "en": "Clear: Family Board"
+            "de": "Gamut: Pinnwand",
+            "en": "Gamut: Family Board"
           }
         },
         {
           "kind": "display",
           "file": "apps/pinnwand-app/preview-empty-klar.svg",
           "caption": {
-            "de": "Klar: Pinnwand",
-            "en": "Clear: Family Board"
+            "de": "Gamut: Pinnwand",
+            "en": "Gamut: Family Board"
           }
         },
         {
@@ -3339,9 +3379,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "737d812a032b14fd934bec90490f7084fce50b9638ad44df4dce6061a9891f87",
-      "sig": "i+/pa8D+5e6XJEhcAXAObBC3VA+Yxd9++om+oxq3bx+Z3JEooHtGBDVuFFjOFGKiy6Q3ZFTh5brxftRlSaIfkhpuKhM9cJElEjByGoAE8JHyjujSEve8tzwyUO5lzBnzeLK3yppkfWThzw5MmqkDWakigobNjyCnfGxEaCI1uhntPLsdnGVuuqSXAansC+Zh/Z9+rNKggYWEoT9RBs6sEzIuU4N3+RWzmVHSzyEMpcmM1gFQ7eSBCVwuogy156ze8/+eafuZ4Zloh4+VpWmdtZ8aBgrgxEZ+N95cyOor8F2ao8SvZZ4yFp/FCxOE8wXO9pLWLppGVxcuve/QKyfZwQ==",
-      "size": 14659
+      "sha256": "5d9d990d27195b1f753de318eb04cb51cf997c53dd2e6ecc1c862442f5c2ac8c",
+      "sig": "b1O44Qhesz7b92EmH+U5IflJbjkNtx0IrwN6pLj0OBwg0uN8EjyvEVt+C/Yc674jIWgCrL4pr5b6jUbsn1Ekmnd9ALujii5i2SQtfOCRc0xJEnDxXNtG6NKYcAnwHNzqfMDlnFFsB/cZHcR6JDGGibwyfnQdFAfo5R7a2jTcsRMSOUlf5SJJMdkmXxWOQIKYGmGE2IskBlHiT+aVfzgg17gnKxzNuobSFB9f1grvGl1yVUhho02Axa1kHAZlKBIMFYxuyghSws/lPBVNtIDVjUpRCsBZYhaV6Jib+lsvPdGME7oA/rQJyNFXtL5SRdgQIQcXYt3qKaMe48fk0aJPcQ==",
+      "size": 14754
     },
     {
       "id": "rezepte",
@@ -3394,32 +3434,32 @@
           "kind": "display",
           "file": "apps/rezepte/preview-ingredients-relief.svg",
           "caption": {
-            "de": "Relief: Rezepte",
-            "en": "Relief: Recipes"
+            "de": "Bump: Rezepte",
+            "en": "Bump: Recipes"
           }
         },
         {
           "kind": "display",
           "file": "apps/rezepte/preview-steps-relief.svg",
           "caption": {
-            "de": "Relief: Rezepte",
-            "en": "Relief: Recipes"
+            "de": "Bump: Rezepte",
+            "en": "Bump: Recipes"
           }
         },
         {
           "kind": "display",
           "file": "apps/rezepte/preview-ingredients-klar.svg",
           "caption": {
-            "de": "Klar: Rezepte",
-            "en": "Clear: Recipes"
+            "de": "Gamut: Rezepte",
+            "en": "Gamut: Recipes"
           }
         },
         {
           "kind": "display",
           "file": "apps/rezepte/preview-steps-klar.svg",
           "caption": {
-            "de": "Klar: Rezepte",
-            "en": "Clear: Recipes"
+            "de": "Gamut: Rezepte",
+            "en": "Gamut: Recipes"
           }
         },
         {
@@ -3440,9 +3480,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "27267a222295a7ee09314c318cf1e768053cad4e6020e26f7a012019cb6c505c",
-      "sig": "akhtKE0FFrdnRH0uN5ltzp4IxHgRhEWUvJ7v1BZObgXqPKt4qwZ66XHOjxtX1A3XS6RpRJnLB4PgvhPQvbsa5EXv3Jrz2LqJk/UkhPnUL+eTG9Ua45W0S3qgvQtHYDHpxPz276GYyosD1b7oChM7dngqqcw/3TPxS18QT72Pbq5iaa7RMrvruh72HEdpDXjkuNzZKOHMIhcA3kdCYQrSi+w5JIL3VPw2dtSh7xCnJUoZbIiXC/65R/kqh5Hctxyb79jALMb38X8mujSrEsfNzWW4bMAJn8O/lUX5ZE09iX58hQ5eO944yRqtJc8RNxNOEpWxf8cAfeQia4Nkrzdd/A==",
-      "size": 50184
+      "sha256": "65df36f6c3f47aa118414fa2ba1b10cb845b6f5c444253efbeadaee36ec45e3f",
+      "sig": "Fjm3r6K430biuFdHxSRunWvfCHSJeO9IIibQg1w9B0smApaMJtZReRxxe1q5I/t4S39R49pV/zAF4y95y/GrioY1EpWZaKIZ8qNhRqJVzIdbRM1ZqjC7IW6H1cHJqZdeCfP3arKaqJ5c6Q40HXMKjEvYeRa/qRpaASVdASTZ2C41uImwrAHIEohpCXNi378/9uy8bs/rY5vRQX1BF7LeyQVV0eFggv/iPmJICpftzsOSTD117RNCqgJTZUCv+Bug8YPgoqDYriW9OWYahH7p144hNoF+vk9TARaLkDkk7MkXAiHdoeKbOvy95KGMBJu73zTsfnTl9CFV48I5t/7s7A==",
+      "size": 50279
     },
     {
       "id": "sport-tabellen",
@@ -3502,32 +3542,32 @@
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Team",
-            "en": "Relief: Team"
+            "de": "Bump: Team",
+            "en": "Bump: Team"
           }
         },
         {
           "kind": "display",
           "file": "apps/sport-tabellen/preview-table-relief.svg",
           "caption": {
-            "de": "Relief: Liga-Tabelle",
-            "en": "Relief: League table"
+            "de": "Bump: Liga-Tabelle",
+            "en": "Bump: League table"
           }
         },
         {
           "kind": "display",
           "file": "apps/sport-tabellen/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Team",
-            "en": "Clear: Team"
+            "de": "Gamut: Team",
+            "en": "Gamut: Team"
           }
         },
         {
           "kind": "display",
           "file": "apps/sport-tabellen/preview-table-klar.svg",
           "caption": {
-            "de": "Klar: Liga-Tabelle",
-            "en": "Clear: League table"
+            "de": "Gamut: Liga-Tabelle",
+            "en": "Gamut: League table"
           }
         },
         {
@@ -3594,16 +3634,16 @@
           "kind": "widget",
           "file": "apps/sport-tabellen/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/sport-tabellen/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -3618,9 +3658,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "c5ab1d2e3fa9a5ed11aa9ea768355cfb30fb499be80f7e15ec9b5a69e6f27ed0",
-      "sig": "lGdQTO1/1SfuwE6SH7pfVovs1O8Tcnxe0n6YjdVHK6bhvUlaNpAGGpCW/lIqGdIlEFtHhw0kcS1Pjw4/wzdFj6OJiJ/U6CBJVxmLmYyh0qRbmg0I+TGaenNcJCFkTxZQUwLdenJ5Ibonb8qc9ehElMo8wTTH5dMHUuTGd89q6MCABa6QnYIxC8JI4b/fQiDxPi2EXTimBWCwEcFDzQSJQ5JUwDnANzypeHdvrJArtJAP8PjVzdrI1WhT1bWcRRagrCPSxXI5dc5Dr6IBqI+1bGZAVmKLUfZUlPFMSobmop8VnXEacStfpkwrxu2Uejtr/Tdfr8bnwZ2A0Rk8MGKROA==",
-      "size": 64988
+      "sha256": "b4a34693c8233cbfd39c19b8f25fc9ce18ebf9d1ed1c36e0f4d52d8937e53fcb",
+      "sig": "vzxaksuTIAOQlwYTp80Z2zlSd5Yu/Z6YSFhnfLzqtMg2Gk11vpZ1GYIPQKSFrZCWIxrNnT1CS+dlqXPxnT07FEH4VxwBvS8GFz14423D+kR47rX84mulXt3mSUm/Z6qKYoA4VXUWgrf9WtRNueQKIT0oLmDvDE5d5oWs3XD34cS2OH+BVbq7p25i2f6NowJkgAVy6nAvbwO/IicqWSnPvbgjTCwHGlepKNwAtDXGT3SGzhz5g+B1bikNeDNXOsLegMd8Jg3eidSA5jD+IWyPSnH7sFYmzclzEELmN474P0HAAYB2VAcThdsIZ8N3QUiCLQtYuhmtOh/TLTg3W7YGEw==",
+      "size": 65083
     },
     {
       "id": "spotify",
@@ -3638,7 +3678,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -3703,19 +3743,55 @@
         },
         {
           "kind": "widget",
+          "file": "apps/spotify/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          }
+        },
+        {
+          "kind": "widget",
+          "file": "apps/spotify/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          }
+        },
+        {
+          "kind": "widget",
           "file": "apps/spotify/preview-widget.svg",
           "caption": {
-            "de": "Widget „Gerade läuft“",
-            "en": "\"Now playing\" widget"
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
           },
           "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/spotify/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/spotify/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
           "page": 0
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "687c50bc43a85f98a271ecbf6f97cb5838e069b5c763e397bc19a4d991f3f903",
-      "sig": "V0xiygtHAWvcgDjJoeBkSaqEkOhuDTQhS0bhKKhlUFRZfMgs18EH04TgJ240CHGrdK+EnE+9pXeluo5TqiLD5PFaUGeTGfCQ1USCioiWKRPVta1yWw1PbbxQjiC78d+mskMHAHJd18NOl+ADaRGTBTxS1eyUEXqkU6+boicF4RMzTMLqZIjKb+H5hGQI6QqGycTpJ26/Wjrnt8iJoCIjjuzQtf129gtp4e3zXirw9OXUVvv+JHmkoe8oTzt6xcPRztLaNY+9rtHPtA/KkCOraD/LIwAzOmId07AY8betlzrCUvwklXlX6vj8nlAEPJiBShFGkC4b7AXAQ1eu6lR5ag==",
-      "size": 20923
+      "sha256": "47f4610d486fe5e85b764e79c55a046c549fbf816751fd769bf42ca2862d9e8b",
+      "sig": "o99EDjYiEb53lFOPqvPRXM2uGVLP1JfKF+a/9cPZ5iQ0+NaoAci1SFOQIQZszviy9ygkCM586Ko8B9W5VVxnKERkFXOhusdG+PNcNuVvg732g7F3arpxdAco/DzpsHTi/ImaSTivh1+2DK681oZgFSupLvcQOh21UNqhzCZEj6HDQdzLl3JH2qOCPahZCRrOdt7zXsRisqQSW002le5JgGXLHEeEc7+rnJYcoMlwRH6uqedBWKANpVsSTlUkhwYBYR8LiNsBge36p9dV80kUi4iE+M+l+53bh5fYh8D1UO4+qiaNiQ5SN3tglu9keOgP68MFgySTmbtzyeDydaNQBQ==",
+      "size": 24798
     },
     {
       "id": "stocks-crypto",
@@ -3769,16 +3845,16 @@
           "kind": "display",
           "file": "apps/stocks-crypto/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Aktien",
-            "en": "Relief: Stocks"
+            "de": "Bump: Aktien",
+            "en": "Bump: Stocks"
           }
         },
         {
           "kind": "display",
           "file": "apps/stocks-crypto/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Aktien",
-            "en": "Clear: Stocks"
+            "de": "Gamut: Aktien",
+            "en": "Gamut: Stocks"
           }
         },
         {
@@ -3815,16 +3891,16 @@
           "kind": "widget",
           "file": "apps/stocks-crypto/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/stocks-crypto/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -3839,9 +3915,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "032d130f78b84dda13ce0999cc315a485d1f14e0622c35040ad44846f94bf704",
-      "sig": "eX7z4vResbH8Jm1D7g4jMTv9lR7TTOZN22rG9FAaZwZDFCdo99f5q635KQXl/DkOcHoJ4Depbx8EwCgUohClNXEqQk452TucFapUOC5L3Mo9Sx/K+pZ9OScuuC95rZ5IO7aaEzAmFAvuHbsZ+gXmE0RJMkbua6THh+srZOzx5jkoimd6qigTi6rkpCuE3/LIZBSDFt5y7t+xsiJ07ZaTsyMxP3zinUIzxGeDk5Q7DJIt1Jp36RaA26P6GNY/l/giyO8X3nI/qCAHe88p/oLNVN3NEHma1fyGCznoeQ54D1fkSOT0UBuGZxfOC2LctQyY0MNSVzMnH7NolxsZH/WSxw==",
-      "size": 31528
+      "sha256": "c23a153cd49d6da4672e7a84109f15a45b77d27b96422779e401c76c30354976",
+      "sig": "MXAWRY4L6ius6EBn6/ZliW0V9wAQ3h9SLRBLoWZyvJbTTKWlW0YILIXJVpbUo139ha0CjAwL3vhIa4Ma6QzIDCPPZuq2sEsPUvV0TAwtQVK0OoTTh4iup1/GIcWZty/Imfw8mriKddc+9vNOy+ruuLsnJEfBNJsleQXHVA+y0fqXZnOr4WqJWGtUebWIrlunUXamAGA0eWElKFtnHnGQCHrFX5uZCwA/Jd2p2Q/8ozho8vQKtJ2bdAz8/IHaq4r1J5dvAYh4YfNfubQUURU7EvENzylpECgfvz0oqil+nAr71ci6jdCs2OkYq3KWdVu/9yRGBTnKPAOBxAS3JjMnug==",
+      "size": 31623
     },
     {
       "id": "todo-list",
@@ -3895,16 +3971,16 @@
           "kind": "display",
           "file": "apps/todo-list/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Aufgaben",
-            "en": "Relief: Tasks"
+            "de": "Bump: Aufgaben",
+            "en": "Bump: Tasks"
           }
         },
         {
           "kind": "display",
           "file": "apps/todo-list/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Aufgaben",
-            "en": "Clear: Tasks"
+            "de": "Gamut: Aufgaben",
+            "en": "Gamut: Tasks"
           }
         },
         {
@@ -3941,16 +4017,16 @@
           "kind": "widget",
           "file": "apps/todo-list/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/todo-list/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -3965,9 +4041,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "62af6248df43af601e24384f23c148baf96f6a9e01225a92a4d0b2cc2e67f450",
-      "sig": "O6itz+82jmRSJvkHZvnKEtZYFYF6C94k/vw6LqBczHt4SJWjwHPqOn8n0NzJubkp6HddqdLvkpQGaXrryu5NsMhNRBeteiigpoIHDX68o1/so9AnrhBo0sdJVZQkpX5aJ/tyI9C6auwWc42W82tx8qzBiqrI2pDsmkGCzqCNfwEjoOFKbDoOFlHCumwY/823zWqbomop/LXt9541azMVZdXMmlPpo1q/r8AEls4SyQD2YgMoXxTEPAlhlmdlQNs5I2jnFqwBxtcoETlL8CaJZLeK+MGWRMF5MZgwevBXAh3djfNDsLsYFW3OtnC9HMcPM3BhFaUeRS6MuT6xU3UKSQ==",
-      "size": 48588
+      "sha256": "cb24ff58e9d60ed0b6cde5492ba0cd2cd21da0b4fc4a865f32fab29b375d837b",
+      "sig": "JYrPkBawCd/A6NtRgteL1XcS4/lh85wQLrEhq/y4jgdLG68uPO7rrZowGLwMVGPnYMfTz/P1DjX4KlxIloy/8pWlOeOH25CLg2ZF8vnilP/O9wsBy7C9diSxecbS4MDlMtQKpLZu3QznaatDbw3PtHAS7X27sTf954UDmavhP2wnFOEAdyZZp2JGFevk6TfFUQNttoJqx2w8YltrEXl0ALbxh7IwYFRzo/Xgd6L1QD+hNlReNnL+M9yXCAiV+q2U3W5AJE9A8k2QBpAlOV+iS3BuJr7LxSFPDmId2SEPI6JGn5Yij03Br7fv73PSmOPrhxJZiz1AUPdctGNJ+NXcSQ==",
+      "size": 48683
     },
     {
       "id": "tuerschild",
@@ -4019,16 +4095,16 @@
           "kind": "display",
           "file": "apps/tuerschild/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Status",
-            "en": "Relief: Status"
+            "de": "Bump: Status",
+            "en": "Bump: Status"
           }
         },
         {
           "kind": "display",
           "file": "apps/tuerschild/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Status",
-            "en": "Clear: Status"
+            "de": "Gamut: Status",
+            "en": "Gamut: Status"
           }
         },
         {
@@ -4063,16 +4139,16 @@
           "kind": "widget",
           "file": "apps/tuerschild/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/tuerschild/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -4087,9 +4163,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "2cb0d820eb50c2b1e145e64232981a34e8782e603f58f9a50144aa3eb7e13906",
-      "sig": "MUXmk/mbzgZQBx0Uzz64oQwqpLvUpimKhlW+bW+U9SVpSrdK+vmyi8k3r4ND8C/qCvxWuRnND+b+DmvAIklFvyV2e4zlMHAl5MH3VgVgwtyZ7lQIkrHXu583jx1NjgUNNx0q13aoOsmxFiy+68l5zLORRtuflQn5FGLqsP0eqYwgLY4GeEAY/56P3G4yGtBpEXKTVfIx6F1CxI5Iptb4+7yfL+lXSvNI1mG6/7AOjSUQubKm/0qafD51AlTrutohVVPmvh5IbQfi1kFwxWeyEc4H7zjbHlyLlas8fj5J2NTwk0V0WhpnP029+oG44aD0195cvZKSMITR3A8nlJLnUA==",
-      "size": 23809
+      "sha256": "0d498a84128e1c7c8c90106ca1333ae872c13383ac0adc42d1ca4d0f1a174542",
+      "sig": "hA1dhnOkSEPQ9me56V0vaJjyoEgdOrufStkv6+pmTFNu40wsIhVnv/c+Z/p1GlajdQJfzLha7pGoh8s1AXLptPgWVC3SEj0ukAFI+wZpS/UTGanepY5t+4fubykn6lh1sQVI6EkB5AfbC5abYf+2mLnCeGe4W4w/yg2CT9XyAoghN15Hmv/rhu72tnle8RR0WTO50eiJ9MvL/l15yup+Ib3zaCKK+lLwfKzwHbNFK9VFADmVAktFaQlf4mlxlgr9eNwxxWSewilUk+R3znRm4ilk2J+5SSu83Ze4V7aZcjtDo6ZEgGNcuygrkELzcTziU1cE6XIqtvAGzuU6hloupw==",
+      "size": 23904
     },
     {
       "id": "waste-calendar",
@@ -4142,16 +4218,16 @@
           "kind": "display",
           "file": "apps/waste-calendar/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Müllabfuhr",
-            "en": "Relief: Waste collection"
+            "de": "Bump: Müllabfuhr",
+            "en": "Bump: Waste collection"
           }
         },
         {
           "kind": "display",
           "file": "apps/waste-calendar/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Müllabfuhr",
-            "en": "Clear: Waste collection"
+            "de": "Gamut: Müllabfuhr",
+            "en": "Gamut: Waste collection"
           }
         },
         {
@@ -4188,16 +4264,16 @@
           "kind": "widget",
           "file": "apps/waste-calendar/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/waste-calendar/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -4212,9 +4288,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "59d3117c23941d8d22b290267ebd5622b71c7a76c0449a59903e2cc0efd50a8a",
-      "sig": "V0QxHbaSf1zGp1XripZykrX6ivZIKXRSGmprnMGELTTsBlrI7BzeSCf5CqLcoAzSEymLWQYtsIad1UYOQYqMmekR0hWYMtctAM+SjXvUb4gmAnRCpLIV8mqpzY58yL5RyBVegmNZSQmFMvpjG19JgWR/d6fDIFJHJwtNNQIMUAOAWkROC++7OXMcq/xl0T+pHOpG0XJbiAUKYVwjYqiFORlxCIb+ho1cS9ffeZiXTTno6JP0u9YPrO2twPBKMkAOy4iatJvwXk6zhpMN6XW8LlXZ1cAhTCCGl/s8sajG0jbwOTnDUah4jPPqFXPJAMIG4zp6BL/oJmNEySqaWVBwPg==",
-      "size": 34107
+      "sha256": "514d6c933151035194bbbc92c62874dbe2e720d7156d1d68c946dd2e85a9ac09",
+      "sig": "IHmMk50wwOKHz4zPM71S4WSQqexL3HfxDHA+nL3cRT0hpQcIkQMgVUM7Q2KGAL4nV1xWh4oSMYVWs6zGus3yI91l7obFI6/s5sadHzeILQlVcvklDivrwcbwspX7lK3/crGRSjErXGAbplWz4RWbYue+1X0ML2CK3FgKIzaLsYgGfHOjp0aIA2Ljx8m83+KU/ifDdsl08G2t5j8KnUDtD5A3aWgWh5dsYflsLJXB2L8G8RnPTBRfESUNtfw2I6x/EgjicJ4Scdt6Zne2hBOkuD6LhHeIpfE37hfhn1/FxhcqCkiTdxFHbj5mV6EJfdhPrUA+NpiMs2ajNOsuewQBSw==",
+      "size": 34202
     },
     {
       "id": "weather-station",
@@ -4275,40 +4351,40 @@
           "kind": "display",
           "file": "apps/weather-station/preview-outdoor-relief.svg",
           "caption": {
-            "de": "Relief: Außen",
-            "en": "Relief: Outdoor"
+            "de": "Bump: Außen",
+            "en": "Bump: Outdoor"
           }
         },
         {
           "kind": "display",
           "file": "apps/weather-station/preview-indoor-relief.svg",
           "caption": {
-            "de": "Relief: Innen",
-            "en": "Relief: Indoor"
+            "de": "Bump: Innen",
+            "en": "Bump: Indoor"
           }
         },
         {
           "kind": "display",
           "file": "apps/weather-station/preview-network-relief.svg",
           "caption": {
-            "de": "Relief: Netzwerk",
-            "en": "Relief: Network"
+            "de": "Bump: Netzwerk",
+            "en": "Bump: Network"
           }
         },
         {
           "kind": "display",
           "file": "apps/weather-station/preview-outdoor-klar.svg",
           "caption": {
-            "de": "Klar: Außen",
-            "en": "Clear: Outdoor"
+            "de": "Gamut: Außen",
+            "en": "Gamut: Outdoor"
           }
         },
         {
           "kind": "display",
           "file": "apps/weather-station/preview-indoor-klar.svg",
           "caption": {
-            "de": "Klar: Innen",
-            "en": "Clear: Indoor"
+            "de": "Gamut: Innen",
+            "en": "Gamut: Indoor"
           }
         },
         {
@@ -4445,16 +4521,16 @@
           "kind": "widget",
           "file": "apps/weather-station/preview-widget-outdoor-relief.svg",
           "caption": {
-            "de": "Widget Außen: Relief",
-            "en": "Outdoor widget: Relief"
+            "de": "Widget Außen: Bump",
+            "en": "Outdoor widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/weather-station/preview-widget-indoor-klar.svg",
           "caption": {
-            "de": "Widget Innen: Klar",
-            "en": "Indoor widget: Clear"
+            "de": "Widget Innen: Gamut",
+            "en": "Indoor widget: Gamut"
           }
         },
         {
@@ -4481,24 +4557,24 @@
           "kind": "display",
           "file": "apps/weather-station/preview-network-klar.svg",
           "caption": {
-            "de": "Klar: Netzwerk",
-            "en": "Klar: Network"
+            "de": "Gamut: Netzwerk",
+            "en": "Gamut: Network"
           }
         },
         {
           "kind": "widget",
           "file": "apps/weather-station/preview-widget-outdoor-klar.svg",
           "caption": {
-            "de": "Widget Außen: Klar",
-            "en": "Outdoor widget: Klar"
+            "de": "Widget Außen: Gamut",
+            "en": "Outdoor widget: Gamut"
           }
         },
         {
           "kind": "widget",
           "file": "apps/weather-station/preview-widget-indoor-relief.svg",
           "caption": {
-            "de": "Widget Innen: Relief",
-            "en": "Indoor widget: Relief"
+            "de": "Widget Innen: Bump",
+            "en": "Indoor widget: Bump"
           }
         }
       ],
@@ -4561,16 +4637,16 @@
           "kind": "display",
           "file": "apps/wikipedia-today/preview-display-relief.svg",
           "caption": {
-            "de": "Relief: Was geschah heute",
-            "en": "Relief: On this day"
+            "de": "Bump: Was geschah heute",
+            "en": "Bump: On this day"
           }
         },
         {
           "kind": "display",
           "file": "apps/wikipedia-today/preview-display-klar.svg",
           "caption": {
-            "de": "Klar: Was geschah heute",
-            "en": "Clear: On this day"
+            "de": "Gamut: Was geschah heute",
+            "en": "Gamut: On this day"
           }
         },
         {
@@ -4607,16 +4683,16 @@
           "kind": "widget",
           "file": "apps/wikipedia-today/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/wikipedia-today/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -4631,9 +4707,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "96f1938fdcb62b64a7406bfa79cfc88830fc2094b7aae7b7abe47efee4e81797",
-      "sig": "DMEd40MZRuLjVaigWw3FPBYr9/0gPiTdC8g99k7TOdZmrEr25bQENXrLj3iJKmks8JDqfp6K3oYKi3eA0LXoTi2e3VaGDdbTtPQphjKGzn7XTIo/IqAJMdYQ0HjKlVtXN9KFaxi37dfMWocBM7xArQZoDCYqNkCCGkLFnM5SJxrxWiXo6MNxzINXdWcPkV60yF8mOqdY67lrQF/NYssbmJ17LfDwSmnCfd59A8Ey5s3tmVAWopql85s9MkYyE8HazjkX03bMU4aPEE4XL4YMnCckMW9AJCxvfXXYbTDFeGiaKX3ZaFaDkd/KxM/tdcrCecbjHYXRbKBk+7fqFjkVww==",
-      "size": 35933
+      "sha256": "ac099a9e2cf2735fdfeb4f26ad61e804395cd9d370196e9b92feaed7ea23a37f",
+      "sig": "AAxfWar/U2hxpQPRCkiFq9F0JpFG7wF2RVL/N4AnoNWKLbE5xj0OOccRloG3at0qznlN+qVtBHf1ZA2eKYrZtAD0zQPwR6ONDj28G4LhZ27joVPcsf4M3aaoAgZo4po02osyvNwgsXOT4RkUO0/ZkTO2MNteEt6IGGz+ARxWcRJSEIshbugJsHak9cT4BlkfOP7qQSLCo3jJ568m/R7MpaFRWtQPYyEFuYoXk0BhR+Sp/VFI5y/5fHUx9PLjzMogD6w/HGUv6+kooVbkz/F5w0WPZXq6aAQ2RTTbp5PgzeLZjYNrznl1wtooMcNFp9/1Y2V2DD1MQbRKRiBKFMU28g==",
+      "size": 36069
     },
     {
       "id": "wochenplan",
@@ -4689,32 +4765,32 @@
           "kind": "display",
           "file": "apps/wochenplan/preview-week-relief.svg",
           "caption": {
-            "de": "Relief: Woche",
-            "en": "Relief: Week"
+            "de": "Bump: Woche",
+            "en": "Bump: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/wochenplan/preview-today-relief.svg",
           "caption": {
-            "de": "Relief: Heute",
-            "en": "Relief: Today"
+            "de": "Bump: Heute",
+            "en": "Bump: Today"
           }
         },
         {
           "kind": "display",
           "file": "apps/wochenplan/preview-week-klar.svg",
           "caption": {
-            "de": "Klar: Woche",
-            "en": "Clear: Week"
+            "de": "Gamut: Woche",
+            "en": "Gamut: Week"
           }
         },
         {
           "kind": "display",
           "file": "apps/wochenplan/preview-today-klar.svg",
           "caption": {
-            "de": "Klar: Heute",
-            "en": "Clear: Today"
+            "de": "Gamut: Heute",
+            "en": "Gamut: Today"
           }
         },
         {
@@ -4757,16 +4833,16 @@
           "kind": "widget",
           "file": "apps/wochenplan/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/wochenplan/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -4781,9 +4857,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "f534609ad0f68dcdeac62e3c043bcca3421814c1e3bd7d27b46e0dbdc616e38b",
-      "sig": "otB1U3yDS2m3LlLkWIHQKjS1nA0ws1SUfp856WiCilv9oqifeL5jUsW1sUplvIClcdUnDiP4E0t8WDoGR12CmdkHtEQZttWktyWT96Ys9iOZ6OZ2VW2lHea8hrCOSXK2ZBFhpbm/x3FpCmJkQ8NcfujI8jpbYYjI8ZysglYvPpnX2ylFhpZDiYxMEK2gp0roOS50pueKbAaBmo654smecWpD/P/4Kk7QEUgbgTCn6UitaQNtWcMRCAjLp++VGIvQUCqRKEOlAIeHX2sQhDnBjhOmWv5vS64qlxUDNad1jn9LDK9ENqAn5mx+N9zmpxKYIC7C2n4BG9MSQIpTmYsVbA==",
-      "size": 32914
+      "sha256": "1d004b3f6afd60f836c7d771478cfeb39727e225a7692cff64f3272c328ed48e",
+      "sig": "MGG/jXj4HAcoI4U5i48zktsz9d4uKCOtkxu8YEIuDzsjc/gPhkosJ49nn/32tBl8Fb7App6gBldib9DY3wajHvWIcE9TI9yjrJc7tu7zcTkeqUzCYF4klxEXNynQbRFug/7/x3z+d60uP0mnfg8B51NMVmo/a4r7tMmxsuWb+AJo7ZYPx6ELvg6Pp8/aNThEXbuhPf60S1VqD0b3aesV7A1VglgIqPkz2pR692FnmhA1xl5JJDxocVWNm8grsLlyVH0xHTcuyN3lCiAuoqHxj1eVC1SmOJwWZVgDR4Za1CpIEIQ8tM5Y7zX+/r6bHcKX8wsDg+1KWLqZ5u6sbD8jUg==",
+      "size": 33009
     },
     {
       "id": "wort-des-tages",
@@ -4837,16 +4913,16 @@
           "kind": "display",
           "file": "apps/wort-des-tages/preview-display-relief.svg",
           "caption": {
-            "de": "Relief",
-            "en": "Relief"
+            "de": "Bump",
+            "en": "Bump"
           }
         },
         {
           "kind": "display",
           "file": "apps/wort-des-tages/preview-display-klar.svg",
           "caption": {
-            "de": "Klar",
-            "en": "Clear"
+            "de": "Gamut",
+            "en": "Gamut"
           }
         },
         {
@@ -4861,16 +4937,16 @@
           "kind": "widget",
           "file": "apps/wort-des-tages/preview-widget-relief.svg",
           "caption": {
-            "de": "Widget: Relief",
-            "en": "Widget: Relief"
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
           }
         },
         {
           "kind": "widget",
           "file": "apps/wort-des-tages/preview-widget-klar.svg",
           "caption": {
-            "de": "Widget: Klar",
-            "en": "Widget: Clear"
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
           }
         },
         {
@@ -4885,9 +4961,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "77c7b73a8b17f4192486eac5dbe83d2f0e8c1755df12b370a40a4f66000ece3c",
-      "sig": "Bpwr7o/Hc4C4J+ysgCjHs4pMQxV9PM3ksqcASHm8/MLUytfgaUY6BTHO/wGN9CQqJib2iaFb/5cfHxyQhFfY6Cl/M1HmuoQXEGIJwRWQsQNdVhR4wchV/SVQYpUhSoKfY9+iC5BETgY7Aa2WyZkmmPGeSo4L6wG5qVQj4UYuxnrBDoMtMXyFkejc1XDS26INk+Bm7wJ1WApDEtrCx2S8ExYv8YI+hylRJU7KfgjYXt3FJoA6vk7H2LYzkndrN9RtfYY2BXmrpEnhYP4LrSJAKTHB0ezP+nIQPykDj6TY3wmJeGPbIGb0zJvKbrnrL7JHkzW+kSCqYQzkn85s+MRhZA==",
-      "size": 25780
+      "sha256": "a332fdf9c1d0f317d686a0bef7599d6220ae700f9a9999d44387fca6566b5e05",
+      "sig": "mTBm/gUa60Fh5PdTb+lb79vJjD75qVu8PVWNa6Y5ClRTcP9FVO1yk7D9aloLuyIe9eT2LFaSItDbZlr26coaV4zL4qrxUlDBOH0efFu2fHxnqR4YKIuxVN4JstE0/tWpOWfn2dfJt5xBKOzBkLHqXZJtKybPi44kFawQtdlPUlkuwFkxtDd+yIPqm5LVld6BjbH47VIgvhCFkKGNv3yrUYvUV0CwyyoGqVQtgG5wAv8gj2nzdazojsBnWV4MucgCxBmDEfT2wMK19x87ehrxBG84bRWMw6twddxWgtj0ULY3XGYauZVHJC0EY4sCNuAizb5/9gGJGAurRHWpkZHDzg==",
+      "size": 25916
     }
   ]
 }

@@ -68,12 +68,48 @@
     },
     {
       "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "widget",
       "file": "preview-widget.svg",
       "caption": {
-        "de": "Widget „Gerade läuft“",
-        "en": "\"Now playing\" widget"
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
       },
       "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

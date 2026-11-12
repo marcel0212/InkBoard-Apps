@@ -214,11 +214,13 @@ return
 end
 draw.rect(x,y,w,h,c,false,r)
 end
-local function widgetFrame(box)
-if theme.s~="relief" and theme.s~="klar" then return box end
+local function widgetFrame(box,all)
+local st=theme.s
+if st~="relief" and st~="klar" and not (all and st=="cards") then return box end
 local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
-card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
-local pad=theme.s=="relief" and 14 or 8
+local r=st=="relief" and 12 or (st=="klar" and 18 or 10)
+card(x,y,w,h,color.ACCENT,r)
+local pad=st=="relief" and 14 or (st=="klar" and 8 or 20)
 local inner={}
 for k,v in pairs(box) do inner[k]=v end
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
@@ -996,13 +998,13 @@ for _,e in ipairs(loadEvents(ctx,now,now,now+400*86400,24)) do
 if e.e>=now then list[#list+1]=e end
 end
 end
-setStyle(cfg.style or cfg.styleDay)
-box=widgetFrame(box)
+setStyle(cfg.styleWidget or cfg.style or cfg.styleDay)
+box=widgetFrame(box,true)
 local x,top=box.x,box.y
 local maxY=box.y+box.h - 4
 local shift=box.font or 0
 local shown=0
-if cfg.wCompact==true then
+if cfg.wCompact==true or theme.s=="compact" then
 local y=top+14
 for _,e in ipairs(list) do
 if y>maxY then break end
@@ -1108,7 +1110,10 @@ end
 while i<=#list and list[i].k==dayK do i=i+1 end
 local bb=ey - 8
 if bb<bt+58 then bb=bt+58 end
-if doDraw then draw.rect(x+66,bt+2,3,bb - bt - 2,lineC,true) end
+if doDraw then
+if theme.s=="relief" then draw.rect(x+66,bt+2,4,bb - bt - 2,lineC,true,2) else draw.rect(x+66,bt+2,3,bb - bt - 2,lineC,true) end
+if theme.s=="flat" and i<=#list then draw.line(x+8,bb+6+gapExtra//2,x+box.w - 8,bb+6+gapExtra//2,color.BLACK) end
+end
 y=bb+12+gapExtra
 groups=groups+1
 end

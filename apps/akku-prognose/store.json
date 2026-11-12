@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-forecast-relief.svg",
       "caption": {
-        "de": "Relief: Prognose",
-        "en": "Relief: Forecast"
+        "de": "Bump: Prognose",
+        "en": "Bump: Forecast"
       },
       "page": 0,
       "style": "relief"
@@ -41,8 +41,8 @@
       "kind": "display",
       "file": "preview-advisor-relief.svg",
       "caption": {
-        "de": "Relief: Spar-Berater",
-        "en": "Relief: Saving advisor"
+        "de": "Bump: Spar-Berater",
+        "en": "Bump: Saving advisor"
       },
       "page": 1,
       "style": "relief"
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-check-relief.svg",
       "caption": {
-        "de": "Relief: Einstellungen",
-        "en": "Relief: Settings check"
+        "de": "Bump: Einstellungen",
+        "en": "Bump: Settings check"
       },
       "page": 2,
       "style": "relief"
@@ -61,8 +61,8 @@
       "kind": "display",
       "file": "preview-collecting-relief.svg",
       "caption": {
-        "de": "Relief: Prognose",
-        "en": "Relief: Forecast"
+        "de": "Bump: Prognose",
+        "en": "Bump: Forecast"
       },
       "page": 0,
       "style": "relief"
@@ -71,8 +71,8 @@
       "kind": "display",
       "file": "preview-forecast-klar.svg",
       "caption": {
-        "de": "Klar: Prognose",
-        "en": "Clear: Forecast"
+        "de": "Gamut: Prognose",
+        "en": "Gamut: Forecast"
       },
       "page": 0,
       "style": "klar"
@@ -81,8 +81,8 @@
       "kind": "display",
       "file": "preview-advisor-klar.svg",
       "caption": {
-        "de": "Klar: Spar-Berater",
-        "en": "Clear: Saving advisor"
+        "de": "Gamut: Spar-Berater",
+        "en": "Gamut: Saving advisor"
       },
       "page": 1,
       "style": "klar"
@@ -91,8 +91,8 @@
       "kind": "display",
       "file": "preview-check-klar.svg",
       "caption": {
-        "de": "Klar: Einstellungen",
-        "en": "Clear: Settings check"
+        "de": "Gamut: Einstellungen",
+        "en": "Gamut: Settings check"
       },
       "page": 2,
       "style": "klar"
@@ -101,8 +101,8 @@
       "kind": "display",
       "file": "preview-collecting-klar.svg",
       "caption": {
-        "de": "Klar: Prognose",
-        "en": "Clear: Forecast"
+        "de": "Gamut: Prognose",
+        "en": "Gamut: Forecast"
       },
       "page": 0,
       "style": "klar"
@@ -167,8 +167,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -176,8 +176,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

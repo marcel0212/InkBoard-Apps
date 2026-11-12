@@ -29,8 +29,8 @@
       "kind": "display",
       "file": "preview-today-relief.svg",
       "caption": {
-        "de": "Relief: Heute",
-        "en": "Relief: Today"
+        "de": "Bump: Heute",
+        "en": "Bump: Today"
       },
       "style": "relief",
       "page": 0
@@ -39,8 +39,8 @@
       "kind": "display",
       "file": "preview-week-relief.svg",
       "caption": {
-        "de": "Relief: Woche",
-        "en": "Relief: Week"
+        "de": "Bump: Woche",
+        "en": "Bump: Week"
       },
       "style": "relief",
       "page": 1
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-14d-relief.svg",
       "caption": {
-        "de": "Relief: 14 Tage",
-        "en": "Relief: 14 days"
+        "de": "Bump: 14 Tage",
+        "en": "Bump: 14 days"
       },
       "style": "relief",
       "page": 2
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-today-klar.svg",
       "caption": {
-        "de": "Klar: Heute",
-        "en": "Clear: Today"
+        "de": "Gamut: Heute",
+        "en": "Gamut: Today"
       },
       "style": "klar",
       "page": 0
@@ -69,8 +69,8 @@
       "kind": "display",
       "file": "preview-week-klar.svg",
       "caption": {
-        "de": "Klar: Woche",
-        "en": "Clear: Week"
+        "de": "Gamut: Woche",
+        "en": "Gamut: Week"
       },
       "style": "klar",
       "page": 1
@@ -79,8 +79,8 @@
       "kind": "display",
       "file": "preview-14d-klar.svg",
       "caption": {
-        "de": "Klar: 14 Tage",
-        "en": "Clear: 14 days"
+        "de": "Gamut: 14 Tage",
+        "en": "Gamut: 14 days"
       },
       "style": "klar",
       "page": 2
@@ -179,8 +179,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -188,8 +188,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

@@ -31,8 +31,8 @@
       "page": 0,
       "style": "relief",
       "caption": {
-        "de": "Relief: Tag",
-        "en": "Relief: Day"
+        "de": "Bump: Tag",
+        "en": "Bump: Day"
       }
     },
     {
@@ -41,8 +41,8 @@
       "page": 1,
       "style": "relief",
       "caption": {
-        "de": "Relief: Woche",
-        "en": "Relief: Week"
+        "de": "Bump: Woche",
+        "en": "Bump: Week"
       }
     },
     {
@@ -51,8 +51,8 @@
       "page": 2,
       "style": "relief",
       "caption": {
-        "de": "Relief: Monat",
-        "en": "Relief: Month"
+        "de": "Bump: Monat",
+        "en": "Bump: Month"
       }
     },
     {
@@ -61,8 +61,8 @@
       "page": 0,
       "style": "klar",
       "caption": {
-        "de": "Klar: Tag",
-        "en": "Clear: Day"
+        "de": "Gamut: Tag",
+        "en": "Gamut: Day"
       }
     },
     {
@@ -71,8 +71,8 @@
       "page": 1,
       "style": "klar",
       "caption": {
-        "de": "Klar: Woche",
-        "en": "Clear: Week"
+        "de": "Gamut: Woche",
+        "en": "Gamut: Week"
       }
     },
     {
@@ -81,8 +81,8 @@
       "page": 2,
       "style": "klar",
       "caption": {
-        "de": "Klar: Monat",
-        "en": "Clear: Month"
+        "de": "Gamut: Monat",
+        "en": "Gamut: Month"
       }
     },
     {
@@ -179,8 +179,8 @@
       "file": "preview-widget-relief.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -188,26 +188,35 @@
       "file": "preview-widget-klar.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },
     {
-      "kind": "widget",
       "file": "preview-widget.svg",
+      "kind": "widget",
       "caption": {
-        "de": "Widget: nächste Termine",
-        "en": "Widget: next events"
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
       },
       "style": "cards"
     },
     {
+      "file": "preview-widget-flat.svg",
       "kind": "widget",
-      "file": "preview-widget-compact.svg",
       "caption": {
-        "de": "Widget: kompakte Liste",
-        "en": "Widget: compact list"
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "file": "preview-widget-compact.svg",
+      "kind": "widget",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
       },
       "style": "compact"
     }

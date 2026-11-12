@@ -35,8 +35,8 @@
       "page": 0,
       "style": "relief",
       "caption": {
-        "de": "Relief: Homeoffice",
-        "en": "Relief: Home office"
+        "de": "Bump: Homeoffice",
+        "en": "Bump: Home office"
       }
     },
     {
@@ -45,8 +45,8 @@
       "page": 0,
       "style": "klar",
       "caption": {
-        "de": "Klar: Homeoffice",
-        "en": "Clear: Home office"
+        "de": "Gamut: Homeoffice",
+        "en": "Gamut: Home office"
       }
     },
     {
@@ -83,8 +83,8 @@
       "file": "preview-widget-relief.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -92,8 +92,8 @@
       "file": "preview-widget-klar.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

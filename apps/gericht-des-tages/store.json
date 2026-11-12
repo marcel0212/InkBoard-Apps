@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Gericht des Tages",
-        "en": "Relief: Meal of the day"
+        "de": "Bump: Gericht des Tages",
+        "en": "Bump: Meal of the day"
       },
       "style": "relief"
     },
@@ -40,8 +40,8 @@
       "kind": "display",
       "file": "preview-ingredients-relief.svg",
       "caption": {
-        "de": "Relief: Gericht des Tages",
-        "en": "Relief: Meal of the day"
+        "de": "Bump: Gericht des Tages",
+        "en": "Bump: Meal of the day"
       },
       "style": "relief"
     },
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-steps-relief.svg",
       "caption": {
-        "de": "Relief: Gericht des Tages",
-        "en": "Relief: Meal of the day"
+        "de": "Bump: Gericht des Tages",
+        "en": "Bump: Meal of the day"
       },
       "style": "relief"
     },
@@ -58,8 +58,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Gericht des Tages",
-        "en": "Clear: Meal of the day"
+        "de": "Gamut: Gericht des Tages",
+        "en": "Gamut: Meal of the day"
       },
       "style": "klar"
     },
@@ -67,8 +67,8 @@
       "kind": "display",
       "file": "preview-ingredients-klar.svg",
       "caption": {
-        "de": "Klar: Gericht des Tages",
-        "en": "Clear: Meal of the day"
+        "de": "Gamut: Gericht des Tages",
+        "en": "Gamut: Meal of the day"
       },
       "style": "klar"
     },
@@ -76,8 +76,8 @@
       "kind": "display",
       "file": "preview-steps-klar.svg",
       "caption": {
-        "de": "Klar: Gericht des Tages",
-        "en": "Clear: Meal of the day"
+        "de": "Gamut: Gericht des Tages",
+        "en": "Gamut: Meal of the day"
       },
       "style": "klar"
     },
@@ -109,8 +109,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -118,8 +118,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

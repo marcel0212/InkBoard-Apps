@@ -854,13 +854,13 @@ function on_widget(ctx, box)
       if e.e >= now then list[#list + 1] = e end
     end
   end
-  setStyle(cfg.style or cfg.styleDay)
-  box = widgetFrame(box)
+  setStyle(cfg.styleWidget or cfg.style or cfg.styleDay)
+  box = widgetFrame(box, true) -- Bump/Gamut/Tile bekommen eine Karte; Ledger/Nibble bleiben rahmenlos
   local x, top = box.x, box.y
   local maxY = box.y + box.h - 4
   local shift = box.font or 0
   local shown = 0
-  if cfg.wCompact == true then
+  if cfg.wCompact == true or theme.s == "compact" then
     local y = top + 14
     for _, e in ipairs(list) do
       if y > maxY then break end
@@ -969,7 +969,10 @@ function on_widget(ctx, box)
       while i <= #list and list[i].k == dayK do i = i + 1 end
       local bb = ey - 8
       if bb < bt + 58 then bb = bt + 58 end
-      if doDraw then draw.rect(x + 66, bt + 2, 3, bb - bt - 2, lineC, true) end
+      if doDraw then
+        if theme.s == "relief" then draw.rect(x + 66, bt + 2, 4, bb - bt - 2, lineC, true, 2) else draw.rect(x + 66, bt + 2, 3, bb - bt - 2, lineC, true) end
+        if theme.s == "flat" and i <= #list then draw.line(x + 8, bb + 6 + gapExtra // 2, x + box.w - 8, bb + 6 + gapExtra // 2, color.BLACK) end
+      end
       y = bb + 12 + gapExtra
       groups = groups + 1
     end

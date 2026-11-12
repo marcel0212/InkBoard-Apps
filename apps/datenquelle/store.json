@@ -32,8 +32,8 @@
       "file": "preview-display-relief.svg",
       "page": 0,
       "caption": {
-        "de": "Relief: Daten",
-        "en": "Relief: Data"
+        "de": "Bump: Daten",
+        "en": "Bump: Data"
       },
       "style": "relief"
     },
@@ -42,8 +42,8 @@
       "file": "preview-display-klar.svg",
       "page": 0,
       "caption": {
-        "de": "Klar: Daten",
-        "en": "Clear: Data"
+        "de": "Gamut: Daten",
+        "en": "Gamut: Data"
       },
       "style": "klar"
     },
@@ -80,8 +80,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -89,8 +89,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

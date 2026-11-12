@@ -33,8 +33,8 @@
       "page": 1,
       "style": "relief",
       "caption": {
-        "de": "Relief: Außen",
-        "en": "Relief: Outdoor"
+        "de": "Bump: Außen",
+        "en": "Bump: Outdoor"
       }
     },
     {
@@ -43,8 +43,8 @@
       "page": 0,
       "style": "relief",
       "caption": {
-        "de": "Relief: Innen",
-        "en": "Relief: Indoor"
+        "de": "Bump: Innen",
+        "en": "Bump: Indoor"
       }
     },
     {
@@ -53,8 +53,8 @@
       "page": 2,
       "style": "relief",
       "caption": {
-        "de": "Relief: Netzwerk",
-        "en": "Relief: Network"
+        "de": "Bump: Netzwerk",
+        "en": "Bump: Network"
       }
     },
     {
@@ -63,8 +63,8 @@
       "page": 1,
       "style": "klar",
       "caption": {
-        "de": "Klar: Außen",
-        "en": "Clear: Outdoor"
+        "de": "Gamut: Außen",
+        "en": "Gamut: Outdoor"
       }
     },
     {
@@ -73,8 +73,8 @@
       "page": 0,
       "style": "klar",
       "caption": {
-        "de": "Klar: Innen",
-        "en": "Clear: Indoor"
+        "de": "Gamut: Innen",
+        "en": "Gamut: Indoor"
       }
     },
     {
@@ -221,8 +221,8 @@
       "file": "preview-widget-outdoor-relief.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget Außen: Relief",
-        "en": "Outdoor widget: Relief"
+        "de": "Widget Außen: Bump",
+        "en": "Outdoor widget: Bump"
       },
       "style": "relief"
     },
@@ -230,8 +230,8 @@
       "file": "preview-widget-indoor-klar.svg",
       "kind": "widget",
       "caption": {
-        "de": "Widget Innen: Klar",
-        "en": "Indoor widget: Clear"
+        "de": "Widget Innen: Gamut",
+        "en": "Indoor widget: Gamut"
       },
       "style": "klar"
     },
@@ -259,8 +259,8 @@
       "page": 2,
       "style": "klar",
       "caption": {
-        "de": "Klar: Netzwerk",
-        "en": "Klar: Network"
+        "de": "Gamut: Netzwerk",
+        "en": "Gamut: Network"
       }
     },
     {
@@ -268,8 +268,8 @@
       "kind": "widget",
       "style": "klar",
       "caption": {
-        "de": "Widget Außen: Klar",
-        "en": "Outdoor widget: Klar"
+        "de": "Widget Außen: Gamut",
+        "en": "Outdoor widget: Gamut"
       }
     },
     {
@@ -277,8 +277,8 @@
       "kind": "widget",
       "style": "relief",
       "caption": {
-        "de": "Widget Innen: Relief",
-        "en": "Indoor widget: Relief"
+        "de": "Widget Innen: Bump",
+        "en": "Indoor widget: Bump"
       }
     }
   ]

@@ -29,8 +29,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Team",
-        "en": "Relief: Team"
+        "de": "Bump: Team",
+        "en": "Bump: Team"
       },
       "style": "relief",
       "page": 0
@@ -39,8 +39,8 @@
       "kind": "display",
       "file": "preview-table-relief.svg",
       "caption": {
-        "de": "Relief: Liga-Tabelle",
-        "en": "Relief: League table"
+        "de": "Bump: Liga-Tabelle",
+        "en": "Bump: League table"
       },
       "style": "relief",
       "page": 1
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Team",
-        "en": "Clear: Team"
+        "de": "Gamut: Team",
+        "en": "Gamut: Team"
       },
       "style": "klar",
       "page": 0
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-table-klar.svg",
       "caption": {
-        "de": "Klar: Liga-Tabelle",
-        "en": "Clear: League table"
+        "de": "Gamut: Liga-Tabelle",
+        "en": "Gamut: League table"
       },
       "style": "klar",
       "page": 1
@@ -129,8 +129,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -138,8 +138,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

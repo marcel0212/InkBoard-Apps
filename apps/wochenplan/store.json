@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-week-relief.svg",
       "caption": {
-        "de": "Relief: Woche",
-        "en": "Relief: Week"
+        "de": "Bump: Woche",
+        "en": "Bump: Week"
       },
       "page": 0,
       "style": "relief"
@@ -41,8 +41,8 @@
       "kind": "display",
       "file": "preview-today-relief.svg",
       "caption": {
-        "de": "Relief: Heute",
-        "en": "Relief: Today"
+        "de": "Bump: Heute",
+        "en": "Bump: Today"
       },
       "page": 1,
       "style": "relief"
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-week-klar.svg",
       "caption": {
-        "de": "Klar: Woche",
-        "en": "Clear: Week"
+        "de": "Gamut: Woche",
+        "en": "Gamut: Week"
       },
       "page": 0,
       "style": "klar"
@@ -61,8 +61,8 @@
       "kind": "display",
       "file": "preview-today-klar.svg",
       "caption": {
-        "de": "Klar: Heute",
-        "en": "Clear: Today"
+        "de": "Gamut: Heute",
+        "en": "Gamut: Today"
       },
       "page": 1,
       "style": "klar"
@@ -109,8 +109,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -118,8 +118,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

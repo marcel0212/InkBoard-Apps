@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-air-relief.svg",
       "caption": {
-        "de": "Relief: Luft",
-        "en": "Relief: Air"
+        "de": "Bump: Luft",
+        "en": "Bump: Air"
       },
       "page": 0,
       "style": "relief"
@@ -41,8 +41,8 @@
       "kind": "display",
       "file": "preview-pollen-relief.svg",
       "caption": {
-        "de": "Relief: Pollen",
-        "en": "Relief: Pollen"
+        "de": "Bump: Pollen",
+        "en": "Bump: Pollen"
       },
       "page": 1,
       "style": "relief"
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-air-klar.svg",
       "caption": {
-        "de": "Klar: Luft",
-        "en": "Clear: Air"
+        "de": "Gamut: Luft",
+        "en": "Gamut: Air"
       },
       "page": 0,
       "style": "klar"
@@ -61,8 +61,8 @@
       "kind": "display",
       "file": "preview-pollen-klar.svg",
       "caption": {
-        "de": "Klar: Pollen",
-        "en": "Clear: Pollen"
+        "de": "Gamut: Pollen",
+        "en": "Gamut: Pollen"
       },
       "page": 1,
       "style": "klar"
@@ -109,8 +109,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -118,8 +118,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },
@@ -138,8 +138,8 @@
       "page": 2,
       "style": "relief",
       "caption": {
-        "de": "Relief: Lüften",
-        "en": "Relief: Ventilate"
+        "de": "Bump: Lüften",
+        "en": "Bump: Ventilate"
       }
     },
     {
@@ -148,8 +148,8 @@
       "page": 2,
       "style": "klar",
       "caption": {
-        "de": "Klar: Lüften",
-        "en": "Klar: Ventilate"
+        "de": "Gamut: Lüften",
+        "en": "Gamut: Ventilate"
       }
     }
   ]

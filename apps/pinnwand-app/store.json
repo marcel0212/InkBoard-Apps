@@ -31,8 +31,8 @@
       "kind": "display",
       "file": "preview-note-relief.svg",
       "caption": {
-        "de": "Relief: Pinnwand",
-        "en": "Relief: Family Board"
+        "de": "Bump: Pinnwand",
+        "en": "Bump: Family Board"
       },
       "page": 0,
       "style": "relief"
@@ -41,8 +41,8 @@
       "kind": "display",
       "file": "preview-long-relief.svg",
       "caption": {
-        "de": "Relief: Pinnwand",
-        "en": "Relief: Family Board"
+        "de": "Bump: Pinnwand",
+        "en": "Bump: Family Board"
       },
       "page": 0,
       "style": "relief"
@@ -51,8 +51,8 @@
       "kind": "display",
       "file": "preview-empty-relief.svg",
       "caption": {
-        "de": "Relief: Pinnwand",
-        "en": "Relief: Family Board"
+        "de": "Bump: Pinnwand",
+        "en": "Bump: Family Board"
       },
       "page": 0,
       "style": "relief"
@@ -61,8 +61,8 @@
       "kind": "display",
       "file": "preview-note-klar.svg",
       "caption": {
-        "de": "Klar: Pinnwand",
-        "en": "Clear: Family Board"
+        "de": "Gamut: Pinnwand",
+        "en": "Gamut: Family Board"
       },
       "page": 0,
       "style": "klar"
@@ -71,8 +71,8 @@
       "kind": "display",
       "file": "preview-long-klar.svg",
       "caption": {
-        "de": "Klar: Pinnwand",
-        "en": "Clear: Family Board"
+        "de": "Gamut: Pinnwand",
+        "en": "Gamut: Family Board"
       },
       "page": 0,
       "style": "klar"
@@ -81,8 +81,8 @@
       "kind": "display",
       "file": "preview-empty-klar.svg",
       "caption": {
-        "de": "Klar: Pinnwand",
-        "en": "Clear: Family Board"
+        "de": "Gamut: Pinnwand",
+        "en": "Gamut: Family Board"
       },
       "page": 0,
       "style": "klar"

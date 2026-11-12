@@ -27,8 +27,8 @@
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {
-        "de": "Relief: Tiefe",
-        "en": "Relief: depth"
+        "de": "Bump: Tiefe",
+        "en": "Bump: depth"
       },
       "style": "relief",
       "page": 0
@@ -37,8 +37,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Apple-Stil",
-        "en": "Clear: Apple style"
+        "de": "Gamut: Apple-Stil",
+        "en": "Gamut: Apple style"
       },
       "style": "klar",
       "page": 0
@@ -77,8 +77,8 @@
       "kind": "widget",
       "file": "preview-widget.svg",
       "caption": {
-        "de": "Widget im Dashboard",
-        "en": "Widget on the dashboard"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -86,10 +86,37 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-cards.svg",
+      "caption": {
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
+      },
+      "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
     }
   ]
 }

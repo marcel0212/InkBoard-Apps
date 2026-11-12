@@ -269,11 +269,13 @@ return
 end
 draw.rect(x,y,w,h,c,false,r)
 end
-local function widgetFrame(box)
-if theme.s~="relief" and theme.s~="klar" then return box end
+local function widgetFrame(box,all)
+local st=theme.s
+if st~="relief" and st~="klar" and not (all and st=="cards") then return box end
 local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
-card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
-local pad=theme.s=="relief" and 14 or 8
+local r=st=="relief" and 12 or (st=="klar" and 18 or 10)
+card(x,y,w,h,color.ACCENT,r)
+local pad=st=="relief" and 14 or (st=="klar" and 8 or 20)
 local inner={}
 for k,v in pairs(box) do inner[k]=v end
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
@@ -641,7 +643,7 @@ else drawFlat(ctx,items) end
 end
 function on_widget(ctx,box)
 setStyle(ctx.cfg.style)
-if ctx.cfg.style=="klar" then box=widgetFrame(box) end
+if ctx.cfg.style=="klar" or ctx.cfg.style=="cards" then box=widgetFrame(box,true) end
 local ci=1
 for i,c in ipairs(CATS) do if c==ctx.cfg.wCat then ci=i end end
 local items=readCat(ctx,ci)
@@ -696,15 +698,23 @@ return
 end
 local font=((box.font or 0)>0) and "normal" or "small"
 if (box.font or 0)<0 then font="small" end
-local compact=ctx.cfg.wCompact==true
+local compact=ctx.cfg.wCompact==true or ctx.cfg.style=="compact"
 local lineH=compact and 17 or 22
-local y=box.y+16
+if lineH>box.h - 17 then
+font="small"
+lineH=math.max(15,math.min(17,box.h - 17))
+end
+local y=box.y+(lineH<=17 and 13 or 16)
 local maxY=box.y+box.h - 4
 local showSrc=ctx.cfg.wSource==true
 local shown=0
 for _,it in ipairs(items) do
 if y>maxY then break end
+if ctx.cfg.style=="flat" then
+if shown>0 then draw.line(box.x+8,y - lineH+6,box.x+box.w - 8,y - lineH+6,color.BLACK) end
+else
 draw.rect(box.x+12,y - 8,5,5,color.ACCENT,true)
+end
 local tx=box.x+24
 if showSrc then
 draw.text(tx,y,fit(it.src,78,font),font,color.ACCENT_TEXT,"left")

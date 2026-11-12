@@ -4,7 +4,7 @@
     "de": "Spotify",
     "en": "Spotify"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "apiLevel": 21,
   "pages": 1,
   "refreshMinutes": 1,
@@ -86,6 +86,39 @@
         "de": "Aus: der Albumname wird nicht angezeigt. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin alles.",
         "en": "Off: the album name is not shown. The preview in Studio, Mac and iOS app still shows everything."
       }
+    },
+    {
+      "key": "styleWidget",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
+        },
+        "en": {
+          "cards": "Tile",
+          "flat": "Ledger",
+          "compact": "Nibble",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
+        }
+      },
+      "label": {
+        "de": "Widget-Stil",
+        "en": "Widget style"
+      },
+      "group": "widget"
     },
     {
       "key": "wProgress",

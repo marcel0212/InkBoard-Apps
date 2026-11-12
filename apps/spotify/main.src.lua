@@ -1,5 +1,5 @@
 -- Spotify (Paket spotify, Skript-Variante der frueheren eingebauten App): zeigt den aktuell gespielten Titel des verknuepften
--- Spotify-Kontos in drei Stilen (Bento, Slate, Nano) und als Dashboard-Widget. Skript-API Level 21.
+-- Spotify-Kontos in drei Seiten-Stilen (Tile, Ledger, Nibble) und als Dashboard-Widget in allen fuenf Stilen. Skript-API Level 21.
 --
 -- Anmeldung (OAuth), Zugangsdaten, Token, Abfrage-Takt und Cover-Download bleiben Dienste der Firmware: das Paket zeichnet NUR die
 -- Anzeige. spotify.now() liefert Titel/Interpret/Album/Position (nur mit permissions.spotify), das Cover zeichnet
@@ -7,6 +7,8 @@
 -- (Liedwechsel, Wiedergabe/Pause) und im Heartbeat-Takt der Firmware.
 --
 -- Zeichnung 1:1 nach den frueheren drawSpotifyAppCards()/-Flat()/-Compact() (teil14) und dwDrawSpotifyNow() (teil16).
+
+--#include theme -pill -pbar -panel
 
 local function cutOne(s)
   local i = #s
@@ -505,6 +507,9 @@ local function on(v) return v == true end
 
 function on_widget(ctx, box)
   local en = (ctx.lang == "en")
+  setStyle(ctx.cfg.styleWidget or "relief")
+  local fullH = box.fh or box.h
+  box = widgetFrame(box, true)
   local n = spotify.now()
   if ctx.sample then
     n = { connected = true, track = true, playing = true, title = en and "Sample Title" or "Titel-Beispiel",
@@ -515,10 +520,10 @@ function on_widget(ctx, box)
     draw.text(box.x + 12, box.y + 16, fit(en and "Nothing playing" or "Gerade keine Wiedergabe", box.w - 20, "small"), "small", color.BLACK, "left")
     return
   end
-  local maxY = box.y + box.fh - 4
+  local maxY = box.y + math.min(fullH, box.h) - 4
   local pause = n.playing and "" or (en and "(paused) " or "(Pause) ")
   local font = box.font < 0 and "small" or "normal"
-  if on(ctx.cfg.wCompact) then
+  if on(ctx.cfg.wCompact) or theme.s == "compact" then
     draw.text(box.x + 12, box.y + 16, fit(pause .. n.title, box.w - 20, font), font, color.BLACK, "left")
     draw.text(box.x + 12, box.y + 34, fit(n.artist, box.w - 20, "small"), "small", color.ACCENT_TEXT, "left")
     if on(ctx.cfg.wAlbum) and n.album ~= "" and maxY >= box.y + 50 then
@@ -526,6 +531,7 @@ function on_widget(ctx, box)
     end
     return
   end
+  if theme.s == "flat" then draw.line(box.x + 6, box.y + 2, box.x + box.w - 6, box.y + 2, color.BLACK) end
   local cy = box.y + 22
   draw.circle(box.x + 28, cy, 16, color.ACCENT, true)
   draw.icon("music", box.x + 28 - 9, cy - 9, 18, color.ACCENT_INK)

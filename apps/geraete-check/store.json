@@ -29,8 +29,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Geräte-Check",
-        "en": "Relief: Device check"
+        "de": "Bump: Geräte-Check",
+        "en": "Bump: Device check"
       },
       "page": 0,
       "style": "relief"
@@ -39,8 +39,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Geräte-Check",
-        "en": "Clear: Device check"
+        "de": "Gamut: Geräte-Check",
+        "en": "Gamut: Device check"
       },
       "page": 0,
       "style": "klar"

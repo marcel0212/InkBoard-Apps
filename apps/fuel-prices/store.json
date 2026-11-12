@@ -27,8 +27,8 @@
       "kind": "display",
       "file": "preview-display-relief.svg",
       "caption": {
-        "de": "Relief: Tankpreise",
-        "en": "Relief: Fuel prices"
+        "de": "Bump: Tankpreise",
+        "en": "Bump: Fuel prices"
       },
       "style": "relief",
       "page": 0
@@ -37,8 +37,8 @@
       "kind": "display",
       "file": "preview-display-klar.svg",
       "caption": {
-        "de": "Klar: Tankpreise",
-        "en": "Clear: Fuel prices"
+        "de": "Gamut: Tankpreise",
+        "en": "Gamut: Fuel prices"
       },
       "style": "klar",
       "page": 0
@@ -77,8 +77,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -86,8 +86,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

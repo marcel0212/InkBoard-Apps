@@ -33,8 +33,8 @@
       "kind": "display",
       "file": "preview-wifi-relief.svg",
       "caption": {
-        "de": "Relief: WLAN",
-        "en": "Relief: Wi-Fi"
+        "de": "Bump: WLAN",
+        "en": "Bump: Wi-Fi"
       },
       "page": 0,
       "style": "relief"
@@ -43,8 +43,8 @@
       "kind": "display",
       "file": "preview-rules-relief.svg",
       "caption": {
-        "de": "Relief: Hausregeln",
-        "en": "Relief: House rules"
+        "de": "Bump: Hausregeln",
+        "en": "Bump: House rules"
       },
       "page": 1,
       "style": "relief"
@@ -53,8 +53,8 @@
       "kind": "display",
       "file": "preview-wifi-klar.svg",
       "caption": {
-        "de": "Klar: WLAN",
-        "en": "Clear: Wi-Fi"
+        "de": "Gamut: WLAN",
+        "en": "Gamut: Wi-Fi"
       },
       "page": 0,
       "style": "klar"
@@ -63,8 +63,8 @@
       "kind": "display",
       "file": "preview-rules-klar.svg",
       "caption": {
-        "de": "Klar: Hausregeln",
-        "en": "Clear: House rules"
+        "de": "Gamut: Hausregeln",
+        "en": "Gamut: House rules"
       },
       "page": 1,
       "style": "klar"
@@ -111,8 +111,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -120,8 +120,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },

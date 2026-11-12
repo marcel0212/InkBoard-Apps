@@ -66,11 +66,13 @@ draw.rect(x,y,w,h,color.WHITE,true,r)
 draw.rect(x,y,w,h,color.BLACK,false,r)
 if not nobar then draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2) end
 end
-local function widgetFrame(box)
-if theme.s~="relief" and theme.s~="klar" then return box end
+local function widgetFrame(box,all)
+local st=theme.s
+if st~="relief" and st~="klar" and not (all and st=="cards") then return box end
 local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
-card(x,y,w,h,color.ACCENT,theme.s=="relief" and 12 or 18)
-local pad=theme.s=="relief" and 14 or 8
+local r=st=="relief" and 12 or (st=="klar" and 18 or 10)
+card(x,y,w,h,color.ACCENT,r)
+local pad=st=="relief" and 14 or (st=="klar" and 8 or 20)
 local inner={}
 for k,v in pairs(box) do inner[k]=v end
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20

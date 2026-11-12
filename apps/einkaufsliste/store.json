@@ -29,8 +29,8 @@
       "kind": "display",
       "file": "preview-list-relief.svg",
       "caption": {
-        "de": "Relief: Liste",
-        "en": "Relief: List"
+        "de": "Bump: Liste",
+        "en": "Bump: List"
       },
       "page": 0,
       "style": "relief"
@@ -39,8 +39,8 @@
       "kind": "display",
       "file": "preview-select-relief.svg",
       "caption": {
-        "de": "Relief: Liste",
-        "en": "Relief: List"
+        "de": "Bump: Liste",
+        "en": "Bump: List"
       },
       "page": 0,
       "style": "relief"
@@ -49,8 +49,8 @@
       "kind": "display",
       "file": "preview-list-klar.svg",
       "caption": {
-        "de": "Klar: Liste",
-        "en": "Clear: List"
+        "de": "Gamut: Liste",
+        "en": "Gamut: List"
       },
       "page": 0,
       "style": "klar"
@@ -59,8 +59,8 @@
       "kind": "display",
       "file": "preview-select-klar.svg",
       "caption": {
-        "de": "Klar: Liste",
-        "en": "Clear: List"
+        "de": "Gamut: Liste",
+        "en": "Gamut: List"
       },
       "page": 0,
       "style": "klar"
@@ -107,8 +107,8 @@
       "kind": "widget",
       "file": "preview-widget-relief.svg",
       "caption": {
-        "de": "Widget: Relief",
-        "en": "Widget: Relief"
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
       },
       "style": "relief"
     },
@@ -116,8 +116,8 @@
       "kind": "widget",
       "file": "preview-widget-klar.svg",
       "caption": {
-        "de": "Widget: Klar",
-        "en": "Widget: Clear"
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
       },
       "style": "klar"
     },
