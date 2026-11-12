@@ -241,7 +241,11 @@ end
 local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
 card(x,y,w,h,color.ACCENT,st=="relief" and 12 or 18)
 local pad=st=="relief" and 14 or 8
+if box.h<60 then
+inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+3,box.w - pad - 16,box.h - 13
+else
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
+end
 return inner
 end
 local function pillW(txt,font,h,minw)
@@ -683,6 +687,26 @@ end
 local label=dietLabel(d.diet,en)
 local info=label
 if d.time~="" then info=info..(info~="" and " · " or "")..d.time end
+local left1=textW - (draw.measure(tl[1] or "",font)+1) - 14
+local besideOK=#tl==1 and tl[1]==d.title and info~="" and (left1>=draw.measure(info,"small") or left1>=90)
+if not full and not besideOK and info~="" then
+local x0=box.x+12
+if box.h>=33 then
+local off=math.max(0,(box.h - 31)//2)
+local t1=fit(d.title,textW - 1,"small")
+draw.text(x0,box.y+off+13,t1,"small",color.BLACK,"left")
+draw.text(x0+1,box.y+off+13,t1,"small",color.BLACK,"left")
+draw.text(x0,box.y+off+28,fit(info,textW,"small"),"small",color.BLACK,"left")
+else
+local iw=math.min(draw.measure(info,"small"),math.floor(textW*0.5))
+local t1=fit(d.title,textW - iw - 10,"small")
+local by=box.y+math.max(11,(box.h+10)//2)
+draw.text(x0,by,t1,"small",color.BLACK,"left")
+draw.text(x0+1,by,t1,"small",color.BLACK,"left")
+draw.text(x0+draw.measure(t1,"small")+10,by,fit(info,iw,"small"),"small",color.BLACK,"left")
+end
+return
+end
 local y=box.y+18
 for _,l in ipairs(tl) do
 draw.text(box.x+12,y,l,font,color.BLACK,"left")

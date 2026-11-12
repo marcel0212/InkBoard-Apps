@@ -244,7 +244,11 @@ end
 local x,y,w,h=box.x+4,box.y+2,box.w - 14,box.h - 12
 card(x,y,w,h,color.ACCENT,st=="relief" and 12 or 18)
 local pad=st=="relief" and 14 or 8
+if box.h<60 then
+inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+3,box.w - pad - 16,box.h - 13
+else
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
+end
 return inner
 end
 local function pillW(txt,font,h,minw)
