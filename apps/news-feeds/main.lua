@@ -648,11 +648,12 @@ local ci=1
 for i,c in ipairs(CATS) do if c==ctx.cfg.wCat then ci=i end end
 local items=readCat(ctx,ci)
 if ctx.cfg.style=="relief" and #items>0 then
-local sh=5
-local cx,cy=box.x+6,box.y+6
-local cw,ch=box.w - 12 - sh,box.h - 12 - sh
+local low=box.h<72
+local sh=low and 4 or 5
+local cx,cy=box.x+6,box.y+(low and 1 or 6)
+local cw,ch=box.w - 12 - sh,box.h - (low and 3 or 12) - sh
 shadowCard(cx,cy,cw,ch,12,sh)
-draw.rect(cx+10,cy+10,5,ch - 20,color.ACCENT,true,2)
+draw.rect(cx+10,cy+(low and 7 or 10),5,ch - (low and 14 or 20),color.ACCENT,true,2)
 local font=((box.font or 0)>0) and "normal" or "small"
 local compact=ctx.cfg.wCompact==true
 local showSrc=ctx.cfg.wSource==true
@@ -664,7 +665,7 @@ local maxLines=2
 if not compact then
 if maxY - y<2*(2*lh+6+extra) then maxLines=1 end
 if maxLines==1 and font=="normal" and maxY - y<2*(lh+1+extra) then font,lh="small",17 end
-if maxLines==1 then y,maxY=cy+4,cy+ch - 2 end
+if maxLines==1 then y,maxY=cy+(low and 3 or 4),cy+ch - (low and 1 or 2) end
 end
 for i,it in ipairs(items) do
 if compact then
