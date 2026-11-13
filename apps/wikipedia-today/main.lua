@@ -347,6 +347,20 @@ local function pbar(x, y, w, h, frac, c)
   if fw > h - 4 then draw.rect(x + 2, y + 2, fw, h - 4, c, true, (h - 4) // 2)
   elseif fw > 2 then draw.rect(x + 2, y + 2, fw, h - 4, c, true) end
 end
+
+-- Markierte Tabellenzeile (eigener Verein): Relief = Rahmen mit hartem Schatten, Klar = kraeftiger Akzentrahmen, sonst duenner Rahmen.
+local function mark(x, y, w, h, r)
+  if theme.s == "relief" then
+    draw.rect(x + 3, y + 3, w, h, color.BLACK, true, r)
+    draw.rect(x, y, w, h, color.WHITE, true, r)
+    draw.rect(x, y, w, h, color.BLACK, false, r)
+    draw.rect(x + 1, y + 1, w - 2, h - 2, color.BLACK, false, r)
+  elseif theme.s == "klar" then
+    for k = 0, 2 do draw.rect(x + k, y + k, w - 2 * k, h - 2 * k, color.ACCENT, false, r) end
+  else
+    draw.rect(x, y, w, h, color.BLACK, false, r)
+  end
+end
 -- <<< store/lib/theme.lua
 -- >>> store/lib/translate.lua (erzeugt, dort aendern)
 -- Uebersetzer-Baustein (store/lib/translate.lua): Google Translate zuerst, MyMemory als Ersatz.

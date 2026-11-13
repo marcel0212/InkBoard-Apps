@@ -8,7 +8,7 @@
 --
 -- Zeichnung 1:1 nach den frueheren drawSpotifyAppCards()/-Flat()/-Compact() (teil14) und dwDrawSpotifyNow() (teil16).
 
---#include theme -pill -pbar -panel
+--#include theme -pill -pbar
 
 local function cutOne(s)
   local i = #s
@@ -194,7 +194,7 @@ local function drawCardsTall(n, en, topY)
 
   local y = pillY + pillH + 14
   local card1H = 118 + xt
-  draw.rect(margin, y, cw, card1H, color.BLACK, false, cardR)
+  panel(margin, y, cw, card1H, cardR)
   spaced(margin + 20, y + 26, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
   putLines(margin + 20, y + 66, tl, tf, 24)
   putLines(margin + 20, y + 94 + (#tl - 1) * 24, al, "normal", 24)
@@ -207,14 +207,14 @@ local function drawCardsTall(n, en, topY)
   draw.text(margin + 54, y + row2H // 2 + 7, statusText(n, en), "normal", onAccent, "left")
   local p, d = progOf(n)
   local restX = margin + halfW + gap2
-  draw.rect(restX, y, halfW, row2H, color.BLACK, false, cardR)
+  panel(restX, y, halfW, row2H, cardR)
   local remain = d > p and (d - p) or 0
   draw.text(restX + halfW // 2, y + 30, "-" .. fmtMs(remain), "large", color.BLACK, "center")
   draw.text(restX + halfW // 2, y + row2H - 10, en and "remaining" or "verbleibend", "small", color.BLACK, "center")
 
   y = y + row2H + 12
   local row3H = 78
-  draw.rect(margin, y, cw, row3H, color.BLACK, false, cardR)
+  panel(margin, y, cw, row3H, cardR)
   local segCount, segGap = 18, 3
   local segAreaW = cw - 40
   local segW = (segAreaW - (segCount - 1) * segGap) // segCount
@@ -233,14 +233,14 @@ local function drawCardsTall(n, en, topY)
   local tileGap = 12
   local tileW = (cw - 2 * tileGap) // 3
   local tileH = 62
-  draw.rect(margin, y, tileW, tileH, color.BLACK, false, 14)
+  panel(margin, y, tileW, tileH, 14)
   draw.rect(margin + 1, y + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
   prevIcon(margin + tileW // 2, y + tileH // 2, 20, color.BLACK)
   local txm = margin + tileW + tileGap
   draw.rect(txm, y, tileW, tileH, accent, true, 14)
   playOrPause(n.playing, txm + tileW // 2, y + tileH // 2, 24, onAccent)
   local txr = txm + tileW + tileGap
-  draw.rect(txr, y, tileW, tileH, color.BLACK, false, 14)
+  panel(txr, y, tileW, tileH, 14)
   draw.rect(txr + 1, y + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
   nextIcon(txr + tileW // 2, y + tileH // 2, 20, color.BLACK)
 end
@@ -254,7 +254,7 @@ local function drawCards(n, en, topY)
 
   local pillH = 40
   local pillY = coverY + coverPx + 14
-  if n.album ~= "" then draw.rect(coverX, pillY, coverPx, pillH, color.BLACK, false, pillH // 2) end
+  if n.album ~= "" then panel(coverX, pillY, coverPx, pillH, pillH // 2) end
   draw.text(coverX + coverPx // 2, pillY + pillH - 13, fit(n.album, coverPx - 28, "normal"), "normal", color.BLACK, "center")
 
   local tileGap = 10
@@ -262,14 +262,14 @@ local function drawCards(n, en, topY)
   local tileH = 64
   local tileY = pillY + pillH + 14
   local tx0 = coverX
-  draw.rect(tx0, tileY, tileW, tileH, color.BLACK, false, 14)
+  panel(tx0, tileY, tileW, tileH, 14)
   draw.rect(tx0 + 1, tileY + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
   prevIcon(tx0 + tileW // 2, tileY + tileH // 2, 20, color.BLACK)
   local txm = tx0 + tileW + tileGap
   draw.rect(txm, tileY, tileW, tileH, accent, true, 14)
   playOrPause(n.playing, txm + tileW // 2, tileY + tileH // 2, 24, onAccent)
   local txr = txm + tileW + tileGap
-  draw.rect(txr, tileY, tileW, tileH, color.BLACK, false, 14)
+  panel(txr, tileY, tileW, tileH, 14)
   draw.rect(txr + 1, tileY + 1, tileW - 2, tileH - 2, color.BLACK, false, 13)
   nextIcon(txr + tileW // 2, tileY + tileH // 2, 20, color.BLACK)
 
@@ -277,7 +277,7 @@ local function drawCards(n, en, topY)
   local rightW = draw.width - margin - rightX
 
   local card1H = 130
-  draw.rect(rightX, topY, rightW, card1H, color.BLACK, false, cardR)
+  panel(rightX, topY, rightW, card1H, cardR)
   spaced(rightX + 20, topY + 26, en and "NOW PLAYING" or "JETZT LÄUFT", "small", color.BLACK, 3)
   titleFit(n.title, rightX + 20, topY + 66, rightW - 40)
   draw.text(rightX + 20, topY + 96, fit(n.artist, rightW - 40, "normal"), "normal", color.BLACK, "left")
@@ -301,14 +301,14 @@ local function drawCards(n, en, topY)
 
   local p, d = progOf(n)
   local restX = rightX + halfW + gap2
-  draw.rect(restX, row2Y, halfW, row2H, color.BLACK, false, cardR)
+  panel(restX, row2Y, halfW, row2H, cardR)
   local remain = d > p and (d - p) or 0
   draw.text(restX + halfW // 2, row2Y + 34, "-" .. fmtMs(remain), "large", color.BLACK, "center")
   draw.text(restX + halfW // 2, row2Y + row2H - 12, en and "remaining" or "verbleibend", "small", color.BLACK, "center")
 
   local row3Y = row2Y + row2H + 14
   local row3H = 90
-  draw.rect(rightX, row3Y, rightW, row3H, color.BLACK, false, cardR)
+  panel(rightX, row3Y, rightW, row3H, cardR)
   local segCount, segGap = 14, 3
   local segAreaW = rightW - 40
   local segW = (segAreaW - (segCount - 1) * segGap) // segCount
@@ -491,7 +491,7 @@ function on_draw(ctx, page)
     c.album = ""
     n = c
   end
-  local style = ctx.cfg.style
+  local style = setStyle(ctx.cfg.style)
   if style == "compact" then
     drawCompact(n, en, y)
   elseif style == "flat" then

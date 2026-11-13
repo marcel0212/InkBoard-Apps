@@ -65,6 +65,40 @@ draw.rect(x,y,w,h,color.WHITE,true,r)
 draw.rect(x,y,w,h,color.BLACK,false,r)
 if not nobar then draw.rect(x+6,y+6,5,h - 12,c or color.ACCENT,true,2) end
 end
+local function panel(x,y,w,h,r,c)
+c=c or color.BLACK
+local big=w>=60 and h>=30
+if theme.s=="relief" and big then
+local s=5
+local rr=math.max(2,math.min(r or 12,40,w//2,h//2))
+local function sichel(cx,cy,a0,a1)
+local n=5
+for i=0,n - 1 do
+local u,v=math.rad(a0+(a1 - a0)*i/n),math.rad(a0+(a1 - a0)*(i+1)/n)
+local c1,s1,c2,s2=math.cos(u)*rr,math.sin(u)*rr,math.cos(v)*rr,math.sin(v)*rr
+local function f(v) return math.floor(v+0.5) end
+draw.polygon({f(cx+c1),f(cy+s1),f(cx+c1+s),f(cy+s1+s),f(cx+c2+s),f(cy+s2+s),f(cx+c2),f(cy+s2)},color.BLACK,true)
+end
+end
+draw.rect(x+w,y+rr,s,h - 2*rr+s,color.BLACK,true)
+draw.rect(x+rr,y+h,w - 2*rr+s,s,color.BLACK,true)
+sichel(x+w - rr,y+h - rr,0,90)
+sichel(x+w - rr,y+rr,-45,0)
+sichel(x+rr,y+h - rr,90,135)
+end
+if theme.s=="klar" and big then
+c=c==color.BLACK and color.ACCENT or c
+for i=1,#pts,2 do
+if pts[i]>x and pts[i]<x+w and pts[i+1]>y and pts[i+1]<y+h then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,c,false,r) end
+return
+end
+end
+draw.rect(x,y,w,h,c,true,math.min((r or 12)+8,30))
+return
+end
+draw.rect(x,y,w,h,c,false,r)
+end
 local function widgetFrame(box)
 local st=theme.s
 local inner={}
@@ -95,6 +129,18 @@ else
 inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 end
 return inner
+end
+local function mark(x,y,w,h,r)
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+elseif theme.s=="klar" then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,color.ACCENT,false,r) end
+else
+draw.rect(x,y,w,h,color.BLACK,false,r)
+end
 end
 local function cutOne(s)
 local i=#s
@@ -255,7 +301,7 @@ draw.rect((W - 300)//2,pillY,300,pillH,color.BLACK,false,19)
 putLines(W//2,pillY+26,alb,"normal",22,"center")
 local y=pillY+pillH+14
 local card1H=118+xt
-draw.rect(margin,y,cw,card1H,color.BLACK,false,cardR)
+panel(margin,y,cw,card1H,cardR)
 spaced(margin+20,y+26,en and "NOW PLAYING" or "JETZT LÄUFT","small",color.BLACK,3)
 putLines(margin+20,y+66,tl,tf,24)
 putLines(margin+20,y+94+(#tl - 1)*24,al,"normal",24)
@@ -267,13 +313,13 @@ playOrPause(n.playing,margin+30,y+row2H//2,22,onAccent)
 draw.text(margin+54,y+row2H//2+7,statusText(n,en),"normal",onAccent,"left")
 local p,d=progOf(n)
 local restX=margin+halfW+gap2
-draw.rect(restX,y,halfW,row2H,color.BLACK,false,cardR)
+panel(restX,y,halfW,row2H,cardR)
 local remain=d>p and (d - p) or 0
 draw.text(restX+halfW//2,y+30,"-"..fmtMs(remain),"large",color.BLACK,"center")
 draw.text(restX+halfW//2,y+row2H - 10,en and "remaining" or "verbleibend","small",color.BLACK,"center")
 y=y+row2H+12
 local row3H=78
-draw.rect(margin,y,cw,row3H,color.BLACK,false,cardR)
+panel(margin,y,cw,row3H,cardR)
 local segCount,segGap=18,3
 local segAreaW=cw - 40
 local segW=(segAreaW - (segCount - 1)*segGap)//segCount
@@ -291,14 +337,14 @@ y=y+row3H+12
 local tileGap=12
 local tileW=(cw - 2*tileGap)//3
 local tileH=62
-draw.rect(margin,y,tileW,tileH,color.BLACK,false,14)
+panel(margin,y,tileW,tileH,14)
 draw.rect(margin+1,y+1,tileW - 2,tileH - 2,color.BLACK,false,13)
 prevIcon(margin+tileW//2,y+tileH//2,20,color.BLACK)
 local txm=margin+tileW+tileGap
 draw.rect(txm,y,tileW,tileH,accent,true,14)
 playOrPause(n.playing,txm+tileW//2,y+tileH//2,24,onAccent)
 local txr=txm+tileW+tileGap
-draw.rect(txr,y,tileW,tileH,color.BLACK,false,14)
+panel(txr,y,tileW,tileH,14)
 draw.rect(txr+1,y+1,tileW - 2,tileH - 2,color.BLACK,false,13)
 nextIcon(txr+tileW//2,y+tileH//2,20,color.BLACK)
 end
@@ -310,27 +356,27 @@ local coverPx,coverX,coverY=250,margin,topY
 cover(coverX,coverY,coverPx,true,en)
 local pillH=40
 local pillY=coverY+coverPx+14
-if n.album~="" then draw.rect(coverX,pillY,coverPx,pillH,color.BLACK,false,pillH//2) end
+if n.album~="" then panel(coverX,pillY,coverPx,pillH,pillH//2) end
 draw.text(coverX+coverPx//2,pillY+pillH - 13,fit(n.album,coverPx - 28,"normal"),"normal",color.BLACK,"center")
 local tileGap=10
 local tileW=(coverPx - 2*tileGap)//3
 local tileH=64
 local tileY=pillY+pillH+14
 local tx0=coverX
-draw.rect(tx0,tileY,tileW,tileH,color.BLACK,false,14)
+panel(tx0,tileY,tileW,tileH,14)
 draw.rect(tx0+1,tileY+1,tileW - 2,tileH - 2,color.BLACK,false,13)
 prevIcon(tx0+tileW//2,tileY+tileH//2,20,color.BLACK)
 local txm=tx0+tileW+tileGap
 draw.rect(txm,tileY,tileW,tileH,accent,true,14)
 playOrPause(n.playing,txm+tileW//2,tileY+tileH//2,24,onAccent)
 local txr=txm+tileW+tileGap
-draw.rect(txr,tileY,tileW,tileH,color.BLACK,false,14)
+panel(txr,tileY,tileW,tileH,14)
 draw.rect(txr+1,tileY+1,tileW - 2,tileH - 2,color.BLACK,false,13)
 nextIcon(txr+tileW//2,tileY+tileH//2,20,color.BLACK)
 local rightX=coverX+coverPx+24
 local rightW=draw.width - margin - rightX
 local card1H=130
-draw.rect(rightX,topY,rightW,card1H,color.BLACK,false,cardR)
+panel(rightX,topY,rightW,card1H,cardR)
 spaced(rightX+20,topY+26,en and "NOW PLAYING" or "JETZT LÄUFT","small",color.BLACK,3)
 titleFit(n.title,rightX+20,topY+66,rightW - 40)
 draw.text(rightX+20,topY+96,fit(n.artist,rightW - 40,"normal"),"normal",color.BLACK,"left")
@@ -352,13 +398,13 @@ draw.text(stX,row2Y+row2H//2+6,l1,"normal",onAccent,"left")
 end
 local p,d=progOf(n)
 local restX=rightX+halfW+gap2
-draw.rect(restX,row2Y,halfW,row2H,color.BLACK,false,cardR)
+panel(restX,row2Y,halfW,row2H,cardR)
 local remain=d>p and (d - p) or 0
 draw.text(restX+halfW//2,row2Y+34,"-"..fmtMs(remain),"large",color.BLACK,"center")
 draw.text(restX+halfW//2,row2Y+row2H - 12,en and "remaining" or "verbleibend","small",color.BLACK,"center")
 local row3Y=row2Y+row2H+14
 local row3H=90
-draw.rect(rightX,row3Y,rightW,row3H,color.BLACK,false,cardR)
+panel(rightX,row3Y,rightW,row3H,cardR)
 local segCount,segGap=14,3
 local segAreaW=rightW - 40
 local segW=(segAreaW - (segCount - 1)*segGap)//segCount
@@ -527,7 +573,7 @@ for k2,v2 in pairs(n) do c[k2]=v2 end
 c.album=""
 n=c
 end
-local style=ctx.cfg.style
+local style=setStyle(ctx.cfg.style)
 if style=="compact" then
 drawCompact(n,en,y)
 elseif style=="flat" then

@@ -330,6 +330,18 @@ local fw=math.floor((w - 4)*frac)
 if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
 elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
 end
+local function mark(x,y,w,h,r)
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+elseif theme.s=="klar" then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,color.ACCENT,false,r) end
+else
+draw.rect(x,y,w,h,color.BLACK,false,r)
+end
+end
 local OLDB="https://api.openligadb.de/"
 local FDB="https://api.football-data.org/v4/"
 local LIVE_SEC=130*60
@@ -1505,7 +1517,7 @@ yy=yy+labelH
 end
 prev=z
 local base=yy+lh+2
-if r.id==d.own.id then draw.rect(14,yy,draw.width - 28,h,color.BLACK,false,6) end
+if r.id==d.own.id then mark(14,yy,draw.width - 28,h,6) end
 draw.text(46,base,r.pos..".",font,color.BLACK,"right")
 badge(52,yy+5,34,20,r.tla,r.col,7)
 for li,l in ipairs(lines) do draw.text(nameX,base+(li - 1)*lh,l,font,color.BLACK,"left") end
@@ -1537,7 +1549,7 @@ yy=yy+labelH
 end
 prev=z
 local base=yy+rowH//2+6
-if r.id==d.own.id then draw.rect(16,yy,draw.width - 32,rowH,color.BLACK,false,8) end
+if r.id==d.own.id then mark(16,yy,draw.width - 32,rowH,8) end
 draw.text(52,base,r.pos..".","normal",color.BLACK,"right")
 badge(60,base - 16,36,20,r.tla,r.col,7)
 local nameX=60+36+10
@@ -1567,7 +1579,7 @@ local rowY=y+(i - 1)*rowH
 local base=rowY+rowH//2+6
 local z=zoneOf(lg,#d.tab,r.pos)
 if z~=0 then draw.rect(16,rowY+3,5,rowH - 6,zoneColor(z),true,2) end
-if r.id==d.own.id then draw.rect(26,rowY,draw.width - 42,rowH,color.BLACK,false,6) end
+if r.id==d.own.id then mark(26,rowY,draw.width - 42,rowH,6) end
 draw.text(58,base,r.pos..".","normal",color.BLACK,"right")
 badge(66,base - 15,34,19,r.tla,r.col,7)
 local nameX=66+34+10
@@ -1604,7 +1616,7 @@ for i=1,shown do
 local r=d.tab[start+i]
 local rowY=y+(i - 1)*rowH
 local base=rowY+rowH//2+5
-if r.id==d.own.id then draw.rect(14,rowY,draw.width - 28,rowH,color.BLACK,false,5) end
+if r.id==d.own.id then mark(14,rowY,draw.width - 28,rowH,5) end
 draw.text(40,base,tostring(r.pos),"small",color.BLACK,"right")
 local chipH=math.max(12,math.min(rowH - 3,18))
 badge(48,rowY+(rowH - chipH)//2,34,chipH,r.tla,r.col,7)

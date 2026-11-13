@@ -28,6 +28,26 @@
   "icon": "icon.svg",
   "previews": [
     {
+      "file": "preview-display-relief.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "relief",
+      "caption": {
+        "de": "Bump",
+        "en": "Bump"
+      }
+    },
+    {
+      "file": "preview-display-klar.svg",
+      "kind": "display",
+      "page": 0,
+      "style": "klar",
+      "caption": {
+        "de": "Gamut",
+        "en": "Gamut"
+      }
+    },
+    {
       "kind": "display",
       "file": "preview-display.svg",
       "caption": {

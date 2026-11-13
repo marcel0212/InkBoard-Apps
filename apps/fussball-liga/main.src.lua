@@ -1349,7 +1349,7 @@ local function tableTall(ctx, lg, d, top, font)
     end
     prev = z
     local base = yy + lh + 2
-    if r.id == d.own.id then draw.rect(14, yy, draw.width - 28, h, color.BLACK, false, 6) end
+    if r.id == d.own.id then mark(14, yy, draw.width - 28, h, 6) end
     draw.text(46, base, r.pos .. ".", font, color.BLACK, "right")
     badge(52, yy + 5, 34, 20, r.tla, r.col, 7)
     for li, l in ipairs(lines) do draw.text(nameX, base + (li - 1) * lh, l, font, color.BLACK, "left") end
@@ -1382,7 +1382,7 @@ local function tableBento(ctx, lg, d, top)
     end
     prev = z
     local base = yy + rowH // 2 + 6
-    if r.id == d.own.id then draw.rect(16, yy, draw.width - 32, rowH, color.BLACK, false, 8) end
+    if r.id == d.own.id then mark(16, yy, draw.width - 32, rowH, 8) end
     draw.text(52, base, r.pos .. ".", "normal", color.BLACK, "right")
     badge(60, base - 16, 36, 20, r.tla, r.col, 7)
     local nameX = 60 + 36 + 10
@@ -1413,7 +1413,7 @@ local function tableSlate(ctx, lg, d, top)
     local base = rowY + rowH // 2 + 6
     local z = zoneOf(lg, #d.tab, r.pos)
     if z ~= 0 then draw.rect(16, rowY + 3, 5, rowH - 6, zoneColor(z), true, 2) end
-    if r.id == d.own.id then draw.rect(26, rowY, draw.width - 42, rowH, color.BLACK, false, 6) end
+    if r.id == d.own.id then mark(26, rowY, draw.width - 42, rowH, 6) end
     draw.text(58, base, r.pos .. ".", "normal", color.BLACK, "right")
     badge(66, base - 15, 34, 19, r.tla, r.col, 7)
     local nameX = 66 + 34 + 10
@@ -1451,7 +1451,7 @@ local function tableNano(ctx, lg, d, top)
     local r = d.tab[start + i]
     local rowY = y + (i - 1) * rowH
     local base = rowY + rowH // 2 + 5
-    if r.id == d.own.id then draw.rect(14, rowY, draw.width - 28, rowH, color.BLACK, false, 5) end
+    if r.id == d.own.id then mark(14, rowY, draw.width - 28, rowH, 5) end
     draw.text(40, base, tostring(r.pos), "small", color.BLACK, "right")
     local chipH = math.max(12, math.min(rowH - 3, 18))
     badge(48, rowY + (rowH - chipH) // 2, 34, chipH, r.tla, r.col, 7)

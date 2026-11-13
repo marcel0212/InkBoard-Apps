@@ -9,7 +9,7 @@ if WXS=="relief" then draw.rect(x+6,y+10,4,h - 20,acc,true,2) else draw.rect(x+6
 end
 end
 local function wxFrame(ctx,b)
-WXS=ctx.cfg.style or ""
+WXS=(ctx.cfg.style~=nil and ctx.cfg.style~="") and ctx.cfg.style or "relief"
 local n={}
 for k,v in pairs(b) do n[k]=v end
 if WXS=="cards" or WXS=="bento" then

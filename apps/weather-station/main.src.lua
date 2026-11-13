@@ -19,7 +19,7 @@ local function wxCard(x, y, w, h, r, acc)
 end
 -- Widget in Relief/Klar: eine Karte um den Inhalt, Inhalt nach innen geschoben
 local function wxFrame(ctx, b)
-  WXS = ctx.cfg.style or ""
+  WXS = (ctx.cfg.style ~= nil and ctx.cfg.style ~= "") and ctx.cfg.style or "relief"
   local n = {}
   for k, v in pairs(b) do n[k] = v end
   if WXS == "cards" or WXS == "bento" then

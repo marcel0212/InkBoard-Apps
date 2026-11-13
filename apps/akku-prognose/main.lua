@@ -160,6 +160,18 @@ local fw=math.floor((w - 4)*frac)
 if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
 elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
 end
+local function mark(x,y,w,h,r)
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+elseif theme.s=="klar" then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,color.ACCENT,false,r) end
+else
+draw.rect(x,y,w,h,color.BLACK,false,r)
+end
+end
 local BASE=0.3
 local RESERVE=5
 local LADDER={5,10,15,20,30,45,60,90,120,180}
@@ -785,6 +797,7 @@ draw.text(40,draw.height - 12,hl,"small",color.BLACK,"left")
 end
 end
 function on_draw(ctx,page)
+setStyle(ctx.cfg.style)
 if page==3 then return page_check(ctx) end
 if page==2 then return page_advisor(ctx) end
 return page_forecast(ctx)

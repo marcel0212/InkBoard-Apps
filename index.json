@@ -69,7 +69,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "apiLevel": 25,
       "pages": 3,
       "pageNames": [
@@ -113,7 +113,9 @@
           "caption": {
             "de": "Bump: Prognose",
             "en": "Bump: Forecast"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -121,7 +123,9 @@
           "caption": {
             "de": "Bump: Spar-Berater",
             "en": "Bump: Saving advisor"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -129,7 +133,9 @@
           "caption": {
             "de": "Bump: Einstellungen",
             "en": "Bump: Settings check"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -137,7 +143,9 @@
           "caption": {
             "de": "Bump: Prognose",
             "en": "Bump: Forecast"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -145,7 +153,9 @@
           "caption": {
             "de": "Gamut: Prognose",
             "en": "Gamut: Forecast"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -153,7 +163,9 @@
           "caption": {
             "de": "Gamut: Spar-Berater",
             "en": "Gamut: Saving advisor"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -161,7 +173,9 @@
           "caption": {
             "de": "Gamut: Einstellungen",
             "en": "Gamut: Settings check"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -169,7 +183,9 @@
           "caption": {
             "de": "Gamut: Prognose",
             "en": "Gamut: Forecast"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -229,7 +245,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -237,7 +255,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -311,9 +331,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "a5da9f1fb14ae7ed5c201129ddd6db00e7310a9d85476983a2b2ed59f329d52a",
-      "sig": "FlDdcHgaFE73AbTH5+2KN5c3fJ6jAyA/XTxyJzHRIH2E+JjXcsMeZeSRBykBHkImIkYYxQ+b8MSSCT57CvTFmJV4bHELPqC+FHVMTq/SZKTILwtsXUKgffL9+MoViOYgR/T8c5wxn8aW7E0OzUc5IuPJn7mXpchmJKFqjOwaDQ81xXRS8YpFmOeZzOMYOMQfQba7NjAhtUxfw5sjGw+Xe9sYPAVs2amF0LEUkhzLFF2x8isBe1Bd/VaiY9IpFzT30LT6vFkzkIR00AGQv1mRnzOFR/UpKmwAWYOUE5FS+eAa23fyNyUdXZ3vdQJLgox8tWKuNm+gW2fTeYgdVJwDPQ==",
-      "size": 36597
+      "sha256": "48dd7bfb1a8ac4d598273e96eb7aee538de9181d355a86fcaa1817dcd8f3a53c",
+      "sig": "HPTXid1oUXcFkwuUhHJJIzsS/o2v8TbuUtPoH//2T8/6p8Sp4CDuJn8Ay5Lw0+meBCeR0M1zUF8qlaELQ0NPncFIXx3vxTudY8KHa6dlfsFqX3eSp/++WX8yBdhju4Rgax1kMZ8JCIFQClo4y4bnxKL43CTMmGbWN4DY5sWM+oMt/NbD8wpvpU8+vo5Yk8UpnUZEwdWxu9uok2QXGeBYmZH0a7xhdepQtP6SWZGw0YKnIf+oxe9d1wuSs9dBFRXd+v+4+P1rB2uVLoNb8JLCFQsFj8yWXQN2paZ4kUSBB9TN2S6Y5JNtqZH9q9lQwaTvK9PHVI3TfRs7loc6HLPscw==",
+      "size": 37018
     },
     {
       "id": "apple-home",
@@ -393,7 +413,9 @@
           "caption": {
             "de": "Bump: Seite 1",
             "en": "Bump: Page 1"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -401,7 +423,9 @@
           "caption": {
             "de": "Bump: Seite 2",
             "en": "Bump: Page 2"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -409,7 +433,9 @@
           "caption": {
             "de": "Gamut: Seite 1",
             "en": "Gamut: Page 1"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -417,7 +443,9 @@
           "caption": {
             "de": "Gamut: Seite 2",
             "en": "Gamut: Page 2"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -471,7 +499,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -479,7 +509,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -497,7 +529,9 @@
           "caption": {
             "de": "Seite 1: Apple",
             "en": "Page 1: Apple"
-          }
+          },
+          "style": "apple",
+          "page": 0
         },
         {
           "kind": "display",
@@ -505,7 +539,9 @@
           "caption": {
             "de": "Seite 2: Apple",
             "en": "Page 2: Apple"
-          }
+          },
+          "style": "apple",
+          "page": 1
         },
         {
           "kind": "display",
@@ -533,7 +569,9 @@
           "caption": {
             "de": "Widget: Apple",
             "en": "Widget: Apple"
-          }
+          },
+          "style": "apple",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -561,7 +599,9 @@
           "caption": {
             "de": "Seite 3: Bump",
             "en": "Page 3: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -569,7 +609,9 @@
           "caption": {
             "de": "Seite 3: Gamut",
             "en": "Page 3: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -577,7 +619,9 @@
           "caption": {
             "de": "Seite 3: Apple",
             "en": "Page 3: Apple"
-          }
+          },
+          "style": "apple",
+          "page": 2
         },
         {
           "kind": "display",
@@ -615,7 +659,9 @@
           "caption": {
             "de": "Seite 4: Bump (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 4: Bump (empty until more devices exist)"
-          }
+          },
+          "style": "relief",
+          "page": 3
         },
         {
           "kind": "display",
@@ -623,7 +669,9 @@
           "caption": {
             "de": "Seite 4: Gamut (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 4: Gamut (empty until more devices exist)"
-          }
+          },
+          "style": "klar",
+          "page": 3
         },
         {
           "kind": "display",
@@ -631,7 +679,9 @@
           "caption": {
             "de": "Seite 4: Apple (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 4: Apple (empty until more devices exist)"
-          }
+          },
+          "style": "apple",
+          "page": 3
         },
         {
           "kind": "display",
@@ -669,7 +719,9 @@
           "caption": {
             "de": "Seite 5: Bump (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 5: Bump (empty until more devices exist)"
-          }
+          },
+          "style": "relief",
+          "page": 4
         },
         {
           "kind": "display",
@@ -677,7 +729,9 @@
           "caption": {
             "de": "Seite 5: Gamut (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 5: Gamut (empty until more devices exist)"
-          }
+          },
+          "style": "klar",
+          "page": 4
         },
         {
           "kind": "display",
@@ -685,7 +739,9 @@
           "caption": {
             "de": "Seite 5: Apple (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 5: Apple (empty until more devices exist)"
-          }
+          },
+          "style": "apple",
+          "page": 4
         },
         {
           "kind": "display",
@@ -723,7 +779,9 @@
           "caption": {
             "de": "Seite 6: Bump (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 6: Bump (empty until more devices exist)"
-          }
+          },
+          "style": "relief",
+          "page": 5
         },
         {
           "kind": "display",
@@ -731,7 +789,9 @@
           "caption": {
             "de": "Seite 6: Gamut (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 6: Gamut (empty until more devices exist)"
-          }
+          },
+          "style": "klar",
+          "page": 5
         },
         {
           "kind": "display",
@@ -739,7 +799,9 @@
           "caption": {
             "de": "Seite 6: Apple (leer, erst mit mehr Geräten gefüllt)",
             "en": "Page 6: Apple (empty until more devices exist)"
-          }
+          },
+          "style": "apple",
+          "page": 5
         },
         {
           "kind": "display",
@@ -773,9 +835,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "ce356a31eedca5652345bce17a64a4bd6daa203ff6d0d59fa9eabc3afad41d6d",
-      "sig": "SXsP3hW1Rz7LTRtNN6oR35U0s6eIIUsNjSfm9Mld8dUiWcl4IBUoAzvXlvFH57qDwdwrJiH/VgCEwjCIhMLUW7/PxTK1MGKUialKS0MmV6wKl0RT+ReTTjDiD9ezhnr15X31HpLMqoSGq97F6IyHQlXW4gyjl0ijb7S4MUAoevilBHxMtdmnjjLP2VA+SqMqFUT3TYMGU7GKmhzZKs+ECv8fVP23hSg1QXvSmV8PrTIhGx6ZCaa766vcn/mLsiD/IP7s2b2oo0IGUZ16Gm60RxToy7AGTPUEJ0LVF7Bc8/c4ilNZSC9+duLiXiJw9l3AkMOIy3vsAhWlZnqJ6j+DWA==",
-      "size": 35246
+      "sha256": "b1b32eea75a7c6cad666aadf2e95bdf97ad4774a6e2cea82bfe140f41292c974",
+      "sig": "RwkG/xMPmckZDL2zZAuUozGoE5qjThO5lEoydeauDcYqYgcYPI7uhXvWRMmNikU0YCTbq7YtVtu6g/bZYcvzSjwucpDvWn8HDWzcdqD8uMxoCGd95lMTNTFMF+FOQ6L6k1ZPOuqAjchvuRWKNZo5oP1EDGCi0hR+/UvtRVdbQVHCq57Nd/Gz41xW2637I9tdsfaxgGQRS4s3apcm2ExUk+J7aXv7h+BykRitoBViV1y4t13fR2nLCVgbrPSXSBto67zEzaB62dvEHEUkwfSMHXljNcOIRmQPELWMuEdBGDYh/XUfNhOdC01neC/SVRiaIL3glO20DRSMo5fnalKITQ==",
+      "size": 35642
     },
     {
       "id": "bilder",
@@ -911,7 +973,9 @@
           "caption": {
             "de": "Bump: Tag",
             "en": "Bump: Day"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -919,7 +983,9 @@
           "caption": {
             "de": "Bump: Woche",
             "en": "Bump: Week"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -927,7 +993,9 @@
           "caption": {
             "de": "Bump: Monat",
             "en": "Bump: Month"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -935,7 +1003,9 @@
           "caption": {
             "de": "Gamut: Tag",
             "en": "Gamut: Day"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -943,7 +1013,9 @@
           "caption": {
             "de": "Gamut: Woche",
             "en": "Gamut: Week"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -951,7 +1023,9 @@
           "caption": {
             "de": "Gamut: Monat",
             "en": "Gamut: Month"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -1049,7 +1123,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1057,7 +1133,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1091,9 +1169,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "9b0804ba8008c3db2bef55537096c6a066f34b9ed40afcdbc050b4262851d3fb",
-      "sig": "uxixAeOdqCSg0LgmsR36UamJJYckIQ7051jbpY0AMQMZ0RlM8RxpMSGFVrZLU9/7khhdstBDHxzRzLDKg96r08LAAor7eiO1f2kWjeq+EbrIh+8mBSHD3i9duxmma2ozCaLznCwIcly3Tyu0o2LF1XOW7oL7Bq2BDMPXWzase7HnW+ew1sWZhu0BJ3cfaG/upu9ZsHzUThKQE5GKzWIIBcx3AEaxi3Bm8yz8QY42Dq0sVhzUCP/LK5I+J4r1XoN6Y8z1q30YuLNxlRgkH3b0RxVjQGuovjWKJ1UlJ4uKsUIO6r/skz04X3JgI1Ehj7ZoEK1aNs569vqE+F7gug5yBw==",
-      "size": 48931
+      "sha256": "55f24c16512625b389e1db45d104bbc8822526f82ec28c2731cb702e747df15e",
+      "sig": "T2ptmA+55YPewHsCQSoJ9HQkKd9qrIxx7b5ivAhN2YhNenFZZGXjdwhHJv971zbyqpD/KVORBPZqMPsEDlkWGBtqL3NqGr/5v/8eYNQdnPH7Yzf2UMVmW65DsuXi+aXl+7IN7HcS836gTw8BtugP0/TWpp68ae31RJfDkVEvUosuSH6nziYuwph3rwWk5E0PzNqfqX1XNf4AYeC1K8bPoWoPibaQurZP8Rvr1Pgt7X0uZGXwrUK83ejaziZxtR0YFvW6pcf19AbrETYPErw4AMdsp8AnCXId5UDwlfRV8OU1llPDXywnKl+fRZvSdH3DiJRYIRImFx2bWsNl1zQabg==",
+      "size": 49327
     },
     {
       "id": "clock",
@@ -1139,7 +1217,9 @@
           "caption": {
             "de": "Bump: Uhr",
             "en": "Bump: Clock"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1147,7 +1227,9 @@
           "caption": {
             "de": "Gamut: Uhr",
             "en": "Gamut: Clock"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1185,7 +1267,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1193,7 +1277,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1227,9 +1313,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "351d5dfa271415f992b87c0798a1e106a24a6c3e12e0b9d00a36b21fe985093b",
-      "sig": "KLzjC9d1QPBU0Wnfxh6KN5haXVp3HQOpIFjDaHKM0ef8JSoL39Ewb3QwsFrEUi/w2Y+/ZQJw6qxC8AWuOAHhDNaU0MTnN2lCqRy9sFox9rhkr2ewEr6/DdBlEsq0PbZrfE2ISboeOkQ1QzSTLixO23MrWIXCRRFZXagkXGCj69aw4sulhUVdG+hp0QnFUb9H5gWWYEbDw1gZGDLaTa+htmRdqcGpOz72Zrr6V0OMM1qm3pm3Ez09eTczVOSgpA3XuexD9nRNifNzf7u0boFq0ckyFOg4IMc4NyObq99YjJVTVo0WDWtULG0vDuTouKoA7y8ESR3/mFxM9/t4gKeLyA==",
-      "size": 16660
+      "sha256": "ec6d39fd130a3e58295f41ff417c6b4da6ca193a38204a68a64986980f600f07",
+      "sig": "P1Y+dMapf9vA/eMaOSk/puc4ZOHxqFj62uQbkiQj8ci9o2CvMith7/+Asu8RODQSjVt6ihzd5khjAzIlVBOsCODqUEJ++yzLKs1JjomNVRgaXOwU9s1QCG8J8TRwWuzcuPiwFfW0ONzH4O4w052qn74ogP3J8AbWyEhB0ARZwIT+MqskH6m0kCDPdeqbgQPw3IN5vdMmAkqEL/2X15kgSupm4SQAFQPV0TEnz5UcCc3DxHMOycZjvce+i66xycwmH6iKtc0HD/QwOnCGUVg+Oku2PTWPOk8eiBL10SagarOdY3gxLQn4oUejowwABqwyNGnonpFyvwsiXtnsS6CNcQ==",
+      "size": 17056
     },
     {
       "id": "countdown",
@@ -1275,7 +1361,9 @@
           "caption": {
             "de": "Bump",
             "en": "Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1283,7 +1371,9 @@
           "caption": {
             "de": "Gamut",
             "en": "Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1299,7 +1389,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1307,7 +1399,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1325,7 +1419,9 @@
           "caption": {
             "de": "Klassisch",
             "en": "Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1333,13 +1429,15 @@
           "caption": {
             "de": "Widget: Klassisch",
             "en": "Widget: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "9b34f10bc74136039678eb62733128efa1cc5fe2023dc43e3404f30620918c46",
-      "sig": "dHNoTA8E2y7/H3bh3CJlmPgNj6NONFjYFkblRhigvD76UgJKgOsOxKgxFyrgu5d5I3WtyV+dHcayBvv2xC6cNmo0PMvqUDZMo/ek+PcEJWNnrrwtKS7Gs5pabcXz2CRtAikyKdJWSMcphHLJeYNOsGMkfxNYojyHxw/GFLDwtpQEoZL/ytGQ4+oEbyqw/ZGMKSV0rRgk4g60vD8Ltp3ncEC46s6ILddbDvZ40yziAd4iLgQqYiBWtKXxgwCzk1crkoHvXGQMtJavLmNTeKOSFwem/OGN9rA/+ER+atPicI0GDxviRnZmYr825jUotafsGTrO90JuoKm1ocjUtz5ZKQ==",
-      "size": 11112
+      "sha256": "2d4285e39798bfe1ec03aac17c21bc918a146611c86661c793526331eef9a9cf",
+      "sig": "K0Rxh0hdir/7VKepl7RsFOCGs/O8hFmrWp3haP/x8iRLcYm0jQ165qTt1U+AWyH4CdqOiaHOOeZDyaoRG3BUttebBi5SDiwI2Q0vc63UHvUU2uiFIBnBl997Wc1BnVxUHopJV7NV8Ix6yOxPhWBrxNiTMyHHltPSObnxr8XlL3Nv8GUocDjWAUNLGe1Hsjdix3WaRnlVLScT20Hu8PhtGzqJpYtuU0ydJ8DNtRapfR4f++gG1iHruw9PwhbUEgEcR3yw2qjXKer6/w1vA5s+U8R3iBA8kyqPdn3xCkpANfoU52qRwerV74V+RQRy1d+pRc4dUXEyl9RA2ThHVgXWPg==",
+      "size": 11508
     },
     {
       "id": "datenquelle",
@@ -1393,7 +1491,9 @@
           "caption": {
             "de": "Bump: Daten",
             "en": "Bump: Data"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1401,7 +1501,9 @@
           "caption": {
             "de": "Gamut: Daten",
             "en": "Gamut: Data"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1437,7 +1539,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1445,7 +1549,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1479,9 +1585,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "ff0724ebb6e4e9d8ace31c61a8dad917bf6babc26023cbb8a0aa5bb643fd2b14",
-      "sig": "qjJB8OfIYc7Tb+SVaBpIH1EB9cLawd+rC65GThzH2juFSeufl5AARpgqePzkgAKv5Je0Qkck91ixF6PQ2KZgNLuj0/0vWzWye+nuaDIm1TZRa8oMLbc1edYQS69R8tbyA7BeZZVPN6NltKJErgl7nsexC3zXN0ArOKX87q4MzFdvZFblkshtV3Wq+MyBWtrO7zFUKeI3LoEkoZhtUsjAe9sWfUhjuC12bOmKQI8f70GAF5CbEH7jYBpyBwjlRPaop1lUCZJM2L+il9C37GnFtcLTTQutWjAiG6b+xLw+GwT71WWPIOAB5vi0HDnUKf/0JI4E1U970eMaagx1gEZH4Q==",
-      "size": 27985
+      "sha256": "f31d5dd0b8521e627dbec78eae11a3d57fa484df027091c2450e585023a71b97",
+      "sig": "rQ4A00QvTtno77pgBQu+O8pehIKgQsUM+shQnTyxSfExb5Htmc0qkpcllSHPxSwdr2Xf97xS1qgE8i6Dnabxpl41USJ75BxXI0CVRxiPqPU+HKzLPEuRPJh9b4paP/cMhXOaZ562rR1f72Vnpna2N1XnXr0Gi9+Buu4N+n2d7Ek4MYjsqG0Z1zxGQPtoVE8ToFd3crgKSHM20oun/qS9q/rrH9the9ro6dK8CESHD9SDKcMUlKh+HIpFCZW42vRrkHXYOsnwbx5zNbCWaIZuaRipEwrMjg9cat3Ym16rD4S2p+4W7RmRPg+mr2vP5nPpYVdirrYDgNwCQjEeltdwPQ==",
+      "size": 28381
     },
     {
       "id": "einkaufsliste",
@@ -1533,7 +1639,9 @@
           "caption": {
             "de": "Bump: Liste",
             "en": "Bump: List"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1541,7 +1649,9 @@
           "caption": {
             "de": "Bump: Liste",
             "en": "Bump: List"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1549,7 +1659,9 @@
           "caption": {
             "de": "Gamut: Liste",
             "en": "Gamut: List"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1557,7 +1669,9 @@
           "caption": {
             "de": "Gamut: Liste",
             "en": "Gamut: List"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1601,7 +1715,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1609,7 +1725,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1643,9 +1761,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "b692fd0f44f4cd8bda72b98c8175aa68758b0d53b01a44901697081aeed81fbc",
-      "sig": "tMTH2/KePOJCbnR9JH9oxqf40Nvim7RTFDCG8bKWvSweZXgDjtwZdkuSImBtNvG+86TpSg5LefnTWvJ0uj4weRzVAcR6F3M55o/Vsfa5IJ00qXdZqgnYlka7idxwic6YIfbRGsjhLQlNHQnsGRWDUtnIhGMgHysLkP75gajZ4e7b/bExEERlAvWqC6cxfhSVKdL8nAwnohl0uy1ucbUCXiD0SNlllxYUEuOa6fyaDGckgiI3ckTMkmbnigK/vYz2ZaxVLVmxMe+/w+CDADB8+yUL0yGnoXQLX7lOqnEchPBjyUp6FimvuJJuaMxTugr5VuKd04mF5gsBGXeQTgPB5A==",
-      "size": 37213
+      "sha256": "a6f7e943630b70e5c4bb07fb59e4227bd7038ca925a22e858292079e2b3871d9",
+      "sig": "VtxfSGqT3Mtia9JPcVaKaO/KKE97lO7mOn8sWRy9Oib4Z5WH35HO8JNM6KQFx7dXv+3zQPnvuFG/uFbO+/pS32N87/Uym5nj7mpTrcZJlEU0L3e1on+YR0taTYriUSKhIoZwIMh7xzR/CdCCt4Z45BRZp7f0KZJZ7s84+x4yXkxRkiy+qBq1iBHetdQCV3Ps4UXbnZp3Au50d0OmnHbLBlAX+yI13Cm4O0nb/2lwQfw19scLskCviH1wEg3vA6tTs6KPj/pdfn1OprGkBJpboqZEEQVNzJwhU4YuA6ljt62Yey11Aw2kIw4Jr3uym44odyE8fUsdySvuewYjgBn0jg==",
+      "size": 37609
     },
     {
       "id": "flight-radar",
@@ -1819,7 +1937,9 @@
           "caption": {
             "de": "Bump: Nächstes Rennen",
             "en": "Bump: Next race"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1827,7 +1947,9 @@
           "caption": {
             "de": "Bump: WM-Wertung",
             "en": "Bump: Standings"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -1835,7 +1957,9 @@
           "caption": {
             "de": "Bump: Letzte Session",
             "en": "Bump: Last session"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -1843,7 +1967,9 @@
           "caption": {
             "de": "Gamut: Nächstes Rennen",
             "en": "Gamut: Next race"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -1851,7 +1977,9 @@
           "caption": {
             "de": "Gamut: WM-Wertung",
             "en": "Gamut: Standings"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -1859,7 +1987,9 @@
           "caption": {
             "de": "Gamut: Letzte Session",
             "en": "Gamut: Last session"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -1957,7 +2087,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1965,7 +2097,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -1999,9 +2133,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "2b8e3bd8c1dfdedb30e6134b8750b70924b456128fc478ac2ac424ad9d04742d",
-      "sig": "RxL4Te8H1SMPAfU19jIuSTo5pj/mS+R3e7m6CL/0oZu08cXgFVuB6YYXNJ0Eb/IHwp39gTVrjgQ9773BQsLmx7IMPv/vfkWXDPqOWuATibAUsqbqqoBC5y5Rbed6YaHf3POmO+wmsb3nUCuZEfyAkGa5KYU1QbSMP9R8xskvrztArYGNFSuH0FsDQHreH4sWDviVcCX6sE1Qo/dm8CCpcmJ9hPb8YrMx3uqS44hr197GihD4Ua4dy3V1Kqg/NK3aFkYR7nz1k8hm1hIMH4KgRkx9MUV0TYN6e4sZO90FeU/z7DpQ7CHIXWARWAGmv99JBSot3RmND+Udg5nDw57n9g==",
-      "size": 71007
+      "sha256": "a884accde09d41383c44dbe4331292e1542b8000665898fb1c922722f29e4974",
+      "sig": "rfpl2CpbVPot/o+hVR8HQoW2YYCk8nvcsfN83PYo8LpZPTfEdtjWAXcC7Fo/mpOgNPIL2k37FisVhJBDVi+k8UnazAGUGZUUxVoIwfqxBrwnt70erY5z+i4WnBwsum5HJQb5dyDmTwfE90Tr2j4aN0H1AryAPMCy/9sRFHUN+2KsPeQBOYfAETNHYpN5BMBPLhwM2KmSQFdNYvnn/HltIWEm3jatqlRR2dEX2kz8VpHVyYX4d+X32NQ6c0vMrcbtTGz6kBUz9tKumUXhV6a2o6v5xgtnat8+tHjHyE84tcuZMZSTADvPLtgzLlg3N895jhnbLZ2ILKRCPNgQ/B+zGg==",
+      "size": 71403
     },
     {
       "id": "fuel-prices",
@@ -2056,7 +2190,9 @@
           "caption": {
             "de": "Bump: Tankpreise",
             "en": "Bump: Fuel prices"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2064,7 +2200,9 @@
           "caption": {
             "de": "Gamut: Tankpreise",
             "en": "Gamut: Fuel prices"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2102,7 +2240,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2110,7 +2250,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2144,9 +2286,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "8414ea84b0ad0ee823184df3e4b9f21c562baab7e90cd8f3ee9370933dd360d4",
-      "sig": "opl1RV1E3yMB4Rticbu7e2PUx0nMGPSHFaUYVBn/Cfka+ZyDavVQ7q5kMEJza8bVJen4gC3ezo/PsNk0MWyk/QY71ZEHoUi7b8u9gE/fq/eMomGeT3O039Im+YptFAqrUCCahEmli7nsWbkriTKJ3JwlCP6RG/2drXmvLh5GVmjdfVMCorJl7DZUXzljFXjHw4VO2r05ZaqUVLiFioK37w0N0FRZ/xZBtfIvLu6UEcDslaRwbLoX4FkSvdlav/1M3swXN0cZ1/26Dstu8Lra1XG6bBjDohXdZDMYSkOX0M539+L3hvIxUjY+GyTFG8S8vZPa04ArpgCsc9nmy9LO2A==",
-      "size": 34597
+      "sha256": "06d4b959c29e10b8cb6baab54c1277c74700cb60ce2b5974886b0aa5ec6c51f1",
+      "sig": "F7Wodk3oopks68cyNjD/LIyYa8lD5WAXDiL554CX5jeIU+eJlFgwXtQudJ6MmSwvIWIFZCj5xsJJlIKn8SQOYuStry2zXNmH73lGNWuhqlGxlgkhiCXwlzfuuDwZypKBnaQRrwKvtEQ5bkpaiFE/Tm8rXLcmwARgjGaxcdNxzX0vVwQdgkByrLvsVtf0fGOw42LUuHxafcLxs8s7nrZV0kYedwv4EXlCZk9MfMLxVMDWDbjSJyiSrnhcS5F5hRo5LxV6xG2HtXVzFItoWUAMLx9JXnkVB1MrrZvVHTPMpJ73okocxcknH56YxHJoIrZNWiXdYqe7aiF+jBe928ofNA==",
+      "size": 34993
     },
     {
       "id": "fussball-liga",
@@ -2164,7 +2306,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2209,7 +2351,9 @@
           "caption": {
             "de": "Bump: Team",
             "en": "Bump: Team"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2217,7 +2361,9 @@
           "caption": {
             "de": "Bump: Liga-Tabelle",
             "en": "Bump: League table"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -2225,7 +2371,9 @@
           "caption": {
             "de": "Gamut: Team",
             "en": "Gamut: Team"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2233,7 +2381,9 @@
           "caption": {
             "de": "Gamut: Liga-Tabelle",
             "en": "Gamut: League table"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -2301,7 +2451,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2309,7 +2461,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2343,9 +2497,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "8426b85ba30285fd4ac6fc4d5e9ef8c8efeea63059c02a90acfc05ee6f3d64e7",
-      "sig": "dGWGs8ffgVyNTl530+ASS4jk7vuNzJigi1GOW50QvDHg2CoPx+HztfKzWF67tNNPDbh96zQLi1fTExtulKBeqDIA/vB9RHUMOrhaGSsEAoch/6qBatA+4lLwmO+vPCaKQ3pI2aDJEvomHwsNPcK+LqAhRrxHuwLbBI0QvXqKtlcUvr3bOXVhtMpEjRPpkYC9jkIJ8qzMqWU29JI+jrqQCpY5v/F2tV0H0lxUMp76Cdu0NRtnSGK0IlN/mU70poOZ6YmLbdLs+FAERJLYKssgJEszzBDY0nU0nPIQBWcMHfdYUHN5Mx/OEdrjj0774wp+yntmDO2WvwsyLBI0c+pCEw==",
-      "size": 79601
+      "sha256": "522348c3f1c12e592bc18018869ddd3f6bf07f8cdf1aee5eac64a1dadacaaf99",
+      "sig": "HWW8bb71ZvME5AZM2xheMKAGquACbQj45XxD68sn9asZ211ZX2XsRw+2DnOiYikWkeisD+4NvNfBqCjEsrn4KLNjcDa8I/8u29oYtmlKTgQFbnLf+AkDydcOXU06ttvBir0SeZETiPwtrHmrakNCrcwV2UJBQqIPUN9IsdkdvB1YDxWbc9XT+M1UJc9YN2+2JoNVCxMIEhXrb7q3M1OiftwA1/gdIETarPMjnoq84/ve+K1Wpnz5dPuXBX26g01zy8OrvKnIta6eTjYIU14WaiBRmnjM6crHsQm4mf0DVekGmbr0Pd7pQCtI8nB5SIjaoXzsQFn+9FDJMIWhjmTiaA==",
+      "size": 79905
     },
     {
       "id": "gaeste-wlan",
@@ -2406,7 +2560,9 @@
           "caption": {
             "de": "Bump: WLAN",
             "en": "Bump: Wi-Fi"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2414,7 +2570,9 @@
           "caption": {
             "de": "Bump: Hausregeln",
             "en": "Bump: House rules"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -2422,7 +2580,9 @@
           "caption": {
             "de": "Gamut: WLAN",
             "en": "Gamut: Wi-Fi"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2430,7 +2590,9 @@
           "caption": {
             "de": "Gamut: Hausregeln",
             "en": "Gamut: House rules"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -2474,7 +2636,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2482,7 +2646,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2536,9 +2702,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "ab5a15cc94fdba6fa44019265d9300e8730b3eed00a69c76449910a76b0fad44",
-      "sig": "Gqynk+Nz7v1vqJ00RvSJKRryhuGqDUY6KdovScpZPllMCc/J/xC0tlpJmZzhtgux03Y51Fh+elue1nHmx47q17m2yr15jZwVapiBA64KCUiai9gM18wQ8ZucaU/s/zPwHMSmLoIsHGIYMHYdVKXvuP4E/dVkTm8gN7AI7FGom7pszcN9bkKAdLTgFDu9E933NefpsJJ3WQbX/P6B6H9SB0jzuAV8v71Yse2esIIR4TXWSOO1PgiMBG2+IMeP8lx6DyKeJpCCVOWbfjihvjz+SplfSDfoNqiyv8PxyaIbOSnjVZp3NOCpdzhHnwqqj030imEV2z4hdTkqqCU6Q3vWhA==",
-      "size": 36065
+      "sha256": "628f33ba2394c306839775eaac2c7e7e6a332f93316617bab8f4cfca43aa4d15",
+      "sig": "H7PNueuEGhZpbeOAdTj4OLHBh/nY5XIfzrJ5vGKiYhpFVUEycNmJaPJb4QH7cmt+LYNgvzjLmicOFjM+P2URiPCCE9AVPfbhKQnYCjEB9sWylZJvaQy4nOBj8k7zzV+M9JqcfFNOcMTsJ6oa/VlBRoGl1mAIa9b4OyeqldAm821QvfEmVk/l8iLCV8E69KbIYOSG1lr/FX/hHv2Q5bHneQ2nKiAi6NioImNiFvBoDsXeloD/GL3JyK/QS0Wt/sTSG3UTISN7MH7UglG/j6GV+fOXTYUm3CfFeFWwPKrTbJkvhHA2/RI9VD51YHK8+Bva9ehPcM/H1ri7omUdVAg7vA==",
+      "size": 36461
     },
     {
       "id": "geraete-check",
@@ -2584,7 +2750,9 @@
           "caption": {
             "de": "Bump: Geräte-Check",
             "en": "Bump: Device check"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2592,7 +2760,9 @@
           "caption": {
             "de": "Gamut: Geräte-Check",
             "en": "Gamut: Device check"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2638,7 +2808,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2646,7 +2818,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2670,9 +2844,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "79195dcd365c50694aa806c675aa9e6c588bb60fbac07c529c0cb6a80ed0d787",
-      "sig": "jw5LxJ/vHtv8J3ymB3UfA3ztwBAQQ4Kftw8x0+sBDvFEDihuZAMbgsr7WR35V1qDVswlwSAIRuBwHAykbkmKHMFWosENJ8qbBCgDTpQo9Sd06RfyITK2zbAKdLEk5gBmAVFUl3wPAhRIUubPQSWSPNXeswwU+M7kRDBvMj8Y5IfU/X57s1NzrZGJnQdYcL3FQGu18lNKQLWSv/V5DXcLfROvdqMnvWhazIV7d9FFf4hOgublrmF7zIpEPr8kDpIa2wTL91ihHYrv7IzuMYV2/nGNYJs859QnjYKbcexHLfnyqCFHp6H7wdiEqWWEOm+rHGYltQKk47c+WcMhmI/HjQ==",
-      "size": 17597
+      "sha256": "33e9d015c46fb36b7c55310d4d11438b22301cb03ca9c72d01cdd5db22e48ada",
+      "sig": "T9vuvbPZ1OLLoLc5SF8KVWH67PENhGlmIOU0P5QnCTQEtV4gWURAsZ+wTQFXYIjRiChkT2lpU8x5ArcES+t3PU+90ZFIDJfzcXJNkkSeh/4XqheGDZ7DBxF8NcgsJxi74sA0f3pLlvxrPreCE8tSkrcaOJkERlYXXMQ8zrarzF7glZKxrIRNzVBFJunJPa0gmDVJ0frshVTVGuF4kxM82r3r1bTEyrMEHxuYany/3CxDglzFa/KdNfq7Fn1HnS4+i0kBk/+x79ce3ZcDMM1W17JDE7N2XN2bDwoI2FxjyuoVzyXOWoDdpGMQb0fmgDkQOXDE5B0TEWNePzLZPYvNGw==",
+      "size": 17993
     },
     {
       "id": "gericht-des-tages",
@@ -2728,7 +2902,9 @@
           "caption": {
             "de": "Bump: Gericht des Tages",
             "en": "Bump: Meal of the day"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2736,7 +2912,9 @@
           "caption": {
             "de": "Bump: Gericht des Tages",
             "en": "Bump: Meal of the day"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2744,7 +2922,9 @@
           "caption": {
             "de": "Bump: Gericht des Tages",
             "en": "Bump: Meal of the day"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2752,7 +2932,9 @@
           "caption": {
             "de": "Gamut: Gericht des Tages",
             "en": "Gamut: Meal of the day"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2760,7 +2942,9 @@
           "caption": {
             "de": "Gamut: Gericht des Tages",
             "en": "Gamut: Meal of the day"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2768,7 +2952,9 @@
           "caption": {
             "de": "Gamut: Gericht des Tages",
             "en": "Gamut: Meal of the day"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2800,7 +2986,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2808,7 +2996,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2826,7 +3016,9 @@
           "caption": {
             "de": "Gericht des Tages: Klassisch",
             "en": "Meal of the day: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2834,13 +3026,15 @@
           "caption": {
             "de": "Widget: Klassisch",
             "en": "Widget: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "ea5d6b0cb862c448c3df5c8fb9e92c53897d138b9ad5bd1a8c8126ed8cff71fc",
-      "sig": "Ynea7oTQVCVYF7gQmGd5U/FmbVejgg5w6kjq+ycY9GI+DHN3PB0dowlS3ln3AXL33hekyXcnY+7g3U9oQXZloE6pXh03Y1oSCSROv66jQf1/jRu17Pn30Spd1UCpF4vd2Wi2kbSBlvmIeKtqJObp1Z9g2idIPVxrgvtC2Y9qUAyYdVWd8egjOeHZxgFHJoxCONiML5aHE8PzMZR9TeeNW26/SqlRTfrm4lFX8HTzIXAkf0uchdxtIWs2vJQDyeU+a4GOPcm5Xx8FpbsfdakBzmxLXA76QTtG0eoSrbpz6U2E39xm3FX3AnJU2KqRsJU5Fa7kRLKbrKznHkrxkDVQ3w==",
-      "size": 28602
+      "sha256": "d5912d1e7b8fcf76fcb6d54f5366e6334b7dceb23416a6b9e14291164b22ea7b",
+      "sig": "lJwsgLZlVa6SnKH8dl3lzFwrUSLkPa25FuE6hA/ODLHzId3mGJksPRuYJ1+HgtAdklBWMIt5iwnAo7v6nmDHqhyRJGuaxGh51iRxoSl4C6bhsZC4qihvb2bVPKKsMvWp8tPbhQVGoSBcWm6GKExMSfkTWsJM22ghZ4pY4n1jsdsuFZ62ib97q3IiPVrhmIBDqo7I/rMeLFJq4aYj7xHUhd9iBuIQVkns7uYvkzMv3MssOjfaF9lAfngU5P5c5hQgSmoIxRrF2aLb/ytYCgwlGI5Sw/BYs8R/W9GITWXSjcZ8GFlIQoia93Yo2S5GMgUrFjgdK6yTXo6ROhTjxOO/VQ==",
+      "size": 28998
     },
     {
       "id": "golf-tour",
@@ -2894,7 +3088,9 @@
           "caption": {
             "de": "Bump: Leaderboard",
             "en": "Bump: Leaderboard"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2902,7 +3098,9 @@
           "caption": {
             "de": "Gamut: Leaderboard",
             "en": "Gamut: Leaderboard"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -2940,7 +3138,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2948,7 +3148,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -2982,9 +3184,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "95c78779ebf0466ba2ad5b5df3c3b1297cdb52b7a3e78eb7f1a3415045a93dbd",
-      "sig": "Nt1SQmmT38IhtydBoTHdF7kFp4jZvLig3whxHfap5EGbwiKhWwbWm6J/APh0mYI+wuYcIAHv9zedHiVTw3yq9zhK820E4udN+WnsG+Nf9xt2uDSIdErTi+wTw/o5KEN2xTYh5CQIbyq8KZLqtR0RVoxfeKM9vvYuuQQKPHIZnKe1Gz3WW44jL/K9ALCbqDqDzvqDSZch1Fhhg8rgPxheWR9eOFHEnfQKil934nXyatNwYarGO0/r8o2DEMJE03HW1sKlG4qFLhUiJt+eSBuD9tVXN+gLSKwJjtEDCcwMqBGF7Gmw4ywWvg+AV7NoDy4B9IMa7RCJ11KWHDpx6iuQfA==",
-      "size": 32879
+      "sha256": "3f1cc53ff351c37b0694ff39080a2b11806068a102009b00c33305d72d21e2f8",
+      "sig": "Wt3qfy5k029VKcrgNzjf63SrWJnHRWXOPvncrighBxmAUB0Cn8PycwzdotUlHK41s90qQsJMbcQGFaDpKQB9Fjq4uq2sCTQMBDSY5pNj4P0qLZOuWQvCpaBIkue1dpO8vDbSEfK+//NUtX1FIisfXyRFim0B3VhIf2PS3QxgXE5EPUPcnwteAiX/s3kgm+jc5iKH9f0TDC/JbzTXxykGhTE69O6nYTZEYkuGnd3QcGc2/YSm9yUL4SIhrUSRJaY/pbiKSOSO6jmPnakHBmK6sNKAhK1kX/sqtZYBZ1pwbE1zMEO4VP/D/TlVBpM8xYpoOGFXNNdszy7Wihpa7R0gEQ==",
+      "size": 33275
     },
     {
       "id": "golfplatz",
@@ -3046,7 +3248,9 @@
           "caption": {
             "de": "Bump: Heute",
             "en": "Bump: Today"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3054,7 +3258,9 @@
           "caption": {
             "de": "Bump: Woche",
             "en": "Bump: Week"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3062,7 +3268,9 @@
           "caption": {
             "de": "Bump: 14 Tage",
             "en": "Bump: 14 days"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3070,7 +3278,9 @@
           "caption": {
             "de": "Gamut: Heute",
             "en": "Gamut: Today"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3078,7 +3288,9 @@
           "caption": {
             "de": "Gamut: Woche",
             "en": "Gamut: Week"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3086,7 +3298,9 @@
           "caption": {
             "de": "Gamut: 14 Tage",
             "en": "Gamut: 14 days"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3184,7 +3398,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3192,7 +3408,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3226,9 +3444,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "b6a52a3717a81ea6b6da50e863b41e0a8b07c77093f372d6190095736281aa83",
-      "sig": "BKwIbayIi7Oho4NihbyP+8Y1iqo0+oy/edrin64H2VTLsrByKSwAsEe+YAf+HEE3w7frUyDRCUOyjVjVsxINWUt1oVWoT+a6KT7i1wzPOf1jlTjMQpu74TOFhOIh514NPUKG0iajabZjp3P6/vsQ6I110cuueC32LSj5nGL5KyzOOfvsbtLQpiMwe1gkMN66Gpk1DiC0LJeR/ASxdA3EPvUzaKWIEgIkV2lXaDORtz9SYUdpQq9Ag4MWmotOPFrLIOdF4Lrbfz80JG/VRV90YldqghriEiLS7sYuPO9njzk1zkkPVOEWG+bEtpRukOxKQNyE0HPiYwbFr2+jEyc05A==",
-      "size": 51487
+      "sha256": "5cf5884e63b517ce05211d7643e91a2f8651343cd4b95bca9a63256edbe63335",
+      "sig": "O70FQMDzXmQInyFky9qBdBFlEEtAezijGhsQ4n/Yhhye3+myuQAFV8UPwPn7rWcQmbtbXzxS+nFdzbWF4SUkg/baq+D3hRVxSBSlQjCZ+BSKYjjOaV+urbOEVwj9qVawX4rECr4J1LpZ8uvAvWE9SEEUqunKOWoaA50jJ/fO0VCkLNhNeffvaUiZUlALRn2SX2Y7gx3w1CrKfuoYaulkgopN5bO6fMdDbPYLxvc9+yNGIemvu8FCnk6i0J91iClTEOeSXTaN3uwv9ZQNYKJ25fth67gt/bsc1OZWG/JjUR9CtQGR02aoPi0dwfaY2skE1Ftasnrf0oAwO3ivxnfQPA==",
+      "size": 51883
     },
     {
       "id": "homeoffice",
@@ -3284,7 +3502,9 @@
           "caption": {
             "de": "Bump: Homeoffice",
             "en": "Bump: Home office"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3292,7 +3512,9 @@
           "caption": {
             "de": "Gamut: Homeoffice",
             "en": "Gamut: Home office"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3330,7 +3552,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3338,7 +3562,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3372,9 +3598,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "00c12dceb961df76f1b2bffa2cf49251566228eefc45896cbfdb41fadf0f11f1",
-      "sig": "MYJEI1xeJmfUYAUq9fuIJisd4KAqCbJ/Sa2mHr7Ur2TFDoQCnZF6ukvpos6vMnK5C0UXUqfed1Nyqu1FglMm9zgmxOpFubCMvM7Pf83qEV59Sc4aCUMhhuyP+YV+W/mBdv8kUkInDJTOW3B2t3aRp3Pfxo9T4a7sihXKUHNgXR/kQlPxPp+x67zyOg78tJmvpO4bWlBQaoI+Is7xK/u2pNnv5OJYj3P3aEcf1FNnod2ZMZFlsEj/aKiEagdWRvleLmbtgYtLUoEewuGxJsaZxFgwcVvfB9TLgbMIzavQ/TemjcancQHkAPa9TFVB+hCodXNl90lzCTxt+hZ3ZeRfcg==",
-      "size": 30002
+      "sha256": "5acbd2ca268de9d80039cd05655c1f25939ea2d9d3267fc24c0a741181f2fb98",
+      "sig": "luEdussgONz9f5p3/nVqcuuCmAIJ+3WsMOmBBQV3vtWgJ3z41bOaHDs4QlhEZ0WjjtNQGjpYSdO88zCbEAfa8ElW2Z0BDk17yFzVWTMKA3fKARn3Ksqhm+KBkgtVfu31MY6OELJH9ZkDbCI49hv6XqvJCB8JRsVR961xj7VzlTZgTUkJICtLKjyZNbpedYCrDUVHqbUbKTxAqt0alR6ktK1fVH5REGjBazd4oWv1hgsj5aI81QlYXvvXATlhYHNbhWIdKxpiUWhLF+MWSu5Wj+NiGNT8dmrQZcoJJ60BfLXDxWL1GPF/e4t/LM3CIvH1nyZZnWUkLz6VUaZF8iBWhA==",
+      "size": 30398
     },
     {
       "id": "luft-pollen",
@@ -3438,7 +3664,9 @@
           "caption": {
             "de": "Bump: Luft",
             "en": "Bump: Air"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3446,7 +3674,9 @@
           "caption": {
             "de": "Bump: Pollen",
             "en": "Bump: Pollen"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3454,7 +3684,9 @@
           "caption": {
             "de": "Gamut: Luft",
             "en": "Gamut: Air"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3462,7 +3694,9 @@
           "caption": {
             "de": "Gamut: Pollen",
             "en": "Gamut: Pollen"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3506,7 +3740,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3514,7 +3750,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3532,7 +3770,9 @@
           "caption": {
             "de": "Bump: Lüften",
             "en": "Bump: Ventilate"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3540,7 +3780,9 @@
           "caption": {
             "de": "Gamut: Lüften",
             "en": "Gamut: Ventilate"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3614,9 +3856,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "57c56c2fa20f423cd9d20448357d8c30db313d669198995882b7bbd8c762df0a",
-      "sig": "BkoBhvJUR2uiYdtaeOO6pxmF5JemHh4l2q36cJC1tP0h+xeOsJjzD9hbE75Hq7zktTDH/gdlS8soRb0+dLh1bN/npMgJZYbbVYzfldXNKQMfbRTMX2M9kdd4Be5WLwfKU5g2E00oA1tQNcQzAYFSryYWIx4Khu0FMGybz2OZaFL6o/f/rlc3J6FzOZ4T/+xeBiq+T/ZWeMa8ghckp4VMUW3W9fwE4jFablJe3aD2D76JDrHxKCeas1QHeDv/c8yKYthFedSfX7fJmyPuhts+9V3h1rJirySZBQSTGwqkFTwJiGArCCwwSqujSThERNItmH9JJfEx5iy+juiRg72RyQ==",
-      "size": 26442
+      "sha256": "adef280bc7c7d2000acdaa562331ae13820ddfe01404131597657034c37c0f31",
+      "sig": "O/vDWvKEt1QNP7w3Es4pUY1SRXxYi56MYQrnteO+ZMztJGfylqK/ziM1d2AZ9sh4xbQAs7TZO2CYwLNB3PLooUYnoJMacBdPG3y7K3E2Pn1vwgCoFtiRgl093HokEtPF07UapdwxHd3CyyYHUJYD93I4CpoNWSFRpftPHi446PwPEybbMeAamlvNxseU8Onfk578Q4dtUE08T6dM8v00CNJsT4yBWlC9NUZKoS1Ru53TVu2fOdh1qip1E0koj1LyoSbbvY+cj1gp0x8AT1AfGjVafeO3e/QKhzQBux7wUXTkXqT8ZlVo0X5uPjC7Rl8/Bk2pqTd0rT2wv6WfGXkCqA==",
+      "size": 26838
     },
     {
       "id": "news-feeds",
@@ -3684,7 +3926,9 @@
           "caption": {
             "de": "Bump: Tiefe",
             "en": "Bump: depth"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3692,7 +3936,9 @@
           "caption": {
             "de": "Gamut: Apple-Stil",
             "en": "Gamut: Apple style"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3730,7 +3976,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3738,7 +3986,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -3776,7 +4026,9 @@
           "caption": {
             "de": "Wirtschaft: Bump",
             "en": "Business: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3784,7 +4036,9 @@
           "caption": {
             "de": "Wirtschaft: Gamut",
             "en": "Business: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3822,7 +4076,9 @@
           "caption": {
             "de": "Sport: Bump",
             "en": "Sports: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3830,7 +4086,9 @@
           "caption": {
             "de": "Sport: Gamut",
             "en": "Sports: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "display",
@@ -3868,7 +4126,9 @@
           "caption": {
             "de": "Technik: Bump",
             "en": "Tech: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 3
         },
         {
           "kind": "display",
@@ -3876,7 +4136,9 @@
           "caption": {
             "de": "Technik: Gamut",
             "en": "Tech: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 3
         },
         {
           "kind": "display",
@@ -3910,9 +4172,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "f9d1c3343cbf91c8d7d71d87f356c85998505a36f009d5b16f980232f62cd75a",
-      "sig": "v2PsfThdRo7hX2lAKrJEWTN0NOM8UAoJvlq/ql4+uwPWTkYZaQdkd879HI5MG7PvmL2/OZ32ny+rai2Mrinm7zXaaiMkJBSQxup8kxi/XUR1stSV/KqPLVIr4bfA4vKGZHG8miRYNUnarbknRYxD3tQ20OQ5Hdu1tClyWsUO+hcFL9DgMJZgVziX5HamiISA9l8HBAdiX94Do69HX1uXLFe1cGHlXh+4CjFdSvGc8q4kb8Kci163d2vqlv5EGkCA55DDMycPbkkAQnQojLG+/9yoUz5PqAAaNkW8h1NW6jclrOWtpHFQdimKXMLzGuQjJOTz8xF/wmBaIaCg6dYafg==",
-      "size": 34304
+      "sha256": "7598eb4f8594fa7b72ab3cc5a1f6e8147cf9843d6776845318fd418bb7671d58",
+      "sig": "h+Vyt+E59YEU/i+tJVRRohelWYnT52d7vGpY72wJ0lZRRK+oRP1vHd3GFtvrFedDWcdXeTVLXbwn3E4AtP87M20o7HJB8Q309/AncFZfjGTzHEWqy6875IHC1LJKi9OtNtki11JaQlti21CTvKCeyOS2niktel5cbT8RbE8bORfQbx2bfXIdPz8zpMoItiA7SU0nltkJaJGQEukTz1J01bJaKfsoEIO0vP9xoKr2WU0E39wYsyTdhkz4KQZSYsyv/ejZbTrBGHHD7yW+MMRBKEUeWEXeKYC8a3B0x6GcJ/WQmmYtlu951fhfO4kHDOu9rXjYo7rqR4R2zDRTgOIw+w==",
+      "size": 34700
     },
     {
       "id": "oepnv",
@@ -3972,7 +4234,9 @@
           "caption": {
             "de": "Bump: Abfahrten",
             "en": "Bump: Departures"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3980,7 +4244,9 @@
           "caption": {
             "de": "Bump: Routen",
             "en": "Bump: Routes"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -3988,7 +4254,9 @@
           "caption": {
             "de": "Gamut: Abfahrten",
             "en": "Gamut: Departures"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -3996,7 +4264,9 @@
           "caption": {
             "de": "Gamut: Routen",
             "en": "Gamut: Routes"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -4064,7 +4334,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4072,7 +4344,9 @@
           "caption": {
             "de": "Widget Routen: Gamut",
             "en": "Routes widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4116,9 +4390,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "4dbdd6d1e317b1ec28ff44ee68b6c7c7717fd48f2d150d5aac06db67262d7d7a",
-      "sig": "TE/4Eg9Tz0J5RU+hxtgxTNj9ENF0MqQrwIKHYjGfwUw1J55AsFFix1sr0qX72snXqTym+JDOysaPS3iQyRg4sw+HCluo0RPYj1tIWcXX2/HMNDNnPl9LBcxUaiPgf2I2s8b3MgUonlUhOPRUJYTNqOt2WLT+i0y1RqVkMhw6REWzIzrKa7KeuD8MQ/3ZLDiKjUqzV8CUUuL2iiqPVF3gRfm9EwL5b3yfWj3/E1wUmHrdeeFhQB7t6Khc4xInbo43H2HgT2zkI7c7jLteTadOuK3JlVvJKTdlsvyMhwhaTP1xq2hy8doMFKv0AcgeVlbKaKo7fKRqFkJNyPHpihYRPQ==",
-      "size": 83538
+      "sha256": "6a477066ed92544298d90da260f3567555385ee2fca1a085b27e2f59732123b9",
+      "sig": "iMQAv7At8gy0XLg4uf5e6+zOxBNikj6POHBgHY/PSp6UcqEkq0CH1mazMNl5rshSe1qVDV7t4AaDBBhp+1jDlWfRc9c1wn6cqYVzuetCnBG2muBPlIQ8ASP5BcepmzPGbclcYZpWdEermbHYX7STrps6XgQyXPWDPCXyMdHe58Q+GzzKjdaU/RkFmNORHAXZiHp3WFDGGHwW+c0nIKGFEa3sGFqPgc6a4DNYPqPtnIYGbIWnN+dW3Fn3RCcld5M4D8wbbh8kk1V2E+D+F1ONCnETUgNcjbbeaSggSg8BKA4YFiMbyUZ5soKEVf0EF8h9RzpOe8rO5ms+qOIxMoo/Pw==",
+      "size": 83934
     },
     {
       "id": "pinnwand-app",
@@ -4167,7 +4441,9 @@
           "caption": {
             "de": "Bump: Pinnwand",
             "en": "Bump: Family Board"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4175,7 +4451,9 @@
           "caption": {
             "de": "Bump: Pinnwand",
             "en": "Bump: Family Board"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4183,7 +4461,9 @@
           "caption": {
             "de": "Bump: Pinnwand",
             "en": "Bump: Family Board"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4191,7 +4471,9 @@
           "caption": {
             "de": "Gamut: Pinnwand",
             "en": "Gamut: Family Board"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4199,7 +4481,9 @@
           "caption": {
             "de": "Gamut: Pinnwand",
             "en": "Gamut: Family Board"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4207,7 +4491,9 @@
           "caption": {
             "de": "Gamut: Pinnwand",
             "en": "Gamut: Family Board"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4239,13 +4525,15 @@
           "caption": {
             "de": "Klassisch",
             "en": "Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "7a971e3fe2ba96376af28119c7791b2c381712ecb48e287796afeed89443c469",
-      "sig": "CDyBwN16564bD1tSmHuNfOxFV9ztX64QWP5dzvmt8HCiEV0ozDFGoCjf70+IbAiBEMDQ9MOSoBbst9rhi4arb4ZIdeAn0VBpZP/UYPOwgYYHaGZ7+A84Nhww9ymfeVhuImdPoj6cQo04JDPeYx4CFejYk415WXkTM1rUxed5vjc/hKDkqGezmGQPS8vVlAU+8uvswFwiseVqJ9omaKTwwFE5VEIMgKPqdYGtDu2HodkR1XpJ176JyS5MWh3e4Ii1xtN+6TNHFUDaWKPmtCT19jKdalp+/dX4DsrEfKur7Hl4zp+hk3VuqcvvacFIHqUiMWTHuognv3F61rW8PQyxLw==",
-      "size": 15467
+      "sha256": "1360d8204c892b1d7181e3a8c6a85aaa69988547a29394d3d15dd960210faaf6",
+      "sig": "f4WV7ROFoQZNlFPFDLhftL1BWuVmzNP7rnSSuDaZjKVM0dbl9zL/yc/MxmvyHsQMgBHweXLh61FD6G2brgJGdwTmrLWCQbcjC4lqbOSWefJpIft8H+cm+Snwns14XHZ1/Q/07zg9t+kK+W7FHZtw2FNjxEVVy2f0gi1ZF9R5mlDrJ47pBs8wjX9AWALgcmxP0Ey64LAAdjr91ADrnwCfiO0ABEQlhwNSbEFwbNigIWLpPIPkDq1VhkEylKGBlZFNP/EHXmzFUr+lKb+cgpbtYBzc9yQvQAxXgCgEN20XTiUBRcZh7or1a0Bcuxb2mjauJdYMHpgvbztIX4pk+tVkNw==",
+      "size": 15863
     },
     {
       "id": "rezepte",
@@ -4300,7 +4588,9 @@
           "caption": {
             "de": "Bump: Rezepte",
             "en": "Bump: Recipes"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4308,7 +4598,9 @@
           "caption": {
             "de": "Bump: Rezepte",
             "en": "Bump: Recipes"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4316,7 +4608,9 @@
           "caption": {
             "de": "Gamut: Rezepte",
             "en": "Gamut: Recipes"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4324,7 +4618,9 @@
           "caption": {
             "de": "Gamut: Rezepte",
             "en": "Gamut: Recipes"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4348,13 +4644,15 @@
           "caption": {
             "de": "Rezepte: Klassisch",
             "en": "Recipes: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "257717a178b5fa9f57573dc2fc41e636a45bd4d6f121fad87f764a175faceb9a",
-      "sig": "YVbxWGvgFNsZrzLk7gdQrDzXeWx/Bj7YHrCvk6YWsqtTtGDvrvJnPwlcYIUop8wXlblIjgVayLYXqUHzKdHG6mwPmBNpRJ5ahZhdCZgyDrfIORskKLo9dishc87V+7IOioDbzypFg2jnBFpirHapM4vP5T350S5MoTL8lRai/alP9oenS98sI7lBGbJrij8a6kJOSe9P4uCKcmmXlyMth8Zl2SloEI8NxP+UhUb4mOM7UVcAyYJTVNLPmO2KoRRQzTbnXX+wUhy2f/irSEvqUtZc/VqRS2ucNuNuYzH42ZCfdXTwLaZX413wC/pWDvXLTFr0a5UODUx7MVpAhX0ZhQ==",
-      "size": 50992
+      "sha256": "6ad59fd95ed136c85ac869091a599564443b1f87a57f5a4b2332ba01c06fd483",
+      "sig": "b8gYq2ceDNKHg/YKAx1+paKoIE3MnduO8md6rS6tLcNGeQLql7hfRtM+r6ev0lCg+jlCc9gekMh9bazzHl/3i06rqGstXcbZ/ch2Hn/r/BlKtwM6rpCLwBDvHoJ91Zoobm7KUwzAoqigHCsgr6INaUvD6vNZZAy5dCDI262Gl1w5OKBMzXyi51GiOKs5SnEZFF0HL/A7iWw6OWu7uK6uIvz6eF+2qDc6b7Up6ofY2UDrMOh3ep4FuNZUXQkXV5Z+XQZzqYjxxFNEjkxSIpvRRknPb9O56FAZA8aui6Nm0gOafou2VKKKjWshT+rz3zDcXPTKKmvu953fJv0DLtib5A==",
+      "size": 51388
     },
     {
       "id": "sport-tabellen",
@@ -4372,7 +4670,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -4416,7 +4714,9 @@
           "caption": {
             "de": "Bump: Team",
             "en": "Bump: Team"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4424,7 +4724,9 @@
           "caption": {
             "de": "Bump: Liga-Tabelle",
             "en": "Bump: League table"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -4432,7 +4734,9 @@
           "caption": {
             "de": "Gamut: Team",
             "en": "Gamut: Team"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4440,7 +4744,9 @@
           "caption": {
             "de": "Gamut: Liga-Tabelle",
             "en": "Gamut: League table"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -4508,7 +4814,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4516,7 +4824,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4550,9 +4860,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "155cd8ec90d6eb45e03472c5883f08a374eb9733064621a49c78e76443ef4745",
-      "sig": "qbNY/mtdZ+DbpzGeB7EgpI1Tpr3aZtxrlOQyNbQef7QSVIQy3mwXGBfd90It8be7GzXKFJgXbbPgO1HYL+8QOmKCJt1Ce5g9S3TcKR/6l3EBCF/G9hsMoCxi/aCxJgdG9IswyUeZZJI2IRuddHM2Fa6DdsXeSQyfHyb/wXNDMVMpYdHOEgjG3r5ZoN6dSofU8HDakGtTx9BPMiGwl3oIGlHaczMkDwzoFoXQwcWV6V7TvM9bi6Wj0FGBkQGVZRkwS9yR0VKhzBuEp75FiYd32DEb/zTgeShWrXxTPcepRF1zZDiQ61N4GtXVPI4ipdE74hV0p3h6Ffoi8RKBj0cW1A==",
-      "size": 65796
+      "sha256": "7488f7b519bc2d3919c0d2508631ecd2da68e557dbb805064c7f36b897e06deb",
+      "sig": "B2n6A5A+ENaccSSkC81JIoLMjJDTJ4qXRo/sqmqPPSQhP4r8HO+Ashwb9okMb3NPJeRBBBlC4gIhNuCgmDN74MV/KgO3b4Y0azfKtwSGSMMM6OgOmFRV4vjU14FOTmH33WE/U0DMsYwEvCH6EW1WemveT1fWkKeHQOv1c3SvP4cWsrhu7GzQ4oJN7NOQytzR7WwhO47FEupWi6xi89wqdpJi1EDEjzyyGN6l2uPEXmZdCg+Zs1iwbNOKHnjKgz3sTzOdssYtiAPmooUj/vAwK+VdhcEnRiVh4a7dDBwUMBT0iKqGmZF8PrXq63zmZF61q/9olC7ERJu3sOqT22qT0g==",
+      "size": 66100
     },
     {
       "id": "spotify",
@@ -4570,7 +4880,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -4595,6 +4905,26 @@
       "spotify": true,
       "icon": "apps/spotify/icon.svg",
       "previews": [
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-display-relief.svg",
+          "caption": {
+            "de": "Bump",
+            "en": "Bump"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/spotify/preview-display-klar.svg",
+          "caption": {
+            "de": "Gamut",
+            "en": "Gamut"
+          },
+          "style": "klar",
+          "page": 0
+        },
         {
           "kind": "display",
           "file": "apps/spotify/preview-display.svg",
@@ -4639,7 +4969,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4647,7 +4979,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4681,9 +5015,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "01f2708a92ff5b437393e98e0f957f67817204f03dedbf12bf33799ce16b2e87",
-      "sig": "asL9JVNHWPyrzIx03yvqHhPwqRMfOTErgEALHwPhWT3AtsJozHhQ/ATfvhUmQGblkrRdRKmOORbuQbw/NxOE2WR4CgdwR0n05aTEXXcrCcGIHxRTUaF0d1dOPf/G4RxRqDmxIvvJALVkyQjS4FwaaqywrnnWrlFJCoGJ8qDSn0e1RA+UOphn1lEEK3CUV9oLN7ByuQuGq/WLnH7407nDNqiqHEA6FB66pPub5eifyD6prq4xfg29t/IMh7Md0IDt4YTaB9Fi+AckeZbkKiWEr5LjNrhH33P0Q7ubR+xwcvBvjkbDpR6Z/wRZviuKLm2lzVHCAXD72IE0Aqt9A7YjPQ==",
-      "size": 25417
+      "sha256": "5d900f74f74b23733d287304292bcefd0ca60af64f7e2a9e76892739f65911ef",
+      "sig": "aHtxS9CNqYsYpzvIOi4hproPDw3wvSrRrOwjUddVm70otHlwtuXr8AlvIejluZlWEUGF2IoIIkGDJvKd6EwqnM7NSRF1ZC4I/DcD+FvvABCCPD+l3/LoaIC37zq6xpnaKpU8jjgL5OCGqrGVMZsB8Ktwv7YlunmePESh7tVvtWtsWStbmwekUrZyJJInw5HbIHLqIxDzu6JpxIyZhOU9++xrq2hAfXhv62TYXYAJbVX3prqrtDA8Lv1z9wwDi+DGbU1YnVSmRy1O5pPv8Z11Y4Z7gFTOqVJcw70wlwb33XESkJBoS7iP7Ur6Y1q1jAMSgn8upq1tca/VuhHbNpiMew==",
+      "size": 26799
     },
     {
       "id": "stocks-crypto",
@@ -4739,7 +5073,9 @@
           "caption": {
             "de": "Bump: Aktien",
             "en": "Bump: Stocks"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4747,7 +5083,9 @@
           "caption": {
             "de": "Gamut: Aktien",
             "en": "Gamut: Stocks"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4785,7 +5123,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4793,7 +5133,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4811,7 +5153,9 @@
           "caption": {
             "de": "Krypto: Bump",
             "en": "Crypto: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -4819,7 +5163,9 @@
           "caption": {
             "de": "Krypto: Gamut",
             "en": "Crypto: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -4873,9 +5219,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "d70913b0b04d75a0380bca69656d7a86d6fadfd6a6fe94c257ac10e8f84641b0",
-      "sig": "P0EfmeNrMYxgRTQY8bhvsLiAN82NhNase8yBXQnZ4rq5kuRye/TYrNs+A4acjXWhBrTT7MPrqXBCtBnBFS7uke9s67a7w+Clu/iNCf/xfzWbeXRsEAgzqgbHQEpwQJ6MH+4JlsTt/jbAoVRwbICKBv6gdD2cXI3fiboR5jYMDKWQRgKb1RPdRQJ3uabu2jWu+0ve3GBlivQg5h63eyd6mqSITgrXDNhqSU5iBERrJ9Qi0nmRWoKl673SYm0DK5S5qbOmD0zDX+NrJoSsAjXuJSYWQiEUT3GzNo1bkXKGMryn91vnISqP1vTjqOk8kOclig18XMkAaE2MUbrcuXdZQQ==",
-      "size": 32336
+      "sha256": "0934fec8d178d0cc45991a0819d42ae560722f8a38bcf19fd6d63b157489de76",
+      "sig": "v+kQDaiSO9CVqQ/0O4eeGElfnCYnJxRL5vsUxZ6k+aIP0Jxp/CAt3+hmE2Qfz7HIwzF2XmR3g+ERau9CvFJ2iVKcsnnnHOv0VkNxgwUUqr9EgBfkOYNd5ScI2MOBxaDHd6ehk4oaVQ7nmN0X7VFH57ZrlGkryZZOvq3NazGXTqkPxkHIo/Gy0EF0QLaLe6y1hrFnp8Or1zDjUe4PrHIaiVjrPYMCoe6GSqGrasZ6Vs+Ev/InVrhihqFLJIovtQLqpAz+AAffpREUBD9VtGtbzXyo9P2lEbsVrU7NbYgwU5n0RRp3rK5yQ2orcbtSl1HQAyk2ORnWwcN6i2FKzLlOIQ==",
+      "size": 32732
     },
     {
       "id": "todo-list",
@@ -4931,7 +5277,9 @@
           "caption": {
             "de": "Bump: Aufgaben",
             "en": "Bump: Tasks"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4939,7 +5287,9 @@
           "caption": {
             "de": "Gamut: Aufgaben",
             "en": "Gamut: Tasks"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -4977,7 +5327,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -4985,7 +5337,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5019,9 +5373,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "5d4d2d4d6beb52b063bed551b07836d788ae263c0472b1bed021d5106c9996b1",
-      "sig": "nUq443U0GW914PBxbmvMzLGXxZltWEoSnm4qfaDLEUbWKxc/Xh22ko7R/MNTl/ArRx/XTqUfCUNLDdeFxlz0tOIL7VzkLMB7d5qIjmEki288pTIFvLJMz+6kN3Z+4Iajuhful9vrKp8gf5UEn1y6oBgSCTZCSzN5B8dBWaOwOwL8zAag+0wgYA1hsA2gu9Wya3qjastluaC7DURyHqVTaNUf6SPYbXvp4GqnV1HB1BaSjL9Iyx4oTq6yOx+zxs0boLXYgNmirdYxLinVUAwWy0HrUI5DP4tbr9+VqfHBjCaKYZOC9jiVqhcgQeMSuMOK8AcfEFz66OwrvZlUsyZPmQ==",
-      "size": 49396
+      "sha256": "09e6acf5cac20db6aa3ccee6b00e9399f9689463ad845af04804366157cd8ffb",
+      "sig": "Qat3MnirKSoutdP1GX49syIjuD6zz0ubMBaeylpc6WI2fw1AfjgFwTFY1s8MdGHh7nPC6+cZWZ6YaPWrLTDbCn7j5FDd1MJYQSDbtr05qhusI9AiqrThD2lsHCSJtrxxYedIANHgzCz/gnRdgN/+x3s4FssCbf6HEkrbxyi3bq3r8upu8AwhNFKJO8vMRBYK1+XVwhGNo1tg18a/9KIHthDerL+SVoJ6ES5fL3iNtEWLVDlobGsDWHYTwSjetbJtkeUv5HkbaS8XgUT1nAukzRF6/Y7X/ZuvYS2Dox4yVZcrx6gs6rSyv55igKLcKbShz0IyxlE4645oGhUu8wcDhg==",
+      "size": 49792
     },
     {
       "id": "tuerschild",
@@ -5075,7 +5429,9 @@
           "caption": {
             "de": "Bump: Status",
             "en": "Bump: Status"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5083,7 +5439,9 @@
           "caption": {
             "de": "Gamut: Status",
             "en": "Gamut: Status"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5119,7 +5477,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5127,7 +5487,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5161,9 +5523,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "eeef7da5758dc5ab5ba7728644b62700be75763e1a1265f2bd24442e41c6e214",
-      "sig": "K04BgmO/0t9E6XtKU9whrIjz/4k/8mhzQjEa1yIhLNrHGD3mv5KSU1tuE3kfBRpM+yyGsR5KVOgPykNXw5hehNgCE29ULnFw1EhEskGTW5cJlYLay6Ze3ybTWkmipSsjD2xgQBC/2CCTSogf7+/EYlh+eC7YAG+2lqJLKHPyybFn/v1muta5YRJEvj2KK0v2OooKGEgWGhpvXKUCGVqSNMq+Je/Ha0kpnc0MQ3wAtYebGOUw4CYkM/0yFligTGuxsVA7bM3NgF+lkASKmMm9iUWgIyvpn78+illhn3SkXCRFQ4CVxs8lXVEEcW0YEhpfjB5pHY6eON1r+9KMXKDRTw==",
-      "size": 24617
+      "sha256": "4065ed57674d2196dee09c0601450a25af67369b045ec334dc3279ac6c1b22e7",
+      "sig": "X8KW8oM61PhY+Q1jQnjmqN1oAeBg+KBY0vZjs9xw/YMxUTJgDKe76TBtxvRR0XUpU6ZOqQG0qUlpObBLpmBUyPC2ag8ulFsmSuFMkRJS5pn2NBuBaFJL/m+t+NcgT9bpXQRWoPb9TTmNYwCyik4stKPz+d65XdQ6xeTiVrfiSyZcodzMdktwuX8NfvaqE9Wl7yI4ImtB/ALPhtsJLBgDLw9gj+UZydGMgLcn7AKT4iuSPfNQpM0CsWwICgWVRMGseU7AsSaQRCW1qTk4Tul4FwWc0sf2mFP2OAugpUWnw7UkXcDzmKFkqqED2aJEBxbnntHB4lu0SgBoK6E6SRE6Lw==",
+      "size": 25013
     },
     {
       "id": "waste-calendar",
@@ -5218,7 +5580,9 @@
           "caption": {
             "de": "Bump: Müllabfuhr",
             "en": "Bump: Waste collection"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5226,7 +5590,9 @@
           "caption": {
             "de": "Gamut: Müllabfuhr",
             "en": "Gamut: Waste collection"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5264,7 +5630,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5272,7 +5640,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5306,9 +5676,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "3bffa88a1bf241c57f11ba214ad79405cf18b3234409398f2f11738d6eb2590a",
-      "sig": "EqoW6bUhPyP4GbdRPOQ8SLKvVCv0tkYLrMvD0XdtOtKXLyJICiNzrlaT20YHkdsGZ27FCj5mw52xMTOOMaYmZ8iML8YuQeSczP4/tlO7gZYnI1GVzrQoX1jOII8TdFeTMO5yfvGYfDzTL6qioprDaC5UeUCbuptsFYQFq4wB4lxYIxGvpktjNxFegv8X2uUispC4uNkYH5JKKGyoi0if3uHMoST07z29af71B/DY8Nm9XhAEBe5URUHdwGaPh6+i7Q8r54r/bvER0q975yQ4D2WebyvwwwtNdm3gCx3CPFA/VvJid7ghe6112tZsD66nfjevsqmoMOSMicR8QUqBDQ==",
-      "size": 34915
+      "sha256": "59351201af3507647ea83f61c928f74f366895faa606b7a60abe917f9ecf29da",
+      "sig": "aD87Ko5XRAJM9pAQJEc4CXWg8PM4SMez7Vpj7y+gT2Kjl1rLQNhYFEsqz3B26wSJjp7AU4ESjjGxRcr01FjaFI5uG3nDpS5FUyQesPrIot9dmbs4/Ucew0f7bKxkBUWiyDY+bnpmHI9YqzE6H09wuN86L5atguZ2J/Dg+ADWBBhjb1zmNh5GtzCMJHXgOa2mNrxXKdEy1NeYT0QuxNYvw69Cz1GWVk7QkZFLm3hZvjB0vnF5PsUYd3jp8AEVQm8paUrJWMyiSGwpElxaBo5Fgqd3o65vy+vvrOM3NQTMM1+lvM/JNQLhFVNNP4lDu7mwf5l6XCX/V30070xaIFnorQ==",
+      "size": 35311
     },
     {
       "id": "weather-station",
@@ -5326,7 +5696,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -5371,7 +5741,9 @@
           "caption": {
             "de": "Bump: Außen",
             "en": "Bump: Outdoor"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -5379,7 +5751,9 @@
           "caption": {
             "de": "Bump: Innen",
             "en": "Bump: Indoor"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5387,7 +5761,9 @@
           "caption": {
             "de": "Bump: Netzwerk",
             "en": "Bump: Network"
-          }
+          },
+          "style": "relief",
+          "page": 2
         },
         {
           "kind": "display",
@@ -5395,7 +5771,9 @@
           "caption": {
             "de": "Gamut: Außen",
             "en": "Gamut: Outdoor"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -5403,7 +5781,9 @@
           "caption": {
             "de": "Gamut: Innen",
             "en": "Gamut: Indoor"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5501,7 +5881,9 @@
           "caption": {
             "de": "Wetter-Symbole im Stil Klassisch",
             "en": "Weather icons, style Classic"
-          }
+          },
+          "style": "classic",
+          "page": 1
         },
         {
           "kind": "display",
@@ -5541,7 +5923,9 @@
           "caption": {
             "de": "Widget Außen: Bump",
             "en": "Outdoor widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5549,7 +5933,9 @@
           "caption": {
             "de": "Widget Innen: Gamut",
             "en": "Indoor widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5577,7 +5963,9 @@
           "caption": {
             "de": "Gamut: Netzwerk",
             "en": "Gamut: Network"
-          }
+          },
+          "style": "klar",
+          "page": 2
         },
         {
           "kind": "widget",
@@ -5585,7 +5973,9 @@
           "caption": {
             "de": "Widget Außen: Gamut",
             "en": "Outdoor widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5593,13 +5983,15 @@
           "caption": {
             "de": "Widget Innen: Bump",
             "en": "Indoor widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "d38d7acd2f926add2b5be98d8f5d8917912bc79fccfe57c28e63a0fc3115a51a",
-      "sig": "gaEM90SeqBtXqhzIb9kfJ7+BWhFDJ6+Gt60C2j9q4ZWbIK7ceKtUdFyrcqQ1QJWbCNLZn8J6sg3hOL1PduOTX6nR+Z1o4WAEJexOGl5stJm+CG0Huj7DjsW9SVGKluls++tPg5KZ8XwV/K2Y7+DdZsnuNkivXp99IrOu17Lh4SX3kYWit+faMumFPdzsdMwiLWw6ZYA8x25qs1N3t7E1G93Dp8ufYHKrsPUskzPwVNj4t3ErXazxPVTfuELFJYXNFleYK2yypppoS/GpBCkjZ+9JjGcaOhoWTGnCn7FCTtJr6jaNEFFBtO+tNapE5H+MXOxNBJ2ADLwXmj8QaNHSuQ==",
-      "size": 72985
+      "sha256": "871d0a539fd56a5be0ea2e4b1250080d00e1873ce56e88ef604cde99ebc27431",
+      "sig": "FpqxgDMBFamyobndAKSQ5mrwhc4NK4Fn9R1faMt1sAgS8gSOmgWHZ9xE3+Y63hUVrKgWY3LKKfTCJLX264uJYOuJsxiTy62LPwNynSBhj0hIgVN191bg0NZFAGaUs6R6N/ITG1TRdVFLtanJCRwl0+3UTXl7tnwuUvndlMennA0U4UJBcosY92tHqpbKxC/ceNmryEJ/eNiqKEkTZzWwX5Bdl3lNHMQY7/8Ir20xK/02DXh8PbxmyJEXtFzlSWKXahLyr8F8nFUK0j/Ih/LiTGg+IF1QoXplYj98IwVDyHO91QMOvI5TxbZ//cijUUYjZAeEr9FoqPV3cxoAFoEEuw==",
+      "size": 73040
     },
     {
       "id": "wikipedia-today",
@@ -5657,7 +6049,9 @@
           "caption": {
             "de": "Bump: Was geschah heute",
             "en": "Bump: On this day"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5665,7 +6059,9 @@
           "caption": {
             "de": "Gamut: Was geschah heute",
             "en": "Gamut: On this day"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5703,7 +6099,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5711,7 +6109,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5745,9 +6145,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "f4dd7981b0d6ae1de01d1129286ad89907bd0bb82dbbcf0380693d8f0163d083",
-      "sig": "F2+ma7fdtFygk1K/4Q7zMKxkp+mHtX9MHo1BmiSue1pqQf4fACajSIULoZ2zv2dwsFKg4I9KKzhTMd1EmVQr3ghUPlUglEufG/Go+9hlch8HB48ExwzkigUnoZAyKviseF+lqnfd3+Y5XUnQ4ao6AjRukFu+9iguCi7WH7oWoVfQCYfbiHm13ycbVRkafh9P7AdrhmfHLvOML2FUVzQPxiBg0fTD5H+h6AnuT20kan9JL/wTdBCu+IwC3Zf05w9p6DYmL3/069+Sz/DxAlHDMCf3X/ZzTz/g24XSfDJtdvTrq2On0KKyExP4E9NHAVSUY+YMmoWVRYQ0A8xal++2ag==",
-      "size": 37267
+      "sha256": "7329e4a3028a09bcd0411136e77e5a73ae5af51e2fd57270493ce965bf45a4fa",
+      "sig": "A4Fbx3sDhQWr6TVYcQItSBnT8Ecrpd5iTdj8oIYvferPDdz+RzuWsdmD8LlTayLgwZQZsNuxESNY2r5xNu5JyBA1SWKKkyNj3rGlJVkvhWqit4W/UUaCPgGX9+F1Ih90rhY4PoGMUSNiU5L4UCsLCGLfJTfj/yotGo3IUpS8hPBOsJ4WJbL9sa6ixUa9XApl7t5QL6NfZuOi7GQ5TLoJaY3E8Nzk5YJrmv1zI1oSODIUzgQxW/QMLNOxZu0YSDtXvsE9u1RuA35/42M5LzIZp8aQDNfniH1T14An9Gs6/yfbYI/QMvuDXxFtuJl4yjcDYEuq8b0TPIKA0nza3qBCKw==",
+      "size": 37897
     },
     {
       "id": "wochenplan",
@@ -5805,7 +6205,9 @@
           "caption": {
             "de": "Bump: Woche",
             "en": "Bump: Week"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5813,7 +6215,9 @@
           "caption": {
             "de": "Bump: Heute",
             "en": "Bump: Today"
-          }
+          },
+          "style": "relief",
+          "page": 1
         },
         {
           "kind": "display",
@@ -5821,7 +6225,9 @@
           "caption": {
             "de": "Gamut: Woche",
             "en": "Gamut: Week"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -5829,7 +6235,9 @@
           "caption": {
             "de": "Gamut: Heute",
             "en": "Gamut: Today"
-          }
+          },
+          "style": "klar",
+          "page": 1
         },
         {
           "kind": "display",
@@ -5873,7 +6281,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5881,7 +6291,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -5935,9 +6347,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "7a912545be1e00a110895504e4697f074d51a6b31760a5b6117c3f9317ae40d4",
-      "sig": "PtpMv+F4lV3G3nhSvU2YFWWs6WzgQ9kDV+Cqpb+ZbTKU8O0XuhBW62IJEmAs1fG2VTa3uisu4rnC3zT8JQ3vNULvH5WU+jewUZeNhXVP/cD9Ercr7R84Dyx5CEXFBXt7wMB0ne0TTmTkv7mDExDHqOXIaUGJLJYj38ceIAobVPlpcBOrzv5C+NJQW7M5dPQSO7NJ+Bj2f8d1i+sd8t6OWpzc2cZMhViw4qDtkClAwd1mcfigAkQMJ81TlWyC2bYuuF3nwKVQwQf77hMSf0F1NCPxkJcB+Pw+srJjfx66bfZUbbEUJxCjBHaFdFGsWcgSxKlTU4IQGXeK+d/YUC7MDw==",
-      "size": 33722
+      "sha256": "9a556edb981844952b6fba6b0e739e40016c2e521cd725e157688c6ebb130bbd",
+      "sig": "ANhMAYNdWsrtZ4Tu34wKNegdRZdve3+DuHQkPiV9rev4GWOmozLpoSg2e0UOGjY6eiA/3zkFx+pLpnC1RKKirQWJJEhivfYjAQJvF2JfYvusZ4v5gHERGi8dHXQ1skXPw5FdEOMFHx8uGtnLDM3QX9+HGKW1yyJSF3qhVJo4qAUnY3VDReyyHt9rNJEoCDBeLLyh2f8K1JD0/BHghFv4YPd5bpaQHoZZ1VyG5Ntbb3nbQpJpAsLj2OvDZJiyi2DpSSGaUclMR5huij5nLFhY8ZHcASHSLryK7R+7MgMlOXpz0bk8NfVIFrKHi4f3tLpJT7qkPPdOmJbYYejyXQ4qJA==",
+      "size": 34118
     },
     {
       "id": "wort-des-tages",
@@ -5993,7 +6405,9 @@
           "caption": {
             "de": "Bump",
             "en": "Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "display",
@@ -6001,7 +6415,9 @@
           "caption": {
             "de": "Gamut",
             "en": "Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "display",
@@ -6017,7 +6433,9 @@
           "caption": {
             "de": "Widget: Bump",
             "en": "Widget: Bump"
-          }
+          },
+          "style": "relief",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -6025,7 +6443,9 @@
           "caption": {
             "de": "Widget: Gamut",
             "en": "Widget: Gamut"
-          }
+          },
+          "style": "klar",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -6043,7 +6463,9 @@
           "caption": {
             "de": "Wort des Tages: Klassisch",
             "en": "Word of the day: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         },
         {
           "kind": "widget",
@@ -6051,13 +6473,15 @@
           "caption": {
             "de": "Widget: Klassisch",
             "en": "Widget: Classic"
-          }
+          },
+          "style": "classic",
+          "page": 0
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "d9aaa23a87a61fb6685d7ac73bdbfa483d5dc3c52b8d24191a99c249a0f01268",
-      "sig": "u7ts9YbcQLuUcpZW2yBIlqnva3YDmeOfRsBi3XCC/hsvg1WbDBDjpoVDoc624HubTaJ7H1GHnRgqFiWo2mPG/vqoYck9vhXmIRyJia3iOAR7KaxHOScTT3EhthQy6d1HAYAqH5kBYo/QRmMy0GCTd0VR0aSMSiQIidBzyt4AKZCCxGzJb9ve5H1ZxTCXbbP5bGxAFW3GyCMbavKzo/bEz4QIan2LnlfFhO3z0xws4AYvtobhwevkX/sEFKyDJ4C5AUsU2wN0+uB1J40wMM6W0XkqT2dAmI9uve8mVrXZObnm8D68xgFAki0VHsxRPV/Wsi9i8+UCJDUgqP7+HayL9Q==",
-      "size": 27114
+      "sha256": "a395656e8c9886b6c7b977c9c32aa8c70b32eb38e4a6f7d8154275726d9c5597",
+      "sig": "fM+skExBcymGzUSqwezPKeBp+5fqe8ywbbbEknlLXO4RAjnTYXvTiBj2AFyAWOvGLlgw2WgyPbCK/xkvXuMgRKHwuElmDGSb20yL9zqDdbfJM2Oyk1mEhW3t/tkNnG/5e4FI7pqn1gInuXpqCghry/4qmZYaGyrCK6HMEfHGBC0ix8Atz11JI8xQe/Q+xxd6w/cybUAz6C4QL7OSilw732UIAEwkrD+mDtb2qw5DOYizKP2eYEegiJU4FaTlYJ0VONXn2tGNjTfY11J5581106MvGU0NRqlBYUrB/NtuPtI9+FZ6VOALHN/OuYDy72/Wx1AytTq2FUAVOgC7Pfde4g==",
+      "size": 27744
     }
   ]
 }

@@ -678,6 +678,7 @@ local function page_check(ctx)
 end
 
 function on_draw(ctx, page)
+  setStyle(ctx.cfg.style)
   if page == 3 then return page_check(ctx) end
   if page == 2 then return page_advisor(ctx) end
   return page_forecast(ctx)

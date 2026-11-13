@@ -285,6 +285,18 @@ local fw=math.floor((w - 4)*frac)
 if fw>h - 4 then draw.rect(x+2,y+2,fw,h - 4,c,true,(h - 4)//2)
 elseif fw>2 then draw.rect(x+2,y+2,fw,h - 4,c,true) end
 end
+local function mark(x,y,w,h,r)
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+elseif theme.s=="klar" then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,color.ACCENT,false,r) end
+else
+draw.rect(x,y,w,h,color.BLACK,false,r)
+end
+end
 local function dfc(y,m,d)
 if m<=2 then y=y - 1 end
 local era=y//400
@@ -1420,7 +1432,7 @@ for i=1,shown do
 local r=m.rows[start+i]
 local lines,h=rowInfo(r)
 local base=yy+lh+2
-if r.name==m.ownName then draw.rect(14,yy,draw.width - 28,h,color.BLACK,false,6) end
+if r.name==m.ownName then mark(14,yy,draw.width - 28,h,6) end
 draw.text(46,base,r.pos..".",font,color.BLACK,"right")
 crest(52,yy+5,crestW,crestH,r.tla,7)
 for li,l in ipairs(lines) do
@@ -1448,7 +1460,7 @@ local yy=y
 for i=1,shown do
 local r=m.rows[start+i]
 local base=yy+rowH//2+6
-if r.name==m.ownName then draw.rect(16,yy,draw.width - 32,rowH,color.BLACK,false,8) end
+if r.name==m.ownName then mark(16,yy,draw.width - 32,rowH,8) end
 draw.text(52,base,r.pos..".","normal",color.BLACK,"right")
 crest(60,base - 16,36,20,r.tla,7)
 local nameX=60+36+10
@@ -1478,7 +1490,7 @@ for i=1,shown do
 local r=m.rows[start+i]
 local rowY=y+(i - 1)*rowH
 local base=rowY+rowH//2+6
-if r.name==m.ownName then draw.rect(26,rowY,draw.width - 42,rowH,color.BLACK,false,6) end
+if r.name==m.ownName then mark(26,rowY,draw.width - 42,rowH,6) end
 draw.text(58,base,r.pos..".","normal",color.BLACK,"right")
 crest(66,base - 15,34,19,r.tla,7)
 local nameX=66+34+10
@@ -1506,7 +1518,7 @@ for i=1,shown do
 local r=m.rows[start+i]
 local rowY=y+(i - 1)*rowH
 local base=rowY+rowH//2+5
-if r.name==m.ownName then draw.rect(14,rowY,draw.width - 28,rowH,color.BLACK,false,5) end
+if r.name==m.ownName then mark(14,rowY,draw.width - 28,rowH,5) end
 draw.text(40,base,tostring(r.pos),"small",color.BLACK,"right")
 local chipH=rowH - 3
 if chipH>18 then chipH=18 end

@@ -98,6 +98,18 @@ inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 end
 return inner
 end
+local function mark(x,y,w,h,r)
+if theme.s=="relief" then
+draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
+draw.rect(x,y,w,h,color.WHITE,true,r)
+draw.rect(x,y,w,h,color.BLACK,false,r)
+draw.rect(x+1,y+1,w - 2,h - 2,color.BLACK,false,r)
+elseif theme.s=="klar" then
+for k=0,2 do draw.rect(x+k,y+k,w - 2*k,h - 2*k,color.ACCENT,false,r) end
+else
+draw.rect(x,y,w,h,color.BLACK,false,r)
+end
+end
 local function trim(s)
 return (s:gsub("^%s+",""):gsub("%s+$",""))
 end
