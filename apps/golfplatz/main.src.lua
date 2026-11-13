@@ -377,7 +377,7 @@ end
 local function chip(x, y, c)
   local cw = math.max(26, draw.measure(SHORT[c], "small") + 10)
   draw.rect(x, y, cw, 15, colColor(c), true, 4)
-  draw.text(x + cw // 2, y + 11, SHORT[c], "small", inkOn(c), "center")
+  draw.text(x + cw // 2, y + 12, SHORT[c], "small", inkOn(c), "center")
 end
 
 -- gestrichelter Rahmen (4 Pixel Strich, 4 Pixel Luecke)

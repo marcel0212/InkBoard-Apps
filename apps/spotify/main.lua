@@ -130,6 +130,7 @@ inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 end
 return inner
 end
+local FOFF={small=5,s8=6,normal=6,n10=7,medium=9,large=13}
 local function mark(x,y,w,h,r)
 if theme.s=="relief" then
 draw.rect(x+3,y+3,w,h,color.BLACK,true,r)

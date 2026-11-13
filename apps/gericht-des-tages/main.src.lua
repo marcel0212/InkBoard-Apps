@@ -258,7 +258,7 @@ local function drawOverview(ctx, d)
     local bw = 22 + 8 + draw.measure(label, "normal") + 28
     draw.rect(x0, y, bw, 36, color.ACCENT, true, 10)
     dietGlyph(d.diet, x0 + 10, y + 7, color.ACCENT_INK)
-    draw.text(x0 + 40, y + 25, label, "normal", color.ACCENT_INK, "left")
+    draw.text(x0 + 40, y + 24, label, "normal", color.ACCENT_INK, "left")
     y = y + 56
   end
   local meta = {}

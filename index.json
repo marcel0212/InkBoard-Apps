@@ -331,9 +331,9 @@
         }
       ],
       "package": "apps/akku-prognose/package.json",
-      "sha256": "48dd7bfb1a8ac4d598273e96eb7aee538de9181d355a86fcaa1817dcd8f3a53c",
-      "sig": "HPTXid1oUXcFkwuUhHJJIzsS/o2v8TbuUtPoH//2T8/6p8Sp4CDuJn8Ay5Lw0+meBCeR0M1zUF8qlaELQ0NPncFIXx3vxTudY8KHa6dlfsFqX3eSp/++WX8yBdhju4Rgax1kMZ8JCIFQClo4y4bnxKL43CTMmGbWN4DY5sWM+oMt/NbD8wpvpU8+vo5Yk8UpnUZEwdWxu9uok2QXGeBYmZH0a7xhdepQtP6SWZGw0YKnIf+oxe9d1wuSs9dBFRXd+v+4+P1rB2uVLoNb8JLCFQsFj8yWXQN2paZ4kUSBB9TN2S6Y5JNtqZH9q9lQwaTvK9PHVI3TfRs7loc6HLPscw==",
-      "size": 37018
+      "sha256": "27a106d545b8e819b61802b11d55cd2578c1b1df8d35bfb14e20192ddae1186e",
+      "sig": "P6Hach//uyMsmR1iK1eTJvRGTP3rCYCOB90AJPtledTQ7mG3rWGbJO/0sNqwnYCSZvJY2SLnWXTFORuE0HKgBE2DpPDm+IwmQ0mnPo/6eIG+QiPPgZoT8i8vm1d7TQt7B0Me2+kU4Bn2sgxyMjLXcQqORiJO5Pdsi1YbIF9NsgqMYopqbxXzPidtc5vvkRCML2LQVKvcD0WfEZai2CyuJWcCDzlyZhEcXeB0T0Bbd/QIOZ0lfoS1Gh6ikejpu/O4jKU8GrTca6viQFve7cp4rv2cUpMKYAuHjWVM520jvKmU1mH6dfb38Cfp3mMQc7WUknsWgeNcNt0QRzQeDBVksg==",
+      "size": 37107
     },
     {
       "id": "apple-home",
@@ -835,9 +835,9 @@
         }
       ],
       "package": "apps/apple-home/package.json",
-      "sha256": "b1b32eea75a7c6cad666aadf2e95bdf97ad4774a6e2cea82bfe140f41292c974",
-      "sig": "RwkG/xMPmckZDL2zZAuUozGoE5qjThO5lEoydeauDcYqYgcYPI7uhXvWRMmNikU0YCTbq7YtVtu6g/bZYcvzSjwucpDvWn8HDWzcdqD8uMxoCGd95lMTNTFMF+FOQ6L6k1ZPOuqAjchvuRWKNZo5oP1EDGCi0hR+/UvtRVdbQVHCq57Nd/Gz41xW2637I9tdsfaxgGQRS4s3apcm2ExUk+J7aXv7h+BykRitoBViV1y4t13fR2nLCVgbrPSXSBto67zEzaB62dvEHEUkwfSMHXljNcOIRmQPELWMuEdBGDYh/XUfNhOdC01neC/SVRiaIL3glO20DRSMo5fnalKITQ==",
-      "size": 35642
+      "sha256": "792a971af6ca64b150fdf3c706c3dcc248c244eb64c27f04083bb74c2586fe78",
+      "sig": "bKYg4Q3X2KCODzcL/1J/0uJVi5NxIss4X/wv5uaQWRReJH+CK31QbE3Nrlw1oFk4EeMxSdqyx0grYUWEIfVDtgLs3Cal9lHMQPv5GZ6qSpK+f/84/QH8Dls/RVVlg6szX1ekbn/g2kCLlZRHIRLRBtZndSOVWPasYxvX45sbM8nVAaO/F1Z27kpCvEtSQ8zQGPJq4NxXm8RIdRGUVZodKERLFLzrnBa71BgdQM+gblBBIAh/P5JAFlygglY2wlTGZFVVn6ZaAZ8eYRaXWRkhVnh0kUXYnK1FzQUBwAT+ymz3mFOPnFvL58MCGUnJ3Oha3HUqoDjcpJheVF2qcTF8xg==",
+      "size": 35731
     },
     {
       "id": "bilder",
@@ -931,7 +931,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.3.4",
+      "version": "1.3.6",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -1169,9 +1169,9 @@
         }
       ],
       "package": "apps/calendar-app/package.json",
-      "sha256": "55f24c16512625b389e1db45d104bbc8822526f82ec28c2731cb702e747df15e",
-      "sig": "T2ptmA+55YPewHsCQSoJ9HQkKd9qrIxx7b5ivAhN2YhNenFZZGXjdwhHJv971zbyqpD/KVORBPZqMPsEDlkWGBtqL3NqGr/5v/8eYNQdnPH7Yzf2UMVmW65DsuXi+aXl+7IN7HcS836gTw8BtugP0/TWpp68ae31RJfDkVEvUosuSH6nziYuwph3rwWk5E0PzNqfqX1XNf4AYeC1K8bPoWoPibaQurZP8Rvr1Pgt7X0uZGXwrUK83ejaziZxtR0YFvW6pcf19AbrETYPErw4AMdsp8AnCXId5UDwlfRV8OU1llPDXywnKl+fRZvSdH3DiJRYIRImFx2bWsNl1zQabg==",
-      "size": 49327
+      "sha256": "15bc57d4d474c6f62e4219e16fe57b2a55e611c7633e3f736447764fc9f52674",
+      "sig": "qO3MKWE3WkVRHnUQ4Bon7Ts8Hgd6/nidU5k8xycVm/8dMqYEQMR/mIeQ7CuVAxJ6SpqGwtM6KWO7DFZ/kfSzV0tv1uhN4S76T2iHahLgCcbmvlyMqJwyMCG3zSgJ6xRCbxC9MevlvyQMwJU0jRHfX9wuj9eHm7/cb6djfYZEZbeafrrww+kq/j70jJOmzcaK/3RUO2u0D/kj6Ib6otqFhsKgZUTKWG0hDH2l7DhYvbKav5FpGqMTvtDZdkXFv+j5NgZHImhYCZVmknmntgpXxvuc9uxe+KjFeL9rgFsc4DDpaEvOxItTJGHGqBzBaXkmMn1B6IntvSy01DzgZKIPjQ==",
+      "size": 49415
     },
     {
       "id": "clock",
@@ -1313,9 +1313,9 @@
         }
       ],
       "package": "apps/clock/package.json",
-      "sha256": "ec6d39fd130a3e58295f41ff417c6b4da6ca193a38204a68a64986980f600f07",
-      "sig": "P1Y+dMapf9vA/eMaOSk/puc4ZOHxqFj62uQbkiQj8ci9o2CvMith7/+Asu8RODQSjVt6ihzd5khjAzIlVBOsCODqUEJ++yzLKs1JjomNVRgaXOwU9s1QCG8J8TRwWuzcuPiwFfW0ONzH4O4w052qn74ogP3J8AbWyEhB0ARZwIT+MqskH6m0kCDPdeqbgQPw3IN5vdMmAkqEL/2X15kgSupm4SQAFQPV0TEnz5UcCc3DxHMOycZjvce+i66xycwmH6iKtc0HD/QwOnCGUVg+Oku2PTWPOk8eiBL10SagarOdY3gxLQn4oUejowwABqwyNGnonpFyvwsiXtnsS6CNcQ==",
-      "size": 17056
+      "sha256": "70023badeb999548a5bcd3a1c41739f5855f70495ebf795a281ff6d7449919d4",
+      "sig": "dKNH0h9XpMZ6QM4zzM3KkiIIAwaorp6TNLKgAjLcjNDinIOUYbatLzy12R6pXPJO83xinzqHoqIHiSTXFZEsD2CBhR2NqAWJklhAOmAEe8ArBo+UbS5Jt+LnzUKKP4CgqALo7fsM62OmF97PrdbrMrjz2DwmOu1X7ZzjbGbHFWaBkOpncmBl9fYjMVGQ7Y6JpDRLyWeQHCGaKqreAvjcvR+ex4S0ym8sxT1Yo5jlle2lohj0ysJYRTsdD7T/mbpA4S+I0l1TJGvPT93k9fc2/cNuHCfB/4kcyQKU2n/6UptFHyFLEY4VceHlXWZK4z08yTOGxFr5tP7HiDZgWJWy0g==",
+      "size": 17145
     },
     {
       "id": "countdown",
@@ -1435,9 +1435,9 @@
         }
       ],
       "package": "apps/countdown/package.json",
-      "sha256": "2d4285e39798bfe1ec03aac17c21bc918a146611c86661c793526331eef9a9cf",
-      "sig": "K0Rxh0hdir/7VKepl7RsFOCGs/O8hFmrWp3haP/x8iRLcYm0jQ165qTt1U+AWyH4CdqOiaHOOeZDyaoRG3BUttebBi5SDiwI2Q0vc63UHvUU2uiFIBnBl997Wc1BnVxUHopJV7NV8Ix6yOxPhWBrxNiTMyHHltPSObnxr8XlL3Nv8GUocDjWAUNLGe1Hsjdix3WaRnlVLScT20Hu8PhtGzqJpYtuU0ydJ8DNtRapfR4f++gG1iHruw9PwhbUEgEcR3yw2qjXKer6/w1vA5s+U8R3iBA8kyqPdn3xCkpANfoU52qRwerV74V+RQRy1d+pRc4dUXEyl9RA2ThHVgXWPg==",
-      "size": 11508
+      "sha256": "52f64ebda6835a1aa07b57f9758d5aac244dea23a1cd23c24b91edb621c868af",
+      "sig": "CtzwwoIi5Z0L2aq7JLZzx5Lj3x4QFjLGk2KNkc7KVIx4ZYGqxAEYtxTiYqH0DdZniJeuF0Le45eWTL+TdIC4empzgayb7PjmrjPk3I7PirBm0hh9X8rj55+1z0hGQj6z15lfZtp/PuAPVEyblCHT119SKmluSwi76QjwbvOnI07aaCF0CJGUGc4IqLAgSiIvQf38qYRkROb97PlmEjeNbdxCCtKTl4quVBP7SRjvGj0gk3BlpS/7J5V/As48pOEvu2AA8mgi69ZKL2kMtIU8fnZzuGbCwrhCJ3PDNKzS9AqKbnw+mz4qytjWodsc6HPc8cnaZ6kbr4z36kQLZfha7g==",
+      "size": 11597
     },
     {
       "id": "datenquelle",
@@ -1585,9 +1585,9 @@
         }
       ],
       "package": "apps/datenquelle/package.json",
-      "sha256": "f31d5dd0b8521e627dbec78eae11a3d57fa484df027091c2450e585023a71b97",
-      "sig": "rQ4A00QvTtno77pgBQu+O8pehIKgQsUM+shQnTyxSfExb5Htmc0qkpcllSHPxSwdr2Xf97xS1qgE8i6Dnabxpl41USJ75BxXI0CVRxiPqPU+HKzLPEuRPJh9b4paP/cMhXOaZ562rR1f72Vnpna2N1XnXr0Gi9+Buu4N+n2d7Ek4MYjsqG0Z1zxGQPtoVE8ToFd3crgKSHM20oun/qS9q/rrH9the9ro6dK8CESHD9SDKcMUlKh+HIpFCZW42vRrkHXYOsnwbx5zNbCWaIZuaRipEwrMjg9cat3Ym16rD4S2p+4W7RmRPg+mr2vP5nPpYVdirrYDgNwCQjEeltdwPQ==",
-      "size": 28381
+      "sha256": "dde4a5f469e305dd3990884ffc2c601d3d06759e508645d8bbce2a6647a79b8c",
+      "sig": "HO81rJM5PkQ5neUqKI687/gH+svB5wE+K5oK9ZfPhwzngiCwx7/BKU8ZNjBhoLhfeeSoA7efJ+UXEFoH9pNqTQljEZBqhJlvfKGrE3neSm4lYoekqJI7nMpAULEFTAWVf+nUR2j7LsVj6+VAfz1JdpKuVAfP9D3rd4T8E1rXU2D7w1315bmHdSzaVr8HA++/08zOHbAlufs38Red/gUo46rDqT8PVMjT8tW35e7khdAxC0nTcCIYVJiFiXSigJT3hhD+4X449fQvc+4tclqIfk5mDcOt9Jec2yVAaWbLo3pUi5+i0Rx/8lWqYNL6vu6guu7AN1Iee07AsSpg/WIHig==",
+      "size": 28470
     },
     {
       "id": "einkaufsliste",
@@ -1761,9 +1761,9 @@
         }
       ],
       "package": "apps/einkaufsliste/package.json",
-      "sha256": "a6f7e943630b70e5c4bb07fb59e4227bd7038ca925a22e858292079e2b3871d9",
-      "sig": "VtxfSGqT3Mtia9JPcVaKaO/KKE97lO7mOn8sWRy9Oib4Z5WH35HO8JNM6KQFx7dXv+3zQPnvuFG/uFbO+/pS32N87/Uym5nj7mpTrcZJlEU0L3e1on+YR0taTYriUSKhIoZwIMh7xzR/CdCCt4Z45BRZp7f0KZJZ7s84+x4yXkxRkiy+qBq1iBHetdQCV3Ps4UXbnZp3Au50d0OmnHbLBlAX+yI13Cm4O0nb/2lwQfw19scLskCviH1wEg3vA6tTs6KPj/pdfn1OprGkBJpboqZEEQVNzJwhU4YuA6ljt62Yey11Aw2kIw4Jr3uym44odyE8fUsdySvuewYjgBn0jg==",
-      "size": 37609
+      "sha256": "69ed42cec1d5c1fcd6c1a39bbd8905ea2f10b9416ad861c3943658723c3abbd8",
+      "sig": "Pa1Zf89gcED64PZd5Gr9TT/Sp51kAkqarj6iJ9uGGMKLOR7YcJqSTdLN9nBOcuk55qvEf2TFPxzip1D9izR+U0P65214tZqDrksVwOH8QsIq74ssIWk0ZwPDqnc6FYwq1N8uwvgESNmoiu4FQHnPtdv0u/AoYndKweD6nXzrDoS5FZvWQd3heIi+Z/h9XjYupCbd9uX7bx32l9lDPKjLbi6ixhVGQVs3E2uM27TsCm2jtXMuFT1J4zQ24aQxWYZTFcuNZTK5fyNfGgDJjwyB/RcC/6CGW0YFJ43Z6sBZCOp5FNyZqer4VuFqA5eCofE2pHOvQXHYU/8eUWXvwnNbTg==",
+      "size": 37698
     },
     {
       "id": "flight-radar",
@@ -1894,7 +1894,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 11,
       "pages": 3,
       "pageNames": [
@@ -2133,9 +2133,9 @@
         }
       ],
       "package": "apps/formel-1/package.json",
-      "sha256": "a884accde09d41383c44dbe4331292e1542b8000665898fb1c922722f29e4974",
-      "sig": "rfpl2CpbVPot/o+hVR8HQoW2YYCk8nvcsfN83PYo8LpZPTfEdtjWAXcC7Fo/mpOgNPIL2k37FisVhJBDVi+k8UnazAGUGZUUxVoIwfqxBrwnt70erY5z+i4WnBwsum5HJQb5dyDmTwfE90Tr2j4aN0H1AryAPMCy/9sRFHUN+2KsPeQBOYfAETNHYpN5BMBPLhwM2KmSQFdNYvnn/HltIWEm3jatqlRR2dEX2kz8VpHVyYX4d+X32NQ6c0vMrcbtTGz6kBUz9tKumUXhV6a2o6v5xgtnat8+tHjHyE84tcuZMZSTADvPLtgzLlg3N895jhnbLZ2ILKRCPNgQ/B+zGg==",
-      "size": 71403
+      "sha256": "d9535ae5bc6a623d932005d015132a0e225b79290893cea8c7d9af3b7db4b260",
+      "sig": "lCv+XPndogr8r6epGiYNXhhHiIqYRjf4egia07nozChHT86MSkdZ1rPaaL1W8oVaefQFByHu795aS2ZcbBEcTJSE7Rgyuu88xxCNtiSJvNavT0kMIDzIaX7I6bH6H3bswmT7yGE9LdYRs/Qdu/TZPCGER8pQqUuqPHOK60xzxO/KgaIAeIVgftDyIWlhyNzkc5xzfc8wPP1s0En0HGPcnDNg64RAGRl1SvKkBZO5sBOOyEz0Kf0DjuXXtA1uHCw6qL9h44MH2z09uAiKulh/Ffv3bX2myK6t4BfEu5oKTHVMVxdqLJD0h7tOGv7PJuHag/hmZ9qM+CSH0zkzTEHsWw==",
+      "size": 71664
     },
     {
       "id": "fuel-prices",
@@ -2153,7 +2153,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "apiLevel": 7,
       "pages": 1,
       "pageNames": [
@@ -2286,9 +2286,9 @@
         }
       ],
       "package": "apps/fuel-prices/package.json",
-      "sha256": "06d4b959c29e10b8cb6baab54c1277c74700cb60ce2b5974886b0aa5ec6c51f1",
-      "sig": "F7Wodk3oopks68cyNjD/LIyYa8lD5WAXDiL554CX5jeIU+eJlFgwXtQudJ6MmSwvIWIFZCj5xsJJlIKn8SQOYuStry2zXNmH73lGNWuhqlGxlgkhiCXwlzfuuDwZypKBnaQRrwKvtEQ5bkpaiFE/Tm8rXLcmwARgjGaxcdNxzX0vVwQdgkByrLvsVtf0fGOw42LUuHxafcLxs8s7nrZV0kYedwv4EXlCZk9MfMLxVMDWDbjSJyiSrnhcS5F5hRo5LxV6xG2HtXVzFItoWUAMLx9JXnkVB1MrrZvVHTPMpJ73okocxcknH56YxHJoIrZNWiXdYqe7aiF+jBe928ofNA==",
-      "size": 34993
+      "sha256": "1490d95cb07e6a8d160b99bf49c717da5d4a5a8df6156aefed7ab71ef230ae1e",
+      "sig": "aT4FJ//7Q3xBOPGU6zzbDv7eLHUOtZCvjnuxSGzjUKBYqgsb0AoyjInkrJt6ZKu5+svzu4QH/a0x96PbNjqa3sk2zuPQkxBtry8fFZ8zqGhixuDO70EPwJKrGUyxwAJCiFDysxgnjAljf/aYTA3mNEek1ELlVCIgd8fPDUMkbr+N1gYPZ7m06ecwDFrnhueduDTb3qcA4IsXVxTpC5GmZFj8EOIl07Gvmjz04kZl6sXCog0q0VB7jLpFT43CNWGeALUXqaUyfwo1IU2HckpkEjK2D6lyTFWKaftyV/d26kUn0cmOQZf2I2Hqdb/e/83UczHX594E34/JrqMJ/DL/Xw==",
+      "size": 35068
     },
     {
       "id": "fussball-liga",
@@ -2497,9 +2497,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "522348c3f1c12e592bc18018869ddd3f6bf07f8cdf1aee5eac64a1dadacaaf99",
-      "sig": "HWW8bb71ZvME5AZM2xheMKAGquACbQj45XxD68sn9asZ211ZX2XsRw+2DnOiYikWkeisD+4NvNfBqCjEsrn4KLNjcDa8I/8u29oYtmlKTgQFbnLf+AkDydcOXU06ttvBir0SeZETiPwtrHmrakNCrcwV2UJBQqIPUN9IsdkdvB1YDxWbc9XT+M1UJc9YN2+2JoNVCxMIEhXrb7q3M1OiftwA1/gdIETarPMjnoq84/ve+K1Wpnz5dPuXBX26g01zy8OrvKnIta6eTjYIU14WaiBRmnjM6crHsQm4mf0DVekGmbr0Pd7pQCtI8nB5SIjaoXzsQFn+9FDJMIWhjmTiaA==",
-      "size": 79905
+      "sha256": "dd0b69714dbee728d69a3892ac2d7df095bae62e75395e43a38f17786bcd26ce",
+      "sig": "ky8oBU224S63TwPSAhgp07wcxaLihdZXhPjfkcdx09ECHmvCRuAoAHBElzl+AFXamddIbD3AHfO2RNAzmmiMGIx07u1uOq6fRfUr+zAlvZTHY5+MeboAn5+Rdv47Fb1ZCwTMdnM3xpEnuzMy4kfqJijzEmGt8IdK6I17u8to1R4S0gWMJmhuenYHcZAtCsPL597u2JNDw1F6OhkPDrrSlf+rZvoOJfV3PjedmqnoZ0FQlYyiBLzJ0mjnjdW43YbI9bfAcbx64csuCWoV/AzUjLV2ZkpYAjjjZPGhQ1v6/O2c8xULccB8ERvj6mguFiLUa3DB9vrSkYXh6R/pUcW1yg==",
+      "size": 79994
     },
     {
       "id": "gaeste-wlan",
@@ -2702,9 +2702,9 @@
         }
       ],
       "package": "apps/gaeste-wlan/package.json",
-      "sha256": "628f33ba2394c306839775eaac2c7e7e6a332f93316617bab8f4cfca43aa4d15",
-      "sig": "H7PNueuEGhZpbeOAdTj4OLHBh/nY5XIfzrJ5vGKiYhpFVUEycNmJaPJb4QH7cmt+LYNgvzjLmicOFjM+P2URiPCCE9AVPfbhKQnYCjEB9sWylZJvaQy4nOBj8k7zzV+M9JqcfFNOcMTsJ6oa/VlBRoGl1mAIa9b4OyeqldAm821QvfEmVk/l8iLCV8E69KbIYOSG1lr/FX/hHv2Q5bHneQ2nKiAi6NioImNiFvBoDsXeloD/GL3JyK/QS0Wt/sTSG3UTISN7MH7UglG/j6GV+fOXTYUm3CfFeFWwPKrTbJkvhHA2/RI9VD51YHK8+Bva9ehPcM/H1ri7omUdVAg7vA==",
-      "size": 36461
+      "sha256": "0404082d664d715ed5638e389007067d0e1eac7d567d7a7652a04f29a2df58bc",
+      "sig": "gmfbLsznmHyZ4VizaUbKTKUGByMMtn8a0tVrC74gbU/fbdYwJVIvS8hZIWZuLCH7NdvbTp46Vzh3z2gF4yC7rJJMzkF9tFSsuoOpJ1ZH2TJ77qBKf418HEeBIFoyiWwLFNBRzzHqF06mQM/VvrKsuwSULzPUpEzMn0OhScBmglm/mF/B5yze0HZGcAXzlqwurRcBr+0ZlqppsejQ4j6YIOG5gUIB7YwJqJRrMN6buU5qUIgzdrghLKITm54qygF7XZGMG54zY7P9moiQCB44fekfT7wBX13G5LDyDzYEtTSmblUHjePahZN9QyYvGXIrT3luQdDSBqWjUhckhYQWYA==",
+      "size": 36550
     },
     {
       "id": "geraete-check",
@@ -2844,9 +2844,9 @@
         }
       ],
       "package": "apps/geraete-check/package.json",
-      "sha256": "33e9d015c46fb36b7c55310d4d11438b22301cb03ca9c72d01cdd5db22e48ada",
-      "sig": "T9vuvbPZ1OLLoLc5SF8KVWH67PENhGlmIOU0P5QnCTQEtV4gWURAsZ+wTQFXYIjRiChkT2lpU8x5ArcES+t3PU+90ZFIDJfzcXJNkkSeh/4XqheGDZ7DBxF8NcgsJxi74sA0f3pLlvxrPreCE8tSkrcaOJkERlYXXMQ8zrarzF7glZKxrIRNzVBFJunJPa0gmDVJ0frshVTVGuF4kxM82r3r1bTEyrMEHxuYany/3CxDglzFa/KdNfq7Fn1HnS4+i0kBk/+x79ce3ZcDMM1W17JDE7N2XN2bDwoI2FxjyuoVzyXOWoDdpGMQb0fmgDkQOXDE5B0TEWNePzLZPYvNGw==",
-      "size": 17993
+      "sha256": "33848c9ea16e49f58400495503bbe2e30d274275ea40898a5588a5605536da96",
+      "sig": "bc1X3vDO1XpghKSd8ukkwZvli/nM7vNNtPjVZLaRCPNSyhhcAHkxWrVheduYPu2KtSBEiDZk4IN/fZWYeGTddMCFRWxI5HKBmxHTthuSxDfN+tfEM8D5sa/dGPk1L+vhlwzs+kYamiElk626/YqWQS1hHTvyJkLvv6QaHOMpUM3eAHp8u/Wd7Ampz1nPl9EMb0ADwWeSvyxvNP8Ycj6u+ILc2H7a3j/Jp0j+cmg7684+kYhSvBGryc2XTb9HClAcVLvS+ypDyvF1zJBNNjaNNV82+R+XQr4Fc+ybAt/kTC1NLOsKfLxEZioqio+GVC67JDwRNWUv0SpApkF9ayaHag==",
+      "size": 18082
     },
     {
       "id": "gericht-des-tages",
@@ -2864,7 +2864,7 @@
       },
       "category": "fun",
       "author": "InkBoard",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "apiLevel": 10,
       "pages": 1,
       "pageNames": [
@@ -3032,9 +3032,9 @@
         }
       ],
       "package": "apps/gericht-des-tages/package.json",
-      "sha256": "d5912d1e7b8fcf76fcb6d54f5366e6334b7dceb23416a6b9e14291164b22ea7b",
-      "sig": "lJwsgLZlVa6SnKH8dl3lzFwrUSLkPa25FuE6hA/ODLHzId3mGJksPRuYJ1+HgtAdklBWMIt5iwnAo7v6nmDHqhyRJGuaxGh51iRxoSl4C6bhsZC4qihvb2bVPKKsMvWp8tPbhQVGoSBcWm6GKExMSfkTWsJM22ghZ4pY4n1jsdsuFZ62ib97q3IiPVrhmIBDqo7I/rMeLFJq4aYj7xHUhd9iBuIQVkns7uYvkzMv3MssOjfaF9lAfngU5P5c5hQgSmoIxRrF2aLb/ytYCgwlGI5Sw/BYs8R/W9GITWXSjcZ8GFlIQoia93Yo2S5GMgUrFjgdK6yTXo6ROhTjxOO/VQ==",
-      "size": 28998
+      "sha256": "3b421be4e0a5e87c8d9089ffdeb97125fd858f7478cb54df43c66315e4da2beb",
+      "sig": "X63hbjn1k6fsXZsspuyXlfBL4+MxDzRzmkpEA+ijaS+fcAJMRXdEG2ykbWM9GxoKFRVNo+q6Ld6fBpBR32naZ/tfixC6b7z0jVZj+GCC6fodeaucnV1XRaS6ltc6XywBDDMuwwdS0OdLhB2ljX+/A+z9lNszt+HhXwxzxp3D34CTGcWn2/qp8Gsd3fLgiQMm9UXq0Eur7idTN+Wlgg24BdZhMvr0XR0PXZEB5MQRmJeYcdKFSWC+z/f38OtSXMYiYiYg7h2EVv4nib/zmJVHFO0V6IpFpZZCi0CDy04QxB+ILeNSnVIymwD9x6cV8I2TaOvsk3ipkstQj/lyRuV6sg==",
+      "size": 29087
     },
     {
       "id": "golf-tour",
@@ -3184,9 +3184,9 @@
         }
       ],
       "package": "apps/golf-tour/package.json",
-      "sha256": "3f1cc53ff351c37b0694ff39080a2b11806068a102009b00c33305d72d21e2f8",
-      "sig": "Wt3qfy5k029VKcrgNzjf63SrWJnHRWXOPvncrighBxmAUB0Cn8PycwzdotUlHK41s90qQsJMbcQGFaDpKQB9Fjq4uq2sCTQMBDSY5pNj4P0qLZOuWQvCpaBIkue1dpO8vDbSEfK+//NUtX1FIisfXyRFim0B3VhIf2PS3QxgXE5EPUPcnwteAiX/s3kgm+jc5iKH9f0TDC/JbzTXxykGhTE69O6nYTZEYkuGnd3QcGc2/YSm9yUL4SIhrUSRJaY/pbiKSOSO6jmPnakHBmK6sNKAhK1kX/sqtZYBZ1pwbE1zMEO4VP/D/TlVBpM8xYpoOGFXNNdszy7Wihpa7R0gEQ==",
-      "size": 33275
+      "sha256": "0b0acbf02ad295d34a5cdb70e40bb0797c719545cd89efe3916940fbd1c0cc80",
+      "sig": "YpTc8Ink8f3B3ld8asFQnmBv00QZ15Fnvykd2oBeMPLuiuNI0Yrzu5CVew85FwzhyPZ7KK+FZ7/JzmbBAO1WStyXsDWyknv6PKfAxh7GXeG+G3oVFnOSMpsk10bwYhA1ZX3Tg6cXzoqCENMVzIuYF+El4xlWnWroSU1ubYUXChEd4H6VnEQ7pm5hq84i5/lVzFrdKiIgYiaftAVSxU/ojlOEDrIrFb/GmZLqq3zCcNQFXGRmiX8mhpEVdNGZEfp6DdY0OWA7j0h7dni3iz0R32JxmVaNCggQeGKws2340TUzLOQzPBgYx+i7KlDLpa8HM0Gry3Oc+Tjzco8jK/Is5w==",
+      "size": 33364
     },
     {
       "id": "golfplatz",
@@ -3204,7 +3204,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "apiLevel": 14,
       "pages": 3,
       "pageNames": [
@@ -3444,9 +3444,9 @@
         }
       ],
       "package": "apps/golfplatz/package.json",
-      "sha256": "5cf5884e63b517ce05211d7643e91a2f8651343cd4b95bca9a63256edbe63335",
-      "sig": "O70FQMDzXmQInyFky9qBdBFlEEtAezijGhsQ4n/Yhhye3+myuQAFV8UPwPn7rWcQmbtbXzxS+nFdzbWF4SUkg/baq+D3hRVxSBSlQjCZ+BSKYjjOaV+urbOEVwj9qVawX4rECr4J1LpZ8uvAvWE9SEEUqunKOWoaA50jJ/fO0VCkLNhNeffvaUiZUlALRn2SX2Y7gx3w1CrKfuoYaulkgopN5bO6fMdDbPYLxvc9+yNGIemvu8FCnk6i0J91iClTEOeSXTaN3uwv9ZQNYKJ25fth67gt/bsc1OZWG/JjUR9CtQGR02aoPi0dwfaY2skE1Ftasnrf0oAwO3ivxnfQPA==",
-      "size": 51883
+      "sha256": "3057dec904b0d6fcd5172fc07c8e5adb6500290fdbea01f0dfbba7c89bc0de01",
+      "sig": "tQuu6Izy7dl8OOySYSMKkMI57TvmRl3MPnOkE349k5y0ekeUWOAS91xrjX6QV6p/FbL2I7Yn6kj55bA3T3c0elbx1d7Wtk3Tp3TBnAOxGXjeppcwkqSbpWalK67BKC6lrp1Rjrt7y6U6+iwp9ex6YABFJcacNeemQhcAADkUhZ5mIQnk1sIZX7dGWHxDF8CZKQ9fcXxjtJESvbVIlg9mO8CGUErjgE1mK1tdhnIMBKkRZpteItREBRtI0mBprrHmwTFqtWdhBq8K6MIYb0rNr0HqWgohed7LkeTGR6sgwhKmKbl712IrGrgRGm7vrclJHHDC+i8mfzRTvWRu2gSTlg==",
+      "size": 51972
     },
     {
       "id": "homeoffice",
@@ -3598,9 +3598,9 @@
         }
       ],
       "package": "apps/homeoffice/package.json",
-      "sha256": "5acbd2ca268de9d80039cd05655c1f25939ea2d9d3267fc24c0a741181f2fb98",
-      "sig": "luEdussgONz9f5p3/nVqcuuCmAIJ+3WsMOmBBQV3vtWgJ3z41bOaHDs4QlhEZ0WjjtNQGjpYSdO88zCbEAfa8ElW2Z0BDk17yFzVWTMKA3fKARn3Ksqhm+KBkgtVfu31MY6OELJH9ZkDbCI49hv6XqvJCB8JRsVR961xj7VzlTZgTUkJICtLKjyZNbpedYCrDUVHqbUbKTxAqt0alR6ktK1fVH5REGjBazd4oWv1hgsj5aI81QlYXvvXATlhYHNbhWIdKxpiUWhLF+MWSu5Wj+NiGNT8dmrQZcoJJ60BfLXDxWL1GPF/e4t/LM3CIvH1nyZZnWUkLz6VUaZF8iBWhA==",
-      "size": 30398
+      "sha256": "422d0bd8c2d861464c5082abe8d374f0a24625d7de0fed4f3bf867c501abbab2",
+      "sig": "iW1vgF3K2QHBZKp0Tn4qni6qYHAzGCyc/Hi2pcFAFR86YzfPccgmbkvG88tDCQjzPRzMKkiMwLYXGj9Fjf8x0EWqUwoLyX4zyUVwjb42w6fFng5NADhws0sZOmhO8KkcpR8qIV0cQqKWjUlMHW6jgCJiCrAI8PDNCjOOzCTdjcPPesAJT3i00jSN5K+graZQeZkmM+WxJREO8DSVrzh+vqnmtREJDAlqAHRnHZsAnBb4eHTpewgZLxgd3W2E3rOGwPiZEPx4CK1ezcqLSstR7CxkC39IWJPmgNPILd1Kk6bX8d9ryse18+i9cWDc6M0896Nm5lvJZcYRl8SDS6cAkA==",
+      "size": 30487
     },
     {
       "id": "luft-pollen",
@@ -3856,9 +3856,9 @@
         }
       ],
       "package": "apps/luft-pollen/package.json",
-      "sha256": "adef280bc7c7d2000acdaa562331ae13820ddfe01404131597657034c37c0f31",
-      "sig": "O/vDWvKEt1QNP7w3Es4pUY1SRXxYi56MYQrnteO+ZMztJGfylqK/ziM1d2AZ9sh4xbQAs7TZO2CYwLNB3PLooUYnoJMacBdPG3y7K3E2Pn1vwgCoFtiRgl093HokEtPF07UapdwxHd3CyyYHUJYD93I4CpoNWSFRpftPHi446PwPEybbMeAamlvNxseU8Onfk578Q4dtUE08T6dM8v00CNJsT4yBWlC9NUZKoS1Ru53TVu2fOdh1qip1E0koj1LyoSbbvY+cj1gp0x8AT1AfGjVafeO3e/QKhzQBux7wUXTkXqT8ZlVo0X5uPjC7Rl8/Bk2pqTd0rT2wv6WfGXkCqA==",
-      "size": 26838
+      "sha256": "55c4c7896c757bcfc648ac0c45e8f712db96c6a7c2bcdf5df625c1fdba482a1e",
+      "sig": "tx7YftGKCg29UeW7PyICqoKrZNoGJDXyf3JOC1/ZklkOdT2LAQX94T60+Zx/qTLDCBJOvjvxAo63YjF3PsUUEBSK3A2pQcvDDJn1jWslgL1tZ/WvGensMU+pEiH8FgFaoj4Zbdpk08KvSpHQytwuaeqYzvJYnLsUOz+lBcB3h3HPgrHjqeJmwul7NcNFkTjQIHS54yetNlzSacp5KGnhswZa4fpLsAuBiOwq5JTd0tg1d0i7FF/h+b8z8CxQHDT1XGxH6/6USgTB7nNac4ZpH++MnxVixq/nlQEjTnEKKiCPvSioHiCx4zqggbAqTcv3ZnyReJaSaAaPgoQrxG9SJw==",
+      "size": 26927
     },
     {
       "id": "news-feeds",
@@ -4172,9 +4172,9 @@
         }
       ],
       "package": "apps/news-feeds/package.json",
-      "sha256": "7598eb4f8594fa7b72ab3cc5a1f6e8147cf9843d6776845318fd418bb7671d58",
-      "sig": "h+Vyt+E59YEU/i+tJVRRohelWYnT52d7vGpY72wJ0lZRRK+oRP1vHd3GFtvrFedDWcdXeTVLXbwn3E4AtP87M20o7HJB8Q309/AncFZfjGTzHEWqy6875IHC1LJKi9OtNtki11JaQlti21CTvKCeyOS2niktel5cbT8RbE8bORfQbx2bfXIdPz8zpMoItiA7SU0nltkJaJGQEukTz1J01bJaKfsoEIO0vP9xoKr2WU0E39wYsyTdhkz4KQZSYsyv/ejZbTrBGHHD7yW+MMRBKEUeWEXeKYC8a3B0x6GcJ/WQmmYtlu951fhfO4kHDOu9rXjYo7rqR4R2zDRTgOIw+w==",
-      "size": 34700
+      "sha256": "e98e68fdbbb9ae3ebe6c8d1b56e43a6ebac637335cc4633f118ee580b847f67f",
+      "sig": "m77lxY/ScsI3fqtEluF9rQvZs61hlsARrsoWBojNgHY7KHMOuCqw4/W0cfH6mCe7ur4m/C0vR9UVnOLtiOeQ6zvTy+CYDjnt1yD1tnnVX/CyO+xvt0Tg+hlmK4KENbhmevSxjAQBADCABED+c0rOxMMlrtMczlxa51QgZamJWAZI2tw85ss3XYMmEWu6S1ZXFsHjYV5LyR9/34SfJQyQumQfVYIGI8TAyZHIwth4DcwsJ6XFd23DIPmxmY/QXpCsdSkQLkd3bRWAmacGHKo0K/BWL/OQQ7GP02Et4hZWWdpMB6NHuUxBtiXZXSW8UmgA1/hfTXRPMESg+sosX1EYlg==",
+      "size": 34789
     },
     {
       "id": "oepnv",
@@ -4192,7 +4192,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.2",
+      "version": "1.3.4",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -4390,9 +4390,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "6a477066ed92544298d90da260f3567555385ee2fca1a085b27e2f59732123b9",
-      "sig": "iMQAv7At8gy0XLg4uf5e6+zOxBNikj6POHBgHY/PSp6UcqEkq0CH1mazMNl5rshSe1qVDV7t4AaDBBhp+1jDlWfRc9c1wn6cqYVzuetCnBG2muBPlIQ8ASP5BcepmzPGbclcYZpWdEermbHYX7STrps6XgQyXPWDPCXyMdHe58Q+GzzKjdaU/RkFmNORHAXZiHp3WFDGGHwW+c0nIKGFEa3sGFqPgc6a4DNYPqPtnIYGbIWnN+dW3Fn3RCcld5M4D8wbbh8kk1V2E+D+F1ONCnETUgNcjbbeaSggSg8BKA4YFiMbyUZ5soKEVf0EF8h9RzpOe8rO5ms+qOIxMoo/Pw==",
-      "size": 83934
+      "sha256": "6ad2583786780791a7d9652bafac814a4aea92a4cfa1e1898c483c9f50ac78de",
+      "sig": "BVbBIP9kDo0twZB6HPvxPQx0MUSdYckYY6koqJ8fJkXyMrX5Xn7pw9y2rOgYRULttOPcSA4Ubc5a8QB5eVV1lOO0hOmyXwiT4xZOfeiMbevRUSh8dWoQYGnL42xZ7g7vXZ/GTbCC4EfqRH7zGF1XhtPlQWu5i332j8/texAK+KFOsjw6F4xMFbzQLX6+eV7NqshdSyzo5ZA3PaqBsbFj3oqaunRKrEiNQrrZpQlh7+FaAwhY6/JDw71azomzzjoY0IlSWkScW237pJk+G5kMUfYz1uJw6ZApyzevkbzNEo0nH4wPKX1PoxZewebemRORcGW3XFAoASbXfr/5ufQpBw==",
+      "size": 84027
     },
     {
       "id": "pinnwand-app",
@@ -4531,9 +4531,9 @@
         }
       ],
       "package": "apps/pinnwand-app/package.json",
-      "sha256": "1360d8204c892b1d7181e3a8c6a85aaa69988547a29394d3d15dd960210faaf6",
-      "sig": "f4WV7ROFoQZNlFPFDLhftL1BWuVmzNP7rnSSuDaZjKVM0dbl9zL/yc/MxmvyHsQMgBHweXLh61FD6G2brgJGdwTmrLWCQbcjC4lqbOSWefJpIft8H+cm+Snwns14XHZ1/Q/07zg9t+kK+W7FHZtw2FNjxEVVy2f0gi1ZF9R5mlDrJ47pBs8wjX9AWALgcmxP0Ey64LAAdjr91ADrnwCfiO0ABEQlhwNSbEFwbNigIWLpPIPkDq1VhkEylKGBlZFNP/EHXmzFUr+lKb+cgpbtYBzc9yQvQAxXgCgEN20XTiUBRcZh7or1a0Bcuxb2mjauJdYMHpgvbztIX4pk+tVkNw==",
-      "size": 15863
+      "sha256": "2b0813e4e788ddc0ff1eb28a85524a1ee0cc63e6e25a0aa1cf6ffb43aedcd043",
+      "sig": "ZMQlXajf4Wxe0NDzmzdruRoRxRTSV2O3NJgr6MQZ/Yoqa/CtoKxVOmc33ltlPFQrcLZ1OevsQfL9lObOtmKhNbrRJHwhy+Yp/UCxPJPmWPMNa0IgPhiEtZN+fCwQeCugtdwgg+HIpoLuejXV+u0s8sdzwr0XBaZnWkuxxpwW52V62mxuN18Wqpvo+BdFbkWOrwE7zoYs7Ny1Twb/FP5kEUKOuXuV63a7X8Hpwu6m1lWzjK61gmVXyzL3rzvw6QTYlRRaKvQdDghBV+kSYhVxt7mSI855w/KsQ9NpvbJgy0t8wboEY2cMWfPW2a5Bs+rLSWC39aGvM0S6LpfH9EHrew==",
+      "size": 15952
     },
     {
       "id": "rezepte",
@@ -4650,9 +4650,9 @@
         }
       ],
       "package": "apps/rezepte/package.json",
-      "sha256": "6ad59fd95ed136c85ac869091a599564443b1f87a57f5a4b2332ba01c06fd483",
-      "sig": "b8gYq2ceDNKHg/YKAx1+paKoIE3MnduO8md6rS6tLcNGeQLql7hfRtM+r6ev0lCg+jlCc9gekMh9bazzHl/3i06rqGstXcbZ/ch2Hn/r/BlKtwM6rpCLwBDvHoJ91Zoobm7KUwzAoqigHCsgr6INaUvD6vNZZAy5dCDI262Gl1w5OKBMzXyi51GiOKs5SnEZFF0HL/A7iWw6OWu7uK6uIvz6eF+2qDc6b7Up6ofY2UDrMOh3ep4FuNZUXQkXV5Z+XQZzqYjxxFNEjkxSIpvRRknPb9O56FAZA8aui6Nm0gOafou2VKKKjWshT+rz3zDcXPTKKmvu953fJv0DLtib5A==",
-      "size": 51388
+      "sha256": "64d90b7ff08b976edf067bf170f068cddbb822796c0a2483cdf11c82821a528c",
+      "sig": "nQldWw6EDP4X5BquDcSdwD+m/OJlkAhxH7IDl/M5CQr0VoD1jz8uwIvMnK4Shf9GD3IabVfB515BHJkI4yZ737Zu9IlwybzLoz2mUX7U7FmLbl6+vNHq3jlhp7ccHHFG6StcvPfmkw8D8PqqsQvEY6YZnfn/cPcEmmP2OgCe/Qk3l9RxicrvPvzCrrcRSAU5e0+eS6Sd+R9wLMmQ8zeFdTMqFyBtVlk9/oKXBIFJW1CfUVz8OnnEotE4Ij/Sw3M7ZtoqlIybwdDgEoNX/aZX1d2gV49Q4rXr07jReCt33IOyT+BIQTLQPT2mmjwO+/dYQkEbHv84WERkhv8trn0VUg==",
+      "size": 51477
     },
     {
       "id": "sport-tabellen",
@@ -4860,9 +4860,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "7488f7b519bc2d3919c0d2508631ecd2da68e557dbb805064c7f36b897e06deb",
-      "sig": "B2n6A5A+ENaccSSkC81JIoLMjJDTJ4qXRo/sqmqPPSQhP4r8HO+Ashwb9okMb3NPJeRBBBlC4gIhNuCgmDN74MV/KgO3b4Y0azfKtwSGSMMM6OgOmFRV4vjU14FOTmH33WE/U0DMsYwEvCH6EW1WemveT1fWkKeHQOv1c3SvP4cWsrhu7GzQ4oJN7NOQytzR7WwhO47FEupWi6xi89wqdpJi1EDEjzyyGN6l2uPEXmZdCg+Zs1iwbNOKHnjKgz3sTzOdssYtiAPmooUj/vAwK+VdhcEnRiVh4a7dDBwUMBT0iKqGmZF8PrXq63zmZF61q/9olC7ERJu3sOqT22qT0g==",
-      "size": 66100
+      "sha256": "df7a50c2acb2fc2738dc3ed684fe1a0503e4aa183a9f2bff547afd390a4821c8",
+      "sig": "ojcsO82oKpHBBXEj/2NuDGcP3BAQSps3yMavlgY5LuHTD2PCPZXelE7pPZw0MToaMlYXUIh8al8CNgGIdEmhvYlODTeXqQi2IwFsyek74obRBn9yEj4DkrQDdSayTwhI1KeSDSLwX/Qop+OTb73gD/p4vMlVuSG3N0EzLh2Q/K3UJgLeAIvMc9ZMmq1nyGmiFp9Lhd84U8NKkZjj+gfXIGW3EfWD6bpP7AS2Kv7d42YCHhfHWxMELevO7chP+c2R10meSJg6T3dCKnHvazrMYZXo6EJ0bqLYi92UXFjbhn2oJfx8iOYVNXtcqdqRPcVD+Ag8jE8alO2p9JatvBQIvg==",
+      "size": 66189
     },
     {
       "id": "spotify",
@@ -5015,9 +5015,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "5d900f74f74b23733d287304292bcefd0ca60af64f7e2a9e76892739f65911ef",
-      "sig": "aHtxS9CNqYsYpzvIOi4hproPDw3wvSrRrOwjUddVm70otHlwtuXr8AlvIejluZlWEUGF2IoIIkGDJvKd6EwqnM7NSRF1ZC4I/DcD+FvvABCCPD+l3/LoaIC37zq6xpnaKpU8jjgL5OCGqrGVMZsB8Ktwv7YlunmePESh7tVvtWtsWStbmwekUrZyJJInw5HbIHLqIxDzu6JpxIyZhOU9++xrq2hAfXhv62TYXYAJbVX3prqrtDA8Lv1z9wwDi+DGbU1YnVSmRy1O5pPv8Z11Y4Z7gFTOqVJcw70wlwb33XESkJBoS7iP7Ur6Y1q1jAMSgn8upq1tca/VuhHbNpiMew==",
-      "size": 26799
+      "sha256": "0b33decd46288f49b74aeab9941c61a2f5076af6b941e4cb6e271bc3df4abf98",
+      "sig": "l+/rspZrx99XX9Z0nRcfZq+MaFQQ6sNyyll4MlHidnwLLcsEbVcOku1KvbaCxaqoJZTH0FHic2JmBUjbvNLr9f1TVUZ7hsC9eDjzBDeqvb6qTVl62nfhQLbWv5qw+FVYw80XFnBVOY5Q4tMfCREB1sCIv0+ARmA+jZRnw2EjjumRtI/pBIlsEssrn8W+WGLcQeayf7pSBi3lSW+P1arKV3vE7EBA7mW1FVUhfhutwKFZeO+w/wTfrH2b8d6ihbwY+CFkxv+ADZFX5gmVgffVoR8I2KK7B0yvDCMvlv0BaAYtQ6uHcFpRw1nL5G2AAbST8J4V0Fov84Rx8hIDA9oeLw==",
+      "size": 26859
     },
     {
       "id": "stocks-crypto",
@@ -5219,9 +5219,9 @@
         }
       ],
       "package": "apps/stocks-crypto/package.json",
-      "sha256": "0934fec8d178d0cc45991a0819d42ae560722f8a38bcf19fd6d63b157489de76",
-      "sig": "v+kQDaiSO9CVqQ/0O4eeGElfnCYnJxRL5vsUxZ6k+aIP0Jxp/CAt3+hmE2Qfz7HIwzF2XmR3g+ERau9CvFJ2iVKcsnnnHOv0VkNxgwUUqr9EgBfkOYNd5ScI2MOBxaDHd6ehk4oaVQ7nmN0X7VFH57ZrlGkryZZOvq3NazGXTqkPxkHIo/Gy0EF0QLaLe6y1hrFnp8Or1zDjUe4PrHIaiVjrPYMCoe6GSqGrasZ6Vs+Ev/InVrhihqFLJIovtQLqpAz+AAffpREUBD9VtGtbzXyo9P2lEbsVrU7NbYgwU5n0RRp3rK5yQ2orcbtSl1HQAyk2ORnWwcN6i2FKzLlOIQ==",
-      "size": 32732
+      "sha256": "261e813a817ea06ebed72bea671e72e4bf8e02093bd72e4b8a511a33caec8471",
+      "sig": "JqR3p/fiDZMYkF6lkmp/PfKPBT9eVYhBcZ1bApNDwOik5kGWDJLvLb+AOuugETXmklXHk9pRgg2Wlb06BnSsNmfIYSKj0Ey32k5ExkhIcbn7vtKTcMDkpIkxOwWl4mqGwloDTx7Q2/VBi84VeSBV9lorSrtP3X/0Jj2Efb1oEX3zVomHZeF3+/IXSwSbatTnWTB/FpatWQFUZy8LgePEl/p/NcKQlzpjNpDNByCvhZNnesOZnEFhV0Kxnr4Aiz4qw77AmSLkB9ZoU6+VrjZMouZ0ic8zrhD9VCL0MW9qAJgOE+Rmq/3SohMoaQ+mAcItfcNYE0V2/q92Mwd6MiS2MQ==",
+      "size": 32821
     },
     {
       "id": "todo-list",
@@ -5373,9 +5373,9 @@
         }
       ],
       "package": "apps/todo-list/package.json",
-      "sha256": "09e6acf5cac20db6aa3ccee6b00e9399f9689463ad845af04804366157cd8ffb",
-      "sig": "Qat3MnirKSoutdP1GX49syIjuD6zz0ubMBaeylpc6WI2fw1AfjgFwTFY1s8MdGHh7nPC6+cZWZ6YaPWrLTDbCn7j5FDd1MJYQSDbtr05qhusI9AiqrThD2lsHCSJtrxxYedIANHgzCz/gnRdgN/+x3s4FssCbf6HEkrbxyi3bq3r8upu8AwhNFKJO8vMRBYK1+XVwhGNo1tg18a/9KIHthDerL+SVoJ6ES5fL3iNtEWLVDlobGsDWHYTwSjetbJtkeUv5HkbaS8XgUT1nAukzRF6/Y7X/ZuvYS2Dox4yVZcrx6gs6rSyv55igKLcKbShz0IyxlE4645oGhUu8wcDhg==",
-      "size": 49792
+      "sha256": "8f469f28e0d1b3eeef8cb30803c1b19d607fe968c01035aedbd5b0b5b0abd350",
+      "sig": "tmX6GMfDmQ4/7VV+92s4eZUJT344uoOsqMG4gwA4XgviMGuy/u+9iaOJE2QXthFkiXvRPRgWTojFasgNW0iR/if+BBTMtzRh19kNEwOVNKVWncSnu8qGA9ls9LcAucZ0dnEVSG1rXbymy9MQyBABCjXe1V6lTE9YekyrMkBLYspTC0pkuDHQZWXx5eqYkQZLdmfVpAj1ck/gquX7eCvGmN64x5Fbk1PkalGtGm8lL6sqQDIFE3N+HUaHENeQ7H9qUYZQH7QrJvNQXFDiTkYC99FTvBcsaxHT3xCMTQpdygkBwJCpaQeZA56pAgMfpzhsRMt9mVTikIl5siQVu42rFg==",
+      "size": 49881
     },
     {
       "id": "tuerschild",
@@ -5523,9 +5523,9 @@
         }
       ],
       "package": "apps/tuerschild/package.json",
-      "sha256": "4065ed57674d2196dee09c0601450a25af67369b045ec334dc3279ac6c1b22e7",
-      "sig": "X8KW8oM61PhY+Q1jQnjmqN1oAeBg+KBY0vZjs9xw/YMxUTJgDKe76TBtxvRR0XUpU6ZOqQG0qUlpObBLpmBUyPC2ag8ulFsmSuFMkRJS5pn2NBuBaFJL/m+t+NcgT9bpXQRWoPb9TTmNYwCyik4stKPz+d65XdQ6xeTiVrfiSyZcodzMdktwuX8NfvaqE9Wl7yI4ImtB/ALPhtsJLBgDLw9gj+UZydGMgLcn7AKT4iuSPfNQpM0CsWwICgWVRMGseU7AsSaQRCW1qTk4Tul4FwWc0sf2mFP2OAugpUWnw7UkXcDzmKFkqqED2aJEBxbnntHB4lu0SgBoK6E6SRE6Lw==",
-      "size": 25013
+      "sha256": "86792e51bc8a219394df6403046803ff239f1cf982678d920db2cb600175d856",
+      "sig": "cLtdXxMgyNcgpHNhQyUt8VJQ8w2ezHqVAtezmwGrsR9OrFXyTbr3ZnkQ705w+b4GdGqy2M4g7XHUpfzxLUi7Q2IAueeBF0ZmVB3PCn1RME4hY3LxMYVg94fVzsgYMz2z2Ikn+SpPaLahwm/DO1ZoiWk1j3pSstXkFxKWoblF/L3la4LTFI8Hy8zA7jcsY0q8soKV3zdW9IGjwmMyYGpU93J2DRu6sPaTIFizyX7syBphfZf4YwDr/OnIuF2VLShwQAjkpqfcacycDTfQTQHfYAhWm9+t4SdC/qIi/BagwDZ2B2dQzlOj1CCK3WHWa9Gfg/qUV3h/SBJtsb7CQucgnA==",
+      "size": 25102
     },
     {
       "id": "waste-calendar",
@@ -5676,9 +5676,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "59351201af3507647ea83f61c928f74f366895faa606b7a60abe917f9ecf29da",
-      "sig": "aD87Ko5XRAJM9pAQJEc4CXWg8PM4SMez7Vpj7y+gT2Kjl1rLQNhYFEsqz3B26wSJjp7AU4ESjjGxRcr01FjaFI5uG3nDpS5FUyQesPrIot9dmbs4/Ucew0f7bKxkBUWiyDY+bnpmHI9YqzE6H09wuN86L5atguZ2J/Dg+ADWBBhjb1zmNh5GtzCMJHXgOa2mNrxXKdEy1NeYT0QuxNYvw69Cz1GWVk7QkZFLm3hZvjB0vnF5PsUYd3jp8AEVQm8paUrJWMyiSGwpElxaBo5Fgqd3o65vy+vvrOM3NQTMM1+lvM/JNQLhFVNNP4lDu7mwf5l6XCX/V30070xaIFnorQ==",
-      "size": 35311
+      "sha256": "93766595e75cfe20b8f4b04489e01bc8013b1f86e93bd742b5c0cc033fd91eca",
+      "sig": "MXPCw3Afrz7rHNLHu3MpasYroxDit3FyInyoKeCJRUErRJ27dQBwbBmv3FXuba+/MkomSTgkXuBTGBvOxK2qm9az0h+L+sEWUUZxDXNdpqaCTD5hD3HwZKeqMA7fv3W+IDJXZ/gMirh8CwkyVQ8RsBN32eUAnZ+Yy5SyT1GwA4yu9ZxQzhlJ/I8oJw8jDrIFEmMJt3iKz9+6dEJyYBZZbqdGWuiRx1tYyVsyidnHtyLuuG5gmf5uAEyKNy7JV4wpTGD08QLFBGv9KEtdUy0NfV0IwYe72aMX+V3tjenDRvcMXEa4/BTSvE0C0a5e2MgJzNviKQ2Fml9Kx5U2ii9EFw==",
+      "size": 35400
     },
     {
       "id": "weather-station",
@@ -5696,7 +5696,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -5989,9 +5989,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "871d0a539fd56a5be0ea2e4b1250080d00e1873ce56e88ef604cde99ebc27431",
-      "sig": "FpqxgDMBFamyobndAKSQ5mrwhc4NK4Fn9R1faMt1sAgS8gSOmgWHZ9xE3+Y63hUVrKgWY3LKKfTCJLX264uJYOuJsxiTy62LPwNynSBhj0hIgVN191bg0NZFAGaUs6R6N/ITG1TRdVFLtanJCRwl0+3UTXl7tnwuUvndlMennA0U4UJBcosY92tHqpbKxC/ceNmryEJ/eNiqKEkTZzWwX5Bdl3lNHMQY7/8Ir20xK/02DXh8PbxmyJEXtFzlSWKXahLyr8F8nFUK0j/Ih/LiTGg+IF1QoXplYj98IwVDyHO91QMOvI5TxbZ//cijUUYjZAeEr9FoqPV3cxoAFoEEuw==",
-      "size": 73040
+      "sha256": "e113c5d97b7b614d5748450c4bd5626a36b4171fb013be662cafc31c97e77f33",
+      "sig": "Q0y7riqmsA77upZECMox7EPKGAUTmOdc91JG8ZGQE/kr/510P5dzHdUwwYQTcgw5oPB6SR1eylfs9hdrhkcMBXGvB+UXJV3gLilRwx9djLKkcdHJZKLVfGw2/LX4gAjzoI3vVch+TEMkxt1BF25PIrnaNxrXLK2d9fcBF3Yivf75daTxpB/qn0A8wJdb1rUWyZ72yILL4mF6Ehe7fHoDQ0tgfD6mRhRUgqymgIIy5LqVIRlHfXOy0SGd2vQq7r73Mv4vmacSHjtrcKCznXODBPNIKsCqXQ+ebdeSegTC/7lG38279pQIPvq98dHRRuZp1WIHUvrJKABf50o4jrTOsA==",
+      "size": 73035
     },
     {
       "id": "wikipedia-today",
@@ -6145,9 +6145,9 @@
         }
       ],
       "package": "apps/wikipedia-today/package.json",
-      "sha256": "7329e4a3028a09bcd0411136e77e5a73ae5af51e2fd57270493ce965bf45a4fa",
-      "sig": "A4Fbx3sDhQWr6TVYcQItSBnT8Ecrpd5iTdj8oIYvferPDdz+RzuWsdmD8LlTayLgwZQZsNuxESNY2r5xNu5JyBA1SWKKkyNj3rGlJVkvhWqit4W/UUaCPgGX9+F1Ih90rhY4PoGMUSNiU5L4UCsLCGLfJTfj/yotGo3IUpS8hPBOsJ4WJbL9sa6ixUa9XApl7t5QL6NfZuOi7GQ5TLoJaY3E8Nzk5YJrmv1zI1oSODIUzgQxW/QMLNOxZu0YSDtXvsE9u1RuA35/42M5LzIZp8aQDNfniH1T14An9Gs6/yfbYI/QMvuDXxFtuJl4yjcDYEuq8b0TPIKA0nza3qBCKw==",
-      "size": 37897
+      "sha256": "799b02f430ecda8d94ec846a43588d796c336750e67f05d2f4c1fe893f78564b",
+      "sig": "fMmVfr159KEqC884NSWnolSJ8AIgPmKHsLBdejj1cf+jFTyb0zi3ARoBtV38VYxe0na+I6po4BsKQulTDD4uQ9UYiNzcItC4lXGG0q2Uin5QoQlHLXOMPM4hD40VhDvYM5Vuj3cA3wEF2jWH4RRoRl3QGkXqpmSW47x/b6zzrt87+SzzzG5af4WLFWywROPyHuVnozg1rxwGzFmXyYTv6vlEWJE8DwujyAwUQGCGLAYX9UTxM5CgdzA7wWnzFaJfuZwqrMbwtom62EcWj/5vRlOV9XRhaNoA62pF6fqxvhHD6mSOXmDMTWiejfoY7XEuNpZL2ZTImX+WWcf06bANaw==",
+      "size": 38063
     },
     {
       "id": "wochenplan",
@@ -6347,9 +6347,9 @@
         }
       ],
       "package": "apps/wochenplan/package.json",
-      "sha256": "9a556edb981844952b6fba6b0e739e40016c2e521cd725e157688c6ebb130bbd",
-      "sig": "ANhMAYNdWsrtZ4Tu34wKNegdRZdve3+DuHQkPiV9rev4GWOmozLpoSg2e0UOGjY6eiA/3zkFx+pLpnC1RKKirQWJJEhivfYjAQJvF2JfYvusZ4v5gHERGi8dHXQ1skXPw5FdEOMFHx8uGtnLDM3QX9+HGKW1yyJSF3qhVJo4qAUnY3VDReyyHt9rNJEoCDBeLLyh2f8K1JD0/BHghFv4YPd5bpaQHoZZ1VyG5Ntbb3nbQpJpAsLj2OvDZJiyi2DpSSGaUclMR5huij5nLFhY8ZHcASHSLryK7R+7MgMlOXpz0bk8NfVIFrKHi4f3tLpJT7qkPPdOmJbYYejyXQ4qJA==",
-      "size": 34118
+      "sha256": "0c4fed4b927e2dbeabfd1085969d46f09e8f507b006426823f878f6d039f33c4",
+      "sig": "Tdrjo29NrTNmAq8/HhUAzZFMJxPKxCftEwMcGtoTwD6ryjyLbTHnUN8BjFcscacm4VW2VlOfHYbrZNRmSf1A0PI/A+jryBEIVKs9K/1ARY4JZwGhXPJptUiPW36I5qchQoSjNxDySJasv1AOgwIc1jR2uRXrqSDdyrLJuNiYLH+SEfZNjfj0fd9172cB0eTcGY0RJK9JHKqjellOQy4ZQaOHa6x9hp7X04VTF7PFEsmURroCnGcts6nyo4OZ06CYUkpKW/XXu1lwxgs0jIzD4+PAqo1UvG/tfPais5wyDxLX+0S9a9el4j65elinlwIx+sl9oS+cWSLy5dfiTCcauQ==",
+      "size": 34207
     },
     {
       "id": "wort-des-tages",
@@ -6479,9 +6479,9 @@
         }
       ],
       "package": "apps/wort-des-tages/package.json",
-      "sha256": "a395656e8c9886b6c7b977c9c32aa8c70b32eb38e4a6f7d8154275726d9c5597",
-      "sig": "fM+skExBcymGzUSqwezPKeBp+5fqe8ywbbbEknlLXO4RAjnTYXvTiBj2AFyAWOvGLlgw2WgyPbCK/xkvXuMgRKHwuElmDGSb20yL9zqDdbfJM2Oyk1mEhW3t/tkNnG/5e4FI7pqn1gInuXpqCghry/4qmZYaGyrCK6HMEfHGBC0ix8Atz11JI8xQe/Q+xxd6w/cybUAz6C4QL7OSilw732UIAEwkrD+mDtb2qw5DOYizKP2eYEegiJU4FaTlYJ0VONXn2tGNjTfY11J5581106MvGU0NRqlBYUrB/NtuPtI9+FZ6VOALHN/OuYDy72/Wx1AytTq2FUAVOgC7Pfde4g==",
-      "size": 27744
+      "sha256": "430022463e26af348423acd785be76a9d24d0fe2ace4471a67a4ae174ef861fe",
+      "sig": "USwQOqZXPbA5ajWcsw3pcSq2+Alo5JHrzOa36kAh2PW6GDacksJrzgBnzb9QXl7FH9ziqGNsVkqZb3C1tXfXk35hnfINEGysR2TLhv0UKz7ZPQZWm75kHAUa4jbzGBqAMl9DyQorW8GRnpYOXDxEzOx/fXIe7by0TJ3wbUQIYj6o24YhglakN116htK2amIuZS+G38n/HZsHx8cp35pSxo8Xd/9V5jdSCVWfqtpASX3d+sntO5Ggmy0OZlY5RY6+SLaeWFS48SgFvyiultVlLiMf7DgmTDMn3XESC5+ElM/gBKqabeYePPl7BiAWC0WUkBLVOgvX3VDpTynmvyq28A==",
+      "size": 27910
     }
   ]
 }

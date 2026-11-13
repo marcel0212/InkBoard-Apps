@@ -933,7 +933,7 @@ local function badge(x, y, line, mode, big)
   local c = lineColor(line, mode)
   draw.rect(x, y, w, h, c, true, 5)
   local f = big and "normal" or "small"
-  textCB(x + w // 2, y + h - (big and 8 or 6), fit(s0(line), w - 4, f), f, x + 1, x + w - 1, inkOn(c))
+  textCB(x + w // 2, y + h // 2 + (big and 6 or 5), fit(s0(line), w - 4, f), f, x + 1, x + w - 1, inkOn(c))
 end
 
 -- Fussgaenger (drawTransitWalkIcon)
@@ -1205,7 +1205,7 @@ local function chips(x, y, conns, maxChips, cw, ch, gap, bigFirst, maxRight, sta
     local k = conns[c]
     local t = clock(leave(k.when))
     local stc = k.delay > 0 and color.RED or (k.delay < 0 and color.GREEN or color.BLACK)
-    local base = y + ch - (ch >= 26 and 9 or 6)
+    local base = y + ch // 2 + ((bigFirst and c == startIdx and ch >= 26) and 6 or 5) -- Zeit mittig in der Pille
     if c == startIdx and bigFirst then
       local ft = firstTransit(k)
       local fc = k.delay > 0 and color.RED or (k.delay < 0 and color.GREEN or (ft and lineColor(ft.line, ft.mode) or color.BLUE))

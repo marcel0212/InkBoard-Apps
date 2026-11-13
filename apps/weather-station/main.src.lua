@@ -848,7 +848,7 @@ local function pillBadge(text, cx, y, fill)
   local maxW = 2 * math.min(cx, W - cx) - 16
   if pillW > maxW then pillW = maxW end
   draw.rect(cx - pillW // 2, y, pillW, 48, fill, true, 20)
-  draw.text(cx, y + 48 - 14, text, "large", color.WHITE, "center")
+  draw.text(cx, y + 37, text, "large", color.WHITE, "center")
   return y + 48
 end
 

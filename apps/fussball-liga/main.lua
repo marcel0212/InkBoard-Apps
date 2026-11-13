@@ -303,6 +303,7 @@ end
 local function pillW(txt,font,h,minw)
 return math.max(minw or 0,draw.measure(txt,font or "small")+h)
 end
+local FOFF={small=5,s8=6,normal=6,n10=7,medium=9,large=13}
 local function pill(x,y,w,h,c,txt,font,tc)
 if txt then w=pillW(txt,font,h,w) end
 local r=h//2
@@ -317,7 +318,7 @@ else
 draw.rect(x,y,w,h,c,false,r)
 tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
 end
-if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+if txt then draw.text(x+w//2,y+h//2+(FOFF[font or "small"] or 6),txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
 return w
 end
 local function pbar(x,y,w,h,frac,c)

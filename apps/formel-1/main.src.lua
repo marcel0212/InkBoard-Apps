@@ -719,10 +719,10 @@ end
 local function posBadge(x, y, size, r, pos, podium, font)
 	if podium then
 		draw.rect(x, y, size, size, color.ACCENT, true, r)
-		draw.text(x + size // 2, y + size - 5, tostring(pos), font, color.ACCENT_INK, "center")
+		draw.text(x + size // 2, y + size // 2 + ((font == "small" and 5) or (font == "medium" and 9) or (font == "large" and 13) or 6), tostring(pos), font, color.ACCENT_INK, "center")
 	else
 		draw.rect(x, y, size, size, color.BLACK, false, r)
-		draw.text(x + size // 2, y + size - 5, tostring(pos), font, color.BLACK, "center")
+		draw.text(x + size // 2, y + size // 2 + ((font == "small" and 5) or (font == "medium" and 9) or (font == "large" and 13) or 6), tostring(pos), font, color.BLACK, "center")
 	end
 end
 

@@ -406,9 +406,9 @@ local function dayPage(ctx, evs, st, en, t, topY)
   local bx, bs = cp and 20 or 26, cp and 52 or 64
   draw.rect(bx, topY, bs, bs, color.ACCENT, true, cp and 14 or 16)
   if cp then
-    draw.text(bx + bs // 2, topY + 34, tostring(t.day), "normal", color.ACCENT_INK, "center")
+    draw.text(bx + bs // 2, topY + bs // 2 + 6, tostring(t.day), "normal", color.ACCENT_INK, "center")
   else
-    draw.text(bx + bs // 2, topY + bs - 14, tostring(t.day), "large", color.ACCENT_INK, "center")
+    draw.text(bx + bs // 2, topY + bs // 2 + 13, tostring(t.day), "large", color.ACCENT_INK, "center")
   end
   local tx = bx + bs + (cp and 12 or 16)
   draw.text(tx, topY + (cp and 22 or 26), (en and WDF_EN or WDF_DE)[isoWd(t.wday)], "normal", color.BLACK, "left")
@@ -473,9 +473,9 @@ local function dayPage(ctx, evs, st, en, t, topY)
       if st == "cards" then card(cardX, y, cardW, cardH, e.c, 14, true)
       elseif st == "flat" then draw.line(cardX, y + cardH + gap // 2, cardX + cardW, y + cardH + gap // 2, color.BLACK) -- Slate: Liste ohne Kaesten
       else thick(cardX, y, cardW, cardH, cp and 10 or 14, color.BLACK) end
-      local chipY = y + (cp and 6 or 10)
+      local chipY = y + (cardH - chipH) // 2 -- Zeit-Pille in der Hoehe mittig in der Karte, auch bei mehrzeiligen Terminen
       draw.rect(chipX, chipY, chipW, chipH, e.c, true, cp and 8 or 10)
-      local cb = chipY + chipH - (cp and 8 or 11)
+      local cb = chipY + chipH // 2 + (cp and 5 or 6) -- Text mittig in der Pille (Ziffernhoehe 10 bzw. 13)
       if isB then
         cake(chipX + chipW // 2, chipY + chipH // 2, ink(e.c))
       elseif e.ad then
@@ -557,8 +557,8 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
       hc = color.ACCENT_INK
     end
     local narrowCol = colW < 70 -- Hochformat: schmale Spalten brauchen kleinere Schrift
-    draw.text(ccx, headerY + 13, (en and WDS_EN or WDS_DE)[d + 1], narrowCol and "small" or "normal", hc, "center")
-    draw.text(ccx, headerY + headerH - 6, tostring(dd.day), narrowCol and "normal" or "large", hc, "center")
+    draw.text(ccx, headerY + 15, (en and WDS_EN or WDS_DE)[d + 1], narrowCol and "small" or "normal", hc, "center")
+    draw.text(ccx, headerY + headerH - 4, tostring(dd.day), narrowCol and "normal" or "large", hc, "center")
 
     local adCount, adFirst = 0, nil
     for _, e in ipairs(evs) do
@@ -677,7 +677,7 @@ local function weekPage(ctx, evs, st, en, t, topY, now)
     local bx2 = (gridLeft - 10) - bw
     if bx2 < 2 then bx2 = 2 end
     draw.rect(bx2, ny - 9, bw, 18, color.ACCENT, true, 8)
-    draw.text(bx2 + 6, ny - 9 + 18 - 5, s, "normal", color.ACCENT_INK, "left")
+    draw.text(bx2 + 6, ny + 6, s, "normal", color.ACCENT_INK, "left")
   end
 end
 

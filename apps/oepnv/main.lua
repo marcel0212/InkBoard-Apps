@@ -98,6 +98,7 @@ inner.x,inner.y,inner.w,inner.h=box.x+pad,box.y+8,box.w - pad - 16,box.h - 20
 end
 return inner
 end
+local FOFF={small=5,s8=6,normal=6,n10=7,medium=9,large=13}
 local function mark(x,y,w,h,r)
 if theme.s=="relief" then
 draw.rect(x+3,y+3,w,h,color.BLACK,true,r)
@@ -902,7 +903,7 @@ local w,h=big and 46 or 32,big and 26 or 20
 local c=lineColor(line,mode)
 draw.rect(x,y,w,h,c,true,5)
 local f=big and "normal" or "small"
-textCB(x+w//2,y+h - (big and 8 or 6),fit(s0(line),w - 4,f),f,x+1,x+w - 1,inkOn(c))
+textCB(x+w//2,y+h//2+(big and 6 or 5),fit(s0(line),w - 4,f),f,x+1,x+w - 1,inkOn(c))
 end
 local function walkIcon(x,y,s)
 local hr=math.floor(s*0.2)
@@ -1149,7 +1150,7 @@ while c<=#conns and c<startIdx+maxChips and cx+cw<=maxRight do
 local k=conns[c]
 local t=clock(leave(k.when))
 local stc=k.delay>0 and color.RED or (k.delay<0 and color.GREEN or color.BLACK)
-local base=y+ch - (ch>=26 and 9 or 6)
+local base=y+ch//2+((bigFirst and c==startIdx and ch>=26) and 6 or 5)
 if c==startIdx and bigFirst then
 local ft=firstTransit(k)
 local fc=k.delay>0 and color.RED or (k.delay<0 and color.GREEN or (ft and lineColor(ft.line,ft.mode) or color.BLUE))

@@ -249,6 +249,7 @@ end
 local function pillW(txt,font,h,minw)
 return math.max(minw or 0,draw.measure(txt,font or "small")+h)
 end
+local FOFF={small=5,s8=6,normal=6,n10=7,medium=9,large=13}
 local function pill(x,y,w,h,c,txt,font,tc)
 if txt then w=pillW(txt,font,h,w) end
 local r=h//2
@@ -263,7 +264,7 @@ else
 draw.rect(x,y,w,h,c,false,r)
 tc=tc or (c==color.ACCENT and color.ACCENT_TEXT or c)
 end
-if txt then draw.text(x+w//2,y+h//2+8,txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
+if txt then draw.text(x+w//2,y+h//2+(FOFF[font or "small"] or 6),txt,font or "small",tc or (c==color.ACCENT and color.ACCENT_INK or color.WHITE),"center") end
 return w
 end
 local function pbar(x,y,w,h,frac,c)
@@ -617,9 +618,9 @@ local cp=st=="compact"
 local bx,bs=cp and 20 or 26,cp and 52 or 64
 draw.rect(bx,topY,bs,bs,color.ACCENT,true,cp and 14 or 16)
 if cp then
-draw.text(bx+bs//2,topY+34,tostring(t.day),"normal",color.ACCENT_INK,"center")
+draw.text(bx+bs//2,topY+bs//2+6,tostring(t.day),"normal",color.ACCENT_INK,"center")
 else
-draw.text(bx+bs//2,topY+bs - 14,tostring(t.day),"large",color.ACCENT_INK,"center")
+draw.text(bx+bs//2,topY+bs//2+13,tostring(t.day),"large",color.ACCENT_INK,"center")
 end
 local tx=bx+bs+(cp and 12 or 16)
 draw.text(tx,topY+(cp and 22 or 26),(en and WDF_EN or WDF_DE)[isoWd(t.wday)],"normal",color.BLACK,"left")
@@ -682,9 +683,9 @@ if y>=H then break end
 if st=="cards" then card(cardX,y,cardW,cardH,e.c,14,true)
 elseif st=="flat" then draw.line(cardX,y+cardH+gap//2,cardX+cardW,y+cardH+gap//2,color.BLACK)
 else thick(cardX,y,cardW,cardH,cp and 10 or 14,color.BLACK) end
-local chipY=y+(cp and 6 or 10)
+local chipY=y+(cardH - chipH)//2
 draw.rect(chipX,chipY,chipW,chipH,e.c,true,cp and 8 or 10)
-local cb=chipY+chipH - (cp and 8 or 11)
+local cb=chipY+chipH//2+(cp and 5 or 6)
 if isB then
 cake(chipX+chipW//2,chipY+chipH//2,ink(e.c))
 elseif e.ad then
@@ -760,8 +761,8 @@ draw.rect(colX+3,headerY+2,colW - 6,headerH - 4,color.ACCENT,true,10)
 hc=color.ACCENT_INK
 end
 local narrowCol=colW<70
-draw.text(ccx,headerY+13,(en and WDS_EN or WDS_DE)[d+1],narrowCol and "small" or "normal",hc,"center")
-draw.text(ccx,headerY+headerH - 6,tostring(dd.day),narrowCol and "normal" or "large",hc,"center")
+draw.text(ccx,headerY+15,(en and WDS_EN or WDS_DE)[d+1],narrowCol and "small" or "normal",hc,"center")
+draw.text(ccx,headerY+headerH - 4,tostring(dd.day),narrowCol and "normal" or "large",hc,"center")
 local adCount,adFirst=0,nil
 for _,e in ipairs(evs) do
 if e.ad and not (bdSep and e.bd) and e.s>=ds[d] and e.s<ds[d+1] then
@@ -876,7 +877,7 @@ local bw=draw.measure(s,"normal")+12
 local bx2=(gridLeft - 10) - bw
 if bx2<2 then bx2=2 end
 draw.rect(bx2,ny - 9,bw,18,color.ACCENT,true,8)
-draw.text(bx2+6,ny - 9+18 - 5,s,"normal",color.ACCENT_INK,"left")
+draw.text(bx2+6,ny+6,s,"normal",color.ACCENT_INK,"left")
 end
 end
 local function monthPage(ctx,evs,st,en,t,topY)

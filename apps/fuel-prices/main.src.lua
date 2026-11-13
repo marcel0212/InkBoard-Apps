@@ -313,7 +313,7 @@ local function badge(x, y, brand, big, useLogo)
   local e = brandEntry(brand)
   draw.rect(x, y, w, h, brandColor(brand), true, big and 5 or 3)
   if e and e[3] then draw.rect(x, y, w, big and 5 or 3, e[3], true) end
-  draw.text(x + w // 2, y + h - (big and 6 or 3), brandInitials(brand), "small", color.WHITE, "center")
+  draw.text(x + w // 2, y + h // 2 + 5, brandInitials(brand), "small", color.WHITE, "center")
 end
 
 local function emptyState(ctx, stations)
