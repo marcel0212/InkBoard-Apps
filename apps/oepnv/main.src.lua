@@ -18,7 +18,7 @@ local EN = false
 local function T(de, en) if EN then return en end return de end
 
 -- Aus store/lib/text.lua nur trim/cut/clean/fit (num/decodeCut braucht das Paket nicht; main.lua bleibt unter 64 KB)
---#include theme -pill -pbar -panel
+--#include theme -pill -pbar -panel -card -mark
 
 local function trim(s)
   return (s:gsub("^%s+", ""):gsub("%s+$", ""))

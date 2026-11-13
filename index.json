@@ -4192,7 +4192,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.4",
+      "version": "1.3.5",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -4390,9 +4390,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "6ad2583786780791a7d9652bafac814a4aea92a4cfa1e1898c483c9f50ac78de",
-      "sig": "BVbBIP9kDo0twZB6HPvxPQx0MUSdYckYY6koqJ8fJkXyMrX5Xn7pw9y2rOgYRULttOPcSA4Ubc5a8QB5eVV1lOO0hOmyXwiT4xZOfeiMbevRUSh8dWoQYGnL42xZ7g7vXZ/GTbCC4EfqRH7zGF1XhtPlQWu5i332j8/texAK+KFOsjw6F4xMFbzQLX6+eV7NqshdSyzo5ZA3PaqBsbFj3oqaunRKrEiNQrrZpQlh7+FaAwhY6/JDw71azomzzjoY0IlSWkScW237pJk+G5kMUfYz1uJw6ZApyzevkbzNEo0nH4wPKX1PoxZewebemRORcGW3XFAoASbXfr/5ufQpBw==",
-      "size": 84027
+      "sha256": "a2ab08c58755fa73fbbac7acf5db3c91a4a39a31d555c425a877e2a86f674001",
+      "sig": "hLOtyaRXm1KNmMSmfLM3pRTePJPwubfu4y33u3ma0yXW/pHGe+U61dywhufvM51FwkkRkejnwjOXy3PXNOGP8LXz/XdEBwFEXrtO53JPBERHvQn+3FJG5SsyA9jGlSoZvNNa7t5pvLxebpjljy/6IiO0RMopBnBuzVrSqRC8kwH4EoytblgKqbyqUyzEnCIcjcXcO4AhKSHK5hPyetVNI3MI6o54kUuu1CtR+MZY007AkxUxZWAJxydzsp7SMqi59dEKMP3gnNXvAQo4dcmkMCRP890TqFptfZHCTK/kClk0HhCPJm0Eo830PwgYeN/6iPuWBWHtmx/VIqXD1YMjEQ==",
+      "size": 83050
     },
     {
       "id": "pinnwand-app",
@@ -4880,7 +4880,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
@@ -5015,9 +5015,9 @@
         }
       ],
       "package": "apps/spotify/package.json",
-      "sha256": "0b33decd46288f49b74aeab9941c61a2f5076af6b941e4cb6e271bc3df4abf98",
-      "sig": "l+/rspZrx99XX9Z0nRcfZq+MaFQQ6sNyyll4MlHidnwLLcsEbVcOku1KvbaCxaqoJZTH0FHic2JmBUjbvNLr9f1TVUZ7hsC9eDjzBDeqvb6qTVl62nfhQLbWv5qw+FVYw80XFnBVOY5Q4tMfCREB1sCIv0+ARmA+jZRnw2EjjumRtI/pBIlsEssrn8W+WGLcQeayf7pSBi3lSW+P1arKV3vE7EBA7mW1FVUhfhutwKFZeO+w/wTfrH2b8d6ihbwY+CFkxv+ADZFX5gmVgffVoR8I2KK7B0yvDCMvlv0BaAYtQ6uHcFpRw1nL5G2AAbST8J4V0Fov84Rx8hIDA9oeLw==",
-      "size": 26859
+      "sha256": "82807da1b99e4c45a7029bd9de1067505a79c30ab8f02e56d34ddce82cb9dacc",
+      "sig": "Q0XNry4FFwQqixTKsgOUiwrtI6hKttb4g9ds5IcLZyYpxZ3kGFW9OoNeLcgfHc4nB4vHG2ObetpXi5gIfxoyfipzNsuUkiVADkPGn8DhDzfmEwJnxTOPuc0748fzrt+w7RDR5+qYpt2ScXKKjw7TbnGEaWMAMJGgiz+mCG+M/XgPFlVMs2Ta3BDIwsUNHtxEKJN9uC+Ny8amYWe0wDD8m4wJdL0J+o789D2AHkpkg3ZCl4kjGSU501bafLx02QYBEQQzXGX4CNAuv3MELRhENQThSgeKsJaAqn5QOACQUls9OhhmBu5CJLSCJg5YLTUG4DBbEEBpMhklgUPsSO3iMw==",
+      "size": 26453
     },
     {
       "id": "stocks-crypto",

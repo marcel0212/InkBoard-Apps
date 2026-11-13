@@ -586,7 +586,7 @@ end
 local function on(v) return v==true end
 function on_widget(ctx,box)
 local en=(ctx.lang=="en")
-setStyle(ctx.cfg.styleWidget or "relief")
+setStyle(ctx.cfg.style or "relief")
 local fullH=box.fh or box.h
 box=widgetFrame(box,true)
 local n=spotify.now()
