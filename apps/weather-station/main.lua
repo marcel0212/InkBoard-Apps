@@ -1814,6 +1814,13 @@ local co2Col=s.co2_warn and CO2_COLORS[co2Zone(s)] or color.BLACK
 local tBuf=string.format("%.1f°C",s.temp)
 local hBuf=string.format("%.0f %%",s.humidity)
 local cBuf=string.format("%d ppm",s.co2)
+local function wOf(idx) return draw.measure(idx==0 and tBuf or (idx==1 and hBuf or cBuf),font) end
+if #order==1 and not showCurves then
+while txtDx+wOf(order[1])+28>b.w and (font~="small" or iconScale>0.8) do
+if font~="small" then font="small" else iconScale=iconScale - 0.1 end
+txtDx,txtDy=round(20.7*iconScale),round(11.85*iconScale)
+end
+end
 local function item(idx,px,py,spark,sx,sw)
 if idx==0 then
 thermometerIcon(px,py,TEMP_COLOR,iconScale)
