@@ -34,7 +34,8 @@ local function wxFrame(ctx, b)
     n.x, n.w = b.x + 8, b.w - 10
   elseif WXS == "relief" or WXS == "klar" then
     wxCard(b.x + 4, b.y + 2, b.w - 14, b.h - 12, 14)
-    n.x, n.y, n.w, n.h = b.x + 12, b.y + 8, b.w - 26, b.h - 20
+    local low = b.h < 60   -- niedrige Widgets: weniger Innenrand, damit der Inhalt in der Karte bleibt
+    n.x, n.y, n.w, n.h = b.x + 12, low and b.y + 4 or b.y + 8, b.w - 26, low and b.h - 16 or b.h - 20
   end
   return n
 end
@@ -1373,6 +1374,17 @@ function indoor.on_widget(ctx, b)
   local compact = (ctx.cfg.style == "compact")
   local font = (b.font < 0) and "small" or ((b.font > 0) and "medium" or "normal")
   local iconScale = 1.35
+  -- Niedrige Widgets: Symbole und Schrift schrumpfen, damit die Werte immer innerhalb des Rahmens stehen
+  local avail = b.h - 6
+  if avail < 28 then
+    iconScale = math.max(0.7, avail / 21)
+    if iconScale < 1.0 then font = "small" end
+  end
+  local txtDx, txtDy = round(20.7 * iconScale), round(11.85 * iconScale)
+  local function midY(rows, rowH, def)   -- eine Zeile: mittig im Rahmen, sonst wie bisher oben
+    if rows == 1 then return b.y + math.max(1, (b.h - round(20 * iconScale)) // 2) end
+    return b.y + def
+  end
   local maxY = b.y + b.h - 6
   local x = b.x + 16
   local showCurves = (not compact) and (opt & 1) ~= 0
@@ -1397,21 +1409,21 @@ function indoor.on_widget(ctx, b)
   local function item(idx, px, py, spark, sx, sw)
     if idx == 0 then
       thermometerIcon(px, py, TEMP_COLOR, iconScale)
-      draw.text(px + 28, py + 16, tBuf, font, color.BLACK)
+      draw.text(px + txtDx, py + txtDy, tBuf, font, color.BLACK)
       if spark and h then sparkline(sx, py - 4, sw, 28, h.temp, h.n, TEMP_COLOR, false, 1) end
     elseif idx == 1 then
       dropletIcon(px, py, humCol, iconScale)
-      draw.text(px + 28, py + 16, hBuf, font, color.BLACK)
+      draw.text(px + txtDx, py + txtDy, hBuf, font, color.BLACK)
       if spark and h then sparkline(sx, py - 4, sw, 28, h.humidity, h.n, HUM_COLOR, false, 0) end
     else
       co2Icon(px, py, co2Col, iconScale)
-      draw.text(px + 28, py + 16, cBuf, font, color.BLACK)
+      draw.text(px + txtDx, py + txtDy, cBuf, font, color.BLACK)
       if spark and h then sparkline(sx, py - 4, sw, 28, h.co2, h.n, CO2_COLOR, false, 0) end
     end
   end
 
   if compact then
-    local y = b.y + 6
+    local y = midY(#order, 29, 6)
     for i, idx in ipairs(order) do
       if i > 1 and y + 20 > maxY then break end
       item(idx, x, y, false, 0, 0)
@@ -1423,7 +1435,7 @@ function indoor.on_widget(ctx, b)
     local sparkX = x + 92
     local sparkW = b.x + b.w - 12 - sparkX
     local sparkOk = sparkW >= 40 and h ~= nil
-    local y = b.y + 10
+    local y = midY(#order, 38, 10)
     for i, idx in ipairs(order) do
       if i > 1 and y + 20 > maxY then break end
       item(idx, x, y, sparkOk, sparkX, sparkW)
@@ -1431,14 +1443,19 @@ function indoor.on_widget(ctx, b)
     end
     return
   end
-  local rowY = b.y + 10
-  local x2 = b.x + b.w // 2 + 8
+  -- flache, breite Widgets: alle Werte in einer Zeile nebeneinander, sonst zwei Spalten
+  local cols = 2
+  if b.h < 68 and (b.w - 20) // #order >= 96 then cols = #order end
+  local rows = (#order + cols - 1) // cols
+  local rowY = midY(rows, 40, 10)
+  local colW = (b.w - 24) // cols
   for i, idx in ipairs(order) do
-    local col = (i - 1) % 2
-    local row = (i - 1) // 2
+    local col = (i - 1) % cols
+    local row = (i - 1) // cols
     local py = rowY + row * 40
     if row > 0 and py + 20 > maxY then break end
-    item(idx, col == 0 and x or x2, py, false, 0, 0)
+    local px = (cols == 2) and (col == 0 and x or b.x + b.w // 2 + 8) or (b.x + 12 + col * colW)
+    item(idx, px, py, false, 0, 0)
   end
 end
 
