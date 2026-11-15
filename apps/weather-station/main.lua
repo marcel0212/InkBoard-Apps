@@ -1814,12 +1814,25 @@ local co2Col=s.co2_warn and CO2_COLORS[co2Zone(s)] or color.BLACK
 local tBuf=string.format("%.1f°C",s.temp)
 local hBuf=string.format("%.0f %%",s.humidity)
 local cBuf=string.format("%d ppm",s.co2)
+local cols=2
+if not compact and not showCurves and b.h<68 and (b.w - 20)//#order>=96 then cols=#order end
+local availW
+if compact then availW=b.w - 28
+elseif showCurves then availW=76
+elseif #order==1 then availW=b.w - 28
+elseif cols==2 then availW=b.w//2 - 24
+else availW=(b.w - 24)//cols - 8 end
 local function wOf(idx) return draw.measure(idx==0 and tBuf or (idx==1 and hBuf or cBuf),font) end
-if #order==1 and not showCurves then
-while txtDx+wOf(order[1])+28>b.w and (font~="small" or iconScale>0.8) do
+local function widest() local m=0; for _,idx in ipairs(order) do m=math.max(m,wOf(idx)) end; return m end
+if cols==2 and #order>1 and not compact and not showCurves then
+local sm=font; font="small"
+local need=round(20.7*math.min(iconScale,1.0))+widest()
+font=sm
+if need>availW then cols=1; availW=b.w - 28 end
+end
+while txtDx+widest()>availW and (font~="small" or iconScale>0.8) do
 if font~="small" then font="small" else iconScale=iconScale - 0.1 end
 txtDx,txtDy=round(20.7*iconScale),round(11.85*iconScale)
-end
 end
 local function item(idx,px,py,spark,sx,sw)
 if idx==0 then
@@ -1857,17 +1870,16 @@ y=y+38
 end
 return
 end
-local cols=2
-if b.h<68 and (b.w - 20)//#order>=96 then cols=#order end
 local rows=(#order+cols - 1)//cols
-local rowY=midY(rows,40,10)
+local rowH=(cols==1) and 26 or 40
+local rowY=midY(rows,rowH,(cols==1) and 5 or 10)
 local colW=(b.w - 24)//cols
 for i,idx in ipairs(order) do
 local col=(i - 1)%cols
 local row=(i - 1)//cols
-local py=rowY+row*40
+local py=rowY+row*rowH
 if row>0 and py+20>maxY then break end
-local px=(cols==2) and (col==0 and x or b.x+b.w//2+8) or (b.x+12+col*colW)
+local px=(cols==1) and x or ((cols==2) and (col==0 and x or b.x+b.w//2+8) or (b.x+12+col*colW))
 item(idx,px,py,false,0,0)
 end
 end
