@@ -1111,8 +1111,10 @@ end
 end
 return nil
 end
+local WIDGET_ICONS={"classic","ink","sketch","watercolor","crayon"}
 function outdoor.on_widget(ctx,b)
-setIconStyle(ctx.cfg.wIconStyle)
+local wi=((ctx.cfg.opt or 0)>>11) & 7
+setIconStyle(WIDGET_ICONS[wi] or ctx.cfg.wIconStyle)
 local w,why=weather.get()
 if not w then
 local msg=(why=="nolocation") and tr("Location not set","Standort nicht eingerichtet",ctx) or tr("Loading ...","Wird geladen ...",ctx)

@@ -280,6 +280,42 @@
         "de": "Widget Innen: Bump",
         "en": "Indoor widget: Bump"
       }
+    },
+    {
+      "file": "preview-widget-outdoor-flat.svg",
+      "kind": "widget",
+      "style": "flat",
+      "caption": {
+        "de": "Widget Außen: Ledger",
+        "en": "Outdoor widget: Ledger"
+      }
+    },
+    {
+      "file": "preview-widget-indoor-flat.svg",
+      "kind": "widget",
+      "style": "flat",
+      "caption": {
+        "de": "Widget Innen: Ledger",
+        "en": "Indoor widget: Ledger"
+      }
+    },
+    {
+      "file": "preview-widget-outdoor-compact.svg",
+      "kind": "widget",
+      "style": "compact",
+      "caption": {
+        "de": "Widget Außen: Nibble",
+        "en": "Outdoor widget: Nibble"
+      }
+    },
+    {
+      "file": "preview-widget-indoor-compact.svg",
+      "kind": "widget",
+      "style": "compact",
+      "caption": {
+        "de": "Widget Innen: Nibble",
+        "en": "Indoor widget: Nibble"
+      }
     }
   ]
 }

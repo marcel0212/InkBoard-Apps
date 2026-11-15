@@ -5696,7 +5696,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.8",
+      "version": "1.5.9",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -5986,12 +5986,52 @@
           },
           "style": "relief",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor-flat.svg",
+          "caption": {
+            "de": "Widget Außen: Ledger",
+            "en": "Outdoor widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-indoor-flat.svg",
+          "caption": {
+            "de": "Widget Innen: Ledger",
+            "en": "Indoor widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-outdoor-compact.svg",
+          "caption": {
+            "de": "Widget Außen: Nibble",
+            "en": "Outdoor widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weather-station/preview-widget-indoor-compact.svg",
+          "caption": {
+            "de": "Widget Innen: Nibble",
+            "en": "Indoor widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "13f028deddf7519ed042ac8df4c9100819918bbbeb8ffd995f2c9006f7dc84a7",
-      "sig": "Rrrz0u1ItqHm8rlfwZhq8xW+R8Fe2SwtKvwmRwcPPsKmj6LXcLqrVyve/OZYxVB2Ry4DJUW49yQAGrlDSWl6sLwbqfXqrEP8Nwa/W86ixj4qMol9UmiE3z7H6TuJBXyKgIyPBr/uoI89S7wfyooVWgQHCR/4+CgwavwHJwbGsycXBibu1JQ5NHqMduLhO9a5aOHJ54cpjj+QVChsSkTTpVMGQd2z4yOKgiaKNDiGYWNG7EyPXSk4m7OmSasVske7f+aHEPMHbG1xMUdv9JYUe7nC9KvQg3ioqkcjyVGRtTGA6fcM+1blaZ7FWAnl73IvpR8vHHcABWnZL2aKzbWGqg==",
-      "size": 74583
+      "sha256": "5ed41aee6f9b43dd0286b5d2229282977852f5c245460746fb5fde4784727f30",
+      "sig": "DREyylzH5WeBgbX1tGw1kr0nyDk4fu5yUMm9PQIhOK+zKzCwY7k0Mb63guNtZ23CWYni2LUpoecSv5emuRceLnB8F9V6x0kOW8hgKFoCgOs9xhbnQ1BeNyd9h5ngASMX5mBRTzK/uhm8C+J6fhQYIYan+NRntDSix7Wi5g2hMJF0IJUS+zUbLyMTteQ5w1o56aUCH1YhrOrdUQ347E+VLHNsrLSUV+EI7fHnANHHngU//XXrC6iDsyhzPFJLjdCW3/XEScbFGqY9ORxzqSL/UjQm0QM7ZuJQMKmrDSEybySevo12ar5PUSUclIF2U6MSbQPLWa6qpwOh3VHJkKWewA==",
+      "size": 74721
     },
     {
       "id": "wikipedia-today",
