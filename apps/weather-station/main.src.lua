@@ -486,6 +486,27 @@ local function widgetForecast(w, ctx, b, top, maxY, compact, withBarOpt)
   local range = (weekMax - weekMin) > 0.5 and (weekMax - weekMin) or 1
   local iconCol = compact and 0 or (iconSize + 20)
   local short = (ctx.lang == "en") and SHORT_EN or SHORT_DE
+  -- schmales Widget: reicht die Breite fuer "max / min" nicht, wird zuerst das Tages-Symbol kleiner (bis 20 px),
+  -- danach der Text enger ("5°/-2°"); die Temperaturen bleiben so immer lesbar statt hinter dem Symbol abgeschnitten
+  local sep = " / "
+  if not withBar and not compact then
+    local fs = fnt(b, "small")
+    local function worstW(sp)
+      local m = 0
+      for i = 1, n do
+        local t = string.format("%.0f°%s%.0f°", w.daily[i].max, sp, w.daily[i].min)
+        local tw = draw.measure(t, fs)
+        if tw > m then m = tw end
+      end
+      return m
+    end
+    local function avail() return b.w - 4 - (32 + iconCol) end
+    while iconSize > 20 and worstW(sep) > avail() do
+      iconSize = iconSize - 4
+      iconCol = iconSize + 20
+    end
+    if worstW(sep) > avail() then sep = "/" end
+  end
   for i = 1, n do
     local d = w.daily[i]
     local cy = top + (i - 1) * rowH + rowH // 2
@@ -506,7 +527,7 @@ local function widgetForecast(w, ctx, b, top, maxY, compact, withBarOpt)
       draw.rect(bx + 3 + s0, cy - 3, fw, 7, color.ACCENT, true, 3)
       draw.text(b.x + b.w - 24, cy + 5, string.format("%.0f°", d.max), fnt(b, "small"), color.BLACK, "center")
     else
-      centered(b.x + b.w - 44, cy + 5, string.format("%.0f° / %.0f°", d.max, d.min), fnt(b, "small"), color.BLACK, b.x + 32 + iconCol, b.x + b.w - 4)
+      centered((b.x + 32 + iconCol + b.x + b.w - 4) // 2, cy + 5, string.format("%.0f°%s%.0f°", d.max, sep, d.min), fnt(b, "small"), color.BLACK, b.x + 32 + iconCol, b.x + b.w - 4)
     end
   end
   return top + n * rowH

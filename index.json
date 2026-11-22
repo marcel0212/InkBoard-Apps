@@ -87,6 +87,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -381,6 +388,14 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "apple",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -949,6 +964,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -1193,6 +1215,13 @@
       "apiLevel": 2,
       "pages": 1,
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "bento",
+        "slate",
+        "nano"
+      ],
       "standard": true,
       "features": {
         "de": [
@@ -1337,6 +1366,11 @@
       "apiLevel": 1,
       "pages": 1,
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "classic"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -1465,6 +1499,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -1615,6 +1656,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -1912,6 +1960,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -2163,6 +2218,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -2320,6 +2382,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -2531,6 +2600,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -2726,6 +2802,13 @@
       "apiLevel": 24,
       "pages": 1,
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -2874,6 +2957,11 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "classic"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -3062,6 +3150,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -3222,6 +3317,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -3474,6 +3576,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "bento",
+        "slate",
+        "nano"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -3636,6 +3745,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -3898,6 +4014,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "flat",
+        "cards",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -4192,7 +4315,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.3.6",
+      "version": "1.3.8",
       "apiLevel": 16,
       "pages": 2,
       "pageNames": [
@@ -4206,6 +4329,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -4390,9 +4520,9 @@
         }
       ],
       "package": "apps/oepnv/package.json",
-      "sha256": "0dbca2002f1adbb4ec395442995f21e198d88c4660c46abff163a28c4c331b6e",
-      "sig": "qvtqJsNrDDoAdzedMwDwvkZ7rMvrOjH0pZ2AB5xNZbLHY7Jp4wOmCx3Sn41AECz3aLvQKOGX/51dnw6jG3QlMVeSYyuWyK0RunvvswUctpoLdFL1QtYT1KUyqFpCfJpxVYG4GLbmS5HGi9chT7SJIOfMxJOsD35CW9fXtrCQzD38uPFVFo5b0aq/PfHT+Ct+sgTxgMiuvAmxldUw9M+J7pguVgXbnZ17IdoyZtXlUZC6RIEBKkkLq6rfD8EHLgfYq/LkDjCsg35cXhvqFXlNsb1rDW3PIzEvQYEz07eAFV2+AC5WVFwF3ueOOvm8d4gS5dHLOBZ7aqBuLk6U6vQJEw==",
-      "size": 83631
+      "sha256": "24e3eda39390e21a072ef7ad15a6c23a20d59e1535cbabb15cd04619b9f82237",
+      "sig": "F1P7Kzwjn6nfVNNHdDR2dzYHi9JvfanLiHuZnd5eUTqRN1zL2eys1qLxXAxWcWDyCRvfYvHSD/qXt9GRV+oDDO57zN09zDE9S01goC++nujmmmA5lazuGOVJjMQFydsucXxL/Etfvh+UE0V/yEYKYmsy3UL032PEt6Bs83DYE16lr+9nKWibp3VGo0HDNxtAYcYNUzly4V9HZdLUzwjQ2H2se/3yTdL6MCr81KLl/Jm/T3aslkxEfmefRh8HYCqJO4ol9FkXlbzA2dAAqRdhVY5xv8mTgzOk5nXqIvmPJggjy0k7yruWub2fEKfNNqDaKMzxAXcMkVqxgbDuGPc5NA==",
+      "size": 84005
     },
     {
       "id": "pinnwand-app",
@@ -4684,6 +4814,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -4884,6 +5021,13 @@
       "apiLevel": 21,
       "pages": 1,
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -5049,6 +5193,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -5249,6 +5400,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -5403,6 +5561,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -5553,6 +5718,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -5696,7 +5868,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.5.9",
+      "version": "1.6.0",
       "apiLevel": 20,
       "pages": 3,
       "pageNames": [
@@ -5715,6 +5887,13 @@
       ],
       "hasWidget": false,
       "nativeWidgets": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": true,
       "features": {
         "de": [
@@ -6029,9 +6208,9 @@
         }
       ],
       "package": "apps/weather-station/package.json",
-      "sha256": "5ed41aee6f9b43dd0286b5d2229282977852f5c245460746fb5fde4784727f30",
-      "sig": "DREyylzH5WeBgbX1tGw1kr0nyDk4fu5yUMm9PQIhOK+zKzCwY7k0Mb63guNtZ23CWYni2LUpoecSv5emuRceLnB8F9V6x0kOW8hgKFoCgOs9xhbnQ1BeNyd9h5ngASMX5mBRTzK/uhm8C+J6fhQYIYan+NRntDSix7Wi5g2hMJF0IJUS+zUbLyMTteQ5w1o56aUCH1YhrOrdUQ347E+VLHNsrLSUV+EI7fHnANHHngU//XXrC6iDsyhzPFJLjdCW3/XEScbFGqY9ORxzqSL/UjQm0QM7ZuJQMKmrDSEybySevo12ar5PUSUclIF2U6MSbQPLWa6qpwOh3VHJkKWewA==",
-      "size": 74721
+      "sha256": "0207b6a0b35a81b2805c83d11863f82d26571153d474197d477fa8d7c7d7ae5f",
+      "sig": "gEbsXh1RsCzvC9++PQFDkCoI3wWL265CcAUM7GhlsHQTEaQWVIMSO7+0d+6ujwnyslxhMV8/NCz1ndtKMjJfvgg0WRnMkebJvd1Sa4LyKFYOPBzsscBiTBykT/o43UC0Jonl6qzvtjbt9ovKRDNkgFNzUl4z3ERIkAVJavymIZjqH+eUUYvlydkKsEfYaFuF+EYLUN/91bxCy04XU6hasL1UEj+aGzn5kq31k/YNxcf6MTHdmXHJAUacSRRM1WZVnyIr8HxnNwFNvFL7EGKAlarS3Ln5Rh2rPupkNxHurtF819QhqG+yX/HAcUNdwQzk149ccNsi8UKoD7Dbjox2Pg==",
+      "size": 75227
     },
     {
       "id": "wikipedia-today",
@@ -6059,6 +6238,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -6219,6 +6405,13 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
       "standard": false,
       "features": {
         "de": [
@@ -6417,6 +6610,11 @@
         }
       ],
       "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "classic"
+      ],
       "standard": false,
       "features": {
         "de": [

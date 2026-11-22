@@ -1768,12 +1768,14 @@ function on_widget(ctx, box)
   OFF, NOW, WALK = tzOff(), time.now() or 0, walkMin(ctx)
   local prov = provOf(ctx)
   local shown = 0
+  local stand = 0
   if on(ctx.cfg.wRoutes) then
     local list = routesData(ctx, prov)
     if #list == 0 and ctx.sample then list = sampleRoutes() end
     shown = widgetRoutes(ctx, box, list)
   else
     local d = readDeps()
+    stand = d and d.at or 0
     local list = (d and d.sig == depSig(ctx, prov)) and d.list or {}
     if #list == 0 and ctx.sample then list = sampleDeps() end
     shown = widgetDeps(ctx, box, list)
@@ -1781,7 +1783,13 @@ function on_widget(ctx, box)
   if shown == 0 then
     local msg = T("Noch keine Daten", "No data yet")
     local e = ctx.data.get("ed")
-    if e and not on(ctx.cfg.wRoutes) then msg = errText(e) end
-    textC(box.x + box.w // 2, box.y + math.min(box.h // 2 + 6, 40), fit(msg, box.w - 16, "small"), "small")
+    local y = box.y + math.min(box.h // 2 + 6, 40)
+    local sub
+    if e and not on(ctx.cfg.wRoutes) then msg = errText(e)
+    elseif (ctx.netFail or 0) > 0 then msg = T("Kein WLAN", "No Wi-Fi")
+    elseif stand > 0 then msg = T("Keine aktuellen Abfahrten", "No current departures") end
+    if stand > 0 then sub = T("Stand ", "As of ") .. clock(stand) end
+    textC(box.x + box.w // 2, y, fit(msg, box.w - 16, "small"), "small")
+    if sub and box.h >= 56 then textC(box.x + box.w // 2, y + 16, fit(sub, box.w - 16, "small"), "small") end
   end
 end
