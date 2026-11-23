@@ -2546,7 +2546,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2744,9 +2744,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "c976b97fe8d59d4db7557841b1e7603604418812e1da9bb6a300c0414b389ccb",
-      "sig": "mQXx78qVOvvGSw+7BuL0278TaIT9AXX5U+7nULgm/13/fMgFWySLte+sfDP4f7HOgietPxW65jbBzKkVPz89CyqXdGUzcU+QqtjF19AjfeEUbtFdUn6lx7W8LJywn81sU3rnb4XFFdaZzMXU/CNpKvyuP0hzhU8BjnHGkONLs5Ohr71nU+akV1mhtVId9lBxyiNbGrB9agA+NK+7owCCmkglFQeYrvBUnN7XSRkX9XA9VI0K2ndZI2crs11QedjbESZBQmtv0KBVrXbmZ/YNejp6n7LE7BIC4ahkWS66Oz5bN6nhrNQxG5GvmkxnGxWl46RP/F9TFPbXpI975iExuw==",
-      "size": 82847
+      "sha256": "fff53b5932b868e9b2efdc8c9bda7b398335da287b1ef25da7a63c97a675810d",
+      "sig": "Yh+2wBfODWx7C65aCDT38wl9C/dovifXsLYaMVKsrdn+FXPCPueEF4ZUibGIbFK2NcnrjeupyPinnDuNnLAWzVu9aUit5zNmD4mD5bWTiNslQRmIQz3qMJLtyvlhjH2gsvT+XN+3oCWzs3btM83uf4NJUh8TA7ZQjVOzMbOAuMCg8oqjUGxev19SendhrCdBoae75E5PbXaR+0qe09OybzgjUKu55uYmr85OanQSpAfBoJdPPdP+CduxlPBWL0QDS2lGskNqfisdRc4VBUyrDp9qC9o1VXYf+gD2nt8H0BEF2XS8IeQdpD0bK8kTpudsNwx08/KFTqhoYncncxI2Og==",
+      "size": 83180
     },
     {
       "id": "gaeste-wlan",
@@ -5330,7 +5330,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -5527,9 +5527,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "a510320024b30ad2c60269ce2a62ce605afcfe6f96a816d2a3156702fd6e5ef8",
-      "sig": "csl79zjCflv8Gy9vD2XFPwU0MiMedDe3Ub7XPhtMPSjWk66J0KbwpB4c+8qpVcwSRTgYh0LGrBKVYBhSgFZr6W7J0Z9EGNyLQUufSPz44fiuoGFe/j2+yan0oLDSSvAt7lmAwVffeM81J/kLvzvdxhN+h0itekeIxQ2AKxuM3LmqVaV7DbPYykvgpfyu18vvrTbfNs10c1VN2FoOnsWnv9LP/q/brr2e1C3uMyJltpd/Wa6Zi70+XBT5d8Dc1n22t3Yb+LrXRup9sxHPMR8ykVWVq3KukkyHSlFoh34uz+YhZwLBPZ74+jVSd5ZBP7elgrGNVJfMUl67HGZCehFEMA==",
-      "size": 66591
+      "sha256": "2f5466a0d360c01b8e6ec68a7c57ea45788da187cd98eb16a666895b55996caa",
+      "sig": "oZDt24cn4XOuzo/mhZfwOJelL8vvY9Hylv4VE6cKej61fcSFn6Ee2oVe4PIc6ld7OBFweY46CPOsenOePAf9AxfyjQaOMbWNtI/Q+mfe1tnJm9YAJkkKH3r9uUZ4VmfFNvU60PXD+5CU5AfheBvrL+70OO9kMqCyDQoIh8ZRXVm4obMNCcC95CAeC/IrHMx2HSP772nC+ST2QsNDSnDPFJGrR2kLST06tKuWt4YBLegQ1l8q8gfMeHMreKePq0r5cX9ConGJ79BtfyD02gZABIpcHHtJoYp9i5PUeRKGWbvFy3tiRFcnNRqoZCYDfU4Lggi+1dZDv6BsMalXDrZexg==",
+      "size": 66654
     },
     {
       "id": "spotify",

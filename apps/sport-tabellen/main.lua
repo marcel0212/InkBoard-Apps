@@ -987,7 +987,7 @@ local function crestToken(k,name) return CODE[k]..loose(name or "") end
 local function loadCrest(ctx,k,slot,name,today,iw,ih)
 iw,ih=iw or 203,ih or 135
 local tok=crestToken(k,name)..(iw~=203 and "w" or "")
-if ctx.data.get("im_"..slot)==tok then return false end
+if ctx.data.get("im_"..slot)==tok and draw.image_size(slot)~=nil then return false end
 local fk=ctx.data.get("cf")
 if type(fk)~="string" or fk:sub(1,5)~=today or #fk>700 then fk=today end
 local mark="|"..slot..tok.."|"
@@ -1069,7 +1069,8 @@ end
 if ok and want and NETN+2<=6 then
 local now=time.now()
 if now~=nil then
-if dash then loadWidgetCrests(ctx,now) else loadCrests(ctx,now) end
+if dash then loadWidgetCrests(ctx,now) end
+if (not dash or NETN+2<=6) then loadCrests(ctx,now) end
 end
 end
 return ok

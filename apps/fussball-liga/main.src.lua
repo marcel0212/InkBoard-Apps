@@ -542,9 +542,13 @@ end
 local function loadCrest(ctx, slot, url, full, short, w, h, today)
   local name = (full ~= nil and full ~= "") and full or short
   local key = nk(name)
-  if key == "" then return end
+  if key == "" then log("Fussball: Wappen " .. slot .. ": kein Vereinsname") return end
   local tok = key .. w
-  if ctx.data.get("im_" .. slot) == tok then return end
+  if ctx.data.get("im_" .. slot) == tok then
+    -- Das Kennzeichen bleibt in den Daten, die Bilddatei geht bei Neuinstallation des Pakets verloren: nur ueberspringen, wenn das Bild da ist
+    if draw.image_size(slot) ~= nil then return end
+    log("Fussball: Wappen " .. slot .. " (" .. name .. "): Kennzeichen da, Bild fehlt - wird neu geladen")
+  end
   log("Fussball: Wappen " .. slot .. " (" .. name .. ") wird geladen, Abrufe bisher " .. NET)
   local fk = ctx.data.get("imf")
   if type(fk) ~= "string" or fk:sub(1, 5) ~= today or #fk > 700 then fk = today end
@@ -602,6 +606,7 @@ end
 local function loadCrests(ctx, now)
   if ctx.cfg.crests == false or now == nil then return end
   D = nil
+  log("Fussball: Wappen laden: Ansicht " .. tostring(ctx.view) .. ", geoeffnet " .. tostring(ctx.opened) .. ", Stil " .. tostring(ctx.cfg.style))
   local d = readData(ctx)
   if not d or not d.own then log("Fussball: Wappen: keine Daten") return end
   local today = ("00000" .. tostring(now // 86400)):sub(-5)
@@ -612,7 +617,8 @@ local function loadCrests(ctx, now)
       loadCrest(ctx, "wown", own.icon, own.full, own.name, 60, 40, today)
       loadCrest(ctx, "wopp", m.oppIcon, m.oppFull, m.opp, 60, 40, today)
     end
-    return
+    -- kein return: Die Firmware meldet ctx.view = "dashboard", sobald das Geraet nicht im Akku-Zyklus laeuft - auch dann,
+    -- wenn die App angezeigt wird. Die grossen Wappen der App-Seite werden deshalb ebenfalls geladen (Budget je Lauf: 6).
   end
   local m = d.nxt[1]
   if ctx.cfg.style == "compact" then
