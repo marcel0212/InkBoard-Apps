@@ -8,7 +8,7 @@
     "de": "Bild",
     "en": "Picture"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "apiLevel": 18,
   "pages": [
     {
@@ -29,10 +29,10 @@
   },
   "permissions": {
     "net": [
-      "commons.wikimedia.org",
-      "upload.wikimedia.org",
+      "*.wikimedia.org",
       "api.nasa.gov",
-      "apod.nasa.gov"
+      "*.nasa.gov",
+      "i.ytimg.com"
     ]
   },
   "sections": [
@@ -89,6 +89,12 @@
         "en": "NASA key (optional)"
       },
       "section": "source",
+      "showIf": {
+        "key": "source",
+        "in": [
+          "apod"
+        ]
+      },
       "help": {
         "de": "Ohne eigenen Schlüssel nutzt die App den Demo-Schlüssel von NASA mit Tageslimit. Ein kostenloser Schlüssel von api.nasa.gov hebt das Limit an.",
         "en": "Without your own key the app uses NASA's demo key with a daily limit. A free key from api.nasa.gov raises the limit."

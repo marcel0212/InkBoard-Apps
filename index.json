@@ -870,7 +870,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -909,10 +909,10 @@
         ]
       },
       "net": [
-        "commons.wikimedia.org",
-        "upload.wikimedia.org",
+        "*.wikimedia.org",
         "api.nasa.gov",
-        "apod.nasa.gov"
+        "*.nasa.gov",
+        "i.ytimg.com"
       ],
       "icon": "apps/bild-des-tages/icon.svg",
       "previews": [
@@ -1028,9 +1028,9 @@
         }
       ],
       "package": "apps/bild-des-tages/package.json",
-      "sha256": "5eb8a2185d3ec0503b77c3eed4bd2ad0ca57e84f75cdcc76a95dc3e68b45053c",
-      "sig": "DQK655z0oVPAKiwkkuz/N/hPLZ2HW3u7izDN2JY6Mhr7CUEayS7B1C0bV2HIQy9RJ++xTV35ewO9zGf4J59MJNrpqnNwTq2AYVwzhbLHwGRDLczgFImTs4x23wtilmmcizyRaR4hEC/Ga0jsVc5KfrHSqufZjBFhTEFRS8QkSDgd/zM/6/ktkbAsz4vw7D6JDMDCnqt7vte3mUB7D7NE3CwUGMFI9hTG3QurBL7+gu64WZfYRso4idkAL5XwBmZ5LxJkZmc2Y0OYAqmwCRMY6lL1qjsXmu0dfQbWRAywvT7pLW+Qnp0vqDI3m+q8hMR4Gcsw+ff4Z1J9+KRc2pVkzw==",
-      "size": 31149
+      "sha256": "8a8d6fc14397c7fb1690404553e55a000d93d2c3fcb521d892facf1c83170229",
+      "sig": "dxaKwJdkp6PKvVgxsWx/ArFHHZKCy8vEoLOeO+K8xuWrWZQHyrH67lOkzl3ahGviOolKgOOt1Vh8BvO3sV4SWVdpHSsznZfR3UwD0Xw7gbPDSQRvOCJ4ePtgFOWQ9zRZHoMQHwTegGmcwQ9KR6WOp+EV4TdtvDhcExdujogHunKdt7ez2cBoksjANq012eAN/lb3vEn71eLgZOKXcnpWPOg2oX6anwI/4q/ZTQuQPb7zFPfzvNCixEoH5iqrNHMCS3oeAREra7Nq8XwRDVoCJrMR657cKOi1sWOd8a9HgFXHYRRWcwXeWsXrq4A8p3lC+rFwJZOu7e3dDHwMk+pFSw==",
+      "size": 31171
     },
     {
       "id": "bilder",
