@@ -545,28 +545,33 @@ local function loadCrest(ctx, slot, url, full, short, w, h, today)
   if key == "" then return end
   local tok = key .. w
   if ctx.data.get("im_" .. slot) == tok then return end
+  log("Fussball: Wappen " .. slot .. " (" .. name .. ") wird geladen, Abrufe bisher " .. NET)
   local fk = ctx.data.get("imf")
   if type(fk) ~= "string" or fk:sub(1, 5) ~= today or #fk > 700 then fk = today end
   if fk:find("|" .. slot .. tok .. "|", 1, true) then return end
   local tnow = time.now() or 0
   local lastTry = tonumber(ctx.data.get("imt_" .. slot)) or 0
-  if tnow > 0 and tnow - lastTry < 90 then return end -- nach einem Fehlversuch kurz warten
-  ctx.data.set("imt_" .. slot, tostring(tnow))
+  if tnow > 0 and tnow - lastTry < 90 then
+    log("Fussball: Wappen " .. slot .. " (" .. name .. "): Wartezeit nach Fehlversuch")
+    return
+  end
   local ok, err = false, nil
   local function try(u)
     if NET + 1 > 6 then return "budget" end
     NET = NET + 1
     local good, e = http.image(u, slot, w, h)
+    log("Fussball: Wappen " .. slot .. " " .. u:sub(1, 90) .. " -> " .. tostring(good) .. " " .. tostring(e))
     ok = good == true
     if not ok then err = e end
   end
   local u = crestUrl(url, 250)
-  if u and try(u) == "budget" then return end
+  if u == nil then log("Fussball: Wappen " .. slot .. " (" .. name .. "): keine Wikimedia-Adresse (" .. tostring(url):sub(1, 60) .. ")") end
+  if u and try(u) == "budget" then log("Fussball: Wappen " .. slot .. ": Abrufbudget leer") return end
   if not ok then
     local wu, werr, partial = wikiThumb(name)
-    if partial then return end
+    if partial then log("Fussball: Wappen " .. slot .. ": Abrufbudget leer (Wikipedia)") return end
     if wu then
-      if try(wu) == "budget" then return end
+      if try(wu) == "budget" then log("Fussball: Wappen " .. slot .. ": Abrufbudget leer") return end
     else
       err = werr or err
     end
@@ -580,6 +585,7 @@ local function loadCrest(ctx, slot, url, full, short, w, h, today)
   if ok then
     ctx.data.set("im_" .. slot, tok)
   else
+    ctx.data.set("imt_" .. slot, tostring(tnow))
     log("Fussball: Wappen " .. slot .. " (" .. name .. "): " .. tostring(err))
     ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose,)
     -- Nur endgueltige Fehler (kein Artikel, 403/404, Bildformat) sperren das Wappen fuer den Tag; ein Netzfehler
@@ -597,7 +603,7 @@ local function loadCrests(ctx, now)
   if ctx.cfg.crests == false or now == nil then return end
   D = nil
   local d = readData(ctx)
-  if not d or not d.own then return end
+  if not d or not d.own then log("Fussball: Wappen: keine Daten") return end
   local today = ("00000" .. tostring(now // 86400)):sub(-5)
   local own = d.own
   if ctx.view == "dashboard" then -- Widget: kleine Wappen des Widget-Spiels (kann ein anderer Wettbewerb sein)

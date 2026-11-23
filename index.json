@@ -2546,7 +2546,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2744,9 +2744,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "f74a6bd46a43cadbd8b45325ac2dfb35fdd72d4874562ecb3cfad0f7ddf53e11",
-      "sig": "cdXcZsRLWounhJDuINjLcX4bdaGdv+RI4A4l+06IiTCvgr67I5LTnX/USOQLVUvfw4mknuFUlbWDroMjoSf2aZkCuyYu70t1hugh3ujJDw6+qmLCBfrlA6wiYdnrSLuoLXEv/ztKHjc4lH399lnMuSkfJUuyvva3vvUE1cTL/X+4SJyVF/TvDi7pZmJO8WWL3OIAAtTYbAQtfNSC1+gfZxxbafmIBkc5ZtQ3JbZFtCYPbhFf9r3TaLYthr88ieORpGcjiikYfGID01yMYxwP5TxgDbimRD8LGPzi4q5sq2v/EVeGCigoFaTPCkBooRb7eECePDe/dJUfRiOeEzYsJA==",
-      "size": 82219
+      "sha256": "0b7450597e6b4dbfa341acd8aec2ea5e5858e9a760fd8d1665f201ee94fa051b",
+      "sig": "Qrfj/lvKdt1SxnNsyqXd5zNw22fkWAxtSGNKPQubTKzSd+4ZHRvJFCS0iSyCjg9w3+4DPfWME785RgOXju8kHdD+kqu1SepkjGotn/Wq2SEQn4svHsuUy2wio5uVz+roo3yPpjnMKbx5I2pAimelKCc5mIF3htiBy56VQ/q2vlaQMLmxYzKWDbudnviTpKGomaJRHxq0jLeBCh+wbyON7Rczyf3qWrx+PTC4H5HtWZLz+MnHbkQ3H8zswtgNGdzo7mLYO8HDyuQiVeVGJoOBCAVS/aq0nlMiHNR54CuDOtkaDWD8idZKH0ZiCOdo/5cZObFZOby9PJHhnd56vt2WPg==",
+      "size": 82848
     },
     {
       "id": "gaeste-wlan",
