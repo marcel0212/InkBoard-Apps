@@ -654,6 +654,25 @@ local function fetchOLeague(ctx, code, lg, team, now, sig)
     end)
     local want = lg.o
     last, nxt, wn = pickMatches(ms, function(r) return r.lg == want end)
+    if #nxt == 0 then
+      -- Nichts Anstehendes gefunden: Zukunft getrennt abfragen (kleine Antwort) und zusammenfuehren
+      local fb = oGet("getmatchesbyteamid/" .. id .. "/0/12", 48000, KEEP_M, SKIP_M)
+      local seen = {}
+      for _, r in ipairs(ms) do seen[r.when .. r.opp] = true end
+      local added = 0
+      if fb then
+        eachObj(fb, function(m)
+          local r = oMatch(code, m, id, now)
+          if r and not seen[r.when .. r.opp] then ms[#ms + 1] = r; added = added + 1 end
+        end)
+      end
+      local lgs = {}
+      for _, r in ipairs(ms) do if not r.fin then lgs[#lgs + 1] = r.lg end end
+      log("Fussball: keine anstehenden Spiele in der Liste (" .. #ms .. " Spiele, Nachabruf +" .. added .. ", offene Ligen: "
+        .. table.concat(lgs, ",") .. ", erwartet " .. tostring(want) .. ")")
+      last, nxt, wn = pickMatches(ms, function(r) return r.lg == want end)
+      if #nxt == 0 and wn then nxt[1] = wn end -- Liga-Kennung passt nicht: lieber das naechste Spiel anzeigen als keins
+    end
     for _, r in ipairs(ms) do
       if r.venue and r.venue ~= "" and ownInfo.venue == nil then ownInfo.venue = r.venue end
       if ownInfo.name == "" then ownInfo.name = r.ownName; ownInfo.tla, ownInfo.col = crestOf(code, r.ownName, r.ownFull) end
