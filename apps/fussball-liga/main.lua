@@ -844,7 +844,7 @@ end
 local m=d.nxt[1]
 if ctx.cfg.style=="compact" then
 loadCrest(ctx,"owns",own.icon,own.full,own.name,44,26,today)
-elseif (ctx.cfg.style or "cards")=="cards" then
+else
 loadCrest(ctx,"own",own.icon,own.full,own.name,203,135,today)
 if m then loadCrest(ctx,"opp",m.oppIcon,m.oppFull,m.opp,203,135,today) end
 end

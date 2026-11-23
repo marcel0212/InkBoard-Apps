@@ -1018,9 +1018,13 @@ end
 end
 return true
 end
+local function bigCrestStyle(st)
+st=st or "cards"
+return st~="flat" and st~="compact" and st~="slate" and st~="nano"
+end
 local function loadCrests(ctx,now)
 local cfg=ctx.cfg
-if cfg.crests==false or (cfg.style or "cards")~="cards" then return end
+if cfg.crests==false or not bigCrestStyle(cfg.style) then return end
 local k=pageKind(cfg)
 local m=model(ctx,k)
 local nx=m and m.found and m.nxt[1]
@@ -1044,7 +1048,7 @@ end
 function on_fetch(ctx)
 local cfg=ctx.cfg
 local dash=ctx.view=="dashboard"
-local want=cfg.crests~=false and ctx.view~="other" and (dash or (cfg.style or "cards")=="cards")
+local want=cfg.crests~=false and ctx.view~="other" and (dash or bigCrestStyle(cfg.style))
 RESERVE,NETN=0,0
 local nowT=time.now()
 local cf=ctx.data.get("cf")

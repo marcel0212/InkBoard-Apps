@@ -8,7 +8,7 @@
     "de": "Weltzeit",
     "en": "World"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 2,
   "pages": [
     {
@@ -188,6 +188,49 @@
       "help": {
         "de": "Karten: eine Karte je Stadt. Heimzeit groß: erste Stadt riesig, die anderen als Reihe. Analoguhren: Zifferblatt in jeder Karte. Tabelle: Zeilen mit Tag-/Nacht-Punkt. Sonne und Mond: Symbol je Stadt. Typografisch: große Zahl und schlichte Zeilen.",
         "en": "Cards: one card per city. Large home time: first city huge, the rest in a row. Analog clocks: a dial in each card. Table: rows with a day/night dot. Sun and moon: a symbol per city. Typographic: big number and plain rows."
+      }
+    },
+    {
+      "key": "dial",
+      "type": "select",
+      "options": [
+        "klassisch",
+        "ziffern",
+        "punkte",
+        "minuten",
+        "schlicht"
+      ],
+      "default": "klassisch",
+      "optionLabels": {
+        "de": {
+          "klassisch": "Klassisch",
+          "ziffern": "Mit Ziffern",
+          "punkte": "Punkte",
+          "minuten": "Minutenring",
+          "schlicht": "Schlicht"
+        },
+        "en": {
+          "klassisch": "Classic",
+          "ziffern": "Numerals",
+          "punkte": "Dots",
+          "minuten": "Minute ring",
+          "schlicht": "Minimal"
+        }
+      },
+      "label": {
+        "de": "Zifferblatt",
+        "en": "Dial"
+      },
+      "section": "look",
+      "showIf": {
+        "key": "design",
+        "in": [
+          "analog"
+        ]
+      },
+      "help": {
+        "de": "Klassisch: Striche zu den Stunden. Mit Ziffern: 12, 3, 6 und 9. Punkte: runde Stundenmarken. Minutenring: 60 Striche. Schlicht: ohne Ring, nur vier Marken.",
+        "en": "Classic: hour strokes. Numerals: 12, 3, 6 and 9. Dots: round hour marks. Minute ring: 60 strokes. Minimal: no ring, four marks only."
       }
     },
     {

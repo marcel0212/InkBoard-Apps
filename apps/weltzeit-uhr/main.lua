@@ -669,7 +669,7 @@ end
 local DESIGNS={"karten","heim","analog","tabelle","sonne","typo"}
 local function designOf(cfg)
 local d=cfg.design
-if d==nil then d=DESIGNS[(tonumber(cfg.opt) or 0)+1] end
+if d==nil then d=DESIGNS[((tonumber(cfg.opt) or 0)%10)+1] end
 return d or "karten"
 end
 local function subLine(e,en)
@@ -691,20 +691,84 @@ for k=-(t//2),t//2 do
 draw.line(math.floor(x1+nx*k+0.5),math.floor(y1+ny*k+0.5),math.floor(x2+nx*k+0.5),math.floor(y2+ny*k+0.5),col)
 end
 end
-local function clockFace(cx,cy,r,e)
-draw.rect(cx - r,cy - r,2*r,2*r,color.WHITE,true,r)
-draw.rect(cx - r,cy - r,2*r,2*r,color.BLACK,false,r)
+local DIALS={"klassisch","ziffern","punkte","minuten","schlicht"}
+local function dialOf(cfg)
+local d=cfg.dial
+if d==nil then d=DIALS[((tonumber(cfg.opt) or 0)//10)+1] end
+for _,k in ipairs(DIALS) do if k==d then return d end end
+return "klassisch"
+end
+local function polar(cx,cy,a,len)
+return cx+math.cos(a)*len,cy+math.sin(a)*len
+end
+local function hand(cx,cy,a,len,wid,tail,col)
+local tx,ty=polar(cx,cy,a,len)
+local bx,by=polar(cx,cy,a+math.pi,tail)
+local lx,ly=polar(cx,cy,a - math.pi/2,wid/2)
+local rx,ry=polar(cx,cy,a+math.pi/2,wid/2)
+local function f(v) return math.floor(v+0.5) end
+draw.polygon({f(lx),f(ly),f(tx),f(ty),f(rx),f(ry),f(bx),f(by)},col,true)
+end
+local function tick(cx,cy,a,r0,r1)
+local x0,y0=polar(cx,cy,a,r0)
+local x1,y1=polar(cx,cy,a,r1)
+draw.line(math.floor(x0+0.5),math.floor(y0+0.5),math.floor(x1+0.5),math.floor(y1+0.5),color.BLACK)
+end
+local function clockFace(cx,cy,r,e,dial)
+dial=dial or "klassisch"
+if dial~="schlicht" then
+draw.circle(cx,cy,r,color.WHITE,true)
+draw.circle(cx,cy,r,color.BLACK,false)
+if dial=="ziffern" then draw.circle(cx,cy,r - 1,color.BLACK,false) end
+end
+if dial=="klassisch" then
 for i=0,11 do
-local a=math.rad(i*30 - 90)
-local r1=r - ((i%3==0) and 11 or 7)
-draw.line(cx+math.floor(math.cos(a)*(r - 3)+0.5),cy+math.floor(math.sin(a)*(r - 3)+0.5),
-cx+math.floor(math.cos(a)*r1+0.5),cy+math.floor(math.sin(a)*r1+0.5),color.BLACK)
+tick(cx,cy,math.rad(i*30 - 90),r - 3,r - ((i%3==0) and 13 or 8))
+end
+elseif dial=="ziffern" then
+if r>=40 then
+for i=0,3 do
+local nx,ny=polar(cx,cy,math.rad(i*90 - 90),r - 17)
+local t=tostring(i==0 and 12 or i*3)
+draw.text(math.floor(nx+0.5),math.floor(ny+0.5)+6,t,"small",color.BLACK,"center")
+end
+for i=0,11 do
+if i%3~=0 then tick(cx,cy,math.rad(i*30 - 90),r - 3,r - 8) end
+end
+else
+for i=0,11 do tick(cx,cy,math.rad(i*30 - 90),r - 3,r - ((i%3==0) and 13 or 8)) end
+end
+elseif dial=="punkte" then
+for i=0,11 do
+local x,y=polar(cx,cy,math.rad(i*30 - 90),r - 9)
+local pr=(i%3==0) and 4 or 2
+draw.circle(math.floor(x+0.5),math.floor(y+0.5),pr,i==0 and color.ACCENT or color.BLACK,true)
+end
+elseif dial=="minuten" then
+for i=0,59 do
+local big=i%5==0
+tick(cx,cy,math.rad(i*6 - 90),r - 2,r - (big and 11 or 6))
+end
+else
+for i=0,3 do
+tick(cx,cy,math.rad(i*90 - 90),r - 2,r - 12)
+end
 end
 local ha=math.rad((e.h%12+e.m/60)*30 - 90)
 local ma=math.rad(e.m*6 - 90)
-thick(cx,cy,cx+math.cos(ha)*r*0.5,cy+math.sin(ha)*r*0.5,color.BLACK,5)
-thick(cx,cy,cx+math.cos(ma)*r*0.78,cy+math.sin(ma)*r*0.78,color.ACCENT,3)
-draw.rect(cx - 4,cy - 4,8,8,color.BLACK,true,4)
+if dial=="schlicht" then
+hand(cx,cy,ha,r*0.52,4,0,color.BLACK)
+hand(cx,cy,ma,r*0.82,3,0,color.BLACK)
+draw.circle(cx,cy,3,color.ACCENT,true)
+elseif dial=="punkte" then
+hand(cx,cy,ha,r*0.45,7,0,color.BLACK)
+hand(cx,cy,ma,r*0.68,5,0,color.ACCENT)
+draw.circle(cx,cy,5,color.BLACK,true)
+else
+hand(cx,cy,ha,r*0.52,8,6,color.BLACK)
+hand(cx,cy,ma,r*0.8,5,8,color.ACCENT)
+draw.circle(cx,cy,4,color.BLACK,true)
+end
 end
 local function sunMoon(cx,cy,r,night)
 if night then
@@ -757,7 +821,7 @@ draw.text(x+cw//2,y0+h//2+14,c.time,pickFont(c.time,cw - 12,{"large","medium","n
 draw.text(x+cw//2,y0+h - 14,fit(c.diff..(c.dd~=0 and (", "..dayWord(c.dd,en)) or ""),cw - 10,"small"),"small",color.ACCENT_TEXT,"center")
 end
 end
-local function drawAnalog(list,en)
+local function drawAnalog(list,en,dial)
 local n=#list
 local at,tw,th=gridFor(n)
 for i,e in ipairs(list) do
@@ -765,7 +829,7 @@ local x,y,w,h=at(i)
 frameBox(x,y,w,h)
 if w>=330 then
 local r=math.min(h//2 - 18,74)
-clockFace(x+r+24,y+h//2,r,e)
+clockFace(x+r+24,y+h//2,r,e,dial)
 local tx=x+2*r+48
 draw.text(tx,y+44,fit(e.name,w - (tx - x) - 14,"normal"),"normal",color.BLACK,"left")
 draw.text(tx,y+h//2+22,e.time,pickFont(e.time,w - (tx - x) - 14,{"large","medium","normal"}),color.BLACK,"left")
@@ -773,7 +837,7 @@ draw.text(tx,y+h - 22,fit(subLine(e,en),w - (tx - x) - 14,"small"),"small",color
 else
 local r=math.min(h//2 - 52,w//2 - 22,60)
 if r<24 then r=24 end
-clockFace(x+w//2,y+r+14,r,e)
+clockFace(x+w//2,y+r+14,r,e,dial)
 draw.text(x+w//2,y+2*r+40,fit(e.name,w - 16,"small"),"small",color.BLACK,"center")
 draw.text(x+w//2,y+h - 34,e.time,pickFont(e.time,w - 20,{"large","medium","normal"}),color.BLACK,"center")
 end
@@ -840,7 +904,7 @@ draw.clear(color.WHITE)
 local list,en=build(ctx)
 local design=designOf(ctx.cfg)
 if design=="heim" then return drawHeim(list,en) end
-if design=="analog" then return drawAnalog(list,en) end
+if design=="analog" then return drawAnalog(list,en,dialOf(ctx.cfg)) end
 if design=="tabelle" then return drawTable(list,en) end
 if design=="sonne" then return drawSonne(list,en) end
 if design=="typo" then return drawTypo(list,en) end

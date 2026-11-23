@@ -2546,7 +2546,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2744,9 +2744,9 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "fff53b5932b868e9b2efdc8c9bda7b398335da287b1ef25da7a63c97a675810d",
-      "sig": "Yh+2wBfODWx7C65aCDT38wl9C/dovifXsLYaMVKsrdn+FXPCPueEF4ZUibGIbFK2NcnrjeupyPinnDuNnLAWzVu9aUit5zNmD4mD5bWTiNslQRmIQz3qMJLtyvlhjH2gsvT+XN+3oCWzs3btM83uf4NJUh8TA7ZQjVOzMbOAuMCg8oqjUGxev19SendhrCdBoae75E5PbXaR+0qe09OybzgjUKu55uYmr85OanQSpAfBoJdPPdP+CduxlPBWL0QDS2lGskNqfisdRc4VBUyrDp9qC9o1VXYf+gD2nt8H0BEF2XS8IeQdpD0bK8kTpudsNwx08/KFTqhoYncncxI2Og==",
-      "size": 83180
+      "sha256": "473f4ebfae873fadece1b5a7088c5f45c7dcf5f0fe0aa8f5f4d76a038d26d2df",
+      "sig": "IcGOVAf4/5QLnvjdCl8vDIRzwArm/DApNCUGCemWik4eal4Calclo/aKtOBm06dEnRGIm2pD7SE5d5qciZAmxje1/ZRkh4yia/1sBg7v2kXn9fMBaIJEPMvGPCyu/9wpGMIMiwN/6xP9uM2P5z27tlAHiDCrb1x0Q9d+7ZI8gJCPgHYoXi87Sy62C53z0htdR932wyjFb9iit388/4CWHRII7vbwa63MdhBwS/Wv82vYyVI21QRJcLGyv46THxnh7fx0rsY2kiXBb0wo2Id9MPHWTeI423TocLE70YKbsCkyOio+lVrU6nFBbsccV+zlZ8dI9EzLJ82H8Rf/wSnFBQ==",
+      "size": 83133
     },
     {
       "id": "gaeste-wlan",
@@ -5330,7 +5330,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -5527,9 +5527,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "2f5466a0d360c01b8e6ec68a7c57ea45788da187cd98eb16a666895b55996caa",
-      "sig": "oZDt24cn4XOuzo/mhZfwOJelL8vvY9Hylv4VE6cKej61fcSFn6Ee2oVe4PIc6ld7OBFweY46CPOsenOePAf9AxfyjQaOMbWNtI/Q+mfe1tnJm9YAJkkKH3r9uUZ4VmfFNvU60PXD+5CU5AfheBvrL+70OO9kMqCyDQoIh8ZRXVm4obMNCcC95CAeC/IrHMx2HSP772nC+ST2QsNDSnDPFJGrR2kLST06tKuWt4YBLegQ1l8q8gfMeHMreKePq0r5cX9ConGJ79BtfyD02gZABIpcHHtJoYp9i5PUeRKGWbvFy3tiRFcnNRqoZCYDfU4Lggi+1dZDv6BsMalXDrZexg==",
-      "size": 66654
+      "sha256": "a48e9f8b63b375e12f6d4e0e2c02c1a95f050e4c193658b83f5f19f8f28da3c2",
+      "sig": "jal8iOjCXuiUJjzSlcuaDltJHpir2BueaFo84bMRP0kfdSa9KDuJA7V303RcGvPISGZTuyUS8S7yAtUlw5jPm/lOrIn5PT2dODiC5LIRFU/k+dwDjim4iIFriHiFE92xpYwq8XeAT61y9lsrF4NbYsPrsXVezIPlXCF2k+dOK1rFnWOtt/oefIbMMekOs6j8u1K9/ocfErXJ7+MLUT7vg+cyJyW3jdgZN9xXp7BoRlysc/42gK8Ei5EK3kke1IcyA7NyEkLCY60Q0MqHbK1zuKtriark7+rWGLev+EBv474ibrr0xe3VLtjHDs6rRfca3iCdnIw2xWT2rlYARrlDYA==",
+      "size": 66771
     },
     {
       "id": "spotify",
@@ -6758,7 +6758,7 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "apiLevel": 2,
       "pages": 1,
       "pageNames": [
@@ -6948,12 +6948,62 @@
           },
           "style": "relief",
           "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-dial-klassisch.svg",
+          "caption": {
+            "de": "Zifferblatt: Klassisch",
+            "en": "Dial: Classic"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-dial-ziffern.svg",
+          "caption": {
+            "de": "Zifferblatt: Mit Ziffern",
+            "en": "Dial: Numerals"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-dial-punkte.svg",
+          "caption": {
+            "de": "Zifferblatt: Punkte",
+            "en": "Dial: Dots"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-dial-minuten.svg",
+          "caption": {
+            "de": "Zifferblatt: Minutenring",
+            "en": "Dial: Minute ring"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-dial-schlicht.svg",
+          "caption": {
+            "de": "Zifferblatt: Schlicht",
+            "en": "Dial: Minimal"
+          },
+          "style": "relief",
+          "page": 0
         }
       ],
       "package": "apps/weltzeit-uhr/package.json",
-      "sha256": "bb526a720ce18bb39979ee77d36e7eff946a7a2b76c3db04b0a42087eaafd4a0",
-      "sig": "nlXTgHCuLScoFfHAtwl1vFmM7ROdlhrUEPQWwF/HKATfFtXi6dhwHwr5uEPCTHPord6KPn8uPiUd8R4dxtiQCm5VqtTp+0WQQ4WSsdhO69tWBuclWSSQ86vJGsWs+u/7erbmtzV7NBxTl/zlQ7sVdVVdFRTaOAFFvDYUkIbsW3AiG2IvL45zBPCE084Sx8+s2e5qhvyRL9cAqB6sjkVjvC9y51dOIn8mDPROmmWODIJBk+b0HldnZ+Nt8FhFR0D52r44Ggey5SIdCsjIp8tc/fPvUPJ774HSFi1cSwKqAf52C4ciDZCL45p5lAOLELEvqKZeiR9C8yQJlPFsFGEu9A==",
-      "size": 36644
+      "sha256": "5cf93fe7f44c7fbbcf64e4ddee81f00aa03a9cde8c48d892dbea1f26d4d0a880",
+      "sig": "okEMiHgxYBfltAOpyVV7S/BpctQiDalxfcvSeTpad+VTy6gCGyTtxjx968BMssMlh+zUQJdqjXrf1+fzNwyvG+3hNsPqnUc/C1GcUutmbdKuqRZJamIOhMjWQ5SLK441CZfoC/9/WLCJwom9XH4yYGsYB1KnpPBJC+KpCQVvnRMpvALP7XX51Uss4iW0BFGwHeMb7AT6/KUJSPRqnT/AaW+6Fr1XqQDfj5yNoS3oqmwicEko5LsMlBFaTlttHeA+z5Oeuk7Qka+z3lCVwJ9hZB1kdW6yQF3LX4Mbb9PaFTPDPEJqSTBgCrFtQZ35hcgkMIGisLdeoP8mGVJTeH0YLQ==",
+      "size": 39402
     },
     {
       "id": "wikipedia-today",

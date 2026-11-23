@@ -173,6 +173,56 @@
       },
       "style": "relief",
       "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-dial-klassisch.svg",
+      "caption": {
+        "de": "Zifferblatt: Klassisch",
+        "en": "Dial: Classic"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-dial-ziffern.svg",
+      "caption": {
+        "de": "Zifferblatt: Mit Ziffern",
+        "en": "Dial: Numerals"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-dial-punkte.svg",
+      "caption": {
+        "de": "Zifferblatt: Punkte",
+        "en": "Dial: Dots"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-dial-minuten.svg",
+      "caption": {
+        "de": "Zifferblatt: Minutenring",
+        "en": "Dial: Minute ring"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-dial-schlicht.svg",
+      "caption": {
+        "de": "Zifferblatt: Schlicht",
+        "en": "Dial: Minimal"
+      },
+      "style": "relief",
+      "page": 0
     }
   ]
 }
