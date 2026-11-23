@@ -572,6 +572,11 @@ local SKIP_FM={"area","season","referees","odds","halfTime","regularTime","extra
 local function oGet(path,maxBytes,keep,skip)
 sleepGap()
 local r,err=http.request{url=OLDB..path,keep=keep,skip=skip,maxBytes=maxBytes}
+if r==nil then
+log("Fussball: "..tostring(err).." - neuer Versuch")
+time.sleep(1500)
+r,err=http.request{url=OLDB..path,keep=keep,skip=skip,maxBytes=maxBytes}
+end
 if r==nil then log("Fussball: "..tostring(err)); return nil,"net" end
 if r.status~=200 then log("Fussball: HTTP "..tostring(r.status)); return nil,"net" end
 return r.body
@@ -883,7 +888,7 @@ elseif old then
 last,nxt,wn=old.last,old.nxt,old.wnext
 if old.own.venue~="" then ownInfo.venue=old.own.venue end
 else
-last,nxt={},{}
+return false,"net"
 end
 ownInfo.icon=own and own.icon or ownIcon
 local ok=saveData(sig,now,ownInfo,rows,last,nxt,wn)
@@ -1017,7 +1022,7 @@ last,nxt,wn=pickMatches(ms,function(r) return r.comp=="" or r.comp==code end)
 elseif old then
 last,nxt,wn=old.last,old.nxt,old.wnext
 else
-last,nxt={},{}
+return false,"net"
 end
 if saveData(sig,now,ownInfo,rows,last,nxt,wn)~=true then return false,"net" end
 return true
@@ -1666,7 +1671,7 @@ local d=readData(ctx)
 if not d and ctx.sample then d=sampleData() end
 local m=d and (d.wnext or d.nxt[1])
 if not m then
-draw.text(box.x+12,box.y+16,T("Noch keine Daten","No data yet"),"small",color.BLACK,"left")
+draw.text(box.x+12,box.y+16,d and T("Kein Spiel angesetzt","No match scheduled") or T("Noch keine Daten","No data yet"),"small",color.BLACK,"left")
 return
 end
 local compact=ctx.cfg.wCompact==true
