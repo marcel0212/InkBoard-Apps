@@ -5330,7 +5330,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.7",
+      "version": "1.1.8",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -5527,9 +5527,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "a48e9f8b63b375e12f6d4e0e2c02c1a95f050e4c193658b83f5f19f8f28da3c2",
-      "sig": "jal8iOjCXuiUJjzSlcuaDltJHpir2BueaFo84bMRP0kfdSa9KDuJA7V303RcGvPISGZTuyUS8S7yAtUlw5jPm/lOrIn5PT2dODiC5LIRFU/k+dwDjim4iIFriHiFE92xpYwq8XeAT61y9lsrF4NbYsPrsXVezIPlXCF2k+dOK1rFnWOtt/oefIbMMekOs6j8u1K9/ocfErXJ7+MLUT7vg+cyJyW3jdgZN9xXp7BoRlysc/42gK8Ei5EK3kke1IcyA7NyEkLCY60Q0MqHbK1zuKtriark7+rWGLev+EBv474ibrr0xe3VLtjHDs6rRfca3iCdnIw2xWT2rlYARrlDYA==",
-      "size": 66771
+      "sha256": "cbcfedfc92f992cd58d52d4d6e3445d957fe84c1047cefd4cc292c5ed16fc0d9",
+      "sig": "e/QnEHPMoiQoU8sbOqkK32L+5dRO9L1MsGoi8BR/3WJCvqulPSJLZJTqjK9TErQeAUKTFOMOK3xKsOzeC0TSkv3/OFphXYuGBUZWkq4kWUCyinSHXbF8x5ZaosIWaneVtHJzkWi6B1sGlefNOxwm70pXs443KIZeexhf58dfJrbyupz+2UxyhnzPAG1Q0CdqclLvz+UWwyQ/WPoCiESeWbyiu2a2Z1edfF91Mhw6fVWc8H4HOp3uZTvF/Md1BNX7vIvMgxKfrFzUQDf2NH6LKjbmmoTLRzvcQ3gI7E1NA2dc2i/RhPaBAgU/8RDG0PIM6tDr6TdKWKRk6vvVdn0qPw==",
+      "size": 67255
     },
     {
       "id": "spotify",
