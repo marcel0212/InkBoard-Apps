@@ -548,6 +548,10 @@ local function loadCrest(ctx, slot, url, full, short, w, h, today)
   local fk = ctx.data.get("imf")
   if type(fk) ~= "string" or fk:sub(1, 5) ~= today or #fk > 700 then fk = today end
   if fk:find("|" .. slot .. tok .. "|", 1, true) then return end
+  local tnow = time.now() or 0
+  local lastTry = tonumber(ctx.data.get("imt_" .. slot)) or 0
+  if tnow > 0 and tnow - lastTry < 90 then return end -- nach einem Fehlversuch kurz warten
+  ctx.data.set("imt_" .. slot, tostring(tnow))
   local ok, err = false, nil
   local function try(u)
     if NET + 1 > 6 then return "budget" end
@@ -575,11 +579,16 @@ local function loadCrest(ctx, slot, url, full, short, w, h, today)
   end
   if ok then
     ctx.data.set("im_" .. slot, tok)
-    ctx.data.set("ie", "")
   else
     log("Fussball: Wappen " .. slot .. " (" .. name .. "): " .. tostring(err))
     ctx.data.set("ie", name:sub(1, 24) .. ": " .. tostring(err):sub(1, 70)) -- im Display sichtbar (Diagnose,)
-    ctx.data.set("imf", fk .. "|" .. slot .. tok .. "|")
+    -- Nur endgueltige Fehler (kein Artikel, 403/404, Bildformat) sperren das Wappen fuer den Tag; ein Netzfehler
+    -- (Timeout, Abbruch, 429/5xx) wird beim naechsten Abruf bzw. Oeffnen erneut versucht.
+    local e = tostring(err or ""):lower()
+    if e:find("kein passender", 1, true) or e:find("kein suchwort", 1, true) or e:find("404", 1, true)
+        or e:find("403", 1, true) or e:find("format", 1, true) or e:find("decode", 1, true) then
+      ctx.data.set("imf", fk .. "|" .. slot .. tok .. "|")
+    end
   end
 end
 
@@ -1102,6 +1111,12 @@ local function teamBento(ctx, lg, d, top)
 
   local labelY = y + heroH + 22
   draw.text(heroX, labelY, T("LETZTE 5 SPIELE", "LAST 5 MATCHES"), "small", color.BLACK, "left")
+  -- Diagnose: fehlt ein Wappen, steht der Grund klein rechts neben der Ueberschrift
+  if ctx.cfg.crests ~= false and (ctx.data.get("im_own") == nil or ctx.data.get("im_opp") == nil) then
+    local ie = ctx.data.get("ie")
+    if type(ie) ~= "string" or ie == "" then ie = T("noch kein Abruf", "no fetch yet") end
+    draw.text(draw.width - heroX, labelY, fit(T("Wappen: ", "Crest: ") .. ie, draw.width - heroX * 2 - 150, "small"), "small", color.BLACK, "right")
+  end
   local tilesTop = labelY + 8
   local tileH = math.min(bottom - tilesTop, 128)
   if tall then tileH = 70 end
@@ -1535,12 +1550,6 @@ function on_draw(ctx, page)
     if style == "flat" then tableSlate(ctx, lg, d, top) elseif style == "compact" then tableNano(ctx, lg, d, top) else tableBento(ctx, lg, d, top) end
   else
     if style == "flat" then teamSlate(ctx, lg, d, top) elseif style == "compact" then teamNano(ctx, lg, d, top) else teamBento(ctx, lg, d, top) end
-    -- Diagnose: fehlt ein Wappen, steht der Grund klein am unteren Rand
-    local ie = ctx.data.get("ie")
-    if type(ie) ~= "string" or ie == "" then ie = T("noch kein Wappenabruf", "no crest fetch yet") end
-    if ctx.cfg.crests ~= false and style ~= "flat" and (ctx.data.get("im_own") == nil or ctx.data.get("im_opp") == nil) then
-      draw.text(draw.width - 10, draw.height - 8, fit("Wappen: " .. ie, draw.width - 24, "small"), "small", color.BLACK, "right")
-    end
   end
 end
 
