@@ -557,6 +557,7 @@ if d.own then D=d end
 return D
 end
 local NET=0
+local HTTPN=0
 local function sleepGap()
 NET=NET+1
 if NET>1 then time.sleep(250) end
@@ -571,10 +572,12 @@ local KEEP_FM={"utcDate","status","code","id","name","shortName","tla","crest","
 local SKIP_FM={"area","season","referees","odds","halfTime","regularTime","extraTime","penalties","filters","resultSet"}
 local function oGet(path,maxBytes,keep,skip)
 sleepGap()
+HTTPN=HTTPN+1
 local r,err=http.request{url=OLDB..path,keep=keep,skip=skip,maxBytes=maxBytes}
-if r==nil then
+if r==nil and HTTPN<6 then
 log("Fussball: "..tostring(err).." - neuer Versuch")
 time.sleep(1500)
+HTTPN=HTTPN+1
 r,err=http.request{url=OLDB..path,keep=keep,skip=skip,maxBytes=maxBytes}
 end
 if r==nil then log("Fussball: "..tostring(err)); return nil,"net" end
@@ -867,31 +870,55 @@ local old=previous(ctx,sig)
 local ownInfo=own and {id=id,name=own.name,tla=own.tla,col=own.col,pos=own.pos,pts=own.pts,full=own.full,icon=own.icon}
 or {id=id,name="",tla="",col="b",pos=0,pts=0}
 local last,nxt,wn
-local mbody=oGet("getmatchesbyteamid/"..id.."/16/6",48000,KEEP_M,SKIP_M)
+local fbody=oGet("getmatchesbyteamid/"..id.."/0/3",24000,KEEP_M,SKIP_M)
+local pbody=oGet("getmatchesbyteamid/"..id.."/7/0",40000,KEEP_M,SKIP_M)
 local oppIcon,ownIcon
-if mbody then
+if fbody or pbody then
 local ms={}
-eachObj(mbody,function(m)
+local got={}
+for _,body in ipairs({fbody or "",pbody or ""}) do
+eachObj(body,function(m)
 local r=oMatch(code,m,id,now)
-if r then ms[#ms+1]=r end
+if r and not got[r.when..r.opp] then got[r.when..r.opp]=true; ms[#ms+1]=r end
 end)
+end
+if old then
+for _,o in ipairs(old.last) do
+if not got[o.when..o.opp] then
+got[o.when..o.opp]=true
+o.fin,o.stale,o.lg=true,false,lg.o
+ms[#ms+1]=o
+end
+end
+end
 local want=lg.o
 last,nxt,wn=pickMatches(ms,function(r) return r.lg==want end)
 if #nxt==0 then
-local fb=oGet("getmatchesbyteamid/"..id.."/0/12",48000,KEEP_M,SKIP_M)
 local seen={}
 for _,r in ipairs(ms) do seen[r.when..r.opp]=true end
 local added=0
-if fb then
-eachObj(fb,function(m)
+local function addFrom(body)
+eachObj(body,function(m)
 local r=oMatch(code,m,id,now)
-if r and not seen[r.when..r.opp] then ms[#ms+1]=r; added=added+1 end
+if r and not seen[r.when..r.opp] then seen[r.when..r.opp]=true; ms[#ms+1]=r; added=added+1 end
 end)
+end
+local season=seasonOf(now)
+local cg=HTTPN<5 and oGet("getcurrentgroup/"..want,2000) or nil
+local gno=cg and tonumber(cg:match('"groupOrderID"%s*:%s*(%d+)'))
+if gno then
+for g=gno,gno+1 do
+if HTTPN>=6 then break end
+local gb=oGet("getmatchdata/"..want.."/"..season.."/"..g,24000,KEEP_M,SKIP_M)
+if gb then addFrom(gb) end
+last,nxt,wn=pickMatches(ms,function(r) return r.lg==want end)
+if #nxt>0 then break end
+end
 end
 local lgs={}
 for _,r in ipairs(ms) do if not r.fin then lgs[#lgs+1]=r.lg end end
-log("Fussball: keine anstehenden Spiele in der Liste ("..#ms.." Spiele, Nachabruf +"..added..", offene Ligen: "
-..table.concat(lgs,",")..", erwartet "..tostring(want)..")")
+log("Fussball: keine anstehenden Spiele im Zeitfenster ("..#ms.." Spiele, Spieltag "..tostring(gno).." +"..added
+..", offene Ligen: "..table.concat(lgs,",")..", erwartet "..tostring(want)..", jetzt anstehend "..#nxt..")")
 last,nxt,wn=pickMatches(ms,function(r) return r.lg==want end)
 if #nxt==0 and wn then nxt[1]=wn end
 end
@@ -1048,6 +1075,7 @@ end
 function on_fetch(ctx)
 EN=ctx.lang=="en"
 NET=0
+HTTPN=0
 LIVE_NOW=false
 D,OFF_NOW=nil,nil
 if ctx.opened then
