@@ -2744,8 +2744,8 @@
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "8d12a04112e60c13819bebe7dfc7ccd58f3f02166fa1f61e8371d2074539b9a3",
-      "sig": "GjfKTj1CCqaqFndRd5mkqy5T8beopmFGltrSJAvg0b2TFDEwpsmbxe6khX73wg/V2lbsbJzDwOP+R/iUA8DPTWcXFth7Z52YR0hdDSN9/bX2EtDvesESe5oKCIYIt3xZPAaPJn/oAp5Py2UDDkclKuUSf435hR2v57jZY3zAQPl+wcmfbl9y9aMcE+H2OPrWtgcOGHofH+xz5j21Eex9rr0q+yqmQP0vpylLDtMuQtXwN77Lzde+fp31r5HpthSlMGbspjDOSwuV+Uepd0YxeD7WOgnZl87E5lfI/fOOr/RLZLBdh6871UDyFheVEdf7/qQO8k1GqHIz52YFl4NInQ==",
+      "sha256": "39a9b1c01f0ebc202d96927300fbbf9d82593e2c38982a4dee1feab548990ff5",
+      "sig": "VM43fdsKy2MJSRqAXz+cz7aRCBNl+pX5noR0CDP55gjHcgngrx2BxjSZwevNdxJl5xy3lRxMleqA0rthw73nLRYTttvJVWjosEq8HxI6Vx+QSRlRmmnZwl+6k+1m8lzvafDxamIok32hIGhSoqyNhHqT6WNpCsVY21Q3uxEVO0E6LBKCD38XCveMwc851W1rkMq1R3nYYccqDFGHP2/N6cPW0pvIAgb7mz0cUyzxHXZuFuJkY9P0K6jlki3ucAFUO5ULWbCOryX4tlFdkylqrpN5knoVXkeycb4G1VWrlIOn69mF5JhKahgYxIqxJaOUgtPfQGcQe6J0N5mXCtWL/w==",
       "size": 80938
     },
     {
@@ -5330,7 +5330,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -5527,8 +5527,8 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "df7a50c2acb2fc2738dc3ed684fe1a0503e4aa183a9f2bff547afd390a4821c8",
-      "sig": "ojcsO82oKpHBBXEj/2NuDGcP3BAQSps3yMavlgY5LuHTD2PCPZXelE7pPZw0MToaMlYXUIh8al8CNgGIdEmhvYlODTeXqQi2IwFsyek74obRBn9yEj4DkrQDdSayTwhI1KeSDSLwX/Qop+OTb73gD/p4vMlVuSG3N0EzLh2Q/K3UJgLeAIvMc9ZMmq1nyGmiFp9Lhd84U8NKkZjj+gfXIGW3EfWD6bpP7AS2Kv7d42YCHhfHWxMELevO7chP+c2R10meSJg6T3dCKnHvazrMYZXo6EJ0bqLYi92UXFjbhn2oJfx8iOYVNXtcqdqRPcVD+Ag8jE8alO2p9JatvBQIvg==",
+      "sha256": "598fac4ee54287d67b11c5e538cbebec5da248ae17511092d70fbb97ac06fc16",
+      "sig": "PjHYLvxk2aI+VRaDzQ1mbxojWIqXk46Io8aVPbDnNCUljdexQFISgTk9VkbtRpl+InXDKSMjxajLeUkw6ePbwqURKiLbKsrRSU5r6lDfvDqs3GToioYbUo5enJL7liNWTYX0amLRrdYrprSWNsD9NKp8GiJwUROgArpDIwPbf0R7cn8VorOuMnD3KVZwmnul5vE7+z76uBfkOwIxRB+DcdFxK9T6VtJg2jKMIzkrsQwSYl7DO1MbYFi0UuBJ1kpbL8iOJIOlj9a9EbFAaw6VhzUtARRdo0TJhoBDaEJnMn95dLgqgPcB+zCD87Vq2ZNiVMIIc2dTgukYJUSIH69Hmg==",
       "size": 66189
     },
     {

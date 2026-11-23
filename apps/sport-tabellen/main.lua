@@ -1557,7 +1557,7 @@ teamBento(ctx,k,m)
 local ie=ctx.data.get("ie")
 if type(ie)~="string" or ie=="" then ie=T("noch kein Wappenabruf","no crest fetch yet") end
 if ctx.cfg.crests~=false and (ctx.data.get("im_own")==nil or ctx.data.get("im_opp")==nil) then
-draw.text(draw.width - 10,draw.height - 6,fit("Wappen: "..ie,draw.width - 24,"small"),"small",color.BLACK,"right")
+draw.text(draw.width - 10,draw.height - 8,fit("Wappen: "..ie,draw.width - 24,"small"),"small",color.BLACK,"right")
 end
 end
 end
