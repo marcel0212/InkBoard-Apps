@@ -1,0 +1,136 @@
+{
+  "category": "media",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Was läuft im Kino und was kommt bald",
+    "en": "What's in cinemas and what's coming"
+  },
+  "description": {
+    "de": "Zeigt die aktuellen Kinofilme und die Starttermine kommender Filme aus The Movie Database, mit Bewertung, Genre und Poster des Top-Films. Du trägst deinen eigenen kostenlosen TMDB-Schlüssel ein. Dieses Produkt nutzt die TMDB-API, wird aber von TMDB weder unterstützt noch zertifiziert.",
+    "en": "Shows current films in cinemas and release dates of upcoming films from The Movie Database, with rating, genre and the top film's poster. You enter your own free TMDB key. This product uses the TMDB API but is not endorsed or certified by TMDB."
+  },
+  "features": {
+    "de": [
+      "Aktuell im Kino und Demnächst auf zwei Seiten",
+      "Bewertung, Genre und Starttermin je Film",
+      "Poster des Top-Films",
+      "Land für die Starttermine wählbar",
+      "Fünf Darstellungen und Dashboard-Widget"
+    ],
+    "en": [
+      "In cinemas and Coming soon on two pages",
+      "Rating, genre and release date per film",
+      "Poster of the top film",
+      "Country for release dates selectable",
+      "Five layouts and a dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Bump: Kino",
+        "en": "Bump: Cinema"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Gamut: Kino",
+        "en": "Gamut: Cinema"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Tile: Kino",
+        "en": "Tile: Cinema"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Ledger: Kino",
+        "en": "Ledger: Cinema"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nibble: Kino",
+        "en": "Nibble: Cinema"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-p2-relief.svg",
+      "caption": {
+        "de": "Bump: zweite Seite",
+        "en": "Bump: second page"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
+      },
+      "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
+    }
+  ]
+}

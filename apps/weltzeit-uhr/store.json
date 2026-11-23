@@ -1,0 +1,178 @@
+{
+  "category": "time",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Uhrzeit in aller Welt auf einen Blick",
+    "en": "Time around the world at a glance"
+  },
+  "description": {
+    "de": "Zeigt bis zu sechs Städte mit Uhrzeit, Wochentag, Datum und dem Zeitunterschied zu deiner Bezugsstadt. Die 80 Städte der Liste rechnet die App ohne Internet, weitere Orte der Welt lassen sich als eigene Zone eintragen.",
+    "en": "Shows up to six cities with time, weekday, date and the difference to your reference city. The 80 listed cities work without internet; any other place can be added as an own zone."
+  },
+  "features": {
+    "de": [
+      "80 Metropolen auf allen Kontinenten zur Auswahl",
+      "Beliebige weitere Zonen per Name eintragen (per Internet)",
+      "Sommerzeit für Europa, USA, Chile, Ägypten, Israel, Australien und Neuseeland automatisch",
+      "Zeitunterschied und „heute, morgen, gestern“ je Stadt",
+      "Sechs Layouts (Karten, Heimzeit groß, Analoguhren, Tabelle, Sonne und Mond, Typografisch) und fünf Stile",
+      "Die Städteliste funktioniert ohne Internet"
+    ],
+    "en": [
+      "80 major cities on all continents to choose from",
+      "Add any other zone by name (via internet)",
+      "Daylight saving for Europe, the USA, Chile, Egypt, Israel, Australia and New Zealand handled automatically",
+      "Time difference and “today, tomorrow, yesterday” per city",
+      "Six layouts (cards, large home time, analog clocks, table, sun and moon, typographic) and five styles",
+      "The city list works without internet"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Bump: Weltzeit",
+        "en": "Bump: World clock"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Gamut: Weltzeit",
+        "en": "Gamut: World clock"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Tile: Weltzeit",
+        "en": "Tile: World clock"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Ledger: Weltzeit",
+        "en": "Ledger: World clock"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nibble: Weltzeit",
+        "en": "Nibble: World clock"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
+      },
+      "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
+    },
+    {
+      "kind": "display",
+      "file": "preview-design-heim.svg",
+      "caption": {
+        "de": "Layout: Heimzeit groß",
+        "en": "Layout: Large home time"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-design-analog.svg",
+      "caption": {
+        "de": "Layout: Analoguhren",
+        "en": "Layout: Analog clocks"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-design-tabelle.svg",
+      "caption": {
+        "de": "Layout: Tabelle",
+        "en": "Layout: Table"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-design-sonne.svg",
+      "caption": {
+        "de": "Layout: Sonne und Mond",
+        "en": "Layout: Sun and moon"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-design-typo.svg",
+      "caption": {
+        "de": "Layout: Typografisch",
+        "en": "Layout: Typographic"
+      },
+      "style": "relief",
+      "page": 0
+    }
+  ]
+}

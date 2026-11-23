@@ -855,6 +855,184 @@
       "size": 35731
     },
     {
+      "id": "bild-des-tages",
+      "name": {
+        "de": "Bild des Tages",
+        "en": "Picture of the day"
+      },
+      "tagline": {
+        "de": "Jeden Tag ein neues Bild für dein Display",
+        "en": "A new picture for your display every day"
+      },
+      "description": {
+        "de": "Zeigt das Wikimedia-Commons-Bild des Tages mit Titel, Beschreibung und Urheber oder wahlweise das Astronomiebild der NASA. Das Bild wird für das Farb-E-Paper umgerechnet. Eine zweite Seite zeigt die ganze Beschreibung.",
+        "en": "Shows the Wikimedia Commons picture of the day with title, description and author, or alternatively NASA's astronomy picture. The picture is converted for the color e-paper. A second page shows the full description."
+      },
+      "category": "media",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 18,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Bild",
+          "en": "Picture"
+        },
+        {
+          "de": "Beschreibung",
+          "en": "Description"
+        }
+      ],
+      "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "standard": false,
+      "features": {
+        "de": [
+          "Commons-Bild des Tages ohne Anmeldung",
+          "Alternativ NASA Astronomy Picture of the Day",
+          "Urheber und Lizenz werden angezeigt",
+          "Beschreibung auf einer zweiten Seite",
+          "Fünf Darstellungen und Widget mit Bild"
+        ],
+        "en": [
+          "Commons picture of the day without sign-up",
+          "Alternatively NASA Astronomy Picture of the Day",
+          "Author and license are shown",
+          "Description on a second page",
+          "Five layouts and a widget with the picture"
+        ]
+      },
+      "net": [
+        "commons.wikimedia.org",
+        "upload.wikimedia.org",
+        "api.nasa.gov",
+        "apod.nasa.gov"
+      ],
+      "icon": "apps/bild-des-tages/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-display-relief.svg",
+          "caption": {
+            "de": "Bump: Bild des Tages",
+            "en": "Bump: Picture of the day"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-display-klar.svg",
+          "caption": {
+            "de": "Gamut: Bild des Tages",
+            "en": "Gamut: Picture of the day"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-display.svg",
+          "caption": {
+            "de": "Tile: Bild des Tages",
+            "en": "Tile: Picture of the day"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-display-flat.svg",
+          "caption": {
+            "de": "Ledger: Bild des Tages",
+            "en": "Ledger: Picture of the day"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-display-compact.svg",
+          "caption": {
+            "de": "Nibble: Bild des Tages",
+            "en": "Nibble: Picture of the day"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/bild-des-tages/preview-p2-relief.svg",
+          "caption": {
+            "de": "Bump: zweite Seite",
+            "en": "Bump: second page"
+          },
+          "style": "relief",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/bild-des-tages/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/bild-des-tages/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/bild-des-tages/preview-widget.svg",
+          "caption": {
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/bild-des-tages/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/bild-des-tages/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        }
+      ],
+      "package": "apps/bild-des-tages/package.json",
+      "sha256": "5eb8a2185d3ec0503b77c3eed4bd2ad0ca57e84f75cdcc76a95dc3e68b45053c",
+      "sig": "DQK655z0oVPAKiwkkuz/N/hPLZ2HW3u7izDN2JY6Mhr7CUEayS7B1C0bV2HIQy9RJ++xTV35ewO9zGf4J59MJNrpqnNwTq2AYVwzhbLHwGRDLczgFImTs4x23wtilmmcizyRaR4hEC/Ga0jsVc5KfrHSqufZjBFhTEFRS8QkSDgd/zM/6/ktkbAsz4vw7D6JDMDCnqt7vte3mUB7D7NE3CwUGMFI9hTG3QurBL7+gu64WZfYRso4idkAL5XwBmZ5LxJkZmc2Y0OYAqmwCRMY6lL1qjsXmu0dfQbWRAywvT7pLW+Qnp0vqDI3m+q8hMR4Gcsw+ff4Z1J9+KRc2pVkzw==",
+      "size": 31149
+    },
+    {
       "id": "bilder",
       "name": {
         "de": "Bilder",
@@ -3712,6 +3890,358 @@
       "size": 30487
     },
     {
+      "id": "kino",
+      "name": {
+        "de": "Kino und Filmstarts",
+        "en": "Cinema and releases"
+      },
+      "tagline": {
+        "de": "Was läuft im Kino und was kommt bald",
+        "en": "What's in cinemas and what's coming"
+      },
+      "description": {
+        "de": "Zeigt die aktuellen Kinofilme und die Starttermine kommender Filme aus The Movie Database, mit Bewertung, Genre und Poster des Top-Films. Du trägst deinen eigenen kostenlosen TMDB-Schlüssel ein. Dieses Produkt nutzt die TMDB-API, wird aber von TMDB weder unterstützt noch zertifiziert.",
+        "en": "Shows current films in cinemas and release dates of upcoming films from The Movie Database, with rating, genre and the top film's poster. You enter your own free TMDB key. This product uses the TMDB API but is not endorsed or certified by TMDB."
+      },
+      "category": "media",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 18,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Im Kino",
+          "en": "In cinemas"
+        },
+        {
+          "de": "Demnächst",
+          "en": "Coming soon"
+        }
+      ],
+      "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "standard": false,
+      "features": {
+        "de": [
+          "Aktuell im Kino und Demnächst auf zwei Seiten",
+          "Bewertung, Genre und Starttermin je Film",
+          "Poster des Top-Films",
+          "Land für die Starttermine wählbar",
+          "Fünf Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "In cinemas and Coming soon on two pages",
+          "Rating, genre and release date per film",
+          "Poster of the top film",
+          "Country for release dates selectable",
+          "Five layouts and a dashboard widget"
+        ]
+      },
+      "net": [
+        "api.themoviedb.org",
+        "image.tmdb.org"
+      ],
+      "icon": "apps/kino/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-display-relief.svg",
+          "caption": {
+            "de": "Bump: Kino",
+            "en": "Bump: Cinema"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-display-klar.svg",
+          "caption": {
+            "de": "Gamut: Kino",
+            "en": "Gamut: Cinema"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-display.svg",
+          "caption": {
+            "de": "Tile: Kino",
+            "en": "Tile: Cinema"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-display-flat.svg",
+          "caption": {
+            "de": "Ledger: Kino",
+            "en": "Ledger: Cinema"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-display-compact.svg",
+          "caption": {
+            "de": "Nibble: Kino",
+            "en": "Nibble: Cinema"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/kino/preview-p2-relief.svg",
+          "caption": {
+            "de": "Bump: zweite Seite",
+            "en": "Bump: second page"
+          },
+          "style": "relief",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/kino/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/kino/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/kino/preview-widget.svg",
+          "caption": {
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/kino/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/kino/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        }
+      ],
+      "package": "apps/kino/package.json",
+      "sha256": "2588fdfc0c5aac73d3d5c14d764c1f427f63284db79b22ba7b0fc051efabcdab",
+      "sig": "AHt0ijbopuBWFp0gXnW7fJD05rODEvqMU0jPBSWUv2f70mIQms2Ye96XaGSgHhROllpMynzNKI7oQRy45baGsh7T0fMQemndP9NHg3JWJ85F7Ypt/vxuaozgTr9suBV7HiqpBxksm1cphf23YP3FKsoNTxRtnocKiGbTOLuZdAsT5o8wgppHnFrpUoxRsfDN2bru7tCqzha8KsiP798W/3Y2NeLe+w2LRbvv4tfXkQGI+mPf5W5p5Tnp/AQm3pureJcI1kvKof2OxKZ73LJvXSKzAZo4XVCwEdwdcNldk0LaNETRtGfutbwtnPkLpLpmCu8IY8QKrBN47a5t2IkB2w==",
+      "size": 22353
+    },
+    {
+      "id": "lernkarten",
+      "name": {
+        "de": "Lernkarten",
+        "en": "Flashcards"
+      },
+      "tagline": {
+        "de": "Karteikarten fürs Display: Sätze, Quiz oder eigene Karten",
+        "en": "Flashcards for your display: sentences, quiz or your own cards"
+      },
+      "description": {
+        "de": "Seite 1 zeigt die Vorderseite, Seite 2 die Rückseite. Die Karte wechselt im eingestellten Takt. Fertige Stapel kommen per Internet: Beispielsätze mit Übersetzung aus Tatoeba (neun Sprachen) und Quizfragen aus der Open Trivia DB. Du kannst auch eigene Karten eintragen.",
+        "en": "Page 1 shows the front, page 2 the back. The card changes at the interval you set. Ready-made decks come from the internet: example sentences with translation from Tatoeba (nine languages) and quiz questions from the Open Trivia DB. You can also enter your own cards."
+      },
+      "category": "fun",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 12,
+      "pages": 2,
+      "pageNames": [
+        {
+          "de": "Karte",
+          "en": "Card"
+        },
+        {
+          "de": "Antwort",
+          "en": "Answer"
+        }
+      ],
+      "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "standard": false,
+      "features": {
+        "de": [
+          "Beispielsätze mit Übersetzung aus Tatoeba",
+          "Quizfragen mit vier Antworten aus der Open Trivia DB",
+          "Eigene Karten mit „Vorderseite = Rückseite“",
+          "Neue Karte im eigenen Takt, Rückseite auf Seite 2",
+          "Fünf Darstellungen und Dashboard-Widget"
+        ],
+        "en": [
+          "Example sentences with translation from Tatoeba",
+          "Quiz questions with four answers from the Open Trivia DB",
+          "Own cards written as “front = back”",
+          "A new card at your own interval, back on page 2",
+          "Five layouts and a dashboard widget"
+        ]
+      },
+      "net": [
+        "tatoeba.org",
+        "opentdb.com"
+      ],
+      "icon": "apps/lernkarten/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-display-relief.svg",
+          "caption": {
+            "de": "Bump: Karte",
+            "en": "Bump: Card"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-display-klar.svg",
+          "caption": {
+            "de": "Gamut: Karte",
+            "en": "Gamut: Card"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-display.svg",
+          "caption": {
+            "de": "Tile: Karte",
+            "en": "Tile: Card"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-display-flat.svg",
+          "caption": {
+            "de": "Ledger: Karte",
+            "en": "Ledger: Card"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-display-compact.svg",
+          "caption": {
+            "de": "Nibble: Karte",
+            "en": "Nibble: Card"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/lernkarten/preview-p2-relief.svg",
+          "caption": {
+            "de": "Bump: zweite Seite",
+            "en": "Bump: second page"
+          },
+          "style": "relief",
+          "page": 1
+        },
+        {
+          "kind": "widget",
+          "file": "apps/lernkarten/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/lernkarten/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/lernkarten/preview-widget.svg",
+          "caption": {
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/lernkarten/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/lernkarten/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        }
+      ],
+      "package": "apps/lernkarten/package.json",
+      "sha256": "190dd65d4a67994590df7910d8d91d36db5d09e3c74070984da145e165d1d58d",
+      "sig": "r4pNSI4grZxQ815n60S7glvf9bSRvB43oKMyTtajMT6SoV8qp6IB75RGzx5Wuhsjq0QIUpvWeLVasHLEZzf+KuI4Uyb10XzlrdjE8lqAjMBLpK8gyUF63MlrwGaa+V8vNMvpj8kHxLL1fzeiQdBZYoOFmdb6b4QLrNrZn/PKb+wmRG9hcS3615ZT2Bsep5UMcCl9zBgeIWQD+5FgXv0emAFT+7jlG6EKKU2ppj0i+qajJrmfj5CSThzNWhGyBuxrDZGhGMqnlbQEBfv9nfxh/pCae9VCLQXVK7BgOjEuqY3BbJ4gy30r4RovBvcp2YC0dlwz7Bt1fKyPSFUmXGUnpA==",
+      "size": 25589
+    },
+    {
       "id": "luft-pollen",
       "name": {
         "de": "Luft & Pollen",
@@ -6211,6 +6741,219 @@
       "sha256": "0207b6a0b35a81b2805c83d11863f82d26571153d474197d477fa8d7c7d7ae5f",
       "sig": "gEbsXh1RsCzvC9++PQFDkCoI3wWL265CcAUM7GhlsHQTEaQWVIMSO7+0d+6ujwnyslxhMV8/NCz1ndtKMjJfvgg0WRnMkebJvd1Sa4LyKFYOPBzsscBiTBykT/o43UC0Jonl6qzvtjbt9ovKRDNkgFNzUl4z3ERIkAVJavymIZjqH+eUUYvlydkKsEfYaFuF+EYLUN/91bxCy04XU6hasL1UEj+aGzn5kq31k/YNxcf6MTHdmXHJAUacSRRM1WZVnyIr8HxnNwFNvFL7EGKAlarS3Ln5Rh2rPupkNxHurtF819QhqG+yX/HAcUNdwQzk149ccNsi8UKoD7Dbjox2Pg==",
       "size": 75227
+    },
+    {
+      "id": "weltzeit-uhr",
+      "name": {
+        "de": "Weltzeit-Uhr",
+        "en": "World clock"
+      },
+      "tagline": {
+        "de": "Uhrzeit in aller Welt auf einen Blick",
+        "en": "Time around the world at a glance"
+      },
+      "description": {
+        "de": "Zeigt bis zu sechs Städte mit Uhrzeit, Wochentag, Datum und dem Zeitunterschied zu deiner Bezugsstadt. Die 80 Städte der Liste rechnet die App ohne Internet, weitere Orte der Welt lassen sich als eigene Zone eintragen.",
+        "en": "Shows up to six cities with time, weekday, date and the difference to your reference city. The 80 listed cities work without internet; any other place can be added as an own zone."
+      },
+      "category": "time",
+      "author": "InkBoard",
+      "version": "1.0.0",
+      "apiLevel": 2,
+      "pages": 1,
+      "pageNames": [
+        {
+          "de": "Weltzeit",
+          "en": "World clock"
+        }
+      ],
+      "hasWidget": true,
+      "widgetStyles": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "standard": false,
+      "features": {
+        "de": [
+          "80 Metropolen auf allen Kontinenten zur Auswahl",
+          "Beliebige weitere Zonen per Name eintragen (per Internet)",
+          "Sommerzeit für Europa, USA, Chile, Ägypten, Israel, Australien und Neuseeland automatisch",
+          "Zeitunterschied und „heute, morgen, gestern“ je Stadt",
+          "Sechs Layouts (Karten, Heimzeit groß, Analoguhren, Tabelle, Sonne und Mond, Typografisch) und fünf Stile",
+          "Die Städteliste funktioniert ohne Internet"
+        ],
+        "en": [
+          "80 major cities on all continents to choose from",
+          "Add any other zone by name (via internet)",
+          "Daylight saving for Europe, the USA, Chile, Egypt, Israel, Australia and New Zealand handled automatically",
+          "Time difference and “today, tomorrow, yesterday” per city",
+          "Six layouts (cards, large home time, analog clocks, table, sun and moon, typographic) and five styles",
+          "The city list works without internet"
+        ]
+      },
+      "net": [
+        "worldtimeapi.org"
+      ],
+      "icon": "apps/weltzeit-uhr/icon.svg",
+      "previews": [
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-display-relief.svg",
+          "caption": {
+            "de": "Bump: Weltzeit",
+            "en": "Bump: World clock"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-display-klar.svg",
+          "caption": {
+            "de": "Gamut: Weltzeit",
+            "en": "Gamut: World clock"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-display.svg",
+          "caption": {
+            "de": "Tile: Weltzeit",
+            "en": "Tile: World clock"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-display-flat.svg",
+          "caption": {
+            "de": "Ledger: Weltzeit",
+            "en": "Ledger: World clock"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-display-compact.svg",
+          "caption": {
+            "de": "Nibble: Weltzeit",
+            "en": "Nibble: World clock"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weltzeit-uhr/preview-widget-relief.svg",
+          "caption": {
+            "de": "Widget: Bump",
+            "en": "Widget: Bump"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weltzeit-uhr/preview-widget-klar.svg",
+          "caption": {
+            "de": "Widget: Gamut",
+            "en": "Widget: Gamut"
+          },
+          "style": "klar",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weltzeit-uhr/preview-widget.svg",
+          "caption": {
+            "de": "Widget: Tile",
+            "en": "Widget: Tile"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weltzeit-uhr/preview-widget-flat.svg",
+          "caption": {
+            "de": "Widget: Ledger",
+            "en": "Widget: Ledger"
+          },
+          "style": "flat",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/weltzeit-uhr/preview-widget-compact.svg",
+          "caption": {
+            "de": "Widget: Nibble",
+            "en": "Widget: Nibble"
+          },
+          "style": "compact",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-heim.svg",
+          "caption": {
+            "de": "Layout: Heimzeit groß",
+            "en": "Layout: Large home time"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-analog.svg",
+          "caption": {
+            "de": "Layout: Analoguhren",
+            "en": "Layout: Analog clocks"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-tabelle.svg",
+          "caption": {
+            "de": "Layout: Tabelle",
+            "en": "Layout: Table"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-sonne.svg",
+          "caption": {
+            "de": "Layout: Sonne und Mond",
+            "en": "Layout: Sun and moon"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-typo.svg",
+          "caption": {
+            "de": "Layout: Typografisch",
+            "en": "Layout: Typographic"
+          },
+          "style": "relief",
+          "page": 0
+        }
+      ],
+      "package": "apps/weltzeit-uhr/package.json",
+      "sha256": "bb526a720ce18bb39979ee77d36e7eff946a7a2b76c3db04b0a42087eaafd4a0",
+      "sig": "nlXTgHCuLScoFfHAtwl1vFmM7ROdlhrUEPQWwF/HKATfFtXi6dhwHwr5uEPCTHPord6KPn8uPiUd8R4dxtiQCm5VqtTp+0WQQ4WSsdhO69tWBuclWSSQ86vJGsWs+u/7erbmtzV7NBxTl/zlQ7sVdVVdFRTaOAFFvDYUkIbsW3AiG2IvL45zBPCE084Sx8+s2e5qhvyRL9cAqB6sjkVjvC9y51dOIn8mDPROmmWODIJBk+b0HldnZ+Nt8FhFR0D52r44Ggey5SIdCsjIp8tc/fPvUPJ774HSFi1cSwKqAf52C4ciDZCL45p5lAOLELEvqKZeiR9C8yQJlPFsFGEu9A==",
+      "size": 36644
     },
     {
       "id": "wikipedia-today",

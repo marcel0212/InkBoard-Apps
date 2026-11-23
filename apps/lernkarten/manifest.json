@@ -1,0 +1,356 @@
+{
+  "id": "lernkarten",
+  "name": {
+    "de": "Lernkarten",
+    "en": "Flashcards"
+  },
+  "shortName": {
+    "de": "Lernen",
+    "en": "Cards"
+  },
+  "version": "1.0.0",
+  "apiLevel": 12,
+  "pages": [
+    {
+      "de": "Karte",
+      "en": "Card"
+    },
+    {
+      "de": "Antwort",
+      "en": "Answer"
+    }
+  ],
+  "refreshMinutes": 360,
+  "retrySeconds": 60,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 150
+  },
+  "permissions": {
+    "net": [
+      "tatoeba.org",
+      "opentdb.com"
+    ]
+  },
+  "sections": [
+    {
+      "id": "deck",
+      "title": {
+        "de": "Kartenstapel",
+        "en": "Card deck"
+      }
+    },
+    {
+      "id": "sentences",
+      "title": {
+        "de": "Sätze (Tatoeba)",
+        "en": "Sentences (Tatoeba)"
+      },
+      "help": {
+        "de": "Sätze unter CC BY 2.0 FR von tatoeba.org.",
+        "en": "Sentences under CC BY 2.0 FR from tatoeba.org."
+      }
+    },
+    {
+      "id": "trivia",
+      "title": {
+        "de": "Quiz (Open Trivia DB)",
+        "en": "Quiz (Open Trivia DB)"
+      },
+      "help": {
+        "de": "Fragen unter CC BY-SA 4.0 von opentdb.com, nur auf Englisch.",
+        "en": "Questions under CC BY-SA 4.0 from opentdb.com, English only."
+      }
+    },
+    {
+      "id": "own",
+      "title": {
+        "de": "Eigene Karten",
+        "en": "Own cards"
+      }
+    },
+    {
+      "id": "look",
+      "title": {
+        "de": "Darstellung",
+        "en": "Appearance"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "deck",
+      "type": "select",
+      "options": [
+        "sentences",
+        "trivia",
+        "own"
+      ],
+      "default": "sentences",
+      "optionLabels": {
+        "de": {
+          "sentences": "Sätze lernen (Tatoeba)",
+          "trivia": "Quiz (Open Trivia DB, englisch)",
+          "own": "Eigene Karten"
+        },
+        "en": {
+          "sentences": "Learn sentences (Tatoeba)",
+          "trivia": "Quiz (Open Trivia DB)",
+          "own": "My own cards"
+        }
+      },
+      "label": {
+        "de": "Kartenstapel",
+        "en": "Card deck"
+      },
+      "section": "deck",
+      "help": {
+        "de": "Sätze: Beispielsätze mit Übersetzung aus der freien Datenbank Tatoeba. Quiz: Multiple-Choice-Fragen auf Englisch. Eigene Karten: trage sie unten selbst ein.",
+        "en": "Sentences: example sentences with translation from the free Tatoeba database. Quiz: English multiple-choice questions. Own cards: enter them yourself below."
+      }
+    },
+    {
+      "key": "minutes",
+      "type": "number",
+      "min": 5,
+      "max": 1440,
+      "default": 30,
+      "label": {
+        "de": "Neue Karte alle (Minuten)",
+        "en": "New card every (minutes)"
+      },
+      "section": "deck"
+    },
+    {
+      "key": "learn",
+      "type": "select",
+      "options": [
+        "eng",
+        "spa",
+        "fra",
+        "ita",
+        "por",
+        "nld",
+        "swe",
+        "dan",
+        "deu"
+      ],
+      "default": "eng",
+      "optionLabels": {
+        "de": {
+          "eng": "Englisch",
+          "spa": "Spanisch",
+          "fra": "Französisch",
+          "ita": "Italienisch",
+          "por": "Portugiesisch",
+          "nld": "Niederländisch",
+          "swe": "Schwedisch",
+          "dan": "Dänisch",
+          "deu": "Deutsch"
+        },
+        "en": {
+          "eng": "English",
+          "spa": "Spanish",
+          "fra": "French",
+          "ita": "Italian",
+          "por": "Portuguese",
+          "nld": "Dutch",
+          "swe": "Swedish",
+          "dan": "Danish",
+          "deu": "German"
+        }
+      },
+      "label": {
+        "de": "Sprache, die du lernst",
+        "en": "Language you learn"
+      },
+      "section": "sentences"
+    },
+    {
+      "key": "native",
+      "type": "select",
+      "options": [
+        "deu",
+        "eng"
+      ],
+      "default": "deu",
+      "optionLabels": {
+        "de": {
+          "eng": "Englisch",
+          "spa": "Spanisch",
+          "fra": "Französisch",
+          "ita": "Italienisch",
+          "por": "Portugiesisch",
+          "nld": "Niederländisch",
+          "swe": "Schwedisch",
+          "dan": "Dänisch",
+          "deu": "Deutsch"
+        },
+        "en": {
+          "eng": "English",
+          "spa": "Spanish",
+          "fra": "French",
+          "ita": "Italian",
+          "por": "Portuguese",
+          "nld": "Dutch",
+          "swe": "Swedish",
+          "dan": "Danish",
+          "deu": "German"
+        }
+      },
+      "label": {
+        "de": "Deine Sprache",
+        "en": "Your language"
+      },
+      "section": "sentences"
+    },
+    {
+      "key": "reverse",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Deine Sprache zuerst zeigen",
+        "en": "Show your language first"
+      },
+      "section": "sentences"
+    },
+    {
+      "key": "category",
+      "type": "select",
+      "options": [
+        "any",
+        "9",
+        "17",
+        "18",
+        "21",
+        "22",
+        "23",
+        "12",
+        "11",
+        "14",
+        "27"
+      ],
+      "default": "any",
+      "optionLabels": {
+        "de": {
+          "any": "Alle Themen",
+          "9": "Allgemeinwissen",
+          "17": "Natur und Wissenschaft",
+          "18": "Computer",
+          "21": "Sport",
+          "22": "Geografie",
+          "23": "Geschichte",
+          "12": "Musik",
+          "11": "Film",
+          "14": "Fernsehen",
+          "27": "Tiere"
+        },
+        "en": {
+          "any": "Any topic",
+          "9": "General knowledge",
+          "17": "Science and nature",
+          "18": "Computers",
+          "21": "Sports",
+          "22": "Geography",
+          "23": "History",
+          "12": "Music",
+          "11": "Film",
+          "14": "Television",
+          "27": "Animals"
+        }
+      },
+      "label": {
+        "de": "Thema",
+        "en": "Topic"
+      },
+      "section": "trivia"
+    },
+    {
+      "key": "difficulty",
+      "type": "select",
+      "options": [
+        "any",
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "any",
+      "optionLabels": {
+        "de": {
+          "any": "Beliebig",
+          "easy": "Leicht",
+          "medium": "Mittel",
+          "hard": "Schwer"
+        },
+        "en": {
+          "any": "Any",
+          "easy": "Easy",
+          "medium": "Medium",
+          "hard": "Hard"
+        }
+      },
+      "label": {
+        "de": "Schwierigkeit",
+        "en": "Difficulty"
+      },
+      "section": "trivia"
+    },
+    {
+      "key": "cards",
+      "type": "list",
+      "default": [],
+      "suggest": [
+        "Hund=dog",
+        "Haus=house",
+        "Bonjour=Guten Tag"
+      ],
+      "label": {
+        "de": "Eigene Karten",
+        "en": "Own cards"
+      },
+      "section": "own",
+      "help": {
+        "de": "Eine Karte pro Zeile: Vorderseite = Rückseite, zum Beispiel „Bonjour = Guten Tag“.",
+        "en": "One card per line: front = back, for example “Bonjour = Good day”."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
+        },
+        "en": {
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bump, Gamut und Tile zeigen die Karte groß auf einer Kachel. Ledger und Nibble zeigen sie schlicht mit Linien.",
+        "en": "Bump, Gamut and Tile show the card large on a tile. Ledger and Nibble show it plainly with lines."
+      },
+      "section": "look"
+    }
+  ]
+}

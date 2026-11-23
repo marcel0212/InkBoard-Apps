@@ -1,0 +1,135 @@
+{
+  "id": "bild-des-tages",
+  "name": {
+    "de": "Bild des Tages",
+    "en": "Picture of the day"
+  },
+  "shortName": {
+    "de": "Bild",
+    "en": "Picture"
+  },
+  "version": "1.0.0",
+  "apiLevel": 18,
+  "pages": [
+    {
+      "de": "Bild",
+      "en": "Picture"
+    },
+    {
+      "de": "Beschreibung",
+      "en": "Description"
+    }
+  ],
+  "refreshMinutes": 180,
+  "retrySeconds": 60,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 190
+  },
+  "permissions": {
+    "net": [
+      "commons.wikimedia.org",
+      "upload.wikimedia.org",
+      "api.nasa.gov",
+      "apod.nasa.gov"
+    ]
+  },
+  "sections": [
+    {
+      "id": "source",
+      "title": {
+        "de": "Quelle",
+        "en": "Source"
+      }
+    },
+    {
+      "id": "look",
+      "title": {
+        "de": "Darstellung",
+        "en": "Appearance"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "source",
+      "type": "select",
+      "options": [
+        "commons",
+        "apod"
+      ],
+      "default": "commons",
+      "optionLabels": {
+        "de": {
+          "commons": "Wikimedia Commons (deutsche Texte)",
+          "apod": "NASA Astronomy Picture of the Day (englisch)"
+        },
+        "en": {
+          "commons": "Wikimedia Commons",
+          "apod": "NASA Astronomy Picture of the Day"
+        }
+      },
+      "label": {
+        "de": "Quelle",
+        "en": "Source"
+      },
+      "section": "source",
+      "help": {
+        "de": "Commons liefert jeden Tag ein ausgewähltes Foto mit Beschreibung, ohne Anmeldung. NASA zeigt ein Himmelsbild mit englischem Text.",
+        "en": "Commons delivers a selected photo with a description every day, without sign-up. NASA shows a sky image with an English text."
+      }
+    },
+    {
+      "key": "apodKey",
+      "type": "password",
+      "maxLen": 64,
+      "label": {
+        "de": "NASA-Schlüssel (optional)",
+        "en": "NASA key (optional)"
+      },
+      "section": "source",
+      "help": {
+        "de": "Ohne eigenen Schlüssel nutzt die App den Demo-Schlüssel von NASA mit Tageslimit. Ein kostenloser Schlüssel von api.nasa.gov hebt das Limit an.",
+        "en": "Without your own key the app uses NASA's demo key with a daily limit. A free key from api.nasa.gov raises the limit."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
+        },
+        "en": {
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bump, Gamut und Tile setzen das Bild auf eine Karte neben den Text. Ledger und Nibble zeigen es schlicht mit Linien.",
+        "en": "Bump, Gamut and Tile put the picture on a card next to the text. Ledger and Nibble show it plainly with lines."
+      },
+      "section": "look"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "id": "weltzeit-uhr",
+  "name": {
+    "de": "Weltzeit-Uhr",
+    "en": "World clock"
+  },
+  "shortName": {
+    "de": "Weltzeit",
+    "en": "World"
+  },
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "pages": [
+    {
+      "de": "Weltzeit",
+      "en": "World clock"
+    }
+  ],
+  "refreshMinutes": 180,
+  "retrySeconds": 60,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 130
+  },
+  "permissions": {
+    "net": [
+      "worldtimeapi.org"
+    ]
+  },
+  "sections": [
+    {
+      "id": "cities",
+      "title": {
+        "de": "Städte",
+        "en": "Cities"
+      },
+      "help": {
+        "de": "Bis zu sechs Städte. Die erste ist die Bezugszeit: Die anderen zeigen den Zeitunterschied dazu. „Lokalzeit“ ist die Uhrzeit deines InkBoards. Sommerzeit wird automatisch berechnet.",
+        "en": "Up to six cities. The first is the reference: the others show the time difference to it. “Local time” is your InkBoard's own time. Daylight saving is calculated automatically."
+      }
+    },
+    {
+      "id": "look",
+      "title": {
+        "de": "Darstellung",
+        "en": "Appearance"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "cities",
+      "type": "list",
+      "default": [
+        "Lokalzeit",
+        "New York",
+        "Tokio",
+        "Sydney"
+      ],
+      "suggest": [
+        "Lokalzeit",
+        "Honolulu",
+        "Anchorage",
+        "Los Angeles",
+        "Vancouver",
+        "Phoenix",
+        "Denver",
+        "Mexiko-Stadt",
+        "Chicago",
+        "Houston",
+        "New York",
+        "Toronto",
+        "Miami",
+        "Bogotá",
+        "Lima",
+        "Caracas",
+        "Santiago de Chile",
+        "São Paulo",
+        "Buenos Aires",
+        "Reykjavik",
+        "Accra",
+        "Lissabon",
+        "London",
+        "Dublin",
+        "Madrid",
+        "Paris",
+        "Brüssel",
+        "Amsterdam",
+        "Berlin",
+        "Zürich",
+        "Wien",
+        "Rom",
+        "Kopenhagen",
+        "Oslo",
+        "Stockholm",
+        "Prag",
+        "Warschau",
+        "Budapest",
+        "Lagos",
+        "Algier",
+        "Athen",
+        "Helsinki",
+        "Bukarest",
+        "Kiew",
+        "Kairo",
+        "Tel Aviv",
+        "Johannesburg",
+        "Istanbul",
+        "Moskau",
+        "Riad",
+        "Doha",
+        "Nairobi",
+        "Addis Abeba",
+        "Teheran",
+        "Dubai",
+        "Karatschi",
+        "Neu-Delhi",
+        "Mumbai",
+        "Colombo",
+        "Kathmandu",
+        "Dhaka",
+        "Almaty",
+        "Bangkok",
+        "Jakarta",
+        "Ho-Chi-Minh-Stadt",
+        "Singapur",
+        "Kuala Lumpur",
+        "Hongkong",
+        "Peking",
+        "Shanghai",
+        "Taipeh",
+        "Manila",
+        "Perth",
+        "Tokio",
+        "Seoul",
+        "Adelaide",
+        "Brisbane",
+        "Sydney",
+        "Melbourne",
+        "Auckland"
+      ],
+      "label": {
+        "de": "Städte (höchstens 6)",
+        "en": "Cities (max. 6)"
+      },
+      "section": "cities",
+      "help": {
+        "de": "Eine Stadt pro Zeile, die erste ist die Bezugszeit. Wähle aus den 80 Vorschlägen oder trage einen Ort als „Name=Region/Stadt“ ein, zum Beispiel „Kathmandu=Asia/Kathmandu“ (bis zu drei, braucht Internet; Zonennamen auf worldtimeapi.org/timezones).",
+        "en": "One city per line, the first is the reference. Pick from the 80 suggestions or enter a place as “name=Region/City”, for example “Kathmandu=Asia/Kathmandu” (up to three, needs internet; zone names at worldtimeapi.org/timezones)."
+      }
+    },
+    {
+      "key": "design",
+      "type": "select",
+      "options": [
+        "karten",
+        "heim",
+        "analog",
+        "tabelle",
+        "sonne",
+        "typo"
+      ],
+      "default": "karten",
+      "optionLabels": {
+        "de": {
+          "karten": "Karten",
+          "heim": "Heimzeit groß",
+          "analog": "Analoguhren",
+          "tabelle": "Tabelle",
+          "sonne": "Sonne und Mond",
+          "typo": "Typografisch"
+        },
+        "en": {
+          "karten": "Cards",
+          "heim": "Large home time",
+          "analog": "Analog clocks",
+          "tabelle": "Table",
+          "sonne": "Sun and moon",
+          "typo": "Typographic"
+        }
+      },
+      "label": {
+        "de": "Layout",
+        "en": "Layout"
+      },
+      "section": "look",
+      "help": {
+        "de": "Karten: eine Karte je Stadt. Heimzeit groß: erste Stadt riesig, die anderen als Reihe. Analoguhren: Zifferblatt in jeder Karte. Tabelle: Zeilen mit Tag-/Nacht-Punkt. Sonne und Mond: Symbol je Stadt. Typografisch: große Zahl und schlichte Zeilen.",
+        "en": "Cards: one card per city. Large home time: first city huge, the rest in a row. Analog clocks: a dial in each card. Table: rows with a day/night dot. Sun and moon: a symbol per city. Typographic: big number and plain rows."
+      }
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
+        },
+        "en": {
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Tile, Bump und Gamut zeigen jede Stadt als Karte mit großer Uhrzeit. Ledger und Nibble listen die Städte untereinander.",
+        "en": "Tile, Bump and Gamut show every city as a card with a large time. Ledger and Nibble list the cities in rows."
+      },
+      "section": "look"
+    }
+  ]
+}

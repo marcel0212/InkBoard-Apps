@@ -1,0 +1,136 @@
+{
+  "category": "fun",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Karteikarten fürs Display: Sätze, Quiz oder eigene Karten",
+    "en": "Flashcards for your display: sentences, quiz or your own cards"
+  },
+  "description": {
+    "de": "Seite 1 zeigt die Vorderseite, Seite 2 die Rückseite. Die Karte wechselt im eingestellten Takt. Fertige Stapel kommen per Internet: Beispielsätze mit Übersetzung aus Tatoeba (neun Sprachen) und Quizfragen aus der Open Trivia DB. Du kannst auch eigene Karten eintragen.",
+    "en": "Page 1 shows the front, page 2 the back. The card changes at the interval you set. Ready-made decks come from the internet: example sentences with translation from Tatoeba (nine languages) and quiz questions from the Open Trivia DB. You can also enter your own cards."
+  },
+  "features": {
+    "de": [
+      "Beispielsätze mit Übersetzung aus Tatoeba",
+      "Quizfragen mit vier Antworten aus der Open Trivia DB",
+      "Eigene Karten mit „Vorderseite = Rückseite“",
+      "Neue Karte im eigenen Takt, Rückseite auf Seite 2",
+      "Fünf Darstellungen und Dashboard-Widget"
+    ],
+    "en": [
+      "Example sentences with translation from Tatoeba",
+      "Quiz questions with four answers from the Open Trivia DB",
+      "Own cards written as “front = back”",
+      "A new card at your own interval, back on page 2",
+      "Five layouts and a dashboard widget"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Bump: Karte",
+        "en": "Bump: Card"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Gamut: Karte",
+        "en": "Gamut: Card"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Tile: Karte",
+        "en": "Tile: Card"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Ledger: Karte",
+        "en": "Ledger: Card"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nibble: Karte",
+        "en": "Nibble: Card"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-p2-relief.svg",
+      "caption": {
+        "de": "Bump: zweite Seite",
+        "en": "Bump: second page"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
+      },
+      "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
+    }
+  ]
+}

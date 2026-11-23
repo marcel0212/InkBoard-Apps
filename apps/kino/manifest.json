@@ -1,0 +1,176 @@
+{
+  "id": "kino",
+  "name": {
+    "de": "Kino und Filmstarts",
+    "en": "Cinema and releases"
+  },
+  "shortName": {
+    "de": "Kino",
+    "en": "Cinema"
+  },
+  "version": "1.0.0",
+  "apiLevel": 18,
+  "pages": [
+    {
+      "de": "Im Kino",
+      "en": "In cinemas"
+    },
+    {
+      "de": "Demnächst",
+      "en": "Coming soon"
+    }
+  ],
+  "refreshMinutes": 360,
+  "retrySeconds": 60,
+  "widget": {
+    "autoCompact": true,
+    "w": 320,
+    "h": 190
+  },
+  "permissions": {
+    "net": [
+      "api.themoviedb.org",
+      "image.tmdb.org"
+    ]
+  },
+  "sections": [
+    {
+      "id": "access",
+      "title": {
+        "de": "TMDB-Zugang",
+        "en": "TMDB access"
+      },
+      "help": {
+        "de": "1. Kostenloses Konto auf themoviedb.org anlegen\n2. Unter Einstellungen > API einen Schlüssel für private Nutzung beantragen\n3. Den „API-Schlüssel“ (v3) hier einfügen\nJeder trägt seinen eigenen Schlüssel ein; die App sendet ihn nur an TMDB.",
+        "en": "1. Create a free account at themoviedb.org\n2. Request a key for personal use under Settings > API\n3. Paste the “API key” (v3) here\nEveryone enters their own key; the app only sends it to TMDB."
+      },
+      "helpTitle": {
+        "de": "TMDB-Schlüssel holen",
+        "en": "Get a TMDB key"
+      },
+      "helpUrl": "https://www.themoviedb.org/settings/api"
+    },
+    {
+      "id": "films",
+      "title": {
+        "de": "Filme",
+        "en": "Films"
+      },
+      "help": {
+        "de": "Dieses Produkt nutzt die TMDB-API, wird aber von TMDB weder unterstützt noch zertifiziert. Filmdaten und Poster: TMDB.",
+        "en": "This product uses the TMDB API but is not endorsed or certified by TMDB. Film data and posters: TMDB."
+      }
+    },
+    {
+      "id": "look",
+      "title": {
+        "de": "Darstellung",
+        "en": "Appearance"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "apiKey",
+      "type": "password",
+      "maxLen": 64,
+      "label": {
+        "de": "TMDB-Schlüssel (API-Schlüssel v3)",
+        "en": "TMDB key (API key v3)"
+      },
+      "section": "access"
+    },
+    {
+      "key": "region",
+      "type": "select",
+      "options": [
+        "DE",
+        "AT",
+        "CH",
+        "US",
+        "GB",
+        "FR",
+        "ES",
+        "IT",
+        "NL"
+      ],
+      "default": "DE",
+      "optionLabels": {
+        "de": {
+          "DE": "Deutschland",
+          "AT": "Österreich",
+          "CH": "Schweiz",
+          "US": "USA",
+          "GB": "Großbritannien",
+          "FR": "Frankreich",
+          "ES": "Spanien",
+          "IT": "Italien",
+          "NL": "Niederlande"
+        },
+        "en": {
+          "DE": "Germany",
+          "AT": "Austria",
+          "CH": "Switzerland",
+          "US": "USA",
+          "GB": "United Kingdom",
+          "FR": "France",
+          "ES": "Spain",
+          "IT": "Italy",
+          "NL": "Netherlands"
+        }
+      },
+      "label": {
+        "de": "Land für Starttermine",
+        "en": "Country for release dates"
+      },
+      "section": "films"
+    },
+    {
+      "key": "posters",
+      "type": "toggle",
+      "default": true,
+      "label": {
+        "de": "Poster des Top-Films laden",
+        "en": "Load the top film's poster"
+      },
+      "section": "films"
+    },
+    {
+      "key": "style",
+      "type": "select",
+      "options": [
+        "relief",
+        "klar",
+        "cards",
+        "flat",
+        "compact"
+      ],
+      "default": "relief",
+      "optionLabels": {
+        "de": {
+          "cards": "Tile (Kacheln)",
+          "flat": "Ledger (Zeilen)",
+          "compact": "Nibble (kompakt)",
+          "relief": "Bump (Tiefe)",
+          "klar": "Gamut (Apple)"
+        },
+        "en": {
+          "cards": "Tile (tiles)",
+          "flat": "Ledger (rows)",
+          "compact": "Nibble (compact)",
+          "relief": "Bump (depth)",
+          "klar": "Gamut (Apple)"
+        }
+      },
+      "label": {
+        "de": "Darstellung",
+        "en": "Layout"
+      },
+      "help": {
+        "de": "Bump, Gamut und Tile setzen Poster und Liste auf Karten. Ledger und Nibble zeigen die Liste schlicht mit Linien.",
+        "en": "Bump, Gamut and Tile put poster and list on cards. Ledger and Nibble show the list plainly with lines."
+      },
+      "section": "look"
+    }
+  ]
+}

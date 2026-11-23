@@ -1,0 +1,136 @@
+{
+  "category": "media",
+  "author": "InkBoard",
+  "tagline": {
+    "de": "Jeden Tag ein neues Bild für dein Display",
+    "en": "A new picture for your display every day"
+  },
+  "description": {
+    "de": "Zeigt das Wikimedia-Commons-Bild des Tages mit Titel, Beschreibung und Urheber oder wahlweise das Astronomiebild der NASA. Das Bild wird für das Farb-E-Paper umgerechnet. Eine zweite Seite zeigt die ganze Beschreibung.",
+    "en": "Shows the Wikimedia Commons picture of the day with title, description and author, or alternatively NASA's astronomy picture. The picture is converted for the color e-paper. A second page shows the full description."
+  },
+  "features": {
+    "de": [
+      "Commons-Bild des Tages ohne Anmeldung",
+      "Alternativ NASA Astronomy Picture of the Day",
+      "Urheber und Lizenz werden angezeigt",
+      "Beschreibung auf einer zweiten Seite",
+      "Fünf Darstellungen und Widget mit Bild"
+    ],
+    "en": [
+      "Commons picture of the day without sign-up",
+      "Alternatively NASA Astronomy Picture of the Day",
+      "Author and license are shown",
+      "Description on a second page",
+      "Five layouts and a widget with the picture"
+    ]
+  },
+  "icon": "icon.svg",
+  "previews": [
+    {
+      "kind": "display",
+      "file": "preview-display-relief.svg",
+      "caption": {
+        "de": "Bump: Bild des Tages",
+        "en": "Bump: Picture of the day"
+      },
+      "style": "relief",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-klar.svg",
+      "caption": {
+        "de": "Gamut: Bild des Tages",
+        "en": "Gamut: Picture of the day"
+      },
+      "style": "klar",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display.svg",
+      "caption": {
+        "de": "Tile: Bild des Tages",
+        "en": "Tile: Picture of the day"
+      },
+      "style": "cards",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-flat.svg",
+      "caption": {
+        "de": "Ledger: Bild des Tages",
+        "en": "Ledger: Picture of the day"
+      },
+      "style": "flat",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-display-compact.svg",
+      "caption": {
+        "de": "Nibble: Bild des Tages",
+        "en": "Nibble: Picture of the day"
+      },
+      "style": "compact",
+      "page": 0
+    },
+    {
+      "kind": "display",
+      "file": "preview-p2-relief.svg",
+      "caption": {
+        "de": "Bump: zweite Seite",
+        "en": "Bump: second page"
+      },
+      "style": "relief",
+      "page": 1
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-relief.svg",
+      "caption": {
+        "de": "Widget: Bump",
+        "en": "Widget: Bump"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-klar.svg",
+      "caption": {
+        "de": "Widget: Gamut",
+        "en": "Widget: Gamut"
+      },
+      "style": "klar"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget.svg",
+      "caption": {
+        "de": "Widget: Tile",
+        "en": "Widget: Tile"
+      },
+      "style": "cards"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-flat.svg",
+      "caption": {
+        "de": "Widget: Ledger",
+        "en": "Widget: Ledger"
+      },
+      "style": "flat"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-compact.svg",
+      "caption": {
+        "de": "Widget: Nibble",
+        "en": "Widget: Nibble"
+      },
+      "style": "compact"
+    }
+  ]
+}
