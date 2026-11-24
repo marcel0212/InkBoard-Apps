@@ -838,9 +838,16 @@ local function loadCrest(ctx, k, slot, name, today, iw, ih)
   return true
 end
 
+-- Wie Fussball-Liga: Kachel-Stile zeigen die grossen Wappen, Nibble ein kleines Wappen der eigenen Mannschaft, Ledger keine
+local function bigCrestStyle(st)
+  st = st or "cards"
+  return st ~= "flat" and st ~= "compact" and st ~= "slate" and st ~= "nano"
+end
+local function nanoStyle(st) return st == "compact" or st == "nano" end
+
 local function loadCrests(ctx, now)
   local cfg = ctx.cfg
-  if cfg.crests == false or (cfg.style or "cards") ~= "cards" then return end
+  if cfg.crests == false or not (bigCrestStyle(cfg.style) or nanoStyle(cfg.style)) then return end
   local k = pageKind(cfg)
   local m = model(ctx, k)
   local nx = m and m.found and m.nxt[1]
@@ -848,6 +855,10 @@ local function loadCrests(ctx, now)
   local today = ("00000" .. tostring(now // 86400)):sub(-5)
   -- Beide Wappen im selben Lauf, soweit Abrufe frei sind (vorher nur eines je Lauf - der Gegner kam erst
   -- beim naechsten faelligen Abruf, bis zu 25 Minuten spaeter)
+  if nanoStyle(cfg.style) then
+    loadCrest(ctx, k, "owns", m.ownName, today, 44, 26)
+    return
+  end
   loadCrest(ctx, k, "own", m.ownName, today)
   if NETN + 2 <= 6 then loadCrest(ctx, k, "opp", nx.opp, today) end
 end
@@ -869,7 +880,7 @@ end
 function on_fetch(ctx)
   local cfg = ctx.cfg
   local dash = ctx.view == "dashboard"
-  local want = cfg.crests ~= false and ctx.view ~= "other" and (dash or (cfg.style or "cards") == "cards")
+  local want = cfg.crests ~= false and ctx.view ~= "other" and (dash or bigCrestStyle(cfg.style) or nanoStyle(cfg.style))
   RESERVE, NETN = 0, 0
   -- Fehlen noch Wappen, bleiben Abrufe frei, damit sie im selben Lauf wie die Daten geladen werden koennen
   local nowT = time.now()
@@ -1149,7 +1160,12 @@ end
 local function teamNano(ctx, k, m)
   local W = draw.width
   local y = draw.top + 8
-  crest(24, y + 2, 44, 26, m.ownTla, 9)
+  local drawn = false
+  if ctx.cfg.crests ~= false and ctx.data.get("im_owns") == crestToken(k, m.ownName) .. "w" then
+    local iw, ih = draw.image_size("owns")
+    if iw and iw > 0 then draw.image("owns", 24 + (44 - iw) // 2, y + 2 + (26 - ih) // 2); drawn = true end
+  end
+  if not drawn then crest(24, y + 2, 44, 26, m.ownTla, 9) end
   local head = m.ownName
   if m.ownPos > 0 then
     head = string.format(T("%s · Platz %d · %d Pkt", "%s · Place %d · %d pts"), m.ownName, m.ownPos, m.ownPts)
