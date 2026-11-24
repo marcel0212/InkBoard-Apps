@@ -34,10 +34,12 @@ local function loadImage(url, w, h)
   local ok, err = http.image(url, PIC, w, h, { ram = true })
   if ok then return true end
   -- Zu gross fuer den Download (300 KB)? Wikimedia-Vorschaubild in kleinerer Breite nochmal versuchen.
-  local small = url:gsub("/(%d+)px%-", "/360px-")
-  if small ~= url then
-    ok, err = http.image(small, PIC, w, h, { ram = true })
-    if ok then return true end
+  for _, px in ipairs({ 560, 360 }) do
+    local small = url:gsub("/(%d+)px%-", "/" .. px .. "px-")
+    if small ~= url then
+      ok, err = http.image(small, PIC, w, h, { ram = true })
+      if ok then return true end
+    end
   end
   return false, err
 end
@@ -70,7 +72,7 @@ local function fetchCommons(ctx, day, en)
   desc = wiki(desc)
 
   time.sleep(300)
-  local url = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=560"
+  local url = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=800"
     .. "&iiextmetadatafilter=Artist%7CLicenseShortName%7CObjectName&titles=" .. text.url_encode(file)
   local b2, e2 = http.get(url, 12288)
   if not b2 then return nil, "Commons: " .. tostring(e2) end
@@ -87,7 +89,7 @@ local function fetchCommons(ctx, day, en)
   local credit = cut(artist, 50)
   if lic ~= "" then credit = (credit ~= "" and (credit .. ", ") or "") .. cut(lic, 24) end
   time.sleep(300)
-  local ok, ierr = loadImage(info.thumburl, 520, 396)
+  local ok, ierr = loadImage(info.thumburl, 760, 420)
   return { title = title, desc = desc, credit = credit, img = ok, err = ok and "" or ("Bild: " .. tostring(ierr)) }
 end
 
@@ -103,7 +105,7 @@ local function fetchApod(ctx, day)
   local ok, ierr = false, "kein Bild (Video)"
   if src then
     time.sleep(300)
-    ok, ierr = loadImage(src, 520, 396)
+    ok, ierr = loadImage(src, 760, 420)
   end
   local credit = d.copyright and ("(c) " .. clean(d.copyright, 50)) or "NASA"
   return { title = clean(d.title, 90), desc = clean(d.explanation, 700), credit = credit, img = ok, err = ok and "" or ("Bild: " .. tostring(ierr)) }
@@ -136,18 +138,24 @@ local function dget(ctx, k)
 end
 
 local function imgBox()
-  if SAMPLE then return 520, 360 end
+  if SAMPLE then return 760, 420 end
   local w, h = draw.image_size(PIC)
   return w, h
 end
 
-local function blit(x, y)
-  if not SAMPLE then draw.image(PIC, x, y); return end
-  local w, h = 520, 360
-  draw.rect(x, y, w, h, color.BLUE, true)
-  draw.rect(x, y + h * 6 // 10, w, h * 4 // 10, color.GREEN, true)
-  draw.rect(x + 360, y + 50, 70, 70, color.YELLOW, true, 35)
-  draw.rect(x + 40, y + h * 6 // 10 - 50, 150, 100, color.WHITE, true, 50)
+-- Bild in die Box (maxW x maxH) einpassen; liefert Breite und Hoehe
+local function fitBox(maxW, maxH)
+  local iw, ih = imgBox()
+  local sc = math.min(maxW / iw, maxH / ih)
+  return math.max(1, math.floor(iw * sc)), math.max(1, math.floor(ih * sc))
+end
+
+local function blit(x, y, dw, dh)
+  if not SAMPLE then draw.image(PIC, x, y, dw, dh); return end
+  draw.rect(x, y, dw, dh, color.BLUE, true)
+  draw.rect(x, y + dh * 6 // 10, dw, dh - dh * 6 // 10, color.GREEN, true)
+  draw.rect(x + dw * 69 // 100, y + dh // 8, dw // 8, dw // 8, color.YELLOW, true, dw // 16)
+  draw.rect(x + dw // 13, y + dh * 6 // 10 - dh // 8, dw * 29 // 100, dh // 4, color.WHITE, true, dh // 8)
 end
 
 local function drawText(x, y, w, ctx, en, full)
@@ -196,43 +204,54 @@ function on_draw(ctx, page)
   local tall = draw.height > draw.width
   local top, bottom = draw.top + 14, draw.height - 16
 
-  if page == 2 or not hasImg then
-    -- Textseite: Titel, ganze Beschreibung, Quelle
+  if page == 2 and hasImg then
+    -- Seite 2: Bild (klein) + Titel und Kurztext
+    if tall then
+      local dw, dh = fitBox(draw.width - 48, 396)
+      local ix = (draw.width - dw) // 2
+      if theme.s == "relief" then draw.rect(ix + 5, top + 5, dw, dh, color.BLACK, true) end
+      blit(ix, top, dw, dh)
+      draw.rect(ix, top, dw, dh, color.BLACK, false)
+      local ty = top + dh + 26
+      draw.wrap(24, ty, draw.width - 48, dget(ctx, "title") or "", "medium", color.BLACK)
+      draw.text(24, bottom - 8, fit(srcName .. (credit ~= "" and (" - " .. credit) or ""), draw.width - 48, "small"), "small", color.ACCENT_TEXT, "left")
+      return
+    end
+    local bx, bw, bh = 36, 520, bottom - top
+    local dw, dh = fitBox(bw, 396)
+    local ix = bx + (bw - dw) // 2
+    local iy = top + (bh - dh) // 2
+    if theme.s == "relief" then draw.rect(ix + 5, iy + 5, dw, dh, color.BLACK, true) end
+    blit(ix, iy, dw, dh)
+    if theme.s ~= "klar" then draw.rect(ix, iy, dw, dh, color.BLACK, false) end
+    local tx = bx + bw + 26
+    local tw = draw.width - tx - 28
+    if tw < 100 then return end
+    if fancy then card(tx - 14, top, tw + 28 - 4, bh, color.ACCENT, theme.s == "relief" and 16 or 22); tx = tx + 8; tw = tw - 16 end
+    drawText(tx, top + 40, tw, ctx, en, false)
+    draw.text(tx, bottom - 14, fit(credit, tw, "small"), "small", color.ACCENT_TEXT, "left")
+    return
+  end
+
+  if not hasImg then
+    -- Ohne Bild: Textseite (Titel, ganze Beschreibung, Quelle)
     local x, y, w, h = 40, top, draw.width - 80, bottom - top
     if fancy then card(x, y, w, h, color.ACCENT, theme.s == "relief" and 16 or 22) end
     drawText(x + 28, y + 40, w - 56, ctx, en, true)
     draw.text(x + 28, y + h - 18, fit(srcName .. (credit ~= "" and (" - " .. credit) or ""), w - 56, "small"), "small", color.ACCENT_TEXT, "left")
-    if not hasImg then
-      local e = dget(ctx, "err") or ""
-      if e ~= "" then draw.text(x + w - 28, y + 24, fit(e, w // 2, "small"), "small", color.RED, "right") end
-    end
+    local e = dget(ctx, "err") or ""
+    if e ~= "" then draw.text(x + w - 28, y + 24, fit(e, w // 2, "small"), "small", color.RED, "right") end
     return
   end
 
-  local iw, ih = imgBox()
-  if tall then
-    local ix = (draw.width - iw) // 2
-    if fancy and theme.s == "relief" then draw.rect(ix + 5, top + 5, iw, ih, color.BLACK, true) end
-    blit(ix, top)
-    draw.rect(ix, top, iw, ih, color.BLACK, false)
-    local ty = top + ih + 26
-    local lines = draw.wrap(24, ty, draw.width - 48, dget(ctx, "title") or "", "medium", color.BLACK)
-    draw.text(24, bottom - 8, fit(srcName .. (credit ~= "" and (" - " .. credit) or ""), draw.width - 48, "small"), "small", color.ACCENT_TEXT, "left")
-    return
-  end
-  -- Querformat: Bild links (hoechstens 520 x 396), Titel und Kurztext rechts
-  local bx, bw, bh = 36, 520, bottom - top
-  local ix = bx + (bw - iw) // 2
-  local iy = top + (bh - ih) // 2
-  if theme.s == "relief" then draw.rect(ix + 5, iy + 5, iw, ih, color.BLACK, true) end
-  blit(ix, iy)
-  if theme.s ~= "klar" then draw.rect(ix, iy, iw, ih, color.BLACK, false) end
-  local tx = bx + bw + 26
-  local tw = draw.width - tx - 28
-  if tw < 100 then return end
-  if fancy then card(tx - 14, top, tw + 28 - 4, bh, color.ACCENT, theme.s == "relief" and 16 or 22); tx = tx + 8; tw = tw - 16 end
-  drawText(tx, top + 40, tw, ctx, en, false)
-  draw.text(tx, bottom - 14, fit(credit, tw, "small"), "small", color.ACCENT_TEXT, "left")
+  -- Seite 1: grosses Bild, darunter nur der Titel
+  local strip = 44
+  local dw, dh = fitBox(draw.width - 32, bottom - top - strip)
+  local ix = (draw.width - dw) // 2
+  if theme.s == "relief" then draw.rect(ix + 5, top + 5, dw, dh, color.BLACK, true) end
+  blit(ix, top, dw, dh)
+  if theme.s ~= "klar" then draw.rect(ix, top, dw, dh, color.BLACK, false) end
+  draw.text(draw.width // 2, bottom - 8, fit(dget(ctx, "title") or "", draw.width - 48, "medium"), "medium", color.BLACK, "center")
 end
 
 function on_widget(ctx, box)
