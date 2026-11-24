@@ -6788,8 +6788,8 @@
       },
       "category": "time",
       "author": "InkBoard",
-      "version": "1.0.1",
-      "apiLevel": 2,
+      "version": "1.0.2",
+      "apiLevel": 20,
       "pages": 1,
       "pageNames": [
         {
@@ -6931,13 +6931,19 @@
         },
         {
           "kind": "display",
+          "file": "apps/weltzeit-uhr/preview-design-karten.svg",
+          "caption": {
+            "de": "Layout: Karten",
+            "en": "Layout: Cards"
+          }
+        },
+        {
+          "kind": "display",
           "file": "apps/weltzeit-uhr/preview-design-heim.svg",
           "caption": {
             "de": "Layout: Heimzeit groß",
             "en": "Layout: Large home time"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6945,9 +6951,7 @@
           "caption": {
             "de": "Layout: Analoguhren",
             "en": "Layout: Analog clocks"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6955,9 +6959,7 @@
           "caption": {
             "de": "Layout: Tabelle",
             "en": "Layout: Table"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6965,9 +6967,7 @@
           "caption": {
             "de": "Layout: Sonne und Mond",
             "en": "Layout: Sun and moon"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6975,9 +6975,7 @@
           "caption": {
             "de": "Layout: Typografisch",
             "en": "Layout: Typographic"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6985,9 +6983,7 @@
           "caption": {
             "de": "Zifferblatt: Klassisch",
             "en": "Dial: Classic"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -6995,9 +6991,7 @@
           "caption": {
             "de": "Zifferblatt: Mit Ziffern",
             "en": "Dial: Numerals"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -7005,9 +6999,7 @@
           "caption": {
             "de": "Zifferblatt: Punkte",
             "en": "Dial: Dots"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -7015,9 +7007,7 @@
           "caption": {
             "de": "Zifferblatt: Minutenring",
             "en": "Dial: Minute ring"
-          },
-          "style": "relief",
-          "page": 0
+          }
         },
         {
           "kind": "display",
@@ -7025,15 +7015,13 @@
           "caption": {
             "de": "Zifferblatt: Schlicht",
             "en": "Dial: Minimal"
-          },
-          "style": "relief",
-          "page": 0
+          }
         }
       ],
       "package": "apps/weltzeit-uhr/package.json",
-      "sha256": "5cf93fe7f44c7fbbcf64e4ddee81f00aa03a9cde8c48d892dbea1f26d4d0a880",
-      "sig": "okEMiHgxYBfltAOpyVV7S/BpctQiDalxfcvSeTpad+VTy6gCGyTtxjx968BMssMlh+zUQJdqjXrf1+fzNwyvG+3hNsPqnUc/C1GcUutmbdKuqRZJamIOhMjWQ5SLK441CZfoC/9/WLCJwom9XH4yYGsYB1KnpPBJC+KpCQVvnRMpvALP7XX51Uss4iW0BFGwHeMb7AT6/KUJSPRqnT/AaW+6Fr1XqQDfj5yNoS3oqmwicEko5LsMlBFaTlttHeA+z5Oeuk7Qka+z3lCVwJ9hZB1kdW6yQF3LX4Mbb9PaFTPDPEJqSTBgCrFtQZ35hcgkMIGisLdeoP8mGVJTeH0YLQ==",
-      "size": 39402
+      "sha256": "68776951e666d85df08ef02921dd896b74269e05ceedaa09dd89c6295a5f1908",
+      "sig": "LHymSeCc2sL5uC4KPDzgjHeCPP7bORpNGGGmZlXED2+sDIURrGL6NPUc7ltsIZrr6lwNEBc4j5t2qehnLz9ymu0QlWqKAlbJ/oXLlV9ypLAZLAqIUCbP/xjz4BhgFiCLbmzPWfwwfBv68RvQT3C0VUZaiZSeywd9XakwN4GNEbnP6zecbbmUoJr6jVb2tlF1QgyzcuC+WLZjdiBtI1ME3swuBDszt+W3Na+/jhCWF31Y2U8bf9Eq+13RQtFQk18DNzrbZmfzBrnUoPu58q1IwJdbXtPGC27L2K3B3YQs16OIcN+89mCHMtKDvFt6kxMcfTcD7m9G6TelKE4PGpqOgQ==",
+      "size": 39435
     },
     {
       "id": "wikipedia-today",

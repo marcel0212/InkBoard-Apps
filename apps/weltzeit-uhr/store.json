@@ -126,12 +126,22 @@
     },
     {
       "kind": "display",
+      "file": "preview-design-karten.svg",
+      "caption": {
+        "de": "Layout: Karten",
+        "en": "Layout: Cards"
+      },
+      "style": "karten",
+      "page": 0
+    },
+    {
+      "kind": "display",
       "file": "preview-design-heim.svg",
       "caption": {
         "de": "Layout: Heimzeit groß",
         "en": "Layout: Large home time"
       },
-      "style": "relief",
+      "style": "heim",
       "page": 0
     },
     {
@@ -141,7 +151,7 @@
         "de": "Layout: Analoguhren",
         "en": "Layout: Analog clocks"
       },
-      "style": "relief",
+      "style": "analog",
       "page": 0
     },
     {
@@ -151,7 +161,7 @@
         "de": "Layout: Tabelle",
         "en": "Layout: Table"
       },
-      "style": "relief",
+      "style": "tabelle",
       "page": 0
     },
     {
@@ -161,7 +171,7 @@
         "de": "Layout: Sonne und Mond",
         "en": "Layout: Sun and moon"
       },
-      "style": "relief",
+      "style": "sonne",
       "page": 0
     },
     {
@@ -171,7 +181,7 @@
         "de": "Layout: Typografisch",
         "en": "Layout: Typographic"
       },
-      "style": "relief",
+      "style": "typo",
       "page": 0
     },
     {
@@ -181,7 +191,7 @@
         "de": "Zifferblatt: Klassisch",
         "en": "Dial: Classic"
       },
-      "style": "relief",
+      "style": "klassisch",
       "page": 0
     },
     {
@@ -191,7 +201,7 @@
         "de": "Zifferblatt: Mit Ziffern",
         "en": "Dial: Numerals"
       },
-      "style": "relief",
+      "style": "ziffern",
       "page": 0
     },
     {
@@ -201,7 +211,7 @@
         "de": "Zifferblatt: Punkte",
         "en": "Dial: Dots"
       },
-      "style": "relief",
+      "style": "punkte",
       "page": 0
     },
     {
@@ -211,7 +221,7 @@
         "de": "Zifferblatt: Minutenring",
         "en": "Dial: Minute ring"
       },
-      "style": "relief",
+      "style": "minuten",
       "page": 0
     },
     {
@@ -221,7 +231,7 @@
         "de": "Zifferblatt: Schlicht",
         "en": "Dial: Minimal"
       },
-      "style": "relief",
+      "style": "schlicht",
       "page": 0
     }
   ]
