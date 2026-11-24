@@ -870,7 +870,7 @@
       },
       "category": "media",
       "author": "InkBoard",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "apiLevel": 18,
       "pages": 2,
       "pageNames": [
@@ -1028,9 +1028,9 @@
         }
       ],
       "package": "apps/bild-des-tages/package.json",
-      "sha256": "8a8d6fc14397c7fb1690404553e55a000d93d2c3fcb521d892facf1c83170229",
-      "sig": "dxaKwJdkp6PKvVgxsWx/ArFHHZKCy8vEoLOeO+K8xuWrWZQHyrH67lOkzl3ahGviOolKgOOt1Vh8BvO3sV4SWVdpHSsznZfR3UwD0Xw7gbPDSQRvOCJ4ePtgFOWQ9zRZHoMQHwTegGmcwQ9KR6WOp+EV4TdtvDhcExdujogHunKdt7ez2cBoksjANq012eAN/lb3vEn71eLgZOKXcnpWPOg2oX6anwI/4q/ZTQuQPb7zFPfzvNCixEoH5iqrNHMCS3oeAREra7Nq8XwRDVoCJrMR657cKOi1sWOd8a9HgFXHYRRWcwXeWsXrq4A8p3lC+rFwJZOu7e3dDHwMk+pFSw==",
-      "size": 31171
+      "sha256": "5ad817a6306e88c40fc744fe8e896eb42a55190997683252d79426e646bc40f4",
+      "sig": "HnmNHv7MNts6z4TNwDh2ymvB7gYMRcNK+Q4A/RD7APH3ngNFlOQwzcjyb093ENXhSy1XpHQyaI0l/a9REuc5cU5KC5wh8loIJXgnKzDjhPwR3ZTx29JMnZdrujHhLXkwbu3YNjHuqqD7n+HVogvQO8zBzd2tKLSn3uZsEkQjHNKVtrzIdCkI7u1zBjCgcQgjvBUj7WSOLG4skOB+9jyUGlqK16MsCTedifXkai4VN1c6BOto7nyDZ7utJsj3dvT9R5uzjbTZFF52zAzz8L7L/rY3f//uxvRJB88YcjmzrGoqolvkqJJ07WppCdRJB/1/K8lrrdv2sNnJyD3aJYx1mw==",
+      "size": 32162
     },
     {
       "id": "bilder",
@@ -2546,7 +2546,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -2741,12 +2741,32 @@
           },
           "style": "compact",
           "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-liga.svg",
+          "caption": {
+            "de": "Widget: nur Liga, mit Tabellenplatz",
+            "en": "Widget: league only, with position"
+          },
+          "style": "relief",
+          "page": 0
+        },
+        {
+          "kind": "widget",
+          "file": "apps/fussball-liga/preview-widget-wettbewerbe.svg",
+          "caption": {
+            "de": "Widget: alle Wettbewerbe (Champions League)",
+            "en": "Widget: all competitions (Champions League)"
+          },
+          "style": "relief",
+          "page": 0
         }
       ],
       "package": "apps/fussball-liga/package.json",
-      "sha256": "473f4ebfae873fadece1b5a7088c5f45c7dcf5f0fe0aa8f5f4d76a038d26d2df",
-      "sig": "IcGOVAf4/5QLnvjdCl8vDIRzwArm/DApNCUGCemWik4eal4Calclo/aKtOBm06dEnRGIm2pD7SE5d5qciZAmxje1/ZRkh4yia/1sBg7v2kXn9fMBaIJEPMvGPCyu/9wpGMIMiwN/6xP9uM2P5z27tlAHiDCrb1x0Q9d+7ZI8gJCPgHYoXi87Sy62C53z0htdR932wyjFb9iit388/4CWHRII7vbwa63MdhBwS/Wv82vYyVI21QRJcLGyv46THxnh7fx0rsY2kiXBb0wo2Id9MPHWTeI423TocLE70YKbsCkyOio+lVrU6nFBbsccV+zlZ8dI9EzLJ82H8Rf/wSnFBQ==",
-      "size": 83133
+      "sha256": "4373ca90d94ebdf831ccfb8ca267287fa8d16f62626d62b173e91959ea01a8c6",
+      "sig": "u4RboypJVl1PGqiTUdDuVmGOyMbrlwe1smEEAJAtyR/O6+w5z4UC9+CstsAjtAjwygAuSdE2qhRTxE1raEAKLNatPJyFREZLJr83XuihYnvUzFC3O/Ml88ab9DnpNE+2nwlYSbK81P8oJmwdhpmClxBal6VnsyhF8bSrueHclmn4N764z+lz7Zd3UpMLvYia5QmDbsz2SkYluDbnauSXCeAS7sDxUXg6BonGqUGUJhXd/Ie2hCJ1gqpEtPwxJjUm5FrpcQgjxeTYioaX5RpnvpgvefvUXSNxR/R+tyldYzZwWlwtYXK9Iq7W6qDp114ILzdGqpmyf1pufA8xycLswA==",
+      "size": 86756
     },
     {
       "id": "gaeste-wlan",

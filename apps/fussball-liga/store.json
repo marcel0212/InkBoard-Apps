@@ -169,6 +169,24 @@
         "en": "Widget: Nibble"
       },
       "style": "compact"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-liga.svg",
+      "caption": {
+        "de": "Widget: nur Liga, mit Tabellenplatz",
+        "en": "Widget: league only, with position"
+      },
+      "style": "relief"
+    },
+    {
+      "kind": "widget",
+      "file": "preview-widget-wettbewerbe.svg",
+      "caption": {
+        "de": "Widget: alle Wettbewerbe (Champions League)",
+        "en": "Widget: all competitions (Champions League)"
+      },
+      "style": "relief"
     }
   ]
 }

@@ -527,7 +527,8 @@ return code,LEAGUES[code],team,code.."|"..team
 end
 local function mrec(f)
 return {when=n0(f[2]),home=f[3]=="1",opp=f[4] or "",tla=f[5] or "",col=COLS[f[6]] or color.BLUE,
-gf=n0(f[7]),ga=n0(f[8]),res=f[9] or "",live=f[10]=="1",oppFull=f[11] or "",oppIcon=f[12] or ""}
+gf=n0(f[7]),ga=n0(f[8]),res=f[9] or "",live=f[10]=="1",oppFull=f[11] or "",oppIcon=f[12] or "",
+cn=f[13] or "",cs=f[14] or "",cp=n0(f[15]),cpt=n0(f[16]),inLg=f[17]~="0"}
 end
 local D=nil
 local function readData(ctx)
@@ -564,11 +565,11 @@ if NET>1 then time.sleep(250) end
 end
 local KEEP_T={"teamInfoId","teamName","shortName","teamIconUrl","matches","won","draw","lost","points","goals","opponentGoals"}
 local KEEP_M={"matchDateTimeUTC","matchDateTime","matchIsFinished","leagueShortcut","teamId","teamName","shortName","teamIconUrl",
-"resultTypeID","pointsTeam1","pointsTeam2","locationStadium"}
+"resultTypeID","pointsTeam1","pointsTeam2","locationStadium","leagueName","leagueSeason","groupName"}
 local SKIP_M={"goals"}
 local KEEP_FS={"type","position","id","name","shortName","tla","crest","playedGames","won","draw","lost","points","goalsFor","goalsAgainst"}
 local SKIP_FS={"area","competition","season","filters"}
-local KEEP_FM={"utcDate","status","code","id","name","shortName","tla","crest","winner","home","away"}
+local KEEP_FM={"utcDate","status","code","id","name","shortName","tla","crest","winner","home","away","stage","matchday"}
 local SKIP_FM={"area","season","referees","odds","halfTime","regularTime","extraTime","penalties","filters","resultSet"}
 local function oGet(path,maxBytes,keep,skip)
 sleepGap()
@@ -654,7 +655,9 @@ if not home then gf,ga=g2,g1 end
 local r={when=when,home=home,opp=oppName,tla=tla,col=col,gf=gf,ga=ga,fin=fin,live=live,
 res=fin and resultOf(home,g1,g2,s1,s2) or "",lg=tostring(m.leagueShortcut or ""):lower(),
 stale=(not fin) and when<now - LIVE_SEC,oppIcon=opp.teamIconUrl,ownIcon=own.teamIconUrl,ownName=tName(own),
-ownFull=own.teamName or "",oppFull=clean(opp.teamName or "",60)}
+ownFull=own.teamName or "",oppFull=clean(opp.teamName or "",60),
+cn=clean((tostring(m.leagueName or ""):gsub("%s*%d%d%d%d[/%-]?%d*%s*$","")),40),season=n0(m.leagueSeason),
+cs=clean(type(m.group)=="table" and tostring(m.group.groupName or "") or "",30)}
 if home and type(m.location)=="table" then r.venue=clean(m.location.locationStadium or "",35) end
 if not live then r.gf,r.ga=fin and gf or 0,fin and ga or 0 end
 return r
@@ -674,6 +677,19 @@ end
 end
 end
 return last,nxt,wn
+end
+local function wnTable(wn,id,lgShort,now)
+wn.inLg=wn.lg==lgShort
+if wn.inLg or not wn.lg or wn.lg=="" or HTTPN>4 then return end
+local tb=oGet("getbltable/"..wn.lg.."/"..((wn.season or 0)>0 and wn.season or seasonOf(now)),40000,KEEP_T)
+if not tb then return end
+local i=0
+eachObj(tb,function(r)
+if n0(r.teamInfoId)>0 then
+i=i+1
+if n0(r.teamInfoId)==id then wn.cp,wn.cpt=i,n0(r.points) end
+end
+end)
 end
 local function teamMatcher(team)
 local id=tonumber(team)
@@ -697,7 +713,7 @@ return "b"
 end
 local function mline(k,m)
 return table.concat({k,m.when,m.home and 1 or 0,m.opp,m.tla,colLetter(m.col),m.gf or 0,m.ga or 0,m.res or "",
-m.live and 1 or 0,m.oppFull or "",m.oppIcon or ""},"\t")
+m.live and 1 or 0,m.oppFull or "",m.oppIcon or "",m.cn or "",m.cs or "",m.cp or 0,m.cpt or 0,m.inLg==false and 0 or 1},"\t")
 end
 local function saveData(sig,now,own,tab,last,nxt,wn)
 local out={table.concat({"H",sig,now,own.id,own.name,own.tla,colLetter(own.col),own.venue or "",own.pos or 0,
@@ -951,6 +967,7 @@ if old.own.venue~="" then ownInfo.venue=old.own.venue end
 else
 return false,"net"
 end
+if wn and wn.lg then wnTable(wn,id,lg.o,now) end
 ownInfo.icon=own and own.icon or ownIcon
 local ok=saveData(sig,now,ownInfo,rows,last,nxt,wn)
 if ok~=true then return false,"net" end
@@ -992,6 +1009,7 @@ end)
 end
 local last,nxt=pickMatches(ms,function() return true end)
 local _,_,wn=pickMatches(all,function() return false end)
+if wn and wn.lg then wnTable(wn,id,lg.o,now) end
 local ownInfo={id=id,name="",tla="",col="b",pos=0,pts=0}
 local ownIcon
 for _,r in ipairs(ms) do
@@ -1003,6 +1021,13 @@ if ownInfo.name=="" then return false,"nomatch" end
 ownInfo.icon=ownIcon
 if saveData(sig,now,ownInfo,{},last,nxt,wn)~=true then return false,"net" end
 return true
+end
+local function fdStage(m)
+local stg=tostring(m.stage or "")
+if stg=="" or stg=="REGULAR_SEASON" or stg=="LEAGUE_STAGE" then
+return n0(m.matchday)>0 and ("MD"..n0(m.matchday)) or ""
+end
+return stg
 end
 local function fetchF(ctx,code,lg,team,now,sig)
 local key=clean(ctx.cfg.apiKey or "",80)
@@ -1076,10 +1101,26 @@ end
 local comp=type(m.competition)=="table" and tostring(m.competition.code or "") or ""
 ms[#ms+1]={when=when,home=home,opp=oppName,tla=tla,col=col,gf=(fin or live) and gf or 0,
 oppFull=clean(opp.name or "",60),oppIcon=type(opp.crest)=="string" and opp.crest or nil,
-ga=(fin or live) and gaa or 0,fin=fin,live=live,res=res,comp=comp,stale=false}
+ga=(fin or live) and gaa or 0,fin=fin,live=live,res=res,comp=comp,stale=false,
+cn=type(m.competition)=="table" and clean(tostring(m.competition.name or ""),40) or "",
+cs=fdStage(m)}
 end
 end)
 last,nxt,wn=pickMatches(ms,function(r) return r.comp=="" or r.comp==code end)
+if wn then
+wn.inLg=wn.comp=="" or wn.comp==code
+if not wn.inLg and HTTPN<5 then
+local sb=fdGet("competitions/"..wn.comp.."/standings",key,60000,KEEP_FS,SKIP_FS)
+local at2=sb and sb:find('"type":"TOTAL"',1,true) or 1
+local arr2=sb and sb:match('"table":(%b[])',at2)
+if arr2 then
+eachObj(arr2,function(r)
+local t=type(r.team)=="table" and r.team or {}
+if n0(t.id)==id then wn.cp,wn.cpt=n0(r.position),n0(r.points) end
+end)
+end
+end
+end
 elseif old then
 last,nxt,wn=old.last,old.nxt,old.wnext
 else
@@ -1718,11 +1759,25 @@ else
 if style=="flat" then teamSlate(ctx,lg,d,top) elseif style=="compact" then teamNano(ctx,lg,d,top) else teamBento(ctx,lg,d,top) end
 end
 end
+local STAGES={LAST_16={"Achtelfinale","Round of 16"},QUARTER_FINALS={"Viertelfinale","Quarter-final"},
+SEMI_FINALS={"Halbfinale","Semi-final"},FINAL={"Finale","Final"},PLAYOFFS={"Play-offs","Play-offs"},
+GROUP_STAGE={"Gruppenphase","Group stage"},LAST_32={"Sechzehntelfinale","Round of 32"},
+LAST_64={"1. Runde","Round 1"},ROUND_OF_16={"Achtelfinale","Round of 16"}}
+local function stageText(cs)
+cs=tostring(cs or "")
+local md=cs:match("^MD(%d+)$")
+if md then return T("Spieltag "..md,"Matchday "..md) end
+local st=STAGES[cs]
+if st then return T(st[1],st[2]) end
+return clean((cs:gsub("_"," ")),28)
+end
 local function sampleData()
 local t=time.now() or 1790000000
 return {own={name="FC Bayern München",tla="FCB",col=color.RED,pos=2,pts=13,id=0,venue=""},tab={},last={},
-nxt={},wnext={when=t+3*86400+4*3600,home=true,opp="Borussia Dortmund",tla="BVB",col=color.YELLOW,
-gf=0,ga=0,res="",live=false}}
+nxt={{when=t+3*86400+4*3600,home=true,opp="Borussia Dortmund",tla="BVB",col=color.YELLOW,
+gf=0,ga=0,res="",live=false,inLg=true}},
+wnext={when=t+2*86400+4*3600,home=false,opp="FC Arsenal",tla="ARS",col=color.RED,
+gf=0,ga=0,res="",live=false,cn="Champions League",cs="MD5",cp=9,cpt=10,inLg=false}}
 end
 function on_widget(ctx,box)
 setStyle(ctx.cfg.style)
@@ -1731,7 +1786,8 @@ EN=ctx.lang=="en"
 D,OFF_NOW=nil,nil
 local d=readData(ctx)
 if not d and ctx.sample then d=sampleData() end
-local m=d and (d.wnext or d.nxt[1])
+local allComps=ctx.cfg.wAllComps==true
+local m=d and (allComps and (d.wnext or d.nxt[1]) or d.nxt[1])
 if not m then
 draw.text(box.x+12,box.y+16,d and T("Kein Spiel angesetzt","No match scheduled") or T("Noch keine Daten","No data yet"),"small",color.BLACK,"left")
 return
@@ -1795,10 +1851,22 @@ local s=ds..string.format(" %02d:%02d",p.hour,p.min)
 if withHA then s=(m.home and T("Heim","Home") or T("Auswärts","Away")).." · "..s end
 draw.text(cx,lineY,fit(s,box.w - 16,font),font,color.ACCENT_TEXT,"center")
 end
-if withPos and own.pos>0 then
-local posY=lineY+(compact and 14 or 17)
-if posY<=maxY then
-draw.text(cx,posY,string.format(T("Platz %d · %d Pkt.","Rank %d · %d pts"),own.pos,own.pts),"small",color.BLACK,"center")
+local otherComp=allComps and m.inLg==false
+local nextY=lineY+(compact and 14 or 17)
+if otherComp and m.cn~="" then
+local lab=m.cn
+local st=stageText(m.cs)
+if st~="" then lab=lab.." · "..st end
+if nextY<=maxY then
+draw.text(cx,nextY,fit(lab,box.w - 16,"small"),"small",color.BLACK,"center")
+nextY=nextY+(compact and 14 or 17)
+end
+end
+if withPos then
+local pos,pts=own.pos,own.pts
+if otherComp then pos,pts=m.cp,m.cpt end
+if pos>0 and nextY<=maxY then
+draw.text(cx,nextY,string.format(T("Platz %d · %d Pkt.","Rank %d · %d pts"),pos,pts),"small",color.BLACK,"center")
 end
 end
 end
