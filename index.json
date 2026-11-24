@@ -5350,7 +5350,7 @@
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.1.8",
+      "version": "1.2.0",
       "apiLevel": 14,
       "pages": 2,
       "pageNames": [
@@ -5527,6 +5527,16 @@
         },
         {
           "kind": "widget",
+          "file": "apps/sport-tabellen/preview-widget-wettbewerbe.svg",
+          "caption": {
+            "de": "Widget: alle Wettbewerbe (Champions League)",
+            "en": "Widget: all competitions (Champions League)"
+          },
+          "style": "cards",
+          "page": 0
+        },
+        {
+          "kind": "widget",
           "file": "apps/sport-tabellen/preview-widget-flat.svg",
           "caption": {
             "de": "Widget: Ledger",
@@ -5547,9 +5557,9 @@
         }
       ],
       "package": "apps/sport-tabellen/package.json",
-      "sha256": "cbcfedfc92f992cd58d52d4d6e3445d957fe84c1047cefd4cc292c5ed16fc0d9",
-      "sig": "e/QnEHPMoiQoU8sbOqkK32L+5dRO9L1MsGoi8BR/3WJCvqulPSJLZJTqjK9TErQeAUKTFOMOK3xKsOzeC0TSkv3/OFphXYuGBUZWkq4kWUCyinSHXbF8x5ZaosIWaneVtHJzkWi6B1sGlefNOxwm70pXs443KIZeexhf58dfJrbyupz+2UxyhnzPAG1Q0CdqclLvz+UWwyQ/WPoCiESeWbyiu2a2Z1edfF91Mhw6fVWc8H4HOp3uZTvF/Md1BNX7vIvMgxKfrFzUQDf2NH6LKjbmmoTLRzvcQ3gI7E1NA2dc2i/RhPaBAgU/8RDG0PIM6tDr6TdKWKRk6vvVdn0qPw==",
-      "size": 67255
+      "sha256": "e0e9989843c255940b1b267ddcfa82ea52952a683bbc22dbdde36a94c8f3b63d",
+      "sig": "jjc0s8DKc6KQz+K/jvwg8ky/tWnFrb9CjkxIP54LBkLIEZDPPH25EtbxS2OX2b4DkROa285Bnd6vXzY2C/usNQAd+zVmMk5IgvnQAovNts2HVBxq/Nw7TMACeD57NlL63vqAPJvIwfyVlhgY5nnEAuAeF8JvQSKuT50lOgUrT0BSLJGNV0It81/jtd5k11st5MTos58iWg/cbIeG5RTLamDrQt9Gv2+YucwwLMqGpuCDWoBPCH+TAqCOa+JCivXJT4A7d2g/kP9FvO9jPN+4ZvV289rK+z6+XGHnVEaOUHI+GymAyIF3mEQB6n19jwr4GdHH6NPv8wbDo9bbvkzBVw==",
+      "size": 69406
     },
     {
       "id": "spotify",

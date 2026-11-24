@@ -4,7 +4,7 @@
     "de": "Sport",
     "en": "Sports"
   },
-  "version": "1.1.8",
+  "version": "1.2.0",
   "apiLevel": 14,
   "pages": [
     {
@@ -400,6 +400,19 @@
         "en": "Show home/away"
       },
       "group": "widget"
+    },
+    {
+      "key": "wAllComps",
+      "type": "toggle",
+      "default": false,
+      "label": {
+        "de": "Widget: alle Wettbewerbe (nicht nur Liga)",
+        "en": "Widget: all competitions (not only league)"
+      },
+      "help": {
+        "de": "Handball: Bundesliga und Champions League, Basketball: BBL und EuroLeague. Zeigt das nächste Spiel aus beiden, mit Wettbewerb sowie Platz und Punkten dort.",
+        "en": "Handball: Bundesliga and Champions League, basketball: BBL and EuroLeague. Shows the next match of either, with the competition and the rank and points there."
+      }
     }
   ],
   "fetchOnOpen": true

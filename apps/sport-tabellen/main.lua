@@ -364,6 +364,11 @@ if k==2 then return cfg.leagueHb=="champions-league" and "handball/champions-lea
 if k==3 then return cfg.leagueBb=="euroleague" and "basketball/euroleague" or "basketball/bundesliga" end
 return "us-sport/nfl"
 end
+local function altPath(cfg,k)
+if k==2 then return cfg.leagueHb=="champions-league" and "handball/bundesliga" or "handball/champions-league" end
+if k==3 then return cfg.leagueBb=="euroleague" and "basketball/bundesliga" or "basketball/euroleague" end
+return nil
+end
 local LEAGUE_NAME={
 ["eishockey/del"]="DEL",["handball/bundesliga"]="Bundesliga",["handball/champions-league"]="Champions League",
 ["basketball/bundesliga"]="BBL",["basketball/euroleague"]="EuroLeague",["us-sport/nfl"]="NFL",
@@ -383,6 +388,7 @@ return m
 end
 local function teamOf(cfg,k) return clean(cfg[TEAMKEY[k]] or "",40) end
 local function sigOf(cfg,k) return teamOf(cfg,k).."|"..leaguePath(cfg,k) end
+local function altSigOf(cfg,k) return teamOf(cfg,k).."|"..(altPath(cfg,k) or "") end
 local ENT={
 nbsp=" ",amp="&",gt=">",lt="<",quot='"',apos="'",auml="ä",ouml="ö",uuml="ü",Auml="Ä",
 Ouml="Ö",Uuml="Ü",szlig="ß",eacute="é",egrave="è",ndash="-",mdash="-",
@@ -639,8 +645,8 @@ local function roundPath(k,path,n,sy)
 if k==4 then return path.."/ergebnisse/spieltag-"..n.."-"..slug(sy) end
 return path.."/spielplan/spielplan-spieltag-"..n.."-"..slug(sy)
 end
-local function readStore(k)
-local txt=file.read("sp_"..CODE[k])
+local function readStore(k,alt)
+local txt=file.read("sp_"..CODE[k]..(alt and "x" or ""))
 if not txt then return nil end
 local m={rows={},matches={}}
 for line in txt:gmatch("[^\n]+") do
@@ -667,7 +673,7 @@ end
 if m.sig==nil then return nil end
 return m
 end
-local function writeStore(k,m)
+local function writeStore(k,m,alt)
 local out={
 table.concat({"H",m.fetched,m.sig,m.sy,m.ownName,m.ownTla,m.ownPos,m.ownPts,m.lo or 0,m.found and 1 or 0,m.path},"\t"),
 }
@@ -677,7 +683,7 @@ end
 for _,x in ipairs(m.matches) do
 out[#out+1]=table.concat({"M",x.t,x.home and 1 or 0,x.opp,x.tla,x.scored and 1 or 0,x.gf,x.ga,x.round},"\t")
 end
-return file.write("sp_"..CODE[k],table.concat(out,"\n"))
+return file.write("sp_"..CODE[k]..(alt and "x" or ""),table.concat(out,"\n"))
 end
 local function loadTable(path,sy,get)
 local body,err=get(tablePath(path,sy))
@@ -718,17 +724,17 @@ local function isFinal(x,now,k)
 return x.scored and (not timeKnown(x.t) or now - x.t>=liveWindow(k))
 end
 local classify
-local function fetchKind(ctx,k,now)
+local function fetchKind(ctx,k,now,alt)
 local cfg=ctx.cfg
 local team=teamOf(cfg,k)
-local path=leaguePath(cfg,k)
-local sig=sigOf(cfg,k)
+local path=alt and altPath(cfg,k) or leaguePath(cfg,k)
+local sig=alt and altSigOf(cfg,k) or sigOf(cfg,k)
 local sy0=seasonStart()
 if sy0==nil then return false,T("Uhrzeit noch nicht gestellt.","Clock not set yet.") end
 local get,calls=netGet()
 local rows,sy,err=loadTable(path,sy0,get)
 if not rows then return false,err end
-local old=readStore(k)
+local old=readStore(k,alt)
 if old and (old.sig~=sig or old.sy~=sy) then old=nil end
 local own=findTeam(rows,team)
 local grp=own and rows[own].group or rows[1].group
@@ -750,9 +756,11 @@ if isFinal(x,now,k) then finalRound[x.round]=true; nFinal=nFinal+1 end
 end
 local first=o.sp<1 and 1 or o.sp
 local maxRound=k==4 and 22 or 60
-local budget=6 - (nFinal<LAST_MAX and 0 or RESERVE) - calls()
+local altRes=(not alt and cfg.wAllComps==true and altPath(cfg,k)) and 3 or 0
+local budget=(alt and 3 or 6 - altRes - (nFinal<LAST_MAX and 0 or RESERVE)) - calls()
 local want={}
-local fwd=nFinal<LAST_MAX and 2 or 4
+local fwd=(alt or nFinal<LAST_MAX) and 2 or 4
+if alt then nFinal=LAST_MAX end
 for n=first,first+fwd - 1 do
 if n<=maxRound and not finalRound[n] and #want<budget then want[#want+1]=n end
 end
@@ -806,8 +814,9 @@ for _,x in ipairs(done) do m.matches[#m.matches+1]=x end
 for _,x in ipairs(open) do m.matches[#m.matches+1]=x end
 end
 end
-local ok,werr=writeStore(k,m)
+local ok,werr=writeStore(k,m,alt)
 if not ok then return false,"file: "..tostring(werr) end
+if alt then return true end
 local _,nx=classify(m,now,k)
 local lv=nx[1]~=nil and nx[1].live==true
 ctx.data.set("v"..CODE[k],lv and (nx[1].t+liveWindow(k)) or 0)
@@ -867,6 +876,18 @@ end
 if pick==nil then return true,false end
 local code=CODE[pick]
 local ok,err=fetchKind(ctx,pick,now)
+if ok and cfg.wAllComps==true and altPath(cfg,pick) and (RESERVE==0 or ctx.data.get("x"..code)==nil) then
+local at=ctx.data.get("x"..code) or 0
+if ctx.data.get("y"..code)~=altSigOf(cfg,pick) then at=0 end
+if now - at>=DUE_SEC then
+local mainN=NETN
+local aok,aerr=fetchKind(ctx,pick,now,true)
+NETN=mainN+NETN
+ctx.data.set("y"..code,altSigOf(cfg,pick))
+ctx.data.set("x"..code,aok and now or (now - (DUE_SEC - RETRY_SEC)))
+if not aok then log("Sport ("..code.." alt): "..tostring(aerr)) end
+end
+end
 ctx.data.set("g"..code,sigOf(cfg,pick))
 if ok then
 ctx.data.set("a"..code,now)
@@ -931,9 +952,9 @@ end
 end
 return k
 end
-local function model(ctx,k)
-local m=readStore(k)
-if m==nil or m.sig~=sigOf(ctx.cfg,k) then return nil end
+local function model(ctx,k,alt)
+local m=readStore(k,alt)
+if m==nil or m.sig~=(alt and altSigOf(ctx.cfg,k) or sigOf(ctx.cfg,k)) then return nil end
 local now=time.now() or m.fetched
 m.last,m.nxt=classify(m,now,k)
 m.now=now
@@ -1597,6 +1618,15 @@ elseif cfg.wBasketball==true then k=3
 elseif cfg.wFootball==true then k=4 end
 local m=teamOf(cfg,k)~="" and model(ctx,k) or nil
 local nx=m and m.nxt[1]
+local compName=nil
+if cfg.wAllComps==true and altPath(cfg,k) and teamOf(cfg,k)~="" then
+local a=model(ctx,k,true)
+local ax=a and a.found and a.nxt[1]
+if ax and (nx==nil or ax.t<nx.t) then
+m,nx=a,ax
+compName=LEAGUE_NAME[altPath(cfg,k)]
+end
+end
 if nx==nil then
 draw.text(box.x+12,box.y+16,T("Noch keine Daten","No data yet"),"small",color.BLACK,"left")
 return
@@ -1655,8 +1685,12 @@ col=color.ACCENT_TEXT
 end
 text=fit(text,box.w - 16,font)
 draw.text(cx,lineY,text,font,col,"center")
-if withPos and m.ownPos>0 then
 local posY=lineY+(compact and 14 or 17)
+if compName and posY<=maxY then
+draw.text(cx,posY,fit(compName,box.w - 16,"small"),"small",color.ACCENT_TEXT,"center")
+posY=posY+(compact and 14 or 17)
+end
+if withPos and m.ownPos>0 then
 if posY<=maxY then
 draw.text(cx,posY,string.format(T("Platz %d · %d Pkt.","Rank %d · %d pts"),m.ownPos,m.ownPts),"small",color.BLACK,"center")
 end

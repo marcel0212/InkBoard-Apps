@@ -153,6 +153,15 @@
       "style": "cards"
     },
     {
+      "kind": "widget",
+      "file": "preview-widget-wettbewerbe.svg",
+      "caption": {
+        "de": "Widget: alle Wettbewerbe (Champions League)",
+        "en": "Widget: all competitions (Champions League)"
+      },
+      "style": "cards"
+    },
+    {
       "file": "preview-widget-flat.svg",
       "kind": "widget",
       "caption": {
