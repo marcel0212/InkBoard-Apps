@@ -4,7 +4,7 @@ local ADSB="https://api.adsb.lol"
 local PLANESPOTTERS="https://api.planespotters.net/pub/photos/hex/"
 local MIN_GAP=120
 local RETRY=120
-local POOL=16
+local POOL=50
 local COVPOOL=8
 local KEEP={"hex","flight","r","t","desc","ownOp","lat","lon","alt_baro","gs","track"}
 local PHOTO_W,PHOTO_H=430,296
@@ -14,7 +14,7 @@ local AIR_GAP=1800
 local COV_FLUSH=600
 local COV_PROBES=4
 local PROBES=16
-local SKY_VER="r51"
+local SKY_VER="r52"
 local function trim(s)
 return (s:gsub("^%s+",""):gsub("%s+$",""))
 end
@@ -890,6 +890,7 @@ local SLOTS={
 {{200,785,168,414,520,true},{15,520,24,160,250,false}},
 {{230,785,230,414,520,true},{110,500,122,222,290,false},{15,320,24,114,160,false}},
 }
+local LABEL_H=58
 local function skyOri() return draw.height>draw.width and "P" or "L" end
 local function skySig(ctx,ac)
 local p={SKY_VER..skyOri(),skyOf(ctx.cfg)}
@@ -926,7 +927,7 @@ stLoad()
 local sig=skySig(ctx,ac)
 local _,cur=skyParse(ctx.data.get("sk"))
 if S.sig==sig and skyImagesThere(cur) then return end
-local cands,partial,generic={},false,false
+local cands,partial={},false
 local maxC=skyOri()=="P" and 5 or 3
 local function known(name)
 local r=nasKnown(name,now,PROBES - #cands - 1)
@@ -936,20 +937,8 @@ end
 for i=1,math.min(#ac.list,POOL) do
 if #cands>=maxC then break end
 local a=ac.list[i]
-local name=skyFile(a)
+local name=a.lv and skyFile(a) or nil
 if name and known(name) then cands[#cands+1]={a=a,name=name} end
-end
-do
-local have={}
-for _,c in ipairs(cands) do have[c.a.hex]=true end
-for i=1,math.min(#ac.list,POOL) do
-if #cands>=maxC then break end
-local a=ac.list[i]
-if not have[a.hex] and a.grp~="" and a.lv then
-local name=a.grp..".png"
-if known(name) then cands[#cands+1]={a=a,name=name}; have[a.hex]=true; generic=true end
-end
-end
 end
 if #cands==0 and partial then return end
 local slots=(skyOri()=="P" and SLOTS_P or SLOTS)[#cands]
@@ -958,7 +947,7 @@ local ol=(skyOf(ctx.cfg)=="blue" or skyOf(ctx.cfg)=="black") and color.WHITE or 
 for c,cand in ipairs(cands) do
 local s=slots[c]
 local x0,x1,y0,y1,scx,below=s[1],s[2],s[3],s[4],s[5],s[6]
-local slotW,slotH=x1 - x0,y1 - y0 - (below and 26 or 0)
+local slotW,slotH=x1 - x0,y1 - y0 - (below and LABEL_H or 0)
 if probes>=PROBES then break end
 probes=probes+1
 local w,h=storage.image("dir",cand.name,"sky"..c,{w=math.min(slotW - 8,600),h=slotH,up=133,style="cutout",outline=ol})
@@ -967,7 +956,7 @@ local x=math.max(x0,math.min(x1 - w,scx - w//2))
 local y=math.max(y0,math.min(y0+slotH - h,y0+slotH//2 - h//2))
 local lx,ly,lw
 if below then
-lx,ly,lw=x+w//2,math.min(draw.height - 6,y+h+16),math.min(slotW - 16,380)
+lx,ly,lw=x+w//2,math.min(draw.height - 36,y+h+27),math.min(slotW - 16,380)
 else
 local rightFree,leftFree=790 - (x+w),x - 10
 if rightFree>=leftFree then lx=x+w+math.min(rightFree,190)//2+4 else lx=x - math.min(leftFree,190)//2 - 4 end
@@ -982,10 +971,10 @@ log("Flight Radar: Himmel "..cand.name..": "..tostring(h))
 end
 end
 if #ent==0 and partial then return end
-S.sig=sig
+S.sig=(partial and #cands<maxC) and "" or sig
 sDirty=true
 ctx.data.set("sk",sig.."~"..table.concat(ent,";"))
-log(string.format("Flight Radar: Himmel komponiert (%d von %d Flugzeugen als Render%s).",#ent,math.min(#ac.list,POOL),generic and ", Gruppenbild ohne Lackierung" or ""))
+log(string.format("Flight Radar: Himmel komponiert (%d von %d Flugzeugen als Render).",#ent,math.min(#ac.list,POOL)))
 end
 local function extras(ctx,ac,now)
 featureStep(ctx,ac,now)
@@ -1263,6 +1252,41 @@ if ac.total>1 then
 draw.text(rx,draw.height - 18,fit(string.format(T("+%d weitere im Umkreis von %d km","+%d more within %d km"),ac.total - 1,ac.radius),maxW,"small"),"small",color.BLACK)
 end
 end
+local function haloText(x,y,str,font,ink,halo,al)
+for dy=-1,1 do
+for dx=-1,1 do
+if dx~=0 or dy~=0 then draw.text(x+dx,y+dy,str,font,halo,al) end
+end
+end
+draw.text(x,y,str,font,ink,al)
+end
+local function altText(a)
+if a.gnd then return T("am Boden","on ground") end
+if a.alt>=0 then return fmtInt(rnd(a.alt*0.3048)).." m" end
+return nil
+end
+local function skyLabel(a,e,ink,halo,H)
+local lw=e.lw>0 and e.lw or 150
+local cx,ly=e.lx,math.min(e.ly,H - 36)
+if not EXTRAS then
+haloText(cx,ly,fit(a.cs~="" and a.cs or (a.tc~="" and a.tc or a.hex),lw,"small"),"small",ink,halo,"center")
+return
+end
+local typ=a.desc~="" and a.desc or a.tc
+local air=a.air~="" and a.air:upper() or (typ~="" and typ:upper() or "")
+local l2=nameOf(a)
+if a.air~="" and typ~="" then l2=l2 .." · "..typ end
+local l3=a.dist<10 and string.format("%.1f km",a.dist) or string.format("%d km",rnd(a.dist))
+local at=altText(a)
+if at then l3=l3 .." · "..at end
+local t1=fit(air,lw,"small")
+haloText(cx,ly - 17,t1,"small",ink,halo,"center")
+local rw=math.max(40,math.min(lw,draw.measure(t1,"small")))
+draw.rect(cx - rw//2 - 1,ly - 10,rw+2,3,halo,true)
+draw.rect(cx - rw//2,ly - 9,rw,1,ink,true)
+haloText(cx,ly+7,fit(l2,lw,"small"),"small",ink,halo,"center")
+haloText(cx,ly+22,fit(l3,lw,"small"),"small",ink,halo,"center")
+end
 local function skyPage(ctx,st,ac,radius)
 local W,H=draw.width,draw.height
 local id=skyOf(ctx.cfg)
@@ -1286,27 +1310,14 @@ for _,x in ipairs(ac.list) do
 if x.hex==e.hex then a=x; break end
 end
 if a and draw.image("sky"..e.idx,e.x,e.y) then
-local lab
-if not EXTRAS then lab=a.cs~="" and a.cs or (a.tc~="" and a.tc or a.hex)
-else lab=a.dist<10 and string.format("%s · %.1f km",nameOf(a),a.dist) or string.format("%s · %d km",nameOf(a),rnd(a.dist)) end
-local typ=a.desc~="" and a.desc or a.tc
-local line2=""
-if not EXTRAS then line2=""
-elseif a.air~="" and typ~="" then line2=a.air.." · "..typ elseif a.air~="" then line2=a.air elseif typ~="" then line2=typ end
-local ly=math.min(e.ly,H - 6)
-if line2~="" then
-draw.text(e.lx,math.max(8,ly - 7),lab,"small",fg,"center")
-draw.text(e.lx,math.min(H - 2,ly+7),fit(line2,e.lw>0 and e.lw or 150,"small"),"small",fg,"center")
-else
-draw.text(e.lx,ly,lab,"small",fg,"center")
-end
+skyLabel(a,e,fg,dark and color.BLACK or color.WHITE,H)
 end
 end
 if #ent==0 then
 local a1=ac.list[1]
-local want=skyFile(a1) or (a1.grp~="" and a1.grp..".png") or nil
-draw.text(W//2,H//2 - 8,T("Noch kein passendes Flugzeugbild auf dem Speicher.","No matching aircraft image on the storage yet."),"normal",fg,"center")
-if want then draw.text(W//2,H//2+16,"z. B. "..want,"small",fg,"center") end
+local want=a1.lv and skyFile(a1) or nil
+draw.text(W//2,H//2 - 8,T("Kein Flugzeug mit Lackierung im Umkreis.","No aircraft with a livery image nearby."),"normal",fg,"center")
+if want then draw.text(W//2,H//2+16,T("Fehlt auf dem Speicher: ","Missing on the storage: ")..want,"small",fg,"center") end
 end
 local foot
 if ac.total==1 then foot=string.format(T("1 Flugzeug im Umkreis von %d km","1 aircraft within %d km"),radius)
