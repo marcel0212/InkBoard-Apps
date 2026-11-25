@@ -44,6 +44,8 @@ local ADSB = "https://api.adsb.lol"
 local PLANESPOTTERS = "https://api.planespotters.net/pub/photos/hex/"
 local MIN_GAP = 120      -- Untergrenze zwischen zwei erfolgreichen Abrufen (adsb.lol ist eine kostenlose Community-API)
 local RETRY = 120        -- Wartezeit nach einem Fehlversuch (FLIGHTRADAR_RETRY_MS)
+local FAR_KM = 150       -- erweiterte Suche, wenn im Umkreis weniger Flugzeuge mit Lackierung fliegen als die Himmel-Seite zeigen soll (3, Hochformat 5)
+local FAR_AGE = 600      -- so lange gilt die erweiterte Liste
 local POOL = 50          -- behaltene Flugzeuge (Himmel sucht darin Lackierungsbilder; Firmware-Pool war 8)
 local COVPOOL = 8        -- Abdeckungsauswertung: wie die Firmware nur die 8 naechsten
 local KEEP = { "hex", "flight", "r", "t", "desc", "ownOp", "lat", "lon", "alt_baro", "gs", "track" }
@@ -54,7 +56,7 @@ local AIR_GAP = 1800     -- airlines.json hoechstens alle 30 Minuten vom Speiche
 local COV_FLUSH = 600    -- Abdeckung alle 10 Minuten auf den Speicher (FR_COV_FLUSH_INTERVAL_MS)
 local COV_PROBES = 4     -- FR_COV_PROBES_PER_TICK
 local PROBES = 16        -- storage.exists + storage.image je Lauf (Firmware-Grenze)
-local SKY_VER = "r52"    -- FR_SKY_ASSET_VERSION
+local SKY_VER = "r54"    -- FR_SKY_ASSET_VERSION
 
 --#include text
 --#include ui
@@ -186,11 +188,18 @@ end
 
 local ACRAW = "" -- "ac" ohne E-Zeile (zum Anfuegen eines Fehlers)
 
-local function saveAc(key, at, total, list)
+local function acLine(tag, a)
+  return table.concat({ tag, a.hex, a.cs, a.reg, a.tc, a.desc, a.air, string.format("%.4f", a.lat), string.format("%.4f", a.lon),
+    a.gnd and 1 or 0, a.alt, a.gs, a.trk, string.format("%.2f", a.dist), a.brg, a.grp, a.lv and 1 or 0, a.ia, a.tl }, "\t")
+end
+
+-- far = { key, at, list }: erweiterte Liste (FAR_KM) steht in derselben Datei (Dateizugriffe je Abruf sind begrenzt)
+local function saveAc(key, at, total, list, far)
   local out = { "H\t" .. key .. "\t" .. at .. "\t" .. total }
-  for _, a in ipairs(list) do
-    out[#out + 1] = table.concat({ "A", a.hex, a.cs, a.reg, a.tc, a.desc, a.air, string.format("%.4f", a.lat), string.format("%.4f", a.lon),
-      a.gnd and 1 or 0, a.alt, a.gs, a.trk, string.format("%.2f", a.dist), a.brg, a.grp, a.lv and 1 or 0, a.ia, a.tl }, "\t")
+  for _, a in ipairs(list) do out[#out + 1] = acLine("A", a) end
+  if far and far.key and #far.list > 0 then
+    out[#out + 1] = "FH\t" .. far.key .. "\t" .. far.at
+    for _, a in ipairs(far.list) do out[#out + 1] = acLine("F", a) end
   end
   return file.write("ac", table.concat(out, "\n"))
 end
@@ -205,11 +214,20 @@ local function loadAc()
     if f[1] == "H" then
       ac.key, ac.at, ac.total = f[2], tonumber(f[3]) or 0, tonumber(f[4]) or 0
       raw[#raw + 1] = line
-    elseif f[1] == "A" and #f >= 15 then
-      ac.list[#ac.list + 1] = { hex = f[2], cs = f[3], reg = f[4], tc = f[5], desc = f[6], air = f[7], lat = tonumber(f[8]) or 0,
+    elseif (f[1] == "A" or f[1] == "F") and #f >= 15 then
+      local dst = ac.list
+      if f[1] == "F" then
+        ac.far = ac.far or { list = {} }
+        dst = ac.far.list
+      end
+      dst[#dst + 1] = { hex = f[2], cs = f[3], reg = f[4], tc = f[5], desc = f[6], air = f[7], lat = tonumber(f[8]) or 0,
         lon = tonumber(f[9]) or 0, gnd = f[10] == "1", alt = tonumber(f[11]) or -1, gs = tonumber(f[12]) or -1,
         trk = tonumber(f[13]) or -1, dist = tonumber(f[14]) or 0, brg = tonumber(f[15]) or 0,
         grp = f[16] or "", lv = f[17] == "1", ia = f[18] or "", tl = f[19] or "" }
+      raw[#raw + 1] = line
+    elseif f[1] == "FH" then
+      ac.far = ac.far or { list = {} }
+      ac.far.key, ac.far.at = f[2], tonumber(f[3]) or 0
       raw[#raw + 1] = line
     elseif f[1] == "E" then
       fail = { key = f[2], at = tonumber(f[3]) or 0, msg = f[4] or "" }
@@ -935,10 +953,22 @@ local SLOTS_P = { -- Hochformat 480 x 800: alle Label unter dem Bild
   { { 20, 460, 570, 780, 240, true }, { 20, 400, 395, 560, 210, true }, { 80, 460, 225, 385, 270, true }, { 20, 400, 40, 215, 210, true } },
   { { 20, 460, 600, 780, 240, true }, { 20, 400, 440, 590, 210, true }, { 80, 460, 290, 430, 270, true }, { 20, 400, 160, 280, 210, true }, { 80, 460, 40, 150, 270, true } },
 }
+-- Querformat: je Anzahl mehrere Anordnungen mit gleichem Band-Raster, aber anderer Groessenreihenfolge und Seite; bei jedem Lauf wechselt
+-- die Anordnung (skyVariant). Die Groessen liegen eng beieinander (kein Flugzeug winzig, keines riesig).
+-- Eintrag je Platz: x0, x1, y0, y1, Mittelpunkt x, Label unter dem Bild; Reihenfolge = Reihenfolge der Flugzeuge (naechstes zuerst)
+local function bands(heights, gap, top, scx)
+  local out, y = {}, top
+  for i, h in ipairs(heights) do
+    out[i] = { 15, 790, y, y + h, scx[i], false }
+    y = y + h + gap
+  end
+  return out
+end
 local SLOTS = {
-  { { 20, 780, 20, 414, 400, true } },
-  { { 200, 785, 168, 414, 520, true }, { 15, 520, 24, 160, 250, false } },
-  { { 230, 785, 230, 414, 520, true }, { 110, 500, 122, 222, 290, false }, { 15, 320, 24, 114, 160, false } },
+  { { { 20, 780, 20, 414, 400, true } }, { { 20, 780, 20, 414, 300, true } }, { { 20, 780, 20, 414, 500, true } } },
+  { bands({ 190, 160 }, 24, 40, { 300, 500 }), bands({ 160, 190 }, 24, 40, { 500, 300 }), bands({ 190, 160 }, 24, 40, { 500, 300 }), bands({ 160, 190 }, 24, 40, { 300, 500 }) },
+  { bands({ 156, 138, 120 }, 14, 10, { 300, 500, 300 }), bands({ 120, 156, 138 }, 14, 10, { 500, 300, 500 }), bands({ 138, 120, 156 }, 14, 10, { 300, 500, 300 }),
+    bands({ 156, 120, 138 }, 14, 10, { 500, 300, 500 }), bands({ 138, 156, 120 }, 14, 10, { 300, 500, 300 }), bands({ 120, 138, 156 }, 14, 10, { 500, 300, 500 }) },
 }
 
 local LABEL_H = 58 -- Hoehe des Beschriftungsblocks unter dem Bild (Airline, Linie, Rufzeichen/Typ, Entfernung/Hoehe)
@@ -978,13 +1008,39 @@ local function skyParse(v)
   return sig, list
 end
 
+-- Erweiterte Liste (FAR_KM): wird nur angefragt, wenn der eingestellte Umkreis nicht genug Flugzeuge mit Lackierung hergibt.
+-- Stand in der Datei "far"; ein Fehlversuch wird fruehestens nach RETRY wiederholt.
+local function farList(ctx, ac, now)
+  local loc = weather.location()
+  if not loc then return {} end
+  local key = keyOf(loc, FAR_KM)
+  local fa = ac.far
+  if fa and fa.key ~= key then fa = nil end
+  if fa and now >= fa.at and now - fa.at < FAR_AGE then return fa.list end
+  local tried = tonumber(ctx.data.get("fat")) or 0
+  if now >= tried and now - tried < RETRY then return fa and fa.list or {} end
+  ctx.data.set("fat", tostring(now))
+  local nm = math.min(250, math.max(3, rnd(FAR_KM / 1.852)))
+  local r, err = http.request{ url = string.format(ADSB .. "/v2/point/%.4f/%.4f/%d", loc.lat, loc.lon, nm), keep = KEEP, maxBytes = 65536,
+    headers = { Accept = "application/json" } }
+  if not r or r.status ~= 200 or r.body == "" then
+    log("Flight Radar: erweiterte Suche fehlgeschlagen: " .. tostring(err or (r and r.status)))
+    return fa and fa.list or {}
+  end
+  local pool, total = parseAc(r.body, loc, FAR_KM)
+  r = nil
+  if not pool then return fa and fa.list or {} end
+  ac.far = { key = key, at = now, list = pool }
+  if ac.key then saveAc(ac.key, ac.at, ac.total, ac.list, ac.far) end
+  log(string.format("Flight Radar: erweiterte Suche (%d km): %d Flugzeug(e).", FAR_KM, total))
+  return pool
+end
+
 -- Komponiert den Himmel (frComposeSkyIfNeeded): Phase A Dateien suchen, Phase B Formation nach Trefferzahl, Phase C Bilder laden
 local function skyStep(ctx, ac, now)
   if not storage.ready() then return end
   stLoad()
   local sig = skySig(ctx, ac)
-  local _, cur = skyParse(ctx.data.get("sk"))
-  if S.sig == sig and skyImagesThere(cur) then return end
   -- Nur Flugzeuge mit echter Lackierung (<gruppe>_<iata>.png) kommen auf die Himmel-Seite; Gruppen-/Werksbilder ohne Lackierung werden
   -- nicht gezeigt. Gesucht wird ueber den ganzen Pool (nach Entfernung), bis maxC Treffer da sind. Bekannte Treffer/Fehlen
   -- (Abdeckungs-Cache S.ex, Negativ-Cache) kosten keine Probe; fuer das Laden der Bilder bleibt Budget reserviert.
@@ -998,11 +1054,37 @@ local function skyStep(ctx, ac, now)
   for i = 1, math.min(#ac.list, POOL) do
     if #cands >= maxC then break end
     local a = ac.list[i]
-    local name = a.lv and skyFile(a) or nil
+    local name = (a.lv and not a.gnd) and skyFile(a) or nil -- nur Flugzeuge in der Luft, nicht am Boden
     if name and known(name) then cands[#cands + 1] = { a = a, name = name } end
   end
+  if #cands < maxC and not partial then
+    -- zu wenige Flugzeuge mit Lackierung im Umkreis: erweiterte Suche bis FAR_KM, nach Entfernung, ohne bereits geprueftes
+    local seen = {}
+    for _, a in ipairs(ac.list) do seen[a.hex] = true end
+    for _, f in ipairs(farList(ctx, ac, now)) do
+      if #cands >= maxC then break end
+      local name = (not seen[f.hex]) and f.lv and not f.gnd and skyFile(f) or nil
+      if name and known(name) then cands[#cands + 1] = { a = f, name = name } end
+    end
+  end
   if #cands == 0 and partial then return end -- Budget leer: naechster Lauf sucht mit Negativ-Cache weiter
-  local slots = (skyOri() == "P" and SLOTS_P or SLOTS)[#cands]
+  -- Bei jedem Lauf eine andere Anordnung: Variante aus der Uhrzeit, nie dieselbe wie zuletzt
+  local prev = tonumber(ctx.data.get("skv")) or 0
+  local slots
+  if skyOri() == "P" then
+    slots = {}
+    local base = SLOTS_P[#cands] or {}
+    local off = #base > 0 and (now // 7) % #base or 0
+    if off == prev and #base > 1 then off = (off + 1) % #base end
+    for c = 1, #base do slots[c] = base[(c - 1 + off) % #base + 1] end
+    ctx.data.set("skv", tostring(off))
+  else
+    local set = SLOTS[#cands] or {}
+    local v = #set > 0 and (now // 7) % #set + 1 or 1
+    if v == prev and #set > 1 then v = v % #set + 1 end
+    slots = set[v] or {}
+    ctx.data.set("skv", tostring(v))
+  end
   local ent = {}
   local ol = (skyOf(ctx.cfg) == "blue" or skyOf(ctx.cfg) == "black") and color.WHITE or color.BLACK -- Kontur: Weiss auf Blau/Schwarz
   for c, cand in ipairs(cands) do
@@ -1074,13 +1156,17 @@ local function fetchMain(ctx)
   airlinesPeriodic(now)
   if ctx.opened then -- App gerade geoeffnet (fetchOnOpen): Positionen nicht neu abrufen, nur Foto, Himmel, Logo nachladen
     if shown then covStart(now) end
-    if shown and have and not (fail and fail.key == key) and #ac.list > 0 then extras(ctx, ac, now) end
+    if shown and have and not (fail and fail.key == key) then
+      if #ac.list > 0 then extras(ctx, ac, now) else skyStep(ctx, ac, now) end
+    end
     return true
   end
   if fail and fail.key == key then
     if now - fail.at < RETRY then return false end
   elseif have and now >= ac.at and now - ac.at < MIN_GAP then
-    if shown and #ac.list > 0 then extras(ctx, ac, now) end
+    if shown then
+      if #ac.list > 0 then extras(ctx, ac, now) else skyStep(ctx, ac, now) end
+    end
     return true
   end
   local nm = rnd(radius / 1.852)
@@ -1103,13 +1189,13 @@ local function fetchMain(ctx)
       log("Flight Radar: Antwort ohne ac-Liste")
       msg = T("Antwort nicht erkannt", "Response not recognized")
     else
-      local ok, werr = saveAc(key, now, total, pool)
+      local ok, werr = saveAc(key, now, total, pool, have and ac.far or nil)
       if not ok then
         msg = "file: " .. tostring(werr)
       else
         log(string.format("Flight Radar: %d Flugzeug(e) im Umkreis (%d uebernommen).", total, #pool))
         if #pool > 0 then
-          local acn = { list = pool, total = total }
+          local acn = { key = key, at = now, list = pool, total = total, far = have and ac.far or nil }
           applyFeature(ctx, acn)
           routeStep(ctx, acn.list[1])
           if shown then
@@ -1119,6 +1205,7 @@ local function fetchMain(ctx)
           end
         else
           ctx.data.set("rt", nil)
+          if shown then skyStep(ctx, { key = key, at = now, list = {}, total = total, far = have and ac.far or nil }, now) end -- leerer Umkreis: Himmel aus der erweiterten Suche
         end
         return true
       end
@@ -1395,7 +1482,9 @@ local function skyPage(ctx, st, ac, radius)
   local dark = id == "blue" or id == "black"
   local fg = dark and color.WHITE or color.BLACK
   if id ~= "white" then draw.rect(0, 0, W, H, SKY[id], true) end
-  if st ~= "ok" then
+  local sg, ent = skyParse(ctx.data.get("sk"))
+  if sg and sg:sub(1, #SKY_VER + 1) ~= SKY_VER .. skyOri() then ent = {} end -- Layout stammt aus der anderen Ausrichtung: neu komponieren lassen
+  if st ~= "ok" and not (st == "empty" and #ent > 0) then -- leerer Umkreis, aber die erweiterte Suche hat Flugzeuge gefunden: trotzdem zeigen
     local line
     if st == "noloc" then line = T("Kein Standort hinterlegt.", "No location set.")
     elseif st == "loading" then line = T("Wird geladen ...", "Loading ...")
@@ -1404,12 +1493,17 @@ local function skyPage(ctx, st, ac, radius)
     draw.text(W // 2, H // 2 - 8, line, "normal", fg, "center")
     return
   end
-  local sg, ent = skyParse(ctx.data.get("sk"))
-  if sg and sg:sub(1, #SKY_VER + 1) ~= SKY_VER .. skyOri() then ent = {} end -- Layout stammt aus der anderen Ausrichtung: neu komponieren lassen
+  local farN, far = 0, nil
   for _, e in ipairs(ent) do
     local a
     for _, x in ipairs(ac.list) do
       if x.hex == e.hex then a = x; break end
+    end
+    if not a then -- Flugzeug aus der erweiterten Suche
+      far = far or (ac.far and ac.far.list or {})
+      for _, x in ipairs(far) do
+        if x.hex == e.hex then a = x; farN = farN + 1; break end
+      end
     end
     if a and draw.image("sky" .. e.idx, e.x, e.y) then
       skyLabel(a, e, fg, dark and color.BLACK or color.WHITE, H)
@@ -1418,13 +1512,14 @@ local function skyPage(ctx, st, ac, radius)
   if #ent == 0 then
     -- Nur Flugzeuge mit Lackierungsbild werden gezeigt: gibt es im Umkreis keines, steht hier der Grund (und die Datei des naechsten Flugzeugs)
     local a1 = ac.list[1]
-    local want = a1.lv and skyFile(a1) or nil
+    local want = a1 and a1.lv and skyFile(a1) or nil
     draw.text(W // 2, H // 2 - 8, T("Kein Flugzeug mit Lackierung im Umkreis.", "No aircraft with a livery image nearby."), "normal", fg, "center")
     if want then draw.text(W // 2, H // 2 + 16, T("Fehlt auf dem Speicher: ", "Missing on the storage: ") .. want, "small", fg, "center") end
   end
   local foot
   if ac.total == 1 then foot = string.format(T("1 Flugzeug im Umkreis von %d km", "1 aircraft within %d km"), radius)
   else foot = string.format(T("%d Flugzeuge im Umkreis von %d km", "%d aircraft within %d km"), ac.total, radius) end
+  if farN > 0 then foot = foot .. string.format(T("  ·  Suche erweitert bis %d km", "  ·  search widened to %d km"), FAR_KM) end
   draw.text(14, H - 10, foot, "small", fg)
 end
 

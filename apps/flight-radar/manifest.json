@@ -8,7 +8,7 @@
     "de": "Flights",
     "en": "Flights"
   },
-  "version": "1.4.1",
+  "version": "1.4.4",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
