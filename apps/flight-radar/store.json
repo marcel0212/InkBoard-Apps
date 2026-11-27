@@ -2,24 +2,22 @@
   "category": "info",
   "author": "InkBoard",
   "tagline": {
-    "de": "Flugzeuge über dir live, mit Route und Flugzeugbild",
-    "en": "Aircraft above you, live, with route and aircraft image"
+    "de": "Flugzeuge über dir live am Himmel, mit Route",
+    "en": "Aircraft above you live in the sky, with route"
   },
   "description": {
-    "de": "Zeigt Flugzeuge in deiner Nähe live: Airline, Typ, Höhe, Tempo, Entfernung und Route. Dazu ein Foto der Maschine und eine Himmelsansicht mit den nächsten Flugzeugen. Radius und Farbe stellst du selbst ein. Mit Widget.",
-    "en": "Shows aircraft near you live: airline, type, altitude, speed, distance and route. Plus a photo of the plane and a sky view of the nearest aircraft. You set radius and color. Includes a widget."
+    "de": "Zeigt die Flugzeuge in deiner Nähe live als Himmelsansicht: die nächsten Maschinen als Bilder, dazu Airline, Typ und Entfernung. Radius und Himmelsfarbe stellst du selbst ein. Mit Widget für Route, Höhe und Entfernung.",
+    "en": "Shows aircraft near you live as a sky view: the nearest planes as images, plus airline, type and distance. You set radius and sky color. Includes a widget with route, altitude and distance."
   },
   "features": {
     "de": [
       "Nächstes Flugzeug live von adsb.lol, ohne Zugangsdaten",
-      "Flug-Seite: Renderbild vom Speicher mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
       "Seite Himmel vollflächig mit freigestellten Renderbildern vom Speicher",
       "airlines.json importieren/exportieren/vom Speicher neu laden (Studio, App oder Speicher) mit Änderungsliste, Abdeckungsauswertung als CSV (Speicher oder Download)",
       "Widget mit nächstem Flugzeug, optional Airline und Kennzeichen"
     ],
     "en": [
       "Nearest aircraft live from adsb.lol, no credentials",
-      "Flight page: render from the storage with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
       "Sky page full-screen with cut-out renders from the storage",
       "Import/export/reload airlines.json (Studio, app or storage) with a change list, coverage report as CSV (storage or download)",
       "Widget with the nearest aircraft, optionally airline and registration"
@@ -29,30 +27,12 @@
   "previews": [
     {
       "kind": "display",
-      "file": "preview-flight.svg",
-      "caption": {
-        "de": "Flug: Renderbild vom Speicher mit Logo-Platzhalter, Route und Daten",
-        "en": "Flight: render from the storage with logo placeholder, route and data"
-      },
-      "page": 0
-    },
-    {
-      "kind": "display",
-      "file": "preview-flight-nophoto.svg",
-      "caption": {
-        "de": "Flug ohne Renderbild und ohne Foto: Hinweis „Kein Bild verfügbar“",
-        "en": "Flight without render and photo: “No image available” note"
-      },
-      "page": 0
-    },
-    {
-      "kind": "display",
       "file": "preview-sky.svg",
       "caption": {
         "de": "Himmel (vollflächig): die drei nächsten Flugzeuge als Renderbilder",
         "en": "Sky (full-screen): the three nearest aircraft as renders"
       },
-      "page": 1
+      "page": 0
     },
     {
       "kind": "display",
@@ -61,7 +41,7 @@
         "de": "Himmel in Blau",
         "en": "Sky in blue"
       },
-      "page": 1
+      "page": 0
     },
     {
       "kind": "widget",

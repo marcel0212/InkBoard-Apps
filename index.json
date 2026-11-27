@@ -1998,23 +1998,19 @@
         "en": "Flight Radar"
       },
       "tagline": {
-        "de": "Flugzeuge über dir live, mit Route und Flugzeugbild",
-        "en": "Aircraft above you, live, with route and aircraft image"
+        "de": "Flugzeuge über dir live am Himmel, mit Route",
+        "en": "Aircraft above you live in the sky, with route"
       },
       "description": {
-        "de": "Zeigt Flugzeuge in deiner Nähe live: Airline, Typ, Höhe, Tempo, Entfernung und Route. Dazu ein Foto der Maschine und eine Himmelsansicht mit den nächsten Flugzeugen. Radius und Farbe stellst du selbst ein. Mit Widget.",
-        "en": "Shows aircraft near you live: airline, type, altitude, speed, distance and route. Plus a photo of the plane and a sky view of the nearest aircraft. You set radius and color. Includes a widget."
+        "de": "Zeigt die Flugzeuge in deiner Nähe live als Himmelsansicht: die nächsten Maschinen als Bilder, dazu Airline, Typ und Entfernung. Radius und Himmelsfarbe stellst du selbst ein. Mit Widget für Route, Höhe und Entfernung.",
+        "en": "Shows aircraft near you live as a sky view: the nearest planes as images, plus airline, type and distance. You set radius and sky color. Includes a widget with route, altitude and distance."
       },
       "category": "info",
       "author": "InkBoard",
-      "version": "1.4.4",
+      "version": "1.5.0",
       "apiLevel": 18,
-      "pages": 2,
+      "pages": 1,
       "pageNames": [
-        {
-          "de": "Flug",
-          "en": "Flight"
-        },
         {
           "de": "Himmel",
           "en": "Sky"
@@ -2026,42 +2022,22 @@
       "features": {
         "de": [
           "Nächstes Flugzeug live von adsb.lol, ohne Zugangsdaten",
-          "Flug-Seite: Renderbild vom Speicher mit Airline-Logo im Bild, Route und Daten; ohne Renderbild das Planespotters-Foto mit Fotografen-Nennung",
           "Seite Himmel vollflächig mit freigestellten Renderbildern vom Speicher",
           "airlines.json importieren/exportieren/vom Speicher neu laden (Studio, App oder Speicher) mit Änderungsliste, Abdeckungsauswertung als CSV (Speicher oder Download)",
           "Widget mit nächstem Flugzeug, optional Airline und Kennzeichen"
         ],
         "en": [
           "Nearest aircraft live from adsb.lol, no credentials",
-          "Flight page: render from the storage with the airline logo in the image, route and data; without a render the Planespotters photo with photographer credit",
           "Sky page full-screen with cut-out renders from the storage",
           "Import/export/reload airlines.json (Studio, app or storage) with a change list, coverage report as CSV (storage or download)",
           "Widget with the nearest aircraft, optionally airline and registration"
         ]
       },
       "net": [
-        "api.adsb.lol",
-        "api.planespotters.net",
-        "*.plnspttrs.net"
+        "api.adsb.lol"
       ],
       "icon": "apps/flight-radar/icon.svg",
       "previews": [
-        {
-          "kind": "display",
-          "file": "apps/flight-radar/preview-flight.svg",
-          "caption": {
-            "de": "Flug: Renderbild vom Speicher mit Logo-Platzhalter, Route und Daten",
-            "en": "Flight: render from the storage with logo placeholder, route and data"
-          }
-        },
-        {
-          "kind": "display",
-          "file": "apps/flight-radar/preview-flight-nophoto.svg",
-          "caption": {
-            "de": "Flug ohne Renderbild und ohne Foto: Hinweis „Kein Bild verfügbar“",
-            "en": "Flight without render and photo: “No image available” note"
-          }
-        },
         {
           "kind": "display",
           "file": "apps/flight-radar/preview-sky.svg",
@@ -2100,9 +2076,9 @@
         }
       ],
       "package": "apps/flight-radar/package.json",
-      "sha256": "39b042533e3762ec5900d19f3c284551b8e63fa021cfaff15dfcbbb880ecb322",
-      "sig": "Bl1cmwRlpoTYLTICNX+Cw3d4tLGj+XncmOdqOdWKDVHc4gXGXXGRcp3+irX4sriEXqsPnR5gFe7ZAw8Fl5t8tvTy7YUfRYbbNfyeyJDRxbURKrrpxIPiu06z1vaRT+49A+JHh7FVVVwUMOwqol7TsV4GcwCc8PLfmKRdzrcv2iNKoHq0g/y37dAwNUNPNI5rbwTOz/Y3HKx1e3Ps1J2RwOCR/9pbBiCCcRAuytr24Vg6mLq+phlA2DZgKnvp0sjJACicJBLBm0BX2FzfEp8K5pu9hqKBcfukAYFgk05KPYmvhoFDhA9oLsAadk4ToQW5eJjZoPsYkMAPjIuduA7K+w==",
-      "size": 69766
+      "sha256": "6720ae7ec1c39db6c84a465acb9890a3b6af93680453e0a92e0d14cbef91bf48",
+      "sig": "I8gKc567HCPGktkDLj8Zu6qzkxHn6d9JWyY0hgDa/nNpy58aPRI7NqUypT7+nxRKARVEu87RTsYpzXPq+GYyCJYAaY6Hwif7YWfa5T+1Mjrsi+CWFqh4oxTCY1A6f9h8SftYBKKVq3oOPP6cfYkh5U0+5HrmvGEl0iU7g6orJNhb8frXrzE3wnHNlbGaZHOgXrQ8BLfd0xoNq/VEjsZKsHbRgGa3MwQGxmrt4p1Gxj6vTMtuVbN7OxH046NTXmOCjJrnsOyOTKygr6K4qFWRFjxiahTc4HpMKbtSr1jjRchLrgeyhw1Rzn5jgsgftiiAgOZ46zanO8zl2toZPxGCMw==",
+      "size": 61458
     },
     {
       "id": "formel-1",
@@ -6263,12 +6239,12 @@
         "en": "Next pick-up dates for your bins"
       },
       "description": {
-        "de": "Zeigt, wann welche Tonne geleert wird. Du nutzt den Kalender-Link deines Entsorgers oder gibst deine Adresse ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
-        "en": "Shows when each bin is collected. Use your waste company's calendar link or enter your address. Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
+        "de": "Zeigt, wann welche Tonne geleert wird. Dafür trägst du den Kalender-Link (ICS) deines Entsorgers ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
+        "en": "Shows when each bin is collected. Just enter your waste company's calendar link (ICS). Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
       },
       "category": "home",
       "author": "InkBoard",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "apiLevel": 9,
       "pages": 1,
       "pageNames": [
@@ -6288,22 +6264,19 @@
       "standard": false,
       "features": {
         "de": [
-          "ICS-Kalender-Link oder Adresse (AbfallNavi)",
+          "Kalender-Link (ICS) deines Entsorgers",
           "Tonnenfarben und „in X Tagen“",
           "Drei Darstellungen und Dashboard-Widget",
           "Tonnenarten für das Widget wählbar"
         ],
         "en": [
-          "ICS calendar link or address (AbfallNavi)",
+          "Your waste company's calendar link (ICS)",
           "Bin colors and “in X days”",
           "Three layouts and dashboard widget",
           "Choose which bins the widget shows"
         ]
       },
-      "net": [
-        "abfallapp.regioit.de",
-        "*.regioit.de"
-      ],
+      "net": [],
       "icon": "apps/waste-calendar/icon.svg",
       "previews": [
         {
@@ -6408,9 +6381,9 @@
         }
       ],
       "package": "apps/waste-calendar/package.json",
-      "sha256": "93766595e75cfe20b8f4b04489e01bc8013b1f86e93bd742b5c0cc033fd91eca",
-      "sig": "MXPCw3Afrz7rHNLHu3MpasYroxDit3FyInyoKeCJRUErRJ27dQBwbBmv3FXuba+/MkomSTgkXuBTGBvOxK2qm9az0h+L+sEWUUZxDXNdpqaCTD5hD3HwZKeqMA7fv3W+IDJXZ/gMirh8CwkyVQ8RsBN32eUAnZ+Yy5SyT1GwA4yu9ZxQzhlJ/I8oJw8jDrIFEmMJt3iKz9+6dEJyYBZZbqdGWuiRx1tYyVsyidnHtyLuuG5gmf5uAEyKNy7JV4wpTGD08QLFBGv9KEtdUy0NfV0IwYe72aMX+V3tjenDRvcMXEa4/BTSvE0C0a5e2MgJzNviKQ2Fml9Kx5U2ii9EFw==",
-      "size": 35400
+      "sha256": "497b116cc4dbce6c520359bea63902cd91e054c23431bbd8d847c370be51ba4e",
+      "sig": "doPducsRDIePkLrInt8wdg9Jqf277GYLdQLRzgGqRBn9jUQKLSgzHqLxVdtWXInJV9pSMCAbO3qtlpdEN7uQjsxroy0fLGjckJR01D/GDI3m2acLOSbwrjR46+WwIHawB2aDX+f36IEJnZiNhWM7Gj8ANHVJJMlf+iXdfB0SySj82SJ3GmW9xnq05B1zgfcV4a/dEOqIR4K1VXH9QmwbuVLKkLbB1Gkzbc9qeROmojT/43BrgZfNrl4MoTXZ16GHnsZFWNLls+6aweFAs89wRm2jDUimbfZQyAuTnIcgeGoOIhKt2qYPPbdWws8d91vhbRm91BsD6PikNP/xQaBWKQ==",
+      "size": 27705
     },
     {
       "id": "weather-station",

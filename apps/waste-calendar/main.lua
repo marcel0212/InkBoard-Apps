@@ -343,7 +343,6 @@ local zone=rest:match("([+-]%d%d:?%d%d)") or (rest:find("Z",1,true) and "Z") or 
 return dfc(tonumber(y),tonumber(m),tonumber(d))*86400+tonumber(hh)*3600+tonumber(mi)*60+(tonumber(ss) or 0) - zoneSeconds(zone)
 end
 local function en_(ctx) return ctx.lang=="en" end
-local SHARED={unna=true,frankenthal=true,awvlippe=true,kranenburg=true}
 local KIND={
 R={color.BLACK,"Restmüll","General waste"},
 P={color.BLUE,"Papiertonne","Paper"},
@@ -418,136 +417,6 @@ end
 end
 return out
 end
-local function numField(chunk,key)
-return chunk:match('"'..key..'"%s*:%s*(%d+)')
-end
-local function strField(chunk,key)
-local raw=chunk:match('"'..key..'"%s*:%s*"(.-)"')
-if raw==nil then return nil end
-if raw:find("\\",1,true) then
-local d=json.decode('{"t":"'..raw..'"}')
-if type(d)=="table" and type(d.t)=="string" then return d.t end
-end
-return raw
-end
-local function eachFlat(body,f)
-for chunk in body:gmatch("{[^{}]*}") do
-if f(chunk) then return end
-end
-end
-local function eachTop(body,f)
-local depth,start,pos=0,nil,1
-while true do
-local i=body:find("[{}]",pos)
-if i==nil then return end
-if body:byte(i)==123 then
-if depth==0 then start=i end
-depth=depth+1
-else
-depth=depth - 1
-if depth==0 and start~=nil then
-if f(body:sub(start,i)) then return end
-start=nil
-end
-if depth<0 then depth=0 end
-end
-pos=i+1
-end
-end
-local function lower(s) return tostring(s or ""):lower() end
-local function baseUrl(code)
-if SHARED[code] then return "https://abfallapp.regioit.de/abfall-app-"..code.."/rest" end
-return "https://"..code.."-abfallapp.regioit.de/abfall-app-"..code.."/rest"
-end
-local function resolveAddress(ctx,base)
-local street=lower(ctx.cfg.street)
-local houseNo=tostring(ctx.cfg.houseNo or "")
-local want=lower(ctx.cfg.city)
-local body=http.get(base.."/orte")
-if body==nil then return nil,"net" end
-local ortId,firstOrt
-eachFlat(body,function(chunk)
-local id=numField(chunk,"id")
-if id==nil then return false end
-firstOrt=firstOrt or id
-if want~="" and lower(strField(chunk,"name")):find(want,1,true) then ortId=id; return true end
-return false
-end)
-ortId=ortId or firstOrt
-if ortId==nil then return nil,"orte" end
-time.sleep(300)
-body=http.get(base.."/orte/"..ortId.."/strassen",BIG)
-if body==nil then return nil,"net" end
-local strasseId
-eachFlat(body,function(chunk)
-local name=strField(chunk,"name")
-if name~=nil and lower(name):find(street,1,true) then strasseId=numField(chunk,"id"); return strasseId~=nil end
-return false
-end)
-if strasseId==nil then return nil,"street" end
-local hid=strasseId
-time.sleep(300)
-body=http.get(base.."/strassen/"..strasseId,BIG)
-if body~=nil then
-local first
-eachFlat(body,function(chunk)
-local nr,id=strField(chunk,"nr"),numField(chunk,"id")
-if nr==nil or id==nil then return false end
-first=first or id
-if houseNo~="" and nr==houseNo then first=id; return true end
-return false
-end)
-if first~=nil then hid=first end
-end
-return hid
-end
-local function fetchAuto(ctx,today)
-local code=tostring(ctx.cfg.service or "")
-local street=tostring(ctx.cfg.street or "")
-if code=="" or street=="" then return nil,"cfg" end
-local base=baseUrl(code)
-local sig=code.."|"..street.."|"..tostring(ctx.cfg.houseNo or "").."|"..tostring(ctx.cfg.city or "").."|"
-local hid
-local cached=ctx.data.get("hid")
-if type(cached)=="string" and cached:sub(1,#sig)==sig then hid=cached:sub(#sig+1) end
-if hid==nil or hid=="" then
-local why
-hid,why=resolveAddress(ctx,base)
-if hid==nil then return nil,why end
-ctx.data.set("hid",sig..hid)
-time.sleep(300)
-end
-local names={}
-local fb=http.get(base.."/hausnummern/"..hid.."/fraktionen",BIG)
-if fb~=nil then
-eachFlat(fb,function(chunk)
-local id,name=numField(chunk,"id"),strField(chunk,"name")
-if id~=nil and name~=nil then names[id]=name end
-return false
-end)
-end
-time.sleep(300)
-local tb=http.get(base.."/hausnummern/"..hid.."/termine",BIG)
-if tb==nil then
-ctx.data.set("hid",nil)
-return nil,"net"
-end
-local out={}
-eachTop(tb,function(chunk)
-local y,m,d=chunk:match('"datum"%s*:%s*"(%d%d%d%d)%-(%d%d)%-(%d%d)')
-if y==nil then return false end
-local day=dfc(tonumber(y),tonumber(m),tonumber(d))
-if day<today - 1 then return false end
-local fid=numField(chunk,"fraktionId")
-local name=fid and names[fid] or nil
-if name==nil or name=="" then name=strField(chunk,"fraktion") or strField(chunk,"art") end
-if name==nil or name=="" then name="Abholung" end
-name=clean(name,27)
-out[#out+1]=string.format("%06d%s%s",day,kindOf(name),name)
-return false
-end)
-return out
-end
 local function fetchIcs(ctx,today)
 local url=ctx.cfg.icsUrl
 if type(url)~="string" or url=="" then return nil,"cfg" end
@@ -566,8 +435,7 @@ function on_fetch(ctx)
 local today=todayDays()
 if today==nil then return false end
 local list,why
-if ctx.cfg.mode=="auto" then list,why=fetchAuto(ctx,today)
-else list,why=fetchIcs(ctx,today) end
+list,why=fetchIcs(ctx,today)
 if list==nil then
 if why=="net" then return false end
 ctx.data.set("st","e:"..why)
@@ -605,9 +473,6 @@ if ev.kind=="S" and ev.label~="" then return ev.label end
 return kindName(ev.kind,en)
 end
 local function configured(ctx)
-if ctx.cfg.mode=="auto" then
-return type(ctx.cfg.service)=="string" and ctx.cfg.service~="" and type(ctx.cfg.street)=="string" and ctx.cfg.street~=""
-end
 return type(ctx.cfg.icsUrl)=="string" and ctx.cfg.icsUrl~=""
 end
 local function emptyState(ctx,events,today)
@@ -629,12 +494,7 @@ end
 if st~="ok" and #events==0 then
 local code=st:sub(3)
 local l1,l2=en and "Fetch failed." or "Abruf fehlgeschlagen.",nil
-if code=="street" then
-l1=en and "Street not found." or "Straße nicht gefunden."
-l2=en and "Check the spelling in the Store" or "Schreibweise im Store prüfen"
-elseif code=="orte" then
-l1=en and "Provider returned no places." or "Entsorger liefert keine Orte."
-elseif code=="none" then
+if code=="none" then
 l1=en and "No upcoming dates found." or "Keine Termine gefunden."
 elseif code:sub(1,4)=="http" then
 l2=(en and "The provider is not reachable (code " or "Der Entsorger ist nicht erreichbar (Code ")..code:sub(5)..")"

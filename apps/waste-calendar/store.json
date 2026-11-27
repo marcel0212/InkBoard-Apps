@@ -6,18 +6,18 @@
     "en": "Next pick-up dates for your bins"
   },
   "description": {
-    "de": "Zeigt, wann welche Tonne geleert wird. Du nutzt den Kalender-Link deines Entsorgers oder gibst deine Adresse ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
-    "en": "Shows when each bin is collected. Use your waste company's calendar link or enter your address. Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
+    "de": "Zeigt, wann welche Tonne geleert wird. Dafür trägst du den Kalender-Link (ICS) deines Entsorgers ein. Jede Tonne hat ihre Farbe, dazu „heute“, „morgen“ oder „in 5 Tagen“. Mit drei Ansichten und Widget.",
+    "en": "Shows when each bin is collected. Just enter your waste company's calendar link (ICS). Each bin has its color, plus “today”, “tomorrow” or “in 5 days”. Three views and a widget."
   },
   "features": {
     "de": [
-      "ICS-Kalender-Link oder Adresse (AbfallNavi)",
+      "Kalender-Link (ICS) deines Entsorgers",
       "Tonnenfarben und „in X Tagen“",
       "Drei Darstellungen und Dashboard-Widget",
       "Tonnenarten für das Widget wählbar"
     ],
     "en": [
-      "ICS calendar link or address (AbfallNavi)",
+      "Your waste company's calendar link (ICS)",
       "Bin colors and “in X days”",
       "Three layouts and dashboard widget",
       "Choose which bins the widget shows"

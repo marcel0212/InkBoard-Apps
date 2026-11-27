@@ -1,30 +1,23 @@
--- Flight Radar (Paket flight-radar 1.2.4, Skript-Variante der eingebauten App "flightradar"): das naechstgelegene Flugzeug am
--- Himmel ueber dem Standort des Geraets. Seite 1 "Flug": links im Bildkasten (430 x 296) das freigestellte Renderbild vom NAS
--- (dieselbe Datei- und Lackierungsregel wie auf der Himmel-Seite), darin in der Ecke das Airline-Logo (NAS, 85 x 20); nur wenn
--- auf dem NAS nichts passendes liegt (oder kein NAS eingerichtet ist), das Foto genau dieser Maschine von planespotters.net
--- (gedithert) mit Fotografen-Credit, sonst "Kein Bild verfuegbar". Rechts Rufzeichen, Airline, Route, Maschine, Kennung,
--- Hoehe/Tempo, Entfernung/Richtung (kein Logo-Kaestchen mehr neben dem Rufzeichen).
--- Seite 2 "Himmel" (Vollbild ohne Kopfzeile): bis zu drei nahe Flugzeuge als freigestellte Renderbilder vom NAS in gestaffelter
--- Formation auf waehlbarer Hintergrundfarbe (ohne Renderbild wird ein Flugzeug nicht gezeichnet, kein Ersatzbild).
+-- Flight Radar (Paket flight-radar 1.5.0, Skript-Variante der eingebauten App "flightradar"): Flugzeuge am Himmel ueber dem
+-- Standort des Geraets. Einzige Seite "Himmel" (Vollbild ohne Kopfzeile): bis zu drei nahe Flugzeuge als freigestellte Renderbilder
+-- vom NAS in gestaffelter Formation auf waehlbarer Hintergrundfarbe (ohne Renderbild wird ein Flugzeug nicht gezeichnet, kein Ersatzbild).
+-- Die fruehere Seite "Flug" (mit Ersatzfoto von planespotters.net und Airline-Logo) ist ab 1.5.0 entfallen (Bildrechte).
 -- Dashboard-Widget "Naechster Flug" (Rufzeichen, Route/Typ, Hoehe, Entfernung). Dazu: airlines.json vom NAS (Knoepfe "Von NAS neu laden",
 -- Import/Export als Datei, Aenderungsliste der letzten Uebernahme) und die Abdeckungsauswertung (CSV im Schema der Mac-App auf dem NAS,
 -- auch als Datei-Download vom Geraet).
--- Hauptflugzeug: Flug-Seite, Route, Logo und Widget gelten dem naechsten Flugzeug, zu dem auf dem NAS ein Bild liegt (nicht stur dem
--- allernaechsten); ohne jedes NAS-Bild das allernaechste mit planespotters-Foto.
+-- Hauptflugzeug: Route und Widget gelten dem naechsten Flugzeug, zu dem auf dem NAS ein Bild liegt (nicht stur dem allernaechsten).
 -- Skript-API Level 18 (storage.exists/image, http.image mit ram, Vollbild-Seite, storage.* und file.write in on_action).
 --
 -- Datenquellen:
 --   Positionen  GET  https://api.adsb.lol/v2/point/<lat>/<lon>/<Seemeilen>      (readsb/tar1090-JSON, "ac"-Liste)
 --   Route       POST https://api.adsb.lol/api/0/routeset  {"planes":[{"callsign":..,"lat":..,"lng":..}]} -> "_airport_codes_iata"
---   Foto        GET  https://api.planespotters.net/pub/photos/hex/<hex>  -> photos[1].thumbnail_large.src + photographer
---               (Fotografen-Credit ist Pflicht); das Bild selbst per http.image von *.plnspttrs.net
---   NAS         Renderbilder <gruppe>.png / <gruppe>_<iata>.png (Paket "inkboard-flugzeuge"), Logos logos/<ICAO>.bmp (85 x 20),
+--   NAS         Renderbilder <gruppe>.png / <gruppe>_<iata>.png (Paket "inkboard-flugzeuge"),
 --               airlines.json, Abdeckungs-CSV (Feld "dir" bzw. "cov" der Einstellungen)
 -- Der Standort ist kein Paket-Feld, sondern die Adresse des Geraets (weather.location()), wie bei der eingebauten App.
 --
 -- Auswertung wie fetchFlightRadar(): Antwort beim Empfang auf elf Felder verschlankt (keep), jedes Flugzeug einzeln gelesen, hart auf
 -- den km-Radius nachgefiltert, die POOL = 50 naechsten behalten; Route nur fuer das naechste Flugzeug bei geaendertem Rufzeichen;
--- Flug-Bild, Foto, Himmel, Logo und Auswertung nur, wenn die App angezeigt wird (ctx.view) - ohne zusaetzlichen Positionsabruf.
+-- Himmel und Auswertung nur, wenn die App angezeigt wird (ctx.view) - ohne zusaetzlichen Positionsabruf.
 --
 -- Dateien (file.*, hoechstens 8 Zugriffe je Aufruf - deshalb wenige, gebuendelte Dateien):
 --   "ac"   letzter Stand, Tab-getrennt: H Schluessel,Zeit,Gesamtzahl / A hex,cs,reg,typ,typname,airline,lat,lon,boden,hoehe,tempo,
@@ -33,15 +26,13 @@
 --          D = Zeilen der Aenderungsliste der letzten airlines.json-Uebernahme, C/X/E/B = Abdeckungs-Sitzung (Kopf, gesehene hex,
 --          Existenz-Cache, Eimer)
 --   "airl" airlines.json-Ueberlagerung (A = Airline, G = Lackierungs-Gruppe, T = Typcode-Zuordnung), geht den Tabellen vor
--- ctx.data: "rt" Rufzeichen|von|nach, "fi" Bilddatei|1/0|Zeit (Renderbild der Flug-Seite, Name "fplane"), "ph" hex|Fotograf|1/0
---           (Ersatzfoto), "lg" ICAO|1/0 (Logo), "sk" Kennung~Eintraege (Himmel-Layout).
+-- ctx.data: "rt" Rufzeichen|von|nach, "sk" Kennung~Eintraege (Himmel-Layout).
 -- assets/tables.txt = Typ-Gruppen und Airlines (Quelle der Wahrheit; tools/flightradar_tables.py --check vergleicht sie mit dem Mac-Werkzeug).
 
 local EN = false
 local function T(de, en) if EN then return en end return de end
 
 local ADSB = "https://api.adsb.lol"
-local PLANESPOTTERS = "https://api.planespotters.net/pub/photos/hex/"
 local MIN_GAP = 120      -- Untergrenze zwischen zwei erfolgreichen Abrufen (adsb.lol ist eine kostenlose Community-API)
 local RETRY = 120        -- Wartezeit nach einem Fehlversuch (FLIGHTRADAR_RETRY_MS)
 local FAR_KM = 150       -- erweiterte Suche, wenn im Umkreis weniger Flugzeuge mit Lackierung fliegen als die Himmel-Seite zeigen soll (3, Hochformat 5)
@@ -49,8 +40,6 @@ local FAR_AGE = 600      -- so lange gilt die erweiterte Liste
 local POOL = 50          -- behaltene Flugzeuge (Himmel sucht darin Lackierungsbilder; Firmware-Pool war 8)
 local COVPOOL = 8        -- Abdeckungsauswertung: wie die Firmware nur die 8 naechsten
 local KEEP = { "hex", "flight", "r", "t", "desc", "ownOp", "lat", "lon", "alt_baro", "gs", "track" }
-local PHOTO_W, PHOTO_H = 430, 296 -- FR_PHOTO_BOX_W/H: Ersatzfoto als Arbeitsspeicher-Bild (ram), gedithert wie in der eingebauten App
-local FI_W, FI_H = 406, 244 -- Renderbild der Flug-Seite: Bildkasten 430 x 296 minus 12 Pixel Rand, unten Platz fuer die Logo-Zeile
 local MISS_TTL, MISS_MAX = 1800, 16 -- Negativ-Cache fuer fehlende Speicher-Dateien (FR_ASSET_MISS_TTL_MS / FR_ASSET_MISS_CACHE)
 local AIR_GAP = 1800     -- airlines.json hoechstens alle 30 Minuten vom Speicher (FR_AIRLINES_JSON_INTERVAL_MS)
 local COV_FLUSH = 600    -- Abdeckung alle 10 Minuten auf den Speicher (FR_COV_FLUSH_INTERVAL_MS)
@@ -825,55 +814,6 @@ local function routeStep(ctx, first)
   ctx.data.set("rt", cs .. "|" .. from .. "|" .. to)
 end
 
--- Ersatzfoto des naechsten Flugzeugs (nur wenn die App angezeigt wird, einmal je Maschine, und nur wenn auf dem NAS kein Renderbild
--- fuer die Flug-Seite liegt, siehe flightImgStep) -> ctx.data "ph" = hex|Fotograf|1/0
-local function photoStep(ctx, first)
-  local hex = first.hex:gsub("[^%w]", "")
-  if hex == "" then return end
-  local ph = ctx.data.get("ph")
-  if type(ph) == "string" and ph:match("^([^|]*)") == hex then
-    if not ph:match("|1$") or draw.image_size("photo") then return end -- Bild nach einem Neustart weg: neu laden
-  end
-  ctx.data.set("ph", hex .. "||0") -- geprueft: auch bei "kein Foto" kein Dauer-Retry fuer dieselbe Maschine
-  local r = http.request{ url = PLANESPOTTERS .. hex, maxBytes = 8192, keep = { "src", "photographer" }, headers = { Accept = "application/json" } }
-  if not r or r.status ~= 200 then log("Flight Radar: Foto-Suche fehlgeschlagen"); return end
-  local doc = json.decode(r.body)
-  local p = type(doc) == "table" and type(doc.photos) == "table" and doc.photos[1]
-  if type(p) ~= "table" then log("Flight Radar: kein Foto fuer " .. hex); return end
-  local src = (type(p.thumbnail_large) == "table" and p.thumbnail_large.src) or (type(p.thumbnail) == "table" and p.thumbnail.src)
-  if type(src) ~= "string" or src == "" then return end
-  local who = fld(p.photographer, 39):gsub("|", "/")
-  local ok, err = http.image(src, "photo", PHOTO_W, PHOTO_H, { ram = true })
-  if ok then ctx.data.set("ph", hex .. "|" .. who .. "|1") else log("Flight Radar: Foto " .. tostring(err)) end
-end
-
--- Airline-Logo (VRS-Operator-Flag logos/<ICAO>.bmp, 85 x 20) des naechsten Flugzeugs -> ctx.data "lg" = ICAO|1/0
-local function logoStep(ctx, first, now)
-  if not storage.ready() then return end
-  local icao = icaoOf(first.cs)
-  local lg = ctx.data.get("lg")
-  local cur, okc = "", "0"
-  if type(lg) == "string" then cur, okc = lg:match("^([^|]*)|(%d)$") end
-  if not icao then
-    if cur ~= "" or lg == nil then ctx.data.set("lg", "|0") end
-    return
-  end
-  if cur == icao and (okc ~= "1" or draw.image_size("logo")) then return end
-  ctx.data.set("lg", icao .. "|0") -- geprueft: auch bei "kein Logo" kein Dauer-Retry
-  local name = "logos/" .. icao .. ".bmp"
-  if missHas(name, now) or probes >= PROBES then return end
-  probes = probes + 1
-  local w, h = storage.image("dir", name, "logo", { w = 85, h = 20 })
-  if w == 85 and h == 20 then
-    ctx.data.set("lg", icao .. "|1")
-  elseif w then
-    log(string.format("Flight Radar: Logo %s hat unerwartete Groesse (%dx%d).", name, w, h))
-  else
-    if tostring(h):find("nicht gefunden", 1, true) then missAdd(name, now) end
-    log("Flight Radar: Logo " .. name .. ": " .. tostring(h))
-  end
-end
-
 -- Gibt es <name> auf dem NAS? true / false / nil (nicht feststellbar oder Probenbudget bis cap erreicht).
 -- Bekannte Treffer/Fehlen (Abdeckungs-Cache S.ex, Lauf-Ergebnis EXM, Negativ-Cache) kosten keine Probe.
 local function nasKnown(name, now, cap)
@@ -904,43 +844,6 @@ local function featureStep(ctx, ac, now)
     ctx.data.set("ft", nil)
   end
   applyFeature(ctx, ac)
-end
-
--- Renderbild der Flug-Seite fuer das NAECHSTE Flugzeug: dieselbe Datei wie auf der Himmel-Seite (skyFile: <gruppe>.png bzw.
--- <gruppe>_<iata>.png), Freisteller mit schwarzer Kontur, Arbeitsspeicher-Name "fplane". Ohne Vorab-Probe (ein storage.image-Aufruf statt
--- zwei): "nicht gefunden" landet im Negativ-Cache, ein Treffer ersetzt die Probe der Himmel-Seite (EXM) - zusammen hoechstens
--- 16 Proben je Lauf. ctx.data "fi" = Datei|1/0|Zeit:
--- 1 = geladen, 0 = auf dem NAS nichts Passendes (kein NAS, unbekannter Typ, Datei fehlt); 0 wird nach MISS_TTL neu geprueft.
--- Rueckgabe: true = Bild da, false = nichts Passendes (Ersatzfoto), nil = noch nicht entscheidbar (Probenbudget leer)
-local function flightImgStep(ctx, first, now)
-  local name = skyFile(first) or "-"
-  local cur, st, at
-  local fi = ctx.data.get("fi")
-  if type(fi) == "string" then cur, st, at = fi:match("^([^|]*)|(%d)|(%d+)$") end
-  if cur == name then
-    if st == "1" and draw.image_size("fplane") then return true end -- nach einem Neustart weg: neu laden
-    if st == "0" and now - (tonumber(at) or 0) < MISS_TTL then return false end
-  end
-  local function done(ok)
-    ctx.data.set("fi", name .. "|" .. (ok and 1 or 0) .. "|" .. now)
-    return ok
-  end
-  if name == "-" or not storage.ready() then return done(false) end
-  stLoad()
-  if missHas(name, now) then return done(false) end
-  if probes >= PROBES then return nil end
-  probes = probes + 1
-  local w, h = storage.image("dir", name, "fplane", { w = FI_W, h = FI_H, up = 133, style = "cutout", outline = color.BLACK })
-  if w and w >= 8 and h >= 8 then
-    EXM[name] = true
-    return done(true)
-  end
-  if not w and tostring(h):find("nicht gefunden", 1, true) then
-    missAdd(name, now)
-    return done(false)
-  end
-  log("Flight Radar: Flug-Bild " .. name .. ": " .. tostring(h)) -- Fehler (z. B. Verbindung) ist kein Fehlen: nichts merken, naechster Lauf probiert erneut
-  return false
 end
 
 -- Formation (FR_SKY_SLOTS_1/2/3): Leader gross unten rechts, weitere versetzt darueber, disjunkte Zeilenbaender -> keine Ueberlappung.
@@ -1120,12 +1023,10 @@ local function skyStep(ctx, ac, now)
   log(string.format("Flight Radar: Himmel komponiert (%d von %d Flugzeugen als Render).", #ent, math.min(#ac.list, POOL)))
 end
 
--- Alles, was nur bei angezeigter App und vorhandenen Flugzeugen laeuft (Flug-Bild, Ersatzfoto, Himmel, Logo, Auswertung)
+-- Alles, was nur bei angezeigter App und vorhandenen Flugzeugen laeuft (Himmel, Auswertung)
 local function extras(ctx, ac, now)
   featureStep(ctx, ac, now)
-  if flightImgStep(ctx, ac.list[1], now) == false then photoStep(ctx, ac.list[1]) end
   skyStep(ctx, ac, now)
-  logoStep(ctx, ac.list[1], now)
   covStep(ac, now)
 end
 
@@ -1311,23 +1212,11 @@ function on_action(ctx, name)
 end
 
 -- ---------------------------------------------------------------------------
--- Seite 1: Flug
+-- Hilfen fuer Himmel-Seite und Widget
 -- ---------------------------------------------------------------------------
 
-local PX, PW, PH = 20, 430, 296 -- Fotokarte (FR_PHOTO_BOX_W/H)
 -- Zusatzinfos der Himmel-Seite (Zeile Airline · Typ): Einstellung "details"; in der Vorschau (ctx.preview, Firmware ab Build 808) immer sichtbar
 local EXTRAS = true
-
-local function infoRow(x, y, maxW, label, value)
-  draw.text(x, y, label, "small", color.ACCENT_TEXT)
-  if draw.height > draw.width then -- Hochformat: umbrechen statt abkuerzen
-    local ls = wrapLines(value, maxW, "normal", 3)
-    for i, l in ipairs(ls) do draw.text(x, y + 20 + (i - 1) * 22, l, "normal", color.BLACK) end
-    return y + 44 + (#ls - 1) * 22
-  end
-  draw.text(x, y + 20, fit(value, maxW, "normal"), "normal", color.BLACK)
-  return y + 44
-end
 
 local function nameOf(a) return a.cs ~= "" and a.cs or (a.reg ~= "" and a.reg or a.hex) end
 
@@ -1348,87 +1237,6 @@ local function arrowRoute(x, baseY, from, to, font, gap, aw, hh, limitX)
   draw.rect(ax, ay - 1, aw - (aw > 30 and 8 or 7), 3, color.ACCENT, true)
   draw.triangle(ax + aw - (aw > 30 and 9 or 8), ay - hh, ax + aw - (aw > 30 and 9 or 8), ay + hh, ax + aw, ay, color.ACCENT, true)
   draw.text(ax + aw + gap, baseY, to, font, color.BLACK)
-end
-
-local function flightPage(ctx, ac)
-  local top = draw.top
-  local a = ac.list[1]
-  -- Bildkasten links: Renderbild vom NAS (Name "fplane", zur Datei des aktuellen Flugzeugs passend), sonst das planespotters-Foto dieser
-  -- Maschine, sonst nur der Rahmen mit Hinweis. Das Airline-Logo sitzt in der Ecke des Kastens (nur wenn es zum Rufzeichen passt).
-  local py = top + 10
-  local want = skyFile(a) or "-"
-  local fi = ctx.data.get("fi")
-  local fn, fs = (type(fi) == "string" and fi or ""):match("^([^|]*)|(%d)|")
-  local fw, fh = draw.image_size("fplane")
-  local ph = ctx.data.get("ph")
-  local phHex, phWho, phOk = "", "", "0"
-  if type(ph) == "string" then phHex, phWho, phOk = ph:match("^([^|]*)|([^|]*)|(%d)$") end
-  local iw, ih = draw.image_size("photo")
-  local bx, by = PX, py -- obere linke Ecke des Bildes (fuer die Logo-Marke)
-  if fn == want and fs == "1" and fw then
-    draw.rect(PX, py, PW, PH, color.BLACK, false, 12)
-    draw.image("fplane", PX + (PW - fw) // 2, py + 40 + (FI_H - fh) // 2)
-  elseif phOk == "1" and phHex == a.hex and iw and not (fn == want and fs == "1") then
-    bx, by = PX + (PW - iw) // 2, py + (PH - ih) // 2
-    draw.image("photo", bx, by)
-    draw.rect(bx - 1, by - 1, iw + 2, ih + 2, color.BLACK, false)
-    draw.text(PX, py + PH + 18, fit(string.format("%s: %s · planespotters.net", T("Foto", "Photo"), phWho), PW, "small"), "small", color.BLACK)
-  else
-    draw.rect(PX, py, PW, PH, color.BLACK, false, 12)
-    local loading = fn ~= want or fs == "1" or (phHex ~= a.hex or phOk == "1")
-    draw.text(PX + PW // 2, py + PH // 2 + 6, loading and T("Bild wird geladen ...", "Loading image ...") or T("Kein Bild verfügbar", "No image available"),
-      "small", color.BLACK, "center")
-  end
-  local lg = ctx.data.get("lg")
-  if type(lg) == "string" and lg == (icaoOf(a.cs) or "") .. "|1" then
-    local lx, ly = bx + 12, by + 12
-    if draw.image("logo", lx, ly) then draw.rect(lx - 1, ly - 1, 87, 22, color.BLACK, false) end
-  end
-  -- Daten rechts
-  local rx = 472
-  local maxW = draw.width - rx - 20
-  local y = top + 38 -- ohne Logo-Kaestchen daneben: Rufzeichen ueber die ganze Spaltenbreite, Airline in der Normalschrift
-  if draw.height > draw.width then rx, maxW, y = PX + 4, draw.width - 2 * PX - 8, py + PH + 54 end -- Hochformat: Daten unter dem Bild
-  if draw.height > draw.width then -- Hochformat: umbrechen statt abkuerzen
-    local nl = wrapLines(nameOf(a), maxW, "large", 3)
-    for i, l in ipairs(nl) do draw.text(rx, y + (i - 1) * 34, l, "large", color.BLACK) end
-    y = y + (#nl - 1) * 34 + 8
-    if a.air ~= "" then
-      local al = wrapLines(a.air, maxW, "normal", 3)
-      for i, l in ipairs(al) do draw.text(rx, y + 16 + (i - 1) * 22, l, "normal", color.BLACK) end
-      y = y + 22 + (#al - 1) * 22
-    end
-  else
-    draw.text(rx, y, fit(nameOf(a), maxW, "large"), "large", color.BLACK)
-    y = y + 8
-    if a.air ~= "" then
-      draw.text(rx, y + 16, fit(a.air, maxW, "normal"), "normal", color.BLACK)
-      y = y + 22
-    end
-  end
-  y = y + 14
-  local from, to = routeOf(ctx, a)
-  if from then
-    arrowRoute(rx, y + 22, from, to, "large", 10, 34, 6)
-    y = y + 46
-  else
-    y = y + 4
-  end
-  y = infoRow(rx, y + 12, maxW, T("MASCHINE", "AIRCRAFT"), a.desc ~= "" and a.desc or (a.tc ~= "" and a.tc or "-"))
-  local reg = a.reg ~= "" and (a.reg .. " · " .. (a.tc ~= "" and a.tc or a.hex)) or a.hex
-  y = infoRow(rx, y, maxW, T("KENNUNG", "REGISTRATION"), reg)
-  local alt
-  if a.gnd then alt = T("am Boden", "on ground")
-  elseif a.alt >= 0 then
-    alt = rnd(a.alt * 0.3048) .. " m"
-    if a.gs >= 0 then alt = alt .. " · " .. rnd(a.gs * 1.852) .. " km/h" end
-  else alt = "-" end
-  y = infoRow(rx, y, maxW, T("HÖHE · TEMPO", "ALTITUDE · SPEED"), alt)
-  local dist = a.dist < 10 and string.format("%.1f km", a.dist) or (rnd(a.dist) .. " km")
-  infoRow(rx, y, maxW, T("ENTFERNUNG", "DISTANCE"), string.format(T("%s · aus %s", "%s · from %s"), dist, compass(a.brg)))
-  if ac.total > 1 then
-    draw.text(rx, draw.height - 18, fit(string.format(T("+%d weitere im Umkreis von %d km", "+%d more within %d km"), ac.total - 1, ac.radius), maxW, "small"), "small", color.BLACK)
-  end
 end
 
 -- ---------------------------------------------------------------------------
@@ -1551,21 +1359,7 @@ function on_draw(ctx, page)
   EXTRAS = ctx.cfg.details ~= false or ctx.preview == true
   draw.clear(color.WHITE)
   local st, ac, radius = state(ctx)
-  if page == 2 then
-    skyPage(ctx, st, ac, radius)
-    return
-  end
-  if st == "noloc" then
-    notice("gear", T("Kein Standort hinterlegt.", "No location set."), T("Studio -> Einstellungen -> Adresse", "Studio -> Settings -> Address"))
-  elseif st == "loading" then
-    notice("clock", T("Wird geladen ...", "Loading ..."))
-  elseif st == "error" then
-    notice("warning", T("Abruf fehlgeschlagen.", "Fetch failed."), ac.msg ~= "" and ac.msg or T("Nächster Versuch in Kürze.", "Retrying shortly."))
-  elseif st == "empty" then
-    notice("info", string.format(T("Gerade kein Flugzeug im Umkreis von %d km.", "No aircraft within %d km right now."), radius))
-  else
-    flightPage(ctx, ac)
-  end
+  skyPage(ctx, st, ac, radius) -- einzige Seite (die Flug-Seite mit planespotters-Foto ist entfallen)
 end
 
 -- ---------------------------------------------------------------------------

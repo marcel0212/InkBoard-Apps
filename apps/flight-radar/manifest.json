@@ -8,14 +8,10 @@
     "de": "Flights",
     "en": "Flights"
   },
-  "version": "1.4.4",
+  "version": "1.5.0",
   "apiLevel": 18,
   "needsStorage": true,
   "pages": [
-    {
-      "de": "Flug",
-      "en": "Flight"
-    },
     {
       "de": "Himmel",
       "en": "Sky",
@@ -33,9 +29,7 @@
   },
   "permissions": {
     "net": [
-      "api.adsb.lol",
-      "api.planespotters.net",
-      "*.plnspttrs.net"
+      "api.adsb.lol"
     ]
   },
   "sections": [
@@ -46,8 +40,8 @@
         "en": "Search area"
       },
       "help": {
-        "de": "Der Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten). Abgerufen wird adsb.lol, höchstens alle zwei Minuten; Route, Bild und Foto werden nur für das nächste Flugzeug geladen.",
-        "en": "The location comes from the device settings (weather location). Data comes from adsb.lol, at most every two minutes; route and image are only loaded for the nearest aircraft."
+        "de": "Der Standort kommt aus den Geräteeinstellungen (Standort für Wetterdaten). Abgerufen wird adsb.lol, höchstens alle zwei Minuten; die Route wird nur für das nächste Flugzeug geladen.",
+        "en": "The location comes from the device settings (weather location). Data comes from adsb.lol, at most every two minutes; the route is only loaded for the nearest aircraft."
       },
       "helpTitle": {
         "de": "Woher kommen die Daten?",
@@ -68,8 +62,8 @@
         "en": "Images and coverage"
       },
       "help": {
-        "de": "Beide Seiten zeigen das Flugzeug als freigestelltes Renderbild von einem Ordner auf dem externen Speicher (in den allgemeinen Einstellungen eingerichtet): <Gruppe>.png bzw. <Gruppe>_<IATA>.png (Paket \"inkboard-flugzeuge\"). Auf der Flug-Seite sitzt darin das Airline-Logo logos/<ICAO>.bmp (85 x 20). Liegt kein passendes Renderbild bereit (oder gibt es kein Speicher), zeigt die Flug-Seite das Foto von planespotters.net mit Fotografen-Nennung, sonst \"Kein Bild verfügbar\"; die Himmel-Seite lässt das Flugzeug dann ungezeichnet.\nDie Abdeckungsauswertung schreibt, solange die App angezeigt wird, eine CSV im Schema der Mac-App (Flugzeugbilder -> Auswertungen) in den Auswertungs-Ordner; \"Auswertung herunterladen\" liefert dieselbe CSV als Datei vom Gerät, auch ohne Speicher.",
-        "en": "Both pages show the aircraft as a cut-out render from a folder on the external storage (set up in the general settings): <group>.png or <group>_<IATA>.png (package \"inkboard-flugzeuge\"). On the flight page the airline logo logos/<ICAO>.bmp (85 x 20) sits inside it. Without a matching render (or without storage) the flight page shows the photo from planespotters.net with photographer credit, otherwise \"No image available\"; the sky page leaves the aircraft undrawn.\nThe coverage report writes a CSV in the Mac app schema (aircraft images -> reports) to the report folder while the app is shown; \"Download report\" delivers the same CSV as a file from the device, even without storage."
+        "de": "Die Himmel-Seite zeigt die Flugzeuge als freigestellte Renderbilder von einem Ordner auf dem externen Speicher (in den allgemeinen Einstellungen eingerichtet): <Gruppe>.png bzw. <Gruppe>_<IATA>.png (Paket \"inkboard-flugzeuge\"). Ohne passendes Renderbild wird ein Flugzeug nicht gezeichnet.\nDie Abdeckungsauswertung schreibt, solange die App angezeigt wird, eine CSV im Schema der Mac-App (Flugzeugbilder -> Auswertungen) in den Auswertungs-Ordner; \"Auswertung herunterladen\" liefert dieselbe CSV als Datei vom Gerät, auch ohne Speicher.",
+        "en": "The sky page shows the aircraft as cut-out renders from a folder on the external storage (set up in the general settings): <group>.png or <group>_<IATA>.png (package \"inkboard-flugzeuge\"). Without a matching render an aircraft is not drawn.\nThe coverage report writes a CSV in the Mac app schema (aircraft images -> reports) to the report folder while the app is shown; \"Download report\" delivers the same CSV as a file from the device, even without storage."
       },
       "helpTitle": {
         "de": "Woher kommen die Bilder?",
@@ -111,8 +105,8 @@
         "en": "Sky page: show airline and type"
       },
       "help": {
-        "de": "Aus: die Himmel-Seite auf dem Display zeigt unter dem Flugzeug nur Rufzeichen und Entfernung. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin Airline und Typ. Die Flug-Seite bleibt unverändert.",
-        "en": "Off: the sky page on the display only shows callsign and distance below the aircraft. The preview in Studio, Mac and iOS app still shows airline and type. The flight page is unchanged."
+        "de": "Aus: die Himmel-Seite auf dem Display zeigt unter dem Flugzeug nur Rufzeichen und Entfernung. Die Vorschau in Studio, Mac- und iOS-App zeigt weiterhin Airline und Typ.",
+        "en": "Off: the sky page on the display only shows callsign and distance below the aircraft. The preview in Studio, Mac and iOS app still shows airline and type."
       },
       "section": "sky"
     },
@@ -152,13 +146,25 @@
     {
       "key": "storageProfile",
       "type": "select",
-      "options": ["main", "app"],
+      "options": [
+        "main",
+        "app"
+      ],
       "default": "main",
       "optionLabels": {
-        "de": {"main": "Hauptspeicher", "app": "App-Speicher (getrennt)"},
-        "en": {"main": "Main storage", "app": "App storage (separate)"}
+        "de": {
+          "main": "Hauptspeicher",
+          "app": "App-Speicher (getrennt)"
+        },
+        "en": {
+          "main": "Main storage",
+          "app": "App storage (separate)"
+        }
       },
-      "label": {"de": "Speicher", "en": "Storage"},
+      "label": {
+        "de": "Speicher",
+        "en": "Storage"
+      },
       "help": {
         "de": "App-Speicher: ein eigener, getrennter Speicher (FTP, WebDAV oder Google Drive) nur für Apps. Einrichten unter Einstellungen → App-Speicher.",
         "en": "App storage: a separate storage (FTP, WebDAV or Google Drive) just for apps. Set it up under Settings → App storage."
@@ -170,8 +176,8 @@
       "type": "storagePath",
       "default": "/inkboard/flugzeuge",
       "label": {
-        "de": "Speicher-Ordner für Bilder und Logos",
-        "en": "storage folder for images and logos"
+        "de": "Speicher-Ordner für die Bilder",
+        "en": "Storage folder for the images"
       },
       "section": "nas"
     },

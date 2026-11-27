@@ -8,7 +8,7 @@
     "de": "Müll",
     "en": "Waste"
   },
-  "version": "1.1.2",
+  "version": "1.2.0",
   "apiLevel": 9,
   "pages": [
     {
@@ -24,10 +24,6 @@
     "h": 120
   },
   "permissions": {
-    "net": [
-      "abfallapp.regioit.de",
-      "*.regioit.de"
-    ],
     "netFrom": [
       "icsUrl"
     ]
@@ -40,8 +36,8 @@
         "en": "Data source"
       },
       "help": {
-        "de": "Kalender-Link (empfohlen):\n1. Auf der Webseite deines Entsorgers den Abfuhrkalender für deine Adresse öffnen\n2. Kalender-Export oder Abo (ICS, iCal) wählen und den Link kopieren\n3. Beginnt der Link mit webcal://, ersetze das durch https://\nDer Link muss ohne Anmeldung abrufbar sein.\nAdresse: nur für die Kommunen in der Liste. Entsorger wählen, dann Straße und Hausnummer eingeben.",
-        "en": "Calendar link (recommended):\n1. Open the collection calendar for your address on your waste company's website\n2. Choose the calendar export or subscription (ICS, iCal) and copy the link\n3. If the link starts with webcal://, replace that with https://\nThe link must work without signing in.\nAddress: only for the municipalities in the list. Choose the company, then enter street and house number."
+        "de": "1. Auf der Webseite deines Entsorgers den Abfuhrkalender für deine Adresse öffnen\n2. Kalender-Export oder Abo (ICS, iCal) wählen und den Link kopieren\n3. Beginnt der Link mit webcal://, ersetze das durch https://\nDer Link muss ohne Anmeldung abrufbar sein.",
+        "en": "1. Open the collection calendar for your address on your waste company's website\n2. Choose the calendar export or subscription (ICS, iCal) and copy the link\n3. If the link starts with webcal://, replace that with https://\nThe link must work without signing in."
       },
       "helpTitle": {
         "de": "Kalender-Link holen",
@@ -51,194 +47,11 @@
   ],
   "settings": [
     {
-      "key": "mode",
-      "type": "select",
-      "options": [
-        "ics",
-        "auto"
-      ],
-      "default": "ics",
-      "optionLabels": {
-        "de": {
-          "ics": "Kalender-Link (ICS)",
-          "auto": "Adresse (AbfallNavi)"
-        },
-        "en": {
-          "ics": "Calendar link (ICS)",
-          "auto": "Address (AbfallNavi)"
-        }
-      },
-      "label": {
-        "de": "Datenquelle",
-        "en": "Data source"
-      },
-      "section": "source"
-    },
-    {
       "key": "icsUrl",
       "type": "url",
       "label": {
         "de": "Kalender-Link (ICS)",
         "en": "Calendar link (ICS)"
-      },
-      "showIf": {
-        "key": "mode",
-        "in": [
-          "ics"
-        ]
-      },
-      "section": "source"
-    },
-    {
-      "key": "service",
-      "type": "select",
-      "options": [
-        "aachen",
-        "nuernberg",
-        "aw-bgl2",
-        "zew2",
-        "krwaf",
-        "bav",
-        "coe",
-        "cottbus",
-        "din",
-        "dorsten",
-        "wml2",
-        "hlv",
-        "krhs",
-        "kronberg",
-        "muelheim",
-        "nds",
-        "pi",
-        "roe",
-        "solingen",
-        "stl",
-        "unna",
-        "viersen",
-        "oberhausen",
-        "cux",
-        "frankenthal",
-        "awvlippe",
-        "kranenburg"
-      ],
-      "default": "aachen",
-      "optionLabels": {
-        "de": {
-          "aachen": "Stadt Aachen",
-          "nuernberg": "Stadt Nürnberg",
-          "aw-bgl2": "Bergisch Gladbach",
-          "zew2": "Zweckverband Entsorgungsregion West",
-          "krwaf": "Kreis Warendorf",
-          "bav": "Bergischer Abfallwirtschaftverbund",
-          "coe": "Kreis Coesfeld",
-          "cottbus": "Cottbus",
-          "din": "Dinslaken",
-          "dorsten": "Dorsten",
-          "wml2": "EGW Westmünsterland",
-          "hlv": "Halver",
-          "krhs": "Kreis Heinsberg",
-          "kronberg": "Kronberg im Taunus",
-          "muelheim": "Mülheim an der Ruhr",
-          "nds": "Norderstedt",
-          "pi": "Kreis Pinneberg",
-          "roe": "Roetgen",
-          "solingen": "Solingen",
-          "stl": "Lüdenscheid",
-          "unna": "Kreis Unna",
-          "viersen": "Kreis Viersen",
-          "oberhausen": "Oberhausen",
-          "cux": "Cuxhaven",
-          "frankenthal": "Frankenthal",
-          "awvlippe": "AWV Lippe",
-          "kranenburg": "Kranenburg"
-        },
-        "en": {
-          "aachen": "Stadt Aachen",
-          "nuernberg": "Stadt Nürnberg",
-          "aw-bgl2": "Bergisch Gladbach",
-          "zew2": "Zweckverband Entsorgungsregion West",
-          "krwaf": "Kreis Warendorf",
-          "bav": "Bergischer Abfallwirtschaftverbund",
-          "coe": "Kreis Coesfeld",
-          "cottbus": "Cottbus",
-          "din": "Dinslaken",
-          "dorsten": "Dorsten",
-          "wml2": "EGW Westmünsterland",
-          "hlv": "Halver",
-          "krhs": "Kreis Heinsberg",
-          "kronberg": "Kronberg im Taunus",
-          "muelheim": "Mülheim an der Ruhr",
-          "nds": "Norderstedt",
-          "pi": "Kreis Pinneberg",
-          "roe": "Roetgen",
-          "solingen": "Solingen",
-          "stl": "Lüdenscheid",
-          "unna": "Kreis Unna",
-          "viersen": "Kreis Viersen",
-          "oberhausen": "Oberhausen",
-          "cux": "Cuxhaven",
-          "frankenthal": "Frankenthal",
-          "awvlippe": "AWV Lippe",
-          "kranenburg": "Kranenburg"
-        }
-      },
-      "label": {
-        "de": "Entsorger",
-        "en": "Provider"
-      },
-      "showIf": {
-        "key": "mode",
-        "in": [
-          "auto"
-        ]
-      },
-      "section": "source"
-    },
-    {
-      "key": "street",
-      "type": "text",
-      "maxLen": 40,
-      "label": {
-        "de": "Straße",
-        "en": "Street"
-      },
-      "showIf": {
-        "key": "mode",
-        "in": [
-          "auto"
-        ]
-      },
-      "section": "source"
-    },
-    {
-      "key": "houseNo",
-      "type": "text",
-      "maxLen": 8,
-      "label": {
-        "de": "Hausnummer",
-        "en": "House number"
-      },
-      "showIf": {
-        "key": "mode",
-        "in": [
-          "auto"
-        ]
-      },
-      "section": "source"
-    },
-    {
-      "key": "city",
-      "type": "text",
-      "maxLen": 40,
-      "label": {
-        "de": "Ort (nur bei mehreren Orten)",
-        "en": "Place (only if the provider has several)"
-      },
-      "showIf": {
-        "key": "mode",
-        "in": [
-          "auto"
-        ]
       },
       "section": "source"
     },
